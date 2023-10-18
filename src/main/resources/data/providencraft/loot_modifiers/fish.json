@@ -8,5 +8,5 @@
     }
   ],
   "table": "providencraft:gameplay/fishing/fish",
-  "chance": 0.2
+  "chance": 0.15
 }
