@@ -1253,9 +1253,9 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		this.body_total.copyModelAngles(this.bipedBody);
 
 		matrixStack.push();
-		matrixStack.scale(0.55f, 0.55f, 0.55f);
+		matrixStack.scale(0.55f, 0.55f, 0.59f);
 
-		matrixStack.translate(0, -1.5, -0.05);
+		matrixStack.translate(0, -1.5, -0.03);
 
 		main.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 
