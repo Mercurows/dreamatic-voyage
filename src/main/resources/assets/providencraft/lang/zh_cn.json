@@ -159,7 +159,7 @@
   "des.providencraft.mva_stew_2": "食用后会获得抗性提升效果",
   "des.providencraft.ayelet_mask_1": "原野牟牟珍藏的面具",
   "des.providencraft.ayelet_mask_2": "阿——伊——蕾——特——",
-  "des.providencraft.ct_message_1": "Eli,Eli是给",
+  "des.providencraft.ct_message_1": "喜报：java.lang.IndexOutOfBoundsException",
   "des.providencraft.ct_message_2": "喜报：java.lang.NullPointerException",
   "des.providencraft.ct_message_3": "喜报：java.lang.StackOverflowError",
   "des.providencraft.ct_message_4": "<若芖> 我是弯的 但是屏幕是直的",
