@@ -30,7 +30,7 @@ import java.util.List;
 
 public class Leviy extends Item {
     public Leviy() {
-        super(new Properties().group(ModGroup.itemgroup).rarity(Rarity.create("PROVIDENCRAFT_LEGENDARY", TextFormatting.GOLD)));
+        super(new Properties().group(ModGroup.itemgroup).rarity(Rarity.create("PROVIDENCRAFT_LEGENDARY", TextFormatting.GOLD)).maxStackSize(1));
     }
 
     @OnlyIn(Dist.CLIENT)

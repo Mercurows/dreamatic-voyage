@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.LivingEntity;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class MaidCostumeModel<T extends LivingEntity> extends BipedModel<T> {
 	private final ModelRenderer main;
 	private final ModelRenderer body_total;

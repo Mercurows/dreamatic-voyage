@@ -2,6 +2,7 @@ package tech.lq0.providencraft.models;// Made with Blockbench 4.8.3
 // Exported for Minecraft version 1.15 - 1.16 with MCP mappings
 // Paste this class into your mod and generate all required imports
 
+
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.BipedModel;
@@ -170,22 +171,22 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 
 		main = new ModelRenderer(this);
 		main.setRotationPoint(0.0F, 24.0F, 0.0F);
-
+		
 
 		left_total = new ModelRenderer(this);
-		left_total.setRotationPoint(0.0F, 0.0F, 0.0F);
+		left_total.setRotationPoint(-5.0F, -22.0F, 0.0F);
 		main.addChild(left_total);
-
+		
 
 		left_arm = new ModelRenderer(this);
-		left_arm.setRotationPoint(0.0F, 0.0F, 0.0F);
+		left_arm.setRotationPoint(1.5F, 6.0F, 0.0F);
 		left_total.addChild(left_arm);
-
+		
 
 		cuff = new ModelRenderer(this);
-		cuff.setRotationPoint(0.0F, 1.0F, 0.0F);
+		cuff.setRotationPoint(-8.0F, 17.0F, 0.0F);
 		left_arm.addChild(cuff);
-
+		
 
 		ring1 = new ModelRenderer(this);
 		ring1.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -232,7 +233,7 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		ring3.setTextureOffset(111, 76).addBox(16.0F, -19.0F, -5.0F, 1.0F, 2.0F, 1.0F, 0.0F, false);
 
 		sleeve = new ModelRenderer(this);
-		sleeve.setRotationPoint(0.0F, 0.0F, 0.0F);
+		sleeve.setRotationPoint(-8.0F, 16.0F, 0.0F);
 		left_arm.addChild(sleeve);
 		sleeve.setTextureOffset(20, 49).addBox(7.25F, -13.5F, -4.5F, 1.0F, 6.0F, 9.0F, 0.0F, false);
 		sleeve.setTextureOffset(0, 49).addBox(7.0F, -7.5F, -4.5F, 1.0F, 6.0F, 9.0F, 0.0F, false);
@@ -252,17 +253,17 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		sleeve.setTextureOffset(85, 75).addBox(7.5F, -4.5F, 4.3F, 10.0F, 3.0F, 1.0F, 0.0F, false);
 
 		body_total = new ModelRenderer(this);
-		body_total.setRotationPoint(0.0F, 0.0F, 0.0F);
+		body_total.setRotationPoint(0.0F, -24.0F, 0.0F);
 		main.addChild(body_total);
-
+		
 
 		body = new ModelRenderer(this);
 		body.setRotationPoint(0.0F, 0.0F, 0.0F);
 		body_total.addChild(body);
-
+		
 
 		up = new ModelRenderer(this);
-		up.setRotationPoint(0.0F, 0.0F, 0.0F);
+		up.setRotationPoint(0.0F, 24.0F, 0.0F);
 		body.addChild(up);
 		up.setTextureOffset(0, 27).addBox(-8.0F, -20.0F, -5.25F, 16.0F, 6.0F, 1.0F, 0.0F, false);
 		up.setTextureOffset(0, 13).addBox(-8.0F, -20.0F, 4.25F, 16.0F, 6.0F, 1.0F, 0.0F, false);
@@ -282,15 +283,15 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		up.setTextureOffset(74, 73).addBox(-8.8F, -10.0F, -4.5F, 1.0F, 2.0F, 9.0F, 0.0F, false);
 
 		dress = new ModelRenderer(this);
-		dress.setRotationPoint(0.0F, 0.0F, 0.0F);
+		dress.setRotationPoint(0.0F, 24.0F, 0.0F);
 		body.addChild(dress);
-
+		
 
 		outside = new ModelRenderer(this);
 		outside.setRotationPoint(-3.1828F, -6.0162F, -5.9904F);
 		dress.addChild(outside);
 		setRotationAngle(outside, 0.2618F, 0.0F, 0.0F);
-
+		
 
 		cube_r1 = new ModelRenderer(this);
 		cube_r1.setRotationPoint(0.5128F, 3.988F, 11.4321F);
@@ -493,12 +494,12 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		inside = new ModelRenderer(this);
 		inside.setRotationPoint(4.0712F, -1.6285F, -5.5F);
 		dress.addChild(inside);
-
+		
 
 		one = new ModelRenderer(this);
 		one.setRotationPoint(-8.0367F, 2.1643F, 11.3628F);
 		inside.addChild(one);
-
+		
 
 		cube_r34 = new ModelRenderer(this);
 		cube_r34.setRotationPoint(12.4558F, -1.537F, -2.4412F);
@@ -868,7 +869,7 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		two = new ModelRenderer(this);
 		two.setRotationPoint(0.0F, -1.0F, 0.0F);
 		inside.addChild(two);
-
+		
 
 		cube_r93 = new ModelRenderer(this);
 		cube_r93.setRotationPoint(2.9288F, -1.3368F, 7.4276F);
@@ -1073,7 +1074,7 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		cube_r116.setTextureOffset(56, 0).addBox(-2.5F, 1.0F, -0.85F, 2.0F, 7.0F, 1.0F, 0.0F, false);
 
 		brace = new ModelRenderer(this);
-		brace.setRotationPoint(0.0F, 0.0F, 0.0F);
+		brace.setRotationPoint(0.0F, 24.0F, 0.0F);
 		body.addChild(brace);
 		brace.setTextureOffset(80, 0).addBox(-9.0F, -24.0F, -4.75F, 2.0F, 4.0F, 1.0F, 0.0F, false);
 		brace.setTextureOffset(63, 63).addBox(-9.0F, -24.75F, -4.5F, 2.0F, 1.0F, 9.0F, 0.0F, false);
@@ -1083,7 +1084,7 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		brace.setTextureOffset(42, 79).addBox(7.0F, -24.0F, 3.75F, 2.0F, 4.0F, 1.0F, 0.0F, false);
 
 		core = new ModelRenderer(this);
-		core.setRotationPoint(-0.2F, 0.0F, 0.0F);
+		core.setRotationPoint(-0.2F, 24.0F, 0.0F);
 		body.addChild(core);
 		core.setTextureOffset(47, 83).addBox(-0.3F, -20.9F, -5.75F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 		core.setTextureOffset(42, 8).addBox(-2.3F, -19.3F, -5.75F, 5.0F, 1.0F, 1.0F, 0.0F, false);
@@ -1120,7 +1121,7 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		cube_r121.setTextureOffset(77, 79).addBox(-1.0F, -1.0F, -0.5F, 2.0F, 2.0F, 1.0F, 0.0F, false);
 
 		bow = new ModelRenderer(this);
-		bow.setRotationPoint(0.0F, 0.75F, 0.0F);
+		bow.setRotationPoint(0.0F, 24.75F, 0.0F);
 		body.addChild(bow);
 		bow.setTextureOffset(65, 44).addBox(-3.5F, -25.25F, -4.5F, 7.0F, 1.0F, 1.0F, 0.0F, false);
 		bow.setTextureOffset(11, 49).addBox(-4.0F, -25.25F, -4.0F, 1.0F, 1.0F, 8.0F, 0.0F, false);
@@ -1140,7 +1141,7 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		cube_r123.setTextureOffset(11, 71).addBox(-2.0F, -1.0F, -0.5F, 3.0F, 1.0F, 1.0F, 0.0F, false);
 
 		wing = new ModelRenderer(this);
-		wing.setRotationPoint(12.2F, -23.15F, 10.05F);
+		wing.setRotationPoint(12.2F, 0.85F, 10.05F);
 		body.addChild(wing);
 		setRotationAngle(wing, 0.0F, 0.0F, -0.6545F);
 		wing.setTextureOffset(0, 6).addBox(-6.2F, -4.85F, -0.65F, 23.0F, 1.0F, 1.0F, 0.0F, false);
@@ -1156,19 +1157,19 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		wing.setTextureOffset(33, 26).addBox(-4.2F, 4.15F, 0.15F, 15.0F, 1.0F, 1.0F, 0.0F, false);
 
 		right_total = new ModelRenderer(this);
-		right_total.setRotationPoint(0.0F, 0.0F, 0.0F);
+		right_total.setRotationPoint(5.0F, -22.0F, 0.0F);
 		main.addChild(right_total);
-
+		
 
 		right_arm = new ModelRenderer(this);
-		right_arm.setRotationPoint(0.0F, 0.0F, 0.0F);
+		right_arm.setRotationPoint(-1.5F, 6.0F, 0.0F);
 		right_total.addChild(right_arm);
-
+		
 
 		cuff2 = new ModelRenderer(this);
-		cuff2.setRotationPoint(0.0F, 1.0F, 0.0F);
+		cuff2.setRotationPoint(8.0F, 17.0F, 0.0F);
 		right_arm.addChild(cuff2);
-
+		
 
 		ring4 = new ModelRenderer(this);
 		ring4.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1215,7 +1216,7 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		ring6.setTextureOffset(88, 84).addBox(-17.0F, -19.0F, 4.0F, 1.0F, 2.0F, 1.0F, 0.0F, false);
 
 		sleeve2 = new ModelRenderer(this);
-		sleeve2.setRotationPoint(0.0F, 0.0F, 0.0F);
+		sleeve2.setRotationPoint(8.0F, 16.0F, 0.0F);
 		right_arm.addChild(sleeve2);
 		sleeve2.setTextureOffset(42, 46).addBox(-8.25F, -13.5F, -4.5F, 1.0F, 6.0F, 9.0F, 0.0F, false);
 		sleeve2.setTextureOffset(31, 40).addBox(-8.0F, -7.5F, -4.5F, 1.0F, 6.0F, 9.0F, 0.0F, false);
@@ -1242,14 +1243,17 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+		this.right_total.copyModelAngles(this.bipedRightArm);
+		this.left_total.copyModelAngles(this.bipedLeftArm);
 		this.body_total.copyModelAngles(this.bipedBody);
-		this.left_arm.copyModelAngles(this.bipedLeftArm);
-		this.right_arm.copyModelAngles(this.bipedRightArm);
 
 		matrixStack.push();
-		matrixStack.scale(0.5f, 0.5f, 0.5f);
+		matrixStack.scale(0.55f, 0.55f, 0.55f);
+
+		matrixStack.translate(0, -1.5, -0.05);
 
 		main.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+
 		matrixStack.pop();
 	}
 
