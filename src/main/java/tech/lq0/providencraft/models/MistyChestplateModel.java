@@ -1141,20 +1141,20 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 		cube_r123.setTextureOffset(11, 71).addBox(-2.0F, -1.0F, -0.5F, 3.0F, 1.0F, 1.0F, 0.0F, false);
 
 		wing = new ModelRenderer(this);
-		wing.setRotationPoint(12.2F, 0.85F, 10.05F);
+		wing.setRotationPoint(0.0F, 12.0F, 10.0F);
 		body.addChild(wing);
 		setRotationAngle(wing, 0.0F, 0.0F, -0.6545F);
-		wing.setTextureOffset(0, 6).addBox(-6.2F, -4.85F, -0.65F, 23.0F, 1.0F, 1.0F, 0.0F, false);
-		wing.setTextureOffset(0, 2).addBox(-9.2F, -1.85F, -0.65F, 26.0F, 1.0F, 1.0F, 0.0F, false);
-		wing.setTextureOffset(42, 67).addBox(-9.2F, -0.85F, -0.65F, 4.0F, 2.0F, 1.0F, 0.0F, false);
-		wing.setTextureOffset(70, 25).addBox(-8.2F, 1.15F, -0.65F, 6.0F, 2.0F, 1.0F, 0.0F, false);
-		wing.setTextureOffset(70, 25).addBox(-8.2F, 1.15F, -0.65F, 6.0F, 2.0F, 1.0F, 0.0F, false);
-		wing.setTextureOffset(0, 4).addBox(-8.2F, -3.85F, -0.65F, 26.0F, 1.0F, 1.0F, 0.0F, false);
-		wing.setTextureOffset(0, 0).addBox(-8.2F, -2.85F, -0.65F, 26.0F, 1.0F, 1.0F, 0.0F, false);
-		wing.setTextureOffset(0, 11).addBox(-5.2F, 1.15F, -0.25F, 19.0F, 1.0F, 1.0F, 0.0F, false);
-		wing.setTextureOffset(0, 8).addBox(-5.2F, -0.85F, -0.25F, 20.0F, 2.0F, 1.0F, 0.0F, false);
-		wing.setTextureOffset(34, 13).addBox(-5.2F, 2.15F, 0.15F, 17.0F, 2.0F, 1.0F, 0.0F, false);
-		wing.setTextureOffset(33, 26).addBox(-4.2F, 4.15F, 0.15F, 15.0F, 1.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(0, 6).addBox(10.2431F, -5.9771F, -0.6F, 23.0F, 1.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(0, 2).addBox(7.2431F, -2.9771F, -0.6F, 26.0F, 1.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(42, 67).addBox(7.2431F, -1.9771F, -0.6F, 4.0F, 2.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(70, 25).addBox(8.2431F, 0.0229F, -0.6F, 6.0F, 2.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(70, 25).addBox(8.2431F, 0.0229F, -0.6F, 6.0F, 2.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(0, 4).addBox(8.2431F, -4.9771F, -0.6F, 26.0F, 1.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(0, 0).addBox(8.2431F, -3.9771F, -0.6F, 26.0F, 1.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(0, 11).addBox(11.2431F, 0.0229F, -0.2F, 19.0F, 1.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(0, 8).addBox(11.2431F, -1.9771F, -0.2F, 20.0F, 2.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(34, 13).addBox(11.2431F, 1.0229F, 0.2F, 17.0F, 2.0F, 1.0F, 0.0F, false);
+		wing.setTextureOffset(33, 26).addBox(12.2431F, 3.0229F, 0.2F, 15.0F, 1.0F, 1.0F, 0.0F, false);
 
 		right_total = new ModelRenderer(this);
 		right_total.setRotationPoint(5.0F, -22.0F, 0.0F);
@@ -1243,6 +1243,11 @@ public class MistyChestplateModel<T extends LivingEntity> extends BipedModel<T> 
 
 	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+		float sin = (float) Math.sin((System.currentTimeMillis() % 4000 - 1) * Math.PI / 2000);
+		float deg = sin * 20f + 20f;
+
+		this.wing.rotateAngleY = deg / -60f;
+
 		this.right_total.copyModelAngles(this.bipedRightArm);
 		this.left_total.copyModelAngles(this.bipedLeftArm);
 		this.body_total.copyModelAngles(this.bipedBody);
