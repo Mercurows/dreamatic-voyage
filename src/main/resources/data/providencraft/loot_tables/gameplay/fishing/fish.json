@@ -7,7 +7,7 @@
         {
           "type": "minecraft:item",
           "name": "providencraft:fukamizu_fish",
-          "weight": 25,
+          "weight": 20,
           "conditions": [
             {
               "condition": "minecraft:alternative",
