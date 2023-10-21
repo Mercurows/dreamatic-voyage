@@ -170,7 +170,7 @@ public class MistyChestplateModel2<T extends LivingEntity> extends BipedModel<T>
 		textureHeight = 128;
 
 		main = new ModelRenderer(this);
-		main.setRotationPoint(0.0F, 24.0F, 0.0F);
+		main.setRotationPoint(0.0F, 26.0F, 0.0F);
 		
 
 		left_total = new ModelRenderer(this);
@@ -179,7 +179,7 @@ public class MistyChestplateModel2<T extends LivingEntity> extends BipedModel<T>
 		
 
 		left_arm = new ModelRenderer(this);
-		left_arm.setRotationPoint(1.5F, 6.0F, 0.0F);
+		left_arm.setRotationPoint(1.5F, 7.0F, -1.0F);
 		left_total.addChild(left_arm);
 		
 
@@ -258,7 +258,7 @@ public class MistyChestplateModel2<T extends LivingEntity> extends BipedModel<T>
 		
 
 		body = new ModelRenderer(this);
-		body.setRotationPoint(0.0F, 0.0F, 0.0F);
+		body.setRotationPoint(0.0F, 0.5F, -1.0F);
 		body_total.addChild(body);
 		
 
@@ -1162,7 +1162,7 @@ public class MistyChestplateModel2<T extends LivingEntity> extends BipedModel<T>
 		
 
 		right_arm = new ModelRenderer(this);
-		right_arm.setRotationPoint(-1.5F, 6.0F, 0.0F);
+		right_arm.setRotationPoint(-1.5F, 7.0F, -1.0F);
 		right_total.addChild(right_arm);
 		
 

@@ -58,8 +58,6 @@ public class CelestialBoots extends ArmorItem {
     @Override
     @ParametersAreNonnullByDefault
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        TooltipTool.addDevelopingText(tooltip);
-
         tooltip.add(new TranslationTextComponent("des.providencraft.celestial_boots_1").mergeStyle(TextFormatting.GRAY).mergeStyle(TextFormatting.ITALIC));
         tooltip.add(new TranslationTextComponent("des.providencraft.celestial_boots_2").mergeStyle(TextFormatting.GRAY));
         if (hasArmorSet(stack)) {
