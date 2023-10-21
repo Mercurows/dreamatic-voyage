@@ -76,7 +76,7 @@ public class MistyChestplate extends ArmorItem {
     @Nullable
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-        return Utils.MOD_ID + ":textures/models/armor/misty_chestplate.png";
+        return Utils.MOD_ID + ":textures/models/armor/misty_chestplate_texture.png";
     }
 
     @Override
