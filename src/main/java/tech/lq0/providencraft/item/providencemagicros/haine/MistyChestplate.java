@@ -31,6 +31,7 @@ import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.group.ModGroup;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.models.MistyChestplateModel;
+import tech.lq0.providencraft.models.MistyChestplateModel2;
 import tech.lq0.providencraft.tiers.ModArmorMaterial;
 import tech.lq0.providencraft.tools.ArmorTool;
 import tech.lq0.providencraft.tools.ItemNBTTool;
@@ -70,6 +71,19 @@ public class MistyChestplate extends ArmorItem {
     @Nullable
     @Override
     public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
+        if (entityLiving instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) entityLiving;
+
+            if (!player.abilities.isFlying && player.isSneaking()) {
+                return (A) new MistyChestplateModel2<>();
+            }
+            if (!player.abilities.isFlying && player.isOnGround() && player.isSneaking()) {
+                return (A) new MistyChestplateModel2<>();
+            } else {
+                return (A) new MistyChestplateModel<>();
+            }
+        }
+
         return (A) new MistyChestplateModel<>();
     }
 
