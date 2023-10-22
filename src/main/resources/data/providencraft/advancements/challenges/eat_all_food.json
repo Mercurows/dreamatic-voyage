@@ -239,6 +239,62 @@
           "item": "providencraft:isekai_lollipop"
         }
       }
+    },
+    "eat_all_food_29": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "providencraft:brownie_uzza"
+        }
+      }
+    },
+    "eat_all_food_30": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "providencraft:haibara_soup"
+        }
+      }
+    },
+    "eat_all_food_31": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "providencraft:lemon_tea"
+        }
+      }
+    },
+    "eat_all_food_32": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "providencraft:large_lemon_tea"
+        }
+      }
+    },
+    "eat_all_food_33": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "providencraft:hirenade_gg"
+        }
+      }
+    },
+    "eat_all_food_34": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "providencraft:craft_beer_0322"
+        }
+      }
+    },
+    "eat_all_food_35": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "providencraft:strawberry_cake"
+        }
+      }
     }
   },
   "rewards": {
