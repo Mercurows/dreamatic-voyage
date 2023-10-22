@@ -94,7 +94,7 @@ public class CelestialBootsModel2<T extends LivingEntity> extends BipedModel<T> 
 		
 
 		left = new ModelRenderer(this);
-		left.setRotationPoint(-2.5F, 24.0F, 3.0F);
+		left.setRotationPoint(-2.0F, 24.0F, 3.0F);
 		left_total.addChild(left);
 		left.setTextureOffset(18, 45).addBox(-0.75F, -6.0F, -4.0F, 1.0F, 4.0F, 8.0F, 0.0F, false);
 		left.setTextureOffset(38, 54).addBox(-1.0F, -8.0F, -4.0F, 1.0F, 2.0F, 8.0F, 0.0F, false);
@@ -298,7 +298,7 @@ public class CelestialBootsModel2<T extends LivingEntity> extends BipedModel<T> 
 		
 
 		right = new ModelRenderer(this);
-		right.setRotationPoint(2.5F, 24.0F, 3.0F);
+		right.setRotationPoint(2.0F, 24.0F, 3.0F);
 		right_total.addChild(right);
 		right.setTextureOffset(44, 42).addBox(-0.25F, -6.0F, -4.0F, 1.0F, 4.0F, 8.0F, 0.0F, false);
 		right.setTextureOffset(49, 32).addBox(0.0F, -8.0F, -4.0F, 1.0F, 2.0F, 8.0F, 0.0F, false);

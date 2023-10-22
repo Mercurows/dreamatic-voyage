@@ -44,6 +44,16 @@
           }
         ]
       }
+    },
+    "red_ahoge_weapon_master_4": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items":[
+          {
+            "item": "providencraft:crimson_impact"
+          }
+        ]
+      }
     }
   }
 }
