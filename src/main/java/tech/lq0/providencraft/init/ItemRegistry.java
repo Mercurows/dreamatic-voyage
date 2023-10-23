@@ -81,10 +81,7 @@ import tech.lq0.providencraft.item.providencemagicros.chiram.*;
 import tech.lq0.providencraft.item.providencemagicros.haine.*;
 import tech.lq0.providencraft.item.providencemagicros.hoshimiya.*;
 import tech.lq0.providencraft.item.providencemagicros.keroro.*;
-import tech.lq0.providencraft.item.providencesecond.lecia.DuelWaterGun;
-import tech.lq0.providencraft.item.providencesecond.lecia.ElectricHorn;
-import tech.lq0.providencraft.item.providencesecond.lecia.Leviy;
-import tech.lq0.providencraft.item.providencesecond.lecia.MechanicalHorn;
+import tech.lq0.providencraft.item.providencesecond.lecia.*;
 import tech.lq0.providencraft.item.providencesecond.louise.*;
 import tech.lq0.providencraft.item.providencesecond.lucia.BigFierceOneCoffee;
 import tech.lq0.providencraft.item.providencesecond.lucia.BigMoeOnePotion;
@@ -199,6 +196,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ELECTRIC_HORN = ITEMS.register("electric_horn", ElectricHorn::new);
     public static final RegistryObject<Item> MECHANICAL_HORN = ITEMS.register("mechanical_horn", MechanicalHorn::new);
     public static final RegistryObject<Item> DUEL_WATER_GUN = ITEMS.register("duel_water_gun", DuelWaterGun::new);
+    public static final RegistryObject<Item> KULEBOH = ITEMS.register("kuleboh", Kuleboh::new);
     public static final RegistryObject<Item> LEVIY = ITEMS.register("leviy", Leviy::new);
 
     //satou
