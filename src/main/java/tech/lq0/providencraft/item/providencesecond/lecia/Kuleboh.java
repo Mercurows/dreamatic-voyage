@@ -31,7 +31,7 @@ public class Kuleboh extends Item {
     public static final String TAG_NOW_COUNT = "now_count";
 
     private static final Food food = new Food.Builder().hunger(5).saturation(0.5f)
-            .effect(() -> new EffectInstance(Effects.ABSORPTION, 600, 1), 1.0f)
+            .effect(() -> new EffectInstance(Effects.ABSORPTION, 1200, 1), 1.0f)
             .setAlwaysEdible().build();
 
     public Kuleboh() {

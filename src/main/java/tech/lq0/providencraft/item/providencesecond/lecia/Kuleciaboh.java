@@ -39,7 +39,10 @@ public class Kuleciaboh extends Item {
     public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         if (!worldIn.isRemote && entityIn instanceof PlayerEntity) {
             PlayerEntity player = (PlayerEntity) entityIn;
-            player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 40, 1, false, false));
+
+            if (player.ticksExisted % 600 == 0) {
+                player.addPotionEffect(new EffectInstance(Effects.ABSORPTION, 300, 1, false, false));
+            }
         }
     }
 }

@@ -8,4 +8,6 @@ public class SpatiotemporalDevice extends Item {
     public SpatiotemporalDevice() {
         super(new Properties().rarity(Rarity.EPIC).group(ModGroup.itemgroup));
     }
+
+
 }
