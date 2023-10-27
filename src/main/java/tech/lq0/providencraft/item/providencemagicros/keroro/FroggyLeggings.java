@@ -2,6 +2,7 @@ package tech.lq0.providencraft.item.providencemagicros.keroro;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
@@ -30,8 +31,10 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.group.ModGroup;
 import tech.lq0.providencraft.init.ItemRegistry;
+import tech.lq0.providencraft.models.FroggyLeggingsModel;
 import tech.lq0.providencraft.tiers.ModArmorMaterial;
 import tech.lq0.providencraft.tools.ArmorTool;
 import tech.lq0.providencraft.tools.ItemNBTTool;
@@ -66,6 +69,33 @@ public class FroggyLeggings extends ArmorItem {
         }
 
         TooltipTool.addLiverInfo(tooltip, Livers.KERORO);
+    }
+
+    @SuppressWarnings("unchecked")
+    @OnlyIn(Dist.CLIENT)
+    @Nullable
+    @Override
+    public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
+//        if (entityLiving instanceof PlayerEntity) {
+//            PlayerEntity player = (PlayerEntity) entityLiving;
+//
+//            if (!player.abilities.isFlying && player.isSneaking()) {
+//                return (A) new FroggyLeggingsModel2<>();
+//            }
+//            if (!player.abilities.isFlying && player.isOnGround() && player.isSneaking()) {
+//                return (A) new FroggyLeggingsModel2<>();
+//            } else {
+//                return (A) new FroggyLeggingsModel<>();
+//            }
+//        }
+
+        return (A) new FroggyLeggingsModel<>();
+    }
+
+    @Nullable
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
+        return Utils.MOD_ID + ":textures/models/armor/froggy_leggings_texture.png";
     }
 
     @Override
