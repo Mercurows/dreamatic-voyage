@@ -67,10 +67,14 @@ public class MechanicalHorn extends Item {
                 }
             } else {
                 resetTags(stack);
+                if (count >= 1) {
+                    player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.fail").mergeStyle(TextFormatting.ITALIC), true);
+                }
             }
 
             if (time > 60) {
                 resetTags(stack);
+                player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.fail").mergeStyle(TextFormatting.ITALIC), true);
             }
 
         }
@@ -98,6 +102,32 @@ public class MechanicalHorn extends Item {
 
                 if ((keyFrom == World.OVERWORLD && keyTo == World.THE_END) || (keyFrom == World.THE_END && keyTo == World.OVERWORLD)) {
                     setTagEnd(stack, true);
+                }
+
+                int count = getTagCount(stack);
+
+                switch (count) {
+                    case 1:
+                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_1").mergeStyle(TextFormatting.ITALIC), true);
+                        break;
+                    case 2:
+                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_2").mergeStyle(TextFormatting.ITALIC), true);
+                        break;
+                    case 3:
+                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_3").mergeStyle(TextFormatting.ITALIC), true);
+                        break;
+                    case 4:
+                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_4").mergeStyle(TextFormatting.ITALIC), true);
+                        break;
+                    default:
+                        if (!getTagNether(stack)) {
+                            player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.nether").mergeStyle(TextFormatting.ITALIC), true);
+                        } else if (!getTagEnd(stack)) {
+                            player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.end").mergeStyle(TextFormatting.ITALIC), true);
+                        } else {
+                            player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_5").mergeStyle(TextFormatting.ITALIC), true);
+                        }
+                        break;
                 }
             }
         }
