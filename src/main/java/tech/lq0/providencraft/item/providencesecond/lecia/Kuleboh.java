@@ -54,7 +54,7 @@ public class Kuleboh extends Item {
                 ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
                 int count = serverPlayer.getStats().getValue(Stats.ITEM_USED.get(Items.TOTEM_OF_UNDYING));
 
-                if (itemSlot != 0) {
+                if (stack != player.getHeldItemOffhand()) {
                     setLocked(stack, false);
                 }
 
@@ -64,7 +64,7 @@ public class Kuleboh extends Item {
                     setNowCount(stack, count);
                     setLocked(stack, true);
                 } else {
-                    if (itemSlot == 0) {
+                    if (stack == player.getHeldItemOffhand()) {
                         setNowCount(stack, count);
 
                         if (getNowCount(stack) >= getTotemCount(stack)) {

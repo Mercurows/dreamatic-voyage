@@ -3,6 +3,7 @@ package tech.lq0.providencraft.item.providencesecond.lecia;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.RegistryKey;
@@ -53,7 +54,7 @@ public class MechanicalHorn extends Item {
             boolean nether = getTagNether(stack);
             boolean end = getTagEnd(stack);
 
-            if (isSelected && stack.getCount() == 1) {
+            if (stack.getCount() == 1 && stack == player.getHeldItemOffhand()) {
                 if (count > 0) {
                     if (player.ticksExisted % 20 == 0) {
                         setTagTime(stack, ++time);
@@ -61,7 +62,7 @@ public class MechanicalHorn extends Item {
                 }
 
                 if (nether && end && count >= 5) {
-                    player.replaceItemInInventory(itemSlot, new ItemStack(ItemRegistry.TURBULENCE_AMBER.get()));
+                    player.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(ItemRegistry.TURBULENCE_AMBER.get()));
                 }
             } else {
                 resetTags(stack);
@@ -89,7 +90,7 @@ public class MechanicalHorn extends Item {
         RegistryKey<World> keyFrom = event.getFrom();
         RegistryKey<World> keyTo = event.getTo();
 
-        ItemStack stack = player.getHeldItemMainhand();
+        ItemStack stack = player.getHeldItemOffhand();
         if (stack.getItem() == ItemRegistry.MECHANICAL_HORN.get() && stack.getCount() == 1) {
             if (!player.world.isRemote) {
                 setTagCount(stack, getTagCount(stack) + 1);
