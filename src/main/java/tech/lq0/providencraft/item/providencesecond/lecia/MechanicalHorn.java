@@ -6,9 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.RegistryKey;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.util.text.*;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -68,13 +66,13 @@ public class MechanicalHorn extends Item {
             } else {
                 resetTags(stack);
                 if (count >= 1) {
-                    player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.fail").mergeStyle(TextFormatting.ITALIC), true);
+                    player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.fail").mergeStyle(TextFormatting.ITALIC).mergeStyle(TextFormatting.RED), true);
                 }
             }
 
             if (time > 60) {
                 resetTags(stack);
-                player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.fail").mergeStyle(TextFormatting.ITALIC), true);
+                player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.fail").mergeStyle(TextFormatting.ITALIC).mergeStyle(TextFormatting.RED), true);
             }
 
         }
@@ -108,24 +106,24 @@ public class MechanicalHorn extends Item {
 
                 switch (count) {
                     case 1:
-                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_1").mergeStyle(TextFormatting.ITALIC), true);
+                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_1").mergeStyle(TextFormatting.ITALIC).mergeStyle(Style.EMPTY.setColor(Color.fromHex("#C0E7FE"))), true);
                         break;
                     case 2:
-                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_2").mergeStyle(TextFormatting.ITALIC), true);
+                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_2").mergeStyle(TextFormatting.ITALIC).mergeStyle(Style.EMPTY.setColor(Color.fromHex("#C0E7FE"))), true);
                         break;
                     case 3:
-                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_3").mergeStyle(TextFormatting.ITALIC), true);
+                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_3").mergeStyle(TextFormatting.ITALIC).mergeStyle(Style.EMPTY.setColor(Color.fromHex("#C0E7FE"))), true);
                         break;
                     case 4:
-                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_4").mergeStyle(TextFormatting.ITALIC), true);
+                        player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_4").mergeStyle(TextFormatting.ITALIC).mergeStyle(Style.EMPTY.setColor(Color.fromHex("#C0E7FE"))), true);
                         break;
                     default:
                         if (!getTagNether(stack)) {
-                            player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.nether").mergeStyle(TextFormatting.ITALIC), true);
+                            player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.nether").mergeStyle(TextFormatting.ITALIC).mergeStyle(Style.EMPTY.setColor(Color.fromHex("#C0E7FE"))), true);
                         } else if (!getTagEnd(stack)) {
-                            player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.end").mergeStyle(TextFormatting.ITALIC), true);
+                            player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.end").mergeStyle(TextFormatting.ITALIC).mergeStyle(Style.EMPTY.setColor(Color.fromHex("#C0E7FE"))), true);
                         } else {
-                            player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_5").mergeStyle(TextFormatting.ITALIC), true);
+                            player.sendStatusMessage(new TranslationTextComponent("des.providencraft.mechanical_horn.count_5").mergeStyle(TextFormatting.ITALIC).mergeStyle(Style.EMPTY.setColor(Color.fromHex("#C0E7FE"))), true);
                         }
                         break;
                 }
