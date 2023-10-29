@@ -67,8 +67,10 @@ public class LeviyBeamEntity extends Entity {
             List<LivingEntity> targets = this.world.getEntitiesWithinAABB(LivingEntity.class, this.getBoundingBox().grow(r, 0, r));
             if (!targets.isEmpty()) {
                 for (LivingEntity target : targets) {
-                    if (target.getUniqueID().equals(this.ownerUniqueId) || getOwner() != null && target.isOnSameTeam(getOwner()))
+                    if (target.getUniqueID().equals(this.ownerUniqueId) || getOwner() != null && target.isOnSameTeam(getOwner())) {
                         continue;
+                    }
+
                     double xDiff = target.getPosX() - this.getPosX();
                     double zDiff = target.getPosZ() - this.getPosZ();
                     double d = Math.sqrt(xDiff * xDiff + zDiff * zDiff);
@@ -78,13 +80,19 @@ public class LeviyBeamEntity extends Entity {
                     target.forceFireTicks(1);
                     target.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 1));
 
-                    target.attackEntityFrom(DamageSource.causeIndirectDamage(this, this.getOwner()), damage * 5);
+                    boolean motionFlag = false;
+
+                    if (this.ticksExisted % 4 == 0) {
+                        motionFlag = target.attackEntityFrom(DamageSource.causeIndirectDamage(this, this.getOwner()), damage * 4);
+                    }
 
                     double rate = d / r;
                     double xMotion = 4 * xDiff / d * rate / 20;
                     double zMotion = 4 * zDiff / d * rate / 20;
 
-                    target.setMotion(target.getMotion().x - xMotion, target.getMotion().y - .2, target.getMotion().z - zMotion);
+                    if (motionFlag) {
+                        target.setMotion(target.getMotion().x - xMotion, target.getMotion().y - .2, target.getMotion().z - zMotion);
+                    }
 
                     target.hurtResistantTime = 4;
                 }
