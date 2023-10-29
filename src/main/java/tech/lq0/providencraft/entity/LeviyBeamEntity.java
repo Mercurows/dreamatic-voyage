@@ -75,12 +75,18 @@ public class LeviyBeamEntity extends Entity {
 
                     float damage = getDamage(d, r);
 
-                    target.setMotion(target.getMotion().x, target.getMotion().y - .2, target.getMotion().z);
                     target.forceFireTicks(1);
                     target.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 1));
 
-                    target.attackEntityFrom(DamageSource.causeIndirectDamage(this, this.getOwner()), damage);
-                    target.hurtResistantTime = 0;
+                    target.attackEntityFrom(DamageSource.causeIndirectDamage(this, this.getOwner()), damage * 5);
+
+                    double rate = d / r;
+                    double xMotion = 4 * xDiff / d * rate / 20;
+                    double zMotion = 4 * zDiff / d * rate / 20;
+
+                    target.setMotion(target.getMotion().x - xMotion, target.getMotion().y - .2, target.getMotion().z - zMotion);
+
+                    target.hurtResistantTime = 4;
                 }
             }
         }
