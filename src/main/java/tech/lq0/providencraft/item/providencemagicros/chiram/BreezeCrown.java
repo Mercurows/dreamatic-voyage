@@ -34,6 +34,7 @@ import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.group.ModGroup;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.models.BreezeCrownModel;
+import tech.lq0.providencraft.models.BreezeCrownModel2;
 import tech.lq0.providencraft.tiers.ModArmorMaterial;
 import tech.lq0.providencraft.tools.ArmorTool;
 import tech.lq0.providencraft.tools.ItemNBTTool;
@@ -59,8 +60,6 @@ public class BreezeCrown extends ArmorItem {
     @Override
     @ParametersAreNonnullByDefault
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        TooltipTool.addDevelopingText(tooltip);
-
         tooltip.add(new TranslationTextComponent("des.providencraft.breeze_crown_1").mergeStyle(TextFormatting.GRAY).mergeStyle(TextFormatting.ITALIC));
         tooltip.add(new TranslationTextComponent("des.providencraft.breeze_crown_2").mergeStyle(TextFormatting.GRAY));
         if (hasArmorSet(stack)) {
@@ -75,18 +74,18 @@ public class BreezeCrown extends ArmorItem {
     @Nullable
     @Override
     public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
-//        if (entityLiving instanceof PlayerEntity) {
-//            PlayerEntity player = (PlayerEntity) entityLiving;
-//
-//            if (!player.abilities.isFlying && player.isSneaking()) {
-//                return (A) new BreezeCrownModel2<>();
-//            }
-//            if (!player.abilities.isFlying && player.isOnGround() && player.isSneaking()) {
-//                return (A) new BreezeCrownModel2<>();
-//            } else {
-//                return (A) new BreezeCrownModel<>();
-//            }
-//        }
+        if (entityLiving instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) entityLiving;
+
+            if (!player.abilities.isFlying && player.isSneaking()) {
+                return (A) new BreezeCrownModel2<>();
+            }
+            if (!player.abilities.isFlying && player.isOnGround() && player.isSneaking()) {
+                return (A) new BreezeCrownModel2<>();
+            } else {
+                return (A) new BreezeCrownModel<>();
+            }
+        }
 
         return (A) new BreezeCrownModel<>();
     }
