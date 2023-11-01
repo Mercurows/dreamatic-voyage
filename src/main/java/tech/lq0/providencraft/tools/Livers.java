@@ -20,7 +20,7 @@ public enum Livers {
     KERORO("keroro", "magicros", "#F5FFEA", true),
     EKIRA("ekira", "magicros", "#FFF7EA", true),
     HIRU("hiru", "third", "#68B9F6", true),
-    BENI("beni", "third", "#E26C64", true),
+    BENI("beni", "third", "#E26C64", false),
     YUKI("yuki", "third", "#B4CEE3", true),
     LECIEL("leciel", "third", "#FCBBB1", true),
     CHOCO("choco", "fourth", "#A98880", true),
