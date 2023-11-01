@@ -295,6 +295,14 @@
           "item": "providencraft:strawberry_cake"
         }
       }
+    },
+    "eat_all_food_36": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "providencraft:chocoal_cookie"
+        }
+      }
     }
   },
   "rewards": {
