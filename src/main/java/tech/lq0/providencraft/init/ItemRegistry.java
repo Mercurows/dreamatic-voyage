@@ -74,6 +74,7 @@ import tech.lq0.providencraft.item.providencefirst.usa.BrownieUzza;
 import tech.lq0.providencraft.item.providencefirst.usa.KurumiBoomerang;
 import tech.lq0.providencraft.item.providencefirst.usa.KurumiHalo;
 import tech.lq0.providencraft.item.providencefirst.usa.Plunger;
+import tech.lq0.providencraft.item.providencefourth.choco.ChocoalCookie;
 import tech.lq0.providencraft.item.providencefourth.choco.StrawberryCake;
 import tech.lq0.providencraft.item.providencefourth.hifumi.NetherLight;
 import tech.lq0.providencraft.item.providencefourth.sana.JellyfishBottle;
@@ -351,6 +352,7 @@ public class ItemRegistry {
      */
     //choco
     public static final RegistryObject<Item> STRAWBERRY_CAKE = ITEMS.register("strawberry_cake", StrawberryCake::new);
+    public static final RegistryObject<Item> CHOCOAL_COOKIE = ITEMS.register("chocoal_cookie", ChocoalCookie::new);
 
     //hifumi
     public static final RegistryObject<Item> NETHER_LIGHT = ITEMS.register("nether_light", NetherLight::new);

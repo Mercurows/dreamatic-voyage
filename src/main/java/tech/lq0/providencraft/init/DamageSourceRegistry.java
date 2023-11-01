@@ -14,4 +14,5 @@ public class DamageSourceRegistry {
     public static final DamageSource LUNAR_ECLIPSE = (new DamageSource("lunar_eclipse").setDamageBypassesArmor().setMagicDamage().setDamageIsAbsolute());
     public static final DamageSource FUKAMIZU_BREAD = (new DamageSource("fukamizu_bread")).setDamageBypassesArmor().setMagicDamage();
     public static final DamageSource BROWNIE_UZZA = (new DamageSource("brownie_uzza")).setDamageBypassesArmor().setMagicDamage();
+    public static final DamageSource CHOCOAL_COOKIE = (new DamageSource("chocoal_cookie")).setDamageBypassesArmor().setMagicDamage();
 }
