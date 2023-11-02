@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.item.providencesecond.mumu;
+package tech.lq0.providencraft.item.providenceOI.fukami;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Food;
@@ -17,21 +17,20 @@ import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
-public class MumuSteak extends Item {
-    private static final Food food = (new Food.Builder()).saturation(0.7f).hunger(10).
-            effect(() -> new EffectInstance(Effects.HEALTH_BOOST, 600, 1), 1.0F).meat().build();
+public class GarlicMelonSlice extends Item {
+    private static final Food food = (new Food.Builder()).setAlwaysEdible().hunger(3).saturation(0.3f)
+            .effect(() -> new EffectInstance(Effects.NAUSEA, 200, 0), 0.5f).build();
 
-    public MumuSteak() {
+    public GarlicMelonSlice() {
         super(new Properties().group(ModGroup.itemgroup).food(food));
     }
 
     @OnlyIn(Dist.CLIENT)
-    @ParametersAreNonnullByDefault
+    @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add((new TranslationTextComponent("des.providencraft.mumu_steak")).mergeStyle(TextFormatting.GRAY));
-        TooltipTool.addLiverInfo(tooltip, Livers.MUMU);
+        tooltip.add(new TranslationTextComponent("des.providencraft.garlic_melon_slice").mergeStyle(TextFormatting.GRAY));
+        TooltipTool.addLiverInfo(tooltip, Livers.FUKAMI);
     }
 }

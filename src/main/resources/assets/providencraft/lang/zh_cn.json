@@ -710,6 +710,8 @@
   "death.attack.chocoal_cookie": "%1$s和手中的食物一起化为了灰烬",
   "death.attack.chocoal_cookie.player": "%2$s让%1$s和手中的食物一起化为了灰烬",
   "death.attack.chocoal_cookie.item": "%2$s让%1$s和手中的食物一起化为了灰烬",
+  "item.providencraft.garlic_melon_slice": "蒜香西瓜片",
+  "des.providencraft.garlic_melon_slice": "一种失传多年的秘制料理，一般人难以理解它的美味",
   "itemGroup.Providencraft Audio Tapes": "普罗维登：音声",
   "item.providencraft.audio_tape_haine_1": "音声磁带（灰音）",
   "subtitle.providencraft.haine_broadcast": "灰音：紧急苦力怕播报",
