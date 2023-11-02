@@ -303,6 +303,22 @@
           "item": "providencraft:chocoal_cookie"
         }
       }
+    },
+    "eat_all_food_37": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "providencraft:garlic_melon_slice"
+        }
+      }
+    },
+    "eat_all_food_38": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "item": "providencraft:shakana"
+        }
+      }
     }
   },
   "rewards": {

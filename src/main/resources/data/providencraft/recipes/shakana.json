@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "LGP",
+    "BMA"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:red_dye"
+    },
+    "L": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "G": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "P": {
+      "item": "minecraft:purple_dye"
+    },
+    "B": {
+      "item": "minecraft:blue_dye"
+    },
+    "M": {
+      "item": "minecraft:lime_dye"
+    },
+    "A": {
+      "item": "minecraft:magenta_dye"
+    }
+  },
+  "result": {
+    "item": "providencraft:shakana",
+    "count": 1
+  }
+}
