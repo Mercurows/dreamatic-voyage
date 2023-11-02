@@ -54,7 +54,7 @@ public class Overload extends Effect {
                     triggerSideEffect(player, num[0], lvl);
                     triggerSideEffect(player, num[1], lvl);
                 } else {
-                    player.attackEntityFrom(DamageSourceRegistry.EMO, 30.0f);
+                    player.attackEntityFrom(DamageSourceRegistry.EMO, 10.0f);
                 }
             }
         }

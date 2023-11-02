@@ -78,6 +78,7 @@ import tech.lq0.providencraft.item.providencefourth.choco.ChocoalCookie;
 import tech.lq0.providencraft.item.providencefourth.choco.StrawberryCake;
 import tech.lq0.providencraft.item.providencefourth.hifumi.NetherLight;
 import tech.lq0.providencraft.item.providencefourth.sana.JellyfishBottle;
+import tech.lq0.providencraft.item.providencefourth.sana.Shakana;
 import tech.lq0.providencraft.item.providencemagicros.chiram.*;
 import tech.lq0.providencraft.item.providencemagicros.haine.*;
 import tech.lq0.providencraft.item.providencemagicros.hoshimiya.*;
@@ -360,6 +361,7 @@ public class ItemRegistry {
 
     //sana
     public static final RegistryObject<Item> JELLYFISH_BOTTLE = ITEMS.register("jellyfish_bottle", JellyfishBottle::new);
+    public static final RegistryObject<Item> SHAKANA = ITEMS.register("shakana", Shakana::new);
 
     /**
      * others
