@@ -1,8 +1,11 @@
 package tech.lq0.providencraft.item.providenceconnections.qianyun;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.GrassBlock;
 import net.minecraft.block.IGrowable;
+import net.minecraft.block.NyliumBlock;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
@@ -36,29 +39,20 @@ public class Qiankela extends Item {
         TooltipTool.addLiverInfo(tooltip, Livers.QIANYUN);
     }
 
+    @Override
     public ActionResultType onItemUse(ItemUseContext context) {
         World world = context.getWorld();
         BlockPos blockpos = context.getPos();
-        BlockPos blockpos1 = blockpos.offset(context.getFace());
+
         if (applyBonemeal(context.getItem(), world, blockpos, context.getPlayer())) {
             if (!world.isRemote) {
                 world.playEvent(2005, blockpos, 0);
             }
 
             return ActionResultType.func_233537_a_(world.isRemote);
-        } else {
-            BlockState blockstate = world.getBlockState(blockpos);
-            boolean flag = blockstate.isSolidSide(world, blockpos, context.getFace());
-            if (flag) {
-                if (!world.isRemote) {
-                    world.playEvent(2005, blockpos1, 0);
-                }
-
-                return ActionResultType.func_233537_a_(world.isRemote);
-            } else {
-                return ActionResultType.PASS;
-            }
         }
+
+        return ActionResultType.PASS;
     }
 
     public static boolean applyBonemeal(ItemStack stack, World worldIn, BlockPos pos, net.minecraft.entity.player.PlayerEntity player) {
@@ -68,7 +62,7 @@ public class Qiankela extends Item {
             BlockState blockstate = worldIn.getBlockState(pos);
             int hook = net.minecraftforge.event.ForgeEventFactory.onApplyBonemeal(player, worldIn, pos, blockstate, stack);
             if (hook != 0) return hook > 0;
-            if (blockstate.getBlock() instanceof IGrowable) {
+            if (blockstate.getBlock() instanceof IGrowable && !(blockstate.getBlock() instanceof GrassBlock) && !(blockstate.getBlock() instanceof NyliumBlock)) {
                 IGrowable igrowable = (IGrowable) blockstate.getBlock();
                 if (igrowable.canGrow(worldIn, pos, blockstate, worldIn.isRemote)) {
                     if (worldIn instanceof ServerWorld) {
@@ -80,6 +74,10 @@ public class Qiankela extends Item {
                     success = true;
                 }
             }
+        }
+
+        if (success) {
+            stack.damageItem(1, player, (entity) -> entity.sendBreakAnimation(EquipmentSlotType.MAINHAND));
         }
 
         return success;

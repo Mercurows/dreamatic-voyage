@@ -38,7 +38,7 @@ public enum Livers {
     ROKY("roky", "poi", "#E1849E", true),
     RINO("rino", "poi", "#CBE0DF", false),
     CCELIA("ccelia", "poi", "#CAD855", false),
-    QIANYUN("qianyun", "connections", "#A33432", false),
+    QIANYUN("qianyun", "connections", "#A33432", true),
     MARIA("maria", "first", "#AF4657", false),
     MOJUKO("mojuko", "second", "#FFF6F9", false);
 
