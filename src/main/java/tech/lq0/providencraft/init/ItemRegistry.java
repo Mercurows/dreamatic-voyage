@@ -48,6 +48,7 @@ import tech.lq0.providencraft.item.providenceOI.yesa.MintChocolate;
 import tech.lq0.providencraft.item.providenceOI.yesa.TailFishingRod;
 import tech.lq0.providencraft.item.providenceOI.yesa.YeggyPearl;
 import tech.lq0.providencraft.item.providenceOI.yuri.RabbitLychee;
+import tech.lq0.providencraft.item.providenceconnections.qianyun.Qiankela;
 import tech.lq0.providencraft.item.providenceconnections.qianyun.QianyunHoe;
 import tech.lq0.providencraft.item.providenceconnections.qianyun.Suitcase;
 import tech.lq0.providencraft.item.providencefirst.akumaria.FluffBall;
@@ -348,6 +349,7 @@ public class ItemRegistry {
     //qianyun
     public static final RegistryObject<Item> QIANYUN_HOE = ITEMS.register("qianyun_hoe", QianyunHoe::new);
     public static final RegistryObject<Item> SUITCASE = ITEMS.register("suitcase", Suitcase::new);
+    public static final RegistryObject<Item> QIANKELA = ITEMS.register("qiankela", Qiankela::new);
 
     /**
      * 4th
