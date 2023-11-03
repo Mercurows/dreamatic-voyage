@@ -83,7 +83,7 @@ public class CrystalHorn extends ArmorItem {
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        if(!world.isRemote) {
+        if (!world.isRemote) {
             if (!world.isDaytime()) {
                 ItemNBTTool.setBoolean(stack, TAG_NIGHT, true);
                 player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 400, 0));
@@ -118,11 +118,10 @@ public class CrystalHorn extends ArmorItem {
             PlayerEntity player = (PlayerEntity) entityP;
             ItemStack item = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
             if (item.getItem().equals(ItemRegistry.CRYSTAL_HORN.get())) {
-                if (entity instanceof CowEntity || entity.getUniqueID().toString().equals("1e10b6810052495bb7a93c0c5fc35552")) {
+                if (entity instanceof CowEntity) {
                     event.setAmount(event.getAmount() + 200);
                 }
             }
         }
     }
-
 }

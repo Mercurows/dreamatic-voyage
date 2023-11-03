@@ -88,7 +88,7 @@ public class AyeletMask extends ArmorItem {
             PlayerEntity player = (PlayerEntity) entityP;
             ItemStack item = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
             if (item.getItem().equals(ItemRegistry.AYELET_MASK.get())) {
-                if (entity instanceof CowEntity || entity.getUniqueID().toString().equals("1e10b6810052495bb7a93c0c5fc35552")) {
+                if (entity instanceof CowEntity) {
                     event.setAmount(0);
                 } else if (entity instanceof AnimalEntity && entity.isChild()) {
                     event.setAmount(event.getAmount() + 200);
