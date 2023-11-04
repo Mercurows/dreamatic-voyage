@@ -4,16 +4,14 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.tileentity.BeaconTileEntityRenderer;
 import net.minecraft.util.ResourceLocation;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.entity.LeviyBeamEntity;
 import tech.lq0.providencraft.render.special.LeviyRenderer;
 
 public class LeviyBeamEntityRenderer extends EntityRenderer<LeviyBeamEntity> {
-
-    private static final ResourceLocation TEXTURE = BeaconTileEntityRenderer.TEXTURE_BEACON_BEAM;
-    private static final ResourceLocation TEXTURE_LEVIY_HALO = new ResourceLocation(Utils.MOD_ID, "textures/entity/leviy_halo.png");
+    public static final ResourceLocation TEXTURE_LEVIY_BEAM = new ResourceLocation(Utils.MOD_ID, "textures/entity/leviy_beam.png");
+    public static final ResourceLocation TEXTURE_LEVIY_HALO = new ResourceLocation(Utils.MOD_ID, "textures/entity/leviy_halo.png");
 
     protected LeviyBeamEntityRenderer(EntityRendererManager renderManager) {
         super(renderManager);
@@ -21,7 +19,7 @@ public class LeviyBeamEntityRenderer extends EntityRenderer<LeviyBeamEntity> {
 
     @Override
     public ResourceLocation getEntityTexture(LeviyBeamEntity entity) {
-        return TEXTURE;
+        return TEXTURE_LEVIY_BEAM;
     }
 
     @Override
@@ -33,11 +31,11 @@ public class LeviyBeamEntityRenderer extends EntityRenderer<LeviyBeamEntity> {
         // 渲染光柱
         LeviyRenderer.renderBeamSegment(matrixStackIn,
                 bufferIn,
-                TEXTURE,
+                TEXTURE_LEVIY_BEAM,
                 partialTicks,
                 1, entityIn.getEntityWorld().getGameTime(),
-                0, 5000, new float[]{1, 0, 0},
-                r, r + .1f, 1);
+                0, 5000, new float[]{1, 1, 1},
+                r, r + .25f, 0.5f);
         matrixStackIn.pop();
         matrixStackIn.translate(.5f, 0, .5f);
     }

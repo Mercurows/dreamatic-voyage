@@ -7,7 +7,6 @@ import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.renderer.tileentity.BeaconTileEntityRenderer;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -23,6 +22,7 @@ import net.minecraftforge.client.event.RenderWorldLastEvent;
 import tech.lq0.providencraft.entity.LeviyBeamEntity;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.item.providencesecond.lecia.Leviy;
+import tech.lq0.providencraft.render.LeviyBeamEntityRenderer;
 
 import java.awt.*;
 import java.util.Random;
@@ -76,10 +76,10 @@ public class LeviyRenderer {
                 stack.translate(x - view.getX(), y - view.getY() + 1, z - view.getZ());
                 renderBeamSegment(stack,
                         Minecraft.getInstance().getRenderTypeBuffers().getBufferSource(),
-                        BeaconTileEntityRenderer.TEXTURE_BEACON_BEAM,
+                        LeviyBeamEntityRenderer.TEXTURE_LEVIY_BEAM,
                         evt.getPartialTicks(),
                         1, world.getGameTime(),
-                        0, 1000, new float[]{1, 0, 0},
+                        0, 1000, new float[]{1, 1, 1},
                         0.35f, .35f, 0.2f);
 
                 stack.pop();
