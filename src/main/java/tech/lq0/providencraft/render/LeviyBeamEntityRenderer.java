@@ -6,12 +6,14 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.tileentity.BeaconTileEntityRenderer;
 import net.minecraft.util.ResourceLocation;
+import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.entity.LeviyBeamEntity;
 import tech.lq0.providencraft.render.special.LeviyRenderer;
 
 public class LeviyBeamEntityRenderer extends EntityRenderer<LeviyBeamEntity> {
 
-    private final ResourceLocation TEXTURE = BeaconTileEntityRenderer.TEXTURE_BEACON_BEAM;
+    private static final ResourceLocation TEXTURE = BeaconTileEntityRenderer.TEXTURE_BEACON_BEAM;
+    private static final ResourceLocation TEXTURE_LEVIY_HALO = new ResourceLocation(Utils.MOD_ID, "textures/entity/leviy_halo.png");
 
     protected LeviyBeamEntityRenderer(EntityRendererManager renderManager) {
         super(renderManager);
