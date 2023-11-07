@@ -79,7 +79,7 @@ public class LeviyRenderer {
                         LeviyBeamEntityRenderer.TEXTURE_LEVIY_BEAM,
                         evt.getPartialTicks(),
                         1, world.getGameTime(),
-                        0, 1000, new float[]{1, 1, 1},
+                        0, 150, new float[]{1, 1, 1},
                         0.35f, .35f, 0.2f);
 
                 stack.pop();
@@ -147,7 +147,10 @@ public class LeviyRenderer {
         float f14 = 1.0F;
         float f15 = -1.0F + f2;
         float f16 = (float) height * textureScale * (0.5F / beamRadius) + f15;
+
+        // 内圈
         renderPart(matrixStackIn, bufferIn.getBuffer(RenderType.getEntityTranslucent(textureLocation)), r, g, b, alpha, yOffset, i, 0.0F, beamRadius, beamRadius, 0.0F, f9, 0.0F, 0.0F, f12, 0.0F, 1.0F, f16, f15);
+
         matrixStackIn.pop();
         f6 = -glowRadius;
         float f7 = -glowRadius;
@@ -156,8 +159,42 @@ public class LeviyRenderer {
         f13 = 0.0F;
         f15 = -1.0F + f2;
         f16 = (float) height * textureScale + f15;
+
+        // 外圈
         renderPart(matrixStackIn, bufferIn.getBuffer(RenderType.getEntityTranslucent(textureLocation)), r, g, b, 0.125F * alpha, yOffset, i, f6, f7, glowRadius, f8, f9, glowRadius, glowRadius, glowRadius, 0.0F, 1.0F, f16, f15);
+
+        // 谜之光环
+        int count = 16;
+        int radius = 30;
+        int startHeight = 120;
+        for (int j = 1; j <= count; j++) {
+            float currentDegree = 360f / count * j;
+            float lastDegree = 360f / count * (j - 1);
+
+            // Codeium神中神
+            float x1 = radius * (float) Math.cos(Math.toRadians(lastDegree));
+            float z1 = radius * (float) Math.sin(Math.toRadians(lastDegree));
+
+            float x2 = radius * (float) Math.cos(Math.toRadians(currentDegree));
+            float z2 = radius * (float) Math.sin(Math.toRadians(currentDegree));
+
+            renderYTexture(matrixStackIn, bufferIn, LeviyBeamEntityRenderer.TEXTURE_LEVIY_HALO, x1, startHeight, z1, x2, startHeight + radius * 2 * (float) Math.sin(Math.toRadians(180f / count)), z2, alpha * 1.5f, 1, 1);
+        }
+
+
         matrixStackIn.pop();
+    }
+
+    private static void renderYTexture(MatrixStack stack, IRenderTypeBuffer buffer, ResourceLocation texture, float x1, float y1, float z1, float x2, float y2, float z2, float alpha, float textureWidthScale, float textureHeightScale) {
+        MatrixStack.Entry matrixstack$entry = stack.getLast();
+        Matrix4f matrix4f = matrixstack$entry.getMatrix();
+        Matrix3f matrix3f = matrixstack$entry.getNormal();
+        IVertexBuilder b = buffer.getBuffer(RenderType.getEntityTranslucent(texture));
+
+        addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y1, x1, z1, 0, 0);
+        addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y1, x2, z2, textureWidthScale, 0);
+        addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y2, x2, z2, textureWidthScale, textureHeightScale);
+        addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y2, x1, z1, 0, textureHeightScale);
     }
 
     private static void renderPart(MatrixStack matrixStackIn, IVertexBuilder bufferIn, float red, float green, float blue, float alpha, int yMin, int yMax, float x1, float z1, float x2, float z2, float x3, float z3, float x4, float z4, float u1, float u2, float v1, float v2) {
@@ -177,7 +214,7 @@ public class LeviyRenderer {
         addVertex(matrixPos, matrixNormal, bufferIn, red, green, blue, alpha, yMax, x2, z2, u1, v1);
     }
 
-    private static void addVertex(Matrix4f matrixPos, Matrix3f matrixNormal, IVertexBuilder bufferIn, float red, float green, float blue, float alpha, int y, float x, float z, float texU, float texV) {
-        bufferIn.pos(matrixPos, x, (float) y, z).color(red, green, blue, alpha).tex(texU, texV).overlay(OverlayTexture.NO_OVERLAY).lightmap(15728880).normal(matrixNormal, 0.0F, 1.0F, 0.0F).endVertex();
+    private static void addVertex(Matrix4f matrixPos, Matrix3f matrixNormal, IVertexBuilder bufferIn, float red, float green, float blue, float alpha, float y, float x, float z, float texU, float texV) {
+        bufferIn.pos(matrixPos, x, y, z).color(red, green, blue, alpha).tex(texU, texV).overlay(OverlayTexture.NO_OVERLAY).lightmap(15728880).normal(matrixNormal, 0.0F, 1.0F, 0.0F).endVertex();
     }
 }
