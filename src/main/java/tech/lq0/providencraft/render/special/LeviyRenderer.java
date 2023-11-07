@@ -50,6 +50,9 @@ public class LeviyRenderer {
 
             // 命中方块再渲染
             if (!result.getType().equals(RayTraceResult.Type.MISS)) {
+                int useTime = player.getItemInUseMaxCount();
+                float alpha = ease(0.2f, 0.5f, useTime / 40f);
+
                 BlockPos pos = result.getPos();
 
                 int animationTime = 300;
@@ -80,7 +83,7 @@ public class LeviyRenderer {
                         evt.getPartialTicks(),
                         1, world.getGameTime(),
                         0, 150, new float[]{1, 1, 1},
-                        0.35f, .35f, 0.2f);
+                        .25f, .25f, alpha);
 
                 stack.pop();
 

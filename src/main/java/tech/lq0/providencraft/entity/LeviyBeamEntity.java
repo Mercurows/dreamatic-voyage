@@ -150,7 +150,7 @@ public class LeviyBeamEntity extends Entity {
         } else if (ticksExisted <= 180) {
             return 10f;
         } else {
-            return Math.max(0, -0.025f * ticksExisted * ticksExisted + 9 * ticksExisted - 800);
+            return Math.max(0.05f, -0.025f * ticksExisted * ticksExisted + 9 * ticksExisted - 800);
         }
     }
 

@@ -1,10 +1,12 @@
 package tech.lq0.providencraft.item.providencesecond.lecia;
 
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
+import net.minecraft.item.UseAction;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -19,6 +21,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.providencraft.group.ModGroup;
+import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.network.PdcNetwork;
 import tech.lq0.providencraft.network.packet.LeviyLaunchPacket;
 import tech.lq0.providencraft.tools.Livers;
@@ -44,29 +47,59 @@ public class Leviy extends Item {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        if (worldIn.isRemote) {
-            ItemStack stack = playerIn.getHeldItem(handIn);
-            Vector3d look = playerIn.getLookVec();
-            int distance = 512;
-            Vector3d start = playerIn.getPositionVec().add(0, playerIn.getEyeHeight(), 0);
-            Vector3d end = playerIn.getPositionVec().add(look.x * distance, look.y * distance + playerIn.getEyeHeight(), look.z * distance);
+        ItemStack stack = playerIn.getHeldItem(handIn);
+        if (playerIn.getCooldownTracker().hasCooldown(ItemRegistry.LEVIY.get())) {
+            playerIn.resetActiveHand();
+            return ActionResult.resultFail(stack);
+        }
 
-            RayTraceContext context = new RayTraceContext(start, end, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, playerIn);
-            BlockRayTraceResult result = playerIn.getEntityWorld().rayTraceBlocks(context);
+        if (handIn == Hand.MAIN_HAND) {
+            playerIn.setActiveHand(handIn);
+            return ActionResult.resultConsume(stack);
+        } else {
+            return ActionResult.resultFail(stack);
+        }
+    }
 
-            // 命中方块再发请求
-            if (!result.getType().equals(RayTraceResult.Type.MISS)) {
-                BlockPos pos = result.getPos();
-                PdcNetwork.CHANNEL.sendToServer(new LeviyLaunchPacket(pos.getX(), pos.getY(), pos.getZ()));
+    @Override
+    public void onUsingTick(ItemStack stack, LivingEntity player, int count) {
+        World worldIn = player.getEntityWorld();
 
-                // TODO 修改为正确的冷却时间
-                playerIn.getCooldownTracker().setCooldown(this, 100);
-                return ActionResult.resultSuccess(stack);
-            } else {
-                playerIn.sendStatusMessage(new TranslationTextComponent("des.providencraft.leviy.invalid_select"), true);
-                return ActionResult.resultFail(stack);
+        if (player instanceof PlayerEntity) {
+            PlayerEntity playerIn = (PlayerEntity) player;
+
+            if (worldIn.isRemote) {
+                Vector3d look = playerIn.getLookVec();
+                int distance = 512;
+                Vector3d start = playerIn.getPositionVec().add(0, player.getEyeHeight(), 0);
+                Vector3d end = playerIn.getPositionVec().add(look.x * distance, look.y * distance + playerIn.getEyeHeight(), look.z * distance);
+
+                RayTraceContext context = new RayTraceContext(start, end, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, playerIn);
+                BlockRayTraceResult result = worldIn.rayTraceBlocks(context);
+
+                // 命中方块再发请求
+                if (getUseDuration(stack) - count >= 40 && !playerIn.getCooldownTracker().hasCooldown(ItemRegistry.LEVIY.get())) {
+                    if (!result.getType().equals(RayTraceResult.Type.MISS)) {
+                        BlockPos pos = result.getPos();
+                        PdcNetwork.CHANNEL.sendToServer(new LeviyLaunchPacket(pos.getX(), pos.getY(), pos.getZ()));
+
+                        playerIn.getCooldownTracker().setCooldown(this, 400);
+                        playerIn.resetActiveHand();
+                    } else {
+                        playerIn.sendStatusMessage(new TranslationTextComponent("des.providencraft.leviy.invalid_select"), true);
+                    }
+                }
             }
         }
-        return super.onItemRightClick(worldIn, playerIn, handIn);
+    }
+
+    @Override
+    public int getUseDuration(ItemStack stack) {
+        return 72000;
+    }
+
+    @Override
+    public UseAction getUseAction(ItemStack stack) {
+        return UseAction.CROSSBOW;
     }
 }
