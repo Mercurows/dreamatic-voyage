@@ -53,7 +53,7 @@ public class LeviyBeamEntity extends Entity {
         super(entityTypeIn, worldIn);
         this.power = 6;
         this.radius = 10;
-        this.duration = 100;
+        this.duration = 200;
     }
 
     @Override
@@ -90,7 +90,11 @@ public class LeviyBeamEntity extends Entity {
                     }
 
                     if (motionFlag) {
-                        target.setMotion(xMotion, target.getMotion().y + .05, zMotion);
+                        if (r <= 1.5) {
+                            target.setMotion(xMotion * r / 1.5, target.getMotion().y + .05, zMotion * r / 1.5);
+                        } else {
+                            target.setMotion(xMotion, target.getMotion().y + .05, zMotion);
+                        }
                     }
 
                     target.hurtResistantTime = 4;
@@ -137,11 +141,17 @@ public class LeviyBeamEntity extends Entity {
     }
 
     public float getCurrentRadius(float partialTicks) {
-        float radius = getRadius();
         float ticksExisted = this.ticksExisted + partialTicks;
-        float duration = getDuration();
 
-        return ease(0, radius, ticksExisted / duration);
+        if (ticksExisted <= 5) {
+            return .25f;
+        } else if (ticksExisted <= 100) {
+            return .00108f * ticksExisted * ticksExisted - .011f * ticksExisted + .277f;
+        } else if (ticksExisted <= 180) {
+            return 10f;
+        } else {
+            return Math.max(0, -0.025f * ticksExisted * ticksExisted + 9 * ticksExisted - 800);
+        }
     }
 
     @Override

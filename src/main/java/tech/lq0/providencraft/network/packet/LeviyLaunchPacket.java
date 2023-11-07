@@ -19,15 +19,15 @@ public class LeviyLaunchPacket {
     private int duration;
 
     public LeviyLaunchPacket(int x, int y, int z) {
-        this(x, y, z, 6, 10, 100);
+        this(x, y, z, 6, 10, 200);
     }
 
     public LeviyLaunchPacket(int x, int y, int z, float power) {
-        this(x, y, z, power, 10, 100);
+        this(x, y, z, power, 10, 200);
     }
 
     public LeviyLaunchPacket(int x, int y, int z, float power, float radius) {
-        this(x, y, z, power, radius, 100);
+        this(x, y, z, power, radius, 200);
     }
 
     public LeviyLaunchPacket(int x, int y, int z, float power, float radius, int duration) {

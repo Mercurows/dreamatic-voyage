@@ -129,8 +129,11 @@ public class LeviyRenderer {
         int i = yOffset + height;
         matrixStackIn.push();
         matrixStackIn.translate(0.5D, 0.0D, 0.5D);
+
         float tick40 = (float) Math.floorMod(totalWorldTime, 40L) + partialTicks;
         float tick320 = (float) Math.floorMod(totalWorldTime, 320L) + partialTicks;
+        float tick120 = (float) Math.floorMod(totalWorldTime, 120L) + partialTicks;
+
         float f1 = height < 0 ? -tick40 : tick40;
         float f2 = MathHelper.frac(f1 * 0.2F - (float) MathHelper.floor(f1 * 0.1F));
         float r = colors[0];
@@ -165,18 +168,31 @@ public class LeviyRenderer {
         renderPart(matrixStackIn, bufferIn.getBuffer(RenderType.getEntityTranslucent(textureLocation)), r, g, b, 0.125F * alpha, yOffset, i, f6, f7, glowRadius, f8, f9, glowRadius, glowRadius, glowRadius, 0.0F, 1.0F, f16, f15);
 
         // 谜之光环
-        renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick320);
+        renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick320, 16, 30, 120, 8, false);
+
+        renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick120, 12, 12, 140, 3, true);
 
         matrixStackIn.pop();
     }
 
-    private static void renderOuterRing(MatrixStack stack, IRenderTypeBuffer buffer, float alpha, float tick) {
-        int count = 16;
-        int radius = 30;
-        int startHeight = 120;
-        for (int j = 1; j <= count; j++) {
-            float currentDegree = 360f / count * j + tick * .28125f;
-            float lastDegree = 360f / count * (j - 1) + tick * .28125f;
+    /**
+     * 渲染光环
+     * @param stack MatrixStack
+     * @param buffer RenderTypeBuffer
+     * @param alpha 透明度
+     * @param tick 传入Tick应 = Math.floorMod(totalWorldTime, 40L * rate) + partialTicks
+     * @param edgeCount 光环边数
+     * @param radius 光环半径
+     * @param height 光环位置（相对高度）
+     * @param speedRate 光环转速
+     * @param reverse 是否反转（默认逆时针）
+     */
+    private static void renderOuterRing(MatrixStack stack, IRenderTypeBuffer buffer, float alpha, float tick, int edgeCount, int radius, int height, int speedRate, boolean reverse) {
+        for (int j = 1; j <= edgeCount; j++) {
+            float nTick = reverse ? tick * -2.25f / speedRate : tick * 2.25f / speedRate;
+
+            float currentDegree = 360f / edgeCount * j + nTick;
+            float lastDegree = 360f / edgeCount * (j - 1) + nTick;
 
             // Codeium神中神
             float x1 = radius * (float) Math.cos(Math.toRadians(lastDegree));
@@ -185,7 +201,7 @@ public class LeviyRenderer {
             float x2 = radius * (float) Math.cos(Math.toRadians(currentDegree));
             float z2 = radius * (float) Math.sin(Math.toRadians(currentDegree));
 
-            renderYTexture(stack, buffer, LeviyBeamEntityRenderer.TEXTURE_LEVIY_HALO, x1, startHeight, z1, x2, startHeight + radius * 2 * (float) Math.sin(Math.toRadians(180f / count)), z2, alpha, 1, 1);
+            renderYTexture(stack, buffer, LeviyBeamEntityRenderer.TEXTURE_LEVIY_HALO, x1, height, z1, x2, height + radius * 2 * (float) Math.sin(Math.toRadians(180f / edgeCount)), z2, alpha, 1, 1);
         }
 
     }
