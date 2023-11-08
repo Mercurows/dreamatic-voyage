@@ -12,6 +12,7 @@ import tech.lq0.providencraft.render.special.LeviyRenderer;
 public class LeviyBeamEntityRenderer extends EntityRenderer<LeviyBeamEntity> {
     public static final ResourceLocation TEXTURE_LEVIY_BEAM = new ResourceLocation(Utils.MOD_ID, "textures/entity/leviy_beam.png");
     public static final ResourceLocation TEXTURE_LEVIY_HALO = new ResourceLocation(Utils.MOD_ID, "textures/entity/leviy_halo.png");
+    public static final ResourceLocation TEXTURE_LEVIY_MAGIC = new ResourceLocation(Utils.MOD_ID, "textures/entity/leviy_magic.png");
 
     protected LeviyBeamEntityRenderer(EntityRendererManager renderManager) {
         super(renderManager);

@@ -185,9 +185,12 @@ public class LeviyRenderer {
         renderPart(matrixStackIn, bufferIn.getBuffer(RenderType.getEntityTranslucent(textureLocation)), r, g, b, 0.125F * alpha, yOffset, i, f6, f7, glowRadius, f8, f9, glowRadius, glowRadius, glowRadius, 0.0F, 1.0F, f16, f15);
 
         // 谜之光环
-        renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick320, 16, 30, 120, 8, false);
+        renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick320, 16, 30, 120, 8, true);
 
-        renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick120, 12, 12, 140, 3, true);
+        renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick120, 12, 12, 140, 3, false);
+
+        // 魔法阵
+        renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, 15, 150, 1, true);
 
         matrixStackIn.pop();
     }
@@ -221,7 +224,18 @@ public class LeviyRenderer {
 
             renderYTexture(stack, buffer, LeviyBeamEntityRenderer.TEXTURE_LEVIY_HALO, x1, height, z1, x2, height + radius * 2 * (float) Math.sin(Math.toRadians(180f / edgeCount)), z2, alpha, 1, 1);
         }
+    }
 
+    private static void renderMagic(MatrixStack stack, IRenderTypeBuffer buffer, float alpha, float tick, int radius, int height, int speedRate, boolean reverse) {
+        float nTick = reverse ? tick * -2.25f / speedRate : tick * 2.25f / speedRate;
+
+        float x1 = radius * (float) Math.cos(Math.toRadians(nTick));
+        float z1 = radius * (float) Math.sin(Math.toRadians(nTick));
+
+        float x2 = radius * (float) Math.cos(Math.toRadians(nTick + 90f));
+        float z2 = radius * (float) Math.sin(Math.toRadians(nTick + 90f));
+
+        renderXZTexture(stack, buffer, LeviyBeamEntityRenderer.TEXTURE_LEVIY_MAGIC, x1, z1, x2, z2, -x1, -z1, -x2, -z2, height, alpha, 1, 1);
     }
 
     private static void renderYTexture(MatrixStack stack, IRenderTypeBuffer buffer, ResourceLocation texture, float x1, float y1, float z1, float x2, float y2, float z2, float alpha, float textureWidthScale, float textureHeightScale) {
@@ -234,6 +248,18 @@ public class LeviyRenderer {
         addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y1, x2, z2, textureWidthScale, 0);
         addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y2, x2, z2, textureWidthScale, textureHeightScale);
         addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y2, x1, z1, 0, textureHeightScale);
+    }
+
+    private static void renderXZTexture(MatrixStack stack, IRenderTypeBuffer buffer, ResourceLocation texture, float x1, float z1, float x2, float z2, float x3, float z3, float x4, float z4, float y, float alpha, float textureWidthScale, float textureHeightScale) {
+        MatrixStack.Entry matrixstack$entry = stack.getLast();
+        Matrix4f matrix4f = matrixstack$entry.getMatrix();
+        Matrix3f matrix3f = matrixstack$entry.getNormal();
+        IVertexBuilder b = buffer.getBuffer(RenderType.getEntityTranslucent(texture));
+
+        addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y, x1, z1, 0, 0);
+        addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y, x2, z2, textureWidthScale, 0);
+        addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y, x3, z3, textureWidthScale, textureHeightScale);
+        addVertex(matrix4f, matrix3f, b, 1, 1, 1, alpha, y, x4, z4, 0, textureHeightScale);
     }
 
     private static void renderPart(MatrixStack matrixStackIn, IVertexBuilder bufferIn, float red, float green, float blue, float alpha, int yMin, int yMax, float x1, float z1, float x2, float z2, float x3, float z3, float x4, float z4, float u1, float u2, float v1, float v2) {
