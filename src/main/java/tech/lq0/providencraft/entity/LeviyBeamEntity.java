@@ -9,10 +9,10 @@ import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.fml.network.NetworkHooks;
+import tech.lq0.providencraft.init.DamageSourceRegistry;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -86,7 +86,7 @@ public class LeviyBeamEntity extends Entity {
                     double zMotion = target.getMotion().z - 10 * zDiff / r / 20;
 
                     if (this.ticksExisted % 4 == 0) {
-                        motionFlag = target.attackEntityFrom(DamageSource.causeIndirectDamage(this, this.getOwner()), damage * 4);
+                        motionFlag = target.attackEntityFrom(DamageSourceRegistry.causeLeviyBeamDamage(this, this.owner), damage * 4);
                     }
 
                     if (motionFlag) {
