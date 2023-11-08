@@ -663,7 +663,7 @@
   "item.providencraft.leviy": "Leviy",
   "des.providencraft.leviy_1": "Travel through the reverse space-time turbulence, back to the familiar future world",
   "des.providencraft.leviy_2": "\"Would you like... to hold my hand tightly?\"",
-  "des.providencraft.leviy.invalid_select": "Invalid target selected",
+  "des.providencraft.leviy.invalid_select": "Invalid target selected. Leviy needs to be recharged",
   "block.providencraft.jellyfish_bottle": "Jellyfish Bottle",
   "des.providencraft.jellyfish_bottle_1": "The jellyfish which is favored by a jellyfish lover from art academy",
   "des.providencraft.jellyfish_bottle_2": "A decorative work has already finished when it is put into a bottle",

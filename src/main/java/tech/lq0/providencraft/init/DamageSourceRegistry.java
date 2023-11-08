@@ -22,4 +22,8 @@ public class DamageSourceRegistry {
     public static DamageSource causeLeviyBeamDamage(Entity source, LivingEntity indirectEntityIn) {
         return new IndirectEntityDamageSource("leviy_beam", source, indirectEntityIn);
     }
+
+    public static DamageSource causeAbsoluteLeviyBeamDamage(Entity source, LivingEntity indirectEntityIn) {
+        return new IndirectEntityDamageSource("leviy_beam", source, indirectEntityIn).setDamageBypassesArmor().setMagicDamage().setDamageIsAbsolute();
+    }
 }

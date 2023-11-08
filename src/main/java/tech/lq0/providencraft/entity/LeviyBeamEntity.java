@@ -86,7 +86,8 @@ public class LeviyBeamEntity extends Entity {
                     double zMotion = target.getMotion().z - 10 * zDiff / r / 20;
 
                     if (this.ticksExisted % 4 == 0) {
-                        motionFlag = target.attackEntityFrom(DamageSourceRegistry.causeLeviyBeamDamage(this, this.owner), damage * 4);
+                        motionFlag = target.attackEntityFrom(DamageSourceRegistry.causeLeviyBeamDamage(this, this.owner), damage * 3.5f);
+                        target.attackEntityFrom(DamageSourceRegistry.causeAbsoluteLeviyBeamDamage(this, this.owner), damage * 0.5f);
                     }
 
                     if (motionFlag) {
