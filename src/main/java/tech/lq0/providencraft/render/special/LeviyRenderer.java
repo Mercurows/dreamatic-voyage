@@ -28,8 +28,9 @@ import java.awt.*;
 import java.util.Random;
 
 public class LeviyRenderer {
-    private static float lastX, lastY, lastZ;
+    public static float lastX, lastY, lastZ;
     private static long lastChangeTime;
+    public static boolean lastHit = false;
 
     public static void render(RenderWorldLastEvent evt) {
         ClientPlayerEntity player = Minecraft.getInstance().player;
@@ -48,8 +49,15 @@ public class LeviyRenderer {
             RayTraceContext context = new RayTraceContext(start, end, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, player);
             BlockRayTraceResult result = player.getEntityWorld().rayTraceBlocks(context);
 
+            boolean isUsingLeviy = player.getItemInUseMaxCount() != 0;
+
+            if (!isUsingLeviy) {
+                lastHit = false;
+            }
+
             // 命中方块再渲染
             if (!result.getType().equals(RayTraceResult.Type.MISS)) {
+                lastHit = true;
                 int useTime = player.getItemInUseMaxCount();
                 float alpha = ease(0.2f, 0.5f, useTime / 40f);
 
@@ -61,7 +69,7 @@ public class LeviyRenderer {
                     timePassed = System.currentTimeMillis() - lastChangeTime;
                 }
 
-                if (timePassed >= animationTime) {
+                if (timePassed >= animationTime && !isUsingLeviy) {
                     lastX = pos.getX();
                     lastY = pos.getY();
                     lastZ = pos.getZ();
@@ -72,6 +80,12 @@ public class LeviyRenderer {
                 float x = ease(lastX, pos.getX(), progress);
                 float y = ease(lastY, pos.getY(), progress);
                 float z = ease(lastZ, pos.getZ(), progress);
+
+                if (isUsingLeviy) {
+                    x = lastX;
+                    y = lastY;
+                    z = lastZ;
+                }
 
                 stack.push();
                 // 渲染光柱
@@ -180,15 +194,16 @@ public class LeviyRenderer {
 
     /**
      * 渲染光环
-     * @param stack MatrixStack
-     * @param buffer RenderTypeBuffer
-     * @param alpha 透明度
-     * @param tick 传入Tick应 = Math.floorMod(totalWorldTime, 40L * rate) + partialTicks
+     *
+     * @param stack     MatrixStack
+     * @param buffer    RenderTypeBuffer
+     * @param alpha     透明度
+     * @param tick      传入Tick应 = Math.floorMod(totalWorldTime, 40L * rate) + partialTicks
      * @param edgeCount 光环边数
-     * @param radius 光环半径
-     * @param height 光环位置（相对高度）
+     * @param radius    光环半径
+     * @param height    光环位置（相对高度）
      * @param speedRate 光环转速
-     * @param reverse 是否反转（默认逆时针）
+     * @param reverse   是否反转（默认逆时针）
      */
     private static void renderOuterRing(MatrixStack stack, IRenderTypeBuffer buffer, float alpha, float tick, int edgeCount, int radius, int height, int speedRate, boolean reverse) {
         for (int j = 1; j <= edgeCount; j++) {

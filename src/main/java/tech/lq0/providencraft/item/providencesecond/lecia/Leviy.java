@@ -9,10 +9,8 @@ import net.minecraft.item.Rarity;
 import net.minecraft.item.UseAction;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.RayTraceContext;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -24,6 +22,7 @@ import tech.lq0.providencraft.group.ModGroup;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.network.PdcNetwork;
 import tech.lq0.providencraft.network.packet.LeviyLaunchPacket;
+import tech.lq0.providencraft.render.special.LeviyRenderer;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
@@ -79,9 +78,8 @@ public class Leviy extends Item {
 
                 // 命中方块再发请求
                 if (getUseDuration(stack) - count >= 40 && !playerIn.getCooldownTracker().hasCooldown(ItemRegistry.LEVIY.get())) {
-                    if (!result.getType().equals(RayTraceResult.Type.MISS)) {
-                        BlockPos pos = result.getPos();
-                        PdcNetwork.CHANNEL.sendToServer(new LeviyLaunchPacket(pos.getX(), pos.getY(), pos.getZ()));
+                    if (LeviyRenderer.lastHit) {
+                        PdcNetwork.CHANNEL.sendToServer(new LeviyLaunchPacket((int) LeviyRenderer.lastX, (int) LeviyRenderer.lastY, (int) LeviyRenderer.lastZ));
 
                         playerIn.getCooldownTracker().setCooldown(this, 400);
                         playerIn.resetActiveHand();
