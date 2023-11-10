@@ -78,6 +78,7 @@ import tech.lq0.providencraft.item.providencefirst.usa.Plunger;
 import tech.lq0.providencraft.item.providencefourth.choco.ChocoalCookie;
 import tech.lq0.providencraft.item.providencefourth.choco.StrawberryCake;
 import tech.lq0.providencraft.item.providencefourth.hifumi.NetherLight;
+import tech.lq0.providencraft.item.providencefourth.hifumi.UnfaithfulHeart;
 import tech.lq0.providencraft.item.providencefourth.sana.JellyfishBottle;
 import tech.lq0.providencraft.item.providencefourth.sana.Shakana;
 import tech.lq0.providencraft.item.providencemagicros.chiram.*;
@@ -360,6 +361,7 @@ public class ItemRegistry {
 
     //hifumi
     public static final RegistryObject<Item> NETHER_LIGHT = ITEMS.register("nether_light", NetherLight::new);
+    public static final RegistryObject<Item> UNFAITHFUL_HEART = ITEMS.register("unfaithful_heart", UnfaithfulHeart::new);
 
     //sana
     public static final RegistryObject<Item> JELLYFISH_BOTTLE = ITEMS.register("jellyfish_bottle", JellyfishBottle::new);
