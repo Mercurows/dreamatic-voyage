@@ -1,5 +1,6 @@
 package tech.lq0.providencraft.item.providencefourth.hifumi;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -35,10 +36,13 @@ public class UnfaithfulHeart extends Item {
     @OnlyIn(Dist.CLIENT)
     @ParametersAreNonnullByDefault
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        TooltipTool.addDevelopingText(tooltip);
-
         tooltip.add((new TranslationTextComponent("des.providencraft.unfaithful_heart_1")).mergeStyle(TextFormatting.GRAY));
-        tooltip.add((new TranslationTextComponent("des.providencraft.unfaithful_heart_2")).mergeStyle(TextFormatting.GRAY));
+        if (!Screen.hasShiftDown()) {
+            tooltip.add((new TranslationTextComponent("des.providencraft.unfaithful_heart_2")).mergeStyle(TextFormatting.GRAY));
+        } else {
+            tooltip.add((new TranslationTextComponent("des.providencraft.unfaithful_heart_3")).mergeStyle(TextFormatting.GRAY));
+        }
+
         TooltipTool.addLiverInfo(tooltip, Livers.HIFUMI);
     }
 
