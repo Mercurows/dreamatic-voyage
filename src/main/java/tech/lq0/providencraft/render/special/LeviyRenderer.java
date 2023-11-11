@@ -95,8 +95,8 @@ public class LeviyRenderer {
                         LeviyBeamEntityRenderer.TEXTURE_LEVIY_BEAM,
                         evt.getPartialTicks(),
                         1, world.getGameTime(),
-                        0, 150, new float[]{1, 1, 1},
-                        .25f, 0, alpha);
+                        (int) player.getYOffset(), 150, new float[]{1, 1, 1},
+                        .25f, 0, alpha, false);
 
                 stack.pop();
             }
@@ -134,7 +134,7 @@ public class LeviyRenderer {
         return start + (end - start) * rate;
     }
 
-    public static void renderBeamSegment(MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, ResourceLocation textureLocation, float partialTicks, float textureScale, long totalWorldTime, int yOffset, int height, float[] colors, float beamRadius, float glowRadius, float alpha) {
+    public static void renderBeamSegment(MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, ResourceLocation textureLocation, float partialTicks, float textureScale, long totalWorldTime, int yOffset, int height, float[] colors, float beamRadius, float glowRadius, float alpha, boolean flag) {
         int i = yOffset + height;
         matrixStackIn.push();
         matrixStackIn.translate(0.5D, 0.0D, 0.5D);
@@ -172,15 +172,20 @@ public class LeviyRenderer {
         // 外部光晕
         renderPart(matrixStackIn, bufferIn.getBuffer(RenderType.getEntityTranslucent(textureLocation)), r, g, b, 0.125F * alpha, yOffset, i, f6, f7, glowRadius, f8, f9, glowRadius, glowRadius, glowRadius, 0.0F, 1.0F, f16, f15);
 
-        // 谜之光环
-        renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick320, 16, 30, 120, 8, true);
+        // 是否为预览
+        if (flag) {
+            // 谜之光环
+            renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick320, 16, 30, 120, 8, true);
 
-        renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick120, 12, 12, 140, 3, false);
+            renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick120, 12, 12, 140, 3, false);
 
-        // 魔法阵
-        renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, beamRadius + 5f, 150, 1, true);
+            // 魔法阵
+            renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, beamRadius + 5f, 150, 1, true);
 
-        renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, beamRadius + 5f, 0.01f, 1, true);
+            renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, beamRadius + 5f, 0.01f, 1, true);
+        } else {
+            renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick320, 8, 5, 0, 8, true);
+        }
 
         matrixStackIn.pop();
     }

@@ -36,7 +36,7 @@ public class LeviyBeamEntityRenderer extends EntityRenderer<LeviyBeamEntity> {
                 partialTicks,
                 1, entityIn.getEntityWorld().getGameTime(),
                 (int) entityIn.getYOffset(), 150, new float[]{1, 1, 1},
-                r, 0, 0.5f);
+                r, 0, 0.5f, true);
         matrixStackIn.pop();
         matrixStackIn.translate(.5f, 0, .5f);
     }
