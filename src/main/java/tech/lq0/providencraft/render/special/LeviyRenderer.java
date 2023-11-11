@@ -158,18 +158,15 @@ public class LeviyRenderer {
         float b = colors[2];
         matrixStackIn.push();
         matrixStackIn.rotate(Vector3f.YP.rotationDegrees(tick40 * 2.25F - 45.0F));
-        float f6 = 0.0F;
-        float f8 = 0.0F;
+        float f6, f8;
         float f9 = -beamRadius;
-        float f10 = 0.0F;
-        float f11 = 0.0F;
         float f12 = -beamRadius;
-        float f13 = 0.0F;
-        float f14 = 1.0F;
         float f15 = -1.0F + f2;
         float f16 = (float) height * textureScale * (0.5F / beamRadius) + f15;
 
         // 内圈
+        renderPart(matrixStackIn, bufferIn.getBuffer(RenderType.getEntityTranslucent(textureLocation)), r, g, b, alpha, yOffset, i, 0.0F, beamRadius, beamRadius, 0.0F, f9, 0.0F, 0.0F, f12, 0.0F, 1.0F, f16, f15);
+        matrixStackIn.rotate(Vector3f.YP.rotationDegrees(45.0F));
         renderPart(matrixStackIn, bufferIn.getBuffer(RenderType.getEntityTranslucent(textureLocation)), r, g, b, alpha, yOffset, i, 0.0F, beamRadius, beamRadius, 0.0F, f9, 0.0F, 0.0F, f12, 0.0F, 1.0F, f16, f15);
 
         matrixStackIn.pop();
@@ -177,7 +174,6 @@ public class LeviyRenderer {
         float f7 = -glowRadius;
         f8 = -glowRadius;
         f9 = -glowRadius;
-        f13 = 0.0F;
         f15 = -1.0F + f2;
         f16 = (float) height * textureScale + f15;
 
