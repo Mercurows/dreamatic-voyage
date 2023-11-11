@@ -55,5 +55,9 @@ public class PropertyRegistry {
                 ItemModelsProperties.registerProperty(ItemRegistry.SECONDARY_CATACLYSM.get(), new ResourceLocation("fire"),
                         (heldStack, world, livingEntity) -> ItemNBTTool.getBoolean(heldStack, "fire", false) ? 1.0F : 0.0F)
         );
+        event.enqueueWork(() ->
+                ItemModelsProperties.registerProperty(ItemRegistry.UNFAITHFUL_HEART.get(), new ResourceLocation(Utils.MOD_ID, "damage"),
+                        (heldStack, world, livingEntity) -> heldStack.getDamage())
+        );
     }
 }

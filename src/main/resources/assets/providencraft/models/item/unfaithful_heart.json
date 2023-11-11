@@ -1,0 +1,38 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "providencraft:item/unfaithful_heart0"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "providencraft:damage": 1
+      },
+      "model": "providencraft:item/unfaithful_heart1"
+    },
+    {
+      "predicate": {
+        "providencraft:damage": 3
+      },
+      "model": "providencraft:item/unfaithful_heart2"
+    },
+    {
+      "predicate": {
+        "providencraft:damage": 5
+      },
+      "model": "providencraft:item/unfaithful_heart3"
+    },
+    {
+      "predicate": {
+        "providencraft:damage": 7
+      },
+      "model": "providencraft:item/unfaithful_heart4"
+    },
+    {
+      "predicate": {
+        "providencraft:damage": 9
+      },
+      "model": "providencraft:item/unfaithful_heart5"
+    }
+  ]
+}

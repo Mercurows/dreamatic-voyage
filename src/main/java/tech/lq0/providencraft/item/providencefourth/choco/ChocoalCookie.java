@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Rarity;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -30,7 +31,7 @@ public class ChocoalCookie extends Item {
             .effect(() -> new EffectInstance(Effects.WITHER, 100, 0), 1.0f).build();
 
     public ChocoalCookie() {
-        super(new Properties().group(ModGroup.itemgroup).food(food));
+        super(new Properties().group(ModGroup.itemgroup).food(food).rarity(Rarity.UNCOMMON));
     }
 
     @OnlyIn(Dist.CLIENT)
