@@ -30,7 +30,12 @@ import java.util.List;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class UnfaithfulHeart extends Item {
     public UnfaithfulHeart() {
-        super(new Properties().group(ModGroup.itemgroup).maxDamage(9).rarity(Rarity.UNCOMMON).defaultMaxDamage(2));
+        super(new Properties().group(ModGroup.itemgroup).maxDamage(9).rarity(Rarity.UNCOMMON));
+    }
+
+    @Override
+    public void onCreated(ItemStack stack, World worldIn, PlayerEntity playerIn) {
+        stack.setDamage(stack.getMaxDamage());
     }
 
     @OnlyIn(Dist.CLIENT)
