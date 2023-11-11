@@ -24,7 +24,6 @@ import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.item.providencesecond.lecia.Leviy;
 import tech.lq0.providencraft.render.LeviyBeamEntityRenderer;
 
-import java.awt.*;
 import java.util.Random;
 
 public class LeviyRenderer {
@@ -100,13 +99,6 @@ public class LeviyRenderer {
                         .25f, 0, alpha);
 
                 stack.pop();
-
-                // 十字形方块标识渲染
-                SpecialRender.renderBlock(stack, x, y, z, Color.cyan, 0.6f);
-                SpecialRender.renderBlock(evt.getMatrixStack(), x + 1, y, z, Color.cyan, .5f);
-                SpecialRender.renderBlock(evt.getMatrixStack(), x - 1, y, z, Color.cyan, .5f);
-                SpecialRender.renderBlock(evt.getMatrixStack(), x, y, z + 1, Color.cyan, .5f);
-                SpecialRender.renderBlock(evt.getMatrixStack(), x, y, z - 1, Color.cyan, .5f);
             }
         }
     }
@@ -186,7 +178,9 @@ public class LeviyRenderer {
         renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick120, 12, 12, 140, 3, false);
 
         // 魔法阵
-        renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, 15, 150, 1, true);
+        renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, beamRadius + 5f, 150, 1, true);
+
+        renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, beamRadius + 5f, 0.01f, 1, true);
 
         matrixStackIn.pop();
     }
@@ -222,7 +216,7 @@ public class LeviyRenderer {
         }
     }
 
-    private static void renderMagic(MatrixStack stack, IRenderTypeBuffer buffer, float alpha, float tick, int radius, int height, int speedRate, boolean reverse) {
+    private static void renderMagic(MatrixStack stack, IRenderTypeBuffer buffer, float alpha, float tick, float radius, float height, int speedRate, boolean reverse) {
         float nTick = reverse ? tick * -2.25f / speedRate : tick * 2.25f / speedRate;
 
         float x1 = radius * (float) Math.cos(Math.toRadians(nTick));

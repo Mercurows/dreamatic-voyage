@@ -62,7 +62,7 @@ public class Leviy extends Item {
                 // 命中方块再发请求
                 if (!playerIn.getCooldownTracker().hasCooldown(ItemRegistry.LEVIY.get())) {
                     if (LeviyRenderer.lastHit) {
-                        PdcNetwork.CHANNEL.sendToServer(new LeviyLaunchPacket((int) LeviyRenderer.lastX, (int) LeviyRenderer.lastY, (int) LeviyRenderer.lastZ));
+                        PdcNetwork.CHANNEL.sendToServer(new LeviyLaunchPacket((int) LeviyRenderer.lastX, (int) LeviyRenderer.lastY + 1, (int) LeviyRenderer.lastZ));
                     } else {
                         playerIn.sendStatusMessage(new TranslationTextComponent("des.providencraft.leviy.invalid_select").mergeStyle(TextFormatting.RED), true);
                     }
