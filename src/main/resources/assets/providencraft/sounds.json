@@ -520,5 +520,22 @@
         "stream": true
       }
     ]
+  },
+  "leviy_fail": {
+    "subtitle": "subtitle.providencraft.leviy_fail",
+    "sounds": [
+      {
+        "name": "providencraft:leviy_fail"
+      }
+    ]
+  },
+  "leviy_beam": {
+    "subtitle": "subtitle.providencraft.leviy_beam",
+    "sounds": [
+      {
+        "name": "providencraft:leviy_beam",
+        "stream": true
+      }
+    ]
   }
 }

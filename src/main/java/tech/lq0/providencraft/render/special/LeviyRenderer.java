@@ -183,8 +183,6 @@ public class LeviyRenderer {
             renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, beamRadius + 5f, 150, 1, true);
 
             renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, beamRadius + 5f, 0.01f, 1, true);
-        } else {
-            renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick320, 8, 5, 0, 8, true);
         }
 
         matrixStackIn.pop();

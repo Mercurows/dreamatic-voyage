@@ -9,6 +9,7 @@ import net.minecraft.item.Rarity;
 import net.minecraft.item.UseAction;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -17,6 +18,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.providencraft.group.ModGroup;
 import tech.lq0.providencraft.init.ItemRegistry;
+import tech.lq0.providencraft.init.SoundRegistry;
 import tech.lq0.providencraft.network.PdcNetwork;
 import tech.lq0.providencraft.network.packet.LeviyLaunchPacket;
 import tech.lq0.providencraft.render.special.LeviyRenderer;
@@ -63,8 +65,12 @@ public class Leviy extends Item {
                 if (!playerIn.getCooldownTracker().hasCooldown(ItemRegistry.LEVIY.get())) {
                     if (LeviyRenderer.lastHit) {
                         PdcNetwork.CHANNEL.sendToServer(new LeviyLaunchPacket((int) LeviyRenderer.lastX, (int) LeviyRenderer.lastY + 1, (int) LeviyRenderer.lastZ));
+
+                        worldIn.playSound(LeviyRenderer.lastX, LeviyRenderer.lastY + 1, LeviyRenderer.lastZ, SoundRegistry.LEVIY_BEAM.get(), SoundCategory.AMBIENT, 1.0f, 1.0f, true);
                     } else {
                         playerIn.sendStatusMessage(new TranslationTextComponent("des.providencraft.leviy.invalid_select").mergeStyle(TextFormatting.RED), true);
+
+                        playerIn.playSound(SoundRegistry.LEVIY_FAIL.get(), 1.0f, 1.0f);
                     }
                 }
             }
