@@ -69,6 +69,18 @@ public class KRM_963_53 extends ArmorItem {
         TooltipTool.addLiverInfo(tooltip, Livers.USA);
     }
 
+    @Override
+    public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+        if (!worldIn.isRemote && entityIn instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) entityIn;
+            if (itemSlot != 2) {
+                if (player.ticksExisted % 30 == 0) {
+                    setFlyEnergy(stack, getFlyEnergy(stack) + 1);
+                }
+            }
+        }
+    }
+
     private void showFlyEnergy(ItemStack stack, List<ITextComponent> tooltip) {
         TextFormatting textFormatting;
         if (getFlyEnergy(stack) >= 800) {
