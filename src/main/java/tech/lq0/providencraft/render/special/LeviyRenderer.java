@@ -176,13 +176,17 @@ public class LeviyRenderer {
         if (flag) {
             // 谜之光环
             renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick320, 16, 30, 120, 8, true);
-
             renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick120, 12, 12, 140, 3, false);
 
             // 魔法阵
             renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, beamRadius + 5f, 150, 1, true);
-
             renderMagic(matrixStackIn, bufferIn, alpha * 2f, tick40, beamRadius + 5f, 0.01f, 1, true);
+        } else {
+            // 什么bug，ybb，必须渲染个环才能保证光柱不错位
+            matrixStackIn.push();
+            matrixStackIn.translate(0, -1145140, 0);
+            renderOuterRing(matrixStackIn, bufferIn, alpha * 1.5f, tick320, 8, 5, 0, 8, true);
+            matrixStackIn.pop();
         }
 
         matrixStackIn.pop();
