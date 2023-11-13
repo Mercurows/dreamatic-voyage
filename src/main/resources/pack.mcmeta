@@ -1,6 +1,7 @@
 {
   "pack": {
-    "description": "Providencraft Resources",
-    "pack_format": 7
+    "description": "Providencraft",
+    "pack_format": 15,
+    "forge:server_data_pack_format": 12
   }
 }

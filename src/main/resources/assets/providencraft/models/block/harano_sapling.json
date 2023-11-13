@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "providencraft:block/harano_sapling",
-    "particle": "providencraft:block/harano_sapling"
-  }
-}
