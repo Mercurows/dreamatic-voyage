@@ -13,8 +13,8 @@
 
 #### 安装教程
 
-1. 确保你使用的Minecraft版本是1.16.5
-2. 确保你为Minecraft安装了Forge 36.2.20及以上 
+1. 确保你使用的Minecraft版本是1.20.1
+2. 确保你为Minecraft安装了Forge 47.1.1及以上 
 3. 将mod放进mods文件夹
 
 #### 协议
