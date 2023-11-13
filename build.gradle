@@ -120,7 +120,6 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
-    maven { url = 'https://maven.parchmentmc.org' }
 }
 
 dependencies {
