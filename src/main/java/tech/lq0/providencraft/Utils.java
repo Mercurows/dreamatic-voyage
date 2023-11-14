@@ -20,11 +20,10 @@ public class Utils {
     public Utils() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        modEventBus.addListener(this::commonSetup);
-
         ItemRegistry.ITEMS.register(modEventBus);
         TabRegistry.TABS.register(modEventBus);
 
+        modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
