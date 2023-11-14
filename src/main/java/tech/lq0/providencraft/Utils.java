@@ -31,5 +31,4 @@ public class Utils {
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("Welcome to {}", MOD_ID);
     }
-
 }
