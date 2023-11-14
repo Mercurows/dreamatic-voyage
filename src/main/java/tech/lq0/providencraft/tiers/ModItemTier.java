@@ -12,9 +12,9 @@ import java.util.function.Supplier;
 
 public enum ModItemTier implements Tier {
     RED_AHOGE(2, 1221, 7.0F, 2.0F, 14,
-            () -> Ingredient.of(ItemRegistry.RED_AHOGE.get()));
-//    DARK_ELF(4, 39, 50.0F, 1.0F, 20,
-//            () -> Ingredient.of(ItemRegistry.WHITE_AHOGE));
+            () -> Ingredient.of(ItemRegistry.RED_AHOGE.get())),
+    DARK_ELF(4, 39, 50.0F, 1.0F, 20,
+            () -> Ingredient.of(ItemRegistry.WHITE_AHOGE.get()));
 
     private final int level;
     private final int uses;
