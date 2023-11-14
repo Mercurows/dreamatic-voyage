@@ -9,6 +9,8 @@ import tech.lq0.providencraft.item.providenceOI.shirako.Fetuozi;
 import tech.lq0.providencraft.item.providenceOI.shirako.MomoDaifuku;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhoge;
 import tech.lq0.providencraft.item.providencesecond.lucia.MoonlightAmulet;
+import tech.lq0.providencraft.item.providencethird.yuki.FoxIceCream;
+import tech.lq0.providencraft.item.providencethird.yuki.FoxPudding;
 
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
@@ -179,9 +181,9 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> LECIEL_EAR_COVERTS = ITEMS.register("leciel_ear_coverts", LecielEarCoverts::new);
 //    public static final RegistryObject<Item> GIANT_DIAMOND_RING = ITEMS.register("giant_diamond_ring", GiantDiamondRing::new);
 //
-//    //yuki
-//    public static final RegistryObject<Item> FOX_ICE_CREAM = ITEMS.register("fox_ice_cream", FoxIceCream::new);
-//    public static final RegistryObject<Item> FOX_PUDDING = ITEMS.register("fox_pudding", FoxPudding::new);
+    //yuki
+    public static final RegistryObject<Item> FOX_ICE_CREAM = ITEMS.register("fox_ice_cream", FoxIceCream::new);
+    public static final RegistryObject<Item> FOX_PUDDING = ITEMS.register("fox_pudding", FoxPudding::new);
 
     /**
      * POI
