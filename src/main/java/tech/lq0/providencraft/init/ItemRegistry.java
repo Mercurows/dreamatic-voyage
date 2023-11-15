@@ -7,10 +7,12 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.item.providenceOI.shirako.Fetuozi;
 import tech.lq0.providencraft.item.providenceOI.shirako.MomoDaifuku;
+import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhoge;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhogeSword;
 import tech.lq0.providencraft.item.providencesecond.louise.WhiteAhoge;
 import tech.lq0.providencraft.item.providencesecond.louise.WhiteDoubleAhoge;
+import tech.lq0.providencraft.item.providencesecond.lucia.LuciaRiceCake;
 import tech.lq0.providencraft.item.providencesecond.lucia.MoonlightAmulet;
 import tech.lq0.providencraft.item.providencethird.yuki.FoxIceCream;
 import tech.lq0.providencraft.item.providencethird.yuki.FoxPudding;
@@ -62,10 +64,10 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> DRILL = ITEMS.register("drill", Drill::new);
 //    public static final RegistryObject<Item> SCHEDULE = ITEMS.register("schedule", Schedule::new);
 //    public static final RegistryObject<Item> DARK_ELF_GLASSES = ITEMS.register("dark_elf_glasses", DarkElfGlasses::new);
-//
-//    //haya
+
+    //haya
 //    public static final RegistryObject<Item> HAYAMEN = ITEMS.register("hayamen", Hayamen::new);
-//    public static final RegistryObject<Item> BIG_SPOON = ITEMS.register("big_spoon", BigSpoon::new);
+    public static final RegistryObject<Item> BIG_SPOON = ITEMS.register("big_spoon", BigSpoon::new);
 //    public static final RegistryObject<Item> HAYA_SWORD = ITEMS.register("haya_sword", HayaSword::new);
 //
 //    //akumaria
@@ -82,7 +84,7 @@ public class ItemRegistry {
      * 2nd
      **/
     //lucia
-//    public static final RegistryObject<Item> LUCIA_RICE_CAKE = ITEMS.register("lucia_rice_cake", LuciaRiceCake::new);
+    public static final RegistryObject<Item> LUCIA_RICE_CAKE = ITEMS.register("lucia_rice_cake", LuciaRiceCake::new);
 //    public static final RegistryObject<Item> BIG_MOE_ONE_POTION = ITEMS.register("big_moe_one_potion", BigMoeOnePotion::new);
     public static final RegistryObject<Item> MOONLIGHT_AMULET = ITEMS.register("moonlight_amulet", MoonlightAmulet::new);
 //    public static final RegistryObject<Item> BIG_FIERCE_ONE_COFFEE = ITEMS.register("big_fierce_one_coffee", BigFierceOneCoffee::new);
