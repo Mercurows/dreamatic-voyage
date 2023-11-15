@@ -7,9 +7,11 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import tech.lq0.providencraft.init.DamageSourceRegistry;
 import tech.lq0.providencraft.init.EffectRegistry;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class Bleeding extends MobEffect {
     public Bleeding(){
         super(MobEffectCategory.HARMFUL, 11815816);

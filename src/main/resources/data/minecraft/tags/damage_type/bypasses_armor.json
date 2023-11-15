@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "providencraft:lava_cake",
-    "providencraft:bleeding",
+    "providencraft:pdc_bleeding",
     "providencraft:chocoal_cookie"
   ]
 }
