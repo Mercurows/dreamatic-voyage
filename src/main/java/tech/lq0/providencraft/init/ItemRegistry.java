@@ -10,6 +10,8 @@ import tech.lq0.providencraft.item.providenceOI.shirako.MomoDaifuku;
 import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhoge;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhogeSword;
+import tech.lq0.providencraft.item.providencefourth.choco.ChocoalCookie;
+import tech.lq0.providencraft.item.providencefourth.choco.StrawberryCake;
 import tech.lq0.providencraft.item.providencesecond.louise.WhiteAhoge;
 import tech.lq0.providencraft.item.providencesecond.louise.WhiteDoubleAhoge;
 import tech.lq0.providencraft.item.providencesecond.lucia.LuciaRiceCake;
@@ -250,21 +252,21 @@ public class ItemRegistry {
 //
 //    //ccelia
 //    public static final RegistryObject<Item> CRAFT_BEER_0322 = ITEMS.register("craft_beer_0322", CraftBeer0322::new);
-//
-//    /**
-//     * connections
-//     */
-//    //qianyun
+
+    /**
+     * connections
+     */
+    //qianyun
 //    public static final RegistryObject<Item> QIANYUN_HOE = ITEMS.register("qianyun_hoe", QianyunHoe::new);
 //    public static final RegistryObject<Item> SUITCASE = ITEMS.register("suitcase", Suitcase::new);
 //    public static final RegistryObject<Item> QIANKELA = ITEMS.register("qiankela", Qiankela::new);
-//
-//    /**
-//     * 4th
-//     */
-//    //choco
-//    public static final RegistryObject<Item> STRAWBERRY_CAKE = ITEMS.register("strawberry_cake", StrawberryCake::new);
-//    public static final RegistryObject<Item> CHOCOAL_COOKIE = ITEMS.register("chocoal_cookie", ChocoalCookie::new);
+
+    /**
+     * 4th
+     */
+    //choco
+    public static final RegistryObject<Item> STRAWBERRY_CAKE = ITEMS.register("strawberry_cake", StrawberryCake::new);
+    public static final RegistryObject<Item> CHOCOAL_COOKIE = ITEMS.register("chocoal_cookie", ChocoalCookie::new);
 //
 //    //hifumi
 //    public static final RegistryObject<Item> NETHER_LIGHT = ITEMS.register("nether_light", NetherLight::new);
