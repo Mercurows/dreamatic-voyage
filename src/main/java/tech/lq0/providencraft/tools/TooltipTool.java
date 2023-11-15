@@ -25,6 +25,11 @@ public class TooltipTool {
         addHideText(tooltip, Component.translatable("liver.providencraft." + liver.getName()).withStyle(Style.EMPTY.withColor(TextColor.parseColor(liver.getColor()))));
     }
 
+    public static void addLegacyInfo(List<Component> tooltip) {
+        addHideText(tooltip, Component.literal(""));
+        addHideText(tooltip, Component.translatable("des.providencraft.legacy").withStyle(Style.EMPTY.withColor(0xff6288)));
+    }
+
 //    public static void addChaosInfo(List<Component> tooltip, int chaos) {
 //        TextFormatting textFormatting;
 //        StringBuilder builder = new StringBuilder();

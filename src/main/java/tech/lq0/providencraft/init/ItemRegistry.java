@@ -5,6 +5,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
+import tech.lq0.providencraft.item.legacy.LavaCake;
 import tech.lq0.providencraft.item.providenceOI.shirako.Fetuozi;
 import tech.lq0.providencraft.item.providenceOI.shirako.MomoDaifuku;
 import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
@@ -172,11 +173,6 @@ public class ItemRegistry {
     /**
      * 3rd
      **/
-//    //beni
-//    public static final RegistryObject<Item> LAVA_CAKE = ITEMS.register("lava_cake", LavaCake::new);
-//    public static final RegistryObject<Item> SHURA_CHIN = ITEMS.register("shura_chin", ShuraChin::new);
-//    public static final RegistryObject<Item> UME = ITEMS.register("ume", Ume::new);
-//
 //    //hiru
 //    public static final RegistryObject<Item> HIRU_HEAD = ITEMS.register("hiru_head", HiruHead::new);
 //    public static final RegistryObject<Item> HIRU_TENTACLES = ITEMS.register("hiru_tentacles", HiruTentacles::new);
@@ -343,7 +339,9 @@ public class ItemRegistry {
     /**
      * legacy
      */
-
+    public static final RegistryObject<Item> LAVA_CAKE = ITEMS.register("lava_cake", LavaCake::new);
+//    public static final RegistryObject<Item> SHURA_CHIN = ITEMS.register("shura_chin", ShuraChin::new);
+//    public static final RegistryObject<Item> UME = ITEMS.register("ume", Ume::new);
 
 
     /**
