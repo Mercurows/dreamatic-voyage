@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.item.providencesecond.lucia;
+package tech.lq0.providencraft.item.legacy;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -15,7 +15,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
-import tech.lq0.providencraft.tools.Livers;
+import tech.lq0.providencraft.tools.RarityTool;
 import tech.lq0.providencraft.tools.TooltipTool;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
@@ -23,23 +23,18 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 import java.util.List;
 import java.util.UUID;
 
-public class MoonlightAmulet extends Item implements ICurioItem {
-
-    public MoonlightAmulet() {
-        super(new Properties().stacksTo(1));
+public class YagiStaffCard extends Item implements ICurioItem {
+    public YagiStaffCard() {
+        super(new Properties().stacksTo(1).rarity(RarityTool.LEGACY));
     }
 
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.moonlight_amulet").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.providencraft.yagi_staff_card_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.providencraft.yagi_staff_card_2").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.LUCIA);
-    }
-
-    @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        ICurioItem.super.curioTick(slotContext, stack);
+        TooltipTool.addLegacyInfo(pTooltipComponents);
     }
 
     @Override
@@ -48,11 +43,9 @@ public class MoonlightAmulet extends Item implements ICurioItem {
 
         map = HashMultimap.create(map);
         map.put(Attributes.MAX_HEALTH,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 6.0, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.7f, AttributeModifier.Operation.MULTIPLY_BASE));
         map.put(Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 2.0, AttributeModifier.Operation.ADDITION));
-        map.put(Attributes.ARMOR,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 4.0, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 1.0f, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return map;
     }

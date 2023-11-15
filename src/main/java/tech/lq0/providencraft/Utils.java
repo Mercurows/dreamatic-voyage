@@ -15,6 +15,8 @@ public class Utils {
 
     public static final String MOD_ID = "providencraft";
 
+    public static final String PDC_ATTRIBUTE_MODIFIER = "pdc_attribute_modifier";
+
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public Utils() {
