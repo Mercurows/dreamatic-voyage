@@ -6,6 +6,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.item.legacy.LavaCake;
+import tech.lq0.providencraft.item.material.IdolCloth;
 import tech.lq0.providencraft.item.providenceOI.shirako.Fetuozi;
 import tech.lq0.providencraft.item.providenceOI.shirako.MomoDaifuku;
 import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
@@ -73,9 +74,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> BIG_SPOON = ITEMS.register("big_spoon", BigSpoon::new);
 //    public static final RegistryObject<Item> HAYA_SWORD = ITEMS.register("haya_sword", HayaSword::new);
 //
-//    //akumaria
-//    public static final RegistryObject<Item> PLATE = ITEMS.register("plate", Plate::new);
-//    public static final RegistryObject<Item> FLUFF_BALL = ITEMS.register("fluff_ball", FluffBall::new);
+
 //
 //    //unia
 //    public static final RegistryObject<Item> TARO_ICE_CREAM = ITEMS.register("taro_ice_cream", TaroIceCream::new);
@@ -88,7 +87,7 @@ public class ItemRegistry {
      **/
     //lucia
     public static final RegistryObject<Item> LUCIA_RICE_CAKE = ITEMS.register("lucia_rice_cake", LuciaRiceCake::new);
-//    public static final RegistryObject<Item> BIG_MOE_ONE_POTION = ITEMS.register("big_moe_one_potion", BigMoeOnePotion::new);
+    //    public static final RegistryObject<Item> BIG_MOE_ONE_POTION = ITEMS.register("big_moe_one_potion", BigMoeOnePotion::new);
     public static final RegistryObject<Item> MOONLIGHT_AMULET = ITEMS.register("moonlight_amulet", MoonlightAmulet::new);
 //    public static final RegistryObject<Item> BIG_FIERCE_ONE_COFFEE = ITEMS.register("big_fierce_one_coffee", BigFierceOneCoffee::new);
 
@@ -103,8 +102,6 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> UNI_MILLET = ITEMS.register("uni_millet", UniMillet::new);
 //    public static final RegistryObject<Item> MAGIC_BOOK_REVELATION = ITEMS.register("magic_book_revelation", MagicBookRevelation::new);
 
-//    //mojuko
-//    public static final RegistryObject<Item> YAGI_STAFF_CARD = ITEMS.register("yagi_staff_card", YagiStaffCard::new);
 
 //    //lecia
 //    public static final RegistryObject<Item> ELECTRIC_HORN = ITEMS.register("electric_horn", ElectricHorn::new);
@@ -339,6 +336,9 @@ public class ItemRegistry {
     /**
      * legacy
      */
+//    public static final RegistryObject<Item> PLATE = ITEMS.register("plate", Plate::new);
+//    public static final RegistryObject<Item> FLUFF_BALL = ITEMS.register("fluff_ball", FluffBall::new);
+//    public static final RegistryObject<Item> YAGI_STAFF_CARD = ITEMS.register("yagi_staff_card", YagiStaffCard::new);
     public static final RegistryObject<Item> LAVA_CAKE = ITEMS.register("lava_cake", LavaCake::new);
 //    public static final RegistryObject<Item> SHURA_CHIN = ITEMS.register("shura_chin", ShuraChin::new);
 //    public static final RegistryObject<Item> UME = ITEMS.register("ume", Ume::new);
@@ -365,7 +365,7 @@ public class ItemRegistry {
     /**
      * material
      */
-//    public static final RegistryObject<Item> IDOL_CLOTH = ITEMS.register("idol_cloth", IdolCloth::new);
+    public static final RegistryObject<Item> IDOL_CLOTH = ITEMS.register("idol_cloth", IdolCloth::new);
 //    public static final RegistryObject<Item> GN_SOUL = ITEMS.register("gn_souls", GNSouls::new);
 //    public static final RegistryObject<Item> GN_SPIRIT = ITEMS.register("gn_spirit", GNSpirit::new);
 //    public static final RegistryObject<Item> GN_STAR = ITEMS.register("gn_star", GNStar::new);
