@@ -63,3 +63,9 @@ Providence企划同人Minecraft Mod, 希望我们还能再次相遇
    versionRange="${minecraft_version_range}"
    ordering="NONE"
    side="BOTH"
+[[dependencies.providencraft]]
+   modId="curios"
+   mandatory=true
+   versionRange="[5.4.0,)"
+   ordering="NONE"
+   side="BOTH"
