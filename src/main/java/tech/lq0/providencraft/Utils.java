@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import tech.lq0.providencraft.init.EffectRegistry;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.init.TabRegistry;
 
@@ -24,6 +25,7 @@ public class Utils {
 
         ItemRegistry.ITEMS.register(modEventBus);
         TabRegistry.TABS.register(modEventBus);
+        EffectRegistry.EFFECTS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
