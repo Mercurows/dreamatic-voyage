@@ -13,7 +13,9 @@ import tech.lq0.providencraft.item.providenceOI.shirako.MomoDaifuku;
 import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhoge;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhogeSword;
+import tech.lq0.providencraft.item.providencefirst.unia.EnchantedUnigiri;
 import tech.lq0.providencraft.item.providencefirst.unia.TaroIceCream;
+import tech.lq0.providencraft.item.providencefirst.unia.Unigiri;
 import tech.lq0.providencraft.item.providencefourth.choco.ChocoalCookie;
 import tech.lq0.providencraft.item.providencefourth.choco.StrawberryCake;
 import tech.lq0.providencraft.item.providencefourth.sana.Shakana;
@@ -79,8 +81,8 @@ public class ItemRegistry {
 
     //unia
     public static final RegistryObject<Item> TARO_ICE_CREAM = ITEMS.register("taro_ice_cream", TaroIceCream::new);
-//    public static final RegistryObject<Item> UNIGIRI = ITEMS.register("unigiri", Unigiri::new);
-//    public static final RegistryObject<Item> ENCHANTED_UNIGIRI = ITEMS.register("enchanted_unigiri", EnchantedUnigiri::new);
+    public static final RegistryObject<Item> UNIGIRI = ITEMS.register("unigiri", Unigiri::new);
+    public static final RegistryObject<Item> ENCHANTED_UNIGIRI = ITEMS.register("enchanted_unigiri", EnchantedUnigiri::new);
 //    public static final RegistryObject<Item> ELF_WINGS = ITEMS.register("elf_wings", ElfWings::new);
 
     /**
