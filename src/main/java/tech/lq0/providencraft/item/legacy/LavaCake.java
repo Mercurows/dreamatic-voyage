@@ -25,6 +25,7 @@ public class LavaCake extends Item {
         super(new Properties().food(food).stacksTo(1).rarity(RarityTool.LEGACY));
     }
 
+    //TODO 混沌值系统
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if (pLivingEntity instanceof Player player && !pLevel.isClientSide) {

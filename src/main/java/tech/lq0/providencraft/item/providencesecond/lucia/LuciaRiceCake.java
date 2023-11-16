@@ -30,4 +30,6 @@ public class LuciaRiceCake extends Item {
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.LUCIA);
     }
+
+    //TODO 混沌值系统
 }

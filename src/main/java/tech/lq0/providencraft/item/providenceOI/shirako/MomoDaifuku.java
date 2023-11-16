@@ -38,6 +38,7 @@ public class MomoDaifuku extends Item {
         TooltipTool.addLiverInfo(tooltip, Livers.SHIRAKO);
     }
 
+    //TODO 混沌值系统
     @Override
     @ParametersAreNonnullByDefault
     @Nonnull

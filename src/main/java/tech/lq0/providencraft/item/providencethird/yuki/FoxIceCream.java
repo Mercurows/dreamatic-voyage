@@ -32,4 +32,6 @@ public class FoxIceCream extends Item {
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.YUKI);
     }
+
+    //TODO 混沌值系统
 }
