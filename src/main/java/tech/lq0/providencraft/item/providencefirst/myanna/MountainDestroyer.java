@@ -43,6 +43,10 @@ import java.util.UUID;
 public class MountainDestroyer extends PickaxeItem {
     public static final String TAG_MULTIMINE = "multimine";
 
+    public MountainDestroyer() {
+        super(ModItemTier.DARK_ELF, 6, -3f, new Properties().durability(39).rarity(Rarity.EPIC).fireResistant().setNoRepair());
+    }
+
     @Override
     @NotNull
     @ParametersAreNonnullByDefault
@@ -55,10 +59,6 @@ public class MountainDestroyer extends PickaxeItem {
                     Component.translatable("des.providencraft.mountain_destroyer.disable"), true);
         }
         return InteractionResultHolder.fail(stack);
-    }
-
-    public MountainDestroyer() {
-        super(ModItemTier.DARK_ELF, 6, -3f, new Properties().durability(39).rarity(Rarity.EPIC).fireResistant().setNoRepair());
     }
 
     @Override
@@ -133,7 +133,6 @@ public class MountainDestroyer extends PickaxeItem {
     }
 
     private void manualMineBlock(ArrayList<BlockPos> pos, Level world, LivingEntity player) {
-
         for (BlockPos p : pos) {
             BlockState s = world.getBlockState(p);
             if (TierSortingRegistry.isCorrectTierForDrops(ModItemTier.DARK_ELF, s) && s.is(BlockTags.MINEABLE_WITH_PICKAXE) || s.is(BlockTags.MINEABLE_WITH_SHOVEL)) {
@@ -151,8 +150,7 @@ public class MountainDestroyer extends PickaxeItem {
     @OnlyIn(Dist.CLIENT)
     @Override
     @ParametersAreNonnullByDefault
-    public void appendHoverText(ItemStack pStack, @Nullable Level
-            pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.mountain_destroyer_1").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.providencraft.mountain_destroyer_2").withStyle(ChatFormatting.GRAY));
 
