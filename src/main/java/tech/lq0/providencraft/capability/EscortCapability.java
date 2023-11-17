@@ -34,12 +34,10 @@ public class EscortCapability implements IEscortCapability, INBTSerializable<Tag
         return this.value;
     }
 
-
     @Override
     public double getCapacity() {
         return this.capacity;
     }
-
 
     @Override
     public double addValue(double num) {
@@ -48,11 +46,10 @@ public class EscortCapability implements IEscortCapability, INBTSerializable<Tag
         }
 
         double add = Math.min(capacity - value, Math.min(this.addLimit, num));
-        value += num;
+        value += add;
 
         return add;
     }
-
 
     @Override
     public double subValue(double num) {
@@ -61,7 +58,7 @@ public class EscortCapability implements IEscortCapability, INBTSerializable<Tag
         }
 
         double sub = Math.min(value, Math.min(this.subLimit, num));
-        value -= num;
+        value = Math.max(0, value - sub);
 
         return sub;
     }
@@ -86,5 +83,12 @@ public class EscortCapability implements IEscortCapability, INBTSerializable<Tag
         if (nbt instanceof DoubleTag doubleTag) {
             this.value = doubleTag.getAsDouble();
         }
+    }
+
+    @Override
+    public double setValue(double num) {
+        value = Math.min(num, capacity);
+
+        return value;
     }
 }

@@ -15,4 +15,6 @@ public interface IEscortCapability {
     boolean canAdd();
 
     boolean canSub();
+
+    double setValue(double num);
 }

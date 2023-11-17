@@ -14,7 +14,7 @@ public class ItemEscortStorage extends EscortCapability {
         super(capacity, Double.MAX_VALUE, Double.MAX_VALUE);
 
         this.stack = stack;
-        this.value = stack.hasTag() && stack.getTag().contains(NBT_ESCORT) ? stack.getTag().getInt(NBT_ESCORT) : 0;
+        this.value = stack.hasTag() && stack.getTag().contains(NBT_ESCORT) ? stack.getTag().getDouble(NBT_ESCORT) : 0;
     }
 
     @Override
@@ -43,6 +43,19 @@ public class ItemEscortStorage extends EscortCapability {
 
             stack.getTag().putDouble(NBT_ESCORT, getEscortValue());
         }
+
+        return escort;
+    }
+
+    @Override
+    public double setValue(double num) {
+        double escort = super.setValue(num);
+
+        if (!stack.hasTag()) {
+            stack.setTag(new CompoundTag());
+        }
+
+        stack.getTag().putDouble(NBT_ESCORT, escort);
 
         return escort;
     }
