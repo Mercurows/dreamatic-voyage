@@ -12,6 +12,7 @@ import tech.lq0.providencraft.item.providenceOI.miya.TailPen;
 import tech.lq0.providencraft.item.providenceOI.shirako.Fetuozi;
 import tech.lq0.providencraft.item.providenceOI.shirako.MomoDaifuku;
 import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
+import tech.lq0.providencraft.item.providencefirst.madoka.CrimsonImpact;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhoge;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhogeSword;
 import tech.lq0.providencraft.item.providencefirst.myanna.MountainDestroyer;
@@ -48,7 +49,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> PEACH_BEACH = ITEMS.register("peach_beach", PeachBeach::new);
 //    public static final RegistryObject<Item> RED_AHOGE_MACHETE = ITEMS.register("red_ahoge_machete", RedAhogeMachete::new);
 //    public static final RegistryObject<Item> SNEAKERS = ITEMS.register("sneakers", Sneakers::new);
-//    public static final RegistryObject<Item> CRIMSON_IMPACT = ITEMS.register("crimson_impact", CrimsonImpact::new);
+    public static final RegistryObject<Item> CRIMSON_IMPACT = ITEMS.register("crimson_impact", CrimsonImpact::new);
 //
 //    //ayelet
 //    public static final RegistryObject<Item> CRYSTAL_HORN = ITEMS.register("crystal_horn", CrystalHorn::new);
