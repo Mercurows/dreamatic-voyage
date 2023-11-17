@@ -8,6 +8,7 @@ import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.item.legacy.LavaCake;
 import tech.lq0.providencraft.item.legacy.YagiStaffCard;
 import tech.lq0.providencraft.item.material.IdolCloth;
+import tech.lq0.providencraft.item.providenceOI.miya.TailPen;
 import tech.lq0.providencraft.item.providenceOI.shirako.Fetuozi;
 import tech.lq0.providencraft.item.providenceOI.shirako.MomoDaifuku;
 import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
@@ -211,9 +212,9 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> LUNATIC_BOW = ITEMS.register("lunatic_bow", LunaticBow::new);
 //    public static final RegistryObject<Item> MOON_CAKE = ITEMS.register("moon_cake", MoonCake::new);
 //    public static final RegistryObject<Item> LUNAR_ECLIPSE = ITEMS.register("lunar_eclipse", LunarEclipse::new);
-//
-//    //miya
-//    public static final RegistryObject<Item> TAIL_PEN = ITEMS.register("tail_pen", TailPen::new);
+
+    //miya
+    public static final RegistryObject<Item> TAIL_PEN = ITEMS.register("tail_pen", TailPen::new);
 //    public static final RegistryObject<Item> JELLYFISH_SHELL = ITEMS.register("jellyfish_shell", JellyfishShell::new);
 //
 //    //ayu

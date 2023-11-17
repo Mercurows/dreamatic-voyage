@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " fa",
+    "cbf",
+    "eg "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:brush"
+    },
+    "b": {
+      "item": "minecraft:nether_star"
+    },
+    "c": {
+      "item": "minecraft:red_glazed_terracotta"
+    },
+    "e": {
+      "item": "minecraft:end_rod"
+    },
+    "f": {
+      "item": "minecraft:white_wool"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "providencraft:tail_pen",
+    "count": 1
+  }
+}
