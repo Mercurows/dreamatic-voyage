@@ -30,7 +30,7 @@ import java.util.UUID;
 
 public class MomoBandage extends Item implements ICurioItem {
     public MomoBandage() {
-        super(new Properties().stacksTo(1).rarity(Rarity.EPIC));
+        super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
     @OnlyIn(Dist.CLIENT)

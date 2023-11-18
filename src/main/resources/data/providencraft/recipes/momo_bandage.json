@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " x ",
+    "xax",
+    " x "
+  ],
+  "key": {
+    "x": {
+      "item": "providencraft:idol_cloth"
+    },
+    "a": {
+      "item": "providencraft:momo_daifuku"
+    }
+  },
+  "result": {
+    "item": "providencraft:momo_bandage",
+    "count": 1
+  }
+}
