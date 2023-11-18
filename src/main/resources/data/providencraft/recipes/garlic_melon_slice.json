@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "minecraft:melon"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:dragon_breath"
+    }
+  ],
+  "result": {
+    "item": "providencraft:garlic_melon_slice",
+    "count": 8
+  }
+}
