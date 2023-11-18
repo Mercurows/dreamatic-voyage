@@ -1,6 +1,8 @@
 package tech.lq0.providencraft.init;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -8,8 +10,10 @@ import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.item.legacy.LavaCake;
 import tech.lq0.providencraft.item.legacy.YagiStaffCard;
 import tech.lq0.providencraft.item.material.IdolCloth;
+import tech.lq0.providencraft.item.other.MusicDisc;
 import tech.lq0.providencraft.item.providenceOI.miya.TailPen;
 import tech.lq0.providencraft.item.providenceOI.shirako.*;
+import tech.lq0.providencraft.item.providenceOI.yuri.RabbitLychee;
 import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
 import tech.lq0.providencraft.item.providencefirst.madoka.CrimsonImpact;
 import tech.lq0.providencraft.item.providencefirst.madoka.PeachBeach;
@@ -32,6 +36,7 @@ import tech.lq0.providencraft.item.providencesecond.lucia.LuciaRiceCake;
 import tech.lq0.providencraft.item.providencesecond.lucia.MoonlightAmulet;
 import tech.lq0.providencraft.item.providencethird.yuki.FoxIceCream;
 import tech.lq0.providencraft.item.providencethird.yuki.FoxPudding;
+import tech.lq0.providencraft.tools.Livers;
 
 @SuppressWarnings("unused")
 public class ItemRegistry {
@@ -226,11 +231,11 @@ public class ItemRegistry {
 //    //shirayuki
 //    public static final RegistryObject<Item> FOX_FAIRY_FAN = ITEMS.register("fox_fairy_fan", FoxFairyFan::new);
 //    public static final RegistryObject<Item> BUTTERFLY_ANKLET = ITEMS.register("butterfly_anklet", ButterflyAnklet::new);
-//
-//    //yuri
-//    public static final RegistryObject<Item> RABBIT_LYCHEE = ITEMS.register("rabbit_lychee", RabbitLychee::new);
-//
-//    //fukami
+
+    //yuri
+    public static final RegistryObject<Item> RABBIT_LYCHEE = ITEMS.register("rabbit_lychee", RabbitLychee::new);
+
+    //fukami
 //    public static final RegistryObject<Item> FUKAMIZU_RING = ITEMS.register("fukamizu_ring", FukamizuRing::new);
 //    public static final RegistryObject<Item> ECHOED_DESTINY_RING = ITEMS.register("echoed_destiny_ring", EchoedDestinyRing::new);
 //    public static final RegistryObject<Item> OCEAN_DESTINY = ITEMS.register("ocean_destiny", OceanDestiny::new);
@@ -288,7 +293,9 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> PDC_POINT = ITEMS.register("pdc_point", PdcPoint::new);
 //    public static final RegistryObject<Item> PREMIUM_PDC_POINT = ITEMS.register("premium_pdc_point", PremiumPdcPoint::new);
 //    public static final RegistryObject<Item> CHAOS_CHECKER = ITEMS.register("chaos_checker", ChaosChecker::new);
-//
+
+    public static final DeferredRegister<Item> AUDIO_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
+
 //    public static final RegistryObject<Item> AUDIO_TAPE_HAINE_1 = ITEMS.register("audio_tape_haine_1", () -> new AudioTape(Livers.HAINE, SoundRegistry.HAINE_BROADCAST, (new Item.Properties()).group(ModGroup.tapegroup).maxStackSize(1)));
 //    public static final RegistryObject<Item> AUDIO_TAPE_HAINE_2 = ITEMS.register("audio_tape_haine_2", () -> new AudioTape(Livers.HAINE, SoundRegistry.HAINE_TAUNT, (new Item.Properties()).group(ModGroup.tapegroup).maxStackSize(1)));
 //    public static final RegistryObject<Item> AUDIO_TAPE_HAINE_3 = ITEMS.register("audio_tape_haine_3", () -> new AudioTape(Livers.HAINE, SoundRegistry.HAINE_HAIPLATE, (new Item.Properties()).group(ModGroup.tapegroup).maxStackSize(1)));
@@ -325,9 +332,9 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> AUDIO_TAPE_USA_1 = ITEMS.register("audio_tape_usa_1", () -> new AudioTape(Livers.USA, SoundRegistry.USA_DUODUO_ANGEL, (new Item.Properties().group(ModGroup.tapegroup).maxStackSize(1))));
 //    public static final RegistryObject<Item> AUDIO_TAPE_USA_2 = ITEMS.register("audio_tape_usa_2", () -> new AudioTape(Livers.USA, SoundRegistry.USA_BOOMERANG, (new Item.Properties().group(ModGroup.tapegroup).maxStackSize(1))));
 //    public static final RegistryObject<Item> AUDIO_TAPE_USA_3 = ITEMS.register("audio_tape_usa_3", () -> new AudioTape(Livers.USA, SoundRegistry.USA_GUNDAM, (new Item.Properties().group(ModGroup.tapegroup).maxStackSize(1))));
-//
+
 //    public static final RegistryObject<Item> MUSIC_DISC_DARAKUDATENSHI = ITEMS.register("music_disc_darakudatenshi", () -> new MusicDisc(Livers.USA, SoundRegistry.DARAKUDATENSHI, (new Item.Properties()).group(ModGroup.tapegroup).maxStackSize(1).rarity(Rarity.RARE), 1));
-//    public static final RegistryObject<Item> MUSIC_DISC_AROUND_THE_TRAVEL = ITEMS.register("music_disc_around_the_travel", () -> new MusicDisc(Livers.SHIRAKO, SoundRegistry.AROUND_THE_TRAVEL, (new Item.Properties()).group(ModGroup.tapegroup).maxStackSize(1).rarity(Rarity.EPIC), 2));
+    public static final RegistryObject<Item> MUSIC_DISC_AROUND_THE_TRAVEL = AUDIO_ITEMS.register("music_disc_around_the_travel", () -> new MusicDisc(Livers.SHIRAKO, SoundRegistry.AROUND_THE_TRAVEL, (new Item.Properties()).stacksTo(1).rarity(Rarity.EPIC), 2, 4420));
 //    public static final RegistryObject<Item> MUSIC_DISC_SONG_OF_QINGQIU = ITEMS.register("music_disc_song_of_qingqiu", () -> new MusicDisc(Livers.AOI, SoundRegistry.SONG_OF_QINGQIU, (new Item.Properties()).group(ModGroup.tapegroup).maxStackSize(1).rarity(Rarity.RARE), 3));
 //    public static final RegistryObject<Item> MUSIC_DISC_DREAMING_FAIRY = ITEMS.register("music_disc_dreaming_fairy", () -> new MusicDisc(Livers.UNIA, SoundRegistry.DREAMING_FAIRY, (new Item.Properties()).group(ModGroup.tapegroup).maxStackSize(1).rarity(Rarity.RARE), 4));
 //
@@ -449,4 +456,9 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> HARANO_BUTTON = ITEMS.register("harano_button",
 //            () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties().group(ModGroup.blockgroup)));
 //    public static final RegistryObject<Item> ELIBOARD = ITEMS.register("eliboard", EliboardBlockItem::new);
+
+    public static void register(IEventBus bus) {
+        ITEMS.register(bus);
+        AUDIO_ITEMS.register(bus);
+    }
 }

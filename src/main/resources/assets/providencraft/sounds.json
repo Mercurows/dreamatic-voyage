@@ -6,5 +6,14 @@
         "name": "providencraft:blood_crystal"
       }
     ]
+  },
+  "song/around_the_travel": {
+    "subtitle": "subtitle.providencraft.around_the_travel",
+    "sounds": [
+      {
+        "name": "providencraft:song/around_the_travel",
+        "stream": true
+      }
+    ]
   }
 }

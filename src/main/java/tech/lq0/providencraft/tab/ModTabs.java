@@ -25,4 +25,14 @@ public class ModTabs {
                 }
             }))
             .build();
+
+    public static CreativeModeTab PDC_TAPE_TAB = CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.Providencraft Audio Tapes"))
+            .icon(() -> new ItemStack(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL.get()))
+            .displayItems((param, output) -> ItemRegistry.AUDIO_ITEMS.getEntries().forEach((registryObject) -> {
+                if (!HIDDEN.contains(registryObject)) {
+                    output.accept(registryObject.get());
+                }
+            }))
+            .build();
 }

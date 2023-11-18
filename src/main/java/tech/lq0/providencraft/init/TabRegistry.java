@@ -11,4 +11,5 @@ public class TabRegistry {
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Utils.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> PDC_TAB = TABS.register("pdc_tab", () -> ModTabs.PDC_TAB);
+    public static final RegistryObject<CreativeModeTab> PDC_TAPE_TAB = TABS.register("pdc_tape_tab", () -> ModTabs.PDC_TAPE_TAB);
 }
