@@ -240,7 +240,7 @@ public class ItemRegistry {
     //fukami
 //    public static final RegistryObject<Item> FUKAMIZU_RING = ITEMS.register("fukamizu_ring", FukamizuRing::new);
 //    public static final RegistryObject<Item> ECHOED_DESTINY_RING = ITEMS.register("echoed_destiny_ring", EchoedDestinyRing::new);
-//    public static final RegistryObject<Item> OCEAN_DESTINY = ITEMS.register("ocean_destiny", OceanDestiny::new);
+    public static final RegistryObject<Item> OCEAN_DESTINY = ITEMS.register("ocean_destiny", OceanDestiny::new);
     public static final RegistryObject<Item> FRACTURE_DESTINY = ITEMS.register("fracture_destiny", FractureDestiny::new);
     public static final RegistryObject<Item> FUKAMIZU_FISH = ITEMS.register("fukamizu_fish", FukamizuFish::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD = ITEMS.register("fukamizu_bread", FukamizuBread::new);
