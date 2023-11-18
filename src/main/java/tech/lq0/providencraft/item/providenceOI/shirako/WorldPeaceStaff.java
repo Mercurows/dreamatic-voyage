@@ -4,6 +4,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -18,6 +19,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
@@ -26,7 +28,9 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.capability.IEscortCapability;
 import tech.lq0.providencraft.capability.ModCapabilities;
 import tech.lq0.providencraft.energy.EscortCapabilityProvider;
+import tech.lq0.providencraft.entity.projectile.BloodCrystalEntity;
 import tech.lq0.providencraft.init.EffectRegistry;
+import tech.lq0.providencraft.init.SoundRegistry;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.RarityTool;
 import tech.lq0.providencraft.tools.TooltipTool;
@@ -37,7 +41,7 @@ import java.util.function.Supplier;
 public class WorldPeaceStaff extends SwordItem {
     private final Supplier<Double> energyCapacity;
 
-    public WorldPeaceStaff(){
+    public WorldPeaceStaff() {
         super(Tiers.NETHERITE, 18, -2.0f, new Properties().durability(11451).fireResistant()
                 .rarity(RarityTool.LEGENDARY));
 
@@ -102,39 +106,36 @@ public class WorldPeaceStaff extends SwordItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
-        if(pUsedHand == InteractionHand.MAIN_HAND) {
+        if (pUsedHand == InteractionHand.MAIN_HAND) {
             pPlayer.startUsingItem(pUsedHand);
             return InteractionResultHolder.consume(stack);
-        }else {
+        } else {
             return InteractionResultHolder.fail(stack);
         }
     }
 
-//    @Override
-//    public void onUsingTick(ItemStack stack, LivingEntity player, int count) {
-//        if(count % 2 == 0){
-//            if(getAllDamage(stack) >= 5.0f) {
-//                if (player.isSneaking()) {
-//                    player.heal(3.0f);
-//                }else {
-//                    World world = player.world;
-//                    BloodCrystalEntity bloodCrystal = new BloodCrystalEntity(world, player);
-//                    Vector3d vector3d = player.getLookVec();
-//                    bloodCrystal.shoot(vector3d.x, vector3d.y, vector3d.z, 4.0f, 0.6f);
-//                    world.addEntity(bloodCrystal);
-//
-//                    if(player instanceof PlayerEntity) {
-//                        PlayerEntity playerEntity = (PlayerEntity) player;
-//                        world.playSound(playerEntity, playerEntity.getPosition(),
-//                                SoundRegistry.BLOOD_CRYSTAL.get(), SoundCategory.AMBIENT, 0.8f, 1.0f);
-//                    }
-//                }
-//
-//                setAllDamage(stack, Math.max(getAllDamage(stack) - 5.0f, 0.0f));
-//            }
-//        }
-//        super.onUsingTick(stack, player, count);
-//    }
+    @Override
+    public void onUseTick(Level pLevel, LivingEntity player, ItemStack pStack, int pRemainingUseDuration) {
+        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = pStack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
+        escortCapabilityLazyOptional.ifPresent(s -> {
+            if (pRemainingUseDuration % 2 == 0 && s.getEscortValue() >= 5.0) {
+                if (player.isSteppingCarefully()) {
+                    player.heal(3.0f);
+                } else {
+                    BloodCrystalEntity bloodCrystal = new BloodCrystalEntity(pLevel, player);
+                    Vec3 vec3 = player.getLookAngle();
+                    bloodCrystal.shoot(vec3.x, vec3.y, vec3.z, 4.0f, 0.6f);
+                    pLevel.addFreshEntity(bloodCrystal);
+
+                    if (player instanceof Player player1) {
+                        pLevel.playSound(player1, player1.getOnPos(), SoundRegistry.BLOOD_CRYSTAL.get(), SoundSource.AMBIENT, 0.8f, 1.0f);
+                    }
+                }
+
+                s.subValue(5.0);
+            }
+        });
+    }
 
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {

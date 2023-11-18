@@ -7,10 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-import tech.lq0.providencraft.init.EffectRegistry;
-import tech.lq0.providencraft.init.EntityRegistry;
-import tech.lq0.providencraft.init.ItemRegistry;
-import tech.lq0.providencraft.init.TabRegistry;
+import tech.lq0.providencraft.init.*;
 
 @Mod(Utils.MOD_ID)
 public class Utils {
@@ -28,6 +25,7 @@ public class Utils {
         TabRegistry.TABS.register(modEventBus);
         EffectRegistry.EFFECTS.register(modEventBus);
         EntityRegistry.ENTITY_TYPES.register(modEventBus);
+        SoundRegistry.SOUNDS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);

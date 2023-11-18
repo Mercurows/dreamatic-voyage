@@ -1,0 +1,10 @@
+{
+  "blood_crystal": {
+    "subtitle": "subtitle.providencraft.blood_crystal",
+    "sounds": [
+      {
+        "name": "providencraft:blood_crystal"
+      }
+    ]
+  }
+}
