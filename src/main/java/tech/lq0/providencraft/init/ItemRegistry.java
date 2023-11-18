@@ -12,6 +12,7 @@ import tech.lq0.providencraft.item.legacy.YagiStaffCard;
 import tech.lq0.providencraft.item.material.IdolCloth;
 import tech.lq0.providencraft.item.other.MusicDisc;
 import tech.lq0.providencraft.item.providenceOI.miya.TailPen;
+import tech.lq0.providencraft.item.providenceOI.roky.Xiaolongbao;
 import tech.lq0.providencraft.item.providenceOI.shirako.*;
 import tech.lq0.providencraft.item.providenceOI.yuri.RabbitLychee;
 import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
@@ -215,7 +216,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MOMO_SYRINGE = ITEMS.register("momo_syringe", MomoSyringe::new);
     public static final RegistryObject<Item> MOMO_BANDAGE = ITEMS.register("momo_bandage", MomoBandage::new);
 
-//    //sorayo
+    //sorayo
 //    public static final RegistryObject<Item> LUNATIC_BOW = ITEMS.register("lunatic_bow", LunaticBow::new);
 //    public static final RegistryObject<Item> MOON_CAKE = ITEMS.register("moon_cake", MoonCake::new);
 //    public static final RegistryObject<Item> LUNAR_ECLIPSE = ITEMS.register("lunar_eclipse", LunarEclipse::new);
@@ -223,8 +224,8 @@ public class ItemRegistry {
     //miya
     public static final RegistryObject<Item> TAIL_PEN = ITEMS.register("tail_pen", TailPen::new);
 //    public static final RegistryObject<Item> JELLYFISH_SHELL = ITEMS.register("jellyfish_shell", JellyfishShell::new);
-//
-//    //ayu
+
+    //ayu
 //    public static final RegistryObject<Item> GRAVITY_RESTRAINT_DEVICE = ITEMS.register("gravity_restraint_device", GravityRestraintDevice::new);
 //    public static final RegistryObject<Item> DELICATE_MIRAGE = ITEMS.register("delicate_mirage", DelicateMirage::new);
 //
@@ -243,18 +244,18 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> FUKAMIZU_FISH = ITEMS.register("fukamizu_fish", FukamizuFish::new);
 //    public static final RegistryObject<Item> FUKAMIZU_BREAD = ITEMS.register("fukamizu_bread", FukamizuBread::new);
 //    public static final RegistryObject<Item> GARLIC_MELON_SLICE = ITEMS.register("garlic_melon_slice", GarlicMelonSlice::new);
-//
-//    //lutafia
+
+    //lutafia
 //    public static final RegistryObject<Item> FIAXE = ITEMS.register("fiaxe", Fiaxe::new);
-//
-//    //yesa
+
+    //yesa
 //    public static final RegistryObject<Item> MINT_CHOCOLATE = ITEMS.register("mint_chocolate", MintChocolate::new);
 //    public static final RegistryObject<Item> YEGGY_PEARL = ITEMS.register("yeggy_pearl", YeggyPearl::new);
 //    public static final RegistryObject<Item> TAIL_FISHING_ROD = ITEMS.register("tail_fishing_rod", TailFishingRod::new);
-//
-//    //roky
-//    public static final RegistryObject<Item> XIAOLONGBAO = ITEMS.register("xiaolongbao", Xiaolongbao::new);
-//
+
+    //roky
+    public static final RegistryObject<Item> XIAOLONGBAO = ITEMS.register("xiaolongbao", Xiaolongbao::new);
+
 //    //rino
 //    public static final RegistryObject<Item> SHU_RINO_KEN = ITEMS.register("shu_rino_ken", ShuRinoKen::new);
 //    public static final RegistryObject<Item> CLARITY_AMULET = ITEMS.register("clarity_amulet", ClarityAmulet::new);
