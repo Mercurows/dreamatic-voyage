@@ -1,5 +1,6 @@
 package tech.lq0.providencraft.render.hud;
 
+import com.google.common.util.concurrent.AtomicDouble;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
@@ -36,8 +37,12 @@ public class WorldPeaceStaffRenderer {
 
             Minecraft.getInstance().getTextureManager().bindForSetup(HUD);
 
+            AtomicDouble atValue = new AtomicDouble(0);
+
             LazyOptional<IEscortCapability> escortCapabilityLazyOptional = item.getCapability(ModCapabilities.ESCORT_CAPABILITY);
             escortCapabilityLazyOptional.ifPresent(s -> {
+                atValue.set(s.getEscortValue());
+
                 double value = s.getEscortValue();
                 double rate = value / 500;
 
@@ -63,7 +68,7 @@ public class WorldPeaceStaffRenderer {
             gui.blit(HUD, left, top, 0, 0, 40, 88, 128, 128);
 
             // 兔
-            if (!player.isUsingItem()) {
+            if (!player.isUsingItem() || atValue.get() < 5) {
                 gui.blit(HUD, left + 5, top + 37, 12, 11, 52, 1, 12, 11, 128, 128);
             }
         }
