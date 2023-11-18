@@ -24,8 +24,8 @@ import tech.lq0.providencraft.init.EffectRegistry;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
+import java.text.NumberFormat;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 
 public class MomoKnife extends SwordItem {
@@ -42,14 +42,7 @@ public class MomoKnife extends SwordItem {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.momo_knife").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.providencraft.momo_knife.func").withStyle(ChatFormatting.AQUA));
-//        showDamage(pStack, pTooltipComponents, pLevel == null ? 0 : pLevel.getGameTime());
-
-        AtomicReference<Double> dam = new AtomicReference<>((double) 0);
-
-        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = pStack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
-        escortCapabilityLazyOptional.ifPresent(s -> dam.set(s.getEscortValue()));
-
-        pTooltipComponents.add(Component.literal("damage=" + dam.get()));
+        showDamage(pStack, pTooltipComponents);
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.SHIRAKO);
     }
@@ -92,23 +85,26 @@ public class MomoKnife extends SwordItem {
         return super.hurtEnemy(stack, target, attacker);
     }
 
-//    private void showDamage(ItemStack stack, List<ITextComponent> tooltip, long time) {
-//        float allDamage = getAllDamage(stack, time);
-//        NumberFormat numberFormat = NumberFormat.getNumberInstance();
-//        numberFormat.setMinimumFractionDigits(1);
-//        numberFormat.setMaximumFractionDigits(1);
-//        String damage = numberFormat.format(allDamage);
-//
-//        tooltip.add((new StringTextComponent("")));
-//        tooltip.add((new TranslationTextComponent("des.providencraft.momo_knife.damage")).mergeStyle(TextFormatting.WHITE));
-//        tooltip.add((new StringTextComponent(damage)).mergeStyle(TextFormatting.GREEN).mergeStyle(TextFormatting.BOLD));
-//    }
+    private void showDamage(ItemStack stack, List<Component> tooltip) {
+        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
+
+        NumberFormat numberFormat = NumberFormat.getNumberInstance();
+        numberFormat.setMinimumFractionDigits(1);
+        numberFormat.setMaximumFractionDigits(1);
+
+        escortCapabilityLazyOptional.ifPresent(s -> {
+            String damage = numberFormat.format(s.getEscortValue());
+            tooltip.add(Component.literal(""));
+            tooltip.add(Component.translatable("des.providencraft.momo_knife.damage").withStyle(ChatFormatting.WHITE)
+                    .append(Component.literal(damage).withStyle(ChatFormatting.RESET).withStyle(ChatFormatting.GREEN).withStyle(ChatFormatting.BOLD)));
+        });
+    }
 
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         LazyOptional<IEscortCapability> escortCapabilityLazyOptional = pStack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
 
-        escortCapabilityLazyOptional.ifPresent(s -> s.setValue(Math.max(0, s.getEscortValue() - 0.1)));
+        escortCapabilityLazyOptional.ifPresent(s -> s.subValue(0.1));
     }
 
     @Override

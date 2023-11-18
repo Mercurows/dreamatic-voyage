@@ -11,15 +11,15 @@ public class EscortCapability implements IEscortCapability, INBTSerializable<Tag
     protected double subLimit;
 
     public EscortCapability(double capacity) {
-        this(capacity, capacity, capacity, 0);
+        this(capacity, 0, capacity, capacity);
     }
 
     public EscortCapability(double capacity, double limit) {
-        this(capacity, limit, limit, 0);
+        this(capacity, 0, limit, limit);
     }
 
     public EscortCapability(double capacity, double addLimit, double subLimit) {
-        this(capacity, addLimit, subLimit, 0);
+        this(capacity, 0, addLimit, subLimit);
     }
 
     public EscortCapability(double capacity, double value, double addLimit, double subLimit) {
