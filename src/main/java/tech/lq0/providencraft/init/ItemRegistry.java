@@ -11,6 +11,7 @@ import tech.lq0.providencraft.item.legacy.LavaCake;
 import tech.lq0.providencraft.item.legacy.YagiStaffCard;
 import tech.lq0.providencraft.item.material.IdolCloth;
 import tech.lq0.providencraft.item.other.MusicDisc;
+import tech.lq0.providencraft.item.providenceOI.fukami.*;
 import tech.lq0.providencraft.item.providenceOI.miya.TailPen;
 import tech.lq0.providencraft.item.providenceOI.roky.Xiaolongbao;
 import tech.lq0.providencraft.item.providenceOI.shirako.*;
@@ -241,8 +242,8 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> ECHOED_DESTINY_RING = ITEMS.register("echoed_destiny_ring", EchoedDestinyRing::new);
 //    public static final RegistryObject<Item> OCEAN_DESTINY = ITEMS.register("ocean_destiny", OceanDestiny::new);
 //    public static final RegistryObject<Item> FRACTURE_DESTINY = ITEMS.register("fracture_destiny", FractureDestiny::new);
-//    public static final RegistryObject<Item> FUKAMIZU_FISH = ITEMS.register("fukamizu_fish", FukamizuFish::new);
-//    public static final RegistryObject<Item> FUKAMIZU_BREAD = ITEMS.register("fukamizu_bread", FukamizuBread::new);
+    public static final RegistryObject<Item> FUKAMIZU_FISH = ITEMS.register("fukamizu_fish", FukamizuFish::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD = ITEMS.register("fukamizu_bread", FukamizuBread::new);
 //    public static final RegistryObject<Item> GARLIC_MELON_SLICE = ITEMS.register("garlic_melon_slice", GarlicMelonSlice::new);
 
     //lutafia
