@@ -6,7 +6,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -21,15 +20,18 @@ import tech.lq0.providencraft.capability.IEscortCapability;
 import tech.lq0.providencraft.capability.ModCapabilities;
 import tech.lq0.providencraft.energy.EscortCapabilityProvider;
 import tech.lq0.providencraft.init.EffectRegistry;
+import tech.lq0.providencraft.tools.ItemNBTTool;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
 import java.text.NumberFormat;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 
 public class MomoKnife extends SwordItem {
     private final Supplier<Double> energyCapacity;
+    public static final String TAG_TIME = "time";
 
     public MomoKnife() {
         super(Tiers.NETHERITE, 1, -1.0f, new Properties().durability(1231).rarity(Rarity.EPIC));
@@ -42,7 +44,7 @@ public class MomoKnife extends SwordItem {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.momo_knife").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.providencraft.momo_knife.func").withStyle(ChatFormatting.AQUA));
-        showDamage(pStack, pTooltipComponents);
+        showDamage(pStack, pTooltipComponents, pLevel == null ? 0 : pLevel.getGameTime());
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.SHIRAKO);
     }
@@ -53,8 +55,9 @@ public class MomoKnife extends SwordItem {
         LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
 
         escortCapabilityLazyOptional.ifPresent(s -> {
-            pPlayer.heal((float) (s.getEscortValue() * 0.5));
+            pPlayer.heal(getAllDamage(stack, pLevel.getGameTime()));
             s.setValue(0);
+            ItemNBTTool.setLong(stack, TAG_TIME, pPlayer.level().getGameTime());
         });
 
         return InteractionResultHolder.success(stack);
@@ -74,6 +77,7 @@ public class MomoKnife extends SwordItem {
         LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
 
         escortCapabilityLazyOptional.ifPresent(s -> s.addValue(random));
+        ItemNBTTool.setLong(stack, TAG_TIME, attacker.level().getGameTime());
 
         int lvl = -1;
         if (target.hasEffect(EffectRegistry.BLEEDING.get())) {
@@ -85,26 +89,31 @@ public class MomoKnife extends SwordItem {
         return super.hurtEnemy(stack, target, attacker);
     }
 
-    private void showDamage(ItemStack stack, List<Component> tooltip) {
-        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
-
+    private void showDamage(ItemStack stack, List<Component> tooltip, long time) {
         NumberFormat numberFormat = NumberFormat.getNumberInstance();
         numberFormat.setMinimumFractionDigits(1);
         numberFormat.setMaximumFractionDigits(1);
 
-        escortCapabilityLazyOptional.ifPresent(s -> {
-            String damage = numberFormat.format(s.getEscortValue());
-            tooltip.add(Component.literal(""));
-            tooltip.add(Component.translatable("des.providencraft.momo_knife.damage").withStyle(ChatFormatting.WHITE)
-                    .append(Component.literal(damage).withStyle(ChatFormatting.RESET).withStyle(ChatFormatting.GREEN).withStyle(ChatFormatting.BOLD)));
-        });
+        String damage = numberFormat.format(getAllDamage(stack, time));
+        tooltip.add(Component.literal(""));
+        tooltip.add(Component.translatable("des.providencraft.momo_knife.damage").withStyle(ChatFormatting.WHITE)
+                .append(Component.literal(damage).withStyle(ChatFormatting.RESET).withStyle(ChatFormatting.GREEN).withStyle(ChatFormatting.BOLD)));
     }
 
-    @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = pStack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
+    private static float getAllDamage(ItemStack stack, long time) {
+        long lastDamageTime = ItemNBTTool.getLong(stack, TAG_TIME, 9223372036854775807L);
+        AtomicReference<Float> damage = new AtomicReference<>((float) 0);
 
-        escortCapabilityLazyOptional.ifPresent(s -> s.subValue(0.1));
+        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
+
+        escortCapabilityLazyOptional.ifPresent(s -> {
+            damage.set((float) (s.getEscortValue() - (time - lastDamageTime) * 0.1f));
+            if (damage.get() < 0 || time <= lastDamageTime) {
+                damage.set(0f);
+            }
+        });
+
+        return damage.get();
     }
 
     @Override
