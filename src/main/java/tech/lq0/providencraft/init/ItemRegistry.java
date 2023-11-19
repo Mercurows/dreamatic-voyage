@@ -21,6 +21,8 @@ import tech.lq0.providencraft.item.providencefirst.madoka.CrimsonImpact;
 import tech.lq0.providencraft.item.providencefirst.madoka.PeachBeach;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhoge;
 import tech.lq0.providencraft.item.providencefirst.madoka.RedAhogeSword;
+import tech.lq0.providencraft.item.providencefirst.myanna.DarkElfCore;
+import tech.lq0.providencraft.item.providencefirst.myanna.Drill;
 import tech.lq0.providencraft.item.providencefirst.myanna.MountainDestroyer;
 import tech.lq0.providencraft.item.providencefirst.unia.EnchantedUnigiri;
 import tech.lq0.providencraft.item.providencefirst.unia.TaroIceCream;
@@ -57,7 +59,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> RED_AHOGE_MACHETE = ITEMS.register("red_ahoge_machete", RedAhogeMachete::new);
 //    public static final RegistryObject<Item> SNEAKERS = ITEMS.register("sneakers", Sneakers::new);
     public static final RegistryObject<Item> CRIMSON_IMPACT = ITEMS.register("crimson_impact", CrimsonImpact::new);
-//
+
 //    //ayelet
 //    public static final RegistryObject<Item> CRYSTAL_HORN = ITEMS.register("crystal_horn", CrystalHorn::new);
 //    public static final RegistryObject<Item> SLEEP_ROULETTE = ITEMS.register("sleep_roulette", SleepRoulette::new);
@@ -83,8 +85,8 @@ public class ItemRegistry {
 
     //myanna
     public static final RegistryObject<Item> MOUNTAIN_DESTROYER = ITEMS.register("mountain_destroyer", MountainDestroyer::new);
-//    public static final RegistryObject<Item> DARK_ELF_CORE = ITEMS.register("dark_elf_core", DarkElfCore::new);
-//    public static final RegistryObject<Item> DRILL = ITEMS.register("drill", Drill::new);
+    public static final RegistryObject<Item> DARK_ELF_CORE = ITEMS.register("dark_elf_core", DarkElfCore::new);
+    public static final RegistryObject<Item> DRILL = ITEMS.register("drill", Drill::new);
 //    public static final RegistryObject<Item> SCHEDULE = ITEMS.register("schedule", Schedule::new);
 //    public static final RegistryObject<Item> DARK_ELF_GLASSES = ITEMS.register("dark_elf_glasses", DarkElfGlasses::new);
 

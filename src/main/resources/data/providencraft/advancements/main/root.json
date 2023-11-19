@@ -20,7 +20,9 @@
       "conditions": {
         "items":[
           {
-            "item":"providencraft:red_ahoge"
+            "items":[
+              "providencraft:red_ahoge"
+            ]
           }
         ]
       }
