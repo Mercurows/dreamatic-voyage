@@ -22,6 +22,7 @@ public class Utils {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ItemRegistry.register(modEventBus);
+        BlockRegistry.BLOCKS.register(modEventBus);
         TabRegistry.TABS.register(modEventBus);
         EffectRegistry.EFFECTS.register(modEventBus);
         EntityRegistry.ENTITY_TYPES.register(modEventBus);
