@@ -22,11 +22,13 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class OceanDestiny extends Item implements ICurioItem {
     public OceanDestiny(){
@@ -67,5 +69,14 @@ public class OceanDestiny extends Item implements ICurioItem {
         entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 40, 0, false, false));
 
         ICurioItem.super.curioTick(slotContext, stack);
+    }
+
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        LivingEntity livingEntity = slotContext.entity();
+        AtomicBoolean flag = new AtomicBoolean(true);
+        CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(this).ifPresent(s -> flag.set(false)));
+
+        return flag.get();
     }
 }
