@@ -12,6 +12,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import tech.lq0.providencraft.Utils;
 
+import javax.annotation.Nullable;
+
 @SuppressWarnings("OptionalGetWithoutIsPresent")
 public class DamageSourceRegistry {
     public static final ResourceKey<DamageType> LAVA_CAKE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "lava_cake"));
@@ -27,37 +29,41 @@ public class DamageSourceRegistry {
 //    public static final ResourceKey<DamageType> BROWNIE_UZZA
     public static final ResourceKey<DamageType> CHOCOAL_COOKIE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "chocoal_cookie"));
 
-    public static DamageSource causeLavaCakeDamage(RegistryAccess registryAccess) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LAVA_CAKE));
+    public static DamageSource causeLavaCakeDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LAVA_CAKE), entity);
     }
 
-    public static DamageSource causeLotusPotatoDamage(RegistryAccess registryAccess) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LOTUS_POTATO));
+    public static DamageSource causeLotusPotatoDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LOTUS_POTATO), entity);
     }
 
-    public static DamageSource causeSorayoDamage(RegistryAccess registryAccess) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(SORAYO));
+    public static DamageSource causeSorayoDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(SORAYO), entity);
     }
 
-    public static DamageSource causeBleedingDamage(RegistryAccess registryAccess) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(BLEEDING));
+    public static DamageSource causeBleedingDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(BLEEDING), entity);
     }
 
-    public static DamageSource causeBloodCrystalDamage(RegistryAccess registryAccess) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(BLOOD_CRYSTAL));
+    public static DamageSource causeBloodCrystalDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(BLOOD_CRYSTAL), entity);
     }
 
-    public static DamageSource causeFukamizuBreadDamage(RegistryAccess registryAccess) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(FUKAMIZU_BREAD));
+    public static DamageSource causeFukamizuBreadDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(FUKAMIZU_BREAD), entity);
     }
 
-    public static DamageSource causeChocoalCookieDamage(RegistryAccess registryAccess) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(CHOCOAL_COOKIE));
+    public static DamageSource causeChocoalCookieDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(CHOCOAL_COOKIE), entity);
     }
 
     private static class DamageMessages extends DamageSource {
         public DamageMessages(Holder.Reference<DamageType> typeReference) {
             super(typeReference);
+        }
+
+        public DamageMessages(Holder.Reference<DamageType> typeReference, Entity entity) {
+            super(typeReference, entity);
         }
 
         @Override

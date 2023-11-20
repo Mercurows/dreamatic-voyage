@@ -33,7 +33,7 @@ public class LotusPotato extends Item {
             } else {
                 float damage = 2 * player.getHealth() - player.getMaxHealth() - 1;
                 if (damage > 0) {
-                    player.hurt(DamageSourceRegistry.causeLotusPotatoDamage(pLevel.registryAccess()), damage);
+                    player.hurt(DamageSourceRegistry.causeLotusPotatoDamage(pLevel.registryAccess(), null), damage);
                 }
             }
         }

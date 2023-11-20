@@ -41,7 +41,7 @@ public class ChocoalCookie extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if (pLivingEntity instanceof Player player && !pLevel.isClientSide) {
-            player.hurt(DamageSourceRegistry.causeChocoalCookieDamage(pLevel.registryAccess()), 2.0f);
+            player.hurt(DamageSourceRegistry.causeChocoalCookieDamage(pLevel.registryAccess(), null), 2.0f);
         }
 
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);

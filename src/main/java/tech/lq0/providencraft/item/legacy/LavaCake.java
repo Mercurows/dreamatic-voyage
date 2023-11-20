@@ -29,7 +29,7 @@ public class LavaCake extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if (pLivingEntity instanceof Player player && !pLevel.isClientSide) {
-            player.hurt(DamageSourceRegistry.causeLavaCakeDamage(pLevel.registryAccess()), 20.0f);
+            player.hurt(DamageSourceRegistry.causeLavaCakeDamage(pLevel.registryAccess(), null), 20.0f);
         }
 
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);

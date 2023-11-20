@@ -22,7 +22,7 @@ public class Bleeding extends MobEffect {
         if(EntityType.getKey(pLivingEntity.getType()).equals(new ResourceLocation("twilightforest:snow_queen"))){
             return;
         }
-        pLivingEntity.hurt(DamageSourceRegistry.causeBleedingDamage(pLivingEntity.level().registryAccess()), 0.5f);
+        pLivingEntity.hurt(DamageSourceRegistry.causeBleedingDamage(pLivingEntity.level().registryAccess(), null), 0.5f);
         pLivingEntity.invulnerableTime = 0;
     }
 
@@ -51,7 +51,7 @@ public class Bleeding extends MobEffect {
                 int level = entity.getEffect(EffectRegistry.BLEEDING.get()).getAmplifier();
 
                 float damage = 1.0f + level * (level + 1.0f) / 2.0f;
-                entity.hurt(DamageSourceRegistry.causeBleedingDamage(entity.level().registryAccess()), damage);
+                entity.hurt(DamageSourceRegistry.causeBleedingDamage(entity.level().registryAccess(), event.getSource().getDirectEntity()), damage);
             }
         }
     }

@@ -69,7 +69,7 @@ public class LunaticBow extends Item implements ICurioItem {
 
         CuriosApi.getCuriosInventory(player).ifPresent(
                 c -> c.findFirstCurio(ItemRegistry.LUNATIC_BOW.get()).ifPresent(
-                        slotResult -> player.hurt(DamageSourceRegistry.causeSorayoDamage(player.level().registryAccess()), 2.0f)
+                        slotResult -> player.hurt(DamageSourceRegistry.causeSorayoDamage(player.level().registryAccess(), null), 2.0f)
                 )
         );
     }

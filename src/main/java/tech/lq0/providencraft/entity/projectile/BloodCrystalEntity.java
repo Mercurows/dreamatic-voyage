@@ -38,15 +38,15 @@ public class BloodCrystalEntity extends ThrowableItemProjectile {
                     } else if (player.getTeam() == null && shooter.getTeam() == null) {
                         player.heal(4.0f);
                     } else {
-                        player.hurt(DamageSourceRegistry.causeBloodCrystalDamage(this.level().registryAccess()), 4.0f);
+                        player.hurt(DamageSourceRegistry.causeBloodCrystalDamage(this.level().registryAccess(), this.getOwner()), 4.0f);
                         player.invulnerableTime = 0;
                     }
                 } else {
-                    player.hurt(DamageSourceRegistry.causeBloodCrystalDamage(this.level().registryAccess()), 4.0f);
+                    player.hurt(DamageSourceRegistry.causeBloodCrystalDamage(this.level().registryAccess(), this.getOwner()), 4.0f);
                     player.invulnerableTime = 0;
                 }
             } else {
-                entity.hurt(DamageSourceRegistry.causeBloodCrystalDamage(this.level().registryAccess()), 4.0f);
+                entity.hurt(DamageSourceRegistry.causeBloodCrystalDamage(this.level().registryAccess(), this.getOwner()), 4.0f);
                 entity.invulnerableTime = 0;
             }
         }

@@ -34,7 +34,7 @@ public class FukamizuBread extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if (!pLevel.isClientSide) {
-            pLivingEntity.hurt(DamageSourceRegistry.causeFukamizuBreadDamage(pLevel.registryAccess()), 5.0f);
+            pLivingEntity.hurt(DamageSourceRegistry.causeFukamizuBreadDamage(pLevel.registryAccess(), null), 5.0f);
         }
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);
     }
