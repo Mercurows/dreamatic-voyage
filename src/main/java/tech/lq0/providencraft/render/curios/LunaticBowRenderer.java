@@ -35,11 +35,13 @@ public class LunaticBowRenderer implements ICurioRenderer {
         this.model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 
         ICurioRenderer.translateIfSneaking(matrixStack, entity);
-        ICurioRenderer.rotateIfSneaking(matrixStack, entity);
-        ICurioRenderer.followBodyRotations(entity, this.model);
+        ICurioRenderer.followHeadRotations(entity, this.model.main);
+
+        matrixStack.scale(0.7f, 0.7f, 0.7f);
+        matrixStack.translate(0.12f, -0.1f, 0.0f);
 
         VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(renderTypeBuffer, RenderType.armorCutoutNoCull(TEXTURE), false, stack.hasFoil());
-        matrixStack.scale(0.7F, 0.7F, 0.7F);
+
         model.renderToBuffer(matrixStack, vertexconsumer, light, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 
         matrixStack.popPose();
