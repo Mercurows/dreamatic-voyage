@@ -14,7 +14,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.entity.projectile.BloodCrystalEntity;
-import tech.lq0.providencraft.models.BloodCrystalModel;
+import tech.lq0.providencraft.models.entity.BloodCrystalModel;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;

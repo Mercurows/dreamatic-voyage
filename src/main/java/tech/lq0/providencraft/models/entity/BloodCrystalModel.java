@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.models;// Made with Blockbench 4.8.3
+package tech.lq0.providencraft.models.entity;// Made with Blockbench 4.8.3
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
