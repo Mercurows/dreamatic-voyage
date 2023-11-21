@@ -38,7 +38,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class LunaticBow extends Item implements ICurioItem {
     public LunaticBow() {
-        super(new Properties().rarity(Rarity.UNCOMMON));
+        super(new Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
     }
 
     @OnlyIn(Dist.CLIENT)

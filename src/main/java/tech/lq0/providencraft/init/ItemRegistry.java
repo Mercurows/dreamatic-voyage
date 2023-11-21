@@ -36,10 +36,7 @@ import tech.lq0.providencraft.item.providencefourth.choco.ChocoalCookie;
 import tech.lq0.providencraft.item.providencefourth.choco.StrawberryCake;
 import tech.lq0.providencraft.item.providencefourth.hifumi.NetherLight;
 import tech.lq0.providencraft.item.providencefourth.sana.Shakana;
-import tech.lq0.providencraft.item.providencemagicros.chiram.Bolster;
-import tech.lq0.providencraft.item.providencemagicros.chiram.FlatVegetableChestplate;
-import tech.lq0.providencraft.item.providencemagicros.chiram.LotusPotato;
-import tech.lq0.providencraft.item.providencemagicros.chiram.SteelPlate;
+import tech.lq0.providencraft.item.providencemagicros.chiram.*;
 import tech.lq0.providencraft.item.providencemagicros.haine.CloudKey;
 import tech.lq0.providencraft.item.providencesecond.louise.WhiteAhoge;
 import tech.lq0.providencraft.item.providencesecond.louise.WhiteDoubleAhoge;
@@ -167,7 +164,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> EYE_MASK = ITEMS.register("eye_mask", EyeMask::new);
 //    public static final RegistryObject<Item> BREEZE_CROWN = ITEMS.register("breeze_crown", BreezeCrown::new);
 //    public static final RegistryObject<Item> CHIRAM_CORE = ITEMS.register("chiram_core", ChiramCore::new);
-//    public static final RegistryObject<Item> QINGLAN_UMBRELLA = ITEMS.register("qinglan_umbrella", QinglanUmbrella::new);
+    public static final RegistryObject<Item> QINGLAN_UMBRELLA = ITEMS.register("qinglan_umbrella", QinglanUmbrella::new);
 //    public static final RegistryObject<Item> MAGIC_TEAPOT = ITEMS.register("magic_teapot", MagicTeapot::new);
 
     //haine
