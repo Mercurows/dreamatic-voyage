@@ -55,9 +55,9 @@ public class LunaticBow extends Item implements ICurioItem {
         Multimap<Attribute, AttributeModifier> map = ICurioItem.super.getAttributeModifiers(slotContext, uuid, stack);
 
         map = HashMultimap.create(map);
-        map.put(Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.35f, AttributeModifier.Operation.MULTIPLY_BASE));
         map.put(Attributes.ATTACK_SPEED,
+                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.35f, AttributeModifier.Operation.MULTIPLY_BASE));
+        map.put(Attributes.ATTACK_DAMAGE,
                 new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.7f, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return map;
