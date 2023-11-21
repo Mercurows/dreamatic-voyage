@@ -414,10 +414,10 @@ public class ItemRegistry {
      */
     public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
 
-//    public static final RegistryObject<Item> RED_AHOGE_BLOCK = BLOCK_ITEMS.register("red_ahoge_block",
-//            () -> new BlockItem(BlockRegistry.RED_AHOGE_BLOCK.get(), new Item.Properties().group(ModGroup.blockgroup)));
-//    public static final RegistryObject<Item> WHITE_AHOGE_BLOCK = BLOCK_ITEMS.register("white_ahoge_block",
-//            () -> new BlockItem(BlockRegistry.WHITE_AHOGE_BLOCK.get(), new Item.Properties().group(ModGroup.blockgroup)));
+    public static final RegistryObject<Item> RED_AHOGE_BLOCK = BLOCK_ITEMS.register("red_ahoge_block",
+            () -> new BlockItem(BlockRegistry.RED_AHOGE_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WHITE_AHOGE_BLOCK = BLOCK_ITEMS.register("white_ahoge_block",
+            () -> new BlockItem(BlockRegistry.WHITE_AHOGE_BLOCK.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> COMMUNICATION_TABLE = BLOCK_ITEMS.register("communication_table",
 //            () -> new BlockItem(BlockRegistry.COMMUNICATION_TABLE.get(), new Item.Properties().group(ModGroup.blockgroup)));
 //    public static final RegistryObject<Item> PORCELAIN_THRONE = BLOCK_ITEMS.register("porcelain_throne", PorcelainThroneBlockItem::new);
