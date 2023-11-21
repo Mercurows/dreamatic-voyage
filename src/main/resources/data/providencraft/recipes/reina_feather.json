@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " xa",
+    "xsx",
+    "gx "
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:pink_dye"
+    },
+    "a": {
+      "item": "minecraft:feather"
+    },
+    "g": {
+      "item": "minecraft:iron_ingot"
+    },
+    "s": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "result": {
+    "item": "providencraft:reina_feather",
+    "count": 1
+  }
+}

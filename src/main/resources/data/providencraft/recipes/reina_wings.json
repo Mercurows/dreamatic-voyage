@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bab",
+    "psp",
+    "p p"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:gold_ingot"
+    },
+    "b": {
+      "item": "minecraft:iron_ingot"
+    },
+    "p": {
+      "item": "providencraft:reina_feather"
+    },
+    "s": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "result": {
+    "item": "providencraft:reina_wings",
+    "count": 1
+  }
+}
