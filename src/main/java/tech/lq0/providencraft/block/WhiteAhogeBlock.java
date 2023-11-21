@@ -14,7 +14,7 @@ import java.util.List;
 
 public class WhiteAhogeBlock extends Block {
     public WhiteAhogeBlock() {
-        super(Properties.of().strength(3));
+        super(Properties.of().strength(3).requiresCorrectToolForDrops());
     }
 
     @OnlyIn(Dist.CLIENT)

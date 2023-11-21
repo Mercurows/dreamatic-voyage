@@ -32,7 +32,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class OceanDestiny extends Item implements ICurioItem {
     public OceanDestiny(){
-        super(new Properties().rarity(Rarity.EPIC));
+        super(new Properties().rarity(Rarity.EPIC).stacksTo(1));
     }
 
     @OnlyIn(Dist.CLIENT)

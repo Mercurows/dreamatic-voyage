@@ -422,8 +422,8 @@ public class ItemRegistry {
 //            () -> new BlockItem(BlockRegistry.COMMUNICATION_TABLE.get(), new Item.Properties().group(ModGroup.blockgroup)));
 //    public static final RegistryObject<Item> PORCELAIN_THRONE = BLOCK_ITEMS.register("porcelain_throne", PorcelainThroneBlockItem::new);
 //    public static final RegistryObject<Item> POINTS_STORE = BLOCK_ITEMS.register("points_store", PointsStoreBlockItem::new);
-//    public static final RegistryObject<Item> FUKAMIZU_BREAD_BLOCK = BLOCK_ITEMS.register("fukamizu_bread_block",
-//            () -> new BlockItem(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), new Item.Properties().group(ModGroup.blockgroup)));
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_BLOCK = BLOCK_ITEMS.register("fukamizu_bread_block",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> BLUE_SAND = BLOCK_ITEMS.register("blue_sand",
             () -> new BlockItem(BlockRegistry.BLUE_SAND.get(), new Item.Properties()));
