@@ -50,6 +50,10 @@ public class BloodCrystalEntity extends ThrowableItemProjectile {
                 entity.invulnerableTime = 0;
             }
         }
+
+        if (!this.level().isClientSide) {
+            this.discard();
+        }
     }
 
     @Override
