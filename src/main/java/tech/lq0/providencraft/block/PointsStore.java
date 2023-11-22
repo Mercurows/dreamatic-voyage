@@ -39,13 +39,16 @@ public class PointsStore extends Block implements EntityBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide && pHand == InteractionHand.MAIN_HAND) {
+        if (pLevel.isClientSide) {
+            return InteractionResult.SUCCESS;
+        }
+        if (pHand == InteractionHand.MAIN_HAND) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
             if (blockEntity instanceof PointsStoreBlockEntity pointsStoreTileEntity) {
                 pointsStoreTileEntity.openGui(pPlayer);
             }
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.CONSUME;
     }
 
     @Nullable

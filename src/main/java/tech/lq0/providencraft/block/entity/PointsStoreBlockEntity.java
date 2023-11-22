@@ -14,6 +14,8 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.client.gui.PointsStoreMenu;
 import tech.lq0.providencraft.init.BlockEntityRegistry;
@@ -55,6 +57,7 @@ public class PointsStoreBlockEntity extends BlockEntity implements Merchant {
         return this.level;
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void overrideOffers(MerchantOffers pOffers) {
         this.merchantOffers = pOffers;
@@ -68,8 +71,6 @@ public class PointsStoreBlockEntity extends BlockEntity implements Merchant {
 
     @Override
     public void openTradingScreen(Player player, Component pDisplayName, int pLevel) {
-        Merchant.super.openTradingScreen(player, pDisplayName, pLevel);
-
         OptionalInt optionalint = player.openMenu(new SimpleMenuProvider((id, playerInventory, player2)
                 -> new PointsStoreMenu(id, playerInventory, this), pDisplayName));
         if (optionalint.isPresent()) {
@@ -110,11 +111,10 @@ public class PointsStoreBlockEntity extends BlockEntity implements Merchant {
 
     @Override
     public boolean isClientSide() {
-        if (this.level != null) {
-            return this.level.isClientSide;
-        } else {
-            return false;
+        if (level != null) {
+            return level.isClientSide;
         }
+        return false;
     }
 
     private void addOffers() {
