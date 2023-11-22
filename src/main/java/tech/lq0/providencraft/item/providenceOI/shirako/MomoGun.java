@@ -15,6 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.entity.projectile.DaifukuSyrupEntity;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
@@ -44,11 +45,11 @@ public class MomoGun extends Item {
 
                 DaifukuSyrup syrup = (DaifukuSyrup) (ammo.getItem() instanceof DaifukuSyrup ? ammo.getItem() : ItemRegistry.DAIFUKU_SYRUP.get());
 
-//                DaifukuSyrupEntity syrupEntity = syrup.createArrow(worldIn, ammo, playerIn);
-//                syrupEntity.func_234612_a_(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 4.0F, 0.2F);
+                DaifukuSyrupEntity syrupEntity = syrup.createArrow(pLevel, playerIn);
+                syrupEntity.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot(), 0.0F, 4.0F, 0.2F);
 
                 itemstack.hurtAndBreak(1, playerIn, (playerEntity) -> playerEntity.broadcastBreakEvent(pUsedHand));
-//                pLevel.addFreshEntity(syrupEntity);
+                pLevel.addFreshEntity(syrupEntity);
 
                 if (!flag1 && !playerIn.isCreative()) {
                     ammo.shrink(1);

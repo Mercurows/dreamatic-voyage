@@ -19,6 +19,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.entity.projectile.DaifukuSyrupEntity;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
@@ -60,9 +61,9 @@ public class DaifukuSyrup extends Item {
         TooltipTool.addLiverInfo(tooltip, Livers.SHIRAKO);
     }
 
-//    public DaifukuSyrupEntity createArrow(World p_200887_1_, ItemStack p_200887_2_, LivingEntity p_200887_3_) {
-//        return new DaifukuSyrupEntity(p_200887_1_, p_200887_3_);
-//    }
+    public DaifukuSyrupEntity createArrow(Level level, LivingEntity livingEntity) {
+        return new DaifukuSyrupEntity(level, livingEntity);
+    }
 
     public boolean isInfinite(ItemStack bow) {
         int enchant = EnchantmentHelper.getTagEnchantmentLevel(Enchantments.INFINITY_ARROWS, bow);
