@@ -18,6 +18,7 @@ public class ClientRenderHandler {
     public static void onClientSetUpEvent(FMLClientSetupEvent event) {
         EntityRenderers.register(EntityRegistry.BLOOD_CRYSTAL_ENTITY.get(), BloodCrystalEntityRenderer::new);
         EntityRenderers.register(EntityRegistry.DAIFUKU_SYRUP_ENTITY.get(), DaifukuSyrupEntityRenderer::new);
+        EntityRenderers.register(EntityRegistry.CURSED_CAT_DOLL_ENTITY.get(), CursedCatDollEntityRenderer::new);
 
         CuriosRendererRegistry.register(ItemRegistry.LUNATIC_BOW.get(), LunaticBowRenderer::new);
     }
