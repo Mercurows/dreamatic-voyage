@@ -74,7 +74,7 @@ public class PointsStore extends Block implements EntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        if (!pLevel.isClientSide) {
+        if (pLevel.isClientSide) {
             return createTickerHelper(pBlockEntityType, BlockEntityRegistry.POINTS_STORE_BLOCK_ENTITY.get(), PointsStoreBlockEntity::tick);
         }
         return null;

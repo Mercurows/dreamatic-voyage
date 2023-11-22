@@ -34,7 +34,7 @@ public class PointsStoreBlockEntity extends BlockEntity implements Merchant {
     Player customer = null;
     MerchantOffers merchantOffers = null;
 
-    public int ticks = 0;
+    public int ticks;
 
     public PointsStoreBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.POINTS_STORE_BLOCK_ENTITY.get(), pPos, pBlockState);

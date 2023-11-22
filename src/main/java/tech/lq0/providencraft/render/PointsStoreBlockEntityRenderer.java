@@ -32,7 +32,7 @@ public class PointsStoreBlockEntityRenderer implements BlockEntityRenderer<Point
         pPoseStack.scale(0.4f, 0.4f, 0.4f);
         pPoseStack.mulPose(Axis.XP.rotationDegrees(180.0f));
 
-//        pPoseStack.mulPose(Axis.YP.rotationDegrees((pBlockEntity.ticks + pPartialTick) * 5));
+        pPoseStack.mulPose(Axis.YP.rotationDegrees((pBlockEntity.ticks + pPartialTick) * 5));
         VertexConsumer vertexconsumer = TEXTURE.buffer(pBuffer, RenderType::entitySolid);
         this.model.renderToBuffer(pPoseStack, vertexconsumer, pPackedLight, pPackedOverlay, 255.0F, 255.0F, 255.0F, 1.0F);
         pPoseStack.popPose();
