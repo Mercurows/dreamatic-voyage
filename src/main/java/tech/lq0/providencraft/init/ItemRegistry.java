@@ -420,8 +420,8 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.RED_AHOGE_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> WHITE_AHOGE_BLOCK = BLOCK_ITEMS.register("white_ahoge_block",
             () -> new BlockItem(BlockRegistry.WHITE_AHOGE_BLOCK.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> COMMUNICATION_TABLE = BLOCK_ITEMS.register("communication_table",
-//            () -> new BlockItem(BlockRegistry.COMMUNICATION_TABLE.get(), new Item.Properties().group(ModGroup.blockgroup)));
+    public static final RegistryObject<Item> COMMUNICATION_TABLE = BLOCK_ITEMS.register("communication_table",
+            () -> new BlockItem(BlockRegistry.COMMUNICATION_TABLE.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> PORCELAIN_THRONE = BLOCK_ITEMS.register("porcelain_throne", PorcelainThroneBlockItem::new);
     public static final RegistryObject<Item> POINTS_STORE = BLOCK_ITEMS.register("points_store",
             () -> new BlockItem(BlockRegistry.POINTS_STORE.get(), new Item.Properties()));
