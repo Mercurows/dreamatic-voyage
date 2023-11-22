@@ -27,6 +27,7 @@ public class Utils {
         EffectRegistry.EFFECTS.register(modEventBus);
         EntityRegistry.ENTITY_TYPES.register(modEventBus);
         SoundRegistry.SOUNDS.register(modEventBus);
+        BlockEntityRegistry.BLOCK_ENTITY_TYPES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
