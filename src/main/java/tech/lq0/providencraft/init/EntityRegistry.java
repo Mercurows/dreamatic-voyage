@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.entity.projectile.BloodCrystalEntity;
+import tech.lq0.providencraft.entity.projectile.CursedCatDollEntity;
 import tech.lq0.providencraft.entity.projectile.DaifukuSyrupEntity;
 
 public class EntityRegistry {
@@ -46,9 +47,9 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<BloodCrystalEntity>> BLOOD_CRYSTAL_ENTITY =
             ENTITY_TYPES.register("blood_crystal",
                     () -> EntityType.Builder.<BloodCrystalEntity>of(BloodCrystalEntity::new, MobCategory.MISC).sized(0.1f, 0.1f).build("blood_crystal"));
-//    public static final RegistryObject<EntityType<CursedCatDollEntity>> CURSED_CAT_DOLL_ENTITY =
-//            ENTITY_TYPES.register("cursed_cat_doll",
-//                    () -> EntityType.Builder.<CursedCatDollEntity>create(CursedCatDollEntity::new, EntityClassification.MISC).size(0.3f, 0.3f).build("cursed_cat_doll"));
+    public static final RegistryObject<EntityType<CursedCatDollEntity>> CURSED_CAT_DOLL_ENTITY =
+            ENTITY_TYPES.register("cursed_cat_doll",
+                    () -> EntityType.Builder.<CursedCatDollEntity>of(CursedCatDollEntity::new, MobCategory.MISC).sized(0.3f, 0.3f).build("cursed_cat_doll"));
 //    public static final RegistryObject<EntityType<ShuRinoKenEntity>> SHU_RINO_KEN_ENTITY =
 //            ENTITY_TYPES.register("shu_rino_ken",
 //                    () -> EntityType.Builder.<ShuRinoKenEntity>create(ShuRinoKenEntity::new, EntityClassification.MISC).size(0.5f, 0.2f).build("shu_rino_ken"));

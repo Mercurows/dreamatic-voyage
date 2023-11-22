@@ -40,6 +40,8 @@ import tech.lq0.providencraft.item.providencefourth.hifumi.NetherLight;
 import tech.lq0.providencraft.item.providencefourth.sana.Shakana;
 import tech.lq0.providencraft.item.providencemagicros.chiram.*;
 import tech.lq0.providencraft.item.providencemagicros.haine.CloudKey;
+import tech.lq0.providencraft.item.providencemagicros.haine.CursedMarshaimallow;
+import tech.lq0.providencraft.item.providencemagicros.haine.Marshaimallow;
 import tech.lq0.providencraft.item.providencesecond.louise.WhiteAhoge;
 import tech.lq0.providencraft.item.providencesecond.louise.WhiteDoubleAhoge;
 import tech.lq0.providencraft.item.providencesecond.lucia.LuciaRiceCake;
@@ -171,9 +173,9 @@ public class ItemRegistry {
 
     //haine
 //    public static final RegistryObject<Item> HAI_PLATE = ITEMS.register("hai_plate", HaiPlate::new);
-//    public static final RegistryObject<Item> MARSHAIMALLOW = ITEMS.register("marshaimallow", Marshaimallow::new);
+    public static final RegistryObject<Item> MARSHAIMALLOW = ITEMS.register("marshaimallow", Marshaimallow::new);
     public static final RegistryObject<Item> CLOUD_KEY = ITEMS.register("cloud_key", CloudKey::new);
-//    public static final RegistryObject<Item> CURSED_MARSHAIMALLOW = ITEMS.register("cursed_marshaimallow", CursedMarshaimallow::new);
+    public static final RegistryObject<Item> CURSED_MARSHAIMALLOW = ITEMS.register("cursed_marshaimallow", CursedMarshaimallow::new);
 //    public static final RegistryObject<Item> MISTY_CHESTPLATE = ITEMS.register("misty_chestplate", MistyChestplate::new);
 //    public static final RegistryObject<Item> HAINE_CORE = ITEMS.register("haine_core", HaineCore::new);
 //    public static final RegistryObject<Item> HAIBARA_SOUP = ITEMS.register("haibara_soup", HaibaraSoup::new);
