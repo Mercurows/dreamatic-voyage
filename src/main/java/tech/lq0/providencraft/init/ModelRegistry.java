@@ -5,6 +5,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.providencraft.models.armor.ReinaWingsModel;
+import tech.lq0.providencraft.models.blockentity.PdCLogoModel;
 import tech.lq0.providencraft.models.entity.BloodCrystalModel;
 import tech.lq0.providencraft.models.curios.LunaticBowModel;
 
@@ -15,5 +16,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(BloodCrystalModel.LAYER_LOCATION, BloodCrystalModel::createBodyLayer);
         event.registerLayerDefinition(LunaticBowModel.LAYER_LOCATION, LunaticBowModel::createBodyLayer);
         event.registerLayerDefinition(ReinaWingsModel.LAYER_LOCATION, ReinaWingsModel::createBodyLayer);
+        event.registerLayerDefinition(PdCLogoModel.LAYER_LOCATION, PdCLogoModel::createBodyLayer);
     }
 }

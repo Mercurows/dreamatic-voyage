@@ -1,7 +1,11 @@
 package tech.lq0.providencraft.block.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
@@ -25,11 +29,33 @@ import java.util.Collections;
 import java.util.OptionalInt;
 
 public class PointsStoreBlockEntity extends BlockEntity implements Merchant {
+    private static final String TAG_TICK = "rotate_ticks";
+
     Player customer = null;
     MerchantOffers merchantOffers = null;
 
+    public int ticks = 0;
+
     public PointsStoreBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.POINTS_STORE_BLOCK_ENTITY.get(), pPos, pBlockState);
+    }
+
+    @Override
+    public void saveAdditional(CompoundTag tag) {
+        super.saveAdditional(tag);
+        tag.putInt(TAG_TICK, ticks);
+    }
+
+    @Override
+    public void load(CompoundTag pTag) {
+        super.load(pTag);
+        ticks = pTag.getInt(TAG_TICK);
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override
@@ -213,5 +239,13 @@ public class PointsStoreBlockEntity extends BlockEntity implements Merchant {
             goods.grow(count - 1);
         }
         return goods;
+    }
+
+    @SuppressWarnings("unused")
+    public static void tick(Level level, BlockPos pos, BlockState state, PointsStoreBlockEntity self) {
+        if (self.ticks >= 360) {
+            self.ticks = 0;
+        }
+        self.ticks++;
     }
 }
