@@ -2,12 +2,14 @@ package tech.lq0.providencraft;
 
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import tech.lq0.providencraft.init.*;
+import tech.lq0.providencraft.loot.ModLootTables;
 
 @Mod(Utils.MOD_ID)
 public class Utils {
@@ -31,9 +33,16 @@ public class Utils {
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
+
+        registerForgeEvents();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("Welcome to {}", MOD_ID);
+    }
+
+    private void registerForgeEvents() {
+        IEventBus bus = MinecraftForge.EVENT_BUS;
+        bus.addListener((LootTableLoadEvent e) -> ModLootTables.lootLoad(e.getName(), b -> e.getTable().addPool(b.build())));
     }
 }
