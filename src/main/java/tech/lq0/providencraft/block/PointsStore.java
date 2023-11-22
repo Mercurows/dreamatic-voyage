@@ -37,7 +37,8 @@ public class PointsStore extends Block implements EntityBlock {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @org.jetbrains.annotations.Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.points_store").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.providencraft.points_store_1").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.providencraft.points_store_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
     }
 
     @Override

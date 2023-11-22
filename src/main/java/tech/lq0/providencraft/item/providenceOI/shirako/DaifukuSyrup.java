@@ -13,6 +13,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -61,11 +63,11 @@ public class DaifukuSyrup extends Item {
 //    public DaifukuSyrupEntity createArrow(World p_200887_1_, ItemStack p_200887_2_, LivingEntity p_200887_3_) {
 //        return new DaifukuSyrupEntity(p_200887_1_, p_200887_3_);
 //    }
-//
-//    public boolean isInfinite(ItemStack stack, ItemStack bow, net.minecraft.entity.player.PlayerEntity player) {
-//        int enchant = EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, bow);
-//        return enchant > 0 && this.getClass() == DaifukuSyrup.class;
-//    }
+
+    public boolean isInfinite(ItemStack bow) {
+        int enchant = EnchantmentHelper.getTagEnchantmentLevel(Enchantments.INFINITY_ARROWS, bow);
+        return enchant > 0 && this.getClass() == DaifukuSyrup.class;
+    }
 
     @Override
     public SoundEvent getEatingSound() {
