@@ -1,4 +1,13 @@
 {
+  "song/darakudatenshi": {
+    "subtitle": "subtitle.providencraft.darakudatenshi",
+    "sounds": [
+      {
+        "name": "providencraft:song/darakudatenshi",
+        "stream": true
+      }
+    ]
+  },
   "blood_crystal": {
     "subtitle": "subtitle.providencraft.blood_crystal",
     "sounds": [
