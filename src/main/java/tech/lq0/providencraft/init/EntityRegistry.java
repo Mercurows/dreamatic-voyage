@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
+import tech.lq0.providencraft.entity.projectile.AhogeBoomerangEntity;
 import tech.lq0.providencraft.entity.projectile.BloodCrystalEntity;
 import tech.lq0.providencraft.entity.projectile.CursedCatDollEntity;
 import tech.lq0.providencraft.entity.projectile.DaifukuSyrupEntity;
@@ -13,9 +14,9 @@ import tech.lq0.providencraft.entity.projectile.DaifukuSyrupEntity;
 public class EntityRegistry {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Utils.MOD_ID);
 
-//    public static final RegistryObject<EntityType<AhogeBoomerangEntity>> AHOGE_BOOMERANG_ENTITY =
-//            ENTITY_TYPES.register("ahoge_boomerang",
-//                    () -> EntityType.Builder.<AhogeBoomerangEntity>create(AhogeBoomerangEntity::new, EntityClassification.MISC).size(0.8f, 0.3f).build("ahoge_boomerang"));
+    public static final RegistryObject<EntityType<AhogeBoomerangEntity>> AHOGE_BOOMERANG_ENTITY =
+            ENTITY_TYPES.register("ahoge_boomerang",
+                    () -> EntityType.Builder.<AhogeBoomerangEntity>of(AhogeBoomerangEntity::new, MobCategory.MISC).sized(0.8f, 0.3f).build("ahoge_boomerang"));
 //    public static final RegistryObject<EntityType<PlungerEntity>> PLUNGER_ENTITY =
 //            ENTITY_TYPES.register("plunger_entity",
 //                    () -> EntityType.Builder.<PlungerEntity>create(PlungerEntity::new, EntityClassification.MISC).size(0.3f, 0.3f).build("plunger_entity"));
