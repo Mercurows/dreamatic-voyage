@@ -62,6 +62,11 @@ public class MountainDestroyer extends PickaxeItem {
     }
 
     @Override
+    public boolean isCorrectToolForDrops(ItemStack stack, BlockState state) {
+        return state.is(BlockTags.MINEABLE_WITH_PICKAXE) || state.is(BlockTags.MINEABLE_WITH_SHOVEL);
+    }
+
+    @Override
     public @NotNull Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(@NotNull EquipmentSlot pEquipmentSlot) {
         Multimap<Attribute, AttributeModifier> map = super.getDefaultAttributeModifiers(pEquipmentSlot);
         UUID uuid = new UUID(ItemRegistry.MOUNTAIN_DESTROYER.hashCode() + pEquipmentSlot.toString().hashCode(), 0);

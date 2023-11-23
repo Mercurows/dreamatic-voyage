@@ -17,6 +17,7 @@ import tech.lq0.providencraft.item.other.PdcPoint;
 import tech.lq0.providencraft.item.other.PremiumPdcPoint;
 import tech.lq0.providencraft.item.providenceOI.ccelia.CraftBeer0322;
 import tech.lq0.providencraft.item.providenceOI.fukami.*;
+import tech.lq0.providencraft.item.providenceOI.lutafia.Fiaxe;
 import tech.lq0.providencraft.item.providenceOI.miya.TailPen;
 import tech.lq0.providencraft.item.providenceOI.roky.Xiaolongbao;
 import tech.lq0.providencraft.item.providenceOI.shirako.*;
@@ -259,7 +260,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> GARLIC_MELON_SLICE = ITEMS.register("garlic_melon_slice", GarlicMelonSlice::new);
 
     //lutafia
-//    public static final RegistryObject<Item> FIAXE = ITEMS.register("fiaxe", Fiaxe::new);
+    public static final RegistryObject<Item> FIAXE = ITEMS.register("fiaxe", Fiaxe::new);
 
     //yesa
     public static final RegistryObject<Item> MINT_CHOCOLATE = ITEMS.register("mint_chocolate", MintChocolate::new);
