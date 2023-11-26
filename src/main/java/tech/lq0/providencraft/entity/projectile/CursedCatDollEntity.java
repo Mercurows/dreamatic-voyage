@@ -59,7 +59,7 @@ public class CursedCatDollEntity extends ThrowableItemProjectile {
             }
         } else {
             if (this.level().isClientSide) {
-                this.level().addParticle(ParticleTypes.FIREWORK, this.getX(), this.getY() + 0.5D, this.getZ(), 0.0D, 0.0D, 0.0D);
+                this.level().addParticle(ParticleTypes.DAMAGE_INDICATOR, this.getX(), this.getY() + 0.5D, this.getZ(), 0.0D, 0.0D, 0.0D);
             }
         }
     }
