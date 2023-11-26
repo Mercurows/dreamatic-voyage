@@ -10,21 +10,21 @@ import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
-public class FukamizuRingItemRenderer extends BlockEntityWithoutLevelRenderer {
-    public FukamizuRingItemRenderer() {
+public class EchoedDestinyRingItemRenderer extends BlockEntityWithoutLevelRenderer {
+    public EchoedDestinyRingItemRenderer() {
         super(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels());
     }
 
     @Override
     public void renderByItem(ItemStack pStack, ItemDisplayContext pDisplayContext, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
-        long degree = System.currentTimeMillis() / 25 % 360;
+        long degree = System.currentTimeMillis() / 40 % 360;
 
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         BakedModel bakedModel = itemRenderer.getModel(pStack, null, null, 0);
 
         pPoseStack.pushPose();
         pPoseStack.scale(0.4F, 0.4F, 0.4F);
-        pPoseStack.translate(-0.15F, 2.8F, 0.8F);
+        pPoseStack.translate(-0.15F, 3.0F, 0.8F);
         pPoseStack.mulPose(Axis.ZP.rotationDegrees(30.0F));
         pPoseStack.mulPose(Axis.XP.rotationDegrees(10.0F));
         float xOffset = -1 / 32f;

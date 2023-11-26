@@ -19,7 +19,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -33,10 +32,11 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.init.ItemRegistry;
-import tech.lq0.providencraft.models.item.FukamizuRingItemModel;
-import tech.lq0.providencraft.render.item.FukamizuRingItemRenderer;
+import tech.lq0.providencraft.models.item.EchoedDestinyRingItemModel;
+import tech.lq0.providencraft.render.item.EchoedDestinyRingItemRenderer;
 import tech.lq0.providencraft.tools.ItemNBTTool;
 import tech.lq0.providencraft.tools.Livers;
+import tech.lq0.providencraft.tools.RarityTool;
 import tech.lq0.providencraft.tools.TooltipTool;
 
 import java.util.List;
@@ -45,18 +45,18 @@ import java.util.UUID;
 import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class FukamizuRing extends Item {
-    public static final String TAG_WATER = "underwater";
+public class EchoedDestinyRing extends Item {
+    public static final String TAG_ECHO = "underwater";
 
-    public FukamizuRing() {
-        super(new Properties().stacksTo(1).durability(404).rarity(Rarity.EPIC));
+    public EchoedDestinyRing() {
+        super(new Properties().stacksTo(1).durability(404).rarity(RarityTool.LEGENDARY));
     }
 
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.fukamizu_ring_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.fukamizu_ring_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.providencraft.echoed_destiny_ring_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.providencraft.echoed_destiny_ring_2").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMI);
     }
@@ -67,9 +67,15 @@ public class FukamizuRing extends Item {
         consumer.accept(new IClientItemExtensions() {
             @Override
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return new FukamizuRingItemRenderer();
+                return new EchoedDestinyRingItemRenderer();
             }
         });
+    }
+
+    @Nullable
+    @Override
+    public EquipmentSlot getEquipmentSlot(ItemStack stack) {
+        return EquipmentSlot.HEAD;
     }
 
     @Override
@@ -82,35 +88,58 @@ public class FukamizuRing extends Item {
         return false;
     }
 
-    @Nullable
-    @Override
-    public EquipmentSlot getEquipmentSlot(ItemStack stack) {
-        return EquipmentSlot.HEAD;
-    }
-
     @Override
     public void onArmorTick(ItemStack stack, Level level, Player player) {
         if (!level.isClientSide) {
             if (player.isInWater() || level.isRaining()) {
-                ItemNBTTool.setBoolean(stack, TAG_WATER, true);
+                ItemNBTTool.setBoolean(stack, TAG_ECHO, true);
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 2, true, false));
                 player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, true, false));
+                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, true, false));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 2, true, false));
 
                 if (player.isSwimming()) {
                     player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0, true, false));
                 }
+                for (LivingEntity livingentity : player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().expandTowards(30.0D, 30.0D, 30.0D))) {
+                    if (livingentity instanceof Player playerEntity && livingentity != player && livingentity.isAlliedTo(player)) {
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 1, true, false));
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, true, false));
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, true, false));
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0, true, false));
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, true, false));
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, true, false));
+
+                        if (player.tickCount % 300 == 0) {
+                            playerEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1, true, false));
+                        }
+                    }
+                }
+            } else {
+                ItemNBTTool.setBoolean(stack, TAG_ECHO, false);
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, true, false));
+                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, true, false));
 
                 for (LivingEntity livingentity : player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().expandTowards(10.0D, 10.0D, 10.0D))) {
-                    if (livingentity instanceof Player playerEntity && livingentity != player && livingentity.isAlliedTo(player)) {
+                    if (livingentity instanceof Player playerEntity && livingentity != player) {
                         playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0, true, false));
                         playerEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, true, false));
                     }
                 }
-            } else {
-                ItemNBTTool.setBoolean(stack, TAG_WATER, false);
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 0, true, false));
+            }
+
+            //heal player
+            if (player.tickCount % 100 == 0) {
+                player.heal(1.0f);
+            }
+
+            //give saturation effect when player is dying
+            if (player.getHealth() <= 5.0f && !player.getCooldowns().isOnCooldown(stack.getItem())) {
+                player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 100, 0, true, false));
+                player.getCooldowns().addCooldown(stack.getItem(), 2400);
             }
         }
+        super.onArmorTick(stack, level, player);
     }
 
     @Override
@@ -119,13 +148,30 @@ public class FukamizuRing extends Item {
         UUID uuid = new UUID(ItemRegistry.FUKAMIZU_RING.hashCode() + slot.toString().hashCode(), 0);
         if (slot == EquipmentSlot.HEAD) {
             map = HashMultimap.create(map);
-            boolean underwater = ItemNBTTool.getBoolean(stack, TAG_WATER, false);
+            boolean flag = ItemNBTTool.getBoolean(stack, TAG_ECHO, false);
             map.put(Attributes.ARMOR,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, underwater ? 5.0f : 1.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 9.0f : 3.0f, AttributeModifier.Operation.ADDITION));
+            map.put(Attributes.ARMOR_TOUGHNESS,
+                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 6.0f : 0.0f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.MAX_HEALTH,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, underwater ? 12.0f : 0.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 20.0f : 6.0f, AttributeModifier.Operation.ADDITION));
         }
         return map;
+    }
+
+    @SubscribeEvent
+    public static void onModelBaked(ModelEvent.ModifyBakingResult event) {
+        Map<ResourceLocation, BakedModel> modelRegistry = event.getModels();
+        ModelResourceLocation location = new ModelResourceLocation(ItemRegistry.ECHOED_DESTINY_RING.getId(), "inventory");
+        BakedModel existingModel = modelRegistry.get(location);
+        if (existingModel == null) {
+            throw new RuntimeException();
+        } else if (existingModel instanceof EchoedDestinyRingItemModel) {
+            throw new RuntimeException();
+        } else {
+            EchoedDestinyRingItemModel model = new EchoedDestinyRingItemModel(existingModel);
+            event.getModels().put(location, model);
+        }
     }
 
     @Override
@@ -134,28 +180,13 @@ public class FukamizuRing extends Item {
     }
 
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return enchantment.category == EnchantmentCategory.ARMOR_HEAD || enchantment.category == EnchantmentCategory.BREAKABLE ||
-                enchantment.category == EnchantmentCategory.ARMOR;
+    public int getEnchantmentValue(ItemStack stack) {
+        return 20;
     }
 
     @Override
-    public int getEnchantmentValue(ItemStack stack) {
-        return 15;
-    }
-
-    @SubscribeEvent
-    public static void onModelBaked(ModelEvent.ModifyBakingResult event) {
-        Map<ResourceLocation, BakedModel> modelRegistry = event.getModels();
-        ModelResourceLocation location = new ModelResourceLocation(ItemRegistry.FUKAMIZU_RING.getId(), "inventory");
-        BakedModel existingModel = modelRegistry.get(location);
-        if (existingModel == null) {
-            throw new RuntimeException();
-        } else if (existingModel instanceof FukamizuRingItemModel) {
-            throw new RuntimeException();
-        } else {
-            FukamizuRingItemModel model = new FukamizuRingItemModel(existingModel);
-            event.getModels().put(location, model);
-        }
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return enchantment.category == EnchantmentCategory.ARMOR_HEAD || enchantment.category == EnchantmentCategory.BREAKABLE ||
+                enchantment.category == EnchantmentCategory.ARMOR;
     }
 }
