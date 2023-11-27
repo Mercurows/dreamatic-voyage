@@ -46,6 +46,7 @@ import tech.lq0.providencraft.item.providencesecond.louise.WhiteAhoge;
 import tech.lq0.providencraft.item.providencesecond.louise.WhiteDoubleAhoge;
 import tech.lq0.providencraft.item.providencesecond.lucia.LuciaRiceCake;
 import tech.lq0.providencraft.item.providencesecond.lucia.MoonlightAmulet;
+import tech.lq0.providencraft.item.providencesecond.satou.*;
 import tech.lq0.providencraft.item.providencethird.leciel.ReinaFeather;
 import tech.lq0.providencraft.item.providencethird.leciel.ReinaWings;
 import tech.lq0.providencraft.item.providencethird.yuki.FoxIceCream;
@@ -145,12 +146,12 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> LEVIY = ITEMS.register("leviy", Leviy::new);
 
     //satou
-//    public static final RegistryObject<Item> SATOU_KNIFE = ITEMS.register("satou_knife", SatouKnife::new);
-//    public static final RegistryObject<Item> SATOU_CAMERA = ITEMS.register("satou_camera", SatouCamera::new);
-//    public static final RegistryObject<Item> ANCIENT_LOLLIPOP = ITEMS.register("ancient_lollipop", AncientLollipop::new);
-//    public static final RegistryObject<Item> ISEKAI_LOLLIPOP = ITEMS.register("isekai_lollipop", IsekaiLollipop::new);
-//    public static final RegistryObject<Item> PAST_SUGAR = ITEMS.register("past_sugar", PastSugar::new);
-//    public static final RegistryObject<Item> SATOU_CHESTPLATE = ITEMS.register("satou_chestplate", SatouChestplate::new);
+    public static final RegistryObject<Item> SATOU_KNIFE = ITEMS.register("satou_knife", SatouKnife::new);
+    public static final RegistryObject<Item> SATOU_CAMERA = ITEMS.register("satou_camera", SatouCamera::new);
+    public static final RegistryObject<Item> ANCIENT_LOLLIPOP = ITEMS.register("ancient_lollipop", AncientLollipop::new);
+    public static final RegistryObject<Item> ISEKAI_LOLLIPOP = ITEMS.register("isekai_lollipop", IsekaiLollipop::new);
+    public static final RegistryObject<Item> PAST_SUGAR = ITEMS.register("past_sugar", PastSugar::new);
+    public static final RegistryObject<Item> SATOU_CHESTPLATE = ITEMS.register("satou_chestplate", SatouChestplate::new);
 
     //mumu
 //    public static final RegistryObject<Item> AYELET_MASK = ITEMS.register("ayelet_mask", AyeletMask::new);
