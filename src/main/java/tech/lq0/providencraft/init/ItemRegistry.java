@@ -33,6 +33,7 @@ import tech.lq0.providencraft.item.providencefirst.unia.ElfWings;
 import tech.lq0.providencraft.item.providencefirst.unia.EnchantedUnigiri;
 import tech.lq0.providencraft.item.providencefirst.unia.TaroIceCream;
 import tech.lq0.providencraft.item.providencefirst.unia.Unigiri;
+import tech.lq0.providencraft.item.providencefirst.usa.BrownieUzza;
 import tech.lq0.providencraft.item.providencefourth.choco.ChocoalCookie;
 import tech.lq0.providencraft.item.providencefourth.choco.StrawberryCake;
 import tech.lq0.providencraft.item.providencefourth.hifumi.NetherLight;
@@ -89,11 +90,11 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> BANANA_MILK = ITEMS.register("banana_milk", BananaMilk::new);
 //    public static final RegistryObject<Item> BLUE_SMALL_BALL = ITEMS.register("blue_small_ball", BlueSmallBall::new);
 //
-//    //usa
+    //usa
 //    public static final RegistryObject<Item> PLUNGER = ITEMS.register("plunger", Plunger::new);
 //    public static final RegistryObject<Item> KURUMI_BOOMERANG = ITEMS.register("kurumi_boomerang", KurumiBoomerang::new);
 //    public static final RegistryObject<Item> KURUMI_HALO = ITEMS.register("kurumi_halo", KurumiHalo::new);
-//    public static final RegistryObject<Item> BROWNIE_UZZA = ITEMS.register("brownie_uzza", BrownieUzza::new);
+    public static final RegistryObject<Item> BROWNIE_UZZA = ITEMS.register("brownie_uzza", BrownieUzza::new);
 
     //myanna
     public static final RegistryObject<Item> MOUNTAIN_DESTROYER = ITEMS.register("mountain_destroyer", MountainDestroyer::new);

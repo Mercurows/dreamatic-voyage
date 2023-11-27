@@ -26,7 +26,7 @@ public class DamageSourceRegistry {
     public static final ResourceKey<DamageType> BLOOD_CRYSTAL = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "blood_crystal"));
 //    public static final ResourceKey<DamageType> LUNAR_ECLIPSE
     public static final ResourceKey<DamageType> FUKAMIZU_BREAD = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "fukamizu_bread"));
-//    public static final ResourceKey<DamageType> BROWNIE_UZZA
+    public static final ResourceKey<DamageType> BROWNIE_UZZA = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "brownie_uzza"));
     public static final ResourceKey<DamageType> CHOCOAL_COOKIE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "chocoal_cookie"));
 
     public static DamageSource causeLavaCakeDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
@@ -51,6 +51,10 @@ public class DamageSourceRegistry {
 
     public static DamageSource causeFukamizuBreadDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
         return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(FUKAMIZU_BREAD), entity);
+    }
+
+    public static DamageSource causeBrownieUzzaDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(BROWNIE_UZZA), entity);
     }
 
     public static DamageSource causeChocoalCookieDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
