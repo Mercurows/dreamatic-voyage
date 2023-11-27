@@ -1,4 +1,12 @@
 {
+  "shutter": {
+    "subtitle": "subtitle.providencraft.shutter",
+    "sounds": [
+      {
+        "name": "providencraft:shutter"
+      }
+    ]
+  },
   "song/darakudatenshi": {
     "subtitle": "subtitle.providencraft.darakudatenshi",
     "sounds": [

@@ -101,7 +101,7 @@ public class EchoedDestinyRing extends Item {
                 if (player.isSwimming()) {
                     player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0, true, false));
                 }
-                for (LivingEntity livingentity : player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().expandTowards(30.0D, 30.0D, 30.0D))) {
+                for (LivingEntity livingentity : player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(30.0D, 30.0D, 30.0D))) {
                     if (livingentity instanceof Player playerEntity && livingentity != player && livingentity.isAlliedTo(player)) {
                         playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 1, true, false));
                         playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, true, false));
@@ -120,7 +120,7 @@ public class EchoedDestinyRing extends Item {
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, true, false));
                 player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, true, false));
 
-                for (LivingEntity livingentity : player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().expandTowards(10.0D, 10.0D, 10.0D))) {
+                for (LivingEntity livingentity : player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(10.0D, 10.0D, 10.0D))) {
                     if (livingentity instanceof Player playerEntity && livingentity != player) {
                         playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0, true, false));
                         playerEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, true, false));
