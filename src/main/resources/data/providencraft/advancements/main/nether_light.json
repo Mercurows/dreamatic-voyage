@@ -1,27 +1,27 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:red_ahoge"
+      "item": "providencraft:nether_light"
     },
     "title": {
-      "translate": "providencraft.advancement.root"
+      "translate": "providencraft.advancement.nether_light"
     },
     "description": {
-      "translate": "providencraft.advancement.root_des"
+      "translate": "providencraft.advancement.nether_light_des"
     },
-    "background": "providencraft:textures/block/white_ahoge_block.png",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
+  "parent": "providencraft:main/root",
   "criteria": {
-    "red_ahoge": {
+    "nether_light": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "providencraft:red_ahoge"
+              "providencraft:nether_light"
             ]
           }
         ]

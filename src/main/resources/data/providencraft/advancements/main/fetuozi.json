@@ -1,31 +1,34 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:red_ahoge"
+      "item": "providencraft:fetuozi"
     },
     "title": {
-      "translate": "providencraft.advancement.root"
+      "translate": "providencraft.advancement.fetuozi"
     },
     "description": {
-      "translate": "providencraft.advancement.root_des"
+      "translate": "providencraft.advancement.fetuozi_des"
     },
-    "background": "providencraft:textures/block/white_ahoge_block.png",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
+  "parent": "providencraft:main/eat_momo_daifuku",
   "criteria": {
-    "red_ahoge": {
+    "fetuozi": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "providencraft:red_ahoge"
+              "providencraft:fetuozi"
             ]
           }
         ]
       }
     }
+  },
+  "rewards": {
+    "experience": 100
   }
 }
