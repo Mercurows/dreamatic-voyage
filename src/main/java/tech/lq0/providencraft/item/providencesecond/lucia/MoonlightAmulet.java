@@ -4,10 +4,12 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -16,6 +18,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
+import tech.lq0.providencraft.init.EffectRegistry;
+import tech.lq0.providencraft.tools.ItemNBTTool;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -27,6 +31,7 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MoonlightAmulet extends Item implements ICurioItem {
+    public static final String TAG_MOONLIGHT = "isnight";
 
     public MoonlightAmulet() {
         super(new Properties().stacksTo(1));
@@ -42,7 +47,15 @@ public class MoonlightAmulet extends Item implements ICurioItem {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-        ICurioItem.super.curioTick(slotContext, stack);
+        LivingEntity livingEntity = slotContext.entity();
+        if (livingEntity instanceof Player player && !player.level().isClientSide) {
+            if (!player.level().isDay()) {
+                ItemNBTTool.setBoolean(stack, TAG_MOONLIGHT, true);
+                player.addEffect(new MobEffectInstance(EffectRegistry.BIG_FIERCE_ONE.get(), 300, 0));
+            } else {
+                ItemNBTTool.setBoolean(stack, TAG_MOONLIGHT, false);
+            }
+        }
     }
 
     @Override
