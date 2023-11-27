@@ -10,8 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.item.legacy.LavaCake;
 import tech.lq0.providencraft.item.legacy.YagiStaffCard;
-import tech.lq0.providencraft.item.material.DreamWeavingYarn;
-import tech.lq0.providencraft.item.material.IdolCloth;
+import tech.lq0.providencraft.item.material.*;
 import tech.lq0.providencraft.item.other.MusicDisc;
 import tech.lq0.providencraft.item.other.PdcPoint;
 import tech.lq0.providencraft.item.other.PremiumPdcPoint;
@@ -327,10 +326,10 @@ public class ItemRegistry {
      * material
      */
     public static final RegistryObject<Item> IDOL_CLOTH = ITEMS.register("idol_cloth", IdolCloth::new);
-    //    public static final RegistryObject<Item> GN_SOUL = ITEMS.register("gn_souls", GNSouls::new);
-//    public static final RegistryObject<Item> GN_SPIRIT = ITEMS.register("gn_spirit", GNSpirit::new);
-//    public static final RegistryObject<Item> GN_STAR = ITEMS.register("gn_star", GNStar::new);
-//    public static final RegistryObject<Item> MAGICROS_CORE = ITEMS.register("magicros_core", MagicrosCore::new);
+    public static final RegistryObject<Item> GN_SOUL = ITEMS.register("gn_souls", GNSouls::new);
+    public static final RegistryObject<Item> GN_SPIRIT = ITEMS.register("gn_spirit", GNSpirit::new);
+    public static final RegistryObject<Item> GN_STAR = ITEMS.register("gn_star", GNStar::new);
+    public static final RegistryObject<Item> MAGICROS_CORE = ITEMS.register("magicros_core", MagicrosCore::new);
     public static final RegistryObject<Item> DREAM_WEAVING_YARN = ITEMS.register("dream_weaving_yarn", DreamWeavingYarn::new);
 
 
