@@ -139,7 +139,7 @@ public class MistyChestplate extends ArmorItem {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> map = super.getAttributeModifiers(slot, stack);
-        UUID uuid = new UUID(ItemRegistry.BREEZE_CROWN.hashCode() + slot.toString().hashCode(), 0);
+        UUID uuid = new UUID(ItemRegistry.MISTY_CHESTPLATE.hashCode() + slot.toString().hashCode(), 0);
         if (slot == getEquipmentSlot()) {
             map = HashMultimap.create(map);
             map.put(Attributes.ARMOR_TOUGHNESS,
