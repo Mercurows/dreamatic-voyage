@@ -5,11 +5,12 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.providencraft.models.armor.AhogeHelmetModel;
+import tech.lq0.providencraft.models.armor.MistyChestplateModel;
 import tech.lq0.providencraft.models.armor.ReinaWingsModel;
 import tech.lq0.providencraft.models.blockentity.PdCLogoModel;
+import tech.lq0.providencraft.models.curios.LunaticBowModel;
 import tech.lq0.providencraft.models.entity.AhogeBoomerangModel;
 import tech.lq0.providencraft.models.entity.BloodCrystalModel;
-import tech.lq0.providencraft.models.curios.LunaticBowModel;
 import tech.lq0.providencraft.models.entity.CursedCatDollModel;
 import tech.lq0.providencraft.models.entity.DaifukuSyrupModel;
 
@@ -25,5 +26,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(CursedCatDollModel.LAYER_LOCATION, CursedCatDollModel::createBodyLayer);
         event.registerLayerDefinition(AhogeBoomerangModel.LAYER_LOCATION, AhogeBoomerangModel::createBodyLayer);
         event.registerLayerDefinition(AhogeHelmetModel.LAYER_LOCATION, AhogeHelmetModel::createBodyLayer);
+        event.registerLayerDefinition(MistyChestplateModel.LAYER_LOCATION, MistyChestplateModel::createBodyLayer);
     }
 }

@@ -3,6 +3,9 @@ package tech.lq0.providencraft.item.providencemagicros.haine;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.tags.DamageTypeTags;
@@ -24,18 +27,24 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.init.ItemRegistry;
+import tech.lq0.providencraft.models.armor.MistyChestplateModel;
 import tech.lq0.providencraft.tiers.ModArmorMaterial;
 import tech.lq0.providencraft.tools.*;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
+import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class MistyChestplate extends ArmorItem {
@@ -58,32 +67,32 @@ public class MistyChestplate extends ArmorItem {
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.HAINE);
     }
 
-//    @SuppressWarnings("unchecked")
-//    @OnlyIn(Dist.CLIENT)
-//    @Nullable
-//    @Override
-//    public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
-//        if (entityLiving instanceof PlayerEntity) {
-//            PlayerEntity player = (PlayerEntity) entityLiving;
-//
-//            if (!player.abilities.isFlying && player.isSneaking()) {
-//                return (A) new MistyChestplateModel2<>();
-//            }
-//            if (!player.abilities.isFlying && player.isOnGround() && player.isSneaking()) {
-//                return (A) new MistyChestplateModel2<>();
-//            } else {
-//                return (A) new MistyChestplateModel<>();
-//            }
-//        }
-//
-//        return (A) new MistyChestplateModel<>();
-//    }
-//
-//    @Nullable
-//    @Override
-//    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-//        return Utils.MOD_ID + ":textures/models/armor/misty_chestplate_texture.png";
-//    }
+    @Override
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            @Override
+            @OnlyIn(Dist.CLIENT)
+            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+                HumanoidModel<?> armorModel = new HumanoidModel<>(new ModelPart(Collections.emptyList(), Map.of(
+                        "body", new MistyChestplateModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(MistyChestplateModel.LAYER_LOCATION)).body_total,
+                        "left_arm", new MistyChestplateModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(MistyChestplateModel.LAYER_LOCATION)).left_total,
+                        "right_arm", new MistyChestplateModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(MistyChestplateModel.LAYER_LOCATION)).right_total,
+                        "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
+                armorModel.crouching = livingEntity.isShiftKeyDown();
+                armorModel.riding = original.riding;
+                armorModel.young = livingEntity.isBaby();
+                return armorModel;
+            }
+        });
+    }
+
+    @Override
+    public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+        return Utils.MOD_ID + ":textures/models/armor/misty_chestplate.png";
+    }
 
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
