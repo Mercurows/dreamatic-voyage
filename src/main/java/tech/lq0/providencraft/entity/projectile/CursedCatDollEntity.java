@@ -29,11 +29,11 @@ public class CursedCatDollEntity extends ThrowableItemProjectile {
     private static final EntityDataAccessor<Integer> FUSE = SynchedEntityData.defineId(CursedCatDollEntity.class, EntityDataSerializers.INT);
     private int fuse = 100;
 
-    public CursedCatDollEntity(EntityType<? extends CursedCatDollEntity> type, Level world){
+    public CursedCatDollEntity(EntityType<? extends CursedCatDollEntity> type, Level world) {
         super(type, world);
     }
 
-    public CursedCatDollEntity(Level world, LivingEntity entity){
+    public CursedCatDollEntity(Level world, LivingEntity entity) {
         super(EntityRegistry.CURSED_CAT_DOLL_ENTITY.get(), entity, world);
     }
 
@@ -120,7 +120,7 @@ public class CursedCatDollEntity extends ThrowableItemProjectile {
 
         Explosion explosion = new Explosion(world, entity, null, null, entity.getX(), entity.getY(), entity.getZ(), radius, false, Explosion.BlockInteraction.KEEP);
 
-        if(net.minecraftforge.event.ForgeEventFactory.onExplosionStart(world, explosion)) {
+        if (net.minecraftforge.event.ForgeEventFactory.onExplosionStart(world, explosion)) {
             return;
         }
 

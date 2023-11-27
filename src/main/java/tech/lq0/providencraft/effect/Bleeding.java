@@ -13,13 +13,13 @@ import tech.lq0.providencraft.init.EffectRegistry;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class Bleeding extends MobEffect {
-    public Bleeding(){
+    public Bleeding() {
         super(MobEffectCategory.HARMFUL, 11815816);
     }
 
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
-        if(EntityType.getKey(pLivingEntity.getType()).equals(new ResourceLocation("twilightforest:snow_queen"))){
+        if (EntityType.getKey(pLivingEntity.getType()).equals(new ResourceLocation("twilightforest:snow_queen"))) {
             return;
         }
         pLivingEntity.hurt(DamageSourceRegistry.causeBleedingDamage(pLivingEntity.level().registryAccess(), null), 0.5f);
@@ -41,11 +41,11 @@ public class Bleeding extends MobEffect {
         LivingEntity entity = event.getEntity();
         MobEffect effect = EffectRegistry.BLEEDING.get();
 
-        if(EntityType.getKey(entity.getType()).equals(new ResourceLocation("twilightforest:snow_queen"))){
+        if (EntityType.getKey(entity.getType()).equals(new ResourceLocation("twilightforest:snow_queen"))) {
             return;
         }
 
-        if(!event.getSource().is(DamageSourceRegistry.BLEEDING)) {
+        if (!event.getSource().is(DamageSourceRegistry.BLEEDING)) {
             if (entity.hasEffect(effect)) {
                 entity.invulnerableTime = 0;
                 int level = entity.getEffect(EffectRegistry.BLEEDING.get()).getAmplifier();

@@ -134,7 +134,6 @@ public class AncientLollipop extends SwordItem {
 
         }
 
-
         return pStack;
     }
 

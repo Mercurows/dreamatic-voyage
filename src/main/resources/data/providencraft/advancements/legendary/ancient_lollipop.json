@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "providencraft:ancient_lollipop"
+    },
+    "title": {
+      "translate": "providencraft.advancement.ancient_lollipop",
+      "color": "gold"
+    },
+    "description": {
+      "translate": "providencraft.advancement.ancient_lollipop_des"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "hidden": false
+  },
+  "parent": "providencraft:legendary/legendary",
+  "criteria": {
+    "ancient_lollipop": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "providencraft:ancient_lollipop"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
