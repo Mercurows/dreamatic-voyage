@@ -27,7 +27,7 @@ import java.util.List;
 public class FukamizuBread extends Item {
     private static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(8).build();
 
-    public FukamizuBread(){
+    public FukamizuBread() {
         super(new Properties().food(food).fireResistant());
     }
 

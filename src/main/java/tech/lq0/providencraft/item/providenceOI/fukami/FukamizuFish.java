@@ -21,7 +21,7 @@ public class FukamizuFish extends Item {
     private static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(6).
             effect(() -> new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build();
 
-    public FukamizuFish(){
+    public FukamizuFish() {
         super(new Properties().food(food));
     }
 

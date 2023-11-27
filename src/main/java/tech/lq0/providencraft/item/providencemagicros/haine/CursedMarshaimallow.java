@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class CursedMarshaimallow extends Item {
-    public CursedMarshaimallow(){
+    public CursedMarshaimallow() {
         super(new Properties().rarity(Rarity.UNCOMMON));
     }
 

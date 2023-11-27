@@ -45,7 +45,7 @@ public class Fiaxe extends AxeItem {
 
     @Override
     public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pEntityLiving) {
-        if(pState.is(BlockTags.LEAVES) && pEntityLiving instanceof Player player){
+        if (pState.is(BlockTags.LEAVES) && pEntityLiving instanceof Player player) {
             double random = Math.random();
 
             pStack.hurtAndBreak(random > .2 ? 0 : -1, player, (playerEntity) -> playerEntity.broadcastBreakEvent(player.getUsedItemHand()));

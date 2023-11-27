@@ -24,7 +24,7 @@ import java.util.List;
 public class Xiaolongbao extends Item {
     private static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(7).alwaysEat().build();
 
-    public Xiaolongbao(){
+    public Xiaolongbao() {
         super(new Properties().food(food));
     }
 

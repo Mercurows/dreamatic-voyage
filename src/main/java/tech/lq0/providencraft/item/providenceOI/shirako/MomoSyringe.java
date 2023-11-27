@@ -20,7 +20,7 @@ import tech.lq0.providencraft.tools.TooltipTool;
 import java.util.List;
 
 public class MomoSyringe extends Item {
-    public MomoSyringe(){
+    public MomoSyringe() {
         super(new Properties().rarity(Rarity.UNCOMMON));
     }
 

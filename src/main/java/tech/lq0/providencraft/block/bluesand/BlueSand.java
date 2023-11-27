@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class BlueSand extends SandBlock {
-    public BlueSand(){
+    public BlueSand() {
         super(6844335, BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SAND));
     }
 

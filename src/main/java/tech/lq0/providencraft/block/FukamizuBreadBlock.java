@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class FukamizuBreadBlock extends Block {
-    public FukamizuBreadBlock(){
+    public FukamizuBreadBlock() {
         super(Properties.of().sound(SoundType.METAL).strength(50.0F, 1200.0F).requiresCorrectToolForDrops());
     }
 

@@ -82,6 +82,6 @@ public class PointsStore extends Block implements EntityBlock {
 
     @Nullable
     protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> pServerType, BlockEntityType<E> pClientType, BlockEntityTicker<? super E> pTicker) {
-        return pClientType == pServerType ? (BlockEntityTicker<A>)pTicker : null;
+        return pClientType == pServerType ? (BlockEntityTicker<A>) pTicker : null;
     }
 }

@@ -18,13 +18,13 @@ import javax.annotation.Nullable;
 public class DamageSourceRegistry {
     public static final ResourceKey<DamageType> LAVA_CAKE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "lava_cake"));
     public static final ResourceKey<DamageType> MARI_FOOD = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "mari_food"));
-    public static final ResourceKey<DamageType> EMOTIONAL_DAMAGE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "emotional_damage"));;
+    public static final ResourceKey<DamageType> EMOTIONAL_DAMAGE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "emotional_damage"));
     public static final ResourceKey<DamageType> LOTUS_POTATO = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "lotus_potato"));
     public static final ResourceKey<DamageType> SORAYO = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "sorayo"));
-//    public static final ResourceKey<DamageType> OVERLOAD
+    //    public static final ResourceKey<DamageType> OVERLOAD
     public static final ResourceKey<DamageType> BLEEDING = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "pdc_bleeding"));
     public static final ResourceKey<DamageType> BLOOD_CRYSTAL = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "blood_crystal"));
-//    public static final ResourceKey<DamageType> LUNAR_ECLIPSE
+    //    public static final ResourceKey<DamageType> LUNAR_ECLIPSE
     public static final ResourceKey<DamageType> FUKAMIZU_BREAD = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "fukamizu_bread"));
     public static final ResourceKey<DamageType> BROWNIE_UZZA = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "brownie_uzza"));
     public static final ResourceKey<DamageType> CHOCOAL_COOKIE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "chocoal_cookie"));

@@ -17,7 +17,7 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<AhogeBoomerangEntity>> AHOGE_BOOMERANG_ENTITY =
             ENTITY_TYPES.register("ahoge_boomerang",
                     () -> EntityType.Builder.<AhogeBoomerangEntity>of(AhogeBoomerangEntity::new, MobCategory.MISC).sized(0.8f, 0.3f).build("ahoge_boomerang"));
-//    public static final RegistryObject<EntityType<PlungerEntity>> PLUNGER_ENTITY =
+    //    public static final RegistryObject<EntityType<PlungerEntity>> PLUNGER_ENTITY =
 //            ENTITY_TYPES.register("plunger_entity",
 //                    () -> EntityType.Builder.<PlungerEntity>create(PlungerEntity::new, EntityClassification.MISC).size(0.3f, 0.3f).build("plunger_entity"));
 //    public static final RegistryObject<EntityType<SeatEntity>> SEAT_ENTITY =
@@ -27,7 +27,7 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<DaifukuSyrupEntity>> DAIFUKU_SYRUP_ENTITY =
             ENTITY_TYPES.register("daifuku_syrup_entity",
                     () -> EntityType.Builder.<DaifukuSyrupEntity>of(DaifukuSyrupEntity::new, MobCategory.MISC).sized(0.2f, 0.2f).build("daifuku_syrup_entity"));
-//    public static final RegistryObject<EntityType<FluffBallEntity>> FLUFF_BALL_ENTITY =
+    //    public static final RegistryObject<EntityType<FluffBallEntity>> FLUFF_BALL_ENTITY =
 //            ENTITY_TYPES.register("fluff_ball_entity",
 //                    () -> EntityType.Builder.<FluffBallEntity>create(FluffBallEntity::new, EntityClassification.MISC).size(0.3f, 0.3f).build("fluff_ball_entity"));
 //    public static final RegistryObject<EntityType<KurumiBoomerangEntity>> KURUMI_BOOMERANG_ENTITY =

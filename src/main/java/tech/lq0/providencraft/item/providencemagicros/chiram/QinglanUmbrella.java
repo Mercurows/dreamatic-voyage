@@ -24,7 +24,7 @@ import tech.lq0.providencraft.tools.TooltipTool;
 import java.util.List;
 
 public class QinglanUmbrella extends Item {
-    public QinglanUmbrella(){
+    public QinglanUmbrella() {
         super(new Properties().stacksTo(1).durability(1031));
     }
 
@@ -56,7 +56,7 @@ public class QinglanUmbrella extends Item {
 
     @Override
     public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
-        if(pStack.getDamageValue() < pStack.getMaxDamage() - 1) {
+        if (pStack.getDamageValue() < pStack.getMaxDamage() - 1) {
             pLivingEntity.setDeltaMovement(pLivingEntity.getDeltaMovement().multiply(1, 0, 1).add(0, 0.15f, 0));
             if (pLivingEntity.tickCount % 10 == 0) {
                 pStack.hurtAndBreak(1, pLivingEntity, (p) -> p.broadcastBreakEvent(p.getUsedItemHand()));
@@ -67,7 +67,7 @@ public class QinglanUmbrella extends Item {
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!pLevel.isClientSide && pEntity instanceof Player player) {
-            if(pIsSelected || player.getOffhandItem().getItem() == pStack.getItem()) {
+            if (pIsSelected || player.getOffhandItem().getItem() == pStack.getItem()) {
                 player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 20, 0, false, false));
             }
         }

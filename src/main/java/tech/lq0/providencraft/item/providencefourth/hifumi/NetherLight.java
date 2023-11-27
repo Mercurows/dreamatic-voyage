@@ -42,11 +42,11 @@ public class NetherLight extends SwordItem {
         pAttacker.addEffect(new MobEffectInstance(MobEffects.GLOWING, 40, 0));
 
         double random = Math.random();
-        if(random < 0.123){
+        if (random < 0.123) {
             pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 0));
             pAttacker.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0));
         }
-        
+
         return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 }

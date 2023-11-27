@@ -26,7 +26,7 @@ public class CraftBeer0322 extends Item {
             effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 200, 1), 1.0f).
             effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 1), 1.0f).build();
 
-    public CraftBeer0322(){
+    public CraftBeer0322() {
         super(new Properties().food(food).fireResistant().stacksTo(1));
     }
 

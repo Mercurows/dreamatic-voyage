@@ -25,7 +25,7 @@ public class BrownieUzza extends Item {
     private static final FoodProperties food = new FoodProperties.Builder().nutrition(14).saturationMod(0.5f).alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 340, 1), 1.0f).build();
 
-    public BrownieUzza(){
+    public BrownieUzza() {
         super(new Properties().food(food).stacksTo(16).rarity(Rarity.UNCOMMON));
     }
 
