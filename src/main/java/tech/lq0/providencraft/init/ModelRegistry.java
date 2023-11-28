@@ -5,6 +5,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.providencraft.models.armor.AhogeHelmetModel;
+import tech.lq0.providencraft.models.armor.BreezeCrownModel;
 import tech.lq0.providencraft.models.armor.MistyChestplateModel;
 import tech.lq0.providencraft.models.armor.ReinaWingsModel;
 import tech.lq0.providencraft.models.blockentity.PdCLogoModel;
@@ -27,5 +28,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(AhogeBoomerangModel.LAYER_LOCATION, AhogeBoomerangModel::createBodyLayer);
         event.registerLayerDefinition(AhogeHelmetModel.LAYER_LOCATION, AhogeHelmetModel::createBodyLayer);
         event.registerLayerDefinition(MistyChestplateModel.LAYER_LOCATION, MistyChestplateModel::createBodyLayer);
+        event.registerLayerDefinition(BreezeCrownModel.LAYER_LOCATION, BreezeCrownModel::createBodyLayer);
     }
 }

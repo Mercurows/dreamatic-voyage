@@ -3,6 +3,8 @@ package tech.lq0.providencraft.item.providencemagicros.chiram;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.tags.DamageTypeTags;
@@ -24,6 +26,7 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
@@ -31,14 +34,17 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.init.ItemRegistry;
+import tech.lq0.providencraft.models.armor.BreezeCrownModel;
 import tech.lq0.providencraft.tiers.ModArmorMaterial;
 import tech.lq0.providencraft.tools.*;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class BreezeCrown extends ArmorItem {
@@ -61,33 +67,26 @@ public class BreezeCrown extends ArmorItem {
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.CHIRAM);
     }
 
-//    @SuppressWarnings("unchecked")
-//    @OnlyIn(Dist.CLIENT)
-//    @Nullable
-//    @Override
-//    public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
-//        if (entityLiving instanceof PlayerEntity) {
-//            PlayerEntity player = (PlayerEntity) entityLiving;
-//
-//            if (!player.abilities.isFlying && player.isSneaking()) {
-//                return (A) new BreezeCrownModel2<>();
-//            }
-//            if (!player.abilities.isFlying && player.isOnGround() && player.isSneaking()) {
-//                return (A) new BreezeCrownModel2<>();
-//            } else {
-//                return (A) new BreezeCrownModel<>();
-//            }
-//        }
-//
-//        return (A) new BreezeCrownModel<>();
-//    }
-//
-//    @Nullable
-//    @Override
-//    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-//        return Utils.MOD_ID + ":textures/models/armor/breeze_crown_texture.png";
-//    }
+    @Override
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            @Override
+            @OnlyIn(Dist.CLIENT)
+            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+                BreezeCrownModel<?> armorModel = new BreezeCrownModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(BreezeCrownModel.LAYER_LOCATION));
 
+                armorModel.crouching = livingEntity.isShiftKeyDown();
+                armorModel.riding = original.riding;
+                armorModel.young = livingEntity.isBaby();
+                return armorModel;
+            }
+        });
+    }
+
+    @Override
+    public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+        return Utils.MOD_ID + ":textures/models/armor/breeze_crown.png";
+    }
 
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {

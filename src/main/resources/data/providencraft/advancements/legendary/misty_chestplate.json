@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "providencraft:misty_chestplate"
+    },
+    "title": {
+      "translate": "providencraft.advancement.misty_chestplate",
+      "color": "gold"
+    },
+    "description": {
+      "translate": "providencraft.advancement.misty_chestplate_des"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "hidden": false
+  },
+  "parent": "providencraft:legendary/legendary",
+  "criteria": {
+    "misty_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "providencraft:misty_chestplate"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

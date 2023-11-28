@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "providencraft:breeze_crown"
+    },
+    "title": {
+      "translate": "providencraft.advancement.breeze_crown",
+      "color": "gold"
+    },
+    "description": {
+      "translate": "providencraft.advancement.breeze_crown_des"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "hidden": false
+  },
+  "parent": "providencraft:legendary/legendary",
+  "criteria": {
+    "breeze_crown": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "providencraft:breeze_crown"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

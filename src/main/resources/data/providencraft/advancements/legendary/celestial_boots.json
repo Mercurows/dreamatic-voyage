@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "providencraft:celestial_boots"
+    },
+    "title": {
+      "translate": "providencraft.advancement.celestial_boots",
+      "color": "gold"
+    },
+    "description": {
+      "translate": "providencraft.advancement.celestial_boots_des"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "hidden": false
+  },
+  "parent": "providencraft:legendary/legendary",
+  "criteria": {
+    "celestial_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "providencraft:celestial_boots"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
