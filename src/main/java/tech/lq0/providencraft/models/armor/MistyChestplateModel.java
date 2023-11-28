@@ -566,7 +566,7 @@ public class MistyChestplateModel<T extends LivingEntity> extends HumanoidModel<
         wing.zRot = 37f;
         wing.yRot = deg / -60f;
         poseStack.pushPose();
-        poseStack.translate(-0.12, 0.3, 0.5);
+        poseStack.translate(-0.12, 0.35, 0.5);
 
         wing.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         poseStack.popPose();
