@@ -50,14 +50,7 @@ public class LunaticBowModel extends HumanoidModel<LivingEntity> {
 
     @Override
     public void renderToBuffer(PoseStack pPoseStack, VertexConsumer pBuffer, int pPackedLight, int pPackedOverlay, float pRed, float pGreen, float pBlue, float pAlpha) {
-//		main.copyFrom(this.head);
-//		pPoseStack.pushPose();
-//
-//		pPoseStack.scale(0.7f, 0.7f, 0.7f);
-//		pPoseStack.translate(0.12f, -0.1f, 0.0f);
-
         main.render(pPoseStack, pBuffer, pPackedLight, pPackedOverlay, pRed, pGreen, pBlue, pAlpha);
-//		pPoseStack.popPose();
     }
 
     @Override

@@ -5,7 +5,6 @@ import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.tags.DamageTypeTags;
@@ -40,9 +39,7 @@ import tech.lq0.providencraft.models.armor.MistyChestplateModel;
 import tech.lq0.providencraft.tiers.ModArmorMaterial;
 import tech.lq0.providencraft.tools.*;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 import java.util.function.Consumer;
 
@@ -73,14 +70,8 @@ public class MistyChestplate extends ArmorItem {
             @Override
             @OnlyIn(Dist.CLIENT)
             public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-                HumanoidModel<?> armorModel = new HumanoidModel<>(new ModelPart(Collections.emptyList(), Map.of(
-                        "body", new MistyChestplateModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(MistyChestplateModel.LAYER_LOCATION)).body_total,
-                        "left_arm", new MistyChestplateModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(MistyChestplateModel.LAYER_LOCATION)).left_total,
-                        "right_arm", new MistyChestplateModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(MistyChestplateModel.LAYER_LOCATION)).right_total,
-                        "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-                        "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-                        "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-                        "left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
+                MistyChestplateModel<?> armorModel = new MistyChestplateModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(MistyChestplateModel.LAYER_LOCATION));
+
                 armorModel.crouching = livingEntity.isShiftKeyDown();
                 armorModel.riding = original.riding;
                 armorModel.young = livingEntity.isBaby();
