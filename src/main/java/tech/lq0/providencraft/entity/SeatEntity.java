@@ -14,6 +14,7 @@ import tech.lq0.providencraft.init.EntityRegistry;
 
 import java.util.List;
 
+//From MrCrayfishFurnitureMod
 public class SeatEntity extends Entity {
     public SeatEntity(Level level) {
         super(EntityRegistry.SEAT_ENTITY.get(), level);

@@ -48,37 +48,40 @@ public class VillagerRegistry {
             trades.get(1).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),
                     new ItemStack(Items.APPLE, 4), 10, 2, 0.05f)));
 
+            trades.get(2).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 2),
+                    new ItemStack(ItemRegistry.LUCIA_RICE_CAKE.get(), 5), 12, 4, 0.05f)));
+            trades.get(2).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 4),
+                    new ItemStack(Items.CAKE, 1), 3, 12, 0.05f)));
+            trades.get(2).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.SNOW_BLOCK, 32),
+                    new ItemStack(Items.EMERALD, 1), 8, 2, 0.05f)));
+
+            trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 50),
+                    new ItemStack(Items.SADDLE, 1), 2, 25, 0.05f)));
+//            trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.MAGIC_BOOK.get(), 1),
+//                    new ItemStack(Items.EMERALD, 1), 10, 4, 0.05f)));
+            trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.BROWNIE_UZZA.get(), 2),
+                    new ItemStack(Items.EMERALD, 1), 32, 8, 0.05f)));
+
+//            trades.get(4).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 20),
+//                    new ItemStack(ItemRegistry.PLUNGER.get(), 1), 5, 10, 0.05f)));
+            trades.get(4).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),
+                    new ItemStack(Items.BONE_MEAL, 42), 4, 2, 0.05f)));
+            trades.get(4).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.COMPOSTER, 10),
+                    new ItemStack(Items.EMERALD, 1), 10, 2, 0.05f)));
+
+            trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.LAVA_CAKE.get(), 1),
+                    new ItemStack(Items.EMERALD, 1), 2, 15, 0.05f)));
+//            trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.UNI_MILLET.get(), 18),
+//                    new ItemStack(Items.EMERALD, 1), 20, 2, 0.05f)));
+
         }
     }
 
+    // EmeraldForItemsTrade = 物品换成绿宝石，第一个参数为物品，第二个是换1绿宝石需要的物品个数，第三个是maxUses，第四个是Xp
+    // ItemsForEmeraldsTrade = 绿宝石换成物品，第一个参数为要换的物品，第二个是绿宝石个数，第三个是物品个数，第四个是maxUses，第五个是Xp
 
 
 //    public static void fillTradeData() {
-//        VillagerTrades.ITrade[] elifausLevel1 = new VillagerTrades.ITrade[]{
-//                new EmeraldForItemsTrade(ItemRegistry.RED_AHOGE.get(), 5, 10, 2),
-//                new EmeraldForItemsTrade(ItemRegistry.WHITE_AHOGE.get(), 5, 10, 2),
-//                new ItemsForEmeraldsTrade(Items.APPLE, 1, 4, 10, 2)
-//        };
-//        VillagerTrades.ITrade[] elifausLevel2 = new VillagerTrades.ITrade[]{
-//                new ItemsForEmeraldsTrade(ItemRegistry.LUCIA_RICE_CAKE.get(), 2, 5, 12, 4),
-//                new ItemsForEmeraldsTrade(Items.CAKE, 4, 1, 3,12),
-//                new EmeraldForItemsTrade(Items.SNOW_BLOCK, 32, 8, 2)
-//        };
-//        VillagerTrades.ITrade[] elifausLevel3 = new VillagerTrades.ITrade[]{
-//                new ItemsForEmeraldsTrade(Items.SADDLE, 50, 1, 2, 25),
-//                new EmeraldForItemsTrade(ItemRegistry.MAGIC_BOOK.get(), 1, 10, 4),
-//                new EmeraldForItemsTrade(ItemRegistry.BROWNIE_UZZA.get(), 2, 32, 8)
-//        };
-//        VillagerTrades.ITrade[] elifausLevel4 = new VillagerTrades.ITrade[]{
-//                new ItemsForEmeraldsTrade(ItemRegistry.PLUNGER.get(), 20, 1, 5, 10),
-//                new ItemsForEmeraldsTrade(Items.BONE_MEAL, 1, 42, 4, 2),
-//                new EmeraldForItemsTrade(Items.COMPOSTER, 10, 10, 2)
-//        };
-//        VillagerTrades.ITrade[] elifausLevel5 = new VillagerTrades.ITrade[]{
-//                new EmeraldForItemsTrade(ItemRegistry.LAVA_CAKE.get(), 1, 2, 15),
-//                new EmeraldForItemsTrade(ItemRegistry.UNI_MILLET.get(), 18, 20, 2)
-//        };
-//
 //        VillagerTrades.VILLAGER_DEFAULT_TRADES.put(ELIFAUS.get(),
 //                gatAsIntMap(ImmutableMap.of(1, elifausLevel1, 2, elifausLevel2, 3, elifausLevel3, 4, elifausLevel4, 5, elifausLevel5)));
 //
