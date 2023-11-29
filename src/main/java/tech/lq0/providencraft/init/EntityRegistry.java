@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
+import tech.lq0.providencraft.entity.SeatEntity;
 import tech.lq0.providencraft.entity.projectile.AhogeBoomerangEntity;
 import tech.lq0.providencraft.entity.projectile.BloodCrystalEntity;
 import tech.lq0.providencraft.entity.projectile.CursedCatDollEntity;
@@ -20,10 +21,10 @@ public class EntityRegistry {
     //    public static final RegistryObject<EntityType<PlungerEntity>> PLUNGER_ENTITY =
 //            ENTITY_TYPES.register("plunger_entity",
 //                    () -> EntityType.Builder.<PlungerEntity>create(PlungerEntity::new, EntityClassification.MISC).size(0.3f, 0.3f).build("plunger_entity"));
-//    public static final RegistryObject<EntityType<SeatEntity>> SEAT_ENTITY =
-//            ENTITY_TYPES.register("seat_entity",
-//                    () -> EntityType.Builder.<SeatEntity>create((type, world) -> new SeatEntity(world),
-//                            EntityClassification.MISC).size(0.0f, 0.0f).setCustomClientFactory((spawnEntity, world) -> new SeatEntity(world)).disableSummoning().build("seat_entity"));
+    public static final RegistryObject<EntityType<SeatEntity>> SEAT_ENTITY =
+            ENTITY_TYPES.register("seat_entity",
+                    () -> EntityType.Builder.<SeatEntity>of((type, level) -> new SeatEntity(level),
+                            MobCategory.MISC).sized(0.0f, 0.0f).setCustomClientFactory((spawnEntity, level) -> new SeatEntity(level)).noSummon().build("seat_entity"));
     public static final RegistryObject<EntityType<DaifukuSyrupEntity>> DAIFUKU_SYRUP_ENTITY =
             ENTITY_TYPES.register("daifuku_syrup_entity",
                     () -> EntityType.Builder.<DaifukuSyrupEntity>of(DaifukuSyrupEntity::new, MobCategory.MISC).sized(0.2f, 0.2f).build("daifuku_syrup_entity"));
