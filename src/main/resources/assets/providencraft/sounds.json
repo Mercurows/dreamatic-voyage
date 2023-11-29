@@ -1,4 +1,12 @@
 {
+  "myanna": {
+    "subtitle": "subtitle.providencraft.call_myanna",
+    "sounds": [
+      {
+        "name": "providencraft:myanna"
+      }
+    ]
+  },
   "shutter": {
     "subtitle": "subtitle.providencraft.shutter",
     "sounds": [
