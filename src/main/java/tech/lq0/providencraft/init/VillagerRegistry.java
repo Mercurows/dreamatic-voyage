@@ -57,8 +57,8 @@ public class VillagerRegistry {
 
             trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 50),
                     new ItemStack(Items.SADDLE, 1), 2, 25, 0.05f)));
-//            trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.MAGIC_BOOK.get(), 1),
-//                    new ItemStack(Items.EMERALD, 1), 10, 4, 0.05f)));
+            trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.MAGIC_BOOK.get(), 1),
+                    new ItemStack(Items.EMERALD, 1), 10, 4, 0.05f)));
             trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.BROWNIE_UZZA.get(), 2),
                     new ItemStack(Items.EMERALD, 1), 32, 8, 0.05f)));
 
@@ -73,7 +73,6 @@ public class VillagerRegistry {
                     new ItemStack(Items.EMERALD, 1), 2, 15, 0.05f)));
 //            trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.UNI_MILLET.get(), 18),
 //                    new ItemStack(Items.EMERALD, 1), 20, 2, 0.05f)));
-
         }
     }
 
