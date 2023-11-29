@@ -31,5 +31,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(ChiramIdolHelmetModel.LAYER_LOCATION, ChiramIdolHelmetModel::createBodyLayer);
         event.registerLayerDefinition(ChiramIdolChestplateModel.LAYER_LOCATION, ChiramIdolChestplateModel::createBodyLayer);
         event.registerLayerDefinition(ChiramIdolBootsModel.LAYER_LOCATION, ChiramIdolBootsModel::createBodyLayer);
+        event.registerLayerDefinition(ButterflyAnkletModel.LAYER_LOCATION, ButterflyAnkletModel::createBodyLayer);
     }
 }
