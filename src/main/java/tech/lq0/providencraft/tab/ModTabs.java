@@ -38,9 +38,20 @@ public class ModTabs {
             }))
             .build();
 
+    public static CreativeModeTab PDC_COSTUME_TAB = CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.providencraft_costumes_tab"))
+            .withTabsBefore(TabRegistry.PDC_BLOCK_TAB.getKey())
+            .icon(() -> new ItemStack(ItemRegistry.CHIRAM_IDOL_CHESTPLATE.get()))
+            .displayItems((param, output) -> ItemRegistry.COSTUMES.getEntries().forEach((registryObject) -> {
+                if (!HIDDEN.contains(registryObject)) {
+                    output.accept(registryObject.get());
+                }
+            }))
+            .build();
+
     public static CreativeModeTab PDC_TAPE_TAB = CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.providencraft_tapes_tab"))
-            .withTabsBefore(TabRegistry.PDC_BLOCK_TAB.getKey())
+            .withTabsBefore(TabRegistry.PDC_COSTUME_TAB.getKey())
             .icon(() -> new ItemStack(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL.get()))
             .displayItems((param, output) -> ItemRegistry.AUDIO_ITEMS.getEntries().forEach((registryObject) -> {
                 if (!HIDDEN.contains(registryObject)) {
