@@ -46,9 +46,9 @@ public class YagiStaffCard extends Item implements ICurioItem {
 
         map = HashMultimap.create(map);
         map.put(Attributes.MAX_HEALTH,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.7f, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.8f, AttributeModifier.Operation.MULTIPLY_TOTAL));
         map.put(Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 1.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.8f, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
         return map;
     }

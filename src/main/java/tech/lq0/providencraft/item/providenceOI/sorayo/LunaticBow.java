@@ -56,9 +56,9 @@ public class LunaticBow extends Item implements ICurioItem {
 
         map = HashMultimap.create(map);
         map.put(Attributes.ATTACK_SPEED,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.35f, AttributeModifier.Operation.MULTIPLY_BASE));
+                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.2f, AttributeModifier.Operation.MULTIPLY_BASE));
         map.put(Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.7f, AttributeModifier.Operation.MULTIPLY_BASE));
+                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.4f, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return map;
     }
