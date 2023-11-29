@@ -1,6 +1,7 @@
 {
   "entries": [
-    "providencraft:fishing"
+    "providencraft:fishing",
+    "providencraft:frog_leg_from_frog"
   ],
   "replace": false
 }

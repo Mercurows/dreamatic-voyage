@@ -8,6 +8,7 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,9 +27,14 @@ public class VillagerRegistry {
 
     public static final RegistryObject<PoiType> ELIFAUS_POI = POI_TYPES.register("elifaus",
             () -> new PoiType(ImmutableSet.copyOf(BlockRegistry.PORCELAIN_THRONE.get().getStateDefinition().getPossibleStates()), 1, 1));
+    public static final RegistryObject<PoiType> RUOZHI_POI = POI_TYPES.register("ruozhi",
+            () -> new PoiType(ImmutableSet.copyOf(BlockRegistry.COMMUNICATION_TABLE.get().getStateDefinition().getPossibleStates()), 1, 1));
 
     public static final RegistryObject<VillagerProfession> ELIFAUS = VILLAGER_PROFESSIONS.register("elifaus",
             () -> new VillagerProfession("elifaus", holder -> holder.get() == ELIFAUS_POI.get(), holder -> holder.get() == ELIFAUS_POI.get(),
+                    ImmutableSet.of(), ImmutableSet.of(), null));
+    public static final RegistryObject<VillagerProfession> RUOZHI = VILLAGER_PROFESSIONS.register("ruozhi",
+            () -> new VillagerProfession("ruozhi", holder -> holder.get() == RUOZHI_POI.get(), holder -> holder.get() == RUOZHI_POI.get(),
                     ImmutableSet.of(), ImmutableSet.of(), null));
 
     public static void register(IEventBus eventBus) {
@@ -74,42 +80,39 @@ public class VillagerRegistry {
 //            trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.UNI_MILLET.get(), 18),
 //                    new ItemStack(Items.EMERALD, 1), 20, 2, 0.05f)));
         }
+        if (event.getType() == VillagerRegistry.RUOZHI.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            trades.get(1).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.IRON_INGOT, 6),
+                    new ItemStack(Items.EMERALD, 1), 10, 3, 0.05f)));
+            trades.get(1).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Blocks.PUMPKIN.asItem(), 8),
+                    new ItemStack(Items.EMERALD, 1), 10, 5, 0.05f)));
+            trades.get(1).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 5),
+                    new ItemStack(Items.PUMPKIN_PIE, 2), 12, 5, 0.05f)));
+
+            trades.get(2).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.REDSTONE, 15),
+                    new ItemStack(Items.EMERALD, 1), 10, 5, 0.05f)));
+            trades.get(2).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 2),
+                    new ItemStack(Items.STICKY_PISTON, 3), 12, 5, 0.05f)));
+//            trades.get(2).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 3),
+//                    new ItemStack(ItemRegistry.UNI_MILLET.get(), 4), 10, 5, 0.05f)));
+
+            trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.SALMON, 20),
+                    new ItemStack(Items.EMERALD, 1), 16, 2, 0.05f)));
+            trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 8),
+                    new ItemStack(ItemRegistry.PORCELAIN_THRONE.get(), 3), 12, 10, 0.05f)));
+//            trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 2),
+//                    new ItemStack(ItemRegistry.BANANA_MILK.get(), 3), 20, 6, 0.05f)));
+
+            trades.get(4).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.SMOOTH_STONE, 10),
+                    new ItemStack(Items.EMERALD, 1), 30, 1, 0.05f)));
+            trades.get(4).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 3),
+                    new ItemStack(ItemRegistry.FROG_LEG.get(), 2), 12, 3, 0.05f)));
+
+//            trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 50),
+//                    new ItemStack(ItemRegistry.ELECTRIC_HORN.get(), 1), 1, 35, 0.05f)));
+            trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),
+                    new ItemStack(ItemRegistry.TARO_ICE_CREAM.get(), 1), 16, 5, 0.05f)));
+        }
     }
-
-    // EmeraldForItemsTrade = 物品换成绿宝石，第一个参数为物品，第二个是换1绿宝石需要的物品个数，第三个是maxUses，第四个是Xp
-    // ItemsForEmeraldsTrade = 绿宝石换成物品，第一个参数为要换的物品，第二个是绿宝石个数，第三个是物品个数，第四个是maxUses，第五个是Xp
-
-
-//    public static void fillTradeData() {
-//        VillagerTrades.VILLAGER_DEFAULT_TRADES.put(ELIFAUS.get(),
-//                gatAsIntMap(ImmutableMap.of(1, elifausLevel1, 2, elifausLevel2, 3, elifausLevel3, 4, elifausLevel4, 5, elifausLevel5)));
-//
-//        VillagerTrades.ITrade[] ruozhiLevel1 = new VillagerTrades.ITrade[]{
-//                new EmeraldForItemsTrade(Items.IRON_INGOT, 6, 10, 3),
-//                new EmeraldForItemsTrade(Blocks.PUMPKIN.asItem(), 8, 10, 5),
-//                new ItemsForEmeraldsTrade(Items.PUMPKIN_PIE, 5, 2, 5)
-//        };
-//        VillagerTrades.ITrade[] ruozhiLevel2 = new VillagerTrades.ITrade[]{
-//                new EmeraldForItemsTrade(Items.REDSTONE, 15, 10, 5),
-//                new ItemsForEmeraldsTrade(Items.STICKY_PISTON, 2, 3, 5),
-//                new ItemsForEmeraldsTrade(ItemRegistry.UNI_MILLET.get(), 3, 4, 10, 5)
-//        };
-//        VillagerTrades.ITrade[] ruozhiLevel3 = new VillagerTrades.ITrade[]{
-//                new EmeraldForItemsTrade(Items.SALMON, 20, 16, 2),
-//                new ItemsForEmeraldsTrade(ItemRegistry.PORCELAIN_THRONE.get(), 8, 1, 10),
-//                new ItemsForEmeraldsTrade(ItemRegistry.BANANA_MILK.get(), 2, 3, 20, 6)
-//        };
-//        VillagerTrades.ITrade[] ruozhiLevel4 = new VillagerTrades.ITrade[]{
-//                new EmeraldForItemsTrade(Items.SMOOTH_STONE, 10, 30, 1),
-//                new ItemsForEmeraldsTrade(ItemRegistry.ELIBOARD.get(), 3,8, 16, 3),
-//                new ItemsForEmeraldsTrade(ItemRegistry.FROG_LEG.get(), 3, 2, 3)
-//        };
-//        VillagerTrades.ITrade[] ruozhiLevel5 = new VillagerTrades.ITrade[]{
-//                new ItemsForEmeraldsTrade(ItemRegistry.ELECTRIC_HORN.get(), 50, 1, 1, 35),
-//                new ItemsForEmeraldsTrade(ItemRegistry.TARO_ICE_CREAM.get(), 4, 1, 16, 5)
-//        };
-//
-//        VillagerTrades.VILLAGER_DEFAULT_TRADES.put(RUOZHI.get(),
-//                gatAsIntMap(ImmutableMap.of(1, ruozhiLevel1, 2, ruozhiLevel2, 3, ruozhiLevel3, 4, ruozhiLevel4, 5, ruozhiLevel5)));
-//    }
 }

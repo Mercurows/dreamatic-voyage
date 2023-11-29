@@ -3,6 +3,10 @@
     {
       "id": "providencraft:elifaus",
       "required": false
+    },
+    {
+      "id": "providencraft:ruozhi",
+      "required": false
     }
   ]
 }

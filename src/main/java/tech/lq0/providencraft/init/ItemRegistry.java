@@ -43,6 +43,7 @@ import tech.lq0.providencraft.item.providencemagicros.chiram.*;
 import tech.lq0.providencraft.item.providencemagicros.ekira.CelestialBoots;
 import tech.lq0.providencraft.item.providencemagicros.ekira.EkiraCore;
 import tech.lq0.providencraft.item.providencemagicros.haine.*;
+import tech.lq0.providencraft.item.providencemagicros.keroro.FrogLeg;
 import tech.lq0.providencraft.item.providencemagicros.keroro.FroggyLeggings;
 import tech.lq0.providencraft.item.providencemagicros.keroro.KeroroCore;
 import tech.lq0.providencraft.item.providencesecond.louise.*;
@@ -187,7 +188,7 @@ public class ItemRegistry {
 
     //keroro
 //    public static final RegistryObject<Item> RED_NOSE = ITEMS.register("red_nose", RedNose::new);
-//    public static final RegistryObject<Item> FROG_LEG = ITEMS.register("frog_leg", FrogLeg::new);
+    public static final RegistryObject<Item> FROG_LEG = ITEMS.register("frog_leg", FrogLeg::new);
 //    public static final RegistryObject<Item> FROG_CROWN = ITEMS.register("frog_crown", FrogCrown::new);
     public static final RegistryObject<Item> FROGGY_LEGGINGS = ITEMS.register("froggy_leggings", FroggyLeggings::new);
     public static final RegistryObject<Item> KERORO_CORE = ITEMS.register("keroro_core", KeroroCore::new);
