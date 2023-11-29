@@ -7,6 +7,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.tiers.ModItemTier;
 import tech.lq0.providencraft.tools.Livers;
@@ -19,6 +21,7 @@ public class RedAhogeSword extends SwordItem {
         super(ModItemTier.RED_AHOGE, 4, -2.4f, new Item.Properties());
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.red_ahoge_sword_1").withStyle(ChatFormatting.GRAY));

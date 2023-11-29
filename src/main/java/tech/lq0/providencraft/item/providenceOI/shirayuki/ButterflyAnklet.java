@@ -84,9 +84,9 @@ public class ButterflyAnklet extends ArmorItem {
         if (pEquipmentSlot == getEquipmentSlot()) {
             map = HashMultimap.create(map);
             map.put(Attributes.MOVEMENT_SPEED,
-                    new AttributeModifier(uuid, "butterfly anklet modifier", 0.3, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.3, AttributeModifier.Operation.MULTIPLY_TOTAL));
 //            map.put(AttributeRegistry.CHAOS.get(),
-//                    new AttributeModifier(uuid, "butterfly anklet modifier", -30, AttributeModifier.Operation.ADDITION));
+//                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -30, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }
