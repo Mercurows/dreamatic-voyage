@@ -29,5 +29,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(FroggyLeggingsModel.LAYER_LOCATION, FroggyLeggingsModel::createBodyLayer);
         event.registerLayerDefinition(CelestialBootsModel.LAYER_LOCATION, CelestialBootsModel::createBodyLayer);
         event.registerLayerDefinition(ChiramIdolHelmetModel.LAYER_LOCATION, ChiramIdolHelmetModel::createBodyLayer);
+        event.registerLayerDefinition(ChiramIdolChestplateModel.LAYER_LOCATION, ChiramIdolChestplateModel::createBodyLayer);
     }
 }
