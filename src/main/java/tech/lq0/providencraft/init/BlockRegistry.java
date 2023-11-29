@@ -15,7 +15,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> RED_AHOGE_BLOCK = BLOCKS.register("red_ahoge_block", RedAhogeBlock::new);
     public static final RegistryObject<Block> WHITE_AHOGE_BLOCK = BLOCKS.register("white_ahoge_block", WhiteAhogeBlock::new);
     public static final RegistryObject<Block> COMMUNICATION_TABLE = BLOCKS.register("communication_table", CommunicationTable::new);
-//    public static final RegistryObject<Block> PORCELAIN_THRONE = BLOCKS.register("porcelain_throne", PorcelainThrone::new);
+    public static final RegistryObject<Block> PORCELAIN_THRONE = BLOCKS.register("porcelain_throne", PorcelainThrone::new);
     public static final RegistryObject<Block> POINTS_STORE = BLOCKS.register("points_store", PointsStore::new);
     public static final RegistryObject<Block> FUKAMIZU_BREAD_BLOCK = BLOCKS.register("fukamizu_bread_block", FukamizuBreadBlock::new);
 //    public static final RegistryObject<Block> UNI_MILLET_BLOCK = BLOCKS.register("uni_millet_block", UniMilletBlock::new);

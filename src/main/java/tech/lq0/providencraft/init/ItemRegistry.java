@@ -13,6 +13,7 @@ import tech.lq0.providencraft.item.legacy.YagiStaffCard;
 import tech.lq0.providencraft.item.material.*;
 import tech.lq0.providencraft.item.other.MusicDisc;
 import tech.lq0.providencraft.item.other.PdcPoint;
+import tech.lq0.providencraft.item.other.PorcelainThroneBlockItem;
 import tech.lq0.providencraft.item.other.PremiumPdcPoint;
 import tech.lq0.providencraft.item.providenceOI.ccelia.CraftBeer0322;
 import tech.lq0.providencraft.item.providenceOI.fukami.*;
@@ -429,7 +430,7 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.WHITE_AHOGE_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> COMMUNICATION_TABLE = BLOCK_ITEMS.register("communication_table",
             () -> new BlockItem(BlockRegistry.COMMUNICATION_TABLE.get(), new Item.Properties()));
-    //    public static final RegistryObject<Item> PORCELAIN_THRONE = BLOCK_ITEMS.register("porcelain_throne", PorcelainThroneBlockItem::new);
+    public static final RegistryObject<Item> PORCELAIN_THRONE = BLOCK_ITEMS.register("porcelain_throne", PorcelainThroneBlockItem::new);
     public static final RegistryObject<Item> POINTS_STORE = BLOCK_ITEMS.register("points_store",
             () -> new BlockItem(BlockRegistry.POINTS_STORE.get(), new Item.Properties()));
     public static final RegistryObject<Item> FUKAMIZU_BREAD_BLOCK = BLOCK_ITEMS.register("fukamizu_bread_block",
