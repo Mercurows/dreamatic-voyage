@@ -27,5 +27,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(MistyChestplateModel.LAYER_LOCATION, MistyChestplateModel::createBodyLayer);
         event.registerLayerDefinition(BreezeCrownModel.LAYER_LOCATION, BreezeCrownModel::createBodyLayer);
         event.registerLayerDefinition(FroggyLeggingsModel.LAYER_LOCATION, FroggyLeggingsModel::createBodyLayer);
+        event.registerLayerDefinition(CelestialBootsModel.LAYER_LOCATION, CelestialBootsModel::createBodyLayer);
     }
 }
