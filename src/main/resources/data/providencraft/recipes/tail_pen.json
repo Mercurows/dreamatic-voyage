@@ -16,13 +16,13 @@
       "item": "minecraft:red_glazed_terracotta"
     },
     "e": {
-      "item": "minecraft:end_rod"
+      "item": "minecraft:stick"
     },
     "f": {
       "item": "minecraft:white_wool"
     },
     "g": {
-      "item": "minecraft:gold_ingot"
+      "item": "providencraft:radiant_crystal"
     }
   },
   "result": {

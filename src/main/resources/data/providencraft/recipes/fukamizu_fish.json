@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    "php",
+    "ppp"
+  ],
+  "key": {
+    "h": {
+      "item": "providencraft:dark_crystal"
+    },
+    "p": {
+      "tag": "minecraft:fishes"
+    }
+  },
+  "result": {
+    "item": "providencraft:fukamizu_fish",
+    "count": 4
+  }
+}

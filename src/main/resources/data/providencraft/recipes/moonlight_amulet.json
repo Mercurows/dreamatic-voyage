@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "  g",
+    " eg",
     "rgg",
     "ggl"
   ],
@@ -14,6 +14,9 @@
     },
     "l": {
       "item": "providencraft:lucia_rice_cake"
+    },
+    "e": {
+      "item": "providencraft:radiant_crystal"
     }
   },
   "result": {
