@@ -335,6 +335,12 @@ public class ItemRegistry {
     public static final RegistryObject<Item> GN_STAR = ITEMS.register("gn_star", GNStar::new);
     public static final RegistryObject<Item> MAGICROS_CORE = ITEMS.register("magicros_core", MagicrosCore::new);
     public static final RegistryObject<Item> DREAM_WEAVING_YARN = ITEMS.register("dream_weaving_yarn", DreamWeavingYarn::new);
+    public static final RegistryObject<Item> DARK_CRYSTAL = ITEMS.register("dark_crystal", DarkCrystal::new);
+    public static final RegistryObject<Item> RADIANT_CRYSTAL = ITEMS.register("radiant_crystal", RadiantCrystal::new);
+    public static final RegistryObject<Item> ILLUSORY_CRYSTAL = ITEMS.register("illusory_crystal", IllusoryCrystal::new);
+    public static final RegistryObject<Item> SINK_CRYSTAL = ITEMS.register("sink_crystal", SinkCrystal::new);
+    public static final RegistryObject<Item> ALIENIS_CRYSTAL = ITEMS.register("alienis_crystal", AlienisCrystal::new);
+    public static final RegistryObject<Item> TERMINAL_CRYSTAL = ITEMS.register("terminal_crystal", TerminalCrystal::new);
 
 
     /**
