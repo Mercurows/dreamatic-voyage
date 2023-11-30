@@ -29,7 +29,7 @@ public class AhogeBoomerangEntity extends ThrowableItemProjectile {
         super.onHitEntity(pResult);
         Entity entity = pResult.getEntity();
         if (entity instanceof LivingEntity livingEntity) {
-            livingEntity.hurt(this.damageSources().thrown(this, this.getOwner() instanceof LivingEntity living ? living : null), 10.0f);
+            livingEntity.hurt(this.damageSources().thrown(this, this.getOwner() instanceof LivingEntity living ? living : null), 7.0f);
         }
 
         if (!this.level().isClientSide) {

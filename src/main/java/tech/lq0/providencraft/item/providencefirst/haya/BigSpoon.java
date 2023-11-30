@@ -19,7 +19,7 @@ import java.util.List;
 
 public class BigSpoon extends SwordItem {
     public BigSpoon() {
-        super(Tiers.IRON, 8, -3.2f, new Item.Properties().durability(1108));
+        super(Tiers.IRON, 8, -3.2f, new Item.Properties().durability(518));
     }
 
     @Override
@@ -40,7 +40,6 @@ public class BigSpoon extends SwordItem {
             if (pTarget.isDeadOrDying()) {
                 player.getFoodData().eat(food, 0.75f);
             }
-
         }
 
         return super.hurtEnemy(pStack, pTarget, pAttacker);

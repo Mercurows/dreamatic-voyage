@@ -11,7 +11,7 @@ import tech.lq0.providencraft.init.ItemRegistry;
 import java.util.function.Supplier;
 
 public enum ModItemTier implements Tier {
-    RED_AHOGE(2, 1221, 7.0F, 2.0F, 14,
+    RED_AHOGE(2, 321, 7.0F, 2.0F, 14,
             () -> Ingredient.of(ItemRegistry.RED_AHOGE.get())),
     DARK_ELF(4, 39, 50.0F, 1.0F, 20,
             () -> Ingredient.of(ItemRegistry.WHITE_AHOGE.get()));
