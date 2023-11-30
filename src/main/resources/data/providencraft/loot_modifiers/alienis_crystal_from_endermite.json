@@ -1,0 +1,17 @@
+{
+  "type": "providencraft:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/endermite"
+    },
+    {
+      "chance": 0.8,
+      "condition": "minecraft:random_chance"
+    },
+    {
+      "condition": "minecraft:killed_by_player"
+    }
+  ],
+  "item": "providencraft:alienis_crystal"
+}
