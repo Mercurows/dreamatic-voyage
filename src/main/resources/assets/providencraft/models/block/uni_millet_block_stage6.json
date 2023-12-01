@@ -1,5 +1,6 @@
 {
   "parent": "minecraft:block/crop",
+  "render_type": "minecraft:cutout",
   "textures": {
     "crop": "providencraft:block/uni_millet_block_stage6"
   }
