@@ -9,6 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.item.legacy.LavaCake;
+import tech.lq0.providencraft.item.legacy.Plate;
 import tech.lq0.providencraft.item.legacy.YagiStaffCard;
 import tech.lq0.providencraft.item.material.*;
 import tech.lq0.providencraft.item.other.MusicDisc;
@@ -320,7 +321,7 @@ public class ItemRegistry {
     /**
      * legacy
      **/
-//    public static final RegistryObject<Item> PLATE = ITEMS.register("plate", Plate::new);
+    public static final RegistryObject<Item> PLATE = ITEMS.register("plate", Plate::new);
 //    public static final RegistryObject<Item> FLUFF_BALL = ITEMS.register("fluff_ball", FluffBall::new);
     public static final RegistryObject<Item> YAGI_STAFF_CARD = ITEMS.register("yagi_staff_card", YagiStaffCard::new);
     public static final RegistryObject<Item> LAVA_CAKE = ITEMS.register("lava_cake", LavaCake::new);
