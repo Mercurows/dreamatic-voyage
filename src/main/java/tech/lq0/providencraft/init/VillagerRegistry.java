@@ -77,8 +77,8 @@ public class VillagerRegistry {
 
             trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.LAVA_CAKE.get(), 1),
                     new ItemStack(Items.EMERALD, 1), 2, 15, 0.05f)));
-//            trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.UNI_MILLET.get(), 18),
-//                    new ItemStack(Items.EMERALD, 1), 20, 2, 0.05f)));
+            trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(ItemRegistry.UNI_MILLET.get(), 18),
+                    new ItemStack(Items.EMERALD, 1), 20, 2, 0.05f)));
         }
         if (event.getType() == VillagerRegistry.RUOZHI.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
