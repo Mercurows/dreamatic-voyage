@@ -94,8 +94,8 @@ public class VillagerRegistry {
                     new ItemStack(Items.EMERALD, 1), 10, 5, 0.05f)));
             trades.get(2).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 2),
                     new ItemStack(Items.STICKY_PISTON, 3), 12, 5, 0.05f)));
-//            trades.get(2).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 3),
-//                    new ItemStack(ItemRegistry.UNI_MILLET.get(), 4), 10, 5, 0.05f)));
+            trades.get(2).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 3),
+                    new ItemStack(ItemRegistry.UNI_MILLET.get(), 4), 10, 5, 0.05f)));
 
             trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.SALMON, 20),
                     new ItemStack(Items.EMERALD, 1), 16, 2, 0.05f)));
