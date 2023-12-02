@@ -5,7 +5,8 @@
     "providencraft:dark_crystal_from_warden",
     "providencraft:radiant_crystal_from_blaze",
     "providencraft:illusory_crystal_from_phantom",
-    "providencraft:alienis_crystal_from_endermite"
+    "providencraft:alienis_crystal_from_endermite",
+    "providencraft:sink_crystal_from_guardian"
   ],
   "replace": false
 }
