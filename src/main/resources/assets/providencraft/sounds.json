@@ -7,6 +7,15 @@
       }
     ]
   },
+  "baby_meow": {
+    "subtitle": "subtitle.providencraft.baby_meow",
+    "sounds": [
+      {
+        "name": "providencraft:baby_meow",
+        "stream": true
+      }
+    ]
+  },
   "shutter": {
     "subtitle": "subtitle.providencraft.shutter",
     "sounds": [
