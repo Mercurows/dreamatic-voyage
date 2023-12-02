@@ -3,6 +3,9 @@ package tech.lq0.providencraft.item.providencefirst.ayelet;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -20,19 +23,25 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.init.ItemRegistry;
+import tech.lq0.providencraft.models.armor.CrystalHornModel;
 import tech.lq0.providencraft.tiers.ModArmorMaterial;
 import tech.lq0.providencraft.tools.ItemNBTTool;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
+import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CrystalHorn extends ArmorItem {
@@ -75,6 +84,33 @@ public class CrystalHorn extends ArmorItem {
                 player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 12000, 0));
             }
         }
+    }
+
+    @Override
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            @Override
+            @OnlyIn(Dist.CLIENT)
+            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+                HumanoidModel<?> armorModel = new HumanoidModel<>(new ModelPart(Collections.emptyList(), Map.of(
+                        "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "head", new CrystalHornModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(CrystalHornModel.LAYER_LOCATION)).main,
+                        "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
+                armorModel.crouching = livingEntity.isShiftKeyDown();
+                armorModel.riding = original.riding;
+                armorModel.young = livingEntity.isBaby();
+                return armorModel;
+            }
+        });
+    }
+
+    @Override
+    public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+        return Utils.MOD_ID + ":textures/models/armor/crystal_horn.png";
     }
 
     @OnlyIn(Dist.CLIENT)
