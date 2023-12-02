@@ -25,7 +25,7 @@ public final class ModLootTables {
                 case "abandoned_mineshaft", "desert_pyramid", "simple_dungeon" -> addPool.accept(inject(PDC_CHEST));
                 case "jungle_temple", "woodland_mansion" -> addPool.accept(inject(PDC_ELF_CHEST));
                 case "end_city_treasure" -> addPool.accept(inject(PDC_DISC_CHEST));
-//                case "igloo_chest" -> addPool.accept(inject(PDC_IGLOO_CHEST));
+                case "igloo_chest" -> addPool.accept(inject(PDC_IGLOO_CHEST));
                 default -> {
                 }
             }
