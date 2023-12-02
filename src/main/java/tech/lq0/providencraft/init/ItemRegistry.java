@@ -30,6 +30,7 @@ import tech.lq0.providencraft.item.providencefirst.mari.Machete;
 import tech.lq0.providencraft.item.providencefirst.myanna.DarkElfCore;
 import tech.lq0.providencraft.item.providencefirst.myanna.Drill;
 import tech.lq0.providencraft.item.providencefirst.myanna.MountainDestroyer;
+import tech.lq0.providencraft.item.providencefirst.myanna.Schedule;
 import tech.lq0.providencraft.item.providencefirst.unia.ElfWings;
 import tech.lq0.providencraft.item.providencefirst.unia.EnchantedUnigiri;
 import tech.lq0.providencraft.item.providencefirst.unia.TaroIceCream;
@@ -106,7 +107,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MOUNTAIN_DESTROYER = ITEMS.register("mountain_destroyer", MountainDestroyer::new);
     public static final RegistryObject<Item> DARK_ELF_CORE = ITEMS.register("dark_elf_core", DarkElfCore::new);
     public static final RegistryObject<Item> DRILL = ITEMS.register("drill", Drill::new);
-//    public static final RegistryObject<Item> SCHEDULE = ITEMS.register("schedule", Schedule::new);
+    public static final RegistryObject<Item> SCHEDULE = ITEMS.register("schedule", Schedule::new);
 //    public static final RegistryObject<Item> DARK_ELF_GLASSES = ITEMS.register("dark_elf_glasses", DarkElfGlasses::new);
 
     //haya
