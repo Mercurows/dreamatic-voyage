@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ae ",
+    " db",
+    "cc "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:diamond"
+    },
+    "b": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "c": {
+      "item": "minecraft:quartz"
+    },
+    "d": {
+      "item": "minecraft:echo_shard"
+    },
+    "e": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "item": "providencraft:crystal_horn",
+    "count": 1
+  }
+}
