@@ -2,6 +2,8 @@ package tech.lq0.providencraft.item.providencesecond.louise;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,6 +17,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.entity.projectile.WhiteAhogeEntity;
+import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
@@ -28,7 +31,6 @@ public class MagicBookThrow extends Item {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        TooltipTool.addDevelopingText(pTooltipComponents);
         pTooltipComponents.add(Component.translatable("des.providencraft.magic_book_throw_1").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.providencraft.magic_book_throw_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
@@ -41,26 +43,33 @@ public class MagicBookThrow extends Item {
     }
 
     @Override
-    public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
-        if (!pLevel.isClientSide) {
-            int duration = getUseDuration(pStack) - pRemainingUseDuration;
-            int k = 15;
-            if (duration > 160) {
-                k = 5;
-            } else if (duration > 60) {
-                k = 10;
-            }
+    public boolean isValidRepairItem(ItemStack pStack, ItemStack pRepairCandidate) {
+        return pRepairCandidate.getItem() == ItemRegistry.WHITE_DOUBLE_AHOGE.get();
+    }
 
-            if (pRemainingUseDuration % k == 0) {
+    @Override
+    public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
+        int duration = getUseDuration(pStack) - pRemainingUseDuration;
+        int k = 15;
+        if (duration > 160) {
+            k = 5;
+        } else if (duration > 60) {
+            k = 10;
+        }
+
+        if (pRemainingUseDuration % k == 0) {
+            if (!pLevel.isClientSide) {
                 WhiteAhogeEntity ahoge1 = new WhiteAhogeEntity(pLevel, pLivingEntity);
                 WhiteAhogeEntity ahoge2 = new WhiteAhogeEntity(pLevel, pLivingEntity);
-                ahoge1.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot() - 6.14f, 0.0F, 2.0F, 0.0F);
-                ahoge2.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot() + 6.14f, 0.0F, 2.0F, 0.0F);
+                ahoge1.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.0F, 1.2F, 0.1F);
+                ahoge2.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.0F, 0.8F, 0.1F);
                 pLevel.addFreshEntity(ahoge1);
                 pLevel.addFreshEntity(ahoge2);
 
                 pStack.hurtAndBreak(1, pLivingEntity, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
             }
+            pLevel.playSound(null, pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ(),
+                    SoundEvents.ARROW_SHOOT, SoundSource.AMBIENT, 0.5F, 0.4F / (pLevel.random.nextFloat() * 0.4F + 0.8F));
         }
     }
 

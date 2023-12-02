@@ -14,13 +14,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
 import tech.lq0.providencraft.init.EffectRegistry;
 import tech.lq0.providencraft.init.EntityRegistry;
 import tech.lq0.providencraft.init.ItemRegistry;
 
 public class WhiteAhogeEntity extends ThrowableItemProjectile {
     private static final EntityDataAccessor<Integer> LIFE = SynchedEntityData.defineId(WhiteAhogeEntity.class, EntityDataSerializers.INT);
-    private int life = 2000;
+    private int life = 600;
 
     public WhiteAhogeEntity(EntityType<? extends WhiteAhogeEntity> p_i50159_1_, Level p_i50159_2_) {
         super(p_i50159_1_, p_i50159_2_);
@@ -37,12 +38,15 @@ public class WhiteAhogeEntity extends ThrowableItemProjectile {
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(LIFE, 2000);
+        this.entityData.define(LIFE, 600);
     }
 
     @Override
     public void tick() {
         super.tick();
+
+        Vec3 vec = this.getDeltaMovement();
+        this.setDeltaMovement(vec.scale(1 / 0.99));
 
         --this.life;
         if (this.life <= 0) {

@@ -19,7 +19,7 @@
       "item": "minecraft:gunpowder"
     },
     "y": {
-      "item": "minecraft:glowstone_dust"
+      "item": "providencraft:radiant_crystal"
     }
   },
   "result": {
