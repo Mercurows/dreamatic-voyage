@@ -7,10 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 import tech.lq0.providencraft.models.armor.*;
 import tech.lq0.providencraft.models.blockentity.PdCLogoModel;
 import tech.lq0.providencraft.models.curios.LunaticBowModel;
-import tech.lq0.providencraft.models.entity.AhogeBoomerangModel;
-import tech.lq0.providencraft.models.entity.BloodCrystalModel;
-import tech.lq0.providencraft.models.entity.CursedCatDollModel;
-import tech.lq0.providencraft.models.entity.DaifukuSyrupModel;
+import tech.lq0.providencraft.models.entity.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModelRegistry {
@@ -34,5 +31,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(ButterflyAnkletModel.LAYER_LOCATION, ButterflyAnkletModel::createBodyLayer);
         event.registerLayerDefinition(SneakersModel.LAYER_LOCATION, SneakersModel::createBodyLayer);
         event.registerLayerDefinition(CrystalHornModel.LAYER_LOCATION, CrystalHornModel::createBodyLayer);
+        event.registerLayerDefinition(WhiteAhogeEntityModel.LAYER_LOCATION, WhiteAhogeEntityModel::createBodyLayer);
     }
 }

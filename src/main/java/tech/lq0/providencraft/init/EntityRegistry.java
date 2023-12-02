@@ -7,10 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.entity.SeatEntity;
-import tech.lq0.providencraft.entity.projectile.AhogeBoomerangEntity;
-import tech.lq0.providencraft.entity.projectile.BloodCrystalEntity;
-import tech.lq0.providencraft.entity.projectile.CursedCatDollEntity;
-import tech.lq0.providencraft.entity.projectile.DaifukuSyrupEntity;
+import tech.lq0.providencraft.entity.projectile.*;
 
 public class EntityRegistry {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Utils.MOD_ID);
@@ -34,9 +31,9 @@ public class EntityRegistry {
 //    public static final RegistryObject<EntityType<KurumiBoomerangEntity>> KURUMI_BOOMERANG_ENTITY =
 //            ENTITY_TYPES.register("kurumi_boomerang_entity",
 //                    () -> EntityType.Builder.<KurumiBoomerangEntity>create(KurumiBoomerangEntity::new, EntityClassification.MISC).size(1.0f, 0.3f).build("kurumi_boomerang_entity"));
-//    public static final RegistryObject<EntityType<WhiteAhogeEntity>> WHITE_AHOGE_ENTITY =
-//            ENTITY_TYPES.register("white_ahoge",
-//                    () -> EntityType.Builder.<WhiteAhogeEntity>create(WhiteAhogeEntity::new, EntityClassification.MISC).size(0.8f, 0.3f).build("white_ahoge"));
+    public static final RegistryObject<EntityType<WhiteAhogeEntity>> WHITE_AHOGE_ENTITY =
+            ENTITY_TYPES.register("white_ahoge",
+                    () -> EntityType.Builder.<WhiteAhogeEntity>of(WhiteAhogeEntity::new, MobCategory.MISC).sized(0.8f, 0.3f).build("white_ahoge"));
 //    public static final RegistryObject<EntityType<NiitCarEntity>> NIIT_CAR_ENTITY =
 //            ENTITY_TYPES.register("niit_car",
 //                    () -> EntityType.Builder.create(NiitCarEntity::new, EntityClassification.MISC).size(2.0f, 1.7f).build("niit_car"));
