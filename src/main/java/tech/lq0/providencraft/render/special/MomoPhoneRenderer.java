@@ -16,7 +16,9 @@ import java.awt.*;
 public class MomoPhoneRenderer {
     @SubscribeEvent
     public static void render(RenderLevelStageEvent event) {
-        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS) return;
+        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS) {
+            return;
+        }
 
         AbstractClientPlayer player = Minecraft.getInstance().player;
         assert player != null;
@@ -28,6 +30,10 @@ public class MomoPhoneRenderer {
         }
 
         if (item.getItem() instanceof MomoPhone) {
+            if (!player.level().dimension().location().toString().equals(item.getOrCreateTag().getString("dimension"))) {
+                return;
+            }
+
             float posX = ItemNBTTool.getFloat(item, MomoPhone.NBT_POS_X, Float.NaN) - .5F;
             float posY = ItemNBTTool.getFloat(item, MomoPhone.NBT_POS_Y, Float.NaN) - .5F;
             float posZ = ItemNBTTool.getFloat(item, MomoPhone.NBT_POS_Z, Float.NaN) - .5F;
@@ -45,7 +51,6 @@ public class MomoPhoneRenderer {
                     SpecialRenderer.renderLandmark(event.getPoseStack(), posX, posY, posZ, Color.green);
                 }
             }
-
         }
     }
 }

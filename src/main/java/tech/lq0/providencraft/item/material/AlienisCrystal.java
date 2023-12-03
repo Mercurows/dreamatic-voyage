@@ -23,4 +23,9 @@ public class AlienisCrystal extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.alienis_crystal").withStyle(ChatFormatting.GRAY));
     }
+
+    @Override
+    public boolean isFoil(ItemStack pStack) {
+        return true;
+    }
 }

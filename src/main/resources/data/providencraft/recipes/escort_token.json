@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABC",
+    "#L#",
+    "DEF"
+  ],
+  "key": {
+    "A": {
+      "item": "providencraft:dark_crystal"
+    },
+    "B": {
+      "item": "providencraft:radiant_crystal"
+    },
+    "C": {
+      "item": "providencraft:illusory_crystal"
+    },
+    "D": {
+      "item": "providencraft:sink_crystal"
+    },
+    "E": {
+      "item": "providencraft:terminal_crystal"
+    },
+    "F": {
+      "item": "providencraft:alienis_crystal"
+    },
+    "#": {
+      "item": "minecraft:emerald"
+    },
+    "L": {
+      "item": "minecraft:lodestone"
+    }
+  },
+  "result": {
+    "item": "providencraft:escort_token",
+    "count": 1
+  }
+}
