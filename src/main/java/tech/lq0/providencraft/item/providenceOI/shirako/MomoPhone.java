@@ -39,6 +39,7 @@ public class MomoPhone extends Item {
         super(new Properties().fireResistant().durability(9).rarity(Rarity.UNCOMMON));
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player playerIn, InteractionHand pUsedHand) {
         ItemStack item = playerIn.getItemInHand(pUsedHand);
@@ -47,6 +48,7 @@ public class MomoPhone extends Item {
         float posX = ItemNBTTool.getFloat(item, NBT_POS_X, Float.NaN);
         float posY = ItemNBTTool.getFloat(item, NBT_POS_Y, Float.NaN);
         float posZ = ItemNBTTool.getFloat(item, NBT_POS_Z, Float.NaN);
+        String dimensionStr = item.getOrCreateTag().getString(NBT_DIMENSION);
 
         if (!(Float.isNaN(posX) || Float.isNaN(posY) || Float.isNaN(posZ))) {
             pos = BlockPos.containing(posX, posY, posZ);
@@ -66,12 +68,18 @@ public class MomoPhone extends Item {
 
                 ItemNBTTool.setFloat(item, NBT_POS_Z, pos.getZ() + 0.5F);
                 ItemNBTTool.setBoolean(item, NBT_BINDING, true);
+                item.getOrCreateTag().putString(NBT_DIMENSION, pLevel.dimension().location().toString());
 
                 playerIn.displayClientMessage(Component.translatable("des.providencraft.momo_phone.set_pos").withStyle(ChatFormatting.LIGHT_PURPLE), true);
                 playerIn.playSound(SoundEvents.ARROW_HIT_PLAYER, 1.0F, 1.0F);
 
                 return InteractionResultHolder.pass(item);
             } else {
+                if (!pLevel.dimension().location().toString().equals(dimensionStr)) {
+                    playerIn.displayClientMessage(Component.translatable("des.providencraft.momo_phone.tp_fail").withStyle(ChatFormatting.RED), true);
+                    return InteractionResultHolder.fail(item);
+                }
+
                 if (pLevel.isThundering() && pLevel.canSeeSky(playerIn.getOnPos().offset(0, 1, 0))) {
                     LightningBolt lightningBoltEntity = EntityType.LIGHTNING_BOLT.create(pLevel);
                     assert lightningBoltEntity != null;
