@@ -33,5 +33,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(CrystalHornModel.LAYER_LOCATION, CrystalHornModel::createBodyLayer);
         event.registerLayerDefinition(WhiteAhogeEntityModel.LAYER_LOCATION, WhiteAhogeEntityModel::createBodyLayer);
         event.registerLayerDefinition(HaineIdolHelmetModel.LAYER_LOCATION, HaineIdolHelmetModel::createBodyLayer);
+        event.registerLayerDefinition(HaineIdolChestplateModel.LAYER_LOCATION, HaineIdolChestplateModel::createBodyLayer);
     }
 }

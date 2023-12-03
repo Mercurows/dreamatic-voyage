@@ -417,7 +417,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CHIRAM_IDOL_CHESTPLATE = COSTUMES.register("chiram_idol_chestplate", ChiramIdolChestplate::new);
     public static final RegistryObject<Item> CHIRAM_IDOL_BOOTS = COSTUMES.register("chiram_idol_boots", ChiramIdolBoots::new);
     public static final RegistryObject<Item> HAINE_IDOL_HELMET = COSTUMES.register("haine_idol_helmet", HaineIdolHelmet::new);
-//    public static final RegistryObject<Item> HAINE_IDOL_CHESTPLATE = COSTUMES.register("haine_idol_chestplate", HaineIdolChestplate::new);
+    public static final RegistryObject<Item> HAINE_IDOL_CHESTPLATE = COSTUMES.register("haine_idol_chestplate", HaineIdolChestplate::new);
 //    public static final RegistryObject<Item> HAINE_IDOL_BOOTS = COSTUMES.register("haine_idol_boots", HaineIdolBoots::new);
 //    public static final RegistryObject<Item> KERORO_IDOL_HELMET = COSTUMES.register("keroro_idol_helmet", KeroroIdolHelmet::new);
 //    public static final RegistryObject<Item> KERORO_IDOL_CHESTPLATE = COSTUMES.register("keroro_idol_chestplate", KeroroIdolChestplate::new);
