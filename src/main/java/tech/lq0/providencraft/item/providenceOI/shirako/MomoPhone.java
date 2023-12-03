@@ -49,27 +49,25 @@ public class MomoPhone extends Item {
         float posZ = ItemNBTTool.getFloat(item, NBT_POS_Z, Float.NaN);
 
         if (!(Float.isNaN(posX) || Float.isNaN(posY) || Float.isNaN(posZ))) {
-            pos = new BlockPos((int) posX, (int) posY, (int) posZ);
+            pos = BlockPos.containing(posX, posY, posZ);
         }
 
         if (item.getDamageValue() < item.getMaxDamage()) {
             if (playerIn.isSteppingCarefully()) {
-                pos = playerIn.getOnPos().offset(0, 1, 0);
+                pos = playerIn.getOnPos();
                 ItemNBTTool.setFloat(item, NBT_POS_X, pos.getX() + 0.5F);
 
                 BlockState state = pLevel.getBlockState(pos);
-                if (state.canOcclude()) { // 1
+                if (state.blocksMotion()) {
                     ItemNBTTool.setFloat(item, NBT_POS_Y, pos.getY() + 1);
                 } else {
                     ItemNBTTool.setFloat(item, NBT_POS_Y, pos.getY());
                 }
 
                 ItemNBTTool.setFloat(item, NBT_POS_Z, pos.getZ() + 0.5F);
-
                 ItemNBTTool.setBoolean(item, NBT_BINDING, true);
 
                 playerIn.displayClientMessage(Component.translatable("des.providencraft.momo_phone.set_pos").withStyle(ChatFormatting.LIGHT_PURPLE), true);
-
                 playerIn.playSound(SoundEvents.ARROW_HIT_PLAYER, 1.0F, 1.0F);
 
                 return InteractionResultHolder.pass(item);
@@ -86,16 +84,18 @@ public class MomoPhone extends Item {
                         playerIn.displayClientMessage(Component.translatable("des.providencraft.momo_phone.not_set_pos").withStyle(ChatFormatting.RED), true);
                     } else {
                         boolean isBlocked = false;
-                        BlockState state1 = pLevel.getBlockState(pos.offset(0, 1, 0));
-                        BlockState state2 = pLevel.getBlockState(pos.offset(0, 2, 0));
-                        if (state1.canOcclude() || state2.canOcclude()) { // 2 3
+                        BlockState state1 = pLevel.getBlockState(pos);
+                        BlockState state2 = pLevel.getBlockState(pos.offset(0, 1, 0));
+
+                        if (state1.blocksMotion() || state2.blocksMotion()) {
                             isBlocked = true;
                         }
+
                         if (!isBlocked) {
                             boolean temp = false;
-                            for (int i = (int) posY + 1; i >= 0; i--) {
-                                BlockState state = pLevel.getBlockState(new BlockPos((int) posX, i, (int) posZ));
-                                if (state.canOcclude()) { // 4
+                            for (int i = (int) posY; i >= pLevel.getMinBuildHeight(); i--) {
+                                BlockState state = pLevel.getBlockState(BlockPos.containing(posX, i, posZ));
+                                if (state.blocksMotion()) { // 4
                                     temp = true;
                                     posY = i + 1;
                                     break;
@@ -108,7 +108,7 @@ public class MomoPhone extends Item {
                             if (!pLevel.isClientSide) {
                                 playerIn.teleportToWithTicket(posX, posY, posZ);
                             }
-                            playerIn.level().playSound(playerIn, new BlockPos((int) posX, (int) posY, (int) posZ), SoundEvents.CHORUS_FRUIT_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
+                            playerIn.level().playSound(playerIn, BlockPos.containing(posX, posY, posZ), SoundEvents.CHORUS_FRUIT_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
 
                             if (!playerIn.isCreative()) {
                                 item.setDamageValue(item.getDamageValue() + 1);
@@ -152,8 +152,6 @@ public class MomoPhone extends Item {
         pTooltipComponents.add(Component.translatable("des.providencraft.momo_phone_1").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.providencraft.momo_phone_2").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.providencraft.momo_phone.warn").withStyle(ChatFormatting.RED));
-
-        pTooltipComponents.add(Component.literal("xyz=" + ItemNBTTool.getFloat(pStack, NBT_POS_X, Float.NaN) + " " + ItemNBTTool.getFloat(pStack, NBT_POS_Y, Float.NaN) + " " + ItemNBTTool.getFloat(pStack, NBT_POS_Z, Float.NaN)).withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.SHIRAKO);
     }
