@@ -6,10 +6,6 @@
       "loot_table_id": "minecraft:entities/endermite"
     },
     {
-      "chance": 0.8,
-      "condition": "minecraft:random_chance"
-    },
-    {
       "condition": "minecraft:killed_by_player"
     }
   ],
