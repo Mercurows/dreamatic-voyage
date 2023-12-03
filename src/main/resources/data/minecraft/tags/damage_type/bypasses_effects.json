@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "providencraft:emotional_damage",
     "providencraft:pdc_bleeding"
   ]
 }

@@ -33,6 +33,14 @@ public class DamageSourceRegistry {
         return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LAVA_CAKE), entity);
     }
 
+    public static DamageSource causeMariFoodDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(MARI_FOOD), entity);
+    }
+
+    public static DamageSource causeEmotionalDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(EMOTIONAL_DAMAGE), entity);
+    }
+
     public static DamageSource causeLotusPotatoDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
         return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LOTUS_POTATO), entity);
     }
