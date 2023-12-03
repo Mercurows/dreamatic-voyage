@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.item.providencemagicros.chiram;
+package tech.lq0.providencraft.item.providencemagicros.haine;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -18,7 +18,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
-import tech.lq0.providencraft.models.armor.ChiramIdolChestplateModel;
+import tech.lq0.providencraft.models.armor.HaineIdolHelmetModel;
 import tech.lq0.providencraft.tiers.ModArmorMaterial;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
@@ -28,17 +28,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
-public class ChiramIdolChestplate extends ArmorItem {
-    public ChiramIdolChestplate() {
-        super(ModArmorMaterial.IDOL_COSTUME, Type.CHESTPLATE, new Properties());
+public class HaineIdolHelmet extends ArmorItem {
+    public HaineIdolHelmet() {
+        super(ModArmorMaterial.IDOL_COSTUME, Type.HELMET, new Properties());
     }
 
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.chiram_idol_costume").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.providencraft.haine_idol_costume").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.CHIRAM);
+        TooltipTool.addLiverInfo(pTooltipComponents, Livers.HAINE);
     }
 
     @Override
@@ -48,10 +48,10 @@ public class ChiramIdolChestplate extends ArmorItem {
             @OnlyIn(Dist.CLIENT)
             public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
                 HumanoidModel<?> armorModel = new HumanoidModel<>(new ModelPart(Collections.emptyList(), Map.of(
-                        "body", new ChiramIdolChestplateModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(ChiramIdolChestplateModel.LAYER_LOCATION)).body_total,
-                        "left_arm", new ChiramIdolChestplateModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(ChiramIdolChestplateModel.LAYER_LOCATION)).left_total,
-                        "right_arm", new ChiramIdolChestplateModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(ChiramIdolChestplateModel.LAYER_LOCATION)).right_total,
-                        "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "head", new HaineIdolHelmetModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(HaineIdolHelmetModel.LAYER_LOCATION)).head,
                         "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
                         "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
                         "left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
@@ -65,6 +65,6 @@ public class ChiramIdolChestplate extends ArmorItem {
 
     @Override
     public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-        return Utils.MOD_ID + ":textures/models/costume/chiram_idol_chestplate.png";
+        return Utils.MOD_ID + ":textures/models/costume/haine_idol_helmet.png";
     }
 }

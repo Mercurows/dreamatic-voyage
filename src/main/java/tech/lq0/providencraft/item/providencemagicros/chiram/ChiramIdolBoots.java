@@ -65,6 +65,6 @@ public class ChiramIdolBoots extends ArmorItem {
 
     @Override
     public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-        return Utils.MOD_ID + ":textures/models/armor/chiram_idol_boots.png";
+        return Utils.MOD_ID + ":textures/models/costume/chiram_idol_boots.png";
     }
 }
