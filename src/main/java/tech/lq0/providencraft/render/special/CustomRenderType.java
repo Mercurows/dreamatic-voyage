@@ -2,6 +2,7 @@ package tech.lq0.providencraft.render.special;
 
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
+import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 
 class CustomRenderType extends RenderType {
@@ -13,6 +14,19 @@ class CustomRenderType extends RenderType {
                     .setTransparencyState(TRANSLUCENT_TRANSPARENCY)
                     .setTextureState(NO_TEXTURE)
                     .setDepthTestState(LEQUAL_DEPTH_TEST)
+                    .setCullState(CULL)
+                    .setLightmapState(NO_LIGHTMAP)
+                    .setWriteMaskState(COLOR_DEPTH_WRITE)
+                    .createCompositeState(false));
+
+    public static final RenderType Landmark = create("Landmark",
+            DefaultVertexFormat.POSITION_COLOR, VertexFormat.Mode.QUADS, 256, false, false,
+            RenderType.CompositeState.builder()
+                    .setShaderState(ShaderStateShard.POSITION_COLOR_SHADER)
+                    .setLayeringState(VIEW_OFFSET_Z_LAYERING)
+                    .setTransparencyState(TRANSLUCENT_TRANSPARENCY)
+                    .setTextureState(NO_TEXTURE)
+                    .setDepthTestState(RenderStateShard.NO_DEPTH_TEST)
                     .setCullState(CULL)
                     .setLightmapState(NO_LIGHTMAP)
                     .setWriteMaskState(COLOR_DEPTH_WRITE)
