@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "providencraft:dark_crystal"
+    }
+  ],
+  "result": {
+    "item": "minecraft:echo_shard",
+    "count": 4
+  }
+}
