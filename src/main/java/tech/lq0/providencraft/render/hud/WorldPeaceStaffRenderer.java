@@ -12,7 +12,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.providencraft.Utils;
-import tech.lq0.providencraft.capability.IEscortCapability;
+import tech.lq0.providencraft.capability.escort.IEscortCapability;
 import tech.lq0.providencraft.capability.ModCapabilities;
 import tech.lq0.providencraft.init.ItemRegistry;
 

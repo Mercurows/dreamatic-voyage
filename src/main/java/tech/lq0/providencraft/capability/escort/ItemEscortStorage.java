@@ -1,8 +1,7 @@
-package tech.lq0.providencraft.energy;
+package tech.lq0.providencraft.capability.escort;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
-import tech.lq0.providencraft.capability.EscortCapability;
 
 @SuppressWarnings("ConstantConditions")
 public class ItemEscortStorage extends EscortCapability {

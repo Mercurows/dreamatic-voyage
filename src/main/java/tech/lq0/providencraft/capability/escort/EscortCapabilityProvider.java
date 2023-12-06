@@ -1,11 +1,10 @@
-package tech.lq0.providencraft.energy;
+package tech.lq0.providencraft.capability.escort;
 
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
-import tech.lq0.providencraft.capability.IEscortCapability;
 import tech.lq0.providencraft.capability.ModCapabilities;
 
 import javax.annotation.Nonnull;

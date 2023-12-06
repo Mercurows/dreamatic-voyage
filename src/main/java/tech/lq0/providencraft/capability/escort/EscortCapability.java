@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.capability;
+package tech.lq0.providencraft.capability.escort;
 
 import net.minecraft.nbt.DoubleTag;
 import net.minecraft.nbt.Tag;

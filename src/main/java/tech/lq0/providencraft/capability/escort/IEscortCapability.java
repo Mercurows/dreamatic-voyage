@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.capability;
+package tech.lq0.providencraft.capability.escort;
 
 import net.minecraftforge.common.capabilities.AutoRegisterCapability;
 
