@@ -28,6 +28,7 @@ import tech.lq0.providencraft.item.providencefirst.ayelet.CrystalHorn;
 import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
 import tech.lq0.providencraft.item.providencefirst.madoka.*;
 import tech.lq0.providencraft.item.providencefirst.mari.Machete;
+import tech.lq0.providencraft.item.providencefirst.mari.MagicMirror;
 import tech.lq0.providencraft.item.providencefirst.mari.MariStew;
 import tech.lq0.providencraft.item.providencefirst.myanna.DarkElfCore;
 import tech.lq0.providencraft.item.providencefirst.myanna.Drill;
@@ -93,7 +94,7 @@ public class ItemRegistry {
     //mari
     public static final RegistryObject<Item> MACHETE = ITEMS.register("machete", Machete::new);
     public static final RegistryObject<Item> MARI_STEW = ITEMS.register("mari_stew", MariStew::new);
-//    public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror", MagicMirror::new);
+    public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror", MagicMirror::new);
 
     //mitsuki
 //    public static final RegistryObject<Item> CROWN = ITEMS.register("crown", Crown::new);
