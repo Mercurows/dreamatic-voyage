@@ -48,6 +48,7 @@ import tech.lq0.providencraft.item.providencemagicros.haine.*;
 import tech.lq0.providencraft.item.providencemagicros.keroro.FrogLeg;
 import tech.lq0.providencraft.item.providencemagicros.keroro.FroggyLeggings;
 import tech.lq0.providencraft.item.providencemagicros.keroro.KeroroCore;
+import tech.lq0.providencraft.item.providencesecond.lecia.MechanicalHorn;
 import tech.lq0.providencraft.item.providencesecond.louise.*;
 import tech.lq0.providencraft.item.providencesecond.lucia.BigFierceOneCoffee;
 import tech.lq0.providencraft.item.providencesecond.lucia.BigMoeOnePotion;
@@ -146,7 +147,7 @@ public class ItemRegistry {
 
     //lecia
 //    public static final RegistryObject<Item> ELECTRIC_HORN = ITEMS.register("electric_horn", ElectricHorn::new);
-//    public static final RegistryObject<Item> MECHANICAL_HORN = ITEMS.register("mechanical_horn", MechanicalHorn::new);
+    public static final RegistryObject<Item> MECHANICAL_HORN = ITEMS.register("mechanical_horn", MechanicalHorn::new);
 //    public static final RegistryObject<Item> DUEL_WATER_GUN = ITEMS.register("duel_water_gun", DuelWaterGun::new);
 //    public static final RegistryObject<Item> KULEBOH = ITEMS.register("kuleboh", Kuleboh::new);
 //    public static final RegistryObject<Item> KULECIABOH = ITEMS.register("kuleciaboh", Kuleciaboh::new);
