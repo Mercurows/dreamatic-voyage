@@ -13,6 +13,9 @@ import tech.lq0.providencraft.tools.ItemNBTTool;
 public class PropertyRegistry {
     @SubscribeEvent
     public static void propertyOverrideRegistry(FMLClientSetupEvent event) {
+        event.enqueueWork(() ->
+                ItemProperties.register(ItemRegistry.ELECTRIC_HORN.get(), new ResourceLocation(Utils.MOD_ID, "electric_horn_able"),
+                        (stack, world, entity, seed) -> ItemNBTTool.getBoolean(stack, "able", false) ? 1.0F : 0.0F));
         event.enqueueWork(() -> ItemProperties.register(ItemRegistry.MOMO_PHONE.get(), new ResourceLocation(Utils.MOD_ID, "momo_phone_binding"),
                 (itemStack, clientWorld, livingEntity, seed) -> ItemNBTTool.getBoolean(itemStack, "binding", false) ? 1.0F : 0.0F));
     }
