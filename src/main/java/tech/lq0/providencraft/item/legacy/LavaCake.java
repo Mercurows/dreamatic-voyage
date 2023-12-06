@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.capability.chaos.ChaosHelper;
 import tech.lq0.providencraft.init.DamageSourceRegistry;
 import tech.lq0.providencraft.tools.RarityTool;
 import tech.lq0.providencraft.tools.TooltipTool;
@@ -25,10 +26,11 @@ public class LavaCake extends Item {
         super(new Properties().food(food).stacksTo(1).rarity(RarityTool.LEGACY));
     }
 
-    //TODO 混沌值系统
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if (pLivingEntity instanceof Player player && !pLevel.isClientSide) {
+            ChaosHelper.addChaos(player, 30);
+
             player.hurt(DamageSourceRegistry.causeLavaCakeDamage(pLevel.registryAccess(), null), 20.0f);
         }
 
@@ -40,6 +42,7 @@ public class LavaCake extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.lava_cake").withStyle(ChatFormatting.GRAY));
 
+        TooltipTool.addChaosInfo(pTooltipComponents, 30);
         TooltipTool.addLegacyInfo(pTooltipComponents);
     }
 }

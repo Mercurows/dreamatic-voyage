@@ -14,6 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.capability.chaos.ChaosHelper;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
@@ -35,10 +36,10 @@ public class MomoDaifuku extends Item {
         tooltip.add(Component.translatable("des.providencraft.momo_daifuku_2").withStyle(ChatFormatting.GRAY));
         tooltip.add(Component.translatable("des.providencraft.momo_daifuku.warn").withStyle(ChatFormatting.RED));
 
+        TooltipTool.addChaosInfo(tooltip, 0);
         TooltipTool.addLiverInfo(tooltip, Livers.SHIRAKO);
     }
 
-    //TODO 混沌值系统
     @Override
     @ParametersAreNonnullByDefault
     @Nonnull
@@ -52,6 +53,8 @@ public class MomoDaifuku extends Item {
                 player.setSecondsOnFire(10);
                 player.displayClientMessage(Component.translatable("des.providencraft.momo_daifuku.fire").withStyle(ChatFormatting.RED), true);
             }
+
+            ChaosHelper.resetChaos(player);
         }
         return itemStack;
     }

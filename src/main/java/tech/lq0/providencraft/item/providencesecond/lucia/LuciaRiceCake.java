@@ -37,7 +37,7 @@ public class LuciaRiceCake extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        if(!pLevel.isClientSide && pLivingEntity instanceof Player player){
+        if (!pLevel.isClientSide && pLivingEntity instanceof Player player) {
             ChaosHelper.addChaos(player, -3);
         }
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);

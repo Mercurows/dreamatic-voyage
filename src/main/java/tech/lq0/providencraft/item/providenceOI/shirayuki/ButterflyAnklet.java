@@ -24,6 +24,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
+import tech.lq0.providencraft.init.AttributeRegistry;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.models.armor.ButterflyAnkletModel;
 import tech.lq0.providencraft.tools.Livers;
@@ -76,7 +77,6 @@ public class ButterflyAnklet extends ArmorItem {
         return Utils.MOD_ID + ":textures/models/armor/butterfly_anklet.png";
     }
 
-    //TODO 添加混沌值
     @Override
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot pEquipmentSlot) {
         Multimap<Attribute, AttributeModifier> map = super.getDefaultAttributeModifiers(pEquipmentSlot);
@@ -85,8 +85,8 @@ public class ButterflyAnklet extends ArmorItem {
             map = HashMultimap.create(map);
             map.put(Attributes.MOVEMENT_SPEED,
                     new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.3, AttributeModifier.Operation.MULTIPLY_TOTAL));
-//            map.put(AttributeRegistry.CHAOS.get(),
-//                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -30, AttributeModifier.Operation.ADDITION));
+            map.put(AttributeRegistry.CHAOS.get(),
+                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -30, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }

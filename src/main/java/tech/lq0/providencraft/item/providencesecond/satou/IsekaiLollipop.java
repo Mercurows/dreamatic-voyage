@@ -17,6 +17,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.capability.chaos.ChaosHelper;
 import tech.lq0.providencraft.init.EffectRegistry;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.tools.Livers;
@@ -62,6 +63,7 @@ public class IsekaiLollipop extends Item {
             pTooltipComponents.add(Component.translatable("des.providencraft.isekai_lollipop_3").withStyle(ChatFormatting.LIGHT_PURPLE).withStyle(ChatFormatting.ITALIC));
         }
 
+        TooltipTool.addChaosInfo(pTooltipComponents, -50);
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.SATOU);
     }
 
@@ -79,7 +81,7 @@ public class IsekaiLollipop extends Item {
                 }
             }
 
-//            ChaosHelper.addChaos(player, -50);
+            ChaosHelper.addChaos(player, -50);
         }
 
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);
