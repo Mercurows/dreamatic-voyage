@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "providencraft:sleep_roulette"
+    },
+    "title": {
+      "translate": "providencraft.advancement.sleep_roulette"
+    },
+    "description": {
+      "translate": "providencraft.advancement.sleep_roulette_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "providencraft:main/crystal_horn",
+  "criteria": {
+    "sleep_roulette": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "providencraft:sleep_roulette"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
