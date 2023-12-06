@@ -53,6 +53,7 @@ import tech.lq0.providencraft.item.providencesecond.lucia.BigFierceOneCoffee;
 import tech.lq0.providencraft.item.providencesecond.lucia.BigMoeOnePotion;
 import tech.lq0.providencraft.item.providencesecond.lucia.LuciaRiceCake;
 import tech.lq0.providencraft.item.providencesecond.lucia.MoonlightAmulet;
+import tech.lq0.providencraft.item.providencesecond.mumu.AyeletMask;
 import tech.lq0.providencraft.item.providencesecond.mumu.MumuSteak;
 import tech.lq0.providencraft.item.providencesecond.satou.*;
 import tech.lq0.providencraft.item.providencethird.leciel.ReinaFeather;
@@ -162,7 +163,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> SATOU_CHESTPLATE = ITEMS.register("satou_chestplate", SatouChestplate::new);
 
     //mumu
-//    public static final RegistryObject<Item> AYELET_MASK = ITEMS.register("ayelet_mask", AyeletMask::new);
+    public static final RegistryObject<Item> AYELET_MASK = ITEMS.register("ayelet_mask", AyeletMask::new);
     public static final RegistryObject<Item> MUMU_STEAK = ITEMS.register("mumu_steak", MumuSteak::new);
 
     /**

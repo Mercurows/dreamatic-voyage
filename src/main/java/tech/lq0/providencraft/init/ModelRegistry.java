@@ -35,5 +35,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(HaineIdolHelmetModel.LAYER_LOCATION, HaineIdolHelmetModel::createBodyLayer);
         event.registerLayerDefinition(HaineIdolChestplateModel.LAYER_LOCATION, HaineIdolChestplateModel::createBodyLayer);
         event.registerLayerDefinition(HaineIdolBootsModel.LAYER_LOCATION, HaineIdolBootsModel::createBodyLayer);
+        event.registerLayerDefinition(AyeletMaskModel.LAYER_LOCATION, AyeletMaskModel::createBodyLayer);
     }
 }
