@@ -3,6 +3,7 @@
   "values": [
     "providencraft:emotional_damage",
     "providencraft:overload",
-    "providencraft:pdc_bleeding"
+    "providencraft:pdc_bleeding",
+    "providencraft:lunar_eclipse"
   ]
 }

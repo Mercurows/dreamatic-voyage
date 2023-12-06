@@ -498,7 +498,7 @@
   "block.providencraft.harano_planks": "Harano Planks",
   "des.providencraft.harano_planks": "Planks clear on outside but inside chaotic",
   "death.attack.lunar_eclipse": "%1$s was eroded by the dark moonlight",
-  "death.attack.lunar_eclipse.player": "%2$s keeps %1$s trapped in the lunar eclipse forever",
+  "death.attack.lunar_eclipse.entity": "%2$s keeps %1$s trapped in the lunar eclipse forever",
   "des.providencraft.lunar_eclipse": "The moonlight and shriek in one, King Sorayo's saber",
   "entity.providencraft.shu_rino_ken": "Shu-\"Rino\"-Ken",
   "item.providencraft.giant_diamond_ring": "Giant Diamond Ring",
