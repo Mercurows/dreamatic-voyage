@@ -54,6 +54,7 @@ import tech.lq0.providencraft.item.providencemagicros.haine.*;
 import tech.lq0.providencraft.item.providencemagicros.keroro.FrogLeg;
 import tech.lq0.providencraft.item.providencemagicros.keroro.FroggyLeggings;
 import tech.lq0.providencraft.item.providencemagicros.keroro.KeroroCore;
+import tech.lq0.providencraft.item.providencemagicros.keroro.KeroroIdolBoots;
 import tech.lq0.providencraft.item.providencesecond.lecia.ElectricHorn;
 import tech.lq0.providencraft.item.providencesecond.lecia.MechanicalHorn;
 import tech.lq0.providencraft.item.providencesecond.louise.*;
@@ -431,7 +432,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> HAINE_IDOL_BOOTS = COSTUMES.register("haine_idol_boots", HaineIdolBoots::new);
 //    public static final RegistryObject<Item> KERORO_IDOL_HELMET = COSTUMES.register("keroro_idol_helmet", KeroroIdolHelmet::new);
 //    public static final RegistryObject<Item> KERORO_IDOL_CHESTPLATE = COSTUMES.register("keroro_idol_chestplate", KeroroIdolChestplate::new);
-//    public static final RegistryObject<Item> KERORO_IDOL_BOOTS = COSTUMES.register("keroro_idol_boots", KeroroIdolBoots::new);
+    public static final RegistryObject<Item> KERORO_IDOL_BOOTS = COSTUMES.register("keroro_idol_boots", KeroroIdolBoots::new);
 //    public static final RegistryObject<Item> EKIRA_IDOL_HELMET = COSTUMES.register("ekira_idol_helmet", EkiraIdolHelmet::new);
 //    public static final RegistryObject<Item> EKIRA_IDOL_CHESTPLATE = COSTUMES.register("ekira_idol_chestplate", EkiraIdolChestplate::new);
 //    public static final RegistryObject<Item> EKIRA_IDOL_BOOTS = COSTUMES.register("ekira_idol_boots", EkiraIdolBoots::new);
