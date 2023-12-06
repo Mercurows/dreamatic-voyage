@@ -583,6 +583,7 @@
   "item.providencraft.chaos_checker": "混沌检测仪",
   "des.providencraft.chaos_checker_1": "可以查看自身混沌值的仪器",
   "des.providencraft.chaos_checker_2": "“耶！我是一颗土星！”",
+  "des.providencraft.chaos_checker.info": "混沌值为：%1$s",
   "biome.providencraft.blue_desert": "蓝色沙漠",
   "biome.providencraft.harano_plains": "原野平原",
   "attribute.chaos": "混沌值",

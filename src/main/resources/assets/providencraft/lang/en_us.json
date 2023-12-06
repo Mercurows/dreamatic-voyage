@@ -583,6 +583,7 @@
   "item.providencraft.chaos_checker": "Chaos Checker",
   "des.providencraft.chaos_checker_1": "The device that can view your own value of chaos",
   "des.providencraft.chaos_checker_2": "\"Yeah! I'm a Saturn!\"",
+  "des.providencraft.chaos_checker.info": "Chaos Value: %1$s",
   "biome.providencraft.blue_desert": "Blue Desert",
   "biome.providencraft.harano_plains": "Harano Plains",
   "attribute.chaos": "Value of Chaos",
