@@ -47,9 +47,7 @@ import tech.lq0.providencraft.item.providencefourth.choco.StrawberryCake;
 import tech.lq0.providencraft.item.providencefourth.hifumi.NetherLight;
 import tech.lq0.providencraft.item.providencefourth.sana.Shakana;
 import tech.lq0.providencraft.item.providencemagicros.chiram.*;
-import tech.lq0.providencraft.item.providencemagicros.ekira.CelestialBoots;
-import tech.lq0.providencraft.item.providencemagicros.ekira.EkiraCore;
-import tech.lq0.providencraft.item.providencemagicros.ekira.EkiraPearl;
+import tech.lq0.providencraft.item.providencemagicros.ekira.*;
 import tech.lq0.providencraft.item.providencemagicros.haine.*;
 import tech.lq0.providencraft.item.providencemagicros.keroro.*;
 import tech.lq0.providencraft.item.providencesecond.lecia.ElectricHorn;
@@ -430,9 +428,9 @@ public class ItemRegistry {
     public static final RegistryObject<Item> KERORO_IDOL_HELMET = COSTUMES.register("keroro_idol_helmet", KeroroIdolHelmet::new);
     public static final RegistryObject<Item> KERORO_IDOL_CHESTPLATE = COSTUMES.register("keroro_idol_chestplate", KeroroIdolChestplate::new);
     public static final RegistryObject<Item> KERORO_IDOL_BOOTS = COSTUMES.register("keroro_idol_boots", KeroroIdolBoots::new);
-//    public static final RegistryObject<Item> EKIRA_IDOL_HELMET = COSTUMES.register("ekira_idol_helmet", EkiraIdolHelmet::new);
-//    public static final RegistryObject<Item> EKIRA_IDOL_CHESTPLATE = COSTUMES.register("ekira_idol_chestplate", EkiraIdolChestplate::new);
-//    public static final RegistryObject<Item> EKIRA_IDOL_BOOTS = COSTUMES.register("ekira_idol_boots", EkiraIdolBoots::new);
+    public static final RegistryObject<Item> EKIRA_IDOL_HELMET = COSTUMES.register("ekira_idol_helmet", EkiraIdolHelmet::new);
+    public static final RegistryObject<Item> EKIRA_IDOL_CHESTPLATE = COSTUMES.register("ekira_idol_chestplate", EkiraIdolChestplate::new);
+    public static final RegistryObject<Item> EKIRA_IDOL_BOOTS = COSTUMES.register("ekira_idol_boots", EkiraIdolBoots::new);
 //    public static final RegistryObject<Item> KRM_963_53 = COSTUMES.register("krm_963_53", KRM_963_53::new);
 //    public static final RegistryObject<Item> MAID_COSTUME = COSTUMES.register("maid_costume", MaidCostume::new);
 

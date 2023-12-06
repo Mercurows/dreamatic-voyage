@@ -41,5 +41,8 @@ public class ModelRegistry {
         event.registerLayerDefinition(KeroroIdolBootsModel.LAYER_LOCATION, KeroroIdolBootsModel::createBodyLayer);
         event.registerLayerDefinition(KeroroIdolChestplateModel.LAYER_LOCATION, KeroroIdolChestplateModel::createBodyLayer);
         event.registerLayerDefinition(KeroroIdolHelmetModel.LAYER_LOCATION, KeroroIdolHelmetModel::createBodyLayer);
+        event.registerLayerDefinition(EkiraIdolBootsModel.LAYER_LOCATION, EkiraIdolBootsModel::createBodyLayer);
+        event.registerLayerDefinition(EkiraIdolChestplateModel.LAYER_LOCATION, EkiraIdolChestplateModel::createBodyLayer);
+        event.registerLayerDefinition(EkiraIdolHelmetModel.LAYER_LOCATION, EkiraIdolHelmetModel::createBodyLayer);
     }
 }
