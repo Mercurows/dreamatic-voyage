@@ -30,21 +30,21 @@ public class TooltipTool {
         addHideText(tooltip, Component.translatable("des.providencraft.legacy").withStyle(Style.EMPTY.withColor(0xff6288)));
     }
 
-//    public static void addChaosInfo(List<Component> tooltip, int chaos) {
-//        TextFormatting textFormatting;
-//        StringBuilder builder = new StringBuilder();
-//        if(chaos > 0){
-//            textFormatting = TextFormatting.BLUE;
-//            builder.append("+").append(chaos).append(" ").append(new TranslationTextComponent("des.providencraft.chaos").getString());
-//        }else if(chaos < 0){
-//            textFormatting = TextFormatting.YELLOW;
-//            builder.append("-").append(Math.abs(chaos)).append(" ").append(new TranslationTextComponent("des.providencraft.chaos").getString());
-//        }else {
-//            textFormatting = TextFormatting.GREEN;
-//            builder.append(new TranslationTextComponent("des.providencraft.chaos.reset").getString());
-//        }
-//        addHideText(tooltip, new StringTextComponent(""));
-//        addHideText(tooltip, new TranslationTextComponent("des.providencraft.chaos.eaten").mergeStyle(TextFormatting.GRAY));
-//        addHideText(tooltip, new StringTextComponent(builder.toString()).mergeStyle(textFormatting));
-//    }
+    public static void addChaosInfo(List<Component> tooltip, int chaos) {
+        ChatFormatting chatFormatting;
+        StringBuilder builder = new StringBuilder();
+        if(chaos > 0){
+            chatFormatting = ChatFormatting.BLUE;
+            builder.append("+").append(chaos).append(" ").append(Component.translatable("des.providencraft.chaos").getString());
+        }else if(chaos < 0){
+            chatFormatting = ChatFormatting.YELLOW;
+            builder.append("-").append(Math.abs(chaos)).append(" ").append(Component.translatable("des.providencraft.chaos").getString());
+        }else {
+            chatFormatting = ChatFormatting.GREEN;
+            builder.append(Component.translatable("des.providencraft.chaos.reset").getString());
+        }
+        addHideText(tooltip, Component.literal(""));
+        addHideText(tooltip, Component.translatable("des.providencraft.chaos.eaten").withStyle(ChatFormatting.GRAY));
+        addHideText(tooltip, Component.literal(builder.toString()).withStyle(chatFormatting));
+    }
 }
