@@ -166,7 +166,7 @@ public class PointsStoreBlockEntity extends BlockEntity implements Merchant {
 //            new MerchantOffer(getPoints(28), getGoods(ItemRegistry.FOX_FAIRY_FAN.get(), 1), 10000, 0, 0),
 //            new MerchantOffer(getPoints(35), getGoods(ItemRegistry.GRAVITY_RESTRAINT_DEVICE.get(), 1), 10000, 0, 0),
 //            new MerchantOffer(getPoints(38), getGoods(ItemRegistry.KURUMI_HALO.get(), 1), 10000, 0, 0),
-//            new MerchantOffer(getPoints(38), getGoods(ItemRegistry.JELLYFISH_SHELL.get(), 1), 10000, 0, 0),
+            new MerchantOffer(getPoints(38), getGoods(ItemRegistry.JELLYFISH_SHELL.get(), 1), 10000, 0, 0),
             new MerchantOffer(getPoints(38), getGoods(ItemRegistry.SATOU_CAMERA.get(), 1), 10000, 0, 0),
 //            new MerchantOffer(getPoints(38), getGoods(ItemRegistry.CLARITY_AMULET.get(), 1), 10000, 0, 0),
 //            new MerchantOffer(getPoints(58), getGoods(ItemRegistry.QIANYUN_HOE.get(), 1), 10000, 0, 0),
