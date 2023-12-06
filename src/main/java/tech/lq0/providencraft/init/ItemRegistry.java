@@ -18,6 +18,7 @@ import tech.lq0.providencraft.item.providenceOI.fukami.*;
 import tech.lq0.providencraft.item.providenceOI.lutafia.Fiaxe;
 import tech.lq0.providencraft.item.providenceOI.miya.JellyfishShell;
 import tech.lq0.providencraft.item.providenceOI.miya.TailPen;
+import tech.lq0.providencraft.item.providenceOI.rino.ClarityAmulet;
 import tech.lq0.providencraft.item.providenceOI.roky.Xiaolongbao;
 import tech.lq0.providencraft.item.providenceOI.shirako.*;
 import tech.lq0.providencraft.item.providenceOI.shirayuki.ButterflyAnklet;
@@ -286,9 +287,9 @@ public class ItemRegistry {
     //roky
     public static final RegistryObject<Item> XIAOLONGBAO = ITEMS.register("xiaolongbao", Xiaolongbao::new);
 
-//    //rino
+    //rino
 //    public static final RegistryObject<Item> SHU_RINO_KEN = ITEMS.register("shu_rino_ken", ShuRinoKen::new);
-//    public static final RegistryObject<Item> CLARITY_AMULET = ITEMS.register("clarity_amulet", ClarityAmulet::new);
+    public static final RegistryObject<Item> CLARITY_AMULET = ITEMS.register("clarity_amulet", ClarityAmulet::new);
 
     //ccelia
     public static final RegistryObject<Item> CRAFT_BEER_0322 = ITEMS.register("craft_beer_0322", CraftBeer0322::new);
