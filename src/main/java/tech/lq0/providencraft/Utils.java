@@ -33,6 +33,7 @@ public class Utils {
         EnchantmentRegistry.ENCHANTMENTS.register(modEventBus);
         LootModifierRegistry.register(modEventBus);
         VillagerRegistry.register(modEventBus);
+        AttributeRegistry.ATTRIBUTES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
