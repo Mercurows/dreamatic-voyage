@@ -23,6 +23,7 @@ import tech.lq0.providencraft.item.providenceOI.roky.Xiaolongbao;
 import tech.lq0.providencraft.item.providenceOI.shirako.*;
 import tech.lq0.providencraft.item.providenceOI.shirayuki.ButterflyAnklet;
 import tech.lq0.providencraft.item.providenceOI.sorayo.LunaticBow;
+import tech.lq0.providencraft.item.providenceOI.sorayo.MoonCake;
 import tech.lq0.providencraft.item.providenceOI.yesa.MintChocolate;
 import tech.lq0.providencraft.item.providenceOI.yuri.RabbitLychee;
 import tech.lq0.providencraft.item.providencefirst.ayelet.CrystalHorn;
@@ -249,7 +250,7 @@ public class ItemRegistry {
 
     //sorayo
     public static final RegistryObject<Item> LUNATIC_BOW = ITEMS.register("lunatic_bow", LunaticBow::new);
-//    public static final RegistryObject<Item> MOON_CAKE = ITEMS.register("moon_cake", MoonCake::new);
+    public static final RegistryObject<Item> MOON_CAKE = ITEMS.register("moon_cake", MoonCake::new);
 //    public static final RegistryObject<Item> LUNAR_ECLIPSE = ITEMS.register("lunar_eclipse", LunarEclipse::new);
 
     //miya

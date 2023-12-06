@@ -4,6 +4,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -17,10 +18,12 @@ import tech.lq0.providencraft.capability.chaos.ChaosHelper;
 import tech.lq0.providencraft.init.EffectRegistry;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ClarityAmulet extends Item implements ICurioItem {
     public ClarityAmulet() {
@@ -57,5 +60,14 @@ public class ClarityAmulet extends Item implements ICurioItem {
                 }
             }
         }
+    }
+
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        LivingEntity livingEntity = slotContext.entity();
+        AtomicBoolean flag = new AtomicBoolean(true);
+        CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(this).ifPresent(s -> flag.set(false)));
+
+        return flag.get();
     }
 }
