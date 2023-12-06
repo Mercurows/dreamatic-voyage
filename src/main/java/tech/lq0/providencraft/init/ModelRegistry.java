@@ -39,5 +39,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(ElectricHornModel.LAYER_LOCATION, ElectricHornModel::createBodyLayer);
         event.registerLayerDefinition(JellyfishShellModel.LAYER_LOCATION, JellyfishShellModel::createBodyLayer);
         event.registerLayerDefinition(KeroroIdolBootsModel.LAYER_LOCATION, KeroroIdolBootsModel::createBodyLayer);
+        event.registerLayerDefinition(KeroroIdolChestplateModel.LAYER_LOCATION, KeroroIdolChestplateModel::createBodyLayer);
+        event.registerLayerDefinition(KeroroIdolHelmetModel.LAYER_LOCATION, KeroroIdolHelmetModel::createBodyLayer);
     }
 }
