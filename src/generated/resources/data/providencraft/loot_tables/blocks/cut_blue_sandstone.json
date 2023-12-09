@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "providencraft:cut_blue_sandstone"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "providencraft:blocks/cut_blue_sandstone"
+}
