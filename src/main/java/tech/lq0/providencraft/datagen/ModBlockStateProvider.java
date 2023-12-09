@@ -3,6 +3,7 @@ package tech.lq0.providencraft.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -26,9 +27,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ResourceLocation(Utils.MOD_ID, "block/communication_table_underside"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_top"),
                 new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"),
                 new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_side")));
+        horizontalBlock(BlockRegistry.PORCELAIN_THRONE.get(), new ModelFile.UncheckedModelFile(modLoc("block/porcelain_throne")));
+        simpleBlockWithItem(BlockRegistry.POINTS_STORE.get(), new ModelFile.UncheckedModelFile(modLoc("block/points_store")));
+
 
         blockWithItem(BlockRegistry.BLUE_SAND);
-
+        simpleBlockWithItem(BlockRegistry.BLUE_SANDSTONE.get(), models().cubeBottomTop("blue_sandstone", new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone"),
+                new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_bottom"), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top")));
+        slabBlock((SlabBlock) BlockRegistry.BLUE_SANDSTONE_SLAB.get(), blockTexture(BlockRegistry.BLUE_SANDSTONE.get()), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone"),
+                new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_bottom"), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top"));
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

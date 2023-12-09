@@ -1,11 +1,11 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "providencraft:block/porcelain_throne"
-    },
     "facing=east": {
       "model": "providencraft:block/porcelain_throne",
       "y": 90
+    },
+    "facing=north": {
+      "model": "providencraft:block/porcelain_throne"
     },
     "facing=south": {
       "model": "providencraft:block/porcelain_throne",
