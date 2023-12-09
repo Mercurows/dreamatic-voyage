@@ -461,18 +461,18 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.CHISELED_BLUE_SANDSTONE.get(), new Item.Properties()));
     public static final RegistryObject<Item> BLUE_SANDSTONE_SLAB = BLOCK_ITEMS.register("blue_sandstone_slab",
             () -> new BlockItem(BlockRegistry.BLUE_SANDSTONE_SLAB.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> CUT_BLUE_SANDSTONE_SLAB = BLOCK_ITEMS.register("cut_blue_sandstone_slab",
-//            () -> new BlockItem(BlockRegistry.CUT_BLUE_SANDSTONE_SLAB.get(), new Item.Properties().group(ModGroup.blockgroup)));
-//    public static final RegistryObject<Item> BLUE_SANDSTONE_STAIRS = BLOCK_ITEMS.register("blue_sandstone_stairs",
-//            () -> new BlockItem(BlockRegistry.BLUE_SANDSTONE_STAIRS.get(), new Item.Properties().group(ModGroup.blockgroup)));
-//    public static final RegistryObject<Item> BLUE_SANDSTONE_WALL = BLOCK_ITEMS.register("blue_sandstone_wall",
-//            () -> new BlockItem(BlockRegistry.BLUE_SANDSTONE_WALL.get(), new Item.Properties().group(ModGroup.blockgroup)));
+    public static final RegistryObject<Item> CUT_BLUE_SANDSTONE_SLAB = BLOCK_ITEMS.register("cut_blue_sandstone_slab",
+            () -> new BlockItem(BlockRegistry.CUT_BLUE_SANDSTONE_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BLUE_SANDSTONE_STAIRS = BLOCK_ITEMS.register("blue_sandstone_stairs",
+            () -> new BlockItem(BlockRegistry.BLUE_SANDSTONE_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BLUE_SANDSTONE_WALL = BLOCK_ITEMS.register("blue_sandstone_wall",
+            () -> new BlockItem(BlockRegistry.BLUE_SANDSTONE_WALL.get(), new Item.Properties()));
     public static final RegistryObject<Item> SMOOTH_BLUE_SANDSTONE = BLOCK_ITEMS.register("smooth_blue_sandstone",
             () -> new BlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> SMOOTH_BLUE_SANDSTONE_SLAB = BLOCK_ITEMS.register("smooth_blue_sandstone_slab",
-//            () -> new BlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(), new Item.Properties().group(ModGroup.blockgroup)));
-//    public static final RegistryObject<Item> SMOOTH_BLUE_SANDSTONE_STAIRS = BLOCK_ITEMS.register("smooth_blue_sandstone_stairs",
-//            () -> new BlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(), new Item.Properties().group(ModGroup.blockgroup)));
+    public static final RegistryObject<Item> SMOOTH_BLUE_SANDSTONE_SLAB = BLOCK_ITEMS.register("smooth_blue_sandstone_slab",
+            () -> new BlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SMOOTH_BLUE_SANDSTONE_STAIRS = BLOCK_ITEMS.register("smooth_blue_sandstone_stairs",
+            () -> new BlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(), new Item.Properties()));
 //
 //    public static final RegistryObject<Item> HARANO_LOG = ITEMS.register("harano_log",
 //            () -> new BlockItem(BlockRegistry.HARANO_LOG.get(), new Item.Properties().group(ModGroup.blockgroup)));

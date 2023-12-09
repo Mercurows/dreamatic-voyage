@@ -26,12 +26,12 @@ public class BlockRegistry {
     public static final RegistryObject<Block> CUT_BLUE_SANDSTONE = BLOCKS.register("cut_blue_sandstone", CutBlueSandstone::new);
     public static final RegistryObject<Block> CHISELED_BLUE_SANDSTONE = BLOCKS.register("chiseled_blue_sandstone", ChiseledBlueSandstone::new);
     public static final RegistryObject<Block> BLUE_SANDSTONE_SLAB = BLOCKS.register("blue_sandstone_slab", BlueSandstoneSlab::new);
-//    public static final RegistryObject<Block> BLUE_SANDSTONE_STAIRS = BLOCKS.register("blue_sandstone_stairs", BlueSandstoneStairs::new);
-//    public static final RegistryObject<Block> BLUE_SANDSTONE_WALL = BLOCKS.register("blue_sandstone_wall", BlueSandstoneWall::new);
+    public static final RegistryObject<Block> BLUE_SANDSTONE_STAIRS = BLOCKS.register("blue_sandstone_stairs", BlueSandstoneStairs::new);
+    public static final RegistryObject<Block> BLUE_SANDSTONE_WALL = BLOCKS.register("blue_sandstone_wall", BlueSandstoneWall::new);
     public static final RegistryObject<Block> SMOOTH_BLUE_SANDSTONE = BLOCKS.register("smooth_blue_sandstone", SmoothBlueSandstone::new);
-//    public static final RegistryObject<Block> CUT_BLUE_SANDSTONE_SLAB = BLOCKS.register("cut_blue_sandstone_slab", CutBlueSandstoneSlab::new);
-//    public static final RegistryObject<Block> SMOOTH_BLUE_SANDSTONE_SLAB = BLOCKS.register("smooth_blue_sandstone_slab", SmoothBlueSandstoneSlab::new);
-//    public static final RegistryObject<Block> SMOOTH_BLUE_SANDSTONE_STAIRS = BLOCKS.register("smooth_blue_sandstone_stairs", SmoothBlueSandstoneStairs::new);
+    public static final RegistryObject<Block> CUT_BLUE_SANDSTONE_SLAB = BLOCKS.register("cut_blue_sandstone_slab", CutBlueSandstoneSlab::new);
+    public static final RegistryObject<Block> SMOOTH_BLUE_SANDSTONE_SLAB = BLOCKS.register("smooth_blue_sandstone_slab", SmoothBlueSandstoneSlab::new);
+    public static final RegistryObject<Block> SMOOTH_BLUE_SANDSTONE_STAIRS = BLOCKS.register("smooth_blue_sandstone_stairs", SmoothBlueSandstoneStairs::new);
 
     //Harano Wood Series
 //    public static final RegistryObject<Block> HARANO_LOG = BLOCKS.register("harano_log", HaranoLog::new);
