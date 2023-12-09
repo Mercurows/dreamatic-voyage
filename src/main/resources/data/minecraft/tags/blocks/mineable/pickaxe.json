@@ -11,6 +11,11 @@
     "providencraft:cut_blue_sandstone",
     "providencraft:chiseled_blue_sandstone",
     "providencraft:blue_sandstone_slab",
-    "providencraft:smooth_blue_sandstone"
+    "providencraft:smooth_blue_sandstone",
+    "providencraft:blue_sandstone_wall",
+    "providencraft:cut_blue_sandstone_slab",
+    "providencraft:blue_sandstone_stairs",
+    "providencraft:smooth_blue_sandstone_slab",
+    "providencraft:smooth_blue_sandstone_stairs"
   ]
 }
