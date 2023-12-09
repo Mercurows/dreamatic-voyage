@@ -21,6 +21,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(BlockRegistry.RED_AHOGE_BLOCK);
         blockWithItem(BlockRegistry.WHITE_AHOGE_BLOCK);
+        blockWithItem(BlockRegistry.FUKAMIZU_BREAD_BLOCK);
+        simpleBlockWithItem(BlockRegistry.COMMUNICATION_TABLE.get(), models().cube("communication_table",
+                new ResourceLocation(Utils.MOD_ID, "block/communication_table_underside"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_top"),
+                new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"),
+                new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_side")));
+
+        blockWithItem(BlockRegistry.BLUE_SAND);
+
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

@@ -21,11 +21,12 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> HARANO_TREE = registerKey("harano_tree");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+        //TODO 修复树叶问题
         register(context, HARANO_TREE,
                 Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BlockRegistry.HARANO_LOG.get()),
                         new StraightTrunkPlacer(7, 4, 0),
                         BlockStateProvider.simple(BlockRegistry.HARANO_LEAVES.get()),
-                        new BlobFoliagePlacer(UniformInt.of(2, 1), ConstantInt.of(0), 3),
+                        new BlobFoliagePlacer(UniformInt.of(1, 2), ConstantInt.of(0), 3),
                         new TwoLayersFeatureSize(1, 0, 1))
                         .ignoreVines().build());
     }
