@@ -473,37 +473,37 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(), new Item.Properties()));
     public static final RegistryObject<Item> SMOOTH_BLUE_SANDSTONE_STAIRS = BLOCK_ITEMS.register("smooth_blue_sandstone_stairs",
             () -> new BlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(), new Item.Properties()));
-//
-//    public static final RegistryObject<Item> HARANO_LOG = ITEMS.register("harano_log",
-//            () -> new BlockItem(BlockRegistry.HARANO_LOG.get(), new Item.Properties().group(ModGroup.blockgroup)));
+
+    public static final RegistryObject<Item> HARANO_LOG = ITEMS.register("harano_log",
+            () -> new BlockItem(BlockRegistry.HARANO_LOG.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_PLANKS = ITEMS.register("harano_planks",
-//            () -> new BlockItem(BlockRegistry.HARANO_PLANKS.get(), new Item.Properties().group(ModGroup.blockgroup)));
-//    public static final RegistryObject<Item> HARANO_LEAVES = ITEMS.register("harano_leaves",
-//            () -> new BlockItem(BlockRegistry.HARANO_LEAVES.get(), new Item.Properties().group(ModGroup.blockgroup)));
-//    public static final RegistryObject<Item> HARANO_SAPLING = ITEMS.register("harano_sapling",
-//            () -> new BlockItem(BlockRegistry.HARANO_SAPLING.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.HARANO_PLANKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_LEAVES = ITEMS.register("harano_leaves",
+            () -> new BlockItem(BlockRegistry.HARANO_LEAVES.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_SAPLING = ITEMS.register("harano_sapling",
+            () -> new BlockItem(BlockRegistry.HARANO_SAPLING.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_WOOD = ITEMS.register("harano_wood",
-//            () -> new BlockItem(BlockRegistry.HARANO_WOOD.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.HARANO_WOOD.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_STAIRS = ITEMS.register("harano_stairs",
-//            () -> new BlockItem(BlockRegistry.HARANO_STAIRS.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.HARANO_STAIRS.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_SLAB = ITEMS.register("harano_slab",
-//            () -> new BlockItem(BlockRegistry.HARANO_SLAB.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.HARANO_SLAB.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_FENCE = ITEMS.register("harano_fence",
-//            () -> new BlockItem(BlockRegistry.HARANO_FENCE.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.HARANO_FENCE.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_FENCE_GATE = ITEMS.register("harano_fence_gate",
-//            () -> new BlockItem(BlockRegistry.HARANO_FENCE_GATE.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.HARANO_FENCE_GATE.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_PRESSURE_PLATE = ITEMS.register("harano_pressure_plate",
-//            () -> new BlockItem(BlockRegistry.HARANO_PRESSURE_PLATE.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.HARANO_PRESSURE_PLATE.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> STRIPPED_HARANO_LOG = ITEMS.register("stripped_harano_log",
-//            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_LOG.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_LOG.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> STRIPPED_HARANO_WOOD = ITEMS.register("stripped_harano_wood",
-//            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_WOOD.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_WOOD.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_DOOR = ITEMS.register("harano_door",
-//            () -> new BlockItem(BlockRegistry.HARANO_DOOR.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.HARANO_DOOR.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_TRAPDOOR = ITEMS.register("harano_trapdoor",
-//            () -> new BlockItem(BlockRegistry.HARANO_TRAPDOOR.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.HARANO_TRAPDOOR.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_BUTTON = ITEMS.register("harano_button",
-//            () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties().group(ModGroup.blockgroup)));
+//            () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties()));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
