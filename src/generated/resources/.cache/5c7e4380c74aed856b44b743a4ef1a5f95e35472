@@ -1,9 +1,11 @@
-// 1.20.1	2023-12-11T01:48:33.9955327	Item Models: providencraft
+// 1.20.1	2023-12-11T02:00:21.955658	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 bd52ec0ea3055cec34b64316e0d032fcd8cc2e7a assets/providencraft/models/item/big_fierce_one_coffee.json
 8b4ab5a0b7b59d73acdfeea9787436588843116e assets/providencraft/models/item/big_moe_one_potion.json
 27f7de31cf2a0b0ada9b2a6276ef61be54b5f8c5 assets/providencraft/models/item/blue_sandstone_slab.json
+50110666d842512107b17d39ec546bc2ed7bb9ce assets/providencraft/models/item/blue_sandstone_stairs.json
+1cef25ea643039ca22e7e465e215896fda0bd807 assets/providencraft/models/item/blue_sandstone_wall.json
 5225a07affa019300a39bf796708cdcb0dd83a4d assets/providencraft/models/item/breeze_crown.json
 0c9c41ecfaf30a6ff11edf574a3720ac10a3240a assets/providencraft/models/item/brownie_uzza.json
 f8b44aa36c14ff35825433d20c483bc060b73e50 assets/providencraft/models/item/chaos_checker.json
@@ -76,6 +78,7 @@ cb4776f2e10b1c7a25ca14ab57b432a7b9fb1e12 assets/providencraft/models/item/satou_
 05e2289b265b82885df07dcba23090c2febf0e01 assets/providencraft/models/item/sink_crystal.json
 3ec78d9b8e5983e4e32bcb55e464002550d84bfc assets/providencraft/models/item/sleep_roulette.json
 992bcc984f6a42dc1d33688177c6a9d092444c6c assets/providencraft/models/item/smooth_blue_sandstone_slab.json
+6b646c9a9fe3a50c70e105af767f88a39eff2e57 assets/providencraft/models/item/smooth_blue_sandstone_stairs.json
 267310671b30f5c1ef83ce9b4cb215f7bbb6eea5 assets/providencraft/models/item/sneakers.json
 7e3940742096f5c7704fa2f1ecb7cd5b40ae0d24 assets/providencraft/models/item/steel_plate.json
 0400346b10eb1e56baf942131767f95e7c8b87e0 assets/providencraft/models/item/strawberry_cake.json

@@ -159,6 +159,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(BlockRegistry.BLUE_SANDSTONE_SLAB);
         evenSimplerBlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB);
         evenSimplerBlockItem(BlockRegistry.CUT_BLUE_SANDSTONE_SLAB);
+        wallItem(BlockRegistry.BLUE_SANDSTONE_WALL, BlockRegistry.BLUE_SANDSTONE);
+        evenSimplerBlockItem(BlockRegistry.BLUE_SANDSTONE_STAIRS);
+        evenSimplerBlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

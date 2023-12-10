@@ -45,6 +45,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock((StairBlock) BlockRegistry.BLUE_SANDSTONE_STAIRS.get(), blockTexture(BlockRegistry.BLUE_SANDSTONE.get()), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_bottom"),
                 new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top"));
         wallBlock((WallBlock) BlockRegistry.BLUE_SANDSTONE_WALL.get(), blockTexture(BlockRegistry.BLUE_SANDSTONE.get()));
+        simpleBlockWithItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE.get(), models().cubeAll("smooth_blue_sandstone", new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top")));
+        slabBlock((SlabBlock) BlockRegistry.CUT_BLUE_SANDSTONE_SLAB.get(), blockTexture(BlockRegistry.CUT_BLUE_SANDSTONE.get()), new ResourceLocation(Utils.MOD_ID, "block/cut_blue_sandstone"),
+                new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_bottom"), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top"));
+        slabBlock((SlabBlock) BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(), blockTexture(BlockRegistry.SMOOTH_BLUE_SANDSTONE.get()), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top"));
+        stairsBlock((StairBlock) BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top"));
 
     }
 
