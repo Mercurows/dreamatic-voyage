@@ -89,6 +89,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.HAINE_CORE);
 //        simpleItem(ItemRegistry.HAIBARA_SOUP);
 
+        simpleItem(ItemRegistry.FROG_LEG);
+        simpleItem(ItemRegistry.FROGGY_LEGGINGS);
+        simpleItem(ItemRegistry.KERORO_CORE);
+
+        simpleItem(ItemRegistry.EKIRA_PEARL);
+        simpleItem(ItemRegistry.CELESTIAL_BOOTS);
+        simpleItem(ItemRegistry.EKIRA_CORE);
 
         //3rd
 

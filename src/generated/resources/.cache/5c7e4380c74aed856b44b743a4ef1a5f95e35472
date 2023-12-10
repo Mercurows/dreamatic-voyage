@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-11T02:00:21.955658	Item Models: providencraft
+// 1.20.1	2023-12-11T02:09:15.3561527	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 bd52ec0ea3055cec34b64316e0d032fcd8cc2e7a assets/providencraft/models/item/big_fierce_one_coffee.json
@@ -8,6 +8,7 @@ bd52ec0ea3055cec34b64316e0d032fcd8cc2e7a assets/providencraft/models/item/big_fi
 1cef25ea643039ca22e7e465e215896fda0bd807 assets/providencraft/models/item/blue_sandstone_wall.json
 5225a07affa019300a39bf796708cdcb0dd83a4d assets/providencraft/models/item/breeze_crown.json
 0c9c41ecfaf30a6ff11edf574a3720ac10a3240a assets/providencraft/models/item/brownie_uzza.json
+d362bb9bd2d5fd312a7c16913919985fb2656fe7 assets/providencraft/models/item/celestial_boots.json
 f8b44aa36c14ff35825433d20c483bc060b73e50 assets/providencraft/models/item/chaos_checker.json
 c14f3adf4d423aacfc141fd703c778b6406a92c4 assets/providencraft/models/item/chiram_core.json
 5c010021b9dd33fd00b25f0ee74df519511f80ac assets/providencraft/models/item/chiram_idol_boots.json
@@ -22,13 +23,17 @@ c5e5da497d95e01eda8cd8c17cba4d6bd7909045 assets/providencraft/models/item/dark_c
 d4fdbf829e692b6451c9224aead1ffe26f92c877 assets/providencraft/models/item/dark_elf_core.json
 ef4ae352d9188e06ff661a5284e3112924517a5e assets/providencraft/models/item/dream_weaving_yarn.json
 6af84685c4b7b02e5af16f9b0b9653b9e3b3499a assets/providencraft/models/item/drill.json
+305947a5102961f4bbe50987449cf5b9b969e40a assets/providencraft/models/item/ekira_core.json
 adec62a0862a72e5ab54506cd879bc40a0610d65 assets/providencraft/models/item/ekira_idol_boots.json
 3cbcd2f6754f8054b42dceff9182ff837b815157 assets/providencraft/models/item/ekira_idol_chestplate.json
 c5442a740d92cd3d7fc66a81ff0b9d838f044485 assets/providencraft/models/item/ekira_idol_helmet.json
+f6c0f7d4c9240b90f1f6dabdaff029fbc700cef5 assets/providencraft/models/item/ekira_pearl.json
 7a4a38e4c2028d9723ccae93838ed2fe06789fc2 assets/providencraft/models/item/elf_wings.json
 0a39a7640a06aee8f6774c9a32303e9efaca7914 assets/providencraft/models/item/enchanted_unigiri.json
 494cba06ec48de7a45afd4a0f2e6ce4a8c84b54a assets/providencraft/models/item/escort_token.json
 ae89b4045eea4585d1a1234ef60816145ddced5d assets/providencraft/models/item/flat_vegetable_chestplate.json
+7145f5d3154c6d1b16e753818f5d936617769f86 assets/providencraft/models/item/froggy_leggings.json
+ec4ee2ade8d834ea51b010f6dcf3411cc2f67c52 assets/providencraft/models/item/frog_leg.json
 67aa59bb507d3b4892386faac189de7dd0efca17 assets/providencraft/models/item/gn_souls.json
 b587a0ccec1f5d779fd4933d9334a4d18dda25a2 assets/providencraft/models/item/gn_spirit.json
 d477553ab9770c026336b20adac67a9889bb3845 assets/providencraft/models/item/gn_star.json
@@ -39,6 +44,7 @@ c5cb6db480eff346f072ae1d30e2be8bc79b26d3 assets/providencraft/models/item/haine_
 5fe99632a0cfbdf226f7625c6805458af3237326 assets/providencraft/models/item/idol_cloth.json
 8620aeb39204cd07e5f037edf100b69f5d3bcf2a assets/providencraft/models/item/illusory_crystal.json
 ddda18440ca13a20d48e1cd27992be60bd9cfb39 assets/providencraft/models/item/isekai_lollipop.json
+88504fac8b14370601053f537a79dc4e39ce7c88 assets/providencraft/models/item/keroro_core.json
 b1478cafea97c44cfd956d8b84eb76bbc82e3092 assets/providencraft/models/item/keroro_idol_boots.json
 77b6c23955416609c0d89d435833bee8ee77b4fa assets/providencraft/models/item/keroro_idol_chestplate.json
 ca07ff04514da29215cd94495d650a5d4ff616f0 assets/providencraft/models/item/keroro_idol_helmet.json
