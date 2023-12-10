@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.init.ItemRegistry;
 
-@SuppressWarnings("ConstantConditions")
+@SuppressWarnings({"ConstantConditions", "UnusedReturnValue"})
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Utils.MOD_ID, existingFileHelper);
@@ -26,6 +26,24 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.RED_AHOGE_HELMET);
         simpleItem(ItemRegistry.PEACH_BEACH);
         simpleItem(ItemRegistry.SNEAKERS);
+
+        simpleItem(ItemRegistry.CRYSTAL_HORN);
+        simpleItem(ItemRegistry.SLEEP_ROULETTE);
+
+        simpleItem(ItemRegistry.MARI_STEW);
+        simpleItem(ItemRegistry.MAGIC_MIRROR);
+
+
+        simpleItem(ItemRegistry.BROWNIE_UZZA);
+
+        simpleItem(ItemRegistry.DARK_ELF_CORE);
+        simpleItem(ItemRegistry.DRILL);
+        simpleItem(ItemRegistry.SCHEDULE);
+
+        simpleItem(ItemRegistry.TARO_ICE_CREAM);
+        simpleItem(ItemRegistry.UNIGIRI);
+        simpleItem(ItemRegistry.ENCHANTED_UNIGIRI);
+        simpleItem(ItemRegistry.ELF_WINGS);
 
     }
 

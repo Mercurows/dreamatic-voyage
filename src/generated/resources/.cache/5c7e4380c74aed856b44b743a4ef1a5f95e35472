@@ -1,7 +1,19 @@
-// 1.20.1	2023-12-10T05:18:46.2314298	Item Models: providencraft
+// 1.20.1	2023-12-11T01:04:16.9781519	Item Models: providencraft
+0c9c41ecfaf30a6ff11edf574a3720ac10a3240a assets/providencraft/models/item/brownie_uzza.json
+d13acc8c5238727c4982910338f613a410f52dc6 assets/providencraft/models/item/crystal_horn.json
+d4fdbf829e692b6451c9224aead1ffe26f92c877 assets/providencraft/models/item/dark_elf_core.json
+6af84685c4b7b02e5af16f9b0b9653b9e3b3499a assets/providencraft/models/item/drill.json
+7a4a38e4c2028d9723ccae93838ed2fe06789fc2 assets/providencraft/models/item/elf_wings.json
+0a39a7640a06aee8f6774c9a32303e9efaca7914 assets/providencraft/models/item/enchanted_unigiri.json
+aa0249eb2169df96bfb7c92a4d8809cd64877b79 assets/providencraft/models/item/magic_mirror.json
+af0f23ecb717ed4cb8cb5059f6871bdf95a933c3 assets/providencraft/models/item/mari_stew.json
 a34bedea7a1cf2e2325a14b8cc033b8817c8594c assets/providencraft/models/item/peach_beach.json
 d6830301426ecaa936a84e54f9e6a8d6271e0791 assets/providencraft/models/item/red_ahoge.json
 0be9eeb173de6286d58973ef1c7528df4dfc31f4 assets/providencraft/models/item/red_ahoge_boomerang.json
 4c8a91aeda3be8f4a7474eb04614ebf3ff68f042 assets/providencraft/models/item/red_ahoge_helmet.json
 79386f83d8d3c47dd6f5089c38ba181fb42c1378 assets/providencraft/models/item/red_ahoge_sword.json
+88576abecec1f898b7506a5f544b7b499c03e685 assets/providencraft/models/item/schedule.json
+3ec78d9b8e5983e4e32bcb55e464002550d84bfc assets/providencraft/models/item/sleep_roulette.json
 267310671b30f5c1ef83ce9b4cb215f7bbb6eea5 assets/providencraft/models/item/sneakers.json
+c31600f588257739509f66f7286c0090332cb5ad assets/providencraft/models/item/taro_ice_cream.json
+5efefd68c5e1b5b4776fffaae44f02c75841665d assets/providencraft/models/item/unigiri.json
