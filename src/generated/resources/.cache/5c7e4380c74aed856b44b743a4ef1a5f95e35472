@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-11T02:09:15.3561527	Item Models: providencraft
+// 1.20.1	2023-12-11T03:26:11.7946272	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 bd52ec0ea3055cec34b64316e0d032fcd8cc2e7a assets/providencraft/models/item/big_fierce_one_coffee.json
@@ -37,6 +37,7 @@ ec4ee2ade8d834ea51b010f6dcf3411cc2f67c52 assets/providencraft/models/item/frog_l
 67aa59bb507d3b4892386faac189de7dd0efca17 assets/providencraft/models/item/gn_souls.json
 b587a0ccec1f5d779fd4933d9334a4d18dda25a2 assets/providencraft/models/item/gn_spirit.json
 d477553ab9770c026336b20adac67a9889bb3845 assets/providencraft/models/item/gn_star.json
+d309b2128c197d8c45d8315cf71232bbb6790f46 assets/providencraft/models/item/haibara_soup.json
 bb16fdc430973b8df6fcafd83b4756d037b1be9e assets/providencraft/models/item/haine_core.json
 c5cb6db480eff346f072ae1d30e2be8bc79b26d3 assets/providencraft/models/item/haine_idol_boots.json
 35d56922f3e0fde56508a127e1e38d7f4e9d82ab assets/providencraft/models/item/haine_idol_chestplate.json
@@ -48,7 +49,9 @@ ddda18440ca13a20d48e1cd27992be60bd9cfb39 assets/providencraft/models/item/isekai
 b1478cafea97c44cfd956d8b84eb76bbc82e3092 assets/providencraft/models/item/keroro_idol_boots.json
 77b6c23955416609c0d89d435833bee8ee77b4fa assets/providencraft/models/item/keroro_idol_chestplate.json
 ca07ff04514da29215cd94495d650a5d4ff616f0 assets/providencraft/models/item/keroro_idol_helmet.json
+553cf9586bfc6832a86a4fa316759b9d2713c67a assets/providencraft/models/item/large_lemon_tea.json
 c1e38c9b5cb7a30b3fdc67f0651c7edd1208518b assets/providencraft/models/item/lava_cake.json
+925b4d128826e8080b41527a2e997846072f1224 assets/providencraft/models/item/lemon_tea.json
 afaa9cad2d159ad1beeb55a9ba36cd4ac965c166 assets/providencraft/models/item/lotus_potato.json
 163aa5919380a6f2b2290399d7e2b4599d7518f5 assets/providencraft/models/item/louistew.json
 b755376d3cd697ea5fc9a3e0df4452c131e6f8b5 assets/providencraft/models/item/lucia_rice_cake.json
