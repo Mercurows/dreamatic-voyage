@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-11T01:39:40.8998941	Item Models: providencraft
+// 1.20.1	2023-12-11T01:48:33.9955327	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 bd52ec0ea3055cec34b64316e0d032fcd8cc2e7a assets/providencraft/models/item/big_fierce_one_coffee.json
@@ -11,6 +11,7 @@ c14f3adf4d423aacfc141fd703c778b6406a92c4 assets/providencraft/models/item/chiram
 5c010021b9dd33fd00b25f0ee74df519511f80ac assets/providencraft/models/item/chiram_idol_boots.json
 1bfc6ad24f40279e133d0fd6f96cc3e7e9f4b4b4 assets/providencraft/models/item/chiram_idol_chestplate.json
 5fd4732b1be10af948ab32186c2dd87159a4abb1 assets/providencraft/models/item/chiram_idol_helmet.json
+582ea15580f4f078c15f1d17fb588b92e53f8ff1 assets/providencraft/models/item/chocoal_cookie.json
 c33613056cb6c955b51dcdc2903e1cb9fbe224b3 assets/providencraft/models/item/cloud_key.json
 d13acc8c5238727c4982910338f613a410f52dc6 assets/providencraft/models/item/crystal_horn.json
 75fa86d96a6ba2534ad5b2ffaa8a51bd6569dfc9 assets/providencraft/models/item/cursed_marshaimallow.json
@@ -71,11 +72,13 @@ d6830301426ecaa936a84e54f9e6a8d6271e0791 assets/providencraft/models/item/red_ah
 117cdf8884791372a76cf8938c9c0eac3595b1ae assets/providencraft/models/item/satou_chestplate.json
 cb4776f2e10b1c7a25ca14ab57b432a7b9fb1e12 assets/providencraft/models/item/satou_knife.json
 88576abecec1f898b7506a5f544b7b499c03e685 assets/providencraft/models/item/schedule.json
+664cec4f6e98613e2d477fba7535e13d2c1b0ad7 assets/providencraft/models/item/shakana.json
 05e2289b265b82885df07dcba23090c2febf0e01 assets/providencraft/models/item/sink_crystal.json
 3ec78d9b8e5983e4e32bcb55e464002550d84bfc assets/providencraft/models/item/sleep_roulette.json
 992bcc984f6a42dc1d33688177c6a9d092444c6c assets/providencraft/models/item/smooth_blue_sandstone_slab.json
 267310671b30f5c1ef83ce9b4cb215f7bbb6eea5 assets/providencraft/models/item/sneakers.json
 7e3940742096f5c7704fa2f1ecb7cd5b40ae0d24 assets/providencraft/models/item/steel_plate.json
+0400346b10eb1e56baf942131767f95e7c8b87e0 assets/providencraft/models/item/strawberry_cake.json
 c31600f588257739509f66f7286c0090332cb5ad assets/providencraft/models/item/taro_ice_cream.json
 0e1c103f94d1a683d923691def6916801131d105 assets/providencraft/models/item/terminal_crystal.json
 5efefd68c5e1b5b4776fffaae44f02c75841665d assets/providencraft/models/item/unigiri.json

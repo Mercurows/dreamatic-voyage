@@ -4,6 +4,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -34,8 +36,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.BLUE_SAND);
         simpleBlockWithItem(BlockRegistry.BLUE_SANDSTONE.get(), models().cubeBottomTop("blue_sandstone", new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone"),
                 new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_bottom"), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top")));
+        simpleBlockWithItem(BlockRegistry.CUT_BLUE_SANDSTONE.get(), models().cubeColumn("cut_blue_sandstone", new ResourceLocation(Utils.MOD_ID, "block/cut_blue_sandstone"),
+                new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top")));
+        simpleBlockWithItem(BlockRegistry.CHISELED_BLUE_SANDSTONE.get(), models().cubeColumn("chiseled_blue_sandstone", new ResourceLocation(Utils.MOD_ID, "block/chiseled_blue_sandstone"),
+                new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top")));
         slabBlock((SlabBlock) BlockRegistry.BLUE_SANDSTONE_SLAB.get(), blockTexture(BlockRegistry.BLUE_SANDSTONE.get()), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone"),
                 new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_bottom"), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top"));
+        stairsBlock((StairBlock) BlockRegistry.BLUE_SANDSTONE_STAIRS.get(), blockTexture(BlockRegistry.BLUE_SANDSTONE.get()), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_bottom"),
+                new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top"));
+        wallBlock((WallBlock) BlockRegistry.BLUE_SANDSTONE_WALL.get(), blockTexture(BlockRegistry.BLUE_SANDSTONE.get()));
+
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

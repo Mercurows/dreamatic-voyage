@@ -97,6 +97,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 
         //4th
+        simpleItem(ItemRegistry.STRAWBERRY_CAKE);
+        simpleItem(ItemRegistry.CHOCOAL_COOKIE);
+
+        simpleItem(ItemRegistry.SHAKANA);
 
 
         //cnt
