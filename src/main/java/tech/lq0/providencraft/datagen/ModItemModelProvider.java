@@ -36,6 +36,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.MAGIC_MIRROR);
 
 
+        simpleItem(ItemRegistry.BANANA_MILK);
+
         simpleItem(ItemRegistry.BROWNIE_UZZA);
 
         simpleItem(ItemRegistry.DARK_ELF_CORE);

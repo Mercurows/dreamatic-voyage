@@ -37,6 +37,7 @@ import tech.lq0.providencraft.item.providencefirst.myanna.DarkElfCore;
 import tech.lq0.providencraft.item.providencefirst.myanna.Drill;
 import tech.lq0.providencraft.item.providencefirst.myanna.MountainDestroyer;
 import tech.lq0.providencraft.item.providencefirst.myanna.Schedule;
+import tech.lq0.providencraft.item.providencefirst.niina.BananaMilk;
 import tech.lq0.providencraft.item.providencefirst.unia.ElfWings;
 import tech.lq0.providencraft.item.providencefirst.unia.EnchantedUnigiri;
 import tech.lq0.providencraft.item.providencefirst.unia.TaroIceCream;
@@ -99,9 +100,9 @@ public class ItemRegistry {
     //mitsuki
 //    public static final RegistryObject<Item> CROWN = ITEMS.register("crown", Crown::new);
 //    public static final RegistryObject<Item> GOOD_MAN_CARD = ITEMS.register("good_man_card", GoodManCard::new);
-//
-//    //niina
-//    public static final RegistryObject<Item> BANANA_MILK = ITEMS.register("banana_milk", BananaMilk::new);
+
+    //niina
+    public static final RegistryObject<Item> BANANA_MILK = ITEMS.register("banana_milk", BananaMilk::new);
 //    public static final RegistryObject<Item> BLUE_SMALL_BALL = ITEMS.register("blue_small_ball", BlueSmallBall::new);
 //
     //usa
@@ -215,7 +216,7 @@ public class ItemRegistry {
     /**
      * 3rd
      **/
-//    //hiru
+    //hiru
 //    public static final RegistryObject<Item> HIRU_HEAD = ITEMS.register("hiru_head", HiruHead::new);
 //    public static final RegistryObject<Item> HIRU_TENTACLES = ITEMS.register("hiru_tentacles", HiruTentacles::new);
 //    public static final RegistryObject<Item> HIRENADE_GG = ITEMS.register("hirenade_gg", HirenadeGG::new);

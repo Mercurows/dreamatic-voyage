@@ -10,6 +10,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.village.VillagerTradesEvent;
+import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -101,18 +102,26 @@ public class VillagerRegistry {
                     new ItemStack(Items.EMERALD, 1), 16, 2, 0.05f)));
             trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 8),
                     new ItemStack(ItemRegistry.PORCELAIN_THRONE.get(), 3), 12, 10, 0.05f)));
-//            trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 2),
-//                    new ItemStack(ItemRegistry.BANANA_MILK.get(), 3), 20, 6, 0.05f)));
+            trades.get(3).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 2),
+                    new ItemStack(ItemRegistry.BANANA_MILK.get(), 3), 20, 6, 0.05f)));
 
             trades.get(4).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.SMOOTH_STONE, 10),
                     new ItemStack(Items.EMERALD, 1), 30, 1, 0.05f)));
             trades.get(4).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 3),
                     new ItemStack(ItemRegistry.FROG_LEG.get(), 2), 12, 3, 0.05f)));
 
-//            trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 50),
-//                    new ItemStack(ItemRegistry.ELECTRIC_HORN.get(), 1), 1, 35, 0.05f)));
+            trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 50),
+                    new ItemStack(ItemRegistry.ELECTRIC_HORN.get(), 1), 1, 35, 0.05f)));
             trades.get(5).add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),
                     new ItemStack(ItemRegistry.TARO_ICE_CREAM.get(), 1), 16, 5, 0.05f)));
         }
+    }
+
+    @SubscribeEvent
+    public static void addWandererTrade(WandererTradesEvent event) {
+        List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades();
+
+        genericTrades.add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),
+                new ItemStack(ItemRegistry.HARANO_SAPLING.get(), 1), 12, 0, 0.15f)));
     }
 }
