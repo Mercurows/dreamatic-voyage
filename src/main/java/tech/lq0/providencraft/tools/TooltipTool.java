@@ -21,8 +21,13 @@ public class TooltipTool {
 
     public static void addLiverInfo(List<Component> tooltip, Livers liver) {
         addHideText(tooltip, Component.literal(""));
-        addHideText(tooltip, Component.translatable("liver.providencraft.liver").withStyle(Style.EMPTY.withColor(ChatFormatting.WHITE)));
+        addHideText(tooltip, Component.translatable("liver.providencraft.liver").withStyle(ChatFormatting.WHITE));
         addHideText(tooltip, Component.translatable("liver.providencraft." + liver.getName()).withStyle(Style.EMPTY.withColor(TextColor.parseColor(liver.getColor()))));
+    }
+
+    public static void addDonateInfo(List<Component> tooltip) {
+        addHideText(tooltip, Component.literal(""));
+        addHideText(tooltip, Component.translatable("des.providencraft.donate_item").withStyle(ChatFormatting.GOLD));
     }
 
     public static void addLegacyInfo(List<Component> tooltip) {
@@ -33,13 +38,13 @@ public class TooltipTool {
     public static void addChaosInfo(List<Component> tooltip, int chaos) {
         ChatFormatting chatFormatting;
         StringBuilder builder = new StringBuilder();
-        if(chaos > 0){
+        if (chaos > 0) {
             chatFormatting = ChatFormatting.BLUE;
             builder.append("+").append(chaos).append(" ").append(Component.translatable("des.providencraft.chaos").getString());
-        }else if(chaos < 0){
+        } else if (chaos < 0) {
             chatFormatting = ChatFormatting.YELLOW;
             builder.append("-").append(Math.abs(chaos)).append(" ").append(Component.translatable("des.providencraft.chaos").getString());
-        }else {
+        } else {
             chatFormatting = ChatFormatting.GREEN;
             builder.append(Component.translatable("des.providencraft.chaos.reset").getString());
         }

@@ -14,4 +14,5 @@ public class TabRegistry {
     public static final RegistryObject<CreativeModeTab> PDC_BLOCK_TAB = TABS.register("pdc_block_tab", () -> ModTabs.PDC_BLOCK_TAB);
     public static final RegistryObject<CreativeModeTab> PDC_COSTUME_TAB = TABS.register("pdc_costume_tab", () -> ModTabs.PDC_COSTUME_TAB);
     public static final RegistryObject<CreativeModeTab> PDC_TAPE_TAB = TABS.register("pdc_tape_tab", () -> ModTabs.PDC_TAPE_TAB);
+    public static final RegistryObject<CreativeModeTab> PDC_DONATE_TAB = TABS.register("pdc_donate_tab", () -> ModTabs.PDC_DONATE_TAB);
 }

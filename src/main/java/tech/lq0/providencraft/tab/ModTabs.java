@@ -59,4 +59,15 @@ public class ModTabs {
                 }
             }))
             .build();
+
+    public static CreativeModeTab PDC_DONATE_TAB = CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.providencraft_donate_tab"))
+            .withTabsBefore(TabRegistry.PDC_TAPE_TAB.getKey())
+            .icon(() -> new ItemStack(ItemRegistry.LAVA_CAKE.get()))
+            .displayItems((param, output) -> ItemRegistry.DONATE_ITEMS.getEntries().forEach((registryObject) -> {
+                if (!HIDDEN.contains(registryObject)) {
+                    output.accept(registryObject.get());
+                }
+            }))
+            .build();
 }

@@ -119,9 +119,9 @@ public class VillagerRegistry {
 
     @SubscribeEvent
     public static void addWandererTrade(WandererTradesEvent event) {
-        List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades();
+        List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
 
-        genericTrades.add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),
+        rareTrades.add(((pTrader, pRandom) -> new MerchantOffer(new ItemStack(Items.EMERALD, 5),
                 new ItemStack(ItemRegistry.HARANO_SAPLING.get(), 1), 12, 0, 0.15f)));
     }
 }

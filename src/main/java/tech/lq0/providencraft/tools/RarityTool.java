@@ -56,4 +56,29 @@ public class RarityTool {
 
         return Style.EMPTY.withColor(rgb);
     });
+
+    public static final Rarity DONATE =  Rarity.create("providencraft_donate", s -> {
+        long time = System.currentTimeMillis();
+        int step = (int) (time % 4000);
+
+        int startR = 199;
+        int startG = 247;
+        int startB = 255;
+
+        int endR = 248;
+        int endG = 224;
+        int endB = 194;
+
+        int finalR;
+        int finalG;
+        int finalB;
+
+        step = step > 2000 ? 4000 - step : step;
+        finalR = (int) (startR + (endR - startR) * step / 2000f);
+        finalG = (int) (startG + (endG - startG) * step / 2000f);
+        finalB = (int) (startB + (endB - startB) * step / 2000f);
+        int rgb = finalR * 65536 + finalG * 256 + finalB;
+
+        return Style.EMPTY.withColor(rgb);
+    });
 }
