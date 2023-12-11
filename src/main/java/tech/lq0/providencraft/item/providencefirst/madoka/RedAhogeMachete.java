@@ -36,7 +36,7 @@ public class RedAhogeMachete extends SwordItem {
     private static final String TAG_FALL = "falling";
 
     public RedAhogeMachete() {
-        super(ModItemTier.RED_AHOGE, 7, -2.8f, new Properties().durability(1051).rarity(Rarity.UNCOMMON));
+        super(ModItemTier.RED_AHOGE, 7, -2.8f, new Properties().durability(751).rarity(Rarity.UNCOMMON));
     }
 
     @OnlyIn(Dist.CLIENT)
