@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "CLC",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "providencraft:daifuku_syrup"
+    },
+    "C": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "L": {
+      "item": "minecraft:leather_boots"
+    }
+  },
+  "result": {
+    "item": "providencraft:chocolate_boots",
+    "count": 2
+  }
+}

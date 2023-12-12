@@ -107,6 +107,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         //oi
 
 
+        simpleItem(ItemRegistry.CHOCOLATE_BOOTS);
+
+
         //4th
         simpleItem(ItemRegistry.STRAWBERRY_CAKE);
         simpleItem(ItemRegistry.CHOCOAL_COOKIE);

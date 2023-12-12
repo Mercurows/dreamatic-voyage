@@ -247,6 +247,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> WORLD_PEACE_STAFF = ITEMS.register("world_peace_staff", WorldPeaceStaff::new);
     public static final RegistryObject<Item> MOMO_SYRINGE = ITEMS.register("momo_syringe", MomoSyringe::new);
     public static final RegistryObject<Item> MOMO_BANDAGE = ITEMS.register("momo_bandage", MomoBandage::new);
+    public static final RegistryObject<Item> CHOCOLATE_BOOTS = ITEMS.register("chocolate_boots", ChocolateBoots::new);
 
     //sorayo
     public static final RegistryObject<Item> LUNATIC_BOW = ITEMS.register("lunatic_bow", LunaticBow::new);
