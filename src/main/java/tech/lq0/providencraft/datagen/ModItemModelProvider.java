@@ -144,9 +144,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.ALIENIS_CRYSTAL);
         simpleItem(ItemRegistry.TERMINAL_CRYSTAL);
 
-        //audio
-
-
         //donate
 
 
