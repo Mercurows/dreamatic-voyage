@@ -31,7 +31,7 @@ public class PorcelainThrone extends Block {
     private static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
     public PorcelainThrone() {
-        super(Properties.of().strength(2));
+        super(Properties.of().strength(2).forceSolidOn());
         this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
     }
 
