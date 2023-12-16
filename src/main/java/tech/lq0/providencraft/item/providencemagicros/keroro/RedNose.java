@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -78,8 +79,11 @@ public class RedNose extends Item implements ICurioItem {
                     c -> c.findFirstCurio(ItemRegistry.RED_NOSE.get()).ifPresent(
                             slotResult -> {
                                 if (!player.getCooldowns().isOnCooldown(slotResult.stack().getItem())) {
-                                    player.playSound(SoundRegistry.KERORO_SNEEZE.get(), 0.5f, 1.0f);
-                                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 80, 1));
+                                    if (!player.level().isClientSide) {
+                                        player.playNotifySound(SoundRegistry.KERORO_SNEEZE.get(), SoundSource.PLAYERS, 0.5f, 1.0f);
+                                    }
+                                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60, 3));
+                                    player.addEffect(new MobEffectInstance(MobEffects.JUMP, 60, 3));
                                     player.getCooldowns().addCooldown(ItemRegistry.RED_NOSE.get(), 100);
                                 }
                             }
