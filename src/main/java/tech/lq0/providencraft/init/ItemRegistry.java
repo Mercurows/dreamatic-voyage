@@ -63,6 +63,9 @@ import tech.lq0.providencraft.item.providencesecond.lucia.MoonlightAmulet;
 import tech.lq0.providencraft.item.providencesecond.mumu.AyeletMask;
 import tech.lq0.providencraft.item.providencesecond.mumu.MumuSteak;
 import tech.lq0.providencraft.item.providencesecond.satou.*;
+import tech.lq0.providencraft.item.providencethird.hiru.GNSouls;
+import tech.lq0.providencraft.item.providencethird.hiru.GNSpirit;
+import tech.lq0.providencraft.item.providencethird.hiru.GNStar;
 import tech.lq0.providencraft.item.providencethird.leciel.ReinaFeather;
 import tech.lq0.providencraft.item.providencethird.leciel.ReinaWings;
 import tech.lq0.providencraft.item.providencethird.yuki.FoxIceCream;
@@ -223,6 +226,9 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> HIRU_TENTACLES = ITEMS.register("hiru_tentacles", HiruTentacles::new);
 //    public static final RegistryObject<Item> HIRENADE_GG = ITEMS.register("hirenade_gg", HirenadeGG::new);
 //    public static final RegistryObject<Item> SECONDARY_CATACLYSM = ITEMS.register("secondary_cataclysm", SecondaryCataclysm::new);
+    public static final RegistryObject<Item> GN_SOUL = ITEMS.register("gn_souls", GNSouls::new);
+    public static final RegistryObject<Item> GN_SPIRIT = ITEMS.register("gn_spirit", GNSpirit::new);
+    public static final RegistryObject<Item> GN_STAR = ITEMS.register("gn_star", GNStar::new);
 
     //leciel
     public static final RegistryObject<Item> REINA_WINGS = ITEMS.register("reina_wings", ReinaWings::new);
@@ -343,9 +349,6 @@ public class ItemRegistry {
      * material
      */
     public static final RegistryObject<Item> IDOL_CLOTH = ITEMS.register("idol_cloth", IdolCloth::new);
-    public static final RegistryObject<Item> GN_SOUL = ITEMS.register("gn_souls", GNSouls::new);
-    public static final RegistryObject<Item> GN_SPIRIT = ITEMS.register("gn_spirit", GNSpirit::new);
-    public static final RegistryObject<Item> GN_STAR = ITEMS.register("gn_star", GNStar::new);
     public static final RegistryObject<Item> MAGICROS_CORE = ITEMS.register("magicros_core", MagicrosCore::new);
     public static final RegistryObject<Item> DREAM_WEAVING_YARN = ITEMS.register("dream_weaving_yarn", DreamWeavingYarn::new);
     public static final RegistryObject<Item> DARK_CRYSTAL = ITEMS.register("dark_crystal", DarkCrystal::new);
