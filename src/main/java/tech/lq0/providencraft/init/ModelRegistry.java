@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 import tech.lq0.providencraft.models.armor.*;
 import tech.lq0.providencraft.models.blockentity.PdCLogoModel;
 import tech.lq0.providencraft.models.curios.LunaticBowModel;
+import tech.lq0.providencraft.models.curios.RedNoseModel;
 import tech.lq0.providencraft.models.entity.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -45,5 +46,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(EkiraIdolChestplateModel.LAYER_LOCATION, EkiraIdolChestplateModel::createBodyLayer);
         event.registerLayerDefinition(EkiraIdolHelmetModel.LAYER_LOCATION, EkiraIdolHelmetModel::createBodyLayer);
         event.registerLayerDefinition(FrogCrownModel.LAYER_LOCATION, FrogCrownModel::createBodyLayer);
+        event.registerLayerDefinition(RedNoseModel.LAYER_LOCATION, RedNoseModel::createBodyLayer);
     }
 }

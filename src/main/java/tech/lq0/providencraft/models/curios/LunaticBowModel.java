@@ -17,6 +17,7 @@ import tech.lq0.providencraft.Utils;
 
 import javax.annotation.Nonnull;
 
+@SuppressWarnings("unused")
 public class LunaticBowModel extends HumanoidModel<LivingEntity> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Utils.MOD_ID, "lunatic_bow"), "main");

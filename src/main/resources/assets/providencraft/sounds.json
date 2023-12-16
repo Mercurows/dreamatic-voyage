@@ -7,6 +7,14 @@
       }
     ]
   },
+  "keroro_sneeze": {
+    "subtitle": "subtitle.providencraft.keroro_sneeze",
+    "sounds": [
+      {
+        "name": "providencraft:keroro_sneeze"
+      }
+    ]
+  },
   "baby_meow": {
     "subtitle": "subtitle.providencraft.baby_meow",
     "sounds": [
