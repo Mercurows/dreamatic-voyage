@@ -11,7 +11,7 @@ public class SoundRegistry {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Utils.MOD_ID);
 
     public static final RegistryObject<SoundEvent> MYANNA = SOUNDS.register("myanna", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "myanna")));
-    //    public static final RegistryObject<SoundEvent> HAIPLATE = SOUNDS.register("haiplate", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "haiplate")));
+    public static final RegistryObject<SoundEvent> HAIPLATE = SOUNDS.register("haiplate", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "haiplate")));
     public static final RegistryObject<SoundEvent> KERORO_SNEEZE = SOUNDS.register("keroro_sneeze", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "keroro_sneeze")));
 //    public static final RegistryObject<SoundEvent> BLADE = SOUNDS.register("blade", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "blade")));
 //    public static final RegistryObject<SoundEvent> HOW_HOLD_BLOOD = SOUNDS.register("how_hold_blood", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "how_hold_blood")));

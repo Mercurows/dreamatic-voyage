@@ -7,6 +7,15 @@
       }
     ]
   },
+  "haiplate": {
+    "subtitle": "subtitle.providencraft.haiplate_invoke",
+    "sounds": [
+      {
+        "name": "providencraft:haiplate",
+        "stream": true
+      }
+    ]
+  },
   "keroro_sneeze": {
     "subtitle": "subtitle.providencraft.keroro_sneeze",
     "sounds": [

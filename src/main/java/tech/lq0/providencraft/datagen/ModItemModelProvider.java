@@ -105,6 +105,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //3rd
 
+        simpleItem(ItemRegistry.GN_SOUL);
+        simpleItem(ItemRegistry.GN_SPIRIT);
+        simpleItem(ItemRegistry.GN_STAR);
+
+
 
         //oi
 
@@ -137,9 +142,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //material
         simpleItem(ItemRegistry.IDOL_CLOTH);
-        simpleItem(ItemRegistry.GN_SOUL);
-        simpleItem(ItemRegistry.GN_SPIRIT);
-        simpleItem(ItemRegistry.GN_STAR);
         simpleItem(ItemRegistry.MAGICROS_CORE);
         simpleItem(ItemRegistry.DREAM_WEAVING_YARN);
         simpleItem(ItemRegistry.DARK_CRYSTAL);
