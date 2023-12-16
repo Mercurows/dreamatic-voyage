@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-16T23:24:33.1339657	Item Models: providencraft
+// 1.20.1	2023-12-17T00:40:18.1823066	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 465a37a9db586d67c92b0023c2ca51ffb500c5e6 assets/providencraft/models/item/banana_milk.json
@@ -35,6 +35,7 @@ f6c0f7d4c9240b90f1f6dabdaff029fbc700cef5 assets/providencraft/models/item/ekira_
 494cba06ec48de7a45afd4a0f2e6ce4a8c84b54a assets/providencraft/models/item/escort_token.json
 ae89b4045eea4585d1a1234ef60816145ddced5d assets/providencraft/models/item/flat_vegetable_chestplate.json
 7145f5d3154c6d1b16e753818f5d936617769f86 assets/providencraft/models/item/froggy_leggings.json
+eab53ff8231cef38595c1d685d594da4426989de assets/providencraft/models/item/frog_crown.json
 ec4ee2ade8d834ea51b010f6dcf3411cc2f67c52 assets/providencraft/models/item/frog_leg.json
 67aa59bb507d3b4892386faac189de7dd0efca17 assets/providencraft/models/item/gn_souls.json
 b587a0ccec1f5d779fd4933d9334a4d18dda25a2 assets/providencraft/models/item/gn_spirit.json
@@ -83,6 +84,7 @@ d6830301426ecaa936a84e54f9e6a8d6271e0791 assets/providencraft/models/item/red_ah
 0be9eeb173de6286d58973ef1c7528df4dfc31f4 assets/providencraft/models/item/red_ahoge_boomerang.json
 4c8a91aeda3be8f4a7474eb04614ebf3ff68f042 assets/providencraft/models/item/red_ahoge_helmet.json
 79386f83d8d3c47dd6f5089c38ba181fb42c1378 assets/providencraft/models/item/red_ahoge_sword.json
+e834461d7203437537043f1e5a3e24152745ad22 assets/providencraft/models/item/red_nose.json
 117cdf8884791372a76cf8938c9c0eac3595b1ae assets/providencraft/models/item/satou_chestplate.json
 cb4776f2e10b1c7a25ca14ab57b432a7b9fb1e12 assets/providencraft/models/item/satou_knife.json
 88576abecec1f898b7506a5f544b7b499c03e685 assets/providencraft/models/item/schedule.json
