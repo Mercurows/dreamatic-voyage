@@ -44,5 +44,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(EkiraIdolBootsModel.LAYER_LOCATION, EkiraIdolBootsModel::createBodyLayer);
         event.registerLayerDefinition(EkiraIdolChestplateModel.LAYER_LOCATION, EkiraIdolChestplateModel::createBodyLayer);
         event.registerLayerDefinition(EkiraIdolHelmetModel.LAYER_LOCATION, EkiraIdolHelmetModel::createBodyLayer);
+        event.registerLayerDefinition(FrogCrownModel.LAYER_LOCATION, FrogCrownModel::createBodyLayer);
     }
 }
