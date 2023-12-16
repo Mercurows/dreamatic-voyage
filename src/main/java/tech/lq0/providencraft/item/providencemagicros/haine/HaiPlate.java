@@ -9,6 +9,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -32,13 +33,18 @@ public class HaiPlate extends ShieldItem {
         pPlayer.startUsingItem(pHand);
 
         if (pPlayer.isSteppingCarefully()) {
-            pPlayer.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 4));
-            itemstack.hurtAndBreak(80, pPlayer, (playerEntity) -> playerEntity.broadcastBreakEvent(pHand));
-            pPlayer.getCooldowns().addCooldown(itemstack.getItem(), 220);
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 4));
+            itemstack.hurtAndBreak(50, pPlayer, (playerEntity) -> playerEntity.broadcastBreakEvent(pHand));
+            pPlayer.getCooldowns().addCooldown(itemstack.getItem(), 200);
             pLevel.playSound(pPlayer, pPlayer.getOnPos(), SoundRegistry.HAIPLATE.get(), SoundSource.AMBIENT, 0.5f, 1f);
         }
 
         return InteractionResultHolder.consume(itemstack);
+    }
+
+    @Override
+    public boolean isValidRepairItem(ItemStack pToRepair, ItemStack pRepair) {
+        return pRepair.getItem() == Items.IRON_INGOT;
     }
 
     @OnlyIn(Dist.CLIENT)
