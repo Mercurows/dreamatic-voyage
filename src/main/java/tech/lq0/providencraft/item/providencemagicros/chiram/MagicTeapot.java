@@ -21,9 +21,9 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.LiquidBlockContainer;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
@@ -71,6 +71,19 @@ public class MagicTeapot extends Item {
             if (pLevel.mayInteract(pPlayer, blockpos) && pPlayer.mayUseItemAt(blockpos1, direction, itemstack)) {
                 BlockState blockstate = pLevel.getBlockState(blockpos);
                 BlockPos blockpos2 = canBlockContainFluid(pLevel, blockpos, blockstate) ? blockpos : blockpos1;
+
+                if (blockstate.getBlock() instanceof CauldronBlock) {
+                    pLevel.setBlockAndUpdate(blockpos, Blocks.WATER_CAULDRON.defaultBlockState().setValue(BlockStateProperties.LEVEL_CAULDRON, 3));
+
+                    return InteractionResultHolder.success(itemstack);
+                } else if (blockstate.getBlock() instanceof LayeredCauldronBlock block) {
+                    if (block.defaultBlockState().getValue(BlockStateProperties.LEVEL_CAULDRON) < 3) {
+                        pLevel.setBlockAndUpdate(blockpos, Blocks.WATER_CAULDRON.defaultBlockState().setValue(BlockStateProperties.LEVEL_CAULDRON, 3));
+
+                        return InteractionResultHolder.success(itemstack);
+                    }
+                }
+
                 if (this.emptyContents(pPlayer, pLevel, blockpos2, blockhitresult, itemstack)) {
                     if (pPlayer instanceof ServerPlayer) {
                         CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayer) pPlayer, blockpos2, itemstack);
