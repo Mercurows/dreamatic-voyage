@@ -82,7 +82,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 //        simpleItem(ItemRegistry.CHIRAM_LANTERN);
         simpleItem(ItemRegistry.BREEZE_CROWN);
         simpleItem(ItemRegistry.CHIRAM_CORE);
-//        simpleItem(ItemRegistry.MAGIC_TEAPOT);
+        simpleItem(ItemRegistry.MAGIC_TEAPOT);
 
         simpleItem(ItemRegistry.MARSHAIMALLOW);
         simpleItem(ItemRegistry.CLOUD_KEY);

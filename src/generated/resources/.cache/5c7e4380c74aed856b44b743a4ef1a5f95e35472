@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-13T01:01:55.6050989	Item Models: providencraft
+// 1.20.1	2023-12-16T23:24:33.1339657	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 465a37a9db586d67c92b0023c2ca51ffb500c5e6 assets/providencraft/models/item/banana_milk.json
@@ -64,6 +64,7 @@ adb0650d0da74af94c66c43befef2b238c710d68 assets/providencraft/models/item/magic_
 02b842d0fa0b8d03b2d7bbabd52eb556cc49ac79 assets/providencraft/models/item/magic_book_revelation.json
 bf5c09f748d4a222c2c9a54ca389ac38818395ac assets/providencraft/models/item/magic_book_throw.json
 aa0249eb2169df96bfb7c92a4d8809cd64877b79 assets/providencraft/models/item/magic_mirror.json
+f71f2ed602dd311aefdfe23f9e198502136f5994 assets/providencraft/models/item/magic_teapot.json
 af0f23ecb717ed4cb8cb5059f6871bdf95a933c3 assets/providencraft/models/item/mari_stew.json
 376f0a470b219799795303656985113f44eb21d4 assets/providencraft/models/item/marshaimallow.json
 bb82cfd443eadb796508b15ee4f090dd2ff04078 assets/providencraft/models/item/mechanical_horn.json
