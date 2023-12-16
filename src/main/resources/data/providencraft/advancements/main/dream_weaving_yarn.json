@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "providencraft:dream_weaving_yarn"
+    },
+    "title": {
+      "translate": "providencraft.advancement.dream_weaving_yarn"
+    },
+    "description": {
+      "translate": "providencraft.advancement.dream_weaving_yarn_des"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "providencraft:main/chiram_idol_costume",
+  "criteria": {
+    "dream_weaving_yarn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "providencraft:dream_weaving_yarn"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}
