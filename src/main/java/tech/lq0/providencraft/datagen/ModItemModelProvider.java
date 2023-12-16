@@ -133,6 +133,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.PDC_POINT);
         simpleItem(ItemRegistry.PREMIUM_PDC_POINT);
         simpleItem(ItemRegistry.CHAOS_CHECKER);
+        simpleItem(ItemRegistry.FALLEN_RING);
         simpleItem(ItemRegistry.ESCORT_TOKEN);
 
         //legacy

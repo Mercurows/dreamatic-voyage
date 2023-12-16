@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-17T00:40:18.1823066	Item Models: providencraft
+// 1.20.1	2023-12-17T03:37:19.9388205	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 465a37a9db586d67c92b0023c2ca51ffb500c5e6 assets/providencraft/models/item/banana_milk.json
@@ -33,6 +33,7 @@ f6c0f7d4c9240b90f1f6dabdaff029fbc700cef5 assets/providencraft/models/item/ekira_
 7a4a38e4c2028d9723ccae93838ed2fe06789fc2 assets/providencraft/models/item/elf_wings.json
 0a39a7640a06aee8f6774c9a32303e9efaca7914 assets/providencraft/models/item/enchanted_unigiri.json
 494cba06ec48de7a45afd4a0f2e6ce4a8c84b54a assets/providencraft/models/item/escort_token.json
+c69b1d15df03899b6286f407e7190ca0f5062102 assets/providencraft/models/item/fallen_ring.json
 ae89b4045eea4585d1a1234ef60816145ddced5d assets/providencraft/models/item/flat_vegetable_chestplate.json
 7145f5d3154c6d1b16e753818f5d936617769f86 assets/providencraft/models/item/froggy_leggings.json
 eab53ff8231cef38595c1d685d594da4426989de assets/providencraft/models/item/frog_crown.json

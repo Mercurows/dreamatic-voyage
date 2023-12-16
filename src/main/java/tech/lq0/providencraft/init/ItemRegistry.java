@@ -333,6 +333,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> PDC_POINT = ITEMS.register("pdc_point", PdcPoint::new);
     public static final RegistryObject<Item> PREMIUM_PDC_POINT = ITEMS.register("premium_pdc_point", PremiumPdcPoint::new);
     public static final RegistryObject<Item> CHAOS_CHECKER = ITEMS.register("chaos_checker", ChaosChecker::new);
+    public static final RegistryObject<Item> FALLEN_RING = ITEMS.register("fallen_ring", FallenRing::new);
     public static final RegistryObject<Item> ESCORT_TOKEN = ITEMS.register("escort_token", EscortToken::new);
 
     /**
