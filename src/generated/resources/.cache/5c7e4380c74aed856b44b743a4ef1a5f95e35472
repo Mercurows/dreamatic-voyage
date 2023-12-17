@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-18T00:02:10.908701	Item Models: providencraft
+// 1.20.1	2023-12-18T00:59:46.5009354	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 465a37a9db586d67c92b0023c2ca51ffb500c5e6 assets/providencraft/models/item/banana_milk.json
@@ -9,6 +9,7 @@ bd52ec0ea3055cec34b64316e0d032fcd8cc2e7a assets/providencraft/models/item/big_fi
 1cef25ea643039ca22e7e465e215896fda0bd807 assets/providencraft/models/item/blue_sandstone_wall.json
 5225a07affa019300a39bf796708cdcb0dd83a4d assets/providencraft/models/item/breeze_crown.json
 0c9c41ecfaf30a6ff11edf574a3720ac10a3240a assets/providencraft/models/item/brownie_uzza.json
+bd184e102067b3b4f67167fd5056593d7fccf1cd assets/providencraft/models/item/bubble_tea.json
 d362bb9bd2d5fd312a7c16913919985fb2656fe7 assets/providencraft/models/item/celestial_boots.json
 f8b44aa36c14ff35825433d20c483bc060b73e50 assets/providencraft/models/item/chaos_checker.json
 c14f3adf4d423aacfc141fd703c778b6406a92c4 assets/providencraft/models/item/chiram_core.json
@@ -18,6 +19,7 @@ c14f3adf4d423aacfc141fd703c778b6406a92c4 assets/providencraft/models/item/chiram
 582ea15580f4f078c15f1d17fb588b92e53f8ff1 assets/providencraft/models/item/chocoal_cookie.json
 8d9b602697840caf5ce9b935b04b2e1d7a264b6a assets/providencraft/models/item/chocolate_boots.json
 c33613056cb6c955b51dcdc2903e1cb9fbe224b3 assets/providencraft/models/item/cloud_key.json
+b80a02fa942b9d1eb18ad5646b3b0c4c00988dda assets/providencraft/models/item/crystal_ball.json
 d13acc8c5238727c4982910338f613a410f52dc6 assets/providencraft/models/item/crystal_horn.json
 75fa86d96a6ba2534ad5b2ffaa8a51bd6569dfc9 assets/providencraft/models/item/cursed_marshaimallow.json
 41fb434f6f6ccb717404797ea8c70a178c98274b assets/providencraft/models/item/cut_blue_sandstone_slab.json
@@ -31,6 +33,7 @@ adec62a0862a72e5ab54506cd879bc40a0610d65 assets/providencraft/models/item/ekira_
 c5442a740d92cd3d7fc66a81ff0b9d838f044485 assets/providencraft/models/item/ekira_idol_helmet.json
 f6c0f7d4c9240b90f1f6dabdaff029fbc700cef5 assets/providencraft/models/item/ekira_pearl.json
 7a4a38e4c2028d9723ccae93838ed2fe06789fc2 assets/providencraft/models/item/elf_wings.json
+52642656399e1f29c6200a2a697bcd938a12ff1e assets/providencraft/models/item/enchanted_crystal_ball.json
 0a39a7640a06aee8f6774c9a32303e9efaca7914 assets/providencraft/models/item/enchanted_unigiri.json
 494cba06ec48de7a45afd4a0f2e6ce4a8c84b54a assets/providencraft/models/item/escort_token.json
 c69b1d15df03899b6286f407e7190ca0f5062102 assets/providencraft/models/item/fallen_ring.json
