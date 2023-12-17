@@ -68,6 +68,11 @@ public class SuccubusTail extends ArmorItem {
     }
 
     @Override
+    public boolean isValidRepairItem(ItemStack pToRepair, ItemStack pRepair) {
+        return pRepair.getItem() == Items.GOLD_INGOT;
+    }
+
+    @Override
     public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
         return Utils.MOD_ID + ":textures/models/armor/succubus_tail.png";
     }
