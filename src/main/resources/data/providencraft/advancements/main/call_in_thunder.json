@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "providencraft:momo_phone"
+    },
+    "title": {
+      "translate": "providencraft.advancement.call_in_thunder"
+    },
+    "description": {
+      "translate": "providencraft.advancement.call_in_thunder_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "frame": "challenge",
+    "hidden": true
+  },
+  "parent": "providencraft:main/momo_phone",
+  "criteria": {
+    "call_in_thunder": {
+      "trigger": "providencraft:call_in_thunder",
+      "conditions": {
+        "item": {
+          "items": [
+            "providencraft:momo_phone"
+          ]
+        }
+      }
+    }
+  }
+}

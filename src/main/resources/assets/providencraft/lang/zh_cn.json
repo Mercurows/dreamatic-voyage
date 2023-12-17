@@ -1066,7 +1066,7 @@
   "providencraft.advancement.moonlight_amulet": "月夜狼嚎",
   "providencraft.advancement.moonlight_amulet_des": "当月光洒在我的脸上",
   "providencraft.advancement.blue_small_ball": "横冲直撞",
-  "providencraft.advancement.blue_small_ball_des": "小妮袭来！！！",
+  "providencraft.advancement.blue_small_ball_des": "祝你出门撞大运",
   "providencraft.advancement.sleep_roulette": "睡伊会",
   "providencraft.advancement.sleep_roulette_des": "我穿越了？",
   "providencraft.advancement.eat_unigiri": "妖精之力",
@@ -1085,8 +1085,8 @@
   "providencraft.advancement.eat_frog_leg_des": "吃完还能跳高高",
   "providencraft.advancement.cursed_marshaimallow": "怨气爆发",
   "providencraft.advancement.cursed_marshaimallow_des": "请按照说明书安全使用本产品",
-  "providencraft.advancement.momo_phone": "噗噗打雷",
-  "providencraft.advancement.momo_phone_des": "劈你的雷正在路上",
+  "providencraft.advancement.momo_phone": "噗噗打车",
+  "providencraft.advancement.momo_phone_des": "请为本次乘车做出评价",
   "providencraft.advancement.momo_knife": "优选美工",
   "providencraft.advancement.momo_knife_des": "甲方好评率100%",
   "providencraft.advancement.qianyun_hoe": "锄草耘",
@@ -1110,5 +1110,7 @@
   "providencraft.advancement.dream_weaving_yarn": "星河入梦",
   "providencraft.advancement.dream_weaving_yarn_des": "获得轻盈的织梦纱",
   "providencraft.advancement.magicros": "四色交织的奇迹",
-  "providencraft.advancement.magicros_des": "集齐魔力交织套装"
+  "providencraft.advancement.magicros_des": "集齐魔力交织套装",
+  "providencraft.advancement.call_in_thunder": "劈你的雷正在路上",
+  "providencraft.advancement.call_in_thunder_des": "请不要模仿哦"
 }

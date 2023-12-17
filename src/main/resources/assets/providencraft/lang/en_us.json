@@ -1066,7 +1066,7 @@
   "providencraft.advancement.moonlight_amulet": "Shriek of the Lunatic Night",
   "providencraft.advancement.moonlight_amulet_des": "When the moons shines on my face",
   "providencraft.advancement.blue_small_ball": "It Bumps Everywhere",
-  "providencraft.advancement.blue_small_ball_des": "Niina-chan crashing in!!!",
+  "providencraft.advancement.blue_small_ball_des": "祝你出门撞大运",
   "providencraft.advancement.sleep_roulette": "Slyeep",
   "providencraft.advancement.sleep_roulette_des": "How did the time passed?",
   "providencraft.advancement.eat_unigiri": "Power of Fairy",
@@ -1085,8 +1085,8 @@
   "providencraft.advancement.eat_frog_leg_des": "Can also jumps higher after eating",
   "providencraft.advancement.cursed_marshaimallow": "Bursting Resentment",
   "providencraft.advancement.cursed_marshaimallow_des": "Please use with caution and on instructions",
-  "providencraft.advancement.momo_phone": "Pupu Lightning-Hailing",
-  "providencraft.advancement.momo_phone_des": "Lightning is on its way to you!",
+  "providencraft.advancement.momo_phone": "Pupu Hailing",
+  "providencraft.advancement.momo_phone_des": "请为本次乘车做出评价",
   "providencraft.advancement.momo_knife": "Optimized Art Worker",
   "providencraft.advancement.momo_knife_des": "No negatives feedbacks ever",
   "providencraft.advancement.qianyun_hoe": "Qianyun The Hoe",
@@ -1110,5 +1110,7 @@
   "providencraft.advancement.dream_weaving_yarn": "星河入梦",
   "providencraft.advancement.dream_weaving_yarn_des": "获得轻盈的织梦纱",
   "providencraft.advancement.magicros": "四色交织的奇迹",
-  "providencraft.advancement.magicros_des": "集齐魔力交织套装"
+  "providencraft.advancement.magicros_des": "集齐魔力交织套装",
+  "providencraft.advancement.call_in_thunder": "Lightning is on its way to you",
+  "providencraft.advancement.call_in_thunder_des": "请不要模仿哦"
 }

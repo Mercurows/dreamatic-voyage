@@ -3,6 +3,7 @@ package tech.lq0.providencraft.item.providenceOI.shirako;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -21,6 +22,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.init.CriteriaRegistry;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.tools.ItemNBTTool;
 import tech.lq0.providencraft.tools.Livers;
@@ -84,8 +86,12 @@ public class MomoPhone extends Item {
                     LightningBolt lightningBoltEntity = EntityType.LIGHTNING_BOLT.create(pLevel);
                     assert lightningBoltEntity != null;
                     lightningBoltEntity.setPos(Vec3.atBottomCenterOf(playerIn.getOnPos().offset(0, 1, 0)));
-
                     pLevel.addFreshEntity(lightningBoltEntity);
+
+                    if (!pLevel.isClientSide) {
+                        CriteriaRegistry.CALL_IN_THUNDER.trigger((ServerPlayer) playerIn, item);
+                    }
+
                     playerIn.getCooldowns().addCooldown(item.getItem(), 200);
                 } else {
                     if (pos == null) {
