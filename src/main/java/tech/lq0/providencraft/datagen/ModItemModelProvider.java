@@ -99,6 +99,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.LEMON_TEA);
         simpleItem(ItemRegistry.LARGE_LEMON_TEA);
 
+        simpleItem(ItemRegistry.SUCCUBUS_TAIL);
         simpleItem(ItemRegistry.EKIRA_PEARL);
         simpleItem(ItemRegistry.CELESTIAL_BOOTS);
         simpleItem(ItemRegistry.EKIRA_CORE);
