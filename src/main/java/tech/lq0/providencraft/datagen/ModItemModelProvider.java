@@ -79,7 +79,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.FLAT_VEGETABLE_CHESTPLATE);
         simpleItem(ItemRegistry.STEEL_PLATE);
         simpleItem(ItemRegistry.LOTUS_POTATO);
-//        simpleItem(ItemRegistry.CHIRAM_LANTERN);
+        simpleItem(ItemRegistry.CHIRAM_LANTERN);
         simpleItem(ItemRegistry.BREEZE_CROWN);
         simpleItem(ItemRegistry.CHIRAM_CORE);
         simpleItem(ItemRegistry.MAGIC_TEAPOT);
