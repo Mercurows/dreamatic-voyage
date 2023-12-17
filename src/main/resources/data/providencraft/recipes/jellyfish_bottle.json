@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " _ ",
+    "GLG",
+    "GGG"
+  ],
+  "key": {
+    "_": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    },
+    "L": {
+      "item": "providencraft:shakana"
+    }
+  },
+  "result": {
+    "item": "providencraft:jellyfish_bottle",
+    "count": 1
+  }
+}

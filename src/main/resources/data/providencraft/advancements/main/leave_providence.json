@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "providencraft:plate"
+    },
+    "title": {
+      "translate": "providencraft.advancement.leave_providence"
+    },
+    "description": {
+      "translate": "providencraft.advancement.leave_providence_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true,
+    "frame": "goal"
+  },
+  "parent": "providencraft:main/root",
+  "criteria": {
+    "leave_providence": {
+      "trigger": "minecraft:item_durability_changed",
+      "conditions": {
+        "durability": 0,
+        "item": {
+          "items": [
+            "providencraft:plate"
+          ]
+        }
+      }
+    }
+  }
+}
