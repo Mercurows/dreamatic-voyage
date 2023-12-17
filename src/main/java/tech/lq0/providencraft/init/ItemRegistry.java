@@ -48,6 +48,7 @@ import tech.lq0.providencraft.item.providencefirst.usa.BrownieUzza;
 import tech.lq0.providencraft.item.providencefourth.choco.ChocoalCookie;
 import tech.lq0.providencraft.item.providencefourth.choco.StrawberryCake;
 import tech.lq0.providencraft.item.providencefourth.hifumi.NetherLight;
+import tech.lq0.providencraft.item.providencefourth.sana.JellyfishBottle;
 import tech.lq0.providencraft.item.providencefourth.sana.Shakana;
 import tech.lq0.providencraft.item.providencemagicros.chiram.*;
 import tech.lq0.providencraft.item.providencemagicros.ekira.*;
@@ -108,7 +109,7 @@ public class ItemRegistry {
 
     //niina
     public static final RegistryObject<Item> BANANA_MILK = ITEMS.register("banana_milk", BananaMilk::new);
-//    public static final RegistryObject<Item> BLUE_SMALL_BALL = ITEMS.register("blue_small_ball", BlueSmallBall::new);
+    //    public static final RegistryObject<Item> BLUE_SMALL_BALL = ITEMS.register("blue_small_ball", BlueSmallBall::new);
 //
     //usa
 //    public static final RegistryObject<Item> PLUNGER = ITEMS.register("plunger", Plunger::new);
@@ -322,7 +323,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> UNFAITHFUL_HEART = ITEMS.register("unfaithful_heart", UnfaithfulHeart::new);
 
     //sana
-//    public static final RegistryObject<Item> JELLYFISH_BOTTLE = ITEMS.register("jellyfish_bottle", JellyfishBottle::new);
+    public static final RegistryObject<Item> JELLYFISH_BOTTLE = ITEMS.register("jellyfish_bottle", JellyfishBottle::new);
     public static final RegistryObject<Item> SHAKANA = ITEMS.register("shakana", Shakana::new);
 
     /**
@@ -412,7 +413,7 @@ public class ItemRegistry {
      */
     public static final DeferredRegister<Item> DONATE_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
 
-//    public static final RegistryObject<Item> DONATE_ITEM_EXAMPLE = DONATE_ITEMS.register("donate_item_example", DonateItemExample::new);
+    //    public static final RegistryObject<Item> DONATE_ITEM_EXAMPLE = DONATE_ITEMS.register("donate_item_example", DonateItemExample::new);
     public static final RegistryObject<Item> ATSUISHIO = DONATE_ITEMS.register("atsuishio", AtsuiShio::new);
     public static final RegistryObject<Item> EMPTY_JAR = DONATE_ITEMS.register("empty_jar", EmptyJar::new);
 //    public static final RegistryObject<Item> LITTLE_POTATO = DONATE_ITEMS.register("little_potato", LittlePotato::new);
@@ -484,7 +485,7 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> HARANO_LOG = BLOCK_ITEMS.register("harano_log",
             () -> new BlockItem(BlockRegistry.HARANO_LOG.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> HARANO_PLANKS = BLOCK_ITEMS.register("harano_planks",
+    //    public static final RegistryObject<Item> HARANO_PLANKS = BLOCK_ITEMS.register("harano_planks",
 //            () -> new BlockItem(BlockRegistry.HARANO_PLANKS.get(), new Item.Properties()));
     public static final RegistryObject<Item> HARANO_LEAVES = BLOCK_ITEMS.register("harano_leaves",
             () -> new BlockItem(BlockRegistry.HARANO_LEAVES.get(), new Item.Properties()));

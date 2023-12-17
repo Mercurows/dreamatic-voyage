@@ -26,6 +26,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         this.dropSelf(BlockRegistry.PORCELAIN_THRONE.get());
         this.dropSelf(BlockRegistry.POINTS_STORE.get());
         this.dropSelf(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get());
+        this.dropOther(BlockRegistry.JELLYFISH_BOTTLE.get(), ItemRegistry.JELLYFISH_BOTTLE.get());
 
         LootItemCondition.Builder lootItemCondition$builder = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(BlockRegistry.UNI_MILLET_BLOCK.get())

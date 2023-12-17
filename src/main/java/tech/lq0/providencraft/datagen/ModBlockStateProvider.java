@@ -51,6 +51,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock((SlabBlock) BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(), blockTexture(BlockRegistry.SMOOTH_BLUE_SANDSTONE.get()), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top"));
         stairsBlock((StairBlock) BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top"));
 
+        leavesBlock(BlockRegistry.HARANO_LEAVES);
+
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

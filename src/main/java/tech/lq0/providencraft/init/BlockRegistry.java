@@ -22,6 +22,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> POINTS_STORE = BLOCKS.register("points_store", PointsStore::new);
     public static final RegistryObject<Block> FUKAMIZU_BREAD_BLOCK = BLOCKS.register("fukamizu_bread_block", FukamizuBreadBlock::new);
     public static final RegistryObject<Block> UNI_MILLET_BLOCK = BLOCKS.register("uni_millet_block", UniMilletBlock::new);
+    public static final RegistryObject<Block> JELLYFISH_BOTTLE = BLOCKS.register("jellyfish_bottle", JellyfishBottleBlock::new);
 
     //Blue Sand Series
     public static final RegistryObject<Block> BLUE_SAND = BLOCKS.register("blue_sand", BlueSand::new);
@@ -52,6 +53,4 @@ public class BlockRegistry {
 //    public static final RegistryObject<Block> HARANO_DOOR = BLOCKS.register("harano_door", HaranoDoor::new);
 //    public static final RegistryObject<Block> HARANO_TRAPDOOR = BLOCKS.register("harano_trapdoor", HaranoTrapDoor::new);
 //    public static final RegistryObject<Block> HARANO_BUTTON = BLOCKS.register("harano_button", HaranoButton::new);
-
-//    public static final RegistryObject<Block> JELLYFISH_BOTTLE = BLOCKS.register("jellyfish_bottle", JellyfishBottleBlock::new);
 }

@@ -53,8 +53,8 @@ public class Shakana extends Item {
             .effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, 0), 0.1f)
             .effect(() -> new MobEffectInstance(MobEffects.DARKNESS, 200, 0), 0.1f)
             .effect(() -> new MobEffectInstance(EffectRegistry.BLEEDING.get(), 200, 0), 0.1f)
-//            .effect(() -> new MobEffectInstance(EffectRegistry.HOLINESS.get(), 200, 0), 0.1f)
-//            .effect(() -> new MobEffectInstance(EffectRegistry.OVERLOAD.get(), 200, 0), 0.1f)
+            .effect(() -> new MobEffectInstance(EffectRegistry.HOLINESS.get(), 200, 0), 0.1f)
+            .effect(() -> new MobEffectInstance(EffectRegistry.OVERLOAD.get(), 200, 0), 0.1f)
             .effect(() -> new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0), 0.01f)
             .effect(() -> new MobEffectInstance(MobEffects.BAD_OMEN, 200, 0), 0.01f)
             .build();

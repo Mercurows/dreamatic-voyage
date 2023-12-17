@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-18T02:12:07.7853629	Item Models: providencraft
+// 1.20.1	2023-12-18T03:21:47.236066	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 465a37a9db586d67c92b0023c2ca51ffb500c5e6 assets/providencraft/models/item/banana_milk.json
@@ -53,6 +53,7 @@ c5cb6db480eff346f072ae1d30e2be8bc79b26d3 assets/providencraft/models/item/haine_
 5fe99632a0cfbdf226f7625c6805458af3237326 assets/providencraft/models/item/idol_cloth.json
 8620aeb39204cd07e5f037edf100b69f5d3bcf2a assets/providencraft/models/item/illusory_crystal.json
 ddda18440ca13a20d48e1cd27992be60bd9cfb39 assets/providencraft/models/item/isekai_lollipop.json
+04c42ae7f06b05544187e1106bd9bd538c38f1cf assets/providencraft/models/item/jellyfish_bottle.json
 88504fac8b14370601053f537a79dc4e39ce7c88 assets/providencraft/models/item/keroro_core.json
 b1478cafea97c44cfd956d8b84eb76bbc82e3092 assets/providencraft/models/item/keroro_idol_boots.json
 77b6c23955416609c0d89d435833bee8ee77b4fa assets/providencraft/models/item/keroro_idol_chestplate.json
