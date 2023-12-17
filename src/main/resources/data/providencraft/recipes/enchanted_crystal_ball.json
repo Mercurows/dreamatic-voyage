@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "minecraft:eye_armor_trim_smithing_template"
+  },
+  "base": {
+    "item": "providencraft:crystal_ball"
+  },
+  "addition": {
+    "item": "providencraft:illusory_crystal"
+  },
+  "result": {
+    "item": "providencraft:enchanted_crystal_ball",
+    "count": 1
+  }
+}
