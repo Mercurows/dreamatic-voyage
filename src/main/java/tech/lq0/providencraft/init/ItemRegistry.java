@@ -15,6 +15,7 @@ import tech.lq0.providencraft.item.legacy.Plate;
 import tech.lq0.providencraft.item.legacy.YagiStaffCard;
 import tech.lq0.providencraft.item.material.*;
 import tech.lq0.providencraft.item.other.*;
+import tech.lq0.providencraft.item.providenceOI.ayu.GravityRestraintDevice;
 import tech.lq0.providencraft.item.providenceOI.ccelia.CraftBeer0322;
 import tech.lq0.providencraft.item.providenceOI.fukami.*;
 import tech.lq0.providencraft.item.providenceOI.lutafia.Fiaxe;
@@ -268,7 +269,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> JELLYFISH_SHELL = ITEMS.register("jellyfish_shell", JellyfishShell::new);
 
     //ayu
-//    public static final RegistryObject<Item> GRAVITY_RESTRAINT_DEVICE = ITEMS.register("gravity_restraint_device", GravityRestraintDevice::new);
+    public static final RegistryObject<Item> GRAVITY_RESTRAINT_DEVICE = ITEMS.register("gravity_restraint_device", GravityRestraintDevice::new);
 //    public static final RegistryObject<Item> DELICATE_MIRAGE = ITEMS.register("delicate_mirage", DelicateMirage::new);
 
     //shirayuki

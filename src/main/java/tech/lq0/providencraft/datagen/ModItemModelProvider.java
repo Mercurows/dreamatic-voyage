@@ -120,6 +120,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ItemRegistry.CHOCOLATE_BOOTS);
 
+        simpleItem(ItemRegistry.LUNATIC_BOW);
+        simpleItem(ItemRegistry.MOON_CAKE);
+
+        simpleItem(ItemRegistry.JELLYFISH_SHELL);
+
+        simpleItem(ItemRegistry.GRAVITY_RESTRAINT_DEVICE);
+
 
         //4th
         simpleItem(ItemRegistry.STRAWBERRY_CAKE);

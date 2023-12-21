@@ -48,5 +48,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(FrogCrownModel.LAYER_LOCATION, FrogCrownModel::createBodyLayer);
         event.registerLayerDefinition(RedNoseModel.LAYER_LOCATION, RedNoseModel::createBodyLayer);
         event.registerLayerDefinition(SuccubusTailModel.LAYER_LOCATION, SuccubusTailModel::createBodyLayer);
+        event.registerLayerDefinition(GravityRestraintDeviceModel.LAYER_LOCATION, GravityRestraintDeviceModel::createBodyLayer);
     }
 }
