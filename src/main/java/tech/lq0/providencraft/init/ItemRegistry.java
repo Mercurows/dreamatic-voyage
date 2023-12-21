@@ -24,6 +24,7 @@ import tech.lq0.providencraft.item.providenceOI.rino.ClarityAmulet;
 import tech.lq0.providencraft.item.providenceOI.roky.Xiaolongbao;
 import tech.lq0.providencraft.item.providenceOI.shirako.*;
 import tech.lq0.providencraft.item.providenceOI.shirayuki.ButterflyAnklet;
+import tech.lq0.providencraft.item.providenceOI.shirayuki.FoxFairyFan;
 import tech.lq0.providencraft.item.providenceOI.sorayo.LunaticBow;
 import tech.lq0.providencraft.item.providenceOI.sorayo.MoonCake;
 import tech.lq0.providencraft.item.providenceOI.yesa.MintChocolate;
@@ -271,7 +272,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> DELICATE_MIRAGE = ITEMS.register("delicate_mirage", DelicateMirage::new);
 
     //shirayuki
-//    public static final RegistryObject<Item> FOX_FAIRY_FAN = ITEMS.register("fox_fairy_fan", FoxFairyFan::new);
+    public static final RegistryObject<Item> FOX_FAIRY_FAN = ITEMS.register("fox_fairy_fan", FoxFairyFan::new);
     public static final RegistryObject<Item> BUTTERFLY_ANKLET = ITEMS.register("butterfly_anklet", ButterflyAnklet::new);
 
     //yuri
