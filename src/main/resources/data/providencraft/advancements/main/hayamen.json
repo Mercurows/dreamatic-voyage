@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "providencraft:hayamen"
+    },
+    "title": {
+      "translate": "providencraft.advancement.hayamen"
+    },
+    "description": {
+      "translate": "providencraft.advancement.hayamen_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "frame": "challenge",
+    "hidden": false
+  },
+  "parent": "providencraft:main/big_spoon",
+  "criteria": {
+    "hayamen": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "providencraft:hayamen"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

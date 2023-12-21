@@ -31,6 +31,7 @@ import tech.lq0.providencraft.item.providenceOI.yuri.RabbitLychee;
 import tech.lq0.providencraft.item.providencefirst.ayelet.CrystalHorn;
 import tech.lq0.providencraft.item.providencefirst.ayelet.SleepRoulette;
 import tech.lq0.providencraft.item.providencefirst.haya.BigSpoon;
+import tech.lq0.providencraft.item.providencefirst.haya.Hayamen;
 import tech.lq0.providencraft.item.providencefirst.madoka.*;
 import tech.lq0.providencraft.item.providencefirst.mari.Machete;
 import tech.lq0.providencraft.item.providencefirst.mari.MagicMirror;
@@ -125,7 +126,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> DARK_ELF_GLASSES = ITEMS.register("dark_elf_glasses", DarkElfGlasses::new);
 
     //haya
-//    public static final RegistryObject<Item> HAYAMEN = ITEMS.register("hayamen", Hayamen::new);
+    public static final RegistryObject<Item> HAYAMEN = ITEMS.register("hayamen", Hayamen::new);
     public static final RegistryObject<Item> BIG_SPOON = ITEMS.register("big_spoon", BigSpoon::new);
 //    public static final RegistryObject<Item> HAYA_SWORD = ITEMS.register("haya_sword", HayaSword::new);
 
