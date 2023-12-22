@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-18T03:21:47.236066	Item Models: providencraft
+// 1.20.1	2023-12-22T07:59:20.8635207	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 465a37a9db586d67c92b0023c2ca51ffb500c5e6 assets/providencraft/models/item/banana_milk.json
@@ -10,6 +10,7 @@ bd52ec0ea3055cec34b64316e0d032fcd8cc2e7a assets/providencraft/models/item/big_fi
 5225a07affa019300a39bf796708cdcb0dd83a4d assets/providencraft/models/item/breeze_crown.json
 0c9c41ecfaf30a6ff11edf574a3720ac10a3240a assets/providencraft/models/item/brownie_uzza.json
 bd184e102067b3b4f67167fd5056593d7fccf1cd assets/providencraft/models/item/bubble_tea.json
+85d92eb544b280048c85f89936043b66ee74f2ba assets/providencraft/models/item/butterfly_anklet.json
 d362bb9bd2d5fd312a7c16913919985fb2656fe7 assets/providencraft/models/item/celestial_boots.json
 f8b44aa36c14ff35825433d20c483bc060b73e50 assets/providencraft/models/item/chaos_checker.json
 c14f3adf4d423aacfc141fd703c778b6406a92c4 assets/providencraft/models/item/chiram_core.json
@@ -38,6 +39,7 @@ f6c0f7d4c9240b90f1f6dabdaff029fbc700cef5 assets/providencraft/models/item/ekira_
 0a39a7640a06aee8f6774c9a32303e9efaca7914 assets/providencraft/models/item/enchanted_unigiri.json
 494cba06ec48de7a45afd4a0f2e6ce4a8c84b54a assets/providencraft/models/item/escort_token.json
 c69b1d15df03899b6286f407e7190ca0f5062102 assets/providencraft/models/item/fallen_ring.json
+87ead5b35db4ceefee075b7826806548803e0654 assets/providencraft/models/item/fetuozi.json
 ae89b4045eea4585d1a1234ef60816145ddced5d assets/providencraft/models/item/flat_vegetable_chestplate.json
 7145f5d3154c6d1b16e753818f5d936617769f86 assets/providencraft/models/item/froggy_leggings.json
 eab53ff8231cef38595c1d685d594da4426989de assets/providencraft/models/item/frog_crown.json
@@ -45,6 +47,7 @@ ec4ee2ade8d834ea51b010f6dcf3411cc2f67c52 assets/providencraft/models/item/frog_l
 67aa59bb507d3b4892386faac189de7dd0efca17 assets/providencraft/models/item/gn_souls.json
 b587a0ccec1f5d779fd4933d9334a4d18dda25a2 assets/providencraft/models/item/gn_spirit.json
 d477553ab9770c026336b20adac67a9889bb3845 assets/providencraft/models/item/gn_star.json
+5c2a998ec2ecde2d8480dda6dc5b18cf7285a8c3 assets/providencraft/models/item/gravity_restraint_device.json
 d309b2128c197d8c45d8315cf71232bbb6790f46 assets/providencraft/models/item/haibara_soup.json
 bb16fdc430973b8df6fcafd83b4756d037b1be9e assets/providencraft/models/item/haine_core.json
 c5cb6db480eff346f072ae1d30e2be8bc79b26d3 assets/providencraft/models/item/haine_idol_boots.json
@@ -53,7 +56,8 @@ c5cb6db480eff346f072ae1d30e2be8bc79b26d3 assets/providencraft/models/item/haine_
 5fe99632a0cfbdf226f7625c6805458af3237326 assets/providencraft/models/item/idol_cloth.json
 8620aeb39204cd07e5f037edf100b69f5d3bcf2a assets/providencraft/models/item/illusory_crystal.json
 ddda18440ca13a20d48e1cd27992be60bd9cfb39 assets/providencraft/models/item/isekai_lollipop.json
-04c42ae7f06b05544187e1106bd9bd538c38f1cf assets/providencraft/models/item/jellyfish_bottle.json
+76e51c9beb3494cd3772f7107ef8a55f66e76a5c assets/providencraft/models/item/jellyfish_bottle.json
+7d3805d02ab1c14e1ca2256040b90d474b2f8649 assets/providencraft/models/item/jellyfish_shell.json
 88504fac8b14370601053f537a79dc4e39ce7c88 assets/providencraft/models/item/keroro_core.json
 b1478cafea97c44cfd956d8b84eb76bbc82e3092 assets/providencraft/models/item/keroro_idol_boots.json
 77b6c23955416609c0d89d435833bee8ee77b4fa assets/providencraft/models/item/keroro_idol_chestplate.json
@@ -64,6 +68,7 @@ c1e38c9b5cb7a30b3fdc67f0651c7edd1208518b assets/providencraft/models/item/lava_c
 afaa9cad2d159ad1beeb55a9ba36cd4ac965c166 assets/providencraft/models/item/lotus_potato.json
 163aa5919380a6f2b2290399d7e2b4599d7518f5 assets/providencraft/models/item/louistew.json
 b755376d3cd697ea5fc9a3e0df4452c131e6f8b5 assets/providencraft/models/item/lucia_rice_cake.json
+5c663a6e6fe09a65c43f41fd568a1e36291a8698 assets/providencraft/models/item/lunatic_bow.json
 a7a66eee415c4f9be63dad462dd046d2d9f0e5fa assets/providencraft/models/item/magicros_core.json
 44e0c41c15d1c81729162b1b357132ec5d3a3c1f assets/providencraft/models/item/magic_book.json
 adb0650d0da74af94c66c43befef2b238c710d68 assets/providencraft/models/item/magic_book_myanna.json
@@ -77,7 +82,10 @@ af0f23ecb717ed4cb8cb5059f6871bdf95a933c3 assets/providencraft/models/item/mari_s
 bb82cfd443eadb796508b15ee4f090dd2ff04078 assets/providencraft/models/item/mechanical_horn.json
 131df78584193234f8b8c160d30b27b7834e15a5 assets/providencraft/models/item/misty_chestplate.json
 d5f51721c69a33b4163e9bef30c1e5d1b8df3ac6 assets/providencraft/models/item/mma_stew.json
+5ae7afabb86e3c33a3a42973c32badf1b4764365 assets/providencraft/models/item/momo_bandage.json
+963d0c20e2d8746c9c0eb4297447bd6f9f5e35e2 assets/providencraft/models/item/momo_daifuku.json
 efa829bf506c0882be445c1446266083fff14abc assets/providencraft/models/item/moonlight_amulet.json
+e39209e33fa5d48f38095e649a260c68202f6da9 assets/providencraft/models/item/moon_cake.json
 51b076611fcfd7656b1c0069d32114d6efd2b17d assets/providencraft/models/item/mumu_steak.json
 e1146f1ab035630c5771dc4799dba6e963cc6b54 assets/providencraft/models/item/mva_stew.json
 cee3dd5d3a1e175d02f033d993a5d302306cc4bc assets/providencraft/models/item/past_sugar.json
@@ -85,6 +93,7 @@ a87e0d70bb1891660812b88218ec46d3ccf53b8b assets/providencraft/models/item/pdc_po
 a34bedea7a1cf2e2325a14b8cc033b8817c8594c assets/providencraft/models/item/peach_beach.json
 38db7f3dbd7b60ac7818bf33e8c15ef73e526946 assets/providencraft/models/item/porcelain_throne.json
 d3286c02a3fd9ff5b158a728333fdff8afc4c258 assets/providencraft/models/item/premium_pdc_point.json
+6eace0e32f93f08ac3cc199d94069163ca366a10 assets/providencraft/models/item/rabbit_lychee.json
 2f4f21ce7d922c86b5817c817ed5e4b2103d8251 assets/providencraft/models/item/radiant_crystal.json
 d6830301426ecaa936a84e54f9e6a8d6271e0791 assets/providencraft/models/item/red_ahoge.json
 0be9eeb173de6286d58973ef1c7528df4dfc31f4 assets/providencraft/models/item/red_ahoge_boomerang.json

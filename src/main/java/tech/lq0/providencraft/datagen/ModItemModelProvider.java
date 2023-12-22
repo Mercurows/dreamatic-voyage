@@ -116,8 +116,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 
         //oi
-
-
+        simpleItem(ItemRegistry.MOMO_DAIFUKU);
+        handheldItem(ItemRegistry.FETUOZI);
+        simpleItem(ItemRegistry.MOMO_BANDAGE);
         simpleItem(ItemRegistry.CHOCOLATE_BOOTS);
 
         simpleItem(ItemRegistry.LUNATIC_BOW);
@@ -127,12 +128,17 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ItemRegistry.GRAVITY_RESTRAINT_DEVICE);
 
+        simpleItem(ItemRegistry.BUTTERFLY_ANKLET);
+
+        simpleItem(ItemRegistry.RABBIT_LYCHEE);
+
+
 
         //4th
         simpleItem(ItemRegistry.STRAWBERRY_CAKE);
         simpleItem(ItemRegistry.CHOCOAL_COOKIE);
 
-        simpleItem(ItemRegistry.JELLYFISH_BOTTLE);
+        simpleItem(ItemRegistry.JELLYFISH_BOTTLE, "translucent");
         simpleItem(ItemRegistry.SHAKANA);
 
         //cnt
@@ -201,6 +207,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleItem(RegistryObject<Item> item, String renderType) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath())).renderType(renderType);
     }
 
     public void evenSimplerBlockItem(RegistryObject<Block> block) {
