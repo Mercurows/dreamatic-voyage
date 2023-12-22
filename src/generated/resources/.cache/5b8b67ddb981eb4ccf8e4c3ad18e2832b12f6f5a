@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-22T08:03:17.3926747	Block States: providencraft
+// 1.20.1	2023-12-22T21:13:37.2483591	Block States: providencraft
 13dd712abf12d255553d81e05bc388e9b3d6a5b5 assets/providencraft/blockstates/blue_sand.json
 ba591654e80992acf94364306c235e8b02a8fce4 assets/providencraft/blockstates/blue_sandstone.json
 3ce033ffea2948b8d3d05c2b965cbe5e704437fa assets/providencraft/blockstates/blue_sandstone_slab.json
@@ -10,7 +10,6 @@ c9859ac75827884ecb31740bfe03141de4c3fcf0 assets/providencraft/blockstates/blue_s
 9b79770572f021d694274e150ecc9b215f01de3d assets/providencraft/blockstates/cut_blue_sandstone_slab.json
 fa53dac673263c49afe3de1840eac0a17ad2f9d2 assets/providencraft/blockstates/fukamizu_bread_block.json
 7be009afb1746fe38e00143e21fb2d4994887c91 assets/providencraft/blockstates/harano_leaves.json
-ac09c6df067c32f20167b320301a778af1390880 assets/providencraft/blockstates/jellyfish_bottle.json
 b0c0b59143a1cf931665e62a2a942990abf0f8f6 assets/providencraft/blockstates/points_store.json
 7d0ed78fe683032af3d7a3391a0de224e6203c1a assets/providencraft/blockstates/porcelain_throne.json
 fca59eb435b0df11f18787d812c239bfcd8efad8 assets/providencraft/blockstates/red_ahoge_block.json
@@ -35,7 +34,6 @@ b088c1a43d31d34447d25bc7044851ee5c025100 assets/providencraft/models/block/cut_b
 bea6049aebee131dd04627b80564c6a323b723ab assets/providencraft/models/block/cut_blue_sandstone_slab_top.json
 8fbea712d7b610c72d431980352f3e52f652ab00 assets/providencraft/models/block/fukamizu_bread_block.json
 7451f5f3357a9c3f4f5d82486f05346e4de2d6f1 assets/providencraft/models/block/harano_leaves.json
-f6e81a706cc1b35a8be0290cf35753cec433c4e1 assets/providencraft/models/block/jellyfish_bottle.json
 5d9b258e283d04ee9405614ae8f30e5f24849d97 assets/providencraft/models/block/red_ahoge_block.json
 25984c7b50ba39ece37a64709f5e81105387ea40 assets/providencraft/models/block/smooth_blue_sandstone.json
 c3d1444d919093da69ed92d68e26cb6e0538c337 assets/providencraft/models/block/smooth_blue_sandstone_slab.json

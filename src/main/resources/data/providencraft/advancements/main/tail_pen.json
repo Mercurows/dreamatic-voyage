@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "providencraft:tail_pen"
+    },
+    "title": {
+      "translate": "providencraft.advancement.tail_pen"
+    },
+    "description": {
+      "translate": "providencraft.advancement.tail_pen_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "frame": "challenge",
+    "hidden": false
+  },
+  "parent": "providencraft:main/lunatic_bow",
+  "criteria": {
+    "tail_pen": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "providencraft:tail_pen"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
