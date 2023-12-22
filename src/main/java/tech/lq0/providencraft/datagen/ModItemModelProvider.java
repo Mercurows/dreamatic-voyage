@@ -132,7 +132,20 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ItemRegistry.RABBIT_LYCHEE);
 
+        simpleItem(ItemRegistry.OCEAN_DESTINY);
+        simpleItem(ItemRegistry.FRACTURE_DESTINY);
+        simpleItem(ItemRegistry.FUKAMIZU_FISH);
+        simpleItem(ItemRegistry.FUKAMIZU_BREAD);
+        simpleItem(ItemRegistry.GARLIC_MELON_SLICE);
 
+        simpleItem(ItemRegistry.MINT_CHOCOLATE);
+
+        simpleItem(ItemRegistry.XIAOLONGBAO);
+
+        handheldItem(ItemRegistry.SHU_RINO_KEN);
+        simpleItem(ItemRegistry.CLARITY_AMULET);
+
+        simpleItem(ItemRegistry.CRAFT_BEER_0322);
 
         //4th
         simpleItem(ItemRegistry.STRAWBERRY_CAKE);

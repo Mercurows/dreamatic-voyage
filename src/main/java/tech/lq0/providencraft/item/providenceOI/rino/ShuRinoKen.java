@@ -43,17 +43,15 @@ public class ShuRinoKen extends SwordItem {
         ItemStack item = playerIn.getItemInHand(handIn);
         if (!worldIn.isClientSide) {
             //First 1
-            ShuRinoKenEntity shuRinoKenEntity = new ShuRinoKenEntity(worldIn, playerIn);
-            shuRinoKenEntity.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot(), 0.0f, 3.0f, 0.2f);
-            worldIn.addFreshEntity(shuRinoKenEntity);
+            ShuRinoKenEntity shu1 = new ShuRinoKenEntity(worldIn, playerIn);
+            shu1.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot(), 0.0f, 3.0f, 0.2f);
+            worldIn.addFreshEntity(shu1);
 
             //Second 2
             new Object() {
                 private int ticks = 0;
-                private float waitTicks;
 
-                public void start(int waitTicks) {
-                    this.waitTicks = waitTicks;
+                public void start() {
                     MinecraftForge.EVENT_BUS.register(this);
                 }
 
@@ -61,121 +59,63 @@ public class ShuRinoKen extends SwordItem {
                 public void tick(TickEvent.ServerTickEvent event) {
                     if (event.phase == TickEvent.Phase.END) {
                         this.ticks++;
-                        if (this.ticks >= this.waitTicks) {
-                            run();
+                        if (this.ticks == 3) {
+                            run1();
+                        }
+                        if (this.ticks == 6) {
+                            run2();
+                        }
+                        if (this.ticks == 9) {
+                            run3();
+                        }
+                        if (this.ticks == 12) {
+                            run4();
                         }
                     }
                 }
 
-                private void run() {
-                    ShuRinoKenEntity shuRinoKenEntity1 = new ShuRinoKenEntity(worldIn, playerIn);
-                    shuRinoKenEntity1.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() - 4.0f, 0.0f, 3.0f, 0.2f);
-                    worldIn.addFreshEntity(shuRinoKenEntity1);
+                private void run1() {
+                    ShuRinoKenEntity shu2 = new ShuRinoKenEntity(worldIn, playerIn);
+                    shu2.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() - 4.0f, 0.0f, 3.0f, 0.2f);
+                    worldIn.addFreshEntity(shu2);
 
-                    ShuRinoKenEntity shuRinoKenEntity2 = new ShuRinoKenEntity(worldIn, playerIn);
-                    shuRinoKenEntity2.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() + 4.0f, 0.0f, 3.0f, 0.2f);
-                    worldIn.addFreshEntity(shuRinoKenEntity2);
-                    MinecraftForge.EVENT_BUS.unregister(this);
-                }
-            }.start((int) 3);
-
-            //Third 3
-            new Object() {
-                private int ticks = 0;
-                private float waitTicks;
-
-                public void start(int waitTicks) {
-                    this.waitTicks = waitTicks;
-                    MinecraftForge.EVENT_BUS.register(this);
+                    ShuRinoKenEntity shu3 = new ShuRinoKenEntity(worldIn, playerIn);
+                    shu3.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() + 4.0f, 0.0f, 3.0f, 0.2f);
+                    worldIn.addFreshEntity(shu3);
                 }
 
-                @SubscribeEvent
-                public void tick(TickEvent.ServerTickEvent event) {
-                    if (event.phase == TickEvent.Phase.END) {
-                        this.ticks++;
-                        if (this.ticks >= this.waitTicks) {
-                            run();
-                        }
-                    }
+                private void run2() {
+                    ShuRinoKenEntity shu4 = new ShuRinoKenEntity(worldIn, playerIn);
+                    shu4.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() - 8.0f, 0.0f, 3.0f, 0.2f);
+                    worldIn.addFreshEntity(shu4);
+
+                    ShuRinoKenEntity shu5 = new ShuRinoKenEntity(worldIn, playerIn);
+                    shu5.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() + 8.0f, 0.0f, 3.0f, 0.2f);
+                    worldIn.addFreshEntity(shu5);
+
+                    ShuRinoKenEntity shu6 = new ShuRinoKenEntity(worldIn, playerIn);
+                    shu6.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot(), 0.0f, 3.0f, 0.2f);
+                    worldIn.addFreshEntity(shu6);
                 }
 
-                private void run() {
-                    ShuRinoKenEntity shuRinoKenEntity1 = new ShuRinoKenEntity(worldIn, playerIn);
-                    shuRinoKenEntity1.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() - 8.0f, 0.0f, 3.0f, 0.2f);
-                    worldIn.addFreshEntity(shuRinoKenEntity1);
+                private void run3() {
+                    ShuRinoKenEntity shu7 = new ShuRinoKenEntity(worldIn, playerIn);
+                    shu7.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() - 4.0f, 0.0f, 3.0f, 0.2f);
+                    worldIn.addFreshEntity(shu7);
 
-                    ShuRinoKenEntity shuRinoKenEntity2 = new ShuRinoKenEntity(worldIn, playerIn);
-                    shuRinoKenEntity2.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() + 8.0f, 0.0f, 3.0f, 0.2f);
-                    worldIn.addFreshEntity(shuRinoKenEntity2);
-
-                    ShuRinoKenEntity shuRinoKenEntity3 = new ShuRinoKenEntity(worldIn, playerIn);
-                    shuRinoKenEntity3.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot(), 0.0f, 3.0f, 0.2f);
-                    worldIn.addFreshEntity(shuRinoKenEntity3);
-                    MinecraftForge.EVENT_BUS.unregister(this);
-                }
-            }.start((int) 6);
-
-            //Fourth 2
-            new Object() {
-                private int ticks = 0;
-                private float waitTicks;
-
-                public void start(int waitTicks) {
-                    this.waitTicks = waitTicks;
-                    MinecraftForge.EVENT_BUS.register(this);
+                    ShuRinoKenEntity shu8 = new ShuRinoKenEntity(worldIn, playerIn);
+                    shu8.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() + 4.0f, 0.0f, 3.0f, 0.2f);
+                    worldIn.addFreshEntity(shu8);
                 }
 
-                @SubscribeEvent
-                public void tick(TickEvent.ServerTickEvent event) {
-                    if (event.phase == TickEvent.Phase.END) {
-                        this.ticks++;
-                        if (this.ticks >= this.waitTicks) {
-                            run();
-                        }
-                    }
-                }
-
-                private void run() {
-                    ShuRinoKenEntity shuRinoKenEntity1 = new ShuRinoKenEntity(worldIn, playerIn);
-                    shuRinoKenEntity1.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() - 4.0f, 0.0f, 3.0f, 0.2f);
-                    worldIn.addFreshEntity(shuRinoKenEntity1);
-
-                    ShuRinoKenEntity shuRinoKenEntity2 = new ShuRinoKenEntity(worldIn, playerIn);
-                    shuRinoKenEntity2.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot() + 4.0f, 0.0f, 3.0f, 0.2f);
-                    worldIn.addFreshEntity(shuRinoKenEntity2);
+                private void run4() {
+                    ShuRinoKenEntity shu9 = new ShuRinoKenEntity(worldIn, playerIn);
+                    shu9.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot(), 0.0f, 3.0f, 0.2f);
+                    worldIn.addFreshEntity(shu9);
 
                     MinecraftForge.EVENT_BUS.unregister(this);
                 }
-            }.start((int) 9);
-
-            //Fifth 1
-            new Object() {
-                private int ticks = 0;
-                private float waitTicks;
-
-                public void start(int waitTicks) {
-                    this.waitTicks = waitTicks;
-                    MinecraftForge.EVENT_BUS.register(this);
-                }
-
-                @SubscribeEvent
-                public void tick(TickEvent.ServerTickEvent event) {
-                    if (event.phase == TickEvent.Phase.END) {
-                        this.ticks++;
-                        if (this.ticks >= this.waitTicks) {
-                            run();
-                        }
-                    }
-                }
-
-                private void run() {
-                    ShuRinoKenEntity shuRinoKenEntity = new ShuRinoKenEntity(worldIn, playerIn);
-                    shuRinoKenEntity.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot(), 0.0f, 3.0f, 0.2f);
-                    worldIn.addFreshEntity(shuRinoKenEntity);
-
-                    MinecraftForge.EVENT_BUS.unregister(this);
-                }
-            }.start((int) 12);
+            }.start();
 
             item.hurtAndBreak(10, playerIn, (playerEntity) -> playerEntity.broadcastBreakEvent(handIn));
             playerIn.getCooldowns().addCooldown(item.getItem(), 30);
