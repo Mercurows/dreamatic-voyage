@@ -23,6 +23,7 @@ public class ClientRenderHandler {
         EntityRenderers.register(EntityRegistry.AHOGE_BOOMERANG_ENTITY.get(), AhogeBoomerangEntityRenderer::new);
         EntityRenderers.register(EntityRegistry.SEAT_ENTITY.get(), SeatEntityRenderer::new);
         EntityRenderers.register(EntityRegistry.WHITE_AHOGE_ENTITY.get(), WhiteAhogeEntityRenderer::new);
+        EntityRenderers.register(EntityRegistry.SHU_RINO_KEN_ENTITY.get(), ShuRinoKenEntityRenderer::new);
 
         CuriosRendererRegistry.register(ItemRegistry.LUNATIC_BOW.get(), LunaticBowRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.RED_NOSE.get(), RedNoseRenderer::new);

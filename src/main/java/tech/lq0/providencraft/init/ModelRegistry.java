@@ -49,5 +49,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(RedNoseModel.LAYER_LOCATION, RedNoseModel::createBodyLayer);
         event.registerLayerDefinition(SuccubusTailModel.LAYER_LOCATION, SuccubusTailModel::createBodyLayer);
         event.registerLayerDefinition(GravityRestraintDeviceModel.LAYER_LOCATION, GravityRestraintDeviceModel::createBodyLayer);
+        event.registerLayerDefinition(ShuRinoKenModel.LAYER_LOCATION, ShuRinoKenModel::createBodyLayer);
     }
 }

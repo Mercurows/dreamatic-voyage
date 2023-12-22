@@ -49,9 +49,9 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<CursedCatDollEntity>> CURSED_CAT_DOLL_ENTITY =
             ENTITY_TYPES.register("cursed_cat_doll",
                     () -> EntityType.Builder.<CursedCatDollEntity>of(CursedCatDollEntity::new, MobCategory.MISC).sized(0.3f, 0.3f).build("cursed_cat_doll"));
-//    public static final RegistryObject<EntityType<ShuRinoKenEntity>> SHU_RINO_KEN_ENTITY =
-//            ENTITY_TYPES.register("shu_rino_ken",
-//                    () -> EntityType.Builder.<ShuRinoKenEntity>create(ShuRinoKenEntity::new, EntityClassification.MISC).size(0.5f, 0.2f).build("shu_rino_ken"));
+    public static final RegistryObject<EntityType<ShuRinoKenEntity>> SHU_RINO_KEN_ENTITY =
+            ENTITY_TYPES.register("shu_rino_ken",
+                    () -> EntityType.Builder.<ShuRinoKenEntity>of(ShuRinoKenEntity::new, MobCategory.MISC).sized(0.5f, 0.2f).build("shu_rino_ken"));
 //    public static final RegistryObject<EntityType<TailBobberEntity>> TAIL_BOBBER_ENTITY =
 //            ENTITY_TYPES.register("tail_bobber",
 //                    () -> EntityType.Builder.<TailBobberEntity>create(EntityClassification.MISC)
