@@ -5,8 +5,10 @@ import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -172,6 +174,9 @@ public class BreezeCrown extends ArmorItem {
 
                     if (!livingEntity.level().isClientSide) {
                         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 30, level, false, false));
+
+                        ((ServerLevel) player.level()).sendParticles(ParticleTypes.CHERRY_LEAVES,
+                                player.getX(), player.getY(), player.getZ(), time, level / 2.0, level / 2.0, level / 2.0, 0.15);
                     }
 
                     player.getPersistentData().putInt("BreezeInvincible", time);
