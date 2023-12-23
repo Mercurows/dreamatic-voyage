@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.providencraft.models.armor.*;
 import tech.lq0.providencraft.models.blockentity.PdCLogoModel;
+import tech.lq0.providencraft.models.curios.ChiramHatModel;
 import tech.lq0.providencraft.models.curios.LunaticBowModel;
 import tech.lq0.providencraft.models.curios.RedNoseModel;
 import tech.lq0.providencraft.models.entity.*;
@@ -50,5 +51,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(SuccubusTailModel.LAYER_LOCATION, SuccubusTailModel::createBodyLayer);
         event.registerLayerDefinition(GravityRestraintDeviceModel.LAYER_LOCATION, GravityRestraintDeviceModel::createBodyLayer);
         event.registerLayerDefinition(ShuRinoKenModel.LAYER_LOCATION, ShuRinoKenModel::createBodyLayer);
+        event.registerLayerDefinition(ChiramHatModel.LAYER_LOCATION, ChiramHatModel::createBodyLayer);
     }
 }

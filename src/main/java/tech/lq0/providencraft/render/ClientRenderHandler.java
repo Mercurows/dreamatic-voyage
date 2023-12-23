@@ -9,6 +9,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import tech.lq0.providencraft.init.BlockEntityRegistry;
 import tech.lq0.providencraft.init.EntityRegistry;
 import tech.lq0.providencraft.init.ItemRegistry;
+import tech.lq0.providencraft.render.curios.ChiramHatRenderer;
 import tech.lq0.providencraft.render.curios.LunaticBowRenderer;
 import tech.lq0.providencraft.render.curios.RedNoseRenderer;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
@@ -27,6 +28,7 @@ public class ClientRenderHandler {
 
         CuriosRendererRegistry.register(ItemRegistry.LUNATIC_BOW.get(), LunaticBowRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.RED_NOSE.get(), RedNoseRenderer::new);
+        CuriosRendererRegistry.register(ItemRegistry.CHIRAM_HAT.get(), ChiramHatRenderer::new);
     }
 
     @SubscribeEvent
