@@ -1,11 +1,13 @@
 package tech.lq0.providencraft.item.providencemagicros.chiram;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.FireworkRocketEntity;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -21,7 +23,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ChiramHat extends Item implements ICurioItem {
     public ChiramHat() {
-        super(new Properties().stacksTo(1));
+        super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -44,10 +46,25 @@ public class ChiramHat extends Item implements ICurioItem {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         LivingEntity entity = slotContext.entity();
-//        if (!entity.level().isClientSide) {
-//            ((ServerLevel) entity.level()).sendParticles(ParticleTypes.CHERRY_LEAVES,
-//                    entity.getX(), entity.getY(), entity.getZ(), 8, 2, 2, 2, 0.1);
-//        }
+        if (!entity.level().isClientSide) {
+            if (entity instanceof Player player) {
+                if (player.isFallFlying()) {
+                    if (player.getFallFlyingTicks() % 10 == 0) {
+                        ((ServerLevel) entity.level()).sendParticles(ParticleTypes.CHERRY_LEAVES,
+                                entity.getX(), entity.getY(), entity.getZ(), 10, 2, 2, 2, 0.1);
+                    }
+
+                    if (player.isSteppingCarefully() && !player.getCooldowns().isOnCooldown(stack.getItem())) {
+                        ItemStack rocket = new ItemStack(Items.FIREWORK_ROCKET);
+                        rocket.getOrCreateTagElement("Fireworks").putByte("Flight", (byte) 3);
+
+                        FireworkRocketEntity fireworkrocketentity = new FireworkRocketEntity(player.level(), rocket, player);
+                        player.level().addFreshEntity(fireworkrocketentity);
+                        player.getCooldowns().addCooldown(stack.getItem(), 300);
+                    }
+                }
+            }
+        }
 
         ICurioItem.super.curioTick(slotContext, stack);
     }

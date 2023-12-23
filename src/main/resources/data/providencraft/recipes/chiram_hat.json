@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "LRL",
+    "PYP"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:brown_wool"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "R": {
+      "item": "minecraft:red_wool"
+    },
+    "P": {
+      "item": "minecraft:pink_petals"
+    },
+    "Y": {
+      "item": "providencraft:illusory_crystal"
+    }
+  },
+  "result": {
+    "item": "providencraft:chiram_hat",
+    "count": 1
+  }
+}

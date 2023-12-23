@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-23T05:09:01.1138462	Item Models: providencraft
+// 1.20.1	2023-12-24T02:20:49.6697073	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 465a37a9db586d67c92b0023c2ca51ffb500c5e6 assets/providencraft/models/item/banana_milk.json
@@ -14,6 +14,7 @@ bd184e102067b3b4f67167fd5056593d7fccf1cd assets/providencraft/models/item/bubble
 d362bb9bd2d5fd312a7c16913919985fb2656fe7 assets/providencraft/models/item/celestial_boots.json
 f8b44aa36c14ff35825433d20c483bc060b73e50 assets/providencraft/models/item/chaos_checker.json
 c14f3adf4d423aacfc141fd703c778b6406a92c4 assets/providencraft/models/item/chiram_core.json
+bfdf40cdb35e592b398eec807dc40b1135388090 assets/providencraft/models/item/chiram_hat.json
 5c010021b9dd33fd00b25f0ee74df519511f80ac assets/providencraft/models/item/chiram_idol_boots.json
 1bfc6ad24f40279e133d0fd6f96cc3e7e9f4b4b4 assets/providencraft/models/item/chiram_idol_chestplate.json
 5fd4732b1be10af948ab32186c2dd87159a4abb1 assets/providencraft/models/item/chiram_idol_helmet.json
