@@ -5,6 +5,7 @@
 		"2": "providencraft:item/shura_chin",
 		"particle": "providencraft:item/shura_chin"
 	},
+	"gui_light": "front",
 	"elements": [
 		{
 			"from": [7.25, 6, 22],

@@ -1,39 +1,45 @@
 package tech.lq0.providencraft.item.legacy;
 
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.Utils;
+import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.init.SoundRegistry;
 import tech.lq0.providencraft.tools.ItemNBTTool;
 import tech.lq0.providencraft.tools.RarityTool;
+import tech.lq0.providencraft.tools.TooltipTool;
 
 import java.util.List;
+import java.util.UUID;
 
-//@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ShuraChin extends SwordItem {
+public class ShuraChin extends Item {
     public static final String TAG_INVOKE = "invoke";
 
     public ShuraChin() {
-        super(Tiers.IRON, -2, -1.5f, new Properties().rarity(RarityTool.LEGACY).setNoRepair().durability(1442));
+        super(new Properties().rarity(RarityTool.LEGACY).setNoRepair().durability(1442));
     }
-
-//    @SubscribeEvent
-//    public static void propertyOverrideRegistry(FMLClientSetupEvent event) {
-//        event.enqueueWork(() ->
-//                ItemModelsProperties.registerProperty(ItemRegistry.SHURA_CHIN.get(), new ResourceLocation(Utils.MOD_ID, "shurachin_invoke"),
-//                        (stack, world, entity) -> ItemNBTTool.getBoolean(stack, TAG_INVOKE, false) ? 1.0F : 0.0F)
-//        );
-//    }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
@@ -61,24 +67,24 @@ public class ShuraChin extends SwordItem {
         return InteractionResultHolder.fail(stack);
     }
 
-//    @Override
-//    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlotType equipmentSlot, ItemStack stack) {
-//        Multimap<Attribute, AttributeModifier> map = super.getAttributeModifiers(equipmentSlot);
-//        UUID uuid = new UUID(ItemRegistry.SHURA_CHIN.hashCode() + equipmentSlot.toString().hashCode(), 0);
-//        if (equipmentSlot == EquipmentSlotType.MAINHAND) {
-//            map = HashMultimap.create(map);
-//            boolean flag = ItemNBTTool.getBoolean(stack, TAG_INVOKE, false);
-//            map.put(Attributes.ATTACK_DAMAGE,
-//                    new AttributeModifier(uuid, "shurachin modifier", flag ? 12.0f : 0.0f, AttributeModifier.Operation.ADDITION));
-//            map.put(Attributes.ATTACK_KNOCKBACK,
-//                    new AttributeModifier(uuid, "shurachin modifier", flag ? 0.3f : 0.0f, AttributeModifier.Operation.MULTIPLY_BASE));
-//            map.put(Attributes.ARMOR,
-//                    new AttributeModifier(uuid, "shurachin modifier", flag ? 0.0f : 8.0f, AttributeModifier.Operation.ADDITION));
-//            map.put(Attributes.MOVEMENT_SPEED,
-//                    new AttributeModifier(uuid, "shurachin modifier", flag ? 0.0f : 0.2f, AttributeModifier.Operation.MULTIPLY_BASE));
-//        }
-//        return map;
-//    }
+    private Multimap<Attribute, AttributeModifier> getModifiers(ItemStack stack) {
+        UUID uuid = new UUID(ItemRegistry.SHURA_CHIN.hashCode(), 0);
+        boolean flag = ItemNBTTool.getBoolean(stack, TAG_INVOKE, false);
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+        builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
+                flag ? 12 : 0, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier",
+                -1.5f, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ARMOR, new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 0 : 8, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 0.3 : 0, AttributeModifier.Operation.MULTIPLY_BASE));
+        builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 0.3 : 0, AttributeModifier.Operation.MULTIPLY_BASE));
+        return builder.build();
+    }
+
+    @Override
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack stack) {
+        return equipmentSlot == EquipmentSlot.MAINHAND ? getModifiers(stack) : super.getAttributeModifiers(equipmentSlot, stack);
+    }
 
 //    @Override
 //    @ParametersAreNonnullByDefault
@@ -92,30 +98,28 @@ public class ShuraChin extends SwordItem {
 //            }
 //        }
 //    }
-//
-//    @Override
-//    @ParametersAreNonnullByDefault
-//    public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-//        if (target instanceof SalmonEntity || target instanceof SquidEntity || target instanceof GuardianEntity ||
-//                target instanceof CodEntity || target instanceof PufferfishEntity || target instanceof TropicalFishEntity ||
-//                target instanceof ChickenEntity) {
-//            //attacker.addPotionEffect(new EffectInstance(Effects.SATURATION, 20, 0));
-//            if (attacker instanceof PlayerEntity) {
-//                PlayerEntity player = (PlayerEntity) attacker;
-//                player.getFoodStats().addStats(10, 10.0f);
-//            }
-//        }
-//        return super.hitEntity(stack, target, attacker);
-//    }
-//
-//    @Override
-//    @ParametersAreNonnullByDefault
-//    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-//        tooltip.add((new TranslationTextComponent("des.providencraft.ume.func")).mergeStyle(TextFormatting.AQUA));
-//        tooltip.add((new TranslationTextComponent("des.providencraft.shurachin_1")).mergeStyle(TextFormatting.GRAY));
-//        tooltip.add((new TranslationTextComponent("des.providencraft.shurachin_2")).mergeStyle(TextFormatting.GRAY).mergeStyle(TextFormatting.STRIKETHROUGH));
-//        TooltipTool.addLiverInfo(tooltip, Livers.BENI);
-//    }
+
+    @Override
+    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        if (pTarget instanceof Salmon || pTarget instanceof Squid || pTarget instanceof Guardian ||
+                pTarget instanceof Cod || pTarget instanceof Pufferfish || pTarget instanceof TropicalFish || pTarget instanceof Chicken) {
+            if (pAttacker instanceof Player player) {
+                player.getFoodData().eat(10, 0.5f);
+            }
+        }
+
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("des.providencraft.ume.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.providencraft.shurachin_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.providencraft.shurachin_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+
+        TooltipTool.addLegacyInfo(pTooltipComponents);
+    }
 
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
