@@ -37,6 +37,10 @@ public class ChiramHatRenderer implements ICurioRenderer {
         ICurioRenderer.translateIfSneaking(matrixStack, entity);
         ICurioRenderer.followHeadRotations(entity, this.model.armorHead);
 
+        if (entity.isSteppingCarefully()) {
+            matrixStack.translate(0, -0.155, 0);
+        }
+
         VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(renderTypeBuffer, RenderType.armorCutoutNoCull(TEXTURE), false, stack.hasFoil());
 
         model.renderToBuffer(matrixStack, vertexconsumer, light, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
