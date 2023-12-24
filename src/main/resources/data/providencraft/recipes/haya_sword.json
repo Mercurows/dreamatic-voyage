@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #n",
+    "in#",
+    "Qi "
+  ],
+  "key": {
+    "#": {
+      "item": "providencraft:sink_crystal"
+    },
+    "n": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Q": {
+      "item": "minecraft:quartz_block"
+    }
+  },
+  "result": {
+    "item": "providencraft:haya_sword",
+    "count": 1
+  }
+}
