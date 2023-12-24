@@ -12,6 +12,7 @@ import tech.lq0.providencraft.item.donate.AtsuiShio;
 import tech.lq0.providencraft.item.donate.EmptyJar;
 import tech.lq0.providencraft.item.legacy.LavaCake;
 import tech.lq0.providencraft.item.legacy.Plate;
+import tech.lq0.providencraft.item.legacy.ShuraChin;
 import tech.lq0.providencraft.item.legacy.YagiStaffCard;
 import tech.lq0.providencraft.item.material.*;
 import tech.lq0.providencraft.item.other.*;
@@ -351,7 +352,7 @@ public class ItemRegistry {
     //    public static final RegistryObject<Item> FLUFF_BALL = ITEMS.register("fluff_ball", FluffBall::new);
     public static final RegistryObject<Item> YAGI_STAFF_CARD = ITEMS.register("yagi_staff_card", YagiStaffCard::new);
     public static final RegistryObject<Item> LAVA_CAKE = ITEMS.register("lava_cake", LavaCake::new);
-//    public static final RegistryObject<Item> SHURA_CHIN = ITEMS.register("shura_chin", ShuraChin::new);
+    public static final RegistryObject<Item> SHURA_CHIN = ITEMS.register("shura_chin", ShuraChin::new);
 //    public static final RegistryObject<Item> UME = ITEMS.register("ume", Ume::new);
 
     /**

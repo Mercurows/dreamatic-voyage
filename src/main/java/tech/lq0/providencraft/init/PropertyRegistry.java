@@ -24,5 +24,7 @@ public class PropertyRegistry {
                         (stack, world, entity, seed) -> ItemNBTTool.getBoolean(stack, "able", false) ? 1.0F : 0.0F));
         event.enqueueWork(() -> ItemProperties.register(ItemRegistry.MOMO_PHONE.get(), new ResourceLocation(Utils.MOD_ID, "momo_phone_binding"),
                 (itemStack, clientWorld, livingEntity, seed) -> ItemNBTTool.getBoolean(itemStack, "binding", false) ? 1.0F : 0.0F));
+        event.enqueueWork(() -> ItemProperties.register(ItemRegistry.SHURA_CHIN.get(), new ResourceLocation(Utils.MOD_ID, "invoke"),
+                (stack, world, entity, seed) -> ItemNBTTool.getBoolean(stack, "invoke", false) ? 1.0F : 0.0F));
     }
 }

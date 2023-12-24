@@ -24,6 +24,14 @@
       }
     ]
   },
+  "blade": {
+    "subtitle": "subtitle.providencraft.blade",
+    "sounds": [
+      {
+        "name": "providencraft:blade"
+      }
+    ]
+  },
   "baby_meow": {
     "subtitle": "subtitle.providencraft.baby_meow",
     "sounds": [
