@@ -9,6 +9,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -62,7 +64,7 @@ public class Ume extends Item {
         boolean flag = ItemNBTTool.getBoolean(stack, TAG_INVOKE, false);
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
-                flag ? 4 : 0, AttributeModifier.Operation.ADDITION));
+                flag ? 5 : 0, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier",
                 -1.0f, AttributeModifier.Operation.ADDITION));
         return builder.build();
@@ -86,6 +88,17 @@ public class Ume extends Item {
         }
 
         return super.getAttributeModifiers(equipmentSlot, stack);
+    }
+
+    @Override
+    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        double random = Math.random();
+
+        if (random < .4) {
+            pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 0));
+        }
+
+        return true;
     }
 
     @OnlyIn(Dist.CLIENT)
