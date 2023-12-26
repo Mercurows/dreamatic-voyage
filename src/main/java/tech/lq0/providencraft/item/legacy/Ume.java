@@ -7,20 +7,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.*;
-import net.minecraft.world.entity.decoration.ArmorStand;
-import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -40,15 +33,14 @@ import tech.lq0.providencraft.tools.ItemNBTTool;
 import tech.lq0.providencraft.tools.RarityTool;
 import tech.lq0.providencraft.tools.TooltipTool;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.UUID;
 
-public class ShuraChin extends Item {
+public class Ume extends Item {
     public static final String TAG_INVOKE = "invoke";
 
-    public ShuraChin() {
-        super(new Properties().rarity(RarityTool.LEGACY).setNoRepair().durability(1442));
+    public Ume() {
+        super(new Properties().rarity(RarityTool.LEGACY).setNoRepair().durability(721));
     }
 
     @Override
@@ -57,17 +49,6 @@ public class ShuraChin extends Item {
         if (pUsedHand == InteractionHand.MAIN_HAND) {
             boolean flag = ItemNBTTool.getBoolean(stack, TAG_INVOKE, false);
             if (!flag) {
-                List<LivingEntity> entities = pLevel.getEntitiesOfClass(LivingEntity.class, pPlayer.getBoundingBox().inflate(2.0D, 0.5D, 2.0D));
-
-                entities.forEach(e -> {
-                    if (e != pPlayer && !pPlayer.isAlliedTo(e) && !(e instanceof ArmorStand) && pPlayer.distanceToSqr(e) < 9) {
-                        e.knockback(0.6F, Mth.sin(pPlayer.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(pPlayer.getYRot() * ((float) Math.PI / 180F)));
-                        e.hurt(pLevel.damageSources().playerAttack(pPlayer), 13);
-                    }
-                });
-                pPlayer.sweepAttack();
-                pPlayer.getCooldowns().addCooldown(stack.getItem(), 40);
-
                 pLevel.playSound(pPlayer, pPlayer.getOnPos(), SoundRegistry.BLADE.get(), SoundSource.AMBIENT, 0.5f, 1f);
             }
             if (!pLevel.isClientSide) {
@@ -78,53 +59,41 @@ public class ShuraChin extends Item {
     }
 
     private Multimap<Attribute, AttributeModifier> getModifiers(ItemStack stack) {
-        UUID uuid = new UUID(ItemRegistry.SHURA_CHIN.hashCode(), 0);
         boolean flag = ItemNBTTool.getBoolean(stack, TAG_INVOKE, false);
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
-                flag ? 12 : 0, AttributeModifier.Operation.ADDITION));
+                flag ? 4 : 0, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier",
-                -1.5f, AttributeModifier.Operation.ADDITION));
-        builder.put(Attributes.ARMOR, new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 0 : 8, AttributeModifier.Operation.ADDITION));
-        builder.put(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 0.3 : 0, AttributeModifier.Operation.MULTIPLY_BASE));
-        builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 0.3 : 0, AttributeModifier.Operation.MULTIPLY_BASE));
+                -1.0f, AttributeModifier.Operation.ADDITION));
+        return builder.build();
+    }
+
+    private Multimap<Attribute, AttributeModifier> getOffhandModifiers(ItemStack stack) {
+        UUID uuid = new UUID(ItemRegistry.UME.hashCode(), 0);
+        boolean flag = ItemNBTTool.getBoolean(stack, TAG_INVOKE, false);
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+        builder.put(Attributes.ARMOR, new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 0 : 4, AttributeModifier.Operation.ADDITION));
         return builder.build();
     }
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack stack) {
-        return equipmentSlot == EquipmentSlot.MAINHAND ? getModifiers(stack) : super.getAttributeModifiers(equipmentSlot, stack);
-    }
-
-    @Override
-    @ParametersAreNonnullByDefault
-    public void inventoryTick(ItemStack stack, Level worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-        if (!worldIn.isClientSide && entityIn instanceof Player player) {
-            if (player.getOffhandItem().getItem() == ItemRegistry.UME.get() && player.getMainHandItem().getItem() == ItemRegistry.SHURA_CHIN.get()) {
-                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 20, 1, false, false, false));
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 1, false, false, false));
-            }
+        if (equipmentSlot == EquipmentSlot.MAINHAND) {
+            return getModifiers(stack);
         }
-    }
-
-    @Override
-    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        if (pTarget instanceof Salmon || pTarget instanceof Squid || pTarget instanceof Guardian ||
-                pTarget instanceof Cod || pTarget instanceof Pufferfish || pTarget instanceof TropicalFish || pTarget instanceof Chicken) {
-            if (pAttacker instanceof Player player) {
-                player.getFoodData().eat(10, 0.5f);
-            }
+        if (equipmentSlot == EquipmentSlot.OFFHAND) {
+            return getOffhandModifiers(stack);
         }
 
-        return super.hurtEnemy(pStack, pTarget, pAttacker);
+        return super.getAttributeModifiers(equipmentSlot, stack);
     }
 
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.ume.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.shurachin_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.shurachin_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.providencraft.ume_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.providencraft.ume_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
         TooltipTool.addLegacyInfo(pTooltipComponents);
     }
