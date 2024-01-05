@@ -34,12 +34,12 @@ public class ChiramHatRenderer implements ICurioRenderer {
         this.model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
         this.model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 
-        ICurioRenderer.translateIfSneaking(matrixStack, entity);
+//        ICurioRenderer.translateIfSneaking(matrixStack, entity);
         ICurioRenderer.followHeadRotations(entity, this.model.armorHead);
 
-        if (entity.isSteppingCarefully()) {
-            matrixStack.translate(0, -0.155, 0);
-        }
+//        if (entity.isCrouching()) {
+//            matrixStack.translate(0, -0.155, 0);
+//        }
 
         VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(renderTypeBuffer, RenderType.armorCutoutNoCull(TEXTURE), false, stack.hasFoil());
 
