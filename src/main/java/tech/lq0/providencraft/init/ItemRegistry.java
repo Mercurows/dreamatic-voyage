@@ -490,18 +490,18 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> HARANO_LOG = BLOCK_ITEMS.register("harano_log",
             () -> new BlockItem(BlockRegistry.HARANO_LOG.get(), new Item.Properties()));
-    //    public static final RegistryObject<Item> HARANO_PLANKS = BLOCK_ITEMS.register("harano_planks",
-//            () -> new BlockItem(BlockRegistry.HARANO_PLANKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_PLANKS = BLOCK_ITEMS.register("harano_planks",
+            () -> new BlockItem(BlockRegistry.HARANO_PLANKS.get(), new Item.Properties()));
     public static final RegistryObject<Item> HARANO_LEAVES = BLOCK_ITEMS.register("harano_leaves",
             () -> new BlockItem(BlockRegistry.HARANO_LEAVES.get(), new Item.Properties()));
     public static final RegistryObject<Item> HARANO_SAPLING = BLOCK_ITEMS.register("harano_sapling",
             () -> new BlockItem(BlockRegistry.HARANO_SAPLING.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> HARANO_WOOD = BLOCK_ITEMS.register("harano_wood",
-//            () -> new BlockItem(BlockRegistry.HARANO_WOOD.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> HARANO_STAIRS = BLOCK_ITEMS.register("harano_stairs",
-//            () -> new BlockItem(BlockRegistry.HARANO_STAIRS.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> HARANO_SLAB = BLOCK_ITEMS.register("harano_slab",
-//            () -> new BlockItem(BlockRegistry.HARANO_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_WOOD = BLOCK_ITEMS.register("harano_wood",
+            () -> new BlockItem(BlockRegistry.HARANO_WOOD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_STAIRS = BLOCK_ITEMS.register("harano_stairs",
+            () -> new BlockItem(BlockRegistry.HARANO_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_SLAB = BLOCK_ITEMS.register("harano_slab",
+            () -> new BlockItem(BlockRegistry.HARANO_SLAB.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_FENCE = BLOCK_ITEMS.register("harano_fence",
 //            () -> new BlockItem(BlockRegistry.HARANO_FENCE.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_FENCE_GATE = BLOCK_ITEMS.register("harano_fence_gate",

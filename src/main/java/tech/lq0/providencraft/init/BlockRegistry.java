@@ -7,9 +7,7 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.block.*;
 import tech.lq0.providencraft.block.bluesand.*;
-import tech.lq0.providencraft.block.harano.HaranoLeaves;
-import tech.lq0.providencraft.block.harano.HaranoLog;
-import tech.lq0.providencraft.block.harano.HaranoSapling;
+import tech.lq0.providencraft.block.harano.*;
 
 @SuppressWarnings("unused")
 public class BlockRegistry {
@@ -41,10 +39,10 @@ public class BlockRegistry {
     public static final RegistryObject<Block> HARANO_LOG = BLOCKS.register("harano_log", HaranoLog::new);
     public static final RegistryObject<Block> HARANO_LEAVES = BLOCKS.register("harano_leaves", HaranoLeaves::new);
     public static final RegistryObject<Block> HARANO_SAPLING = BLOCKS.register("harano_sapling", HaranoSapling::new);
-//    public static final RegistryObject<Block> HARANO_PLANKS = BLOCKS.register("harano_planks", HaranoPlanks::new);
-//    public static final RegistryObject<Block> HARANO_WOOD = BLOCKS.register("harano_wood", HaranoWood::new);
-//    public static final RegistryObject<Block> HARANO_STAIRS = BLOCKS.register("harano_stairs", HaranoStairs::new);
-//    public static final RegistryObject<Block> HARANO_SLAB = BLOCKS.register("harano_slab", HaranoSlab::new);
+    public static final RegistryObject<Block> HARANO_PLANKS = BLOCKS.register("harano_planks", HaranoPlanks::new);
+    public static final RegistryObject<Block> HARANO_WOOD = BLOCKS.register("harano_wood", HaranoWood::new);
+    public static final RegistryObject<Block> HARANO_STAIRS = BLOCKS.register("harano_stairs", HaranoStairs::new);
+    public static final RegistryObject<Block> HARANO_SLAB = BLOCKS.register("harano_slab", HaranoSlab::new);
 //    public static final RegistryObject<Block> HARANO_FENCE = BLOCKS.register("harano_fence", HaranoFence::new);
 //    public static final RegistryObject<Block> HARANO_FENCE_GATE = BLOCKS.register("harano_fence_gate", HaranoFenceGate::new);
 //    public static final RegistryObject<Block> HARANO_PRESSURE_PLATE = BLOCKS.register("harano_pressure_plate", HaranoPressurePlate::new);

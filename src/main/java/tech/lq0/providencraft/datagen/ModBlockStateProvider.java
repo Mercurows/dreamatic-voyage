@@ -52,7 +52,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock((StairBlock) BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(), new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone_top"));
 
         leavesBlock(BlockRegistry.HARANO_LEAVES);
-
+        blockWithItem(BlockRegistry.HARANO_PLANKS);
+        slabBlock((SlabBlock) BlockRegistry.HARANO_SLAB.get(), blockTexture(BlockRegistry.HARANO_PLANKS.get()), new ResourceLocation(Utils.MOD_ID, "block/harano_planks"),
+                new ResourceLocation(Utils.MOD_ID, "block/harano_planks"), new ResourceLocation(Utils.MOD_ID, "block/harano_planks"));
+        stairsBlock((StairBlock) BlockRegistry.HARANO_STAIRS.get(), blockTexture(BlockRegistry.HARANO_PLANKS.get()), new ResourceLocation(Utils.MOD_ID, "block/harano_planks"),
+                new ResourceLocation(Utils.MOD_ID, "block/harano_planks"));
+//        horizontalBlock(BlockRegistry.HARANO_LOG.get(), models().cubeColumn("harano_log", new ResourceLocation(Utils.MOD_ID, "block/harano_log"), new ResourceLocation(Utils.MOD_ID, "block/harano_log_top")));
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

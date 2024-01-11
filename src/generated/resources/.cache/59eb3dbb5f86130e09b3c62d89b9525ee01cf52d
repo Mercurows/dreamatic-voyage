@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-18T03:21:47.2390624	Loot Tables
+// 1.20.1	2024-01-12T01:20:17.3047016	Loot Tables
 782f77b88e85816a3067eeb62f33674025338b37 data/providencraft/loot_tables/blocks/blue_sand.json
 6770b8ceafaeeda26fa6004c6756e9d4bdb4704c data/providencraft/loot_tables/blocks/blue_sandstone.json
 ba6e24987061c42bb57256568ff64f173d70fc44 data/providencraft/loot_tables/blocks/blue_sandstone_slab.json
@@ -11,7 +11,11 @@ bd8b4bc2c1987163ddb0949907b997e909c9d0ad data/providencraft/loot_tables/blocks/c
 d9c02c3b0ef4edea0d9a3f1d09d1672ffdd07706 data/providencraft/loot_tables/blocks/fukamizu_bread_block.json
 f349a105028c9b4dce2a6398f819e0d00118beae data/providencraft/loot_tables/blocks/harano_leaves.json
 b1a6bceb889342b9b7ec1b670735986dab291f8a data/providencraft/loot_tables/blocks/harano_log.json
+2668daa03f72872d2ef9bcdfd32f5c0d0d773d39 data/providencraft/loot_tables/blocks/harano_planks.json
 48353271a896e1e6a28dcbe2ac462326911a5f2c data/providencraft/loot_tables/blocks/harano_sapling.json
+8e6b8988b96e9c86c9f3a13ae43c5859ef5cb7cf data/providencraft/loot_tables/blocks/harano_slab.json
+10342f52225d8092615d2d6c42e73120dc2af1f9 data/providencraft/loot_tables/blocks/harano_stairs.json
+2b81abfabc40c77d629c6c4d024067c96ab26383 data/providencraft/loot_tables/blocks/harano_wood.json
 a35bc4e2b98c24f1d5fd3c72f59438eae4d00c55 data/providencraft/loot_tables/blocks/jellyfish_bottle.json
 c48774a35caa8fec2462206b9961afd075d43c4e data/providencraft/loot_tables/blocks/points_store.json
 2878989a06894288d02cf95c42d0d304c1a12a85 data/providencraft/loot_tables/blocks/porcelain_throne.json
