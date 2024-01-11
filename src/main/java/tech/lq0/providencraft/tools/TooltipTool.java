@@ -3,6 +3,7 @@ package tech.lq0.providencraft.tools;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
@@ -22,7 +23,13 @@ public class TooltipTool {
     public static void addLiverInfo(List<Component> tooltip, Livers liver) {
         addHideText(tooltip, Component.literal(""));
         addHideText(tooltip, Component.translatable("liver.providencraft.liver").withStyle(ChatFormatting.WHITE));
-        addHideText(tooltip, Component.translatable("liver.providencraft." + liver.getName()).withStyle(Style.EMPTY.withColor(TextColor.parseColor(liver.getColor()))));
+
+        MutableComponent component = Component.translatable("liver.providencraft." + liver.getName()).withStyle(Style.EMPTY.withColor(TextColor.parseColor(liver.getColor())));
+        if (!liver.isActive()) {
+            component.withStyle(ChatFormatting.ITALIC);
+        }
+
+        addHideText(tooltip, component);
     }
 
     public static void addDonateInfo(List<Component> tooltip) {
