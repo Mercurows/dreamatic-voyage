@@ -1,16 +1,17 @@
-// 1.20.1	2023-12-11T02:41:22.0579816	Tags for minecraft:block mod id providencraft
+// 1.20.1	2024-01-12T01:31:37.5569913	Tags for minecraft:block mod id providencraft
 fca08b09e645cb50cebc86f69a0461a035e3723c data/forge/tags/blocks/sandstone.json
 f90f69302343a6f08e6d1da1863f40bc851391a2 data/minecraft/tags/blocks/bee_growables.json
 f90f69302343a6f08e6d1da1863f40bc851391a2 data/minecraft/tags/blocks/crops.json
-c7e992d889ffd70778be717be182564570cc795f data/minecraft/tags/blocks/logs.json
-c7e992d889ffd70778be717be182564570cc795f data/minecraft/tags/blocks/logs_that_burn.json
-c53734538fceb324a83021a36776ea6164630209 data/minecraft/tags/blocks/mineable/axe.json
+e9442b329675ef50944bd97d6b7a7205efb17296 data/minecraft/tags/blocks/logs.json
+e9442b329675ef50944bd97d6b7a7205efb17296 data/minecraft/tags/blocks/logs_that_burn.json
+1497fba5b4ff5706443b228ed526987bf2a45d5e data/minecraft/tags/blocks/mineable/axe.json
 96e8c599dfb0416a22292e2d942801d9d64e690e data/minecraft/tags/blocks/mineable/hoe.json
 ebb866042401979687a3dee5be6e9cd628076a09 data/minecraft/tags/blocks/mineable/pickaxe.json
 bc9c4d524134f45d47a20e759f007d3e2309d1bf data/minecraft/tags/blocks/mineable/shovel.json
+c7df84dca3b10ab8eaa4578a997c3f3c0154d410 data/minecraft/tags/blocks/planks.json
 bc9c4d524134f45d47a20e759f007d3e2309d1bf data/minecraft/tags/blocks/sand.json
-6836d64d88a315ab2fd43674a019f19fd8948740 data/minecraft/tags/blocks/slabs.json
+734ec18a7fabf4fdb742845ca1a54b5cb2560faf data/minecraft/tags/blocks/slabs.json
 bc9c4d524134f45d47a20e759f007d3e2309d1bf data/minecraft/tags/blocks/smelts_to_glass.json
-312ea6b312169f942b71cf97271d551c318caf01 data/minecraft/tags/blocks/stairs.json
+6540579e02cb436f245036aab0c51934aad8afb7 data/minecraft/tags/blocks/stairs.json
 f90f69302343a6f08e6d1da1863f40bc851391a2 data/minecraft/tags/blocks/sword_efficient.json
 1cd66e799ec8535f53c3870bcbedc81dafc2e3b7 data/minecraft/tags/blocks/walls.json

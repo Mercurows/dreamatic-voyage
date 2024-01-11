@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "cross": "providencraft:block/harano_sapling",
-    "particle": "providencraft:block/harano_sapling"
-  }
-}

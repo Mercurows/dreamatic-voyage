@@ -2,10 +2,7 @@ package tech.lq0.providencraft.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -14,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.init.BlockRegistry;
 
-@SuppressWarnings("ConstantConditions")
+@SuppressWarnings({"ConstantConditions", "SameParameterValue"})
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Utils.MOD_ID, exFileHelper);
@@ -57,7 +54,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ResourceLocation(Utils.MOD_ID, "block/harano_planks"), new ResourceLocation(Utils.MOD_ID, "block/harano_planks"));
         stairsBlock((StairBlock) BlockRegistry.HARANO_STAIRS.get(), blockTexture(BlockRegistry.HARANO_PLANKS.get()), new ResourceLocation(Utils.MOD_ID, "block/harano_planks"),
                 new ResourceLocation(Utils.MOD_ID, "block/harano_planks"));
-//        horizontalBlock(BlockRegistry.HARANO_LOG.get(), models().cubeColumn("harano_log", new ResourceLocation(Utils.MOD_ID, "block/harano_log"), new ResourceLocation(Utils.MOD_ID, "block/harano_log_top")));
+        logBlock((RotatedPillarBlock) BlockRegistry.HARANO_LOG.get());
+        saplingBlock(BlockRegistry.HARANO_SAPLING);
+        axisBlock((RotatedPillarBlock) BlockRegistry.HARANO_WOOD.get(), models().cubeColumn("harano_wood", new ResourceLocation(Utils.MOD_ID, "block/harano_log"), new ResourceLocation(Utils.MOD_ID, "block/harano_log")),
+                models().cubeColumn("harano_wood", new ResourceLocation(Utils.MOD_ID, "block/harano_log"), new ResourceLocation(Utils.MOD_ID, "block/harano_log")));
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

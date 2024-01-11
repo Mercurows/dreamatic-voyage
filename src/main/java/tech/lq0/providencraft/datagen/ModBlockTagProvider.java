@@ -31,7 +31,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(BlockRegistry.BLUE_SAND.get());
 
-        this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.HARANO_LOG.get());
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.HARANO_LOG.get(),
+                BlockRegistry.HARANO_WOOD.get(), BlockRegistry.HARANO_SLAB.get(), BlockRegistry.HARANO_PLANKS.get(),
+                BlockRegistry.HARANO_STAIRS.get());
 
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.UNI_MILLET_BLOCK.get());
 
@@ -46,10 +48,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         BlockRegistry.SMOOTH_BLUE_SANDSTONE.get(), BlockRegistry.CHISELED_BLUE_SANDSTONE.get());
 
         this.tag(BlockTags.LOGS)
-                .add(BlockRegistry.HARANO_LOG.get());
+                .add(BlockRegistry.HARANO_LOG.get(), BlockRegistry.HARANO_WOOD.get());
 
         this.tag(BlockTags.LOGS_THAT_BURN)
-                .add(BlockRegistry.HARANO_LOG.get());
+                .add(BlockRegistry.HARANO_LOG.get(), BlockRegistry.HARANO_WOOD.get());
 
         this.tag(BlockTags.WALLS).add(BlockRegistry.BLUE_SANDSTONE_WALL.get());
 
@@ -57,11 +59,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.SLABS)
                 .add(BlockRegistry.BLUE_SANDSTONE_SLAB.get(), BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(),
-                        BlockRegistry.CUT_BLUE_SANDSTONE_SLAB.get());
+                        BlockRegistry.CUT_BLUE_SANDSTONE_SLAB.get(), BlockRegistry.HARANO_SLAB.get());
 
         this.tag(BlockTags.SMELTS_TO_GLASS).add(BlockRegistry.BLUE_SAND.get());
 
         this.tag(BlockTags.STAIRS)
-                .add(BlockRegistry.BLUE_SANDSTONE_STAIRS.get(), BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get());
+                .add(BlockRegistry.BLUE_SANDSTONE_STAIRS.get(), BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(),
+                        BlockRegistry.HARANO_STAIRS.get());
+
+        this.tag(BlockTags.PLANKS).add(BlockRegistry.HARANO_PLANKS.get());
     }
 }
