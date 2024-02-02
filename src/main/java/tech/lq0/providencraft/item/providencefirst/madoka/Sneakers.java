@@ -48,7 +48,6 @@ public class Sneakers extends ArmorItem {
         super(ModArmorMaterial.RED_AHOGE, Type.BOOTS, new Properties().rarity(Rarity.UNCOMMON));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.sneakers_1").withStyle(ChatFormatting.GRAY));

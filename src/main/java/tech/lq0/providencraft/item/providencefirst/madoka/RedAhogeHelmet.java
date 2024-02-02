@@ -45,7 +45,6 @@ public class RedAhogeHelmet extends ArmorItem {
         return Utils.MOD_ID + ":textures/models/armor/ahoge_helmet.png";
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.red_ahoge_helmet_1").withStyle(ChatFormatting.GRAY));
