@@ -30,8 +30,7 @@ public class FoxIceCream extends Item {
     @ParametersAreNonnullByDefault
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.fox_ice_cream_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.fox_ice_cream_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.providencraft.fox_ice_cream").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addChaosInfo(pTooltipComponents, -1);
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.YUKI);
