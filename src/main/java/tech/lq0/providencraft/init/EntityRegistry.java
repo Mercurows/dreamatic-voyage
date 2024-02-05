@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.entity.SeatEntity;
+import tech.lq0.providencraft.entity.TailHookEntity;
 import tech.lq0.providencraft.entity.projectile.*;
 
 public class EntityRegistry {
@@ -34,7 +35,7 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<WhiteAhogeEntity>> WHITE_AHOGE_ENTITY =
             ENTITY_TYPES.register("white_ahoge",
                     () -> EntityType.Builder.<WhiteAhogeEntity>of(WhiteAhogeEntity::new, MobCategory.MISC).sized(0.8f, 0.3f).build("white_ahoge"));
-//    public static final RegistryObject<EntityType<NiitCarEntity>> NIIT_CAR_ENTITY =
+    //    public static final RegistryObject<EntityType<NiitCarEntity>> NIIT_CAR_ENTITY =
 //            ENTITY_TYPES.register("niit_car",
 //                    () -> EntityType.Builder.create(NiitCarEntity::new, EntityClassification.MISC).size(2.0f, 1.7f).build("niit_car"));
 //    public static final RegistryObject<EntityType<GoodManCardEntity>> GOOD_MAN_CARD_ENTITY =
@@ -52,11 +53,11 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<ShuRinoKenEntity>> SHU_RINO_KEN_ENTITY =
             ENTITY_TYPES.register("shu_rino_ken",
                     () -> EntityType.Builder.<ShuRinoKenEntity>of(ShuRinoKenEntity::new, MobCategory.MISC).sized(0.5f, 0.2f).build("shu_rino_ken"));
-//    public static final RegistryObject<EntityType<TailBobberEntity>> TAIL_BOBBER_ENTITY =
-//            ENTITY_TYPES.register("tail_bobber",
-//                    () -> EntityType.Builder.<TailBobberEntity>create(EntityClassification.MISC)
-//                            .disableSerialization().trackingRange(4).func_233608_b_(5)
-//                            .disableSummoning().size(0.25f, 0.25f).setCustomClientFactory(TailBobberEntity::new).build("tail_bobber"));
+    public static final RegistryObject<EntityType<TailHookEntity>> TAIL_HOOK_ENTITY =
+            ENTITY_TYPES.register("tail_hook",
+                    () -> EntityType.Builder.<TailHookEntity>createNothing(MobCategory.MISC)
+                            .noSave().clientTrackingRange(4).updateInterval(5).noSummon().sized(0.25f, 0.25f)
+                            .setCustomClientFactory(TailHookEntity::new).build("tail_hook"));
 //    public static final RegistryObject<EntityType<HirenadeGGEntity>> HIRENADE_GG_ENTITY =
 //            ENTITY_TYPES.register("hirenade_gg",
 //                    () -> EntityType.Builder.<HirenadeGGEntity>create(HirenadeGGEntity::new, EntityClassification.MISC).size(0.4f, 0.4f).build("hirenade_gg"));

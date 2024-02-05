@@ -15,6 +15,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.entity.TailHookEntity;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
@@ -53,7 +54,7 @@ public class TailFishingRod extends FishingRodItem {
             if (!pLevel.isClientSide) {
                 int k = EnchantmentHelper.getFishingSpeedBonus(itemStack) + 2;
                 int j = EnchantmentHelper.getFishingLuckBonus(itemStack) + 3;
-//                pLevel.addFreshEntity(new TailBobberEntity(pPlayer, pLevel, j, k));
+                pLevel.addFreshEntity(new TailHookEntity(pPlayer, pLevel, j, k));
             }
             pPlayer.swing(pHand);
             pPlayer.awardStat(Stats.ITEM_USED.get(this));
