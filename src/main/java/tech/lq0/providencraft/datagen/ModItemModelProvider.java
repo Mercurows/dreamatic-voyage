@@ -168,9 +168,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.ESCORT_TOKEN);
 
         //legacy
+        simpleItem(ItemRegistry.FLUFF_BALL);
         simpleItem(ItemRegistry.YAGI_STAFF_CARD);
         simpleItem(ItemRegistry.LAVA_CAKE);
-
 
         //material
         simpleItem(ItemRegistry.IDOL_CLOTH);

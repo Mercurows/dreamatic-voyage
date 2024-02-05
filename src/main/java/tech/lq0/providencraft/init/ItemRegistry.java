@@ -296,7 +296,7 @@ public class ItemRegistry {
 
     //yesa
     public static final RegistryObject<Item> MINT_CHOCOLATE = ITEMS.register("mint_chocolate", MintChocolate::new);
-//    public static final RegistryObject<Item> YEGGY_PEARL = ITEMS.register("yeggy_pearl", YeggyPearl::new);
+    //    public static final RegistryObject<Item> YEGGY_PEARL = ITEMS.register("yeggy_pearl", YeggyPearl::new);
     public static final RegistryObject<Item> TAIL_FISHING_ROD = ITEMS.register("tail_fishing_rod", TailFishingRod::new);
 
     //roky
@@ -347,7 +347,7 @@ public class ItemRegistry {
      * legacy
      **/
     public static final RegistryObject<Item> PLATE = ITEMS.register("plate", Plate::new);
-    //    public static final RegistryObject<Item> FLUFF_BALL = ITEMS.register("fluff_ball", FluffBall::new);
+    public static final RegistryObject<Item> FLUFF_BALL = ITEMS.register("fluff_ball", FluffBall::new);
     public static final RegistryObject<Item> YAGI_STAFF_CARD = ITEMS.register("yagi_staff_card", YagiStaffCard::new);
     public static final RegistryObject<Item> LAVA_CAKE = ITEMS.register("lava_cake", LavaCake::new);
     public static final RegistryObject<Item> SHURA_CHIN = ITEMS.register("shura_chin", ShuraChin::new);
