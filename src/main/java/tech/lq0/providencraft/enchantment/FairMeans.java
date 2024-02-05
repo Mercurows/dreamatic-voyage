@@ -1,5 +1,7 @@
 package tech.lq0.providencraft.enchantment;
 
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -43,8 +45,10 @@ public class FairMeans extends Enchantment {
     @SubscribeEvent
     public static void attackEvent(LivingHurtEvent event) {
         LivingEntity target = event.getEntity();
-        Entity entity = event.getSource().getDirectEntity();
-        if (!target.level().isClientSide && entity instanceof LivingEntity attacker) {
+        DamageSource source = event.getSource();
+        Entity entity = source.getDirectEntity();
+
+        if (!target.level().isClientSide && entity instanceof LivingEntity attacker && (source.is(DamageTypes.MOB_ATTACK) || source.is(DamageTypes.PLAYER_ATTACK))) {
             ItemStack stack = attacker.getMainHandItem();
             if (!stack.isEmpty()) {
                 int level = EnchantmentHelper.getTagEnchantmentLevel(EnchantmentRegistry.FAIR_MEANS.get(), stack);
