@@ -53,9 +53,8 @@ public class FairMeans extends Enchantment {
                         event.setAmount(event.getAmount() * (1.5f + level));
                         stack.getOrCreateTag().putBoolean("FairMeans", false);
                     } else {
-                        target.heal(event.getAmount() * (0.2f + level * 0.1f));
+                        event.setAmount(Math.min(0.1f + 0.05f * level, 0.5f) * event.getAmount());
                         stack.getOrCreateTag().putBoolean("FairMeans", true);
-                        event.setAmount(0);
                     }
                 }
             }
