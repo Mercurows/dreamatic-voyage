@@ -2,6 +2,8 @@ package tech.lq0.providencraft.init;
 
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.FishingRodItem;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,5 +30,19 @@ public class PropertyRegistry {
                 (stack, world, entity, seed) -> ItemNBTTool.getBoolean(stack, "invoke", false) ? 1.0F : 0.0F));
         event.enqueueWork(() -> ItemProperties.register(ItemRegistry.UME.get(), new ResourceLocation(Utils.MOD_ID, "invoke"),
                 (stack, world, entity, seed) -> ItemNBTTool.getBoolean(stack, "invoke", false) ? 1.0F : 0.0F));
+        event.enqueueWork(() ->
+                ItemProperties.register(ItemRegistry.TAIL_FISHING_ROD.get(), new ResourceLocation("cast"), (heldStack, world, livingEntity, seed) -> {
+                    if (livingEntity == null) {
+                        return 0.0F;
+                    } else {
+                        boolean isMainhand = livingEntity.getMainHandItem() == heldStack;
+                        boolean isOffHand = livingEntity.getOffhandItem() == heldStack;
+                        if (livingEntity.getMainHandItem().getItem() instanceof FishingRodItem) {
+                            isOffHand = false;
+                        }
+                        return (isMainhand || isOffHand) && livingEntity instanceof Player player && player.fishing != null ? 1.0F : 0.0F;
+                    }
+                })
+        );
     }
 }

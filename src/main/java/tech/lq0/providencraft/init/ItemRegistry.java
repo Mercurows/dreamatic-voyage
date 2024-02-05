@@ -28,6 +28,7 @@ import tech.lq0.providencraft.item.providenceOI.shirayuki.FoxFairyFan;
 import tech.lq0.providencraft.item.providenceOI.sorayo.LunaticBow;
 import tech.lq0.providencraft.item.providenceOI.sorayo.MoonCake;
 import tech.lq0.providencraft.item.providenceOI.yesa.MintChocolate;
+import tech.lq0.providencraft.item.providenceOI.yesa.TailFishingRod;
 import tech.lq0.providencraft.item.providenceOI.yuri.RabbitLychee;
 import tech.lq0.providencraft.item.providencefirst.ayelet.CrystalHorn;
 import tech.lq0.providencraft.item.providencefirst.ayelet.SleepRoulette;
@@ -296,7 +297,7 @@ public class ItemRegistry {
     //yesa
     public static final RegistryObject<Item> MINT_CHOCOLATE = ITEMS.register("mint_chocolate", MintChocolate::new);
 //    public static final RegistryObject<Item> YEGGY_PEARL = ITEMS.register("yeggy_pearl", YeggyPearl::new);
-//    public static final RegistryObject<Item> TAIL_FISHING_ROD = ITEMS.register("tail_fishing_rod", TailFishingRod::new);
+    public static final RegistryObject<Item> TAIL_FISHING_ROD = ITEMS.register("tail_fishing_rod", TailFishingRod::new);
 
     //roky
     public static final RegistryObject<Item> XIAOLONGBAO = ITEMS.register("xiaolongbao", Xiaolongbao::new);
