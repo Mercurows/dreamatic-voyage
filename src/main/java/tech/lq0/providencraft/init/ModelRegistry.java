@@ -52,5 +52,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(GravityRestraintDeviceModel.LAYER_LOCATION, GravityRestraintDeviceModel::createBodyLayer);
         event.registerLayerDefinition(ShuRinoKenModel.LAYER_LOCATION, ShuRinoKenModel::createBodyLayer);
         event.registerLayerDefinition(ChiramHatModel.LAYER_LOCATION, ChiramHatModel::createBodyLayer);
+        event.registerLayerDefinition(FluffBallModel.LAYER_LOCATION, FluffBallModel::createBodyLayer);
     }
 }
