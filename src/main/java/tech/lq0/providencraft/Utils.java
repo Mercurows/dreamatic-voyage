@@ -1,6 +1,13 @@
 package tech.lq0.providencraft;
 
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -30,6 +37,7 @@ public class Utils {
         LootModifierRegistry.register(modEventBus);
         VillagerRegistry.register(modEventBus);
         AttributeRegistry.ATTRIBUTES.register(modEventBus);
+        PotionRegistry.POTIONS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -38,7 +46,10 @@ public class Utils {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        event.enqueueWork(() -> BrewingRecipeRegistry.addRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.SPLASH_POTION), Potions.AWKWARD)),
+                Ingredient.of(Tags.Items.GLASS), PotionUtils.setPotion(new ItemStack(Items.POTION), PotionRegistry.BLEEDING.get())));
+        event.enqueueWork(() -> BrewingRecipeRegistry.addRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), PotionRegistry.BLEEDING.get())),
+                Ingredient.of(ItemRegistry.PAST_SUGAR.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), PotionRegistry.SUPER_BLEEDING.get())));
     }
 
     private void registerForgeEvents() {
