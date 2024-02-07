@@ -9,6 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.item.donate.AtsuiShio;
+import tech.lq0.providencraft.item.donate.BakedNameTag;
 import tech.lq0.providencraft.item.donate.EmptyJar;
 import tech.lq0.providencraft.item.legacy.*;
 import tech.lq0.providencraft.item.material.*;
@@ -428,6 +429,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> BLACK_EARPHONES = DONATE_ITEMS.register("black_earphones", BlackEarphones::new);
 //    public static final RegistryObject<Item> EMERGENCY_ENGINE_POWER = DONATE_ITEMS.register("emergency_engine_power", EmergencyEnginePower::new);
 //    public static final RegistryObject<Item> MUSIC_DISC_SONG_OF_AUTUMN = DONATE_ITEMS.register("music_disc_song_of_autumn", MusicDiscSongOfAutumn::new);
+    public static final RegistryObject<Item> BAKED_NAME_TAG = DONATE_ITEMS.register("baked_name_tag", BakedNameTag::new);
 
     /**
      * ===PROVIDENCRAFT COSTUMES===

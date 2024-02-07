@@ -184,6 +184,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.TERMINAL_CRYSTAL);
 
         //donate
+        simpleItem(ItemRegistry.BAKED_NAME_TAG);
 
 
         //costume
