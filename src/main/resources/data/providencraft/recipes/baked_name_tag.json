@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:name_tag"
+  },
+  "result": "providencraft:baked_name_tag",
+  "experience": 1.00
+}
