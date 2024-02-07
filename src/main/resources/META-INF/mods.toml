@@ -73,6 +73,6 @@ side = "BOTH"
 modId = "terrablender"
 mandatory = true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
-versionRange = "${terrablender_version_range}"
+versionRange = "[3.0.0.169,)"
 ordering = "NONE"
 side = "BOTH"
