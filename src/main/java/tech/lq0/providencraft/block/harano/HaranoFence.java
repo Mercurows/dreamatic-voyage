@@ -14,7 +14,7 @@ import java.util.List;
 
 public class HaranoFence extends FenceBlock {
     public HaranoFence() {
-        super(Properties.of().requiresCorrectToolForDrops().strength(2.0F, 3.0F).mapColor(MapColor.WOOD).sound(SoundType.WOOD));
+        super(Properties.of().strength(2.0F, 3.0F).mapColor(MapColor.WOOD).sound(SoundType.WOOD));
     }
 
     @Override

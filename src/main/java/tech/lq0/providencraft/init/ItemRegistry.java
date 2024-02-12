@@ -515,12 +515,12 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_LOG.get(), new Item.Properties()));
     public static final RegistryObject<Item> STRIPPED_HARANO_WOOD = BLOCK_ITEMS.register("stripped_harano_wood",
             () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_WOOD.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> HARANO_DOOR = BLOCK_ITEMS.register("harano_door",
-//            () -> new BlockItem(BlockRegistry.HARANO_DOOR.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> HARANO_TRAPDOOR = BLOCK_ITEMS.register("harano_trapdoor",
-//            () -> new BlockItem(BlockRegistry.HARANO_TRAPDOOR.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> HARANO_BUTTON = BLOCK_ITEMS.register("harano_button",
-//            () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_DOOR = BLOCK_ITEMS.register("harano_door",
+            () -> new BlockItem(BlockRegistry.HARANO_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_TRAPDOOR = BLOCK_ITEMS.register("harano_trapdoor",
+            () -> new BlockItem(BlockRegistry.HARANO_TRAPDOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_BUTTON = BLOCK_ITEMS.register("harano_button",
+            () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties()));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

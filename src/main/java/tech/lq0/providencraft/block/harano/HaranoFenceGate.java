@@ -15,7 +15,7 @@ import java.util.List;
 
 public class HaranoFenceGate extends FenceGateBlock {
     public HaranoFenceGate() {
-        super(Properties.of().requiresCorrectToolForDrops().strength(2.0F, 3.0F).mapColor(MapColor.WOOD).sound(SoundType.WOOD).forceSolidOn(),
+        super(Properties.of().strength(2.0F, 3.0F).mapColor(MapColor.WOOD).sound(SoundType.WOOD).forceSolidOn(),
                 SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE);
     }
 
