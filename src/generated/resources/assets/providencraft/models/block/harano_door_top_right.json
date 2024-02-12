@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "providencraft:block/harano_door_bottom",
+    "top": "providencraft:block/harano_door_top"
+  }
+}

@@ -220,6 +220,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(BlockRegistry.HARANO_PRESSURE_PLATE);
         evenSimplerBlockItem(BlockRegistry.STRIPPED_HARANO_LOG);
         evenSimplerBlockItem(BlockRegistry.STRIPPED_HARANO_WOOD);
+        simpleItem(ItemRegistry.HARANO_DOOR);
+        trapdoorItem(BlockRegistry.HARANO_TRAPDOOR);
+        buttonItem(BlockRegistry.HARANO_BUTTON, BlockRegistry.HARANO_PLANKS);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

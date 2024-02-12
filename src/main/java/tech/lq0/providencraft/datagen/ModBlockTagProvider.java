@@ -60,5 +60,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.PRESSURE_PLATES).add(BlockRegistry.HARANO_PRESSURE_PLATE.get());
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(BlockRegistry.HARANO_PRESSURE_PLATE.get());
         this.tag(BlockTags.LEAVES).add(BlockRegistry.HARANO_LEAVES.get());
+        this.tag(Tags.Blocks.SAND).add(BlockRegistry.BLUE_SAND.get());
     }
 }

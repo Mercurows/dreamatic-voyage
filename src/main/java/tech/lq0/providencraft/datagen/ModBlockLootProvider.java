@@ -58,6 +58,9 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         this.dropSelf(BlockRegistry.HARANO_PRESSURE_PLATE.get());
         this.dropSelf(BlockRegistry.STRIPPED_HARANO_LOG.get());
         this.dropSelf(BlockRegistry.STRIPPED_HARANO_WOOD.get());
+        this.add(BlockRegistry.HARANO_DOOR.get(), block -> createDoorTable(BlockRegistry.HARANO_DOOR.get()));
+        this.dropSelf(BlockRegistry.HARANO_TRAPDOOR.get());
+        this.dropSelf(BlockRegistry.HARANO_BUTTON.get());
     }
 
     @Override

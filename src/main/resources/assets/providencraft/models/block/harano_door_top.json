@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/door_top",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "top": "providencraft:block/harano_door_top",
-    "bottom": "providencraft:block/harano_door_bottom"
-  }
-}
