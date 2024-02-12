@@ -16,8 +16,6 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.entity.projectile.DaifukuSyrupEntity;
 import tech.lq0.providencraft.tools.Livers;
@@ -51,7 +49,6 @@ public class DaifukuSyrup extends Item {
         return itemStack;
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> tooltip, TooltipFlag pIsAdvanced) {
         tooltip.add(Component.translatable("des.providencraft.daifuku_syrup_1").withStyle(ChatFormatting.GRAY));

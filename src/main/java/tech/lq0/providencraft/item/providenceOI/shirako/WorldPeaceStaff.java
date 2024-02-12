@@ -20,14 +20,12 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.providencraft.capability.escort.IEscortCapability;
 import tech.lq0.providencraft.capability.ModCapabilities;
 import tech.lq0.providencraft.capability.escort.EscortCapabilityProvider;
+import tech.lq0.providencraft.capability.escort.IEscortCapability;
 import tech.lq0.providencraft.entity.projectile.BloodCrystalEntity;
 import tech.lq0.providencraft.init.EffectRegistry;
 import tech.lq0.providencraft.init.SoundRegistry;
@@ -48,7 +46,6 @@ public class WorldPeaceStaff extends SwordItem {
         this.energyCapacity = () -> 500.0;
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.world_peace_staff_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));

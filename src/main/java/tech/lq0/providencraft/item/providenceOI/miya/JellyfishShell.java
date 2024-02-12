@@ -30,7 +30,6 @@ public class JellyfishShell extends ArmorItem {
         super(ArmorMaterials.LEATHER, Type.HELMET, new Properties().durability(207));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.jellyfish_shell").withStyle(ChatFormatting.GRAY));

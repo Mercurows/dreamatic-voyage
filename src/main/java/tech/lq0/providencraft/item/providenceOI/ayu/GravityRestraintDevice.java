@@ -70,7 +70,6 @@ public class GravityRestraintDevice extends ArmorItem {
         return InteractionResultHolder.fail(stack);
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.grd.func").withStyle(ChatFormatting.AQUA));
