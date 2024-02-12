@@ -140,6 +140,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.GARLIC_MELON_SLICE);
 
         simpleItem(ItemRegistry.MINT_CHOCOLATE);
+        simpleItem(ItemRegistry.YEGGY_PEARL);
 
         simpleItem(ItemRegistry.XIAOLONGBAO);
 

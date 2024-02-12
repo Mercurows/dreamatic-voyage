@@ -9,6 +9,7 @@ import tech.lq0.providencraft.models.blockentity.PdCLogoModel;
 import tech.lq0.providencraft.models.curios.ChiramHatModel;
 import tech.lq0.providencraft.models.curios.LunaticBowModel;
 import tech.lq0.providencraft.models.curios.RedNoseModel;
+import tech.lq0.providencraft.models.curios.YeggyPearlModel;
 import tech.lq0.providencraft.models.entity.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -53,5 +54,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(ShuRinoKenModel.LAYER_LOCATION, ShuRinoKenModel::createBodyLayer);
         event.registerLayerDefinition(ChiramHatModel.LAYER_LOCATION, ChiramHatModel::createBodyLayer);
         event.registerLayerDefinition(FluffBallModel.LAYER_LOCATION, FluffBallModel::createBodyLayer);
+        event.registerLayerDefinition(YeggyPearlModel.LAYER_LOCATION, YeggyPearlModel::createBodyLayer);
     }
 }
