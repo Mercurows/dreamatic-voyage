@@ -20,8 +20,6 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
@@ -38,7 +36,6 @@ public class HayaSword extends SwordItem {
         super(Tiers.NETHERITE, 4, -2.6f, new Properties().rarity(Rarity.EPIC));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.haya_sword.func").withStyle(ChatFormatting.AQUA));

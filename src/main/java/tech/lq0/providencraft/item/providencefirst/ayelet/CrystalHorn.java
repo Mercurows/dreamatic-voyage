@@ -113,7 +113,6 @@ public class CrystalHorn extends ArmorItem {
         return Utils.MOD_ID + ":textures/models/armor/crystal_horn.png";
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.crystal_horn_1").withStyle(ChatFormatting.GRAY));

@@ -152,7 +152,6 @@ public class MountainDestroyer extends PickaxeItem {
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     @ParametersAreNonnullByDefault
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
