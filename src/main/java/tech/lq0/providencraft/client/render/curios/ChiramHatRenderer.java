@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.render.curios;
+package tech.lq0.providencraft.client.render.curios;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

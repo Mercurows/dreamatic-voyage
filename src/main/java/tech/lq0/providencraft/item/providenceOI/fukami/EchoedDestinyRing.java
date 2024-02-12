@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.models.item.EchoedDestinyRingItemModel;
-import tech.lq0.providencraft.render.item.EchoedDestinyRingItemRenderer;
+import tech.lq0.providencraft.client.render.item.EchoedDestinyRingItemRenderer;
 import tech.lq0.providencraft.tools.ItemNBTTool;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.RarityTool;

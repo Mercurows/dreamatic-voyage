@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.render.curios;
+package tech.lq0.providencraft.client.render.curios;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,17 +13,17 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import tech.lq0.providencraft.Utils;
-import tech.lq0.providencraft.models.curios.RedNoseModel;
+import tech.lq0.providencraft.models.curios.LunaticBowModel;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
-public class RedNoseRenderer implements ICurioRenderer {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/models/curios/red_nose.png");
+public class LunaticBowRenderer implements ICurioRenderer {
+    private static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/models/curios/lunatic_bow.png");
 
-    private final RedNoseModel model;
+    private final LunaticBowModel model;
 
-    public RedNoseRenderer() {
-        this.model = new RedNoseModel(Minecraft.getInstance().getEntityModels().bakeLayer(RedNoseModel.LAYER_LOCATION));
+    public LunaticBowRenderer() {
+        this.model = new LunaticBowModel(Minecraft.getInstance().getEntityModels().bakeLayer(LunaticBowModel.LAYER_LOCATION));
     }
 
     @Override
@@ -34,7 +34,11 @@ public class RedNoseRenderer implements ICurioRenderer {
         this.model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
         this.model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 
-        ICurioRenderer.followHeadRotations(entity, this.model.armorHead);
+        ICurioRenderer.translateIfSneaking(matrixStack, entity);
+        ICurioRenderer.followHeadRotations(entity, this.model.main);
+
+        matrixStack.scale(0.7f, 0.7f, 0.7f);
+        matrixStack.translate(0.12f, -0.1f, 0.0f);
 
         VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(renderTypeBuffer, RenderType.armorCutoutNoCull(TEXTURE), false, stack.hasFoil());
 

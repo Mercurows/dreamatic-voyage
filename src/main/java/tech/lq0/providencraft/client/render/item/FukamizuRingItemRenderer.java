@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.render.item;
+package tech.lq0.providencraft.client.render.item;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;

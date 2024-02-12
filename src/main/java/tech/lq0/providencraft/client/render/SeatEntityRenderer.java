@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.render;
+package tech.lq0.providencraft.client.render;
 
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

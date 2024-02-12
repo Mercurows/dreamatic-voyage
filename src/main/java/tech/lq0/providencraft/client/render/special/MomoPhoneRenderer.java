@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.render.special;
+package tech.lq0.providencraft.client.render.special;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.AbstractClientPlayer;

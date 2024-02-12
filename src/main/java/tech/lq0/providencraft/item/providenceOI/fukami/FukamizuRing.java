@@ -34,7 +34,7 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.models.item.FukamizuRingItemModel;
-import tech.lq0.providencraft.render.item.FukamizuRingItemRenderer;
+import tech.lq0.providencraft.client.render.item.FukamizuRingItemRenderer;
 import tech.lq0.providencraft.tools.ItemNBTTool;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;

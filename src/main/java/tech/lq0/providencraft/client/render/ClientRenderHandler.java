@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.render;
+package tech.lq0.providencraft.client.render;
 
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
@@ -9,9 +9,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import tech.lq0.providencraft.init.BlockEntityRegistry;
 import tech.lq0.providencraft.init.EntityRegistry;
 import tech.lq0.providencraft.init.ItemRegistry;
-import tech.lq0.providencraft.render.curios.ChiramHatRenderer;
-import tech.lq0.providencraft.render.curios.LunaticBowRenderer;
-import tech.lq0.providencraft.render.curios.RedNoseRenderer;
+import tech.lq0.providencraft.client.render.curios.ChiramHatRenderer;
+import tech.lq0.providencraft.client.render.curios.LunaticBowRenderer;
+import tech.lq0.providencraft.client.render.curios.RedNoseRenderer;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

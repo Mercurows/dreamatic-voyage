@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.render.hud;
+package tech.lq0.providencraft.client.render.hud;
 
 import com.google.common.util.concurrent.AtomicDouble;
 import net.minecraft.client.Minecraft;

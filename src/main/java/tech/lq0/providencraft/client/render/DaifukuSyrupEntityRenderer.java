@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.render;
+package tech.lq0.providencraft.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,32 +13,32 @@ import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.providencraft.Utils;
-import tech.lq0.providencraft.entity.projectile.AhogeBoomerangEntity;
-import tech.lq0.providencraft.models.entity.AhogeBoomerangModel;
+import tech.lq0.providencraft.entity.projectile.DaifukuSyrupEntity;
+import tech.lq0.providencraft.models.entity.DaifukuSyrupModel;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
-public class AhogeBoomerangEntityRenderer extends EntityRenderer<AhogeBoomerangEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/ahoge_boomerang.png");
-    private final AhogeBoomerangModel<AhogeBoomerangEntity> model;
+public class DaifukuSyrupEntityRenderer extends EntityRenderer<DaifukuSyrupEntity> {
+    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/daifuku_syrup.png");
+    private final DaifukuSyrupModel<DaifukuSyrupEntity> model;
 
-    public AhogeBoomerangEntityRenderer(EntityRendererProvider.Context manager) {
+    public DaifukuSyrupEntityRenderer(EntityRendererProvider.Context manager) {
         super(manager);
-        model = new AhogeBoomerangModel<>(manager.bakeLayer(AhogeBoomerangModel.LAYER_LOCATION));
+        model = new DaifukuSyrupModel<>(manager.bakeLayer(DaifukuSyrupModel.LAYER_LOCATION));
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    public void render(AhogeBoomerangEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
+    public void render(DaifukuSyrupEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
         matrixStackIn.pushPose();
 
         matrixStackIn.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entityIn.yRotO, entityIn.getYRot()) - 90.0F));
         matrixStackIn.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot())));
 
-        matrixStackIn.translate(0.0f, -1.3f, 0.0f);
+        matrixStackIn.translate(0.55f, -1.3f, 0.0f);
         VertexConsumer vertexConsumer = ItemRenderer.getFoilBufferDirect(bufferIn, this.model.renderType(this.getTextureLocation(entityIn)), false, false);
         this.model.renderToBuffer(matrixStackIn, vertexConsumer, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
         matrixStackIn.popPose();
@@ -47,7 +47,7 @@ public class AhogeBoomerangEntityRenderer extends EntityRenderer<AhogeBoomerangE
     @Override
     @ParametersAreNonnullByDefault
     @Nonnull
-    public ResourceLocation getTextureLocation(AhogeBoomerangEntity entity) {
+    public ResourceLocation getTextureLocation(DaifukuSyrupEntity entity) {
         return TEXTURE;
     }
 }

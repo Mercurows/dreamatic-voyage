@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.render.special;
+package tech.lq0.providencraft.client.render.special;
 
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
