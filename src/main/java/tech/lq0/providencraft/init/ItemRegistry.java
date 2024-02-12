@@ -511,10 +511,10 @@ public class ItemRegistry {
 //            () -> new BlockItem(BlockRegistry.HARANO_FENCE_GATE.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_PRESSURE_PLATE = BLOCK_ITEMS.register("harano_pressure_plate",
 //            () -> new BlockItem(BlockRegistry.HARANO_PRESSURE_PLATE.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> STRIPPED_HARANO_LOG = BLOCK_ITEMS.register("stripped_harano_log",
-//            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_LOG.get(), new Item.Properties()));
-//    public static final RegistryObject<Item> STRIPPED_HARANO_WOOD = BLOCK_ITEMS.register("stripped_harano_wood",
-//            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_WOOD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_HARANO_LOG = BLOCK_ITEMS.register("stripped_harano_log",
+            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_LOG.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_HARANO_WOOD = BLOCK_ITEMS.register("stripped_harano_wood",
+            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_WOOD.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_DOOR = BLOCK_ITEMS.register("harano_door",
 //            () -> new BlockItem(BlockRegistry.HARANO_DOOR.get(), new Item.Properties()));
 //    public static final RegistryObject<Item> HARANO_TRAPDOOR = BLOCK_ITEMS.register("harano_trapdoor",

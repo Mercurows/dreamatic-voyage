@@ -5,6 +5,8 @@
     "providencraft:harano_wood",
     "providencraft:harano_slab",
     "providencraft:harano_planks",
-    "providencraft:harano_stairs"
+    "providencraft:harano_stairs",
+    "providencraft:stripped_harano_log",
+    "providencraft:stripped_harano_wood"
   ]
 }

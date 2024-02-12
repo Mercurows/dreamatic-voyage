@@ -33,7 +33,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.HARANO_LOG.get(),
                 BlockRegistry.HARANO_WOOD.get(), BlockRegistry.HARANO_SLAB.get(), BlockRegistry.HARANO_PLANKS.get(),
-                BlockRegistry.HARANO_STAIRS.get());
+                BlockRegistry.HARANO_STAIRS.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get());
 
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.UNI_MILLET_BLOCK.get());
 
@@ -48,10 +48,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         BlockRegistry.SMOOTH_BLUE_SANDSTONE.get(), BlockRegistry.CHISELED_BLUE_SANDSTONE.get());
 
         this.tag(BlockTags.LOGS)
-                .add(BlockRegistry.HARANO_LOG.get(), BlockRegistry.HARANO_WOOD.get());
+                .add(BlockRegistry.HARANO_LOG.get(), BlockRegistry.HARANO_WOOD.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get());
 
         this.tag(BlockTags.LOGS_THAT_BURN)
-                .add(BlockRegistry.HARANO_LOG.get(), BlockRegistry.HARANO_WOOD.get());
+                .add(BlockRegistry.HARANO_LOG.get(), BlockRegistry.HARANO_WOOD.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get());
 
         this.tag(BlockTags.WALLS).add(BlockRegistry.BLUE_SANDSTONE_WALL.get());
 

@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-12T01:20:17.3047016	Loot Tables
+// 1.20.1	2024-02-12T15:31:59.5248816	Loot Tables
 782f77b88e85816a3067eeb62f33674025338b37 data/providencraft/loot_tables/blocks/blue_sand.json
 6770b8ceafaeeda26fa6004c6756e9d4bdb4704c data/providencraft/loot_tables/blocks/blue_sandstone.json
 ba6e24987061c42bb57256568ff64f173d70fc44 data/providencraft/loot_tables/blocks/blue_sandstone_slab.json
@@ -23,5 +23,7 @@ c40bab1fbcd6b33cdf32eaff7d2724112ef6bc5e data/providencraft/loot_tables/blocks/r
 ed8e990352141f4ae83fc03dbbbe070766776468 data/providencraft/loot_tables/blocks/smooth_blue_sandstone.json
 0c1944dacff7a44e1f9b55af3c1e0285aa8784e3 data/providencraft/loot_tables/blocks/smooth_blue_sandstone_slab.json
 1d683d0dc70df4fb2b0fcd00c657e34c86bb5983 data/providencraft/loot_tables/blocks/smooth_blue_sandstone_stairs.json
+db5b1fcde166a01581850630f6c223a055ee2ca1 data/providencraft/loot_tables/blocks/stripped_harano_log.json
+764b33ce22fcba8cc53b41964ae8565e65e09a4e data/providencraft/loot_tables/blocks/stripped_harano_wood.json
 0dac81c4caff368773b5a5209db1551f559fe373 data/providencraft/loot_tables/blocks/uni_millet_block.json
 14eb20225d6de25dff3b2346147d5cfd41334f4d data/providencraft/loot_tables/blocks/white_ahoge_block.json

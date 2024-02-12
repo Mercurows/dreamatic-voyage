@@ -1,6 +1,8 @@
 {
   "values": [
     "providencraft:harano_log",
-    "providencraft:harano_wood"
+    "providencraft:harano_wood",
+    "providencraft:stripped_harano_log",
+    "providencraft:stripped_harano_wood"
   ]
 }

@@ -58,6 +58,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         saplingBlock(BlockRegistry.HARANO_SAPLING);
         axisBlock((RotatedPillarBlock) BlockRegistry.HARANO_WOOD.get(), models().cubeColumn("harano_wood", new ResourceLocation(Utils.MOD_ID, "block/harano_log"), new ResourceLocation(Utils.MOD_ID, "block/harano_log")),
                 models().cubeColumn("harano_wood", new ResourceLocation(Utils.MOD_ID, "block/harano_log"), new ResourceLocation(Utils.MOD_ID, "block/harano_log")));
+        logBlock((RotatedPillarBlock) BlockRegistry.STRIPPED_HARANO_LOG.get());
+        axisBlock((RotatedPillarBlock) BlockRegistry.STRIPPED_HARANO_WOOD.get(), models().cubeColumn("stripped_harano_wood", new ResourceLocation(Utils.MOD_ID, "block/stripped_harano_log"), new ResourceLocation(Utils.MOD_ID, "block/stripped_harano_log")),
+                models().cubeColumn("stripped_harano_wood", new ResourceLocation(Utils.MOD_ID, "block/stripped_harano_log"), new ResourceLocation(Utils.MOD_ID, "block/stripped_harano_log")));
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

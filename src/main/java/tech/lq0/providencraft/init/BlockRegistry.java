@@ -46,8 +46,8 @@ public class BlockRegistry {
 //    public static final RegistryObject<Block> HARANO_FENCE = BLOCKS.register("harano_fence", HaranoFence::new);
 //    public static final RegistryObject<Block> HARANO_FENCE_GATE = BLOCKS.register("harano_fence_gate", HaranoFenceGate::new);
 //    public static final RegistryObject<Block> HARANO_PRESSURE_PLATE = BLOCKS.register("harano_pressure_plate", HaranoPressurePlate::new);
-//    public static final RegistryObject<Block> STRIPPED_HARANO_LOG = BLOCKS.register("stripped_harano_log", StrippedHaranoLog::new);
-//    public static final RegistryObject<Block> STRIPPED_HARANO_WOOD = BLOCKS.register("stripped_harano_wood", StrippedHaranoWood::new);
+    public static final RegistryObject<Block> STRIPPED_HARANO_LOG = BLOCKS.register("stripped_harano_log", StrippedHaranoLog::new);
+    public static final RegistryObject<Block> STRIPPED_HARANO_WOOD = BLOCKS.register("stripped_harano_wood", StrippedHaranoWood::new);
 //    public static final RegistryObject<Block> HARANO_DOOR = BLOCKS.register("harano_door", HaranoDoor::new);
 //    public static final RegistryObject<Block> HARANO_TRAPDOOR = BLOCKS.register("harano_trapdoor", HaranoTrapDoor::new);
 //    public static final RegistryObject<Block> HARANO_BUTTON = BLOCKS.register("harano_button", HaranoButton::new);
