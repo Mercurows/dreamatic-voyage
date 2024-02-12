@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-12T16:11:22.4055995	Item Models: providencraft
+// 1.20.1	2024-02-12T16:15:07.9671003	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 09e50d46cd21b6ff9757d1416978893df111a70c assets/providencraft/models/item/baked_name_tag.json
@@ -63,9 +63,12 @@ c5cb6db480eff346f072ae1d30e2be8bc79b26d3 assets/providencraft/models/item/haine_
 35d56922f3e0fde56508a127e1e38d7f4e9d82ab assets/providencraft/models/item/haine_idol_chestplate.json
 690bc499058001b160975297b2da0d2f6bf6bc0f assets/providencraft/models/item/haine_idol_helmet.json
 9f1a83eb5dd7aa8c9fd094c79f6b444555da76b0 assets/providencraft/models/item/harano_fence.json
+a107e52604a65e4fbd592eb2ade107500ea9dcfe assets/providencraft/models/item/harano_fence_gate.json
 3f8dfbad575fd47a85bbb7dad885833f0e196839 assets/providencraft/models/item/harano_log.json
+60f1a413e73246b75320ee4a96f05e655a52277a assets/providencraft/models/item/harano_pressure_plate.json
 b10936e2dc52b203e1de48bf62ae3c9d0275ded1 assets/providencraft/models/item/harano_slab.json
 8053f628cb5ba3b1eca936bf686802a86a11305c assets/providencraft/models/item/harano_stairs.json
+640773bbb0ba9c9f9cebb3ba7fe66776cd0ca887 assets/providencraft/models/item/harano_wood.json
 5fe99632a0cfbdf226f7625c6805458af3237326 assets/providencraft/models/item/idol_cloth.json
 8620aeb39204cd07e5f037edf100b69f5d3bcf2a assets/providencraft/models/item/illusory_crystal.json
 ddda18440ca13a20d48e1cd27992be60bd9cfb39 assets/providencraft/models/item/isekai_lollipop.json
@@ -127,6 +130,8 @@ cb4776f2e10b1c7a25ca14ab57b432a7b9fb1e12 assets/providencraft/models/item/satou_
 267310671b30f5c1ef83ce9b4cb215f7bbb6eea5 assets/providencraft/models/item/sneakers.json
 7e3940742096f5c7704fa2f1ecb7cd5b40ae0d24 assets/providencraft/models/item/steel_plate.json
 0400346b10eb1e56baf942131767f95e7c8b87e0 assets/providencraft/models/item/strawberry_cake.json
+e3122143b07a73f4f2dae30501eec640a8281542 assets/providencraft/models/item/stripped_harano_log.json
+6c83ba931eada433d6a0167ef8ddd3e490cb14ae assets/providencraft/models/item/stripped_harano_wood.json
 8851cff78487e0b6799b20bd22f1c5f5da74933e assets/providencraft/models/item/succubus_tail.json
 c31600f588257739509f66f7286c0090332cb5ad assets/providencraft/models/item/taro_ice_cream.json
 0e1c103f94d1a683d923691def6916801131d105 assets/providencraft/models/item/terminal_crystal.json

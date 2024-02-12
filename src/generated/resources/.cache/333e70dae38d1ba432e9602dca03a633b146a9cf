@@ -1,0 +1,15 @@
+// 1.20.1	2024-02-12T16:29:01.5486684	Tags for minecraft:item mod id providencraft
+fca08b09e645cb50cebc86f69a0461a035e3723c data/forge/tags/items/sandstone.json
+c6779040df0ce74d56182985e6428f0f22c879e3 data/minecraft/tags/items/fences.json
+eaa1367228a9caba5b30a114b5fd9dd52eeb98a6 data/minecraft/tags/items/fence_gates.json
+b31c32dadc554595b36c1a1716ddd099bc657e14 data/minecraft/tags/items/leaves.json
+163855e79ae781d1cf6de6e60e58d47c73e3674f data/minecraft/tags/items/logs.json
+163855e79ae781d1cf6de6e60e58d47c73e3674f data/minecraft/tags/items/logs_that_burn.json
+c7df84dca3b10ab8eaa4578a997c3f3c0154d410 data/minecraft/tags/items/planks.json
+bc9c4d524134f45d47a20e759f007d3e2309d1bf data/minecraft/tags/items/sand.json
+734ec18a7fabf4fdb742845ca1a54b5cb2560faf data/minecraft/tags/items/slabs.json
+bc9c4d524134f45d47a20e759f007d3e2309d1bf data/minecraft/tags/items/smelts_to_glass.json
+6540579e02cb436f245036aab0c51934aad8afb7 data/minecraft/tags/items/stairs.json
+1cd66e799ec8535f53c3870bcbedc81dafc2e3b7 data/minecraft/tags/items/walls.json
+c6779040df0ce74d56182985e6428f0f22c879e3 data/minecraft/tags/items/wooden_fences.json
+0132980fb4f7f753741937d66c1d8e9dd3c4e66b data/minecraft/tags/items/wooden_pressure_plates.json

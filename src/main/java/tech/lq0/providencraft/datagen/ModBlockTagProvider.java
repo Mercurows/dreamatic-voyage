@@ -28,46 +28,37 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         BlockRegistry.SMOOTH_BLUE_SANDSTONE.get(), BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(),
                         BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(), BlockRegistry.BLUE_SANDSTONE_STAIRS.get(),
                         BlockRegistry.BLUE_SANDSTONE_WALL.get(), BlockRegistry.CHISELED_BLUE_SANDSTONE.get());
-
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(BlockRegistry.BLUE_SAND.get());
-
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.HARANO_LOG.get(),
                 BlockRegistry.HARANO_WOOD.get(), BlockRegistry.HARANO_SLAB.get(), BlockRegistry.HARANO_PLANKS.get(),
                 BlockRegistry.HARANO_STAIRS.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get(),
                 BlockRegistry.HARANO_FENCE.get(), BlockRegistry.HARANO_FENCE_GATE.get(), BlockRegistry.HARANO_PRESSURE_PLATE.get());
-
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.UNI_MILLET_BLOCK.get());
-
         this.tag(BlockTags.BEE_GROWABLES).add(BlockRegistry.UNI_MILLET_BLOCK.get());
-
         this.tag(BlockTags.CROPS).add(BlockRegistry.UNI_MILLET_BLOCK.get());
-
         this.tag(BlockTags.SAND).add(BlockRegistry.BLUE_SAND.get());
-
         this.tag(Tags.Blocks.SANDSTONE)
                 .add(BlockRegistry.BLUE_SANDSTONE.get(), BlockRegistry.CUT_BLUE_SANDSTONE.get(),
                         BlockRegistry.SMOOTH_BLUE_SANDSTONE.get(), BlockRegistry.CHISELED_BLUE_SANDSTONE.get());
-
         this.tag(BlockTags.LOGS)
                 .add(BlockRegistry.HARANO_LOG.get(), BlockRegistry.HARANO_WOOD.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get());
-
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(BlockRegistry.HARANO_LOG.get(), BlockRegistry.HARANO_WOOD.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get());
-
         this.tag(BlockTags.WALLS).add(BlockRegistry.BLUE_SANDSTONE_WALL.get());
-
         this.tag(BlockTags.SWORD_EFFICIENT).add(BlockRegistry.UNI_MILLET_BLOCK.get());
-
         this.tag(BlockTags.SLABS)
                 .add(BlockRegistry.BLUE_SANDSTONE_SLAB.get(), BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(),
                         BlockRegistry.CUT_BLUE_SANDSTONE_SLAB.get(), BlockRegistry.HARANO_SLAB.get());
-
         this.tag(BlockTags.SMELTS_TO_GLASS).add(BlockRegistry.BLUE_SAND.get());
-
         this.tag(BlockTags.STAIRS)
                 .add(BlockRegistry.BLUE_SANDSTONE_STAIRS.get(), BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(),
                         BlockRegistry.HARANO_STAIRS.get());
-
         this.tag(BlockTags.PLANKS).add(BlockRegistry.HARANO_PLANKS.get());
+        this.tag(BlockTags.FENCES).add(BlockRegistry.HARANO_FENCE.get());
+        this.tag(BlockTags.WOODEN_FENCES).add(BlockRegistry.HARANO_FENCE.get());
+        this.tag(BlockTags.FENCE_GATES).add(BlockRegistry.HARANO_FENCE_GATE.get());
+        this.tag(BlockTags.PRESSURE_PLATES).add(BlockRegistry.HARANO_PRESSURE_PLATE.get());
+        this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(BlockRegistry.HARANO_PRESSURE_PLATE.get());
+        this.tag(BlockTags.LEAVES).add(BlockRegistry.HARANO_LEAVES.get());
     }
 }
