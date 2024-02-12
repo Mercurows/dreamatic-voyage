@@ -38,7 +38,7 @@ public class YeggyPearlRenderer implements ICurioRenderer {
         ICurioRenderer.followHeadRotations(entity, this.model.armorHead);
 
         matrixStack.scale(0.5f, 0.5f, 0.5f);
-//        matrixStack.translate(0.0f, -1.0f, 0.0f);
+        matrixStack.translate(0.0f, -0.05f, 0.0f);
 
         VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(renderTypeBuffer, RenderType.armorCutoutNoCull(TEXTURE), false, stack.hasFoil());
 
