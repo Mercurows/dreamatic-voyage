@@ -185,6 +185,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //donate
         simpleItem(ItemRegistry.BAKED_NAME_TAG);
+        simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN);
 
 
         //costume

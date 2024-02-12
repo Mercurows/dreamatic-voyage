@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-12T17:12:06.1591222	Item Models: providencraft
+// 1.20.1	2024-02-12T21:10:43.2214744	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 09e50d46cd21b6ff9757d1416978893df111a70c assets/providencraft/models/item/baked_name_tag.json
@@ -107,6 +107,7 @@ d5f51721c69a33b4163e9bef30c1e5d1b8df3ac6 assets/providencraft/models/item/mma_st
 efa829bf506c0882be445c1446266083fff14abc assets/providencraft/models/item/moonlight_amulet.json
 e39209e33fa5d48f38095e649a260c68202f6da9 assets/providencraft/models/item/moon_cake.json
 51b076611fcfd7656b1c0069d32114d6efd2b17d assets/providencraft/models/item/mumu_steak.json
+d7f7c075fb33b2f7540b39bff36c89734999920d assets/providencraft/models/item/music_disc_song_of_autumn.json
 e1146f1ab035630c5771dc4799dba6e963cc6b54 assets/providencraft/models/item/mva_stew.json
 7739fc0389d50653717632c170588e65310f2b80 assets/providencraft/models/item/ocean_destiny.json
 cee3dd5d3a1e175d02f033d993a5d302306cc4bc assets/providencraft/models/item/past_sugar.json

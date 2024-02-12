@@ -84,5 +84,15 @@
         "stream": true
       }
     ]
+  },
+  "song/song_of_autumn": {
+    "subtitle": "subtitle.providencraft.song_of_autumn",
+    "sounds": [
+      {
+        "name": "providencraft:song/song_of_autumn",
+        "volume": 0.8,
+        "stream": true
+      }
+    ]
   }
 }
