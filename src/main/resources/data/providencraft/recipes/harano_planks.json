@@ -1,9 +1,20 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "providencraft:harano_log"
-    }
+    [
+      {
+        "item": "providencraft:harano_log"
+      },
+      {
+        "item": "providencraft:stripped_harano_log"
+      },
+      {
+        "item": "providencraft:harano_wood"
+      },
+      {
+        "item": "providencraft:stripped_harano_wood"
+      }
+    ]
   ],
   "result": {
     "item": "providencraft:harano_planks",

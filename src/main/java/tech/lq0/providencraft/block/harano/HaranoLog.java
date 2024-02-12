@@ -1,21 +1,32 @@
 package tech.lq0.providencraft.block.harano;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.init.BlockRegistry;
 
 import java.util.List;
 
 public class HaranoLog extends RotatedPillarBlock {
-    public HaranoLog(){
+    public HaranoLog() {
         super(Properties.of().strength(2.0F).mapColor(MapColor.TERRACOTTA_RED).sound(SoundType.WOOD));
     }
 
@@ -25,18 +36,19 @@ public class HaranoLog extends RotatedPillarBlock {
         pTooltip.add(Component.translatable("des.providencraft.harano_log").withStyle(ChatFormatting.GRAY));
     }
 
-//    @Override
-//    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-//        ItemStack stack = player.getHeldItem(handIn);
-//        if(stack.getItem() instanceof AxeItem) {
-//            worldIn.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
-//            if (!worldIn.isRemote) {
-//                worldIn.setBlockState(pos, BlockRegistry.STRIPPED_HARANO_LOG.get().getDefaultState()
-//                        .with(RotatedPillarBlock.AXIS, state.get(RotatedPillarBlock.AXIS)), 11);
-//                stack.damageItem(1, player, (player1) -> player1.sendBreakAnimation(handIn));
-//            }
-//            return ActionResultType.func_233537_a_(worldIn.isRemote);
-//        }
-//        return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
-//    }
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult pHit) {
+        ItemStack stack = player.getItemInHand(handIn);
+        if (stack.getItem() instanceof AxeItem) {
+            pLevel.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
+            if (!pLevel.isClientSide) {
+                pLevel.setBlock(pos, BlockRegistry.STRIPPED_HARANO_LOG.get().defaultBlockState()
+                        .setValue(RotatedPillarBlock.AXIS, pState.getValue(RotatedPillarBlock.AXIS)), 11);
+                stack.hurtAndBreak(1, player, (player1) -> player1.broadcastBreakEvent(handIn));
+            }
+            return InteractionResult.sidedSuccess(pLevel.isClientSide);
+        }
+
+        return super.use(pState, pLevel, pos, player, handIn, pHit);
+    }
 }
