@@ -18,8 +18,6 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.init.BlockRegistry;
 
@@ -30,7 +28,6 @@ public class HaranoLog extends RotatedPillarBlock {
         super(Properties.of().strength(2.0F).mapColor(MapColor.TERRACOTTA_RED).sound(SoundType.WOOD));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(Component.translatable("des.providencraft.harano_log").withStyle(ChatFormatting.GRAY));

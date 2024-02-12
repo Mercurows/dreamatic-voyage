@@ -214,6 +214,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(BlockRegistry.HARANO_SLAB);
         evenSimplerBlockItem(BlockRegistry.HARANO_STAIRS);
         evenSimplerBlockItem(BlockRegistry.HARANO_LOG);
+        fenceItem(BlockRegistry.HARANO_FENCE, BlockRegistry.HARANO_PLANKS);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

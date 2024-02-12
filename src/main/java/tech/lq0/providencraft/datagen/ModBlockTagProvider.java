@@ -33,7 +33,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.HARANO_LOG.get(),
                 BlockRegistry.HARANO_WOOD.get(), BlockRegistry.HARANO_SLAB.get(), BlockRegistry.HARANO_PLANKS.get(),
-                BlockRegistry.HARANO_STAIRS.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get());
+                BlockRegistry.HARANO_STAIRS.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get(),
+                BlockRegistry.HARANO_FENCE.get(), BlockRegistry.HARANO_FENCE_GATE.get(), BlockRegistry.HARANO_PRESSURE_PLATE.get());
 
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.UNI_MILLET_BLOCK.get());
 

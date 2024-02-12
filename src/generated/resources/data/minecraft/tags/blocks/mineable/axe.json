@@ -7,6 +7,9 @@
     "providencraft:harano_planks",
     "providencraft:harano_stairs",
     "providencraft:stripped_harano_log",
-    "providencraft:stripped_harano_wood"
+    "providencraft:stripped_harano_wood",
+    "providencraft:harano_fence",
+    "providencraft:harano_fence_gate",
+    "providencraft:harano_pressure_plate"
   ]
 }

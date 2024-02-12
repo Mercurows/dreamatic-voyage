@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-07T15:45:12.2557855	Item Models: providencraft
+// 1.20.1	2024-02-12T16:11:22.4055995	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 09e50d46cd21b6ff9757d1416978893df111a70c assets/providencraft/models/item/baked_name_tag.json
@@ -62,6 +62,7 @@ bb16fdc430973b8df6fcafd83b4756d037b1be9e assets/providencraft/models/item/haine_
 c5cb6db480eff346f072ae1d30e2be8bc79b26d3 assets/providencraft/models/item/haine_idol_boots.json
 35d56922f3e0fde56508a127e1e38d7f4e9d82ab assets/providencraft/models/item/haine_idol_chestplate.json
 690bc499058001b160975297b2da0d2f6bf6bc0f assets/providencraft/models/item/haine_idol_helmet.json
+9f1a83eb5dd7aa8c9fd094c79f6b444555da76b0 assets/providencraft/models/item/harano_fence.json
 3f8dfbad575fd47a85bbb7dad885833f0e196839 assets/providencraft/models/item/harano_log.json
 b10936e2dc52b203e1de48bf62ae3c9d0275ded1 assets/providencraft/models/item/harano_slab.json
 8053f628cb5ba3b1eca936bf686802a86a11305c assets/providencraft/models/item/harano_stairs.json
