@@ -43,5 +43,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.WOODEN_PRESSURE_PLATES).add(ItemRegistry.HARANO_PRESSURE_PLATE.get());
         this.tag(ItemTags.LEAVES).add(ItemRegistry.HARANO_LEAVES.get());
         this.tag(Tags.Items.SAND).add(ItemRegistry.BLUE_SAND.get());
+        ItemRegistry.AUDIO_ITEMS.getEntries().forEach(entry -> this.tag(ItemTags.MUSIC_DISCS).add(entry.get()));
+        this.tag(ItemTags.DOORS).add(ItemRegistry.HARANO_DOOR.get());
+        this.tag(ItemTags.WOODEN_DOORS).add(ItemRegistry.HARANO_DOOR.get());
+        this.tag(ItemTags.TRAPDOORS).add(ItemRegistry.HARANO_TRAPDOOR.get());
+        this.tag(ItemTags.WOODEN_TRAPDOORS).add(ItemRegistry.HARANO_TRAPDOOR.get());
+        this.tag(ItemTags.BUTTONS).add(ItemRegistry.HARANO_BUTTON.get());
+        this.tag(ItemTags.WOODEN_BUTTONS).add(ItemRegistry.HARANO_BUTTON.get());
     }
 }

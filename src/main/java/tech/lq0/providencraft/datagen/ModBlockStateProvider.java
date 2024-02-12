@@ -64,8 +64,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         logBlock((RotatedPillarBlock) BlockRegistry.STRIPPED_HARANO_LOG.get());
         axisBlock((RotatedPillarBlock) BlockRegistry.STRIPPED_HARANO_WOOD.get(), models().cubeColumn("stripped_harano_wood", new ResourceLocation(Utils.MOD_ID, "block/stripped_harano_log"), new ResourceLocation(Utils.MOD_ID, "block/stripped_harano_log")),
                 models().cubeColumn("stripped_harano_wood", new ResourceLocation(Utils.MOD_ID, "block/stripped_harano_log"), new ResourceLocation(Utils.MOD_ID, "block/stripped_harano_log")));
-        doorBlock((DoorBlock) BlockRegistry.HARANO_DOOR.get(), new ResourceLocation(Utils.MOD_ID, "block/harano_door_bottom"), new ResourceLocation(Utils.MOD_ID, "block/harano_door_top"));
-        trapdoorBlock((TrapDoorBlock) BlockRegistry.HARANO_TRAPDOOR.get(), new ResourceLocation(Utils.MOD_ID, "block/harano_trapdoor"), true);
+        doorBlockWithRenderType((DoorBlock) BlockRegistry.HARANO_DOOR.get(), new ResourceLocation(Utils.MOD_ID, "block/harano_door_bottom"), new ResourceLocation(Utils.MOD_ID, "block/harano_door_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) BlockRegistry.HARANO_TRAPDOOR.get(), new ResourceLocation(Utils.MOD_ID, "block/harano_trapdoor"), true, "cutout");
         buttonBlock((ButtonBlock) BlockRegistry.HARANO_BUTTON.get(), blockTexture(BlockRegistry.HARANO_PLANKS.get()));
     }
 

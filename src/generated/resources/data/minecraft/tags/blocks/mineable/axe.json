@@ -10,6 +10,9 @@
     "providencraft:stripped_harano_wood",
     "providencraft:harano_fence",
     "providencraft:harano_fence_gate",
-    "providencraft:harano_pressure_plate"
+    "providencraft:harano_pressure_plate",
+    "providencraft:harano_door",
+    "providencraft:harano_trapdoor",
+    "providencraft:harano_button"
   ]
 }
