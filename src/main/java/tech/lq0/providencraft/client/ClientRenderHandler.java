@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.client.render;
+package tech.lq0.providencraft.client;
 
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
@@ -6,6 +6,8 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import tech.lq0.providencraft.client.render.*;
+import tech.lq0.providencraft.client.render.curios.YeggyPearlRenderer;
 import tech.lq0.providencraft.init.BlockEntityRegistry;
 import tech.lq0.providencraft.init.EntityRegistry;
 import tech.lq0.providencraft.init.ItemRegistry;
@@ -31,6 +33,7 @@ public class ClientRenderHandler {
         CuriosRendererRegistry.register(ItemRegistry.LUNATIC_BOW.get(), LunaticBowRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.RED_NOSE.get(), RedNoseRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.CHIRAM_HAT.get(), ChiramHatRenderer::new);
+        CuriosRendererRegistry.register(ItemRegistry.YEGGY_PEARL.get(), YeggyPearlRenderer::new);
     }
 
     @SubscribeEvent

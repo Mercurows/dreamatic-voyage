@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 public class YeggyPearlModel extends HumanoidModel<LivingEntity> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Utils.MOD_ID, "yeggy_pearl_model"), "main");
-    private final ModelPart armorHead;
+    public final ModelPart armorHead;
 
     public YeggyPearlModel(ModelPart root) {
         super(root);
@@ -33,7 +33,7 @@ public class YeggyPearlModel extends HumanoidModel<LivingEntity> {
 
         PartDefinition armorHead = partdefinition.addOrReplaceChild("armorHead", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-        PartDefinition main = armorHead.addOrReplaceChild("main", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+        PartDefinition main = armorHead.addOrReplaceChild("main", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
         PartDefinition flower = main.addOrReplaceChild("flower", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
