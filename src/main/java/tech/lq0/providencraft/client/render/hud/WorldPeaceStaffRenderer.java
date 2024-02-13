@@ -18,7 +18,6 @@ import tech.lq0.providencraft.init.ItemRegistry;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT)
 public class WorldPeaceStaffRenderer {
-
     private static final ResourceLocation HUD = new ResourceLocation(Utils.MOD_ID, "textures/gui/world_peace_staff_hud.png");
 
     @SubscribeEvent
