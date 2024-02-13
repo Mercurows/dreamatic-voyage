@@ -21,7 +21,7 @@ public class EclipseNightRenderer {
 
     @SuppressWarnings("ConstantConditions")
     @SubscribeEvent(priority = EventPriority.NORMAL)
-    public static void onOverlayRender(RenderGuiEvent.Pre event) {
+    public static void onRenderGui(RenderGuiEvent.Pre event) {
         if (Minecraft.getInstance().player == null) {
             return;
         }

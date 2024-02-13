@@ -21,7 +21,7 @@ public class WorldPeaceStaffRenderer {
     private static final ResourceLocation HUD = new ResourceLocation(Utils.MOD_ID, "textures/gui/world_peace_staff_hud.png");
 
     @SubscribeEvent
-    public static void render(RenderGuiOverlayEvent.Post event) {
+    public static void onRenderGui(RenderGuiOverlayEvent.Pre event) {
         Player player = Minecraft.getInstance().player;
         if (player == null) return;
 
