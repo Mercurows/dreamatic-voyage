@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -28,6 +29,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class YeggyPearl extends Item implements ICurioItem {
@@ -88,6 +90,16 @@ public class YeggyPearl extends Item implements ICurioItem {
             res = 2.5f * x;
         }
         return 1.0f + res * 0.01f;
+    }
+
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        LivingEntity livingEntity = slotContext.entity();
+        AtomicBoolean flag = new AtomicBoolean(true);
+        CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(this).ifPresent(s -> flag.set(false)));
+        CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(ItemRegistry.LUNATIC_BOW.get()).ifPresent(s -> flag.set(false)));
+
+        return flag.get();
     }
 
     @SubscribeEvent

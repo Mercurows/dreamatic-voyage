@@ -91,6 +91,7 @@ public class LunaticBow extends Item implements ICurioItem {
         LivingEntity livingEntity = slotContext.entity();
         AtomicBoolean flag = new AtomicBoolean(true);
         CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(this).ifPresent(s -> flag.set(false)));
+        CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(ItemRegistry.YEGGY_PEARL.get()).ifPresent(s -> flag.set(false)));
 
         return flag.get();
     }
