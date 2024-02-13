@@ -27,7 +27,6 @@ public class MagicBookMyanna extends Item {
         super(new Properties().stacksTo(1));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.magic_book_myanna.func").withStyle(ChatFormatting.AQUA));

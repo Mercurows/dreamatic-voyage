@@ -9,8 +9,6 @@ import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.init.BlockRegistry;
 import tech.lq0.providencraft.tools.Livers;
@@ -26,7 +24,6 @@ public class UniMillet extends ItemNameBlockItem {
         super(BlockRegistry.UNI_MILLET_BLOCK.get(), new Properties().food(food));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.uni_millet").withStyle(ChatFormatting.GRAY));

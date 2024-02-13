@@ -8,8 +8,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import tech.lq0.providencraft.entity.projectile.CursedCatDollEntity;
 import tech.lq0.providencraft.tools.Livers;
@@ -57,7 +55,6 @@ public class CursedMarshaimallow extends Item {
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> tooltip, TooltipFlag pIsAdvanced) {
         tooltip.add((Component.translatable("des.providencraft.cursed_marshaimallow_1")).withStyle(ChatFormatting.GRAY));

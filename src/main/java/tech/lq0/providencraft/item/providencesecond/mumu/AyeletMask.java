@@ -46,7 +46,6 @@ public class AyeletMask extends ArmorItem {
         super(ArmorMaterials.LEATHER, Type.HELMET, new Properties().durability(515));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.ayelet_mask_1").withStyle(ChatFormatting.GRAY));

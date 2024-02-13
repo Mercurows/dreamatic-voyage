@@ -28,7 +28,6 @@ public class MagicBookThrow extends Item {
         super(new Properties().durability(242).rarity(Rarity.UNCOMMON));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.magic_book_throw_1").withStyle(ChatFormatting.GRAY));

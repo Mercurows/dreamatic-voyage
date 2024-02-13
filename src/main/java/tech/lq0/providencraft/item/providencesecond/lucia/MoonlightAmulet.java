@@ -37,7 +37,6 @@ public class MoonlightAmulet extends Item implements ICurioItem {
         super(new Properties().stacksTo(1));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.moonlight_amulet").withStyle(ChatFormatting.GRAY));

@@ -14,8 +14,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.capability.chaos.ChaosHelper;
 import tech.lq0.providencraft.init.EffectRegistry;
@@ -51,8 +49,6 @@ public class IsekaiLollipop extends Item {
         }
     }
 
-    //TODO 添加混沌值
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.isekai_lollipop_1").withStyle(ChatFormatting.GRAY));

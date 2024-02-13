@@ -46,7 +46,6 @@ public class ElectricHorn extends ArmorItem {
         super(ArmorMaterials.DIAMOND, Type.HELMET, new Properties().durability(1145));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.electric_horn.func").withStyle(ChatFormatting.AQUA));
