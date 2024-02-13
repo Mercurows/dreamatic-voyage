@@ -92,15 +92,13 @@ public class YeggyPearl extends Item implements ICurioItem {
 
     @SubscribeEvent
     public static void yeggyPearlEffect(LivingDamageEvent event) {
-        Entity source = event.getSource().getDirectEntity();
+        Entity source = event.getSource().getEntity();
         if (source instanceof Player player) {
             CuriosApi.getCuriosInventory(player).ifPresent(
                     c -> c.findFirstCurio(ItemRegistry.YEGGY_PEARL.get()).ifPresent(
                             slotResult -> {
                                 ItemStack stack = slotResult.stack();
                                 event.setAmount(event.getAmount() * getDamageTimes(getEnergy(stack)));
-//                                System.out.println("energy: " + getEnergy(stack));
-//                                System.out.println("times: " + getDamageTimes(getEnergy(stack)));
                                 setEnergy(stack, 0);
                             }
                     )
