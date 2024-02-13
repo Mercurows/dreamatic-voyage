@@ -250,6 +250,11 @@ public class AncientLollipop extends SwordItem {
                         public void tick(TickEvent.ServerTickEvent event) {
                             if (event.phase == TickEvent.Phase.END) {
                                 this.ticks++;
+
+                                if (!target.isAlive()) {
+                                    MinecraftForge.EVENT_BUS.unregister(this);
+                                }
+
                                 if (this.ticks >= this.waitTicks) {
                                     run();
                                 }
