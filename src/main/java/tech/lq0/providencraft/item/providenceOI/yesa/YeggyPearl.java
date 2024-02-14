@@ -12,6 +12,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
@@ -36,7 +37,7 @@ public class YeggyPearl extends Item implements ICurioItem {
     public static final String TAG_YEGGY_PEARL = "yeggy_energy";
 
     public YeggyPearl() {
-        super(new Properties().stacksTo(1));
+        super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
     @Override
