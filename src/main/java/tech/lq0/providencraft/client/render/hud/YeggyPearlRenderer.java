@@ -46,9 +46,7 @@ public class YeggyPearlRenderer {
                         RenderTool.preciseBlit(gui, HUD, left - 48, top + 20, 3, 0, 96, 27, 96, 96);
 
                         // 条
-                        //TODO 修复条的渲染
-                        RenderTool.preciseBlit(gui, HUD, left - 48, top + 35, 6f, 28.5f, (45f * energy / 80f) * 1.5f, 3, 96, 96);
-//                        gui.blit(HUD, left - 46, top + 22, 4.5f, 28.5f, (int) (45 * energy / 80f * 1.5f), 3, 96, 96);
+                        RenderTool.preciseBlit(gui, HUD, left - 46.5f, top + 32, 4.5f, 28.5f, 45 * energy / 80f * 1.5f, 3, 96, 96);
 
                         // 数字
                         int num1 = (int) times;
