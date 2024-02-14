@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.init.ItemRegistry;
 import tech.lq0.providencraft.item.providenceOI.yesa.YeggyPearl;
+import tech.lq0.providencraft.tools.RenderTool;
 import top.theillusivec4.curios.api.CuriosApi;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT)
@@ -41,30 +42,26 @@ public class YeggyPearlRenderer {
                         int energy = YeggyPearl.getEnergy(stack);
                         float times = YeggyPearl.getDamageTimes(energy);
 
-                        gui.pose().pushPose();
-                        gui.pose().scale(1.5f, 1.5f, 1.5f);
-                        gui.pose().translate(-64, -30, 0);
-
                         // 槽
-                        gui.blit(HUD, left - 44, top + 10, 0, 0, 60, 18, 64, 64);
+                        RenderTool.preciseBlit(gui, HUD, left - 48, top + 20, 3, 0, 96, 27, 96, 96);
 
                         // 条
-                        gui.blit(HUD, left - 43, top + 18, 1, 19, (int) (45 * energy / 80f), 2, 64, 64);
-
-                        gui.pose().popPose();
+                        //TODO 修复条的渲染
+                        RenderTool.preciseBlit(gui, HUD, left - 48, top + 35, 6f, 28.5f, (45f * energy / 80f) * 1.5f, 3, 96, 96);
+//                        gui.blit(HUD, left - 46, top + 22, 4.5f, 28.5f, (int) (45 * energy / 80f * 1.5f), 3, 96, 96);
 
                         // 数字
                         int num1 = (int) times;
                         int num2 = (int) (times * 10) % 10;
                         int num3 = (int) (times * 100) % 10;
 
-                        gui.blit(HUD, left - 40, top + 38, num1 * 4, 22, 3, 5, 64, 64);
-                        gui.blit(HUD, left - 34, top + 38, num2 * 4, 22, 3, 5, 64, 64);
-                        gui.blit(HUD, left - 30, top + 38, num3 * 4, 22, 3, 5, 64, 64);
+                        gui.blit(HUD, left - 44, top + 24, num1 * 4 + 4, 22, 3, 5, 64, 64);
+                        gui.blit(HUD, left - 38, top + 24, num2 * 4 + 4, 22, 3, 5, 64, 64);
+                        gui.blit(HUD, left - 34, top + 24, num3 * 4 + 4, 22, 3, 5, 64, 64);
 
                         // 点叉
-                        gui.blit(HUD, left - 36, top + 42, 0, 30, 1, 1, 64, 64);
-                        gui.blit(HUD, left - 26, top + 40, 10, 28, 3, 3, 64, 64);
+                        gui.blit(HUD, left - 40, top + 28, 8, 30, 1, 1, 64, 64);
+                        gui.blit(HUD, left - 30, top + 26, 18, 28, 3, 3, 64, 64);
 
                         gui.pose().popPose();
                     }
