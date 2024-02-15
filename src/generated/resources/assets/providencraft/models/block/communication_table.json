@@ -1,11 +1,8 @@
 {
-  "parent": "minecraft:block/cube",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "down": "providencraft:block/communication_table_underside",
-    "east": "providencraft:block/communication_table_side",
-    "north": "providencraft:block/communication_table_side",
-    "south": "providencraft:block/communication_table_side",
-    "up": "providencraft:block/communication_table_top",
-    "west": "providencraft:block/communication_table_side"
+    "bottom": "providencraft:block/communication_table_bottom",
+    "side": "providencraft:block/communication_table_side",
+    "top": "providencraft:block/communication_table_top"
   }
 }

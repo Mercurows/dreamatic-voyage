@@ -22,13 +22,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.RED_AHOGE_BLOCK);
         blockWithItem(BlockRegistry.WHITE_AHOGE_BLOCK);
         blockWithItem(BlockRegistry.FUKAMIZU_BREAD_BLOCK);
-        simpleBlockWithItem(BlockRegistry.COMMUNICATION_TABLE.get(), models().cube("communication_table",
-                new ResourceLocation(Utils.MOD_ID, "block/communication_table_underside"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_top"),
-                new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"),
-                new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_side")));
+        simpleBlockWithItem(BlockRegistry.COMMUNICATION_TABLE.get(), models().cubeBottomTop("communication_table", new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"),
+                new ResourceLocation(Utils.MOD_ID, "block/communication_table_bottom"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_top")));
         horizontalBlock(BlockRegistry.PORCELAIN_THRONE.get(), new ModelFile.UncheckedModelFile(modLoc("block/porcelain_throne")));
         simpleBlockWithItem(BlockRegistry.POINTS_STORE.get(), new ModelFile.UncheckedModelFile(modLoc("block/points_store")));
-
 
         blockWithItem(BlockRegistry.BLUE_SAND);
         simpleBlockWithItem(BlockRegistry.BLUE_SANDSTONE.get(), models().cubeBottomTop("blue_sandstone", new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone"),
