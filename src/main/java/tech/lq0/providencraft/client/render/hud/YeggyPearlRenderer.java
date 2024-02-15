@@ -37,7 +37,7 @@ public class YeggyPearlRenderer {
                         Minecraft.getInstance().getTextureManager().bindForSetup(HUD);
 
                         int left = gui.guiWidth() / 2;
-                        int top = gui.guiHeight() / 2;
+                        int top = gui.guiHeight() / 2 + 27;
 
                         int energy = YeggyPearl.getEnergy(stack);
                         float times = YeggyPearl.getDamageTimes(energy);
