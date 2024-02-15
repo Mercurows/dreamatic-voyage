@@ -20,8 +20,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.providencraft.block.entity.PointsStoreBlockEntity;
 import tech.lq0.providencraft.init.BlockEntityRegistry;
 import tech.lq0.providencraft.init.ItemRegistry;
@@ -34,7 +32,6 @@ public class PointsStore extends Block implements EntityBlock {
         super(BlockBehaviour.Properties.of().strength(3f).lightLevel(l -> 15));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @org.jetbrains.annotations.Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(Component.translatable("des.providencraft.points_store_1").withStyle(ChatFormatting.GRAY));

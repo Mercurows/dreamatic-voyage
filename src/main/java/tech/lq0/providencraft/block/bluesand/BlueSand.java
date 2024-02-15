@@ -12,8 +12,6 @@ import net.minecraft.world.level.block.SandBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.IPlantable;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,7 +22,6 @@ public class BlueSand extends SandBlock {
         super(6844335, BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SAND));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(Component.translatable("des.providencraft.blue_sand").withStyle(ChatFormatting.GRAY));

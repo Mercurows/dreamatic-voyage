@@ -20,8 +20,6 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.entity.SeatEntity;
 
@@ -51,7 +49,6 @@ public class PorcelainThrone extends Block {
         return Block.box(3, 0, 3, 13, 7, 13);
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @org.jetbrains.annotations.Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(Component.translatable("des.providencraft.porcelain_throne").withStyle(ChatFormatting.GRAY));

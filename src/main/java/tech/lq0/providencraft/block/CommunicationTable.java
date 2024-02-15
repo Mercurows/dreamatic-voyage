@@ -13,8 +13,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -40,7 +38,6 @@ public class CommunicationTable extends Block {
         return InteractionResult.SUCCESS;
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(Component.translatable("des.providencraft.communication_table_1").withStyle(ChatFormatting.GRAY));
