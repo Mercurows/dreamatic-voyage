@@ -11,14 +11,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.providencraft.capability.escort.IEscortCapability;
 import tech.lq0.providencraft.capability.ModCapabilities;
 import tech.lq0.providencraft.capability.escort.EscortCapabilityProvider;
+import tech.lq0.providencraft.capability.escort.IEscortCapability;
 import tech.lq0.providencraft.init.ItemRegistry;
 
 import java.util.List;
@@ -33,7 +31,6 @@ public class IdolCloth extends Item {
         this.energyCapacity = () -> 100.0;
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.idol_cloth").withStyle(ChatFormatting.GRAY));
