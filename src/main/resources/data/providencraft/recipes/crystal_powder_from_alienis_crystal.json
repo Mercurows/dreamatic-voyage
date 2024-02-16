@@ -5,11 +5,11 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:radiant_crystal"
+      "item": "providencraft:alienis_crystal"
     }
   },
   "result": {
     "item": "providencraft:crystal_powder",
-    "count": 2
+    "count": 6
   }
 }
