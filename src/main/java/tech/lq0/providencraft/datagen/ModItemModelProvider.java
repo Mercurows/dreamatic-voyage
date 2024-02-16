@@ -183,6 +183,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.SINK_CRYSTAL);
         simpleItem(ItemRegistry.ALIENIS_CRYSTAL);
         simpleItem(ItemRegistry.TERMINAL_CRYSTAL);
+        simpleItem(ItemRegistry.CRYSTAL_POWDER);
 
         //donate
         simpleItem(ItemRegistry.BAKED_NAME_TAG);

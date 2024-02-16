@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-13T00:20:46.1084362	Item Models: providencraft
+// 1.20.1	2024-02-16T21:14:08.0233622	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 09e50d46cd21b6ff9757d1416978893df111a70c assets/providencraft/models/item/baked_name_tag.json
@@ -27,6 +27,7 @@ c33613056cb6c955b51dcdc2903e1cb9fbe224b3 assets/providencraft/models/item/cloud_
 f0d0df68a07856b1d5b04d6e9c5c5d0097ede3b4 assets/providencraft/models/item/craft_beer_0322.json
 b80a02fa942b9d1eb18ad5646b3b0c4c00988dda assets/providencraft/models/item/crystal_ball.json
 d13acc8c5238727c4982910338f613a410f52dc6 assets/providencraft/models/item/crystal_horn.json
+485403957dee75dfb04e0775712b81fd679911b9 assets/providencraft/models/item/crystal_powder.json
 75fa86d96a6ba2534ad5b2ffaa8a51bd6569dfc9 assets/providencraft/models/item/cursed_marshaimallow.json
 41fb434f6f6ccb717404797ea8c70a178c98274b assets/providencraft/models/item/cut_blue_sandstone_slab.json
 c5e5da497d95e01eda8cd8c17cba4d6bd7909045 assets/providencraft/models/item/dark_crystal.json
