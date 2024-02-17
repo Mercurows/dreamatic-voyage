@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "  r",
-    "w g",
-    " wp"
+    "  g",
+    "w r",
+    "wwp"
   ],
   "key": {
     "r": {
@@ -13,7 +13,7 @@
       "item": "minecraft:pink_dye"
     },
     "g": {
-      "item": "minecraft:gold_ingot"
+      "item": "providencraft:harden_crystal_ingot"
     },
     "w": {
       "item": "minecraft:light_gray_wool"

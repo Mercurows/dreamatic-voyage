@@ -3,7 +3,7 @@
   "pattern": [
     " x ",
     "iai",
-    " i "
+    " c "
   ],
   "key": {
     "x": {
@@ -14,6 +14,9 @@
     },
     "i": {
       "item": "minecraft:iron_ingot"
+    },
+    "c": {
+      "item": "providencraft:harden_crystal_ingot"
     }
   },
   "result": {
