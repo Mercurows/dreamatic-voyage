@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.item.material;
+package tech.lq0.providencraft.item.material.crystal;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -11,13 +11,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class IllusoryCrystal extends Item {
-    public IllusoryCrystal() {
-        super(new Properties().rarity(Rarity.RARE));
+public class RadiantCrystal extends Item {
+    public RadiantCrystal() {
+        super(new Properties().rarity(Rarity.UNCOMMON));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.illusory_crystal").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.providencraft.radiant_crystal").withStyle(ChatFormatting.GRAY));
     }
 }

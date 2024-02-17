@@ -11,6 +11,7 @@ import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.item.donate.*;
 import tech.lq0.providencraft.item.legacy.*;
 import tech.lq0.providencraft.item.material.*;
+import tech.lq0.providencraft.item.material.crystal.*;
 import tech.lq0.providencraft.item.other.*;
 import tech.lq0.providencraft.item.providenceOI.ayu.GravityRestraintDevice;
 import tech.lq0.providencraft.item.providenceOI.ccelia.CraftBeer0322;
@@ -366,6 +367,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ALIENIS_CRYSTAL = ITEMS.register("alienis_crystal", AlienisCrystal::new);
     public static final RegistryObject<Item> TERMINAL_CRYSTAL = ITEMS.register("terminal_crystal", TerminalCrystal::new);
     public static final RegistryObject<Item> CRYSTAL_POWDER = ITEMS.register("crystal_powder", CrystalPowder::new);
+    public static final RegistryObject<Item> PURIFIED_CRYSTAL_POWDER = ITEMS.register("purified_crystal_powder", PurifiedCrystalPowder::new);
     public static final RegistryObject<Item> HARDEN_CRYSTAL_INGOT = ITEMS.register("harden_crystal_ingot", HardenCrystalIngot::new);
 
 

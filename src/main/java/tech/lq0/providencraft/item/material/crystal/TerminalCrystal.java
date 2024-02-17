@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.item.material;
+package tech.lq0.providencraft.item.material.crystal;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
