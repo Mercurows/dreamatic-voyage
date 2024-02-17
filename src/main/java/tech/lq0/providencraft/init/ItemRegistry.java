@@ -369,6 +369,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CRYSTAL_POWDER = ITEMS.register("crystal_powder", CrystalPowder::new);
     public static final RegistryObject<Item> PURIFIED_CRYSTAL_POWDER = ITEMS.register("purified_crystal_powder", PurifiedCrystalPowder::new);
     public static final RegistryObject<Item> HARDEN_CRYSTAL_INGOT = ITEMS.register("harden_crystal_ingot", HardenCrystalIngot::new);
+    public static final RegistryObject<Item> PURIFIED_CRYSTAL_INGOT = ITEMS.register("purified_crystal_ingot", PurifiedCrystalIngot::new);
 
 
     /**
