@@ -8,7 +8,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.providencraft.tools.TooltipTool;
 
 import java.util.List;
 
@@ -19,8 +18,6 @@ public class HardenCrystalIngot extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        TooltipTool.addDevelopingText(pTooltipComponents);
-
         pTooltipComponents.add(Component.translatable("des.providencraft.harden_crystal_ingot_1").withStyle(ChatFormatting.GRAY));
         if (!Screen.hasShiftDown()) {
             pTooltipComponents.add(Component.translatable("des.providencraft.harden_crystal_ingot_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
