@@ -62,9 +62,9 @@ public class CageRing extends Item implements ICurioItem {
                     ItemNBTTool.setInt(stack, TAG_STOP, 0);
                 }
 
-                double distance = player.getAttributeValue(ForgeMod.ENTITY_REACH.get()) * 2;
+                double distance = player.getAttributeValue(ForgeMod.ENTITY_REACH.get()) * 3;
                 player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(distance))
-                        .stream().filter(e -> e != player && !e.isAlliedTo(player) && e.distanceTo(player) <= distance).forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 2, false, false)));
+                        .stream().filter(e -> e != player && !e.isAlliedTo(player) && e.distanceTo(player) <= distance).forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 3, false, false)));
 
                 this.setTagPos(stack, pos);
 
