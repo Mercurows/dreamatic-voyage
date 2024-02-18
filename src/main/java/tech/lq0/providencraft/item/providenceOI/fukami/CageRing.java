@@ -4,7 +4,9 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,6 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
@@ -50,20 +53,28 @@ public class CageRing extends Item implements ICurioItem {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         LivingEntity livingEntity = slotContext.entity();
-        if (livingEntity instanceof Player player && !player.level().isClientSide) {
-            BlockPos pos = player.getOnPos();
-            boolean flag = comparePos(stack, pos);
-            if (flag) {
-                ItemNBTTool.setInt(stack, TAG_STOP, Math.min(40, ItemNBTTool.getInt(stack, TAG_STOP, 0) + 1));
-            } else {
-                ItemNBTTool.setInt(stack, TAG_STOP, 0);
+        if (livingEntity instanceof Player player) {
+            if (!player.level().isClientSide) {
+                BlockPos pos = player.getOnPos();
+                boolean flag = comparePos(stack, pos);
+                if (flag) {
+                    ItemNBTTool.setInt(stack, TAG_STOP, Math.min(40, ItemNBTTool.getInt(stack, TAG_STOP, 0) + 1));
+                } else {
+                    ItemNBTTool.setInt(stack, TAG_STOP, 0);
+                }
+
+                double distance = player.getAttributeValue(ForgeMod.ENTITY_REACH.get()) * 2;
+                player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(distance))
+                        .stream().filter(e -> e != player && e.isAlliedTo(player) && e.distanceTo(player) <= distance).forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 2, false, false)));
+
+                this.setTagPos(stack, pos);
+
+                if (slotContext.visible()) {
+                    if (player.tickCount % 5 == 0) {
+                        this.spawnCircleParticles(player, distance, (int) distance * 10);
+                    }
+                }
             }
-
-            double distance = player.getAttributeValue(ForgeMod.ENTITY_REACH.get());
-            player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(distance * 2))
-                    .stream().filter(e -> e != player && e.isAlliedTo(player) && e.distanceTo(player) <= distance).forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 1, false, false)));
-
-            this.setTagPos(stack, pos);
         }
         ICurioItem.super.curioTick(slotContext, stack);
     }
@@ -118,6 +129,23 @@ public class CageRing extends Item implements ICurioItem {
             return getTagPos(stack).equals(pos);
         } else {
             return false;
+        }
+    }
+
+    private void spawnCircleParticles(Player player, double radius, int count) {
+        ServerLevel level = (ServerLevel) player.level();
+        Vec3 playerPos = player.position();
+        double angleIncrement = 2 * Math.PI / count;
+
+        for (int i = 0; i < count; ++i) {
+            double angle = i * angleIncrement;
+            double offsetX = radius * Math.cos(angle);
+            double offsetZ = radius * Math.sin(angle);
+
+            double offsetY = player.getEyeHeight();
+
+            level.sendParticles(ParticleTypes.CRIMSON_SPORE, playerPos.x + offsetX, playerPos.y + offsetY, playerPos.z + offsetZ,
+                    1, 0, 0, 0, 0);
         }
     }
 }
