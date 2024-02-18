@@ -55,5 +55,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(ChiramHatModel.LAYER_LOCATION, ChiramHatModel::createBodyLayer);
         event.registerLayerDefinition(FluffBallModel.LAYER_LOCATION, FluffBallModel::createBodyLayer);
         event.registerLayerDefinition(YeggyPearlModel.LAYER_LOCATION, YeggyPearlModel::createBodyLayer);
+        event.registerLayerDefinition(HiruHeadModel.LAYER_LOCATION, HiruHeadModel::createBodyLayer);
     }
 }
