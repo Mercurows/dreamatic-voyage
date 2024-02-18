@@ -14,7 +14,7 @@ import java.util.List;
 
 public class PurifiedCrystalIngot extends Item {
     public PurifiedCrystalIngot() {
-        super(new Properties().rarity(Rarity.UNCOMMON));
+        super(new Properties().rarity(Rarity.RARE));
     }
 
     @Override

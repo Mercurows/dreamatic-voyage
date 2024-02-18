@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ChargedCrystalPowder extends Item {
     public ChargedCrystalPowder() {
-        super(new Properties().rarity(Rarity.RARE));
+        super(new Properties().rarity(Rarity.EPIC));
     }
 
     @Override
