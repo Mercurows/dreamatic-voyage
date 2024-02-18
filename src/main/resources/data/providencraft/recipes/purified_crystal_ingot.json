@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#p#",
+    "pPp",
+    "#p#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "p": {
+      "item": "providencraft:harden_crystal_ingot"
+    },
+    "P": {
+      "item": "providencraft:purified_crystal_powder"
+    }
+  },
+  "result": {
+    "item": "providencraft:purified_crystal_ingot",
+    "count": 1
+  }
+}
