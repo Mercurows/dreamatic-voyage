@@ -3,6 +3,7 @@ package tech.lq0.providencraft.item.providenceOI.fukami;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -16,7 +17,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
@@ -33,7 +33,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CageRing extends Item implements ICurioItem {
     public static final String TAG_STOP = "stopTime";
-    private Vec3 previousPos;
+    public static final String TAG_POS = "currentPos";
 
     public CageRing() {
         super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
@@ -51,13 +51,8 @@ public class CageRing extends Item implements ICurioItem {
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         LivingEntity livingEntity = slotContext.entity();
         if (livingEntity instanceof Player player && !player.level().isClientSide) {
-            Vec3 vec = player.getPosition(0.0f);
-            boolean flag = false;
-
-            if (previousPos != null) {
-                flag = previousPos.distanceTo(vec) < 0.01f;
-            }
-
+            BlockPos pos = player.getOnPos();
+            boolean flag = comparePos(stack, pos);
             if (flag) {
                 ItemNBTTool.setInt(stack, TAG_STOP, Math.min(40, ItemNBTTool.getInt(stack, TAG_STOP, 0) + 1));
             } else {
@@ -66,9 +61,9 @@ public class CageRing extends Item implements ICurioItem {
 
             double distance = player.getAttributeValue(ForgeMod.ENTITY_REACH.get());
             player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(distance * 2))
-                    .stream().filter(e -> e != player && e.isAlliedTo(player)).forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 1, false, false)));
+                    .stream().filter(e -> e != player && e.isAlliedTo(player) && e.distanceTo(player) <= distance).forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 1, false, false)));
 
-            previousPos = vec;
+            this.setTagPos(stack, pos);
         }
         ICurioItem.super.curioTick(slotContext, stack);
     }
@@ -97,5 +92,32 @@ public class CageRing extends Item implements ICurioItem {
         CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(this).ifPresent(s -> flag.set(false)));
 
         return flag.get();
+    }
+
+    private void setTagPos(ItemStack stack, BlockPos pos) {
+        int[] position = new int[]{pos.getX(), pos.getY(), pos.getZ()};
+        stack.getOrCreateTag().putIntArray(TAG_POS, position);
+    }
+
+    private BlockPos getTagPos(ItemStack stack) {
+        if (stack.hasTag()) {
+            assert stack.getTag() != null;
+            if (!stack.getTag().contains(TAG_POS)) {
+                return null;
+            }
+
+            int[] position = stack.getOrCreateTag().getIntArray(TAG_POS);
+            return new BlockPos(position[0], position[1], position[2]);
+        }
+
+        return null;
+    }
+
+    private boolean comparePos(ItemStack stack, BlockPos pos) {
+        if (getTagPos(stack) != null && pos != null) {
+            return getTagPos(stack).equals(pos);
+        } else {
+            return false;
+        }
     }
 }
