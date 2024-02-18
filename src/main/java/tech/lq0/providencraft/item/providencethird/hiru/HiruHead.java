@@ -41,7 +41,7 @@ import java.util.function.Consumer;
 
 public class HiruHead extends ArmorItem {
     public HiruHead() {
-        super(ArmorMaterials.LEATHER, Type.HELMET, new Properties().durability(913));
+        super(ArmorMaterials.LEATHER, Type.HELMET, new Properties().durability(913).setNoRepair());
     }
 
     @Override
@@ -83,6 +83,8 @@ public class HiruHead extends ArmorItem {
                     new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.1f, AttributeModifier.Operation.MULTIPLY_BASE));
             map.put(AttributeRegistry.CHAOS.get(),
                     new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 100.0f, AttributeModifier.Operation.ADDITION));
+            map.put(Attributes.ARMOR_TOUGHNESS,
+                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 1.0f, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }
