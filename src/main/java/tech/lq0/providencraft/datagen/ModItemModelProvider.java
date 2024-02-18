@@ -115,7 +115,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.GN_SPIRIT);
         simpleItem(ItemRegistry.GN_STAR);
 
+        simpleItem(ItemRegistry.REINA_WINGS);
+        simpleItem(ItemRegistry.REINA_FEATHER);
 
+        simpleItem(ItemRegistry.FOX_ICE_CREAM);
+        simpleItem(ItemRegistry.FOX_PUDDING);
 
         //oi
         simpleItem(ItemRegistry.MOMO_DAIFUKU);
@@ -228,6 +232,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.HARANO_DOOR);
         trapdoorItem(BlockRegistry.HARANO_TRAPDOOR);
         buttonItem(BlockRegistry.HARANO_BUTTON, BlockRegistry.HARANO_PLANKS);
+
+        //audio
+        simpleItem(ItemRegistry.MUSIC_DISC_DARAKUDATENSHI);
+        simpleItem(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL);
+        simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_QINGQIU);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
