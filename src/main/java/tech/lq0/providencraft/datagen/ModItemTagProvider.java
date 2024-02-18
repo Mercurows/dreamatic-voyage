@@ -51,5 +51,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.WOODEN_TRAPDOORS).add(ItemRegistry.HARANO_TRAPDOOR.get());
         this.tag(ItemTags.BUTTONS).add(ItemRegistry.HARANO_BUTTON.get());
         this.tag(ItemTags.WOODEN_BUTTONS).add(ItemRegistry.HARANO_BUTTON.get());
+        this.tag(ItemTags.PIGLIN_LOVED).add(ItemRegistry.CRYSTAL_POWDER.get(), ItemRegistry.PURIFIED_CRYSTAL_POWDER.get(), ItemRegistry.CHARGED_CRYSTAL_POWDER.get(),
+                ItemRegistry.HARDEN_CRYSTAL_INGOT.get(), ItemRegistry.PURIFIED_CRYSTAL_INGOT.get(), ItemRegistry.CHARGED_CRYSTAL_INGOT.get());
     }
 }
