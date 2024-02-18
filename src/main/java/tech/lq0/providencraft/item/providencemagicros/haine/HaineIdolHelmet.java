@@ -33,7 +33,6 @@ public class HaineIdolHelmet extends ArmorItem {
         super(ModArmorMaterial.IDOL_COSTUME, Type.HELMET, new Properties());
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.haine_idol_costume").withStyle(ChatFormatting.GRAY));
