@@ -64,7 +64,7 @@ public class CageRing extends Item implements ICurioItem {
 
                 double distance = player.getAttributeValue(ForgeMod.ENTITY_REACH.get()) * 2;
                 player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(distance))
-                        .stream().filter(e -> e != player && e.isAlliedTo(player) && e.distanceTo(player) <= distance).forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 2, false, false)));
+                        .stream().filter(e -> e != player && !e.isAlliedTo(player) && e.distanceTo(player) <= distance).forEach(entity -> entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 2, false, false)));
 
                 this.setTagPos(stack, pos);
 
@@ -143,7 +143,7 @@ public class CageRing extends Item implements ICurioItem {
 
             double offsetY = player.getEyeHeight();
 
-            level.sendParticles(ParticleTypes.REVERSE_PORTAL, playerPos.x + offsetX, playerPos.y + offsetY, playerPos.z + offsetZ,
+            level.sendParticles(ParticleTypes.PORTAL, playerPos.x + offsetX, playerPos.y + offsetY, playerPos.z + offsetZ,
                     1, 0, 0, 0, 0);
         }
     }
