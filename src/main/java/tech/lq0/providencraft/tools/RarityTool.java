@@ -32,7 +32,7 @@ public class RarityTool {
 
     public static final Rarity LEGENDARY = Rarity.create("providencraft_legendary", ChatFormatting.GOLD);
 
-    public static final Rarity DEEP_DARK =  Rarity.create("providencraft_deep_dark", s -> {
+    public static final Rarity APOCRYPHAL =  Rarity.create("providencraft_apocryphal", s -> {
         long time = System.currentTimeMillis();
         int step = (int) (time % 4000);
 

@@ -35,7 +35,7 @@ public class EscortToken extends Item implements ICurioItem {
     private final Supplier<Double> energyCapacity;
 
     public EscortToken() {
-        super(new Properties().stacksTo(1).rarity(RarityTool.DEEP_DARK));
+        super(new Properties().stacksTo(1).rarity(RarityTool.APOCRYPHAL));
 
         this.energyCapacity = () -> 100.0;
     }

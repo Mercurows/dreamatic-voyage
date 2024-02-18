@@ -14,13 +14,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.tools.RarityTool;
 import tech.lq0.providencraft.tools.TooltipTool;
 
 import java.util.List;
 
 public class LeahPad extends Item {
     public LeahPad() {
-        super(new Properties().durability(15).setNoRepair());
+        super(new Properties().durability(15).setNoRepair().rarity(RarityTool.DONATE));
     }
 
     @Override

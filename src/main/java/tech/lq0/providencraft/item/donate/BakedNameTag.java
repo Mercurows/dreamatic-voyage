@@ -10,6 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.tools.RarityTool;
 import tech.lq0.providencraft.tools.TooltipTool;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class BakedNameTag extends Item {
             .effect(() -> new MobEffectInstance(MobEffects.WITHER, 100, 0), 0.2f).build();
 
     public BakedNameTag() {
-        super(new Properties().food(food));
+        super(new Properties().food(food).rarity(RarityTool.DONATE));
     }
 
     @Override

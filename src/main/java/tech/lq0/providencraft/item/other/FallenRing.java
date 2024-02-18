@@ -35,7 +35,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class FallenRing extends Item implements ICurioItem {
     public FallenRing() {
-        super(new Properties().stacksTo(1).rarity(RarityTool.DEEP_DARK));
+        super(new Properties().stacksTo(1).rarity(RarityTool.APOCRYPHAL));
     }
 
     @Override

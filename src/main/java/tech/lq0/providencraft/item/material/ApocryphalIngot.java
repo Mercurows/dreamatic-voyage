@@ -1,4 +1,4 @@
-package tech.lq0.providencraft.item.material.crystal;
+package tech.lq0.providencraft.item.material;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -11,13 +11,13 @@ import tech.lq0.providencraft.tools.RarityTool;
 
 import java.util.List;
 
-public class DarkCrystal extends Item {
-    public DarkCrystal() {
+public class ApocryphalIngot extends Item {
+    public ApocryphalIngot() {
         super(new Properties().rarity(RarityTool.APOCRYPHAL));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.dark_crystal").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.providencraft.apocryphal_ingot").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
     }
 }
