@@ -44,8 +44,7 @@ public class CageRing extends Item implements ICurioItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.cage_ring_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.cage_ring_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.providencraft.cage_ring").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMI);
     }
@@ -70,7 +69,7 @@ public class CageRing extends Item implements ICurioItem {
                 this.setTagPos(stack, pos);
 
                 if (slotContext.visible()) {
-                    if (player.tickCount % 5 == 0) {
+                    if (player.tickCount % 10 == 0) {
                         this.spawnCircleParticles(player, distance, (int) distance * 10);
                     }
                 }
@@ -144,7 +143,7 @@ public class CageRing extends Item implements ICurioItem {
 
             double offsetY = player.getEyeHeight();
 
-            level.sendParticles(ParticleTypes.CRIMSON_SPORE, playerPos.x + offsetX, playerPos.y + offsetY, playerPos.z + offsetZ,
+            level.sendParticles(ParticleTypes.REVERSE_PORTAL, playerPos.x + offsetX, playerPos.y + offsetY, playerPos.z + offsetZ,
                     1, 0, 0, 0, 0);
         }
     }
