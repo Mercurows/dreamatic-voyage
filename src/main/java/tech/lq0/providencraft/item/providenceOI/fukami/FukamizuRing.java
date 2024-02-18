@@ -52,7 +52,6 @@ public class FukamizuRing extends Item {
         super(new Properties().stacksTo(1).durability(404).rarity(Rarity.EPIC));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.fukamizu_ring_1").withStyle(ChatFormatting.GRAY));

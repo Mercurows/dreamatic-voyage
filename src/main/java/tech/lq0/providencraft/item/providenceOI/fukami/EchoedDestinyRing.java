@@ -52,7 +52,6 @@ public class EchoedDestinyRing extends Item {
         super(new Properties().stacksTo(1).durability(404).rarity(RarityTool.LEGENDARY));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.providencraft.echoed_destiny_ring_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
