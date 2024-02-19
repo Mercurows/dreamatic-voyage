@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "providencraft:block/harden_crystal_block"
+  }
+}

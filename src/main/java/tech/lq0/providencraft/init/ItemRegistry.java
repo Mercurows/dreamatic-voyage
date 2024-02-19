@@ -530,6 +530,9 @@ public class ItemRegistry {
     public static final RegistryObject<Item> HARANO_BUTTON = BLOCK_ITEMS.register("harano_button",
             () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> HARDEN_CRYSTAL_BLOCK = BLOCK_ITEMS.register("harden_crystal_block",
+            () -> new BlockItem(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
+
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
         AUDIO_ITEMS.register(bus);

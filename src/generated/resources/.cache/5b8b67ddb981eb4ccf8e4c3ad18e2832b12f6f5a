@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-16T00:15:42.9643152	Block States: providencraft
+// 1.20.1	2024-02-19T15:46:09.0823174	Block States: providencraft
 13dd712abf12d255553d81e05bc388e9b3d6a5b5 assets/providencraft/blockstates/blue_sand.json
 ba591654e80992acf94364306c235e8b02a8fce4 assets/providencraft/blockstates/blue_sandstone.json
 3ce033ffea2948b8d3d05c2b965cbe5e704437fa assets/providencraft/blockstates/blue_sandstone_slab.json
@@ -22,6 +22,7 @@ aec9c01ddafe588331417c4b95e264e6bd5e5382 assets/providencraft/blockstates/harano
 472f0cd265c18bf330b6ad80cd8a9330600e9ca2 assets/providencraft/blockstates/harano_stairs.json
 801ba05976bc3291f3c1efe9a649d5b4ff153cf8 assets/providencraft/blockstates/harano_trapdoor.json
 5251541634bfdf4531689909db15974a9556de42 assets/providencraft/blockstates/harano_wood.json
+c36d2d0d2cfb417807153bf0371ecb48ba1e1a00 assets/providencraft/blockstates/harden_crystal_block.json
 b0c0b59143a1cf931665e62a2a942990abf0f8f6 assets/providencraft/blockstates/points_store.json
 7d0ed78fe683032af3d7a3391a0de224e6203c1a assets/providencraft/blockstates/porcelain_throne.json
 fca59eb435b0df11f18787d812c239bfcd8efad8 assets/providencraft/blockstates/red_ahoge_block.json
@@ -79,6 +80,7 @@ fee169b3a348cdecad709ab7d13dacc1bd770313 assets/providencraft/models/block/haran
 885538d093c0a83d4b7641da0683d771f55609f4 assets/providencraft/models/block/harano_trapdoor_open.json
 183d6997e2745a9ba5dfb5ead7de863deb43d7f3 assets/providencraft/models/block/harano_trapdoor_top.json
 725096bd88e88778835573b0891a91d5315de7f5 assets/providencraft/models/block/harano_wood.json
+5c1851abbf07923e120156e3061e149ce340283e assets/providencraft/models/block/harden_crystal_block.json
 5d9b258e283d04ee9405614ae8f30e5f24849d97 assets/providencraft/models/block/red_ahoge_block.json
 25984c7b50ba39ece37a64709f5e81105387ea40 assets/providencraft/models/block/smooth_blue_sandstone.json
 c3d1444d919093da69ed92d68e26cb6e0538c337 assets/providencraft/models/block/smooth_blue_sandstone_slab.json
@@ -98,6 +100,7 @@ a2b124dbacb267f126aae7628b8747119c066c04 assets/providencraft/models/item/blue_s
 09d6adafea65ec97855be37f9696ed4661b6084f assets/providencraft/models/item/fukamizu_bread_block.json
 1f7bb1943758ebb4d992e8851a7260a9fc8c6a22 assets/providencraft/models/item/harano_leaves.json
 198646c8ece1aff9f0271a0de79e44b3f6b02d34 assets/providencraft/models/item/harano_planks.json
+6318bc12136cbad4dd93310880ef69f4e539345d assets/providencraft/models/item/harden_crystal_block.json
 05fa490b391bb6a4dd8bef709cfaa053500c5f26 assets/providencraft/models/item/points_store.json
 1afcc3b1a38753224accffb533e300a9f84eb430 assets/providencraft/models/item/red_ahoge_block.json
 176fe7442d998ba81782ea0d8e2c4b3e9dd51ef8 assets/providencraft/models/item/smooth_blue_sandstone.json

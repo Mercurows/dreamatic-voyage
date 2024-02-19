@@ -61,6 +61,8 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         this.add(BlockRegistry.HARANO_DOOR.get(), block -> createDoorTable(BlockRegistry.HARANO_DOOR.get()));
         this.dropSelf(BlockRegistry.HARANO_TRAPDOOR.get());
         this.dropSelf(BlockRegistry.HARANO_BUTTON.get());
+
+        this.dropSelf(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());
     }
 
     @Override

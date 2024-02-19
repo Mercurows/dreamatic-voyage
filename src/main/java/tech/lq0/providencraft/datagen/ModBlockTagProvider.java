@@ -27,7 +27,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         BlockRegistry.CUT_BLUE_SANDSTONE.get(), BlockRegistry.CUT_BLUE_SANDSTONE_SLAB.get(),
                         BlockRegistry.SMOOTH_BLUE_SANDSTONE.get(), BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(),
                         BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(), BlockRegistry.BLUE_SANDSTONE_STAIRS.get(),
-                        BlockRegistry.BLUE_SANDSTONE_WALL.get(), BlockRegistry.CHISELED_BLUE_SANDSTONE.get());
+                        BlockRegistry.BLUE_SANDSTONE_WALL.get(), BlockRegistry.CHISELED_BLUE_SANDSTONE.get(),
+                        BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(BlockRegistry.BLUE_SAND.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.HARANO_LOG.get(),
                 BlockRegistry.HARANO_WOOD.get(), BlockRegistry.HARANO_SLAB.get(), BlockRegistry.HARANO_PLANKS.get(),
