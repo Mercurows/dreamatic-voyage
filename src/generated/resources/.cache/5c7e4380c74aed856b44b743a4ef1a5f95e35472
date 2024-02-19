@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-18T17:34:17.3651292	Item Models: providencraft
+// 1.20.1	2024-02-19T15:16:44.983129	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 09e50d46cd21b6ff9757d1416978893df111a70c assets/providencraft/models/item/baked_name_tag.json
@@ -40,6 +40,7 @@ adec62a0862a72e5ab54506cd879bc40a0610d65 assets/providencraft/models/item/ekira_
 c5442a740d92cd3d7fc66a81ff0b9d838f044485 assets/providencraft/models/item/ekira_idol_helmet.json
 f6c0f7d4c9240b90f1f6dabdaff029fbc700cef5 assets/providencraft/models/item/ekira_pearl.json
 7a4a38e4c2028d9723ccae93838ed2fe06789fc2 assets/providencraft/models/item/elf_wings.json
+7db63541c31817bc418db94e2239b1caf762fe63 assets/providencraft/models/item/emergency_engine_power.json
 52642656399e1f29c6200a2a697bcd938a12ff1e assets/providencraft/models/item/enchanted_crystal_ball.json
 0a39a7640a06aee8f6774c9a32303e9efaca7914 assets/providencraft/models/item/enchanted_unigiri.json
 494cba06ec48de7a45afd4a0f2e6ce4a8c84b54a assets/providencraft/models/item/escort_token.json
@@ -89,6 +90,8 @@ ca07ff04514da29215cd94495d650a5d4ff616f0 assets/providencraft/models/item/keroro
 553cf9586bfc6832a86a4fa316759b9d2713c67a assets/providencraft/models/item/large_lemon_tea.json
 c1e38c9b5cb7a30b3fdc67f0651c7edd1208518b assets/providencraft/models/item/lava_cake.json
 925b4d128826e8080b41527a2e997846072f1224 assets/providencraft/models/item/lemon_tea.json
+6156c47b660ccfe16fb470d9809ac14b2035b889 assets/providencraft/models/item/little_potato.json
+d974f8b95788f148d4ed3ef4770f7e32ce4d41ca assets/providencraft/models/item/lollipop.json
 afaa9cad2d159ad1beeb55a9ba36cd4ac965c166 assets/providencraft/models/item/lotus_potato.json
 163aa5919380a6f2b2290399d7e2b4599d7518f5 assets/providencraft/models/item/louistew.json
 b755376d3cd697ea5fc9a3e0df4452c131e6f8b5 assets/providencraft/models/item/lucia_rice_cake.json

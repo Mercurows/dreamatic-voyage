@@ -192,6 +192,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.HARDEN_CRYSTAL_INGOT);
 
         //donate
+        simpleItem(ItemRegistry.LITTLE_POTATO);
+        simpleItem(ItemRegistry.LOLLIPOP);
+        simpleItem(ItemRegistry.EMERGENCY_ENGINE_POWER);
         simpleItem(ItemRegistry.BAKED_NAME_TAG);
         simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN);
 
