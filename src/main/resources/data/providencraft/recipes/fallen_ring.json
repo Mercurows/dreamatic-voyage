@@ -2,15 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " x ",
-    "bab",
+    "xax",
     " x "
   ],
   "key": {
     "x": {
-      "item": "minecraft:netherite_ingot"
-    },
-    "b": {
-      "item": "minecraft:echo_shard"
+      "item": "providencraft:apocryphal_ingot"
     },
     "a": {
       "item": "providencraft:dark_crystal"

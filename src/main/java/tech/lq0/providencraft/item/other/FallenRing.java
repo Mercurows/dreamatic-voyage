@@ -93,8 +93,8 @@ public class FallenRing extends Item implements ICurioItem {
                     CuriosApi.getCuriosInventory(player).ifPresent(
                             c -> c.findFirstCurio(ItemRegistry.FALLEN_RING.get()).ifPresent(
                                     slotResult -> {
-                                        living.hurt(player.level().damageSources().sonicBoom(player), Math.min(living.getMaxHealth() * 0.1f, Math.max(ChaosHelper.getChaos(player), 0) * 0.65f));
-                                        player.getCooldowns().addCooldown(ItemRegistry.FALLEN_RING.get(), 80);
+                                        living.hurt(player.level().damageSources().sonicBoom(player), Math.min(living.getMaxHealth() * 0.25f, Math.max(ChaosHelper.getChaos(player), 0) * 1.25f));
+                                        player.getCooldowns().addCooldown(ItemRegistry.FALLEN_RING.get(), 60);
                                     }
                             )
                     );
