@@ -70,7 +70,7 @@ public class CageRing extends Item implements ICurioItem {
 
                 if (slotContext.visible()) {
                     if (player.tickCount % 10 == 0) {
-                        this.spawnCircleParticles(player, distance, (int) distance * 10);
+                        this.spawnCircleParticles(player, distance, (int) distance * 15);
                     }
                 }
             }
