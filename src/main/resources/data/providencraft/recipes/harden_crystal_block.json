@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "providencraft:harden_crystal_ingot"
+    }
+  },
+  "result": {
+    "item": "providencraft:harden_crystal_block",
+    "count": 1
+  }
+}

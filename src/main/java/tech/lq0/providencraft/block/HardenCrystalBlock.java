@@ -12,7 +12,7 @@ import java.util.List;
 
 public class HardenCrystalBlock extends Block {
     public HardenCrystalBlock() {
-        super(Properties.of().strength(3).requiresCorrectToolForDrops());
+        super(Properties.of().strength(5.0f, 3.0f).requiresCorrectToolForDrops());
     }
 
     @Override
