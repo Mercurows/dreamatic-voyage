@@ -231,7 +231,7 @@ public class ItemRegistry {
      **/
     //hiru
     public static final RegistryObject<Item> HIRU_HEAD = ITEMS.register("hiru_head", HiruHead::new);
-//    public static final RegistryObject<Item> HIRU_TENTACLES = ITEMS.register("hiru_tentacles", HiruTentacles::new);
+    //    public static final RegistryObject<Item> HIRU_TENTACLES = ITEMS.register("hiru_tentacles", HiruTentacles::new);
 //    public static final RegistryObject<Item> HIRENADE_GG = ITEMS.register("hirenade_gg", HirenadeGG::new);
 //    public static final RegistryObject<Item> SECONDARY_CATACLYSM = ITEMS.register("secondary_cataclysm", SecondaryCataclysm::new);
     public static final RegistryObject<Item> GN_SOUL = ITEMS.register("gn_souls", GNSouls::new);
@@ -430,11 +430,11 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> ATSUISHIO = DONATE_ITEMS.register("atsuishio", AtsuiShio::new);
     public static final RegistryObject<Item> EMPTY_JAR = DONATE_ITEMS.register("empty_jar", EmptyJar::new);
-    //    public static final RegistryObject<Item> LITTLE_POTATO = DONATE_ITEMS.register("little_potato", LittlePotato::new);
-//    public static final RegistryObject<Item> LOLLIPOP = DONATE_ITEMS.register("lollipop", Lollipop::new);
-//    public static final RegistryObject<Item> ORANGE_TRACKER = DONATE_ITEMS.register("orange_tracker", OrangeTracker::new);
+    public static final RegistryObject<Item> LITTLE_POTATO = DONATE_ITEMS.register("little_potato", LittlePotato::new);
+    public static final RegistryObject<Item> LOLLIPOP = DONATE_ITEMS.register("lollipop", Lollipop::new);
+    //    public static final RegistryObject<Item> ORANGE_TRACKER = DONATE_ITEMS.register("orange_tracker", OrangeTracker::new);
 //    public static final RegistryObject<Item> BLACK_EARPHONES = DONATE_ITEMS.register("black_earphones", BlackEarphones::new);
-//    public static final RegistryObject<Item> EMERGENCY_ENGINE_POWER = DONATE_ITEMS.register("emergency_engine_power", EmergencyEnginePower::new);
+    public static final RegistryObject<Item> EMERGENCY_ENGINE_POWER = DONATE_ITEMS.register("emergency_engine_power", EmergencyEnginePower::new);
     public static final RegistryObject<Item> MUSIC_DISC_SONG_OF_AUTUMN = DONATE_ITEMS.register("music_disc_song_of_autumn", MusicDiscSongOfAutumn::new);
     public static final RegistryObject<Item> BAKED_NAME_TAG = DONATE_ITEMS.register("baked_name_tag", BakedNameTag::new);
     public static final RegistryObject<Item> LEAH_PAD = DONATE_ITEMS.register("leah_pad", LeahPad::new);
