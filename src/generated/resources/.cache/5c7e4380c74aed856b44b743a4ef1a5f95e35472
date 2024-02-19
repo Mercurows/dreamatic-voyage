@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-19T15:16:44.983129	Item Models: providencraft
+// 1.20.1	2024-02-19T20:56:35.1116241	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 09e50d46cd21b6ff9757d1416978893df111a70c assets/providencraft/models/item/baked_name_tag.json
@@ -126,6 +126,8 @@ a87e0d70bb1891660812b88218ec46d3ccf53b8b assets/providencraft/models/item/pdc_po
 a34bedea7a1cf2e2325a14b8cc033b8817c8594c assets/providencraft/models/item/peach_beach.json
 38db7f3dbd7b60ac7818bf33e8c15ef73e526946 assets/providencraft/models/item/porcelain_throne.json
 d3286c02a3fd9ff5b158a728333fdff8afc4c258 assets/providencraft/models/item/premium_pdc_point.json
+fb62c4aea91dae6b058f5466caada30f0663f07a assets/providencraft/models/item/purified_crystal_ingot.json
+80fe0b105f65a96d5aea0035a454e12511c9a34d assets/providencraft/models/item/purified_crystal_powder.json
 6eace0e32f93f08ac3cc199d94069163ca366a10 assets/providencraft/models/item/rabbit_lychee.json
 2f4f21ce7d922c86b5817c817ed5e4b2103d8251 assets/providencraft/models/item/radiant_crystal.json
 d6830301426ecaa936a84e54f9e6a8d6271e0791 assets/providencraft/models/item/red_ahoge.json
