@@ -7,13 +7,13 @@
   ],
   "key": {
     "x": {
-      "item": "minecraft:white_wool"
+      "item": "minecraft:gold_block"
     },
     "a": {
       "item": "minecraft:totem_of_undying"
     },
     "g": {
-      "item": "minecraft:gold_ingot"
+      "item": "providencraft:purified_crystal_ingot"
     }
   },
   "result": {

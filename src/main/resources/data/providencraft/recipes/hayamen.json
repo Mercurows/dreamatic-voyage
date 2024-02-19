@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "aba",
+    "ebe",
     "cdc",
     "eee"
   ],
@@ -19,7 +19,7 @@
       "item": "minecraft:iron_door"
     },
     "e": {
-      "item": "minecraft:purpur_block"
+      "item": "providencraft:purified_crystal_ingot"
     }
   },
   "result": {

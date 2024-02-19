@@ -10,6 +10,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.tiers.ModItemTier;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
@@ -17,7 +18,7 @@ import java.util.List;
 
 public class BigSpoon extends SwordItem {
     public BigSpoon() {
-        super(Tiers.IRON, 8, -3.2f, new Item.Properties().durability(518));
+        super(ModItemTier.HARDEN_CRYSTAL, 8, -3.2f, new Item.Properties().durability(518));
     }
 
     @Override

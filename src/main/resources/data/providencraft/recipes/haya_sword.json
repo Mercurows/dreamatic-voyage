@@ -1,19 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " #n",
-    "in#",
-    "Qi "
+    "  n",
+    "Qn ",
+    "iQ "
   ],
   "key": {
-    "#": {
-      "item": "providencraft:sink_crystal"
-    },
     "n": {
-      "item": "minecraft:netherite_ingot"
+      "item": "providencraft:purified_crystal_ingot"
     },
     "i": {
-      "item": "minecraft:iron_ingot"
+      "item": "minecraft:stick"
     },
     "Q": {
       "item": "minecraft:quartz_block"

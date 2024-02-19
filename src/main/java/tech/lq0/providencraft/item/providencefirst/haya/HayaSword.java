@@ -24,6 +24,7 @@ import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.Utils;
 import tech.lq0.providencraft.init.ItemRegistry;
+import tech.lq0.providencraft.tiers.ModItemTier;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
@@ -33,7 +34,7 @@ import java.util.UUID;
 
 public class HayaSword extends SwordItem {
     public HayaSword() {
-        super(Tiers.NETHERITE, 4, -2.6f, new Properties().rarity(Rarity.EPIC));
+        super(ModItemTier.PURIFIED_CRYSTAL, 4, -2.6f, new Properties().rarity(Rarity.EPIC));
     }
 
     @Override

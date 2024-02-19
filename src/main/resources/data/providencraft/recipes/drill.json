@@ -7,7 +7,7 @@
   ],
   "key": {
     "n": {
-      "item": "minecraft:netherite_ingot"
+      "item": "providencraft:purified_crystal_ingot"
     },
     "a": {
       "item": "minecraft:iron_ingot"
@@ -16,7 +16,7 @@
       "item": "minecraft:piston"
     },
     "d": {
-      "item": "minecraft:diamond"
+      "item": "minecraft:redstone"
     }
   },
   "result": {

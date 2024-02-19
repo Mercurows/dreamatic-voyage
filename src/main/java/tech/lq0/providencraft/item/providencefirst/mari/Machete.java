@@ -7,11 +7,11 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.providencraft.init.EffectRegistry;
+import tech.lq0.providencraft.tiers.ModItemTier;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
 
@@ -19,7 +19,7 @@ import java.util.List;
 
 public class Machete extends SwordItem {
     public Machete() {
-        super(Tiers.NETHERITE, 5, -2.8f, new Properties().durability(1659));
+        super(ModItemTier.PURIFIED_CRYSTAL, 5, -2.8f, new Properties().durability(1659));
     }
 
     @Override
