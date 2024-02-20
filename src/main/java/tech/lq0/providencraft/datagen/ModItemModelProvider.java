@@ -110,6 +110,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //3rd
         simpleItem(ItemRegistry.HIRU_HEAD);
+        simpleItem(ItemRegistry.HIRENADE_GG);
 
         simpleItem(ItemRegistry.GN_SOUL);
         simpleItem(ItemRegistry.GN_SPIRIT);

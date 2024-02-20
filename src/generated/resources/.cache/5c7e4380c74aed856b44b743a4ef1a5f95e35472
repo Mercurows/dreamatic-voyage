@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-19T20:56:35.1116241	Item Models: providencraft
+// 1.20.1	2024-02-20T21:10:11.4990104	Item Models: providencraft
 af696168094301407848d76dc2f7744a4a36b842 assets/providencraft/models/item/alienis_crystal.json
 24a2ca997605ff6d2a28bbab120e0c55460943d7 assets/providencraft/models/item/ayelet_mask.json
 09e50d46cd21b6ff9757d1416978893df111a70c assets/providencraft/models/item/baked_name_tag.json
@@ -77,6 +77,7 @@ b10936e2dc52b203e1de48bf62ae3c9d0275ded1 assets/providencraft/models/item/harano
 151b874115f9d01dced597f70fd433f9fb53d279 assets/providencraft/models/item/harano_trapdoor.json
 640773bbb0ba9c9f9cebb3ba7fe66776cd0ca887 assets/providencraft/models/item/harano_wood.json
 72ab7a3023bf4d85b43ba4c9013f64092091e9c8 assets/providencraft/models/item/harden_crystal_ingot.json
+15463821ff2e815e298f9479cd591aad581e9db6 assets/providencraft/models/item/hirenade_gg.json
 522d37066f4a9dc60787a85cc459015db26dd829 assets/providencraft/models/item/hiru_head.json
 5fe99632a0cfbdf226f7625c6805458af3237326 assets/providencraft/models/item/idol_cloth.json
 8620aeb39204cd07e5f037edf100b69f5d3bcf2a assets/providencraft/models/item/illusory_crystal.json

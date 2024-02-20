@@ -69,10 +69,7 @@ import tech.lq0.providencraft.item.providencesecond.lucia.MoonlightAmulet;
 import tech.lq0.providencraft.item.providencesecond.mumu.AyeletMask;
 import tech.lq0.providencraft.item.providencesecond.mumu.MumuSteak;
 import tech.lq0.providencraft.item.providencesecond.satou.*;
-import tech.lq0.providencraft.item.providencethird.hiru.GNSouls;
-import tech.lq0.providencraft.item.providencethird.hiru.GNSpirit;
-import tech.lq0.providencraft.item.providencethird.hiru.GNStar;
-import tech.lq0.providencraft.item.providencethird.hiru.HiruHead;
+import tech.lq0.providencraft.item.providencethird.hiru.*;
 import tech.lq0.providencraft.item.providencethird.leciel.ReinaFeather;
 import tech.lq0.providencraft.item.providencethird.leciel.ReinaWings;
 import tech.lq0.providencraft.item.providencethird.yuki.FoxIceCream;
@@ -232,7 +229,7 @@ public class ItemRegistry {
     //hiru
     public static final RegistryObject<Item> HIRU_HEAD = ITEMS.register("hiru_head", HiruHead::new);
     //    public static final RegistryObject<Item> HIRU_TENTACLES = ITEMS.register("hiru_tentacles", HiruTentacles::new);
-//    public static final RegistryObject<Item> HIRENADE_GG = ITEMS.register("hirenade_gg", HirenadeGG::new);
+    public static final RegistryObject<Item> HIRENADE_GG = ITEMS.register("hirenade_gg", HirenadeGG::new);
 //    public static final RegistryObject<Item> SECONDARY_CATACLYSM = ITEMS.register("secondary_cataclysm", SecondaryCataclysm::new);
     public static final RegistryObject<Item> GN_SOUL = ITEMS.register("gn_souls", GNSouls::new);
     public static final RegistryObject<Item> GN_SPIRIT = ITEMS.register("gn_spirit", GNSpirit::new);
