@@ -1,0 +1,37 @@
+{
+  "type": "providencraft:add_item",
+  "conditions": [
+    {
+      "condition": "any_of",
+      "terms": [
+        {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "forge:loot_table_id",
+              "loot_table_id": "minecraft:entities/endermite"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ]
+        },
+        {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "forge:loot_table_id",
+              "loot_table_id": "minecraft:entities/enderman"
+            },
+            {
+              "condition": "minecraft:random_chance_with_looting",
+              "chance": 0.03,
+              "looting_multiplier": 0.01
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "item": "providencraft:alienis_crystal"
+}
