@@ -252,7 +252,7 @@
   "effect.providencraft.overload": "Overload",
   "death.attack.overload": "%1$s has been overloaded",
   "death.attack.overload.entity": "%1$s has been overloaded when fleeing from %2$s",
-  "entity.providencraft.plunger_entity": "Plunger",
+  "entity.providencraft.plunger": "Plunger",
   "item.providencraft.daifuku_syrup": "Daifuku Syrup",
   "des.providencraft.daifuku_syrup_1": "It's time for daifuku to sacrifice to protect Shirako!",
   "des.providencraft.daifuku_syrup_2": "Launch itself as an missile",

@@ -252,7 +252,7 @@
   "effect.providencraft.overload": "过载",
   "death.attack.overload": "%1$s的身体过载了",
   "death.attack.overload.entity": "%1$s在逃离%2$s时过载了",
-  "entity.providencraft.plunger_entity": "马桶搋子",
+  "entity.providencraft.plunger": "马桶搋子",
   "item.providencraft.daifuku_syrup": "大福糖浆",
   "des.providencraft.daifuku_syrup_1": "桃大福献身保护毛毛的时候到了！",
   "des.providencraft.daifuku_syrup_2": "将自身作为弹药发射出去",

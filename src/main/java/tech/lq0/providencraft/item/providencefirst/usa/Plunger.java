@@ -15,6 +15,7 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.providencraft.entity.projectile.PlungerEntity;
 import tech.lq0.providencraft.tiers.ModItemTier;
 import tech.lq0.providencraft.tools.Livers;
 import tech.lq0.providencraft.tools.TooltipTool;
@@ -40,12 +41,12 @@ public class Plunger extends SwordItem {
 
         if (!pLevel.isClientSide) {
             //TODO 添加KRM特判
-//            PlungerEntity plungerEntity = new PlungerEntity(worldIn, playerIn);
-//            plungerEntity.func_234612_a_(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0f, 4.0f, 0.2f);
-//            pLevel.addFreshEntity(plungerEntity);
+            PlungerEntity plungerEntity = new PlungerEntity(pLevel, pPlayer);
+            plungerEntity.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0f, 4.0f, 0.1f);
+            pLevel.addFreshEntity(plungerEntity);
 
             stack.hurtAndBreak(1, pPlayer, (p) -> p.broadcastBreakEvent(pUsedHand));
-            pPlayer.getCooldowns().addCooldown(this, 10);
+            pPlayer.getCooldowns().addCooldown(this, 5);
         }
 
         return InteractionResultHolder.success(stack);

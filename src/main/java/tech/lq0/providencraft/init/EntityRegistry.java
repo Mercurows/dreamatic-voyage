@@ -16,9 +16,9 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<AhogeBoomerangEntity>> AHOGE_BOOMERANG_ENTITY =
             ENTITY_TYPES.register("ahoge_boomerang",
                     () -> EntityType.Builder.<AhogeBoomerangEntity>of(AhogeBoomerangEntity::new, MobCategory.MISC).sized(0.8f, 0.3f).build("ahoge_boomerang"));
-    //    public static final RegistryObject<EntityType<PlungerEntity>> PLUNGER_ENTITY =
-//            ENTITY_TYPES.register("plunger_entity",
-//                    () -> EntityType.Builder.<PlungerEntity>create(PlungerEntity::new, EntityClassification.MISC).size(0.3f, 0.3f).build("plunger_entity"));
+    public static final RegistryObject<EntityType<PlungerEntity>> PLUNGER_ENTITY =
+            ENTITY_TYPES.register("plunger",
+                    () -> EntityType.Builder.<PlungerEntity>of(PlungerEntity::new, MobCategory.MISC).sized(0.3f, 0.3f).build("plunger"));
     public static final RegistryObject<EntityType<SeatEntity>> SEAT_ENTITY =
             ENTITY_TYPES.register("seat_entity",
                     () -> EntityType.Builder.<SeatEntity>of((type, level) -> new SeatEntity(level),
