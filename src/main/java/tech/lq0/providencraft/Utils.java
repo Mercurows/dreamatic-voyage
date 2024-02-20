@@ -20,6 +20,7 @@ import tech.lq0.providencraft.loot.ModLootTables;
 public class Utils {
 
     public static final String MOD_ID = "providencraft";
+//    public static final String MOD_ID = "voyaprocrypha";
 
     public static final String PDC_ATTRIBUTE_MODIFIER = "pdc_attribute_modifier";
 
