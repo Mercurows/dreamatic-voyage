@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-19T15:46:09.080318	Loot Tables
+// 1.20.1	2024-02-20T15:53:35.9451918	Loot Tables
 782f77b88e85816a3067eeb62f33674025338b37 data/providencraft/loot_tables/blocks/blue_sand.json
 6770b8ceafaeeda26fa6004c6756e9d4bdb4704c data/providencraft/loot_tables/blocks/blue_sandstone.json
 ba6e24987061c42bb57256568ff64f173d70fc44 data/providencraft/loot_tables/blocks/blue_sandstone_slab.json
@@ -26,6 +26,7 @@ bd76cafba43f79a1d706efd4e04bda820b510c01 data/providencraft/loot_tables/blocks/h
 a35bc4e2b98c24f1d5fd3c72f59438eae4d00c55 data/providencraft/loot_tables/blocks/jellyfish_bottle.json
 c48774a35caa8fec2462206b9961afd075d43c4e data/providencraft/loot_tables/blocks/points_store.json
 2878989a06894288d02cf95c42d0d304c1a12a85 data/providencraft/loot_tables/blocks/porcelain_throne.json
+cf7158745489dd1bb5af08942c06f4b1cee73e8e data/providencraft/loot_tables/blocks/purified_crystal_block.json
 c40bab1fbcd6b33cdf32eaff7d2724112ef6bc5e data/providencraft/loot_tables/blocks/red_ahoge_block.json
 ed8e990352141f4ae83fc03dbbbe070766776468 data/providencraft/loot_tables/blocks/smooth_blue_sandstone.json
 0c1944dacff7a44e1f9b55af3c1e0285aa8784e3 data/providencraft/loot_tables/blocks/smooth_blue_sandstone_slab.json

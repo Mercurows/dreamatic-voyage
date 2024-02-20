@@ -54,4 +54,5 @@ public class BlockRegistry {
 
     //Crystal Series
     public static final RegistryObject<Block> HARDEN_CRYSTAL_BLOCK = BLOCKS.register("harden_crystal_block", HardenCrystalBlock::new);
+    public static final RegistryObject<Block> PURIFIED_CRYSTAL_BLOCK = BLOCKS.register("purified_crystal_block", PurifiedCrystalBlock::new);
 }

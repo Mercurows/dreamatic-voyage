@@ -532,6 +532,8 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> HARDEN_CRYSTAL_BLOCK = BLOCK_ITEMS.register("harden_crystal_block",
             () -> new BlockItem(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> PURIFIED_CRYSTAL_BLOCK = BLOCK_ITEMS.register("purified_crystal_block",
+            () -> new BlockItem(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.RARE)));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

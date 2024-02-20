@@ -65,6 +65,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         trapdoorBlockWithRenderType((TrapDoorBlock) BlockRegistry.HARANO_TRAPDOOR.get(), new ResourceLocation(Utils.MOD_ID, "block/harano_trapdoor"), true, "cutout");
         buttonBlock((ButtonBlock) BlockRegistry.HARANO_BUTTON.get(), blockTexture(BlockRegistry.HARANO_PLANKS.get()));
         blockWithItem(BlockRegistry.HARDEN_CRYSTAL_BLOCK);
+        blockWithItem(BlockRegistry.PURIFIED_CRYSTAL_BLOCK);
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

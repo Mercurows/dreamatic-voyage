@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-19T16:05:29.3042798	Tags for minecraft:block mod id providencraft
+// 1.20.1	2024-02-20T15:58:27.0430009	Tags for minecraft:block mod id providencraft
 bc9c4d524134f45d47a20e759f007d3e2309d1bf data/forge/tags/blocks/sand.json
 fca08b09e645cb50cebc86f69a0461a035e3723c data/forge/tags/blocks/sandstone.json
 f90f69302343a6f08e6d1da1863f40bc851391a2 data/minecraft/tags/blocks/bee_growables.json
@@ -12,8 +12,10 @@ b31c32dadc554595b36c1a1716ddd099bc657e14 data/minecraft/tags/blocks/leaves.json
 163855e79ae781d1cf6de6e60e58d47c73e3674f data/minecraft/tags/blocks/logs_that_burn.json
 a760531934dbf873c8e679106d8ca38ffd4e197c data/minecraft/tags/blocks/mineable/axe.json
 96e8c599dfb0416a22292e2d942801d9d64e690e data/minecraft/tags/blocks/mineable/hoe.json
-71b59eeccf91cfb97b62df8d74f5bb8719063ab1 data/minecraft/tags/blocks/mineable/pickaxe.json
+7157442c645be7db1e5c79f336c74fcb03ca60a6 data/minecraft/tags/blocks/mineable/pickaxe.json
 bc9c4d524134f45d47a20e759f007d3e2309d1bf data/minecraft/tags/blocks/mineable/shovel.json
+2b191af027793d2123d8bbea6776738b119da052 data/minecraft/tags/blocks/needs_iron_tool.json
+90b2007edf66757022ca042e8b6023bd58e7b26e data/minecraft/tags/blocks/needs_stone_tool.json
 c7df84dca3b10ab8eaa4578a997c3f3c0154d410 data/minecraft/tags/blocks/planks.json
 0132980fb4f7f753741937d66c1d8e9dd3c4e66b data/minecraft/tags/blocks/pressure_plates.json
 bc9c4d524134f45d47a20e759f007d3e2309d1bf data/minecraft/tags/blocks/sand.json
