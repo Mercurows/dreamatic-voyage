@@ -56,5 +56,6 @@ public class ModelRegistry {
         event.registerLayerDefinition(FluffBallModel.LAYER_LOCATION, FluffBallModel::createBodyLayer);
         event.registerLayerDefinition(YeggyPearlModel.LAYER_LOCATION, YeggyPearlModel::createBodyLayer);
         event.registerLayerDefinition(HiruHeadModel.LAYER_LOCATION, HiruHeadModel::createBodyLayer);
+        event.registerLayerDefinition(PlungerModel.LAYER_LOCATION, PlungerModel::createBodyLayer);
     }
 }

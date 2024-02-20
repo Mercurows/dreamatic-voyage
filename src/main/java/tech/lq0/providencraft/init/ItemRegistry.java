@@ -113,7 +113,7 @@ public class ItemRegistry {
     //niina
     public static final RegistryObject<Item> BANANA_MILK = ITEMS.register("banana_milk", BananaMilk::new);
     //    public static final RegistryObject<Item> BLUE_SMALL_BALL = ITEMS.register("blue_small_ball", BlueSmallBall::new);
-//
+
     //usa
 //    public static final RegistryObject<Item> PLUNGER = ITEMS.register("plunger", Plunger::new);
 //    public static final RegistryObject<Item> KURUMI_BOOMERANG = ITEMS.register("kurumi_boomerang", KurumiBoomerang::new);
