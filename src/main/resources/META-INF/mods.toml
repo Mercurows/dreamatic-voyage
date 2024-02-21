@@ -15,11 +15,11 @@ license = "${mod_license}"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId = "providencraft" #mandatory
+modId = "dreamaticvoyage" #mandatory
 # The version number of the mod
 version = "${mod_version}" #mandatory
 # A display name for the mod
-displayName = "Providencraft" #mandatory
+displayName = "Dreamatic Voyage" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -43,7 +43,7 @@ description = '''
 虚拟主播主题Minecraft Mod, 希望我们还能再次相遇
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.providencraft]] #optional
+[[dependencies.dreamaticvoyage]] #optional
 # the modid of the dependency
 modId = "forge" #mandatory
 # Does this dependency have to exist - if not, ordering below must be specified
@@ -56,20 +56,20 @@ versionRange = "${forge_version_range}" #mandatory
 ordering = "NONE"
 # Side this dependency is applied on - BOTH, CLIENT, or SERVER
 side = "BOTH"# Here's another dependency
-[[dependencies.providencraft]]
+[[dependencies.dreamaticvoyage]]
 modId = "minecraft"
 mandatory = true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
-[[dependencies.providencraft]]
+[[dependencies.dreamaticvoyage]]
 modId = "curios"
 mandatory = true
 versionRange = "[5.4.0,)"
 ordering = "NONE"
 side = "BOTH"
-[[dependencies.providencraft]]
+[[dependencies.dreamaticvoyage]]
 modId = "terrablender"
 mandatory = true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version

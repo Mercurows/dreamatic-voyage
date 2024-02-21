@@ -1,0 +1,98 @@
+{
+  "myanna": {
+    "subtitle": "subtitle.dreamaticvoyage.call_myanna",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:myanna"
+      }
+    ]
+  },
+  "haiplate": {
+    "subtitle": "subtitle.dreamaticvoyage.haiplate_invoke",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:haiplate",
+        "stream": true
+      }
+    ]
+  },
+  "keroro_sneeze": {
+    "subtitle": "subtitle.dreamaticvoyage.keroro_sneeze",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:keroro_sneeze"
+      }
+    ]
+  },
+  "blade": {
+    "subtitle": "subtitle.dreamaticvoyage.blade",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:blade"
+      }
+    ]
+  },
+  "baby_meow": {
+    "subtitle": "subtitle.dreamaticvoyage.baby_meow",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:baby_meow",
+        "stream": true
+      }
+    ]
+  },
+  "shutter": {
+    "subtitle": "subtitle.dreamaticvoyage.shutter",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:shutter"
+      }
+    ]
+  },
+  "song/darakudatenshi": {
+    "subtitle": "subtitle.dreamaticvoyage.darakudatenshi",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:song/darakudatenshi",
+        "stream": true
+      }
+    ]
+  },
+  "blood_crystal": {
+    "subtitle": "subtitle.dreamaticvoyage.blood_crystal",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:blood_crystal"
+      }
+    ]
+  },
+  "song/around_the_travel": {
+    "subtitle": "subtitle.dreamaticvoyage.around_the_travel",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:song/around_the_travel",
+        "stream": true
+      }
+    ]
+  },
+  "song/song_of_qingqiu": {
+    "subtitle": "subtitle.dreamaticvoyage.song_of_qingqiu",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:song/song_of_qingqiu",
+        "volume": 0.7,
+        "stream": true
+      }
+    ]
+  },
+  "song/song_of_autumn": {
+    "subtitle": "subtitle.dreamaticvoyage.song_of_autumn",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:song/song_of_autumn",
+        "volume": 0.8,
+        "stream": true
+      }
+    ]
+  }
+}
