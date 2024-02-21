@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "dreamaticvoyage:block/harano_log_top",
+    "side": "dreamaticvoyage:block/harano_log"
+  }
+}

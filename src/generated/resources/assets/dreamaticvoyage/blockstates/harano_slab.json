@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dreamaticvoyage:block/harano_slab"
+    },
+    "type=double": {
+      "model": "dreamaticvoyage:block/harano_planks"
+    },
+    "type=top": {
+      "model": "dreamaticvoyage:block/harano_slab_top"
+    }
+  }
+}

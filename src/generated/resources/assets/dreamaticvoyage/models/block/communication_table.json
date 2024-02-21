@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "dreamaticvoyage:block/communication_table_bottom",
+    "side": "dreamaticvoyage:block/communication_table_side",
+    "top": "dreamaticvoyage:block/communication_table_top"
+  }
+}

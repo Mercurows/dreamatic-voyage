@@ -1,0 +1,24 @@
+// 1.20.1	2024-02-21T15:04:43.0095774	Tags for minecraft:item mod id dreamaticvoyage
+231a202bbd648d2359364967567e6fd0a2e8d772 data/forge/tags/items/sand.json
+aed3ef6f2929a8f19592b8a5c21ca16d3214d7bb data/forge/tags/items/sandstone.json
+4cebf103bfadc4376bc4e03429266d8d8d0aba80 data/minecraft/tags/items/buttons.json
+0403b6516098875b66dcd7f02f9b5c65c27b4b3e data/minecraft/tags/items/doors.json
+290a3581d9ff9a54a2195ee38eb75e02deb07621 data/minecraft/tags/items/fences.json
+235242cdfbbea10eb261b7905775ebe74834ad3c data/minecraft/tags/items/fence_gates.json
+5b517182fdcd8f7d7bbda9adda2a7f99d1f5db99 data/minecraft/tags/items/leaves.json
+67aac4fb0c966d8e762b84688bec9fb61bdd4111 data/minecraft/tags/items/logs.json
+67aac4fb0c966d8e762b84688bec9fb61bdd4111 data/minecraft/tags/items/logs_that_burn.json
+8f907571ea8cb0b8ebf50ef5f2a7a85b18e12945 data/minecraft/tags/items/music_discs.json
+147df96e9f75e69e4d365880d2473ac60d43f7f9 data/minecraft/tags/items/piglin_loved.json
+6baeb2cb01c9eb81d861781b12094ec31f620a5e data/minecraft/tags/items/planks.json
+231a202bbd648d2359364967567e6fd0a2e8d772 data/minecraft/tags/items/sand.json
+575573b0677eca713f51574323b4a352876c0f0c data/minecraft/tags/items/slabs.json
+231a202bbd648d2359364967567e6fd0a2e8d772 data/minecraft/tags/items/smelts_to_glass.json
+3b142ad72079a02726e1b6363cca34942074cda7 data/minecraft/tags/items/stairs.json
+3a997fddcc56b54e22c384a8077c9356d30f1df4 data/minecraft/tags/items/trapdoors.json
+91ae97cacf98848aaeb321a9db25a29d4903e3af data/minecraft/tags/items/walls.json
+4cebf103bfadc4376bc4e03429266d8d8d0aba80 data/minecraft/tags/items/wooden_buttons.json
+0403b6516098875b66dcd7f02f9b5c65c27b4b3e data/minecraft/tags/items/wooden_doors.json
+290a3581d9ff9a54a2195ee38eb75e02deb07621 data/minecraft/tags/items/wooden_fences.json
+1646c2ab60f6ba19703843130b19a6d380e017cd data/minecraft/tags/items/wooden_pressure_plates.json
+3a997fddcc56b54e22c384a8077c9356d30f1df4 data/minecraft/tags/items/wooden_trapdoors.json

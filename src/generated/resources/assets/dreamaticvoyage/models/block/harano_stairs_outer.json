@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "dreamaticvoyage:block/harano_planks",
+    "side": "dreamaticvoyage:block/harano_planks",
+    "top": "dreamaticvoyage:block/harano_planks"
+  }
+}

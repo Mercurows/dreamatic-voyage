@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "dreamaticvoyage:block/harano_pressure_plate"
+    },
+    "powered=true": {
+      "model": "dreamaticvoyage:block/harano_pressure_plate_down"
+    }
+  }
+}

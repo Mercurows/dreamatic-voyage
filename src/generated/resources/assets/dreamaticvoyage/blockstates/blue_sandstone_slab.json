@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dreamaticvoyage:block/blue_sandstone_slab"
+    },
+    "type=double": {
+      "model": "dreamaticvoyage:block/blue_sandstone"
+    },
+    "type=top": {
+      "model": "dreamaticvoyage:block/blue_sandstone_slab_top"
+    }
+  }
+}

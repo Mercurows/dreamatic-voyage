@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "dreamaticvoyage:block/harano_planks"
+  }
+}

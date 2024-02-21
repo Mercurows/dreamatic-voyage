@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dreamaticvoyage:purified_crystal_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "dreamaticvoyage:blocks/purified_crystal_block"
+}
