@@ -19,7 +19,6 @@ import tech.lq0.dreamaticvoyage.loot.ModLootTables;
 @Mod(Utils.MOD_ID)
 public class Utils {
 
-//    public static final String MOD_ID = "dreamaticvoyage";
     public static final String MOD_ID = "dreamaticvoyage";
 
     public static final String PDC_ATTRIBUTE_MODIFIER = "pdc_attribute_modifier";
