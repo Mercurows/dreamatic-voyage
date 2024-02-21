@@ -7,7 +7,7 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:idol_cloth"
+      "item": "dreamaticvoyage:idol_cloth"
     },
     "P": {
       "item": "minecraft:pink_wool"
@@ -23,7 +23,7 @@
     }
   },
   "result": {
-    "item": "providencraft:qinglan_umbrella",
+    "item": "dreamaticvoyage:qinglan_umbrella",
     "count": 1
   }
 }

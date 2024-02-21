@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "providencraft:red_ahoge_block"
+      "item": "dreamaticvoyage:red_ahoge_block"
     }
   ],
   "result": {
-    "item": "providencraft:red_ahoge",
+    "item": "dreamaticvoyage:red_ahoge",
     "count": 9
   }
 }

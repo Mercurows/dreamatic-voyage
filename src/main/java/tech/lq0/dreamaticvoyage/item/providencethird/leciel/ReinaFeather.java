@@ -19,7 +19,7 @@ public class ReinaFeather extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.reina_feather").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.reina_feather").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.LECIEL);
     }

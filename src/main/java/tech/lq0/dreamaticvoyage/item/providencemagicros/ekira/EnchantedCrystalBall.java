@@ -31,11 +31,11 @@ public class EnchantedCrystalBall extends Item {
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         if (!pLevel.isClientSide) {
             if (pLevel.isThundering()) {
-                pPlayer.displayClientMessage(Component.translatable("des.providencraft.crystal_ball.weather_thunder").withStyle(ChatFormatting.YELLOW), true);
+                pPlayer.displayClientMessage(Component.translatable("des.dreamaticvoyage.crystal_ball.weather_thunder").withStyle(ChatFormatting.YELLOW), true);
             } else if (pLevel.isRaining()) {
-                pPlayer.displayClientMessage(Component.translatable("des.providencraft.crystal_ball.weather_rain").withStyle(ChatFormatting.AQUA), true);
+                pPlayer.displayClientMessage(Component.translatable("des.dreamaticvoyage.crystal_ball.weather_rain").withStyle(ChatFormatting.AQUA), true);
             } else {
-                pPlayer.displayClientMessage(Component.translatable("des.providencraft.crystal_ball.weather_clear").withStyle(ChatFormatting.GREEN), true);
+                pPlayer.displayClientMessage(Component.translatable("des.dreamaticvoyage.crystal_ball.weather_clear").withStyle(ChatFormatting.GREEN), true);
             }
         }
         return super.use(pLevel, pPlayer, pUsedHand);
@@ -44,8 +44,8 @@ public class EnchantedCrystalBall extends Item {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.crystal_ball.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.enchanted_crystal_ball").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.crystal_ball.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.enchanted_crystal_ball").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.EKIRA);
     }

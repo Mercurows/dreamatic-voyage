@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "providencraft:block/purified_crystal_block"
-  }
-}

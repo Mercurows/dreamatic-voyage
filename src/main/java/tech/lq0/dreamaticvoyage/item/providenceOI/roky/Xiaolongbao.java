@@ -28,8 +28,8 @@ public class Xiaolongbao extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.xiaolongbao").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.xiaolongbao.warn").withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.xiaolongbao").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.xiaolongbao.warn").withStyle(ChatFormatting.RED));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.ROKY);
     }

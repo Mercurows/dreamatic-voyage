@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:hayamen"
+      "item": "dreamaticvoyage:hayamen"
     },
     "title": {
-      "translate": "providencraft.advancement.hayamen"
+      "translate": "dreamaticvoyage.advancement.hayamen"
     },
     "description": {
-      "translate": "providencraft.advancement.hayamen_des"
+      "translate": "dreamaticvoyage.advancement.hayamen_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "frame": "challenge",
     "hidden": false
   },
-  "parent": "providencraft:main/big_spoon",
+  "parent": "dreamaticvoyage:main/big_spoon",
   "criteria": {
     "hayamen": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:hayamen"
+              "dreamaticvoyage:hayamen"
             ]
           }
         ]

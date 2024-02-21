@@ -13,11 +13,11 @@
       "item": "minecraft:glass_pane"
     },
     "L": {
-      "item": "providencraft:shakana"
+      "item": "dreamaticvoyage:shakana"
     }
   },
   "result": {
-    "item": "providencraft:jellyfish_bottle",
+    "item": "dreamaticvoyage:jellyfish_bottle",
     "count": 1
   }
 }

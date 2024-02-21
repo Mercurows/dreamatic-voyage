@@ -7,14 +7,14 @@
   ],
   "key": {
     "c": {
-      "item": "providencraft:idol_cloth"
+      "item": "dreamaticvoyage:idol_cloth"
     },
     "d": {
       "item": "minecraft:pink_dye"
     }
   },
   "result": {
-    "item": "providencraft:ekira_idol_chestplate",
+    "item": "dreamaticvoyage:ekira_idol_chestplate",
     "count": 1
   }
 }

@@ -18,6 +18,6 @@ public class ApocryphalIngot extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.apocryphal_ingot").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.apocryphal_ingot").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
     }
 }

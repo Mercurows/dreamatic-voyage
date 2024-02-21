@@ -7,26 +7,26 @@
   ],
   "key": {
     "k": {
-      "item": "providencraft:momo_knife"
+      "item": "dreamaticvoyage:momo_knife"
     },
     "d": {
-      "item": "providencraft:momo_gun"
+      "item": "dreamaticvoyage:momo_gun"
     },
     "f": {
-      "item": "providencraft:fetuozi"
+      "item": "dreamaticvoyage:fetuozi"
     },
     "m": {
-      "item": "providencraft:music_disc_around_the_travel"
+      "item": "dreamaticvoyage:music_disc_around_the_travel"
     },
     "s": {
-      "item": "providencraft:momo_syringe"
+      "item": "dreamaticvoyage:momo_syringe"
     },
     "p": {
       "item": "minecraft:piston"
     }
   },
   "result": {
-    "item": "providencraft:world_peace_staff",
+    "item": "dreamaticvoyage:world_peace_staff",
     "count": 1
   }
 }

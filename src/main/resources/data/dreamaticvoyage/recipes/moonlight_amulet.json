@@ -10,17 +10,17 @@
       "item": "minecraft:gold_ingot"
     },
     "r": {
-      "item": "providencraft:red_ahoge"
+      "item": "dreamaticvoyage:red_ahoge"
     },
     "l": {
-      "item": "providencraft:lucia_rice_cake"
+      "item": "dreamaticvoyage:lucia_rice_cake"
     },
     "e": {
-      "item": "providencraft:radiant_crystal"
+      "item": "dreamaticvoyage:radiant_crystal"
     }
   },
   "result": {
-    "item": "providencraft:moonlight_amulet",
+    "item": "dreamaticvoyage:moonlight_amulet",
     "count": 1
   }
 }

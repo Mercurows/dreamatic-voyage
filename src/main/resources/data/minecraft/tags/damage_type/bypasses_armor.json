@@ -1,16 +1,16 @@
 {
   "replace": false,
   "values": [
-    "providencraft:lava_cake",
-    "providencraft:mari_food",
-    "providencraft:emotional_damage",
-    "providencraft:lotus_potato",
-    "providencraft:sorayo",
-    "providencraft:overload",
-    "providencraft:pdc_bleeding",
-    "providencraft:lunar_eclipse",
-    "providencraft:fukamizu_bread",
-    "providencraft:brownie_uzza",
-    "providencraft:chocoal_cookie"
+    "dreamaticvoyage:lava_cake",
+    "dreamaticvoyage:mari_food",
+    "dreamaticvoyage:emotional_damage",
+    "dreamaticvoyage:lotus_potato",
+    "dreamaticvoyage:sorayo",
+    "dreamaticvoyage:overload",
+    "dreamaticvoyage:pdc_bleeding",
+    "dreamaticvoyage:lunar_eclipse",
+    "dreamaticvoyage:fukamizu_bread",
+    "dreamaticvoyage:brownie_uzza",
+    "dreamaticvoyage:chocoal_cookie"
   ]
 }

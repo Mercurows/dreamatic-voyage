@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:world_peace_staff"
+      "item": "dreamaticvoyage:world_peace_staff"
     },
     "title": {
-      "translate": "providencraft.advancement.world_peace_staff",
+      "translate": "dreamaticvoyage.advancement.world_peace_staff",
       "color": "gold"
     },
     "description": {
-      "translate": "providencraft.advancement.world_peace_staff_des"
+      "translate": "dreamaticvoyage.advancement.world_peace_staff_des"
     },
     "frame": "challenge",
     "show_toast": true,
     "hidden": false
   },
-  "parent": "providencraft:legendary/legendary",
+  "parent": "dreamaticvoyage:legendary/legendary",
   "criteria": {
     "world_peace_staff": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:world_peace_staff"
+              "dreamaticvoyage:world_peace_staff"
             ]
           }
         ]

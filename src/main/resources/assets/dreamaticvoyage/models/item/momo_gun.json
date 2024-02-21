@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"2": "providencraft:item/momo_gun_bottle",
-		"3": "providencraft:item/momo_gun_main",
-		"particle": "providencraft:item/momo_gun_bottle"
+		"2": "dreamaticvoyage:item/momo_gun_bottle",
+		"3": "dreamaticvoyage:item/momo_gun_main",
+		"particle": "dreamaticvoyage:item/momo_gun_bottle"
 	},
 	"elements": [
 		{

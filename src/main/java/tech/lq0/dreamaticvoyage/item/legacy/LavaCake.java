@@ -40,7 +40,7 @@ public class LavaCake extends Item {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.lava_cake").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lava_cake").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addChaosInfo(pTooltipComponents, 30);
         TooltipTool.addLegacyInfo(pTooltipComponents);

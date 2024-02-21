@@ -10,14 +10,14 @@
       "item": "minecraft:glowstone_dust"
     },
     "P": {
-      "item": "providencraft:crystal_powder"
+      "item": "dreamaticvoyage:crystal_powder"
     },
     "D": {
       "item": "minecraft:diamond"
     }
   },
   "result": {
-    "item": "providencraft:purified_crystal_powder",
+    "item": "dreamaticvoyage:purified_crystal_powder",
     "count": 1
   }
 }

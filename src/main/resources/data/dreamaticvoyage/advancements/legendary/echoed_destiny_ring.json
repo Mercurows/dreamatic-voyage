@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:echoed_destiny_ring"
+      "item": "dreamaticvoyage:echoed_destiny_ring"
     },
     "title": {
-      "translate": "providencraft.advancement.echoed_destiny_ring",
+      "translate": "dreamaticvoyage.advancement.echoed_destiny_ring",
       "color": "gold"
     },
     "description": {
-      "translate": "providencraft.advancement.echoed_destiny_ring_des"
+      "translate": "dreamaticvoyage.advancement.echoed_destiny_ring_des"
     },
     "frame": "challenge",
     "show_toast": true,
     "hidden": false
   },
-  "parent": "providencraft:legendary/legendary",
+  "parent": "dreamaticvoyage:legendary/legendary",
   "criteria": {
     "echoed_destiny_ring": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:echoed_destiny_ring"
+              "dreamaticvoyage:echoed_destiny_ring"
             ]
           }
         ]

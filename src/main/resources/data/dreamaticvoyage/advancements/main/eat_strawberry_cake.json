@@ -1,26 +1,26 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:strawberry_cake"
+      "item": "dreamaticvoyage:strawberry_cake"
     },
     "title": {
-      "translate": "providencraft.advancement.eat_strawberry_cake"
+      "translate": "dreamaticvoyage.advancement.eat_strawberry_cake"
     },
     "description": {
-      "translate": "providencraft.advancement.eat_strawberry_cake_des"
+      "translate": "dreamaticvoyage.advancement.eat_strawberry_cake_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/nether_light",
+  "parent": "dreamaticvoyage:main/nether_light",
   "criteria": {
     "eat_strawberry_cake": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
-            "providencraft:strawberry_cake"
+            "dreamaticvoyage:strawberry_cake"
           ]
         }
       }

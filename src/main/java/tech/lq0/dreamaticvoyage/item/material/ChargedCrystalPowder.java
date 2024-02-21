@@ -20,10 +20,10 @@ public class ChargedCrystalPowder extends Item {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (!Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("des.providencraft.charged_crystal_powder_1").withStyle(ChatFormatting.GRAY));
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.charged_crystal_powder_1").withStyle(ChatFormatting.GRAY));
         } else {
-            pTooltipComponents.add(Component.translatable("des.providencraft.charged_crystal_powder_2").withStyle(ChatFormatting.GRAY));
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.charged_crystal_powder_2").withStyle(ChatFormatting.GRAY));
         }
-        pTooltipComponents.add(Component.translatable("des.providencraft.charged_crystal_powder_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.charged_crystal_powder_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
     }
 }

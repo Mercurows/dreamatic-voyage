@@ -19,11 +19,11 @@
       "item": "minecraft:pink_petals"
     },
     "Y": {
-      "item": "providencraft:illusory_crystal"
+      "item": "dreamaticvoyage:illusory_crystal"
     }
   },
   "result": {
-    "item": "providencraft:chiram_hat",
+    "item": "dreamaticvoyage:chiram_hat",
     "count": 1
   }
 }

@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "providencraft:item/momo_syringe"
+		"1": "dreamaticvoyage:item/momo_syringe"
 	},
 	"elements": [
 		{

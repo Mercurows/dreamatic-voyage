@@ -10,17 +10,17 @@
       "item": "minecraft:popped_chorus_fruit"
     },
     "P": {
-      "item": "providencraft:past_sugar"
+      "item": "dreamaticvoyage:past_sugar"
     },
     "A": {
-      "item": "providencraft:satou_knife"
+      "item": "dreamaticvoyage:satou_knife"
     },
     "E": {
-      "item": "providencraft:terminal_crystal"
+      "item": "dreamaticvoyage:terminal_crystal"
     }
   },
   "result": {
-    "item": "providencraft:ancient_lollipop",
+    "item": "dreamaticvoyage:ancient_lollipop",
     "count": 1
   }
 }

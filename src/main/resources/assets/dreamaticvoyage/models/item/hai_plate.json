@@ -5,8 +5,8 @@
     32
   ],
   "textures": {
-    "2": "providencraft:item/hai_plate",
-    "particle": "providencraft:item/hai_plate"
+    "2": "dreamaticvoyage:item/hai_plate",
+    "particle": "dreamaticvoyage:item/hai_plate"
   },
   "elements": [
     {
@@ -879,9 +879,9 @@
   "overrides": [
     {
       "predicate": {
-        "providencraft:blocking": 1
+        "dreamaticvoyage:blocking": 1
       },
-      "model": "providencraft:item/hai_plate_blocking"
+      "model": "dreamaticvoyage:item/hai_plate_blocking"
     }
   ]
 }

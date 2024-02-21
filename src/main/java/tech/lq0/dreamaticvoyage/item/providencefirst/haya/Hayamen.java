@@ -22,9 +22,9 @@ public class Hayamen extends ShieldItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.hayamen.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.hayamen_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.hayamen_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.hayamen.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.hayamen_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.hayamen_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.HAYA);
     }

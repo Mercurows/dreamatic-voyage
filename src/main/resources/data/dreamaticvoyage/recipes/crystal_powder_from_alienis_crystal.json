@@ -5,11 +5,11 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:alienis_crystal"
+      "item": "dreamaticvoyage:alienis_crystal"
     }
   },
   "result": {
-    "item": "providencraft:crystal_powder",
+    "item": "dreamaticvoyage:crystal_powder",
     "count": 6
   }
 }

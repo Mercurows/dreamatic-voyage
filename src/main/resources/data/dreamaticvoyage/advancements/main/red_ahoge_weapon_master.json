@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:red_ahoge_boomerang"
+      "item": "dreamaticvoyage:red_ahoge_boomerang"
     },
     "title": {
-      "translate": "providencraft.advancement.red_ahoge_weapon_master"
+      "translate": "dreamaticvoyage.advancement.red_ahoge_weapon_master"
     },
     "description": {
-      "translate": "providencraft.advancement.red_ahoge_weapon_master_des"
+      "translate": "dreamaticvoyage.advancement.red_ahoge_weapon_master_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/red_ahoge_helmet",
+  "parent": "dreamaticvoyage:main/red_ahoge_helmet",
   "criteria": {
     "red_ahoge_weapon_master_1": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:red_ahoge_sword"
+              "dreamaticvoyage:red_ahoge_sword"
             ]
           }
         ]
@@ -33,7 +33,7 @@
         "items": [
           {
             "items": [
-              "providencraft:red_ahoge_boomerang"
+              "dreamaticvoyage:red_ahoge_boomerang"
             ]
           }
         ]
@@ -45,7 +45,7 @@
         "items": [
           {
             "items": [
-              "providencraft:red_ahoge_machete"
+              "dreamaticvoyage:red_ahoge_machete"
             ]
           }
         ]
@@ -57,7 +57,7 @@
         "items": [
           {
             "items": [
-              "providencraft:crimson_impact"
+              "dreamaticvoyage:crimson_impact"
             ]
           }
         ]

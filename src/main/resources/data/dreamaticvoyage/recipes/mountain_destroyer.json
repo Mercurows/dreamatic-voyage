@@ -13,17 +13,17 @@
       "item": "minecraft:redstone"
     },
     "c": {
-      "item": "providencraft:dark_elf_core"
+      "item": "dreamaticvoyage:dark_elf_core"
     },
     "d": {
-      "item": "providencraft:drill"
+      "item": "dreamaticvoyage:drill"
     },
     "o": {
       "item": "minecraft:obsidian"
     }
   },
   "result": {
-    "item": "providencraft:mountain_destroyer",
+    "item": "dreamaticvoyage:mountain_destroyer",
     "count": 1
   }
 }

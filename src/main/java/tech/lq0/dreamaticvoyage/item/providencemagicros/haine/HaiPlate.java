@@ -47,10 +47,10 @@ public class HaiPlate extends ShieldItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.hai_plate.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.hai_plate_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.hai_plate_2").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.hai_plate_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.hai_plate.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.hai_plate_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.hai_plate_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.hai_plate_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.HAINE);
     }

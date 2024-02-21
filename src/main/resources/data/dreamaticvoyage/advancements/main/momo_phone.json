@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:momo_phone",
+      "item": "dreamaticvoyage:momo_phone",
       "nbt": "{binding:1}"
     },
     "title": {
-      "translate": "providencraft.advancement.momo_phone"
+      "translate": "dreamaticvoyage.advancement.momo_phone"
     },
     "description": {
-      "translate": "providencraft.advancement.momo_phone_des"
+      "translate": "dreamaticvoyage.advancement.momo_phone_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/eat_momo_daifuku",
+  "parent": "dreamaticvoyage:main/eat_momo_daifuku",
   "criteria": {
     "momo_phone": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:momo_phone"
+              "dreamaticvoyage:momo_phone"
             ]
           }
         ]

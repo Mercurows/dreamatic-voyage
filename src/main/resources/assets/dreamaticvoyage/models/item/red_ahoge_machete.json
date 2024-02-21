@@ -5,8 +5,8 @@
     32
   ],
   "textures": {
-    "2": "providencraft:item/red_ahoge_machete",
-    "particle": "providencraft:item/red_ahoge_machete"
+    "2": "dreamaticvoyage:item/red_ahoge_machete",
+    "particle": "dreamaticvoyage:item/red_ahoge_machete"
   },
   "elements": [
     {

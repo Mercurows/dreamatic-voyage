@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:steel_plate"
+      "item": "dreamaticvoyage:steel_plate"
     },
     "title": {
-      "translate": "providencraft.advancement.steel_plate"
+      "translate": "dreamaticvoyage.advancement.steel_plate"
     },
     "description": {
-      "translate": "providencraft.advancement.steel_plate_des"
+      "translate": "dreamaticvoyage.advancement.steel_plate_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/flat_vegetable_chestplate",
+  "parent": "dreamaticvoyage:main/flat_vegetable_chestplate",
   "criteria": {
     "steel_plate": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:steel_plate"
+              "dreamaticvoyage:steel_plate"
             ]
           }
         ]

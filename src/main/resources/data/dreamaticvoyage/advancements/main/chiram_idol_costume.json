@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:chiram_idol_chestplate"
+      "item": "dreamaticvoyage:chiram_idol_chestplate"
     },
     "title": {
-      "translate": "providencraft.advancement.chiram_idol_costume"
+      "translate": "dreamaticvoyage.advancement.chiram_idol_costume"
     },
     "description": {
-      "translate": "providencraft.advancement.chiram_idol_costume_des"
+      "translate": "dreamaticvoyage.advancement.chiram_idol_costume_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/ekira_idol_costume",
+  "parent": "dreamaticvoyage:main/ekira_idol_costume",
   "criteria": {
     "chiram_idol_costume_1": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:chiram_idol_helmet"
+              "dreamaticvoyage:chiram_idol_helmet"
             ]
           }
         ]
@@ -33,7 +33,7 @@
         "items": [
           {
             "items": [
-              "providencraft:chiram_idol_chestplate"
+              "dreamaticvoyage:chiram_idol_chestplate"
             ]
           }
         ]
@@ -45,7 +45,7 @@
         "items": [
           {
             "items": [
-              "providencraft:chiram_idol_boots"
+              "dreamaticvoyage:chiram_idol_boots"
             ]
           }
         ]

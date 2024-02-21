@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "providencraft:harano_planks"
+      "item": "dreamaticvoyage:harano_planks"
     }
   ],
   "result": {
-    "item": "providencraft:harano_button"
+    "item": "dreamaticvoyage:harano_button"
   }
 }

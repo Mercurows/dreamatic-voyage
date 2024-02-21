@@ -3,21 +3,21 @@
   "ingredients": [
     [
       {
-        "item": "providencraft:harano_log"
+        "item": "dreamaticvoyage:harano_log"
       },
       {
-        "item": "providencraft:stripped_harano_log"
+        "item": "dreamaticvoyage:stripped_harano_log"
       },
       {
-        "item": "providencraft:harano_wood"
+        "item": "dreamaticvoyage:harano_wood"
       },
       {
-        "item": "providencraft:stripped_harano_wood"
+        "item": "dreamaticvoyage:stripped_harano_wood"
       }
     ]
   ],
   "result": {
-    "item": "providencraft:harano_planks",
+    "item": "dreamaticvoyage:harano_planks",
     "count": 4
   }
 }

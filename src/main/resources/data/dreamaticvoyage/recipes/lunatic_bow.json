@@ -13,14 +13,14 @@
       "item": "minecraft:white_wool"
     },
     "c": {
-      "item": "providencraft:dark_crystal"
+      "item": "dreamaticvoyage:dark_crystal"
     },
     "d": {
       "item": "minecraft:nautilus_shell"
     }
   },
   "result": {
-    "item": "providencraft:lunatic_bow",
+    "item": "dreamaticvoyage:lunatic_bow",
     "count": 1
   }
 }

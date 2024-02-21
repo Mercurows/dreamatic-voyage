@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:ancient_lollipop"
+      "item": "dreamaticvoyage:ancient_lollipop"
     },
     "title": {
-      "translate": "providencraft.advancement.ancient_lollipop",
+      "translate": "dreamaticvoyage.advancement.ancient_lollipop",
       "color": "gold"
     },
     "description": {
-      "translate": "providencraft.advancement.ancient_lollipop_des"
+      "translate": "dreamaticvoyage.advancement.ancient_lollipop_des"
     },
     "frame": "challenge",
     "show_toast": true,
     "hidden": false
   },
-  "parent": "providencraft:legendary/legendary",
+  "parent": "dreamaticvoyage:legendary/legendary",
   "criteria": {
     "ancient_lollipop": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:ancient_lollipop"
+              "dreamaticvoyage:ancient_lollipop"
             ]
           }
         ]

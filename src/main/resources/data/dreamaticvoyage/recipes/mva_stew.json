@@ -5,17 +5,17 @@
       "item": "minecraft:bowl"
     },
     {
-      "item": "providencraft:red_ahoge"
+      "item": "dreamaticvoyage:red_ahoge"
     },
     {
-      "item": "providencraft:lotus_potato"
+      "item": "dreamaticvoyage:lotus_potato"
     },
     {
-      "item": "providencraft:frog_leg"
+      "item": "dreamaticvoyage:frog_leg"
     }
   ],
   "result": {
-    "item": "providencraft:mva_stew",
+    "item": "dreamaticvoyage:mva_stew",
     "count": 1
   }
 }

@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "providencraft:item/tail_pen"
+		"1": "dreamaticvoyage:item/tail_pen"
 	},
 	"elements": [
 		{

@@ -1,11 +1,11 @@
 {
   "values": [
     {
-      "id": "providencraft:elifaus",
+      "id": "dreamaticvoyage:elifaus",
       "required": false
     },
     {
-      "id": "providencraft:ruozhi",
+      "id": "dreamaticvoyage:ruozhi",
       "required": false
     }
   ]

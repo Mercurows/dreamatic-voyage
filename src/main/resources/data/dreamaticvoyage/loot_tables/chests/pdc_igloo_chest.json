@@ -5,7 +5,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "providencraft:music_disc_song_of_qingqiu",
+          "name": "dreamaticvoyage:music_disc_song_of_qingqiu",
           "conditions": [
             {
               "condition": "minecraft:random_chance",
@@ -20,7 +20,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "providencraft:taro_ice_cream",
+          "name": "dreamaticvoyage:taro_ice_cream",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -44,7 +44,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "providencraft:fox_ice_cream",
+          "name": "dreamaticvoyage:fox_ice_cream",
           "functions": [
             {
               "function": "minecraft:set_count",

@@ -23,7 +23,7 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class AtsuiShio extends Item {
-    public static final String TAG_BURN = "providencraft_burn";
+    public static final String TAG_BURN = "dreamaticvoyage_burn";
 
     public static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(1).alwaysEat().build();
 
@@ -33,7 +33,7 @@ public class AtsuiShio extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.atsuishio").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.atsuishio").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addDonateInfo(pTooltipComponents);
     }

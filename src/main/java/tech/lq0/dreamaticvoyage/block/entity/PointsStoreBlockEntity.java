@@ -91,7 +91,7 @@ public class PointsStoreBlockEntity extends BlockEntity implements Merchant {
 
     public void openGui(Player player) {
         setTradingPlayer(player);
-        Component name = Component.translatable("block.providencraft.points_store");
+        Component name = Component.translatable("block.dreamaticvoyage.points_store");
         this.openTradingScreen(player, name, 5);
     }
 

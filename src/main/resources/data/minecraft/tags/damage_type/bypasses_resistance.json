@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-    "providencraft:emotional_damage",
-    "providencraft:overload",
-    "providencraft:pdc_bleeding",
-    "providencraft:lunar_eclipse"
+    "dreamaticvoyage:emotional_damage",
+    "dreamaticvoyage:overload",
+    "dreamaticvoyage:pdc_bleeding",
+    "dreamaticvoyage:lunar_eclipse"
   ]
 }

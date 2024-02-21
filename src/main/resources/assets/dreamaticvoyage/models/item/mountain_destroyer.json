@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
 	"textures": {
-		"1": "providencraft:item/drill_main",
-		"2": "providencraft:item/drill_head"
+		"1": "dreamaticvoyage:item/drill_main",
+		"2": "dreamaticvoyage:item/drill_head"
 	},
 	"elements": [
 		{

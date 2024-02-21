@@ -1,13 +1,13 @@
 {
   "entries": [
-    "providencraft:fishing",
-    "providencraft:frog_leg_from_frog",
-    "providencraft:dark_crystal_from_warden",
-    "providencraft:radiant_crystal_from_blaze",
-    "providencraft:illusory_crystal_from_phantom",
-    "providencraft:alienis_crystal",
-    "providencraft:sink_crystal_from_guardian",
-    "providencraft:terminal_crystal_from_shulker"
+    "dreamaticvoyage:fishing",
+    "dreamaticvoyage:frog_leg_from_frog",
+    "dreamaticvoyage:dark_crystal_from_warden",
+    "dreamaticvoyage:radiant_crystal_from_blaze",
+    "dreamaticvoyage:illusory_crystal_from_phantom",
+    "dreamaticvoyage:alienis_crystal",
+    "dreamaticvoyage:sink_crystal_from_guardian",
+    "dreamaticvoyage:terminal_crystal_from_shulker"
   ],
   "replace": false
 }

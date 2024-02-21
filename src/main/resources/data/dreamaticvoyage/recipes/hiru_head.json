@@ -7,7 +7,7 @@
   ],
   "key": {
     "c": {
-      "item": "providencraft:sink_crystal"
+      "item": "dreamaticvoyage:sink_crystal"
     },
     "p": {
       "item": "minecraft:pink_wool"
@@ -17,7 +17,7 @@
     }
   },
   "result": {
-    "item": "providencraft:hiru_head",
+    "item": "dreamaticvoyage:hiru_head",
     "count": 1
   }
 }

@@ -7,11 +7,11 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:purified_crystal_ingot"
+      "item": "dreamaticvoyage:purified_crystal_ingot"
     }
   },
   "result": {
-    "item": "providencraft:purified_crystal_block",
+    "item": "dreamaticvoyage:purified_crystal_block",
     "count": 1
   }
 }

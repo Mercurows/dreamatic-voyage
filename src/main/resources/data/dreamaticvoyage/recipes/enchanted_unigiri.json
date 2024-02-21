@@ -7,7 +7,7 @@
   ],
   "key": {
     "h": {
-      "item": "providencraft:unigiri"
+      "item": "dreamaticvoyage:unigiri"
     },
     "p": {
       "item": "minecraft:purple_dye"
@@ -20,7 +20,7 @@
     }
   },
   "result": {
-    "item": "providencraft:enchanted_unigiri",
+    "item": "dreamaticvoyage:enchanted_unigiri",
     "count": 1
   }
 }

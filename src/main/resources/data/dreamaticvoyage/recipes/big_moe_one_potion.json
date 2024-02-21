@@ -8,14 +8,14 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "providencraft:lucia_rice_cake"
+      "item": "dreamaticvoyage:lucia_rice_cake"
     },
     {
-      "item": "providencraft:lucia_rice_cake"
+      "item": "dreamaticvoyage:lucia_rice_cake"
     }
   ],
   "result": {
-    "item": "providencraft:big_moe_one_potion",
+    "item": "dreamaticvoyage:big_moe_one_potion",
     "count": 1
   }
 }

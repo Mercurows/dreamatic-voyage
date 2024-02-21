@@ -27,8 +27,8 @@ public class MagicBookMyanna extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.magic_book_myanna.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.magic_book_myanna").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.magic_book_myanna.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.magic_book_myanna").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.LOUISE);
     }

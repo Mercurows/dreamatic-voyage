@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "providencraft:elf_wings",
+          "name": "dreamaticvoyage:elf_wings",
           "functions": [
             {
               "function": "minecraft:set_count",

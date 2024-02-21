@@ -1,6 +1,6 @@
 {
   "loader": "forge:obj",
-  "model": "providencraft:models/item/qinglan_umbrella.obj",
+  "model": "dreamaticvoyage:models/item/qinglan_umbrella.obj",
   "flip-v": true,
   "gui_light": "front",
   "display": {

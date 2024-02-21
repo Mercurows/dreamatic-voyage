@@ -7,22 +7,22 @@
   ],
   "key": {
     "A": {
-      "item": "providencraft:dark_crystal"
+      "item": "dreamaticvoyage:dark_crystal"
     },
     "B": {
-      "item": "providencraft:radiant_crystal"
+      "item": "dreamaticvoyage:radiant_crystal"
     },
     "C": {
-      "item": "providencraft:illusory_crystal"
+      "item": "dreamaticvoyage:illusory_crystal"
     },
     "D": {
-      "item": "providencraft:sink_crystal"
+      "item": "dreamaticvoyage:sink_crystal"
     },
     "E": {
-      "item": "providencraft:terminal_crystal"
+      "item": "dreamaticvoyage:terminal_crystal"
     },
     "F": {
-      "item": "providencraft:alienis_crystal"
+      "item": "dreamaticvoyage:alienis_crystal"
     },
     "#": {
       "item": "minecraft:emerald"
@@ -32,7 +32,7 @@
     }
   },
   "result": {
-    "item": "providencraft:escort_token",
+    "item": "dreamaticvoyage:escort_token",
     "count": 1
   }
 }

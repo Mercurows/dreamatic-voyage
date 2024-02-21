@@ -7,13 +7,13 @@
   ],
   "key": {
     "p": {
-      "item": "providencraft:white_double_ahoge"
+      "item": "dreamaticvoyage:white_double_ahoge"
     },
     "x": {
       "item": "minecraft:diamond"
     },
     "a": {
-      "item": "providencraft:magic_book"
+      "item": "dreamaticvoyage:magic_book"
     },
     "y": {
       "item": "minecraft:coal_block"
@@ -23,7 +23,7 @@
     }
   },
   "result": {
-    "item": "providencraft:magic_book_myanna",
+    "item": "dreamaticvoyage:magic_book_myanna",
     "count": 1
   }
 }

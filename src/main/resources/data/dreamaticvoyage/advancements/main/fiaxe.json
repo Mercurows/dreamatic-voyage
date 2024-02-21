@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:fiaxe"
+      "item": "dreamaticvoyage:fiaxe"
     },
     "title": {
-      "translate": "providencraft.advancement.fiaxe"
+      "translate": "dreamaticvoyage.advancement.fiaxe"
     },
     "description": {
-      "translate": "providencraft.advancement.fiaxe_des"
+      "translate": "dreamaticvoyage.advancement.fiaxe_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/fukamizu_ring",
+  "parent": "dreamaticvoyage:main/fukamizu_ring",
   "criteria": {
     "big_spoon": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:fiaxe"
+              "dreamaticvoyage:fiaxe"
             ]
           }
         ]

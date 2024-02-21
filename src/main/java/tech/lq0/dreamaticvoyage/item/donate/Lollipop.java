@@ -31,9 +31,9 @@ public class Lollipop extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.lollipop_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.lollipop_2").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.lollipop_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.STRIKETHROUGH));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lollipop_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lollipop_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lollipop_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.STRIKETHROUGH));
 
         TooltipTool.addDonateInfo(pTooltipComponents);
     }

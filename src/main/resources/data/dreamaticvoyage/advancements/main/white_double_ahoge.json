@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:white_double_ahoge"
+      "item": "dreamaticvoyage:white_double_ahoge"
     },
     "title": {
-      "translate": "providencraft.advancement.white_double_ahoge"
+      "translate": "dreamaticvoyage.advancement.white_double_ahoge"
     },
     "description": {
-      "translate": "providencraft.advancement.white_double_ahoge_des"
+      "translate": "dreamaticvoyage.advancement.white_double_ahoge_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/eat_lucia_rice_cake",
+  "parent": "dreamaticvoyage:main/eat_lucia_rice_cake",
   "criteria": {
     "white_double_ahoge": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:white_double_ahoge"
+              "dreamaticvoyage:white_double_ahoge"
             ]
           }
         ]

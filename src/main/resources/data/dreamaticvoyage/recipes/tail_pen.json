@@ -22,11 +22,11 @@
       "item": "minecraft:white_wool"
     },
     "g": {
-      "item": "providencraft:radiant_crystal"
+      "item": "dreamaticvoyage:radiant_crystal"
     }
   },
   "result": {
-    "item": "providencraft:tail_pen",
+    "item": "dreamaticvoyage:tail_pen",
     "count": 1
   }
 }

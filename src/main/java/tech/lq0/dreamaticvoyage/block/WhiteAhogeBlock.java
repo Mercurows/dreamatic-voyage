@@ -17,6 +17,6 @@ public class WhiteAhogeBlock extends Block {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.white_ahoge_block").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.white_ahoge_block").withStyle(ChatFormatting.GRAY));
     }
 }

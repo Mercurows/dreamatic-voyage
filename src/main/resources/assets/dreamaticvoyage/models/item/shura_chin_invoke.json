@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"2": "providencraft:item/shura_chin",
-		"particle": "providencraft:item/shura_chin"
+		"2": "dreamaticvoyage:item/shura_chin",
+		"particle": "dreamaticvoyage:item/shura_chin"
 	},
 	"gui_light": "front",
 	"elements": [

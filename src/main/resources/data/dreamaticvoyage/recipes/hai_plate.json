@@ -7,7 +7,7 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:harden_crystal_ingot"
+      "item": "dreamaticvoyage:harden_crystal_ingot"
     },
     "b": {
       "item": "minecraft:light_blue_wool"
@@ -20,7 +20,7 @@
     }
   },
   "result": {
-    "item": "providencraft:hai_plate",
+    "item": "dreamaticvoyage:hai_plate",
     "count": 1
   }
 }

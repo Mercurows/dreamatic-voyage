@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "providencraft:momo_daifuku"
+      "item": "dreamaticvoyage:momo_daifuku"
     }
   ],
   "result": {
-    "item": "providencraft:daifuku_syrup",
+    "item": "dreamaticvoyage:daifuku_syrup",
     "count": 4
   }
 }

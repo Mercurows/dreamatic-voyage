@@ -30,7 +30,7 @@ public class HaranoLog extends RotatedPillarBlock {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.harano_log").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.harano_log").withStyle(ChatFormatting.GRAY));
     }
 
     @Override

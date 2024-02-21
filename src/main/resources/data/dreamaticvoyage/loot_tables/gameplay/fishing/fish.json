@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "providencraft:fukamizu_fish",
+          "name": "dreamaticvoyage:fukamizu_fish",
           "weight": 20,
           "conditions": [
             {
@@ -54,7 +54,7 @@
         {
           "type": "minecraft:item",
           "weight": 15,
-          "name": "providencraft:shakana"
+          "name": "dreamaticvoyage:shakana"
         }
       ]
     }

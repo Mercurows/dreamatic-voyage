@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "providencraft:block/jellyfish_bottle"
+      "model": "dreamaticvoyage:block/jellyfish_bottle"
     }
   }
 }

@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:big_spoon"
+      "item": "dreamaticvoyage:big_spoon"
     },
     "title": {
-      "translate": "providencraft.advancement.big_spoon"
+      "translate": "dreamaticvoyage.advancement.big_spoon"
     },
     "description": {
-      "translate": "providencraft.advancement.big_spoon_des"
+      "translate": "dreamaticvoyage.advancement.big_spoon_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/eat_mari_stew",
+  "parent": "dreamaticvoyage:main/eat_mari_stew",
   "criteria": {
     "big_spoon": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:big_spoon"
+              "dreamaticvoyage:big_spoon"
             ]
           }
         ]

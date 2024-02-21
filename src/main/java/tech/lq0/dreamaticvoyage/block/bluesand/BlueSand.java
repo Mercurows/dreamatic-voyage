@@ -24,7 +24,7 @@ public class BlueSand extends SandBlock {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.blue_sand").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.blue_sand").withStyle(ChatFormatting.GRAY));
     }
 
     @Override

@@ -22,9 +22,9 @@ public class TooltipTool {
 
     public static void addLiverInfo(List<Component> tooltip, Livers liver) {
         addHideText(tooltip, Component.literal(""));
-        addHideText(tooltip, Component.translatable("liver.providencraft.liver").withStyle(ChatFormatting.WHITE));
+        addHideText(tooltip, Component.translatable("liver.dreamaticvoyage.liver").withStyle(ChatFormatting.WHITE));
 
-        MutableComponent component = Component.translatable("liver.providencraft." + liver.getName()).withStyle(Style.EMPTY.withColor(TextColor.parseColor(liver.getColor())));
+        MutableComponent component = Component.translatable("liver.dreamaticvoyage." + liver.getName()).withStyle(Style.EMPTY.withColor(TextColor.parseColor(liver.getColor())));
         if (!liver.isActive()) {
             component.withStyle(ChatFormatting.ITALIC);
         }
@@ -34,12 +34,12 @@ public class TooltipTool {
 
     public static void addDonateInfo(List<Component> tooltip) {
         addHideText(tooltip, Component.literal(""));
-        addHideText(tooltip, Component.translatable("des.providencraft.donate_item").withStyle(ChatFormatting.GOLD));
+        addHideText(tooltip, Component.translatable("des.dreamaticvoyage.donate_item").withStyle(ChatFormatting.GOLD));
     }
 
     public static void addLegacyInfo(List<Component> tooltip) {
         addHideText(tooltip, Component.literal(""));
-        addHideText(tooltip, Component.translatable("des.providencraft.legacy").withStyle(Style.EMPTY.withColor(0xff6288)));
+        addHideText(tooltip, Component.translatable("des.dreamaticvoyage.legacy").withStyle(Style.EMPTY.withColor(0xff6288)));
     }
 
     public static void addChaosInfo(List<Component> tooltip, int chaos) {
@@ -47,16 +47,16 @@ public class TooltipTool {
         StringBuilder builder = new StringBuilder();
         if (chaos > 0) {
             chatFormatting = ChatFormatting.BLUE;
-            builder.append("+").append(chaos).append(" ").append(Component.translatable("des.providencraft.chaos").getString());
+            builder.append("+").append(chaos).append(" ").append(Component.translatable("des.dreamaticvoyage.chaos").getString());
         } else if (chaos < 0) {
             chatFormatting = ChatFormatting.YELLOW;
-            builder.append("-").append(Math.abs(chaos)).append(" ").append(Component.translatable("des.providencraft.chaos").getString());
+            builder.append("-").append(Math.abs(chaos)).append(" ").append(Component.translatable("des.dreamaticvoyage.chaos").getString());
         } else {
             chatFormatting = ChatFormatting.GREEN;
-            builder.append(Component.translatable("des.providencraft.chaos.reset").getString());
+            builder.append(Component.translatable("des.dreamaticvoyage.chaos.reset").getString());
         }
         addHideText(tooltip, Component.literal(""));
-        addHideText(tooltip, Component.translatable("des.providencraft.chaos.eaten").withStyle(ChatFormatting.GRAY));
+        addHideText(tooltip, Component.translatable("des.dreamaticvoyage.chaos.eaten").withStyle(ChatFormatting.GRAY));
         addHideText(tooltip, Component.literal(builder.toString()).withStyle(chatFormatting));
     }
 }

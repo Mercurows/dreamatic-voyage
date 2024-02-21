@@ -19,12 +19,12 @@ public class PurifiedCrystalIngot extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.purified_crystal_ingot_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.purified_crystal_ingot_1").withStyle(ChatFormatting.GRAY));
         if (!Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("des.providencraft.purified_crystal_ingot_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.purified_crystal_ingot_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         } else {
-            pTooltipComponents.add(Component.translatable("des.providencraft.purified_crystal_ingot_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-            pTooltipComponents.add(Component.translatable("des.providencraft.purified_crystal_ingot_4").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.purified_crystal_ingot_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.purified_crystal_ingot_4").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         }
     }
 }

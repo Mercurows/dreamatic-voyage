@@ -7,11 +7,11 @@
   ],
   "key": {
     "b": {
-      "item": "providencraft:fukamizu_bread"
+      "item": "dreamaticvoyage:fukamizu_bread"
     }
   },
   "result": {
-    "item": "providencraft:fukamizu_bread_block",
+    "item": "dreamaticvoyage:fukamizu_bread_block",
     "count": 1
   }
 }

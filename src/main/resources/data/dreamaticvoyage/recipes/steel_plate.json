@@ -13,11 +13,11 @@
       "item": "minecraft:obsidian"
     },
     "a": {
-      "item": "providencraft:flat_vegetable_chestplate"
+      "item": "dreamaticvoyage:flat_vegetable_chestplate"
     }
   },
   "result": {
-    "item": "providencraft:steel_plate",
+    "item": "dreamaticvoyage:steel_plate",
     "count": 1
   }
 }

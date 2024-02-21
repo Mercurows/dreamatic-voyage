@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "providencraft:block/harano_planks",
-    "side": "providencraft:block/harano_planks",
-    "top": "providencraft:block/harano_planks"
-  }
-}

@@ -13,14 +13,14 @@
       "item": "minecraft:gold_ingot"
     },
     "c": {
-      "item": "providencraft:communication_table"
+      "item": "dreamaticvoyage:communication_table"
     },
     "p": {
       "item": "minecraft:black_concrete"
     }
   },
   "result": {
-    "item": "providencraft:points_store",
+    "item": "dreamaticvoyage:points_store",
     "count": 1
   }
 }

@@ -11,11 +11,11 @@
       "item": "minecraft:nether_wart"
     },
     {
-      "item": "providencraft:white_ahoge"
+      "item": "dreamaticvoyage:white_ahoge"
     }
   ],
   "result": {
-    "item": "providencraft:louistew",
+    "item": "dreamaticvoyage:louistew",
     "count": 1
   }
 }

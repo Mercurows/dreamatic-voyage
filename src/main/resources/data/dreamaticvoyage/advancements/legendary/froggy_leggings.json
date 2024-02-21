@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:froggy_leggings"
+      "item": "dreamaticvoyage:froggy_leggings"
     },
     "title": {
-      "translate": "providencraft.advancement.froggy_leggings",
+      "translate": "dreamaticvoyage.advancement.froggy_leggings",
       "color": "gold"
     },
     "description": {
-      "translate": "providencraft.advancement.froggy_leggings_des"
+      "translate": "dreamaticvoyage.advancement.froggy_leggings_des"
     },
     "frame": "challenge",
     "show_toast": true,
     "hidden": false
   },
-  "parent": "providencraft:legendary/legendary",
+  "parent": "dreamaticvoyage:legendary/legendary",
   "criteria": {
     "froggy_leggings": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:froggy_leggings"
+              "dreamaticvoyage:froggy_leggings"
             ]
           }
         ]

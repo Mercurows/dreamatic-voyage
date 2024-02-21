@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "providencraft:item/momo_phone"
+		"1": "dreamaticvoyage:item/momo_phone"
 	},
 	"elements": [
 		{
@@ -188,9 +188,9 @@
 	"overrides": [
 		{
 			"predicate": {
-				"providencraft:momo_phone_binding": 1
+				"dreamaticvoyage:momo_phone_binding": 1
 			},
-			"model": "providencraft:item/momo_phone_binding"
+			"model": "dreamaticvoyage:item/momo_phone_binding"
 		}
 	]
 }

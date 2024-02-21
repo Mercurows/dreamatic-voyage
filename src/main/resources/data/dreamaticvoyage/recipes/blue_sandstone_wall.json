@@ -7,11 +7,11 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:blue_sandstone"
+      "item": "dreamaticvoyage:blue_sandstone"
     }
   },
   "result": {
-    "item": "providencraft:blue_sandstone_wall",
+    "item": "dreamaticvoyage:blue_sandstone_wall",
     "count": 6
   }
 }

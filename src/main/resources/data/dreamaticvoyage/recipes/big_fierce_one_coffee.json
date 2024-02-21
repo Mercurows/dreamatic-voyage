@@ -7,7 +7,7 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:big_moe_one_potion"
+      "item": "dreamaticvoyage:big_moe_one_potion"
     },
     "b": {
       "item": "minecraft:blaze_powder"
@@ -17,7 +17,7 @@
     }
   },
   "result": {
-    "item": "providencraft:big_fierce_one_coffee",
+    "item": "dreamaticvoyage:big_fierce_one_coffee",
     "count": 1
   }
 }

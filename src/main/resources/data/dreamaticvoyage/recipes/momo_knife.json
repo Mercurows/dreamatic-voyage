@@ -7,7 +7,7 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:momo_daifuku"
+      "item": "dreamaticvoyage:momo_daifuku"
     },
     "b": {
       "item": "minecraft:magenta_concrete"
@@ -16,11 +16,11 @@
       "item": "minecraft:netherite_sword"
     },
     "n": {
-      "item": "providencraft:dark_crystal"
+      "item": "dreamaticvoyage:dark_crystal"
     }
   },
   "result": {
-    "item": "providencraft:momo_knife",
+    "item": "dreamaticvoyage:momo_knife",
     "count": 1
   }
 }

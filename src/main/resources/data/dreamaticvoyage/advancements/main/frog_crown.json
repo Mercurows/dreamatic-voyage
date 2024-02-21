@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:frog_crown"
+      "item": "dreamaticvoyage:frog_crown"
     },
     "title": {
-      "translate": "providencraft.advancement.frog_crown"
+      "translate": "dreamaticvoyage.advancement.frog_crown"
     },
     "description": {
-      "translate": "providencraft.advancement.frog_crown_des"
+      "translate": "dreamaticvoyage.advancement.frog_crown_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/root",
+  "parent": "dreamaticvoyage:main/root",
   "criteria": {
     "frog_crown": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:frog_crown"
+              "dreamaticvoyage:frog_crown"
             ]
           }
         ]

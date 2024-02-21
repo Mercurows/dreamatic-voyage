@@ -44,8 +44,8 @@ public class SatouKnife extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.satou_knife").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.satou_knife.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.satou_knife").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.satou_knife.func").withStyle(ChatFormatting.AQUA));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.SATOU);
     }

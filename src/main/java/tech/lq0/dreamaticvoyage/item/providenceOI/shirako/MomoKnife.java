@@ -39,8 +39,8 @@ public class MomoKnife extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.momo_knife").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.momo_knife.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.momo_knife").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.momo_knife.func").withStyle(ChatFormatting.AQUA));
         showDamage(pStack, pTooltipComponents, pLevel == null ? 0 : pLevel.getGameTime());
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.SHIRAKO);
@@ -93,7 +93,7 @@ public class MomoKnife extends SwordItem {
 
         String damage = numberFormat.format(getAllDamage(stack, time));
         tooltip.add(Component.literal(""));
-        tooltip.add(Component.translatable("des.providencraft.momo_knife.damage").withStyle(ChatFormatting.WHITE)
+        tooltip.add(Component.translatable("des.dreamaticvoyage.momo_knife.damage").withStyle(ChatFormatting.WHITE)
                 .append(Component.literal(damage).withStyle(ChatFormatting.RESET).withStyle(ChatFormatting.GREEN).withStyle(ChatFormatting.BOLD)));
     }
 

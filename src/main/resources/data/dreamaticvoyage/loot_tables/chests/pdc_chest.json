@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "providencraft:pdc_point",
+          "name": "dreamaticvoyage:pdc_point",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -30,7 +30,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "providencraft:music_disc_darakudatenshi",
+          "name": "dreamaticvoyage:music_disc_darakudatenshi",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -52,7 +52,7 @@
         {
           "type": "minecraft:item",
           "weight": 2,
-          "name": "providencraft:red_ahoge",
+          "name": "dreamaticvoyage:red_ahoge",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -73,7 +73,7 @@
           "type": "minecraft:item",
           "weight": 1,
           "quality": 1,
-          "name": "providencraft:idol_cloth",
+          "name": "dreamaticvoyage:idol_cloth",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -97,7 +97,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "providencraft:yagi_staff_card",
+          "name": "dreamaticvoyage:yagi_staff_card",
           "functions": [
             {
               "function": "minecraft:set_count",

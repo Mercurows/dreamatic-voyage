@@ -32,7 +32,7 @@ public class EmptyJar extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.empty_jar").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.empty_jar").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addDonateInfo(pTooltipComponents);
     }

@@ -44,11 +44,11 @@ public class RedAhogeBoomerang extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.red_ahoge_boomerang.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.red_ahoge_sword_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.red_ahoge_sword_2").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.red_ahoge_boomerang").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.red_ahoge_sword_4").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.STRIKETHROUGH));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.red_ahoge_boomerang.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.red_ahoge_sword_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.red_ahoge_sword_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.red_ahoge_boomerang").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.red_ahoge_sword_4").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.STRIKETHROUGH));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.MADOKA);
     }

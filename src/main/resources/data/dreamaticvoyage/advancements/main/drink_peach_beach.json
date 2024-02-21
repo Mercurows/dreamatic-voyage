@@ -1,26 +1,26 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:peach_beach"
+      "item": "dreamaticvoyage:peach_beach"
     },
     "title": {
-      "translate": "providencraft.advancement.drink_peach_beach"
+      "translate": "dreamaticvoyage.advancement.drink_peach_beach"
     },
     "description": {
-      "translate": "providencraft.advancement.drink_peach_beach_des"
+      "translate": "dreamaticvoyage.advancement.drink_peach_beach_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/red_ahoge_helmet",
+  "parent": "dreamaticvoyage:main/red_ahoge_helmet",
   "criteria": {
     "drink_peach_beach": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
-            "providencraft:peach_beach"
+            "dreamaticvoyage:peach_beach"
           ]
         }
       }

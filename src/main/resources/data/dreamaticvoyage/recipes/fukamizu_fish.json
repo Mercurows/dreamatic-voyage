@@ -7,14 +7,14 @@
   ],
   "key": {
     "h": {
-      "item": "providencraft:dark_crystal"
+      "item": "dreamaticvoyage:dark_crystal"
     },
     "p": {
       "tag": "minecraft:fishes"
     }
   },
   "result": {
-    "item": "providencraft:fukamizu_fish",
+    "item": "dreamaticvoyage:fukamizu_fish",
     "count": 4
   }
 }

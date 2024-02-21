@@ -25,8 +25,8 @@ public class LuciaRiceCake extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.lucia_rice_cake_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.lucia_rice_cake_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lucia_rice_cake_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lucia_rice_cake_2").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addChaosInfo(pTooltipComponents, -3);
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.LUCIA);

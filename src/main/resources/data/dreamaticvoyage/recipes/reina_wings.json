@@ -7,14 +7,14 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:harden_crystal_ingot"
+      "item": "dreamaticvoyage:harden_crystal_ingot"
     },
     "p": {
-      "item": "providencraft:reina_feather"
+      "item": "dreamaticvoyage:reina_feather"
     }
   },
   "result": {
-    "item": "providencraft:reina_wings",
+    "item": "dreamaticvoyage:reina_wings",
     "count": 1
   }
 }

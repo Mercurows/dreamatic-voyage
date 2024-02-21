@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:ayelet_mask"
+      "item": "dreamaticvoyage:ayelet_mask"
     },
     "title": {
-      "translate": "providencraft.advancement.ayelet_mask"
+      "translate": "dreamaticvoyage.advancement.ayelet_mask"
     },
     "description": {
-      "translate": "providencraft.advancement.ayelet_mask_des"
+      "translate": "dreamaticvoyage.advancement.ayelet_mask_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/eat_mumu_steak",
+  "parent": "dreamaticvoyage:main/eat_mumu_steak",
   "criteria": {
     "ayelet_mask": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:ayelet_mask"
+              "dreamaticvoyage:ayelet_mask"
             ]
           }
         ]

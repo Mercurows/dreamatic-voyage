@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "providencraft:blue_sandstone"
+    "item": "dreamaticvoyage:blue_sandstone"
   },
-  "result": "providencraft:blue_sandstone_wall",
+  "result": "dreamaticvoyage:blue_sandstone_wall",
   "count": 1
 }

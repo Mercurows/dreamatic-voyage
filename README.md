@@ -1,4 +1,4 @@
-# 虚构远航 / Providencraft
+# 虚构远航 / dreamaticvoyage
 
 > 在一个名为Providence的岛屿沉没以后……
 

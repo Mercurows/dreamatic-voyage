@@ -7,11 +7,11 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:white_ahoge"
+      "item": "dreamaticvoyage:white_ahoge"
     }
   },
   "result": {
-    "item": "providencraft:white_ahoge_block",
+    "item": "dreamaticvoyage:white_ahoge_block",
     "count": 1
   }
 }

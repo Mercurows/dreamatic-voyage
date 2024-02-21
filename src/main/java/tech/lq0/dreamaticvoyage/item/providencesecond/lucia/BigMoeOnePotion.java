@@ -30,10 +30,10 @@ public class BigMoeOnePotion extends Item {
             int random = (int) (Math.random() * 99 + 1);
             if (random > 10) {
                 player.addEffect(new MobEffectInstance(EffectRegistry.BIG_FIERCE_ONE.get(), 3600, 2));
-                player.displayClientMessage(Component.translatable("des.providencraft.big_moe_one_potion.fierce").withStyle(ChatFormatting.GOLD), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.big_moe_one_potion.fierce").withStyle(ChatFormatting.GOLD), true);
             } else {
                 player.addEffect(new MobEffectInstance(EffectRegistry.BIG_MOE_ONE.get(), 3600, 0));
-                player.displayClientMessage(Component.translatable("des.providencraft.big_moe_one_potion.moe").withStyle(ChatFormatting.LIGHT_PURPLE), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.big_moe_one_potion.moe").withStyle(ChatFormatting.LIGHT_PURPLE), true);
             }
 
             if (!player.isCreative()) {
@@ -62,9 +62,9 @@ public class BigMoeOnePotion extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.big_moe_one_potion_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.big_moe_one_potion_2").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.big_moe_one_potion.warn").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.STRIKETHROUGH));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.big_moe_one_potion_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.big_moe_one_potion_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.big_moe_one_potion.warn").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.STRIKETHROUGH));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.LUCIA);
     }

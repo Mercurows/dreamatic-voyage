@@ -48,9 +48,9 @@ public class WorldPeaceStaff extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.world_peace_staff_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-        TooltipTool.addHideText(pTooltipComponents, Component.translatable("des.providencraft.world_peace_staff_2").withStyle(Style.EMPTY.withColor(0xF4ADB4)).withStyle(ChatFormatting.ITALIC));
-        TooltipTool.addHideText(pTooltipComponents, Component.translatable("des.providencraft.world_peace_staff_3").withStyle(Style.EMPTY.withColor(0xF4ADB4)).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.world_peace_staff_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        TooltipTool.addHideText(pTooltipComponents, Component.translatable("des.dreamaticvoyage.world_peace_staff_2").withStyle(Style.EMPTY.withColor(0xF4ADB4)).withStyle(ChatFormatting.ITALIC));
+        TooltipTool.addHideText(pTooltipComponents, Component.translatable("des.dreamaticvoyage.world_peace_staff_3").withStyle(Style.EMPTY.withColor(0xF4ADB4)).withStyle(ChatFormatting.ITALIC));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.SHIRAKO);
     }

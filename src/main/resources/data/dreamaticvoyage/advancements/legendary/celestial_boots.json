@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:celestial_boots"
+      "item": "dreamaticvoyage:celestial_boots"
     },
     "title": {
-      "translate": "providencraft.advancement.celestial_boots",
+      "translate": "dreamaticvoyage.advancement.celestial_boots",
       "color": "gold"
     },
     "description": {
-      "translate": "providencraft.advancement.celestial_boots_des"
+      "translate": "dreamaticvoyage.advancement.celestial_boots_des"
     },
     "frame": "challenge",
     "show_toast": true,
     "hidden": false
   },
-  "parent": "providencraft:legendary/legendary",
+  "parent": "dreamaticvoyage:legendary/legendary",
   "criteria": {
     "celestial_boots": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:celestial_boots"
+              "dreamaticvoyage:celestial_boots"
             ]
           }
         ]

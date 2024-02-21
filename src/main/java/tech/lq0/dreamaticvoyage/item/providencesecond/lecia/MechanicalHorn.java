@@ -19,8 +19,8 @@ public class MechanicalHorn extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.mechanical_horn_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.mechanical_horn_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.STRIKETHROUGH));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.mechanical_horn_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.mechanical_horn_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.STRIKETHROUGH));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.LECIA);
     }

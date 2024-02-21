@@ -51,7 +51,7 @@ public class PorcelainThrone extends Block {
 
     @Override
     public void appendHoverText(ItemStack pStack, @org.jetbrains.annotations.Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.porcelain_throne").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.porcelain_throne").withStyle(ChatFormatting.GRAY));
     }
 
     @Override

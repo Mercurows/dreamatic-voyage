@@ -10,7 +10,7 @@
       "item": "minecraft:sugar"
     },
     "P": {
-      "item": "providencraft:marshaimallow"
+      "item": "dreamaticvoyage:marshaimallow"
     },
     "M": {
       "item": "minecraft:milk_bucket"
@@ -20,7 +20,7 @@
     }
   },
   "result": {
-    "item": "providencraft:haibara_soup",
+    "item": "dreamaticvoyage:haibara_soup",
     "count": 1
   }
 }

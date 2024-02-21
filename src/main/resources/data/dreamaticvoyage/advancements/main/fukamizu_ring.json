@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:fukamizu_ring"
+      "item": "dreamaticvoyage:fukamizu_ring"
     },
     "title": {
-      "translate": "providencraft.advancement.fukamizu_ring"
+      "translate": "dreamaticvoyage.advancement.fukamizu_ring"
     },
     "description": {
-      "translate": "providencraft.advancement.fukamizu_ring_des"
+      "translate": "dreamaticvoyage.advancement.fukamizu_ring_des"
     },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/eat_rabbit_lychee",
+  "parent": "dreamaticvoyage:main/eat_rabbit_lychee",
   "criteria": {
     "fukamizu_ring": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:fukamizu_ring"
+              "dreamaticvoyage:fukamizu_ring"
             ]
           }
         ]

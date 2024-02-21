@@ -5,11 +5,11 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:harano_planks"
+      "item": "dreamaticvoyage:harano_planks"
     }
   },
   "result": {
-    "item": "providencraft:harano_slab",
+    "item": "dreamaticvoyage:harano_slab",
     "count": 6
   }
 }

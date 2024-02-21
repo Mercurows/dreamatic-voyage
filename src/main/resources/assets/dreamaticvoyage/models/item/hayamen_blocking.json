@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "providencraft:item/hayamen",
+	"parent": "dreamaticvoyage:item/hayamen",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "providencraft:item/hayamen"
+		"1": "dreamaticvoyage:item/hayamen"
 	},
 	"elements": [
 		{

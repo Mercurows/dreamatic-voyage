@@ -44,8 +44,8 @@ public class LotusPotato extends Item {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.lotus_potato").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.lotus_potato.warn").withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lotus_potato").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lotus_potato.warn").withStyle(ChatFormatting.RED));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.CHIRAM);
     }

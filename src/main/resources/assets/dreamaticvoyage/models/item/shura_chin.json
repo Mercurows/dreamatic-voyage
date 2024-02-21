@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"2": "providencraft:item/shura_chin",
-		"particle": "providencraft:item/shura_chin"
+		"2": "dreamaticvoyage:item/shura_chin",
+		"particle": "dreamaticvoyage:item/shura_chin"
 	},
 	"elements": [
 		{
@@ -906,9 +906,9 @@
 	"overrides": [
 		{
 			"predicate": {
-				"providencraft:invoke": 1
+				"dreamaticvoyage:invoke": 1
 			},
-			"model": "providencraft:item/shura_chin_invoke"
+			"model": "dreamaticvoyage:item/shura_chin_invoke"
 		}
 	]
 }

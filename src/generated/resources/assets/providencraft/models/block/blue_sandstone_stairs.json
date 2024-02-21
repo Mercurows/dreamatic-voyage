@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "providencraft:block/blue_sandstone_bottom",
-    "side": "providencraft:block/blue_sandstone",
-    "top": "providencraft:block/blue_sandstone_top"
-  }
-}

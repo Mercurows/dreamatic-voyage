@@ -19,11 +19,11 @@
       "item": "minecraft:iron_door"
     },
     "e": {
-      "item": "providencraft:purified_crystal_ingot"
+      "item": "dreamaticvoyage:purified_crystal_ingot"
     }
   },
   "result": {
-    "item": "providencraft:hayamen",
+    "item": "dreamaticvoyage:hayamen",
     "count": 1
   }
 }

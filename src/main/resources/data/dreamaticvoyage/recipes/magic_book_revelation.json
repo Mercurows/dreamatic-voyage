@@ -16,11 +16,11 @@
       "item": "minecraft:gunpowder"
     },
     "P": {
-      "item": "providencraft:magic_book"
+      "item": "dreamaticvoyage:magic_book"
     }
   },
   "result": {
-    "item": "providencraft:magic_book_revelation",
+    "item": "dreamaticvoyage:magic_book_revelation",
     "count": 1
   }
 }

@@ -18,6 +18,6 @@ public class HaranoSlab extends SlabBlock {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.harano_slab").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.harano_slab").withStyle(ChatFormatting.GRAY));
     }
 }

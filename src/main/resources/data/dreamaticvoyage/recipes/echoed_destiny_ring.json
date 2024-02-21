@@ -4,13 +4,13 @@
     "item": "minecraft:tide_armor_trim_smithing_template"
   },
   "base": {
-    "item": "providencraft:fukamizu_ring"
+    "item": "dreamaticvoyage:fukamizu_ring"
   },
   "addition": {
-    "item": "providencraft:ocean_destiny"
+    "item": "dreamaticvoyage:ocean_destiny"
   },
   "result": {
-    "item": "providencraft:echoed_destiny_ring",
+    "item": "dreamaticvoyage:echoed_destiny_ring",
     "count": 1
   }
 }

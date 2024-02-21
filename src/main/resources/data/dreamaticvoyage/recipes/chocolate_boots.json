@@ -7,7 +7,7 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:daifuku_syrup"
+      "item": "dreamaticvoyage:daifuku_syrup"
     },
     "C": {
       "item": "minecraft:cocoa_beans"
@@ -17,7 +17,7 @@
     }
   },
   "result": {
-    "item": "providencraft:chocolate_boots",
+    "item": "dreamaticvoyage:chocolate_boots",
     "count": 2
   }
 }

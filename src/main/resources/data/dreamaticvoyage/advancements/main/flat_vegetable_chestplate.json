@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:flat_vegetable_chestplate"
+      "item": "dreamaticvoyage:flat_vegetable_chestplate"
     },
     "title": {
-      "translate": "providencraft.advancement.flat_vegetable_chestplate"
+      "translate": "dreamaticvoyage.advancement.flat_vegetable_chestplate"
     },
     "description": {
-      "translate": "providencraft.advancement.flat_vegetable_chestplate_des"
+      "translate": "dreamaticvoyage.advancement.flat_vegetable_chestplate_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/eat_lotus_potato",
+  "parent": "dreamaticvoyage:main/eat_lotus_potato",
   "criteria": {
     "flat_vegetable_chestplate": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:flat_vegetable_chestplate"
+              "dreamaticvoyage:flat_vegetable_chestplate"
             ]
           }
         ]

@@ -35,13 +35,13 @@ public class MariStew extends Item {
                 player.hurt(DamageSourceRegistry.causeMariFoodDamage(pLevel.registryAccess(), null), 20.0f);
             } else if (random > 90) {
                 player.heal(20.0f);
-                player.displayClientMessage(Component.translatable("des.providencraft.mari_stew.heal").withStyle(ChatFormatting.GOLD), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.mari_stew.heal").withStyle(ChatFormatting.GOLD), true);
             } else if (random > 70) {
                 player.addEffect(new MobEffectInstance(MobEffects.POISON, 200, 1));
             } else if (random > 40) {
                 player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 400, 1));
             } else {
-                player.displayClientMessage(Component.translatable("des.providencraft.mari_stew.nothing").withStyle(ChatFormatting.GRAY), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.mari_stew.nothing").withStyle(ChatFormatting.GRAY), true);
             }
 
             ChaosHelper.addChaos(player, 10);
@@ -55,8 +55,8 @@ public class MariStew extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.mari_stew").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.mari_stew.warn").withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.mari_stew").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.mari_stew.warn").withStyle(ChatFormatting.RED));
 
         TooltipTool.addChaosInfo(pTooltipComponents, 10);
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.MARI);

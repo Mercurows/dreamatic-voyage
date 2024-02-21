@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:magic_book_myanna_plus"
+      "item": "dreamaticvoyage:magic_book_myanna_plus"
     },
     "title": {
-      "translate": "providencraft.advancement.magic_book_myanna_plus"
+      "translate": "dreamaticvoyage.advancement.magic_book_myanna_plus"
     },
     "description": {
-      "translate": "providencraft.advancement.magic_book_myanna_plus_des"
+      "translate": "dreamaticvoyage.advancement.magic_book_myanna_plus_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false,
     "frame": "goal"
   },
-  "parent": "providencraft:main/magic_book_myanna",
+  "parent": "dreamaticvoyage:main/magic_book_myanna",
   "criteria": {
     "magic_book_myanna_plus": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:magic_book_myanna_plus"
+              "dreamaticvoyage:magic_book_myanna_plus"
             ]
           }
         ]

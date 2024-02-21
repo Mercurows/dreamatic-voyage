@@ -6,10 +6,10 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:blue_sand"
+      "item": "dreamaticvoyage:blue_sand"
     }
   },
   "result": {
-    "item": "providencraft:blue_sandstone"
+    "item": "dreamaticvoyage:blue_sandstone"
   }
 }

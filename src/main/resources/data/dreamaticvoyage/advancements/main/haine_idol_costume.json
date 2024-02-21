@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:haine_idol_chestplate"
+      "item": "dreamaticvoyage:haine_idol_chestplate"
     },
     "title": {
-      "translate": "providencraft.advancement.haine_idol_costume"
+      "translate": "dreamaticvoyage.advancement.haine_idol_costume"
     },
     "description": {
-      "translate": "providencraft.advancement.haine_idol_costume_des"
+      "translate": "dreamaticvoyage.advancement.haine_idol_costume_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/keroro_idol_costume",
+  "parent": "dreamaticvoyage:main/keroro_idol_costume",
   "criteria": {
     "haine_idol_costume_1": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:haine_idol_helmet"
+              "dreamaticvoyage:haine_idol_helmet"
             ]
           }
         ]
@@ -33,7 +33,7 @@
         "items": [
           {
             "items": [
-              "providencraft:haine_idol_chestplate"
+              "dreamaticvoyage:haine_idol_chestplate"
             ]
           }
         ]
@@ -45,7 +45,7 @@
         "items": [
           {
             "items": [
-              "providencraft:haine_idol_boots"
+              "dreamaticvoyage:haine_idol_boots"
             ]
           }
         ]

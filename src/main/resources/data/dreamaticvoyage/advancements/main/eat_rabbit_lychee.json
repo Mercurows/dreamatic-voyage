@@ -1,26 +1,26 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:rabbit_lychee"
+      "item": "dreamaticvoyage:rabbit_lychee"
     },
     "title": {
-      "translate": "providencraft.advancement.eat_rabbit_lychee"
+      "translate": "dreamaticvoyage.advancement.eat_rabbit_lychee"
     },
     "description": {
-      "translate": "providencraft.advancement.eat_rabbit_lychee_des"
+      "translate": "dreamaticvoyage.advancement.eat_rabbit_lychee_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/gravity_restraint_device",
+  "parent": "dreamaticvoyage:main/gravity_restraint_device",
   "criteria": {
     "eat_rabbit_lychee": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
-            "providencraft:rabbit_lychee"
+            "dreamaticvoyage:rabbit_lychee"
           ]
         }
       }

@@ -11,10 +11,10 @@
     },
     "P": [
       {
-        "item": "providencraft:gn_souls"
+        "item": "dreamaticvoyage:gn_souls"
       },
       {
-        "item": "providencraft:gn_spirit"
+        "item": "dreamaticvoyage:gn_spirit"
       }
     ],
     "L": {
@@ -22,7 +22,7 @@
     }
   },
   "result": {
-    "item": "providencraft:hirenade_gg",
+    "item": "dreamaticvoyage:hirenade_gg",
     "count": 16
   }
 }

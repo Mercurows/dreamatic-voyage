@@ -13,17 +13,17 @@
       "item": "minecraft:diamond"
     },
     "a": {
-      "item": "providencraft:magic_book_myanna"
+      "item": "dreamaticvoyage:magic_book_myanna"
     },
     "b": {
-      "item": "providencraft:crystal_powder"
+      "item": "dreamaticvoyage:crystal_powder"
     },
     "g": {
       "item": "minecraft:emerald"
     }
   },
   "result": {
-    "item": "providencraft:magic_book_myanna_plus",
+    "item": "dreamaticvoyage:magic_book_myanna_plus",
     "count": 1
   }
 }

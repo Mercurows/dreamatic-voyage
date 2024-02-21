@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:crystal_horn"
+      "item": "dreamaticvoyage:crystal_horn"
     },
     "title": {
-      "translate": "providencraft.advancement.crystal_horn"
+      "translate": "dreamaticvoyage.advancement.crystal_horn"
     },
     "description": {
-      "translate": "providencraft.advancement.crystal_horn_des"
+      "translate": "dreamaticvoyage.advancement.crystal_horn_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/eat_taro_ice_cream",
+  "parent": "dreamaticvoyage:main/eat_taro_ice_cream",
   "criteria": {
     "crystal_horn": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:crystal_horn"
+              "dreamaticvoyage:crystal_horn"
             ]
           }
         ]

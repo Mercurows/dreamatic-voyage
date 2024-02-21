@@ -70,13 +70,13 @@ public class MomoPhone extends Item {
                 ItemNBTTool.setBoolean(item, NBT_BINDING, true);
                 item.getOrCreateTag().putString(NBT_DIMENSION, pLevel.dimension().location().toString());
 
-                playerIn.displayClientMessage(Component.translatable("des.providencraft.momo_phone.set_pos").withStyle(ChatFormatting.LIGHT_PURPLE), true);
+                playerIn.displayClientMessage(Component.translatable("des.dreamaticvoyage.momo_phone.set_pos").withStyle(ChatFormatting.LIGHT_PURPLE), true);
                 playerIn.playSound(SoundEvents.ARROW_HIT_PLAYER, 1.0F, 1.0F);
 
                 return InteractionResultHolder.pass(item);
             } else {
                 if (!pLevel.dimension().location().toString().equals(dimensionStr)) {
-                    playerIn.displayClientMessage(Component.translatable("des.providencraft.momo_phone.tp_fail").withStyle(ChatFormatting.RED), true);
+                    playerIn.displayClientMessage(Component.translatable("des.dreamaticvoyage.momo_phone.tp_fail").withStyle(ChatFormatting.RED), true);
                     return InteractionResultHolder.fail(item);
                 }
 
@@ -93,7 +93,7 @@ public class MomoPhone extends Item {
                     playerIn.getCooldowns().addCooldown(item.getItem(), 200);
                 } else {
                     if (pos == null) {
-                        playerIn.displayClientMessage(Component.translatable("des.providencraft.momo_phone.not_set_pos").withStyle(ChatFormatting.RED), true);
+                        playerIn.displayClientMessage(Component.translatable("des.dreamaticvoyage.momo_phone.not_set_pos").withStyle(ChatFormatting.RED), true);
                     } else {
                         boolean isBlocked = false;
                         BlockState state1 = pLevel.getBlockState(pos);
@@ -131,7 +131,7 @@ public class MomoPhone extends Item {
                             }
                         } else {
                             if (!pLevel.isClientSide) {
-                                playerIn.displayClientMessage(Component.translatable("des.providencraft.momo_phone.tp_fail").withStyle(ChatFormatting.RED), true);
+                                playerIn.displayClientMessage(Component.translatable("des.dreamaticvoyage.momo_phone.tp_fail").withStyle(ChatFormatting.RED), true);
                             }
                         }
                     }
@@ -159,10 +159,10 @@ public class MomoPhone extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.momo_phone.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.momo_phone_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.momo_phone_2").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.momo_phone.warn").withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.momo_phone.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.momo_phone_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.momo_phone_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.momo_phone.warn").withStyle(ChatFormatting.RED));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.SHIRAKO);
     }

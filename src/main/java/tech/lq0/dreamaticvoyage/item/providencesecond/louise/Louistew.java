@@ -30,8 +30,8 @@ public class Louistew extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.louistew").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.louistew.warn").withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.louistew").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.louistew.warn").withStyle(ChatFormatting.RED));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.LOUISE);
     }

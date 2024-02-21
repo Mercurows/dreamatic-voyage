@@ -18,6 +18,6 @@ public class CutBlueSandstone extends Block {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.cut_blue_sandstone").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.cut_blue_sandstone").withStyle(ChatFormatting.GRAY));
     }
 }

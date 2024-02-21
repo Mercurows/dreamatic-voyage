@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:breeze_crown"
+      "item": "dreamaticvoyage:breeze_crown"
     },
     "title": {
-      "translate": "providencraft.advancement.breeze_crown",
+      "translate": "dreamaticvoyage.advancement.breeze_crown",
       "color": "gold"
     },
     "description": {
-      "translate": "providencraft.advancement.breeze_crown_des"
+      "translate": "dreamaticvoyage.advancement.breeze_crown_des"
     },
     "frame": "challenge",
     "show_toast": true,
     "hidden": false
   },
-  "parent": "providencraft:legendary/legendary",
+  "parent": "dreamaticvoyage:legendary/legendary",
   "criteria": {
     "breeze_crown": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:breeze_crown"
+              "dreamaticvoyage:breeze_crown"
             ]
           }
         ]

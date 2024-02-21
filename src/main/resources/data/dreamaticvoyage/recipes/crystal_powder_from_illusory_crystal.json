@@ -5,11 +5,11 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:illusory_crystal"
+      "item": "dreamaticvoyage:illusory_crystal"
     }
   },
   "result": {
-    "item": "providencraft:crystal_powder",
+    "item": "dreamaticvoyage:crystal_powder",
     "count": 4
   }
 }

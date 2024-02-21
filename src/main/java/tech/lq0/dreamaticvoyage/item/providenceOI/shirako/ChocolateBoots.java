@@ -32,8 +32,8 @@ public class ChocolateBoots extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> tooltip, TooltipFlag pIsAdvanced) {
-        tooltip.add(Component.translatable("des.providencraft.chocolate_boots_1").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("des.providencraft.chocolate_boots_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.chocolate_boots_1").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.chocolate_boots_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
         TooltipTool.addChaosInfo(tooltip, 200);
         TooltipTool.addLiverInfo(tooltip, Livers.SHIRAKO);

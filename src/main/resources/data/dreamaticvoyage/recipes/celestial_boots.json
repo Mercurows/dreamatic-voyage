@@ -7,26 +7,26 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:dream_weaving_yarn"
+      "item": "dreamaticvoyage:dream_weaving_yarn"
     },
     "G": {
       "item": "minecraft:golden_boots"
     },
     "P": {
-      "item": "providencraft:ekira_idol_helmet"
+      "item": "dreamaticvoyage:ekira_idol_helmet"
     },
     "B": {
-      "item": "providencraft:ekira_core"
+      "item": "dreamaticvoyage:ekira_core"
     },
     "C": {
-      "item": "providencraft:ekira_idol_boots"
+      "item": "dreamaticvoyage:ekira_idol_boots"
     },
     "T": {
-      "item": "providencraft:ekira_idol_chestplate"
+      "item": "dreamaticvoyage:ekira_idol_chestplate"
     }
   },
   "result": {
-    "item": "providencraft:celestial_boots",
+    "item": "dreamaticvoyage:celestial_boots",
     "count": 1
   }
 }

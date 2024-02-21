@@ -1,14 +1,14 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "providencraft:item/electric_horn"
+    "layer0": "dreamaticvoyage:item/electric_horn"
   },
   "overrides": [
     {
       "predicate": {
-        "providencraft:electric_horn_able": 1
+        "dreamaticvoyage:electric_horn_able": 1
       },
-      "model": "providencraft:item/electric_horn_able"
+      "model": "dreamaticvoyage:item/electric_horn_able"
     }
   ]
 }

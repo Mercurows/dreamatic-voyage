@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "minecraft:bread"
   },
-  "result": "providencraft:fukamizu_bread",
+  "result": "dreamaticvoyage:fukamizu_bread",
   "experience": 1.00,
   "cookingtime": 100
 }

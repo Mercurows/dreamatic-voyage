@@ -7,17 +7,17 @@
   ],
   "key": {
     "x": {
-      "item": "providencraft:gn_souls"
+      "item": "dreamaticvoyage:gn_souls"
     },
     "y": {
-      "item": "providencraft:gn_spirit"
+      "item": "dreamaticvoyage:gn_spirit"
     },
     "a": {
       "item": "minecraft:nether_star"
     }
   },
   "result": {
-    "item": "providencraft:gn_star",
+    "item": "dreamaticvoyage:gn_star",
     "count": 1
   }
 }

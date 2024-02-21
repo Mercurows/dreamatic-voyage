@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:moonlight_amulet"
+      "item": "dreamaticvoyage:moonlight_amulet"
     },
     "title": {
-      "translate": "providencraft.advancement.moonlight_amulet"
+      "translate": "dreamaticvoyage.advancement.moonlight_amulet"
     },
     "description": {
-      "translate": "providencraft.advancement.moonlight_amulet_des"
+      "translate": "dreamaticvoyage.advancement.moonlight_amulet_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/big_moe_one",
+  "parent": "dreamaticvoyage:main/big_moe_one",
   "criteria": {
     "moonlight_amulet": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:moonlight_amulet"
+              "dreamaticvoyage:moonlight_amulet"
             ]
           }
         ]

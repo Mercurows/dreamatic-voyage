@@ -1,26 +1,26 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:mari_stew"
+      "item": "dreamaticvoyage:mari_stew"
     },
     "title": {
-      "translate": "providencraft.advancement.eat_mari_stew"
+      "translate": "dreamaticvoyage.advancement.eat_mari_stew"
     },
     "description": {
-      "translate": "providencraft.advancement.eat_mari_stew_des"
+      "translate": "dreamaticvoyage.advancement.eat_mari_stew_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/crystal_horn",
+  "parent": "dreamaticvoyage:main/crystal_horn",
   "criteria": {
     "eat_mari_stew": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
-            "providencraft:mari_stew"
+            "dreamaticvoyage:mari_stew"
           ]
         }
       }

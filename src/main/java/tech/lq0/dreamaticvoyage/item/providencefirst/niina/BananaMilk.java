@@ -38,7 +38,7 @@ public class BananaMilk extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.banana_milk").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.banana_milk").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addChaosInfo(pTooltipComponents, 3);
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.NIINA);

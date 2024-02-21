@@ -7,7 +7,7 @@
   ],
   "key": {
     "n": {
-      "item": "providencraft:purified_crystal_ingot"
+      "item": "dreamaticvoyage:purified_crystal_ingot"
     },
     "i": {
       "item": "minecraft:stick"
@@ -17,7 +17,7 @@
     }
   },
   "result": {
-    "item": "providencraft:haya_sword",
+    "item": "dreamaticvoyage:haya_sword",
     "count": 1
   }
 }

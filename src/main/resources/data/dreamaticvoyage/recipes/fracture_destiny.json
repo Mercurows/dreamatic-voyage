@@ -10,7 +10,7 @@
       "item": "minecraft:diamond"
     },
     "b": {
-      "item": "providencraft:sink_crystal"
+      "item": "dreamaticvoyage:sink_crystal"
     },
     "c": {
       "item": "minecraft:cornflower"
@@ -22,11 +22,11 @@
       "item": "minecraft:emerald"
     },
     "f": {
-      "item": "providencraft:fukamizu_fish"
+      "item": "dreamaticvoyage:fukamizu_fish"
     }
   },
   "result": {
-    "item": "providencraft:fracture_destiny",
+    "item": "dreamaticvoyage:fracture_destiny",
     "count": 1
   }
 }

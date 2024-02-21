@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:magic_book"
+      "item": "dreamaticvoyage:magic_book"
     },
     "title": {
-      "translate": "providencraft.advancement.magic_book"
+      "translate": "dreamaticvoyage.advancement.magic_book"
     },
     "description": {
-      "translate": "providencraft.advancement.magic_book_des"
+      "translate": "dreamaticvoyage.advancement.magic_book_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/white_double_ahoge",
+  "parent": "dreamaticvoyage:main/white_double_ahoge",
   "criteria": {
     "magic_book": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:magic_book"
+              "dreamaticvoyage:magic_book"
             ]
           }
         ]

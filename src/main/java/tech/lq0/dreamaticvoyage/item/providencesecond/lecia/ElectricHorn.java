@@ -48,10 +48,10 @@ public class ElectricHorn extends ArmorItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.electric_horn.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.electric_horn_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.electric_horn_2").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.electric_horn.warn").withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.electric_horn.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.electric_horn_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.electric_horn_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.electric_horn.warn").withStyle(ChatFormatting.RED));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.LECIA);
     }
@@ -72,8 +72,8 @@ public class ElectricHorn extends ArmorItem {
         if (!pLevel.isClientSide && pPlayer.isSteppingCarefully()) {
             boolean flag = ItemNBTTool.getBoolean(stack, TAG_ABLE, false);
             ItemNBTTool.setBoolean(stack, TAG_ABLE, !flag);
-            pPlayer.displayClientMessage(!flag ? Component.translatable("des.providencraft.electric_horn.enable") :
-                    Component.translatable("des.providencraft.electric_horn.disable"), true);
+            pPlayer.displayClientMessage(!flag ? Component.translatable("des.dreamaticvoyage.electric_horn.enable") :
+                    Component.translatable("des.dreamaticvoyage.electric_horn.disable"), true);
         }
         return InteractionResultHolder.fail(stack);
     }

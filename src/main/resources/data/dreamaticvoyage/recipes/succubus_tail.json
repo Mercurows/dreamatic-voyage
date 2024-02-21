@@ -7,20 +7,20 @@
   ],
   "key": {
     "r": {
-      "item": "providencraft:radiant_crystal"
+      "item": "dreamaticvoyage:radiant_crystal"
     },
     "p": {
       "item": "minecraft:pink_dye"
     },
     "g": {
-      "item": "providencraft:harden_crystal_ingot"
+      "item": "dreamaticvoyage:harden_crystal_ingot"
     },
     "w": {
       "item": "minecraft:light_gray_wool"
     }
   },
   "result": {
-    "item": "providencraft:succubus_tail",
+    "item": "dreamaticvoyage:succubus_tail",
     "count": 1
   }
 }

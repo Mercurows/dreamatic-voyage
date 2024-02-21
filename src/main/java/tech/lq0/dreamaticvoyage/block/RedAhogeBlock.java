@@ -18,6 +18,6 @@ public class RedAhogeBlock extends Block {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.red_ahoge_block").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.red_ahoge_block").withStyle(ChatFormatting.GRAY));
     }
 }

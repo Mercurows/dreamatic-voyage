@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "providencraft:item/fiaxe",
-		"2": "providencraft:item/fiaxe2"
+		"1": "dreamaticvoyage:item/fiaxe",
+		"2": "dreamaticvoyage:item/fiaxe2"
 	},
 	"elements": [
 		{

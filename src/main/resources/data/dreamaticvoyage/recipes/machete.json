@@ -13,11 +13,11 @@
       "item": "minecraft:iron_block"
     },
     "c": {
-      "item": "providencraft:purified_crystal_ingot"
+      "item": "dreamaticvoyage:purified_crystal_ingot"
     }
   },
   "result": {
-    "item": "providencraft:machete",
+    "item": "dreamaticvoyage:machete",
     "count": 1
   }
 }

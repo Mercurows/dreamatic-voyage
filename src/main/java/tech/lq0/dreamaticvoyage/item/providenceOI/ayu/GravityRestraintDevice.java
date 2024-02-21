@@ -64,17 +64,17 @@ public class GravityRestraintDevice extends ArmorItem {
         if (!pLevel.isClientSide && pPlayer.isSteppingCarefully()) {
             boolean flag = ItemNBTTool.getBoolean(stack, TAG_GRAVITY, false);
             ItemNBTTool.setBoolean(stack, TAG_GRAVITY, !flag);
-            pPlayer.displayClientMessage(!flag ? Component.translatable("des.providencraft.grd.moon") :
-                    Component.translatable("des.providencraft.grd.zero"), true);
+            pPlayer.displayClientMessage(!flag ? Component.translatable("des.dreamaticvoyage.grd.moon") :
+                    Component.translatable("des.dreamaticvoyage.grd.zero"), true);
         }
         return InteractionResultHolder.fail(stack);
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.grd.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.grd_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.grd_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.grd.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.grd_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.grd_2").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.AYU);
     }

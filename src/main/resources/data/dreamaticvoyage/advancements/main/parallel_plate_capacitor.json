@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:hai_plate"
+      "item": "dreamaticvoyage:hai_plate"
     },
     "title": {
-      "translate": "providencraft.advancement.parallel_plate_capacitor"
+      "translate": "dreamaticvoyage.advancement.parallel_plate_capacitor"
     },
     "description": {
-      "translate": "providencraft.advancement.parallel_plate_capacitor_des"
+      "translate": "dreamaticvoyage.advancement.parallel_plate_capacitor_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/flat_vegetable_chestplate",
+  "parent": "dreamaticvoyage:main/flat_vegetable_chestplate",
   "criteria": {
     "parallel_plate_capacitor_1": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:flat_vegetable_chestplate"
+              "dreamaticvoyage:flat_vegetable_chestplate"
             ]
           }
         ]
@@ -33,7 +33,7 @@
         "items": [
           {
             "items": [
-              "providencraft:hai_plate"
+              "dreamaticvoyage:hai_plate"
             ]
           }
         ]

@@ -5,11 +5,11 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:harden_crystal_block"
+      "item": "dreamaticvoyage:harden_crystal_block"
     }
   },
   "result": {
-    "item": "providencraft:harden_crystal_ingot",
+    "item": "dreamaticvoyage:harden_crystal_ingot",
     "count": 9
   }
 }

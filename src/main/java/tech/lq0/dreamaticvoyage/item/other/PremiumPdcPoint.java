@@ -17,6 +17,6 @@ public class PremiumPdcPoint extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.premium_pdc_point").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.premium_pdc_point").withStyle(ChatFormatting.GRAY));
     }
 }

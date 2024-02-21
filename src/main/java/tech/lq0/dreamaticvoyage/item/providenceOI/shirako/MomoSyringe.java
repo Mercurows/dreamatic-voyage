@@ -24,8 +24,8 @@ public class MomoSyringe extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.momo_syringe_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-        pTooltipComponents.add(Component.translatable("des.providencraft.momo_syringe_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.momo_syringe_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.momo_syringe_2").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.SHIRAKO);
     }

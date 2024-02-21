@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "providencraft:item/atsuishio_glass",
-		"1": "providencraft:item/atsuishio",
-		"particle": "providencraft:item/atsuishio_glass"
+		"0": "dreamaticvoyage:item/atsuishio_glass",
+		"1": "dreamaticvoyage:item/atsuishio",
+		"particle": "dreamaticvoyage:item/atsuishio_glass"
 	},
 	"elements": [
 		{

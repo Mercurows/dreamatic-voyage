@@ -7,7 +7,7 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:red_ahoge"
+      "item": "dreamaticvoyage:red_ahoge"
     },
     "W": {
       "item": "minecraft:white_wool"
@@ -23,7 +23,7 @@
     }
   },
   "result": {
-    "item": "providencraft:sneakers",
+    "item": "dreamaticvoyage:sneakers",
     "count": 1
   }
 }

@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "providencraft:white_double_ahoge"
+      "item": "dreamaticvoyage:white_double_ahoge"
     }
   ],
   "result": {
-    "item": "providencraft:white_ahoge",
+    "item": "dreamaticvoyage:white_ahoge",
     "count": 2
   }
 }

@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:satou_camera"
+      "item": "dreamaticvoyage:satou_camera"
     },
     "title": {
-      "translate": "providencraft.advancement.satou_camera"
+      "translate": "dreamaticvoyage.advancement.satou_camera"
     },
     "description": {
-      "translate": "providencraft.advancement.satou_camera_des"
+      "translate": "dreamaticvoyage.advancement.satou_camera_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/satou_knife",
+  "parent": "dreamaticvoyage:main/satou_knife",
   "criteria": {
     "satou_camera": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:satou_camera"
+              "dreamaticvoyage:satou_camera"
             ]
           }
         ]

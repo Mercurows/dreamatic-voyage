@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "providencraft:block/harano_sapling"
+    "layer0": "dreamaticvoyage:block/harano_sapling"
   }
 }

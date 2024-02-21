@@ -13,11 +13,11 @@
       "item": "minecraft:totem_of_undying"
     },
     "g": {
-      "item": "providencraft:purified_crystal_ingot"
+      "item": "dreamaticvoyage:purified_crystal_ingot"
     }
   },
   "result": {
-    "item": "providencraft:cloud_key",
+    "item": "dreamaticvoyage:cloud_key",
     "count": 1
   }
 }

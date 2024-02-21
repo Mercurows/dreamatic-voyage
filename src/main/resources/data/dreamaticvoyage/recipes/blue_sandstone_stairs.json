@@ -8,18 +8,18 @@
   "key": {
     "#": [
       {
-        "item": "providencraft:blue_sandstone"
+        "item": "dreamaticvoyage:blue_sandstone"
       },
       {
-        "item": "providencraft:chiseled_blue_sandstone"
+        "item": "dreamaticvoyage:chiseled_blue_sandstone"
       },
       {
-        "item": "providencraft:cut_blue_sandstone"
+        "item": "dreamaticvoyage:cut_blue_sandstone"
       }
     ]
   },
   "result": {
-    "item": "providencraft:blue_sandstone_stairs",
+    "item": "dreamaticvoyage:blue_sandstone_stairs",
     "count": 4
   }
 }

@@ -2,10 +2,10 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [8, 8],
 	"textures": {
-		"0": "providencraft:item/fox_fairy_fan_handle",
-		"1": "providencraft:item/fox_fairy_fan",
-		"2": "providencraft:item/fox_fairy_fan_flower",
-		"particle": "providencraft:item/fox_fairy_fan_handle"
+		"0": "dreamaticvoyage:item/fox_fairy_fan_handle",
+		"1": "dreamaticvoyage:item/fox_fairy_fan",
+		"2": "dreamaticvoyage:item/fox_fairy_fan_flower",
+		"particle": "dreamaticvoyage:item/fox_fairy_fan_handle"
 	},
 	"elements": [
 		{

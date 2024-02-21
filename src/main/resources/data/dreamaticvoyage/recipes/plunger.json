@@ -10,11 +10,11 @@
       "item": "minecraft:pink_wool"
     },
     "b": {
-      "item": "providencraft:purified_crystal_ingot"
+      "item": "dreamaticvoyage:purified_crystal_ingot"
     }
   },
   "result": {
-    "item": "providencraft:plunger",
+    "item": "dreamaticvoyage:plunger",
     "count": 1
   }
 }

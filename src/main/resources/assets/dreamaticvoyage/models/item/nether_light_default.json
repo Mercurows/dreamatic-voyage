@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "providencraft:item/nether_light",
-		"particle": "providencraft:item/nether_light"
+		"0": "dreamaticvoyage:item/nether_light",
+		"particle": "dreamaticvoyage:item/nether_light"
 	},
 	"elements": [
 		{

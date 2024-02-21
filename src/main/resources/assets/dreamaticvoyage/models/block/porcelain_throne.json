@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "providencraft:block/porcelain_throne",
-		"particle": "providencraft:block/porcelain_throne"
+		"0": "dreamaticvoyage:block/porcelain_throne",
+		"particle": "dreamaticvoyage:block/porcelain_throne"
 	},
 	"elements": [
 		{

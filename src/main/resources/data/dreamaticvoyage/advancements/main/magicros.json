@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:magicros_core"
+      "item": "dreamaticvoyage:magicros_core"
     },
     "title": {
-      "translate": "providencraft.advancement.magicros"
+      "translate": "dreamaticvoyage.advancement.magicros"
     },
     "description": {
-      "translate": "providencraft.advancement.magicros_des"
+      "translate": "dreamaticvoyage.advancement.magicros_des"
     },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": true
   },
-  "parent": "providencraft:main/dream_weaving_yarn",
+  "parent": "dreamaticvoyage:main/dream_weaving_yarn",
   "criteria": {
     "magicros": {
       "trigger": "minecraft:inventory_changed",
@@ -22,22 +22,22 @@
         "items": [
           {
             "items": [
-              "providencraft:breeze_crown"
+              "dreamaticvoyage:breeze_crown"
             ]
           },
           {
             "items": [
-              "providencraft:misty_chestplate"
+              "dreamaticvoyage:misty_chestplate"
             ]
           },
           {
             "items": [
-              "providencraft:froggy_leggings"
+              "dreamaticvoyage:froggy_leggings"
             ]
           },
           {
             "items": [
-              "providencraft:celestial_boots"
+              "dreamaticvoyage:celestial_boots"
             ]
           }
         ]

@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:fetuozi"
+      "item": "dreamaticvoyage:fetuozi"
     },
     "title": {
-      "translate": "providencraft.advancement.fetuozi"
+      "translate": "dreamaticvoyage.advancement.fetuozi"
     },
     "description": {
-      "translate": "providencraft.advancement.fetuozi_des"
+      "translate": "dreamaticvoyage.advancement.fetuozi_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/eat_momo_daifuku",
+  "parent": "dreamaticvoyage:main/eat_momo_daifuku",
   "criteria": {
     "fetuozi": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:fetuozi"
+              "dreamaticvoyage:fetuozi"
             ]
           }
         ]

@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "providencraft:item/ancient_lollipop",
-		"particle": "providencraft:item/past_sugar"
+		"1": "dreamaticvoyage:item/ancient_lollipop",
+		"particle": "dreamaticvoyage:item/past_sugar"
 	},
 	"elements": [
 		{

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "providencraft:music_disc_around_the_travel",
+          "name": "dreamaticvoyage:music_disc_around_the_travel",
           "functions": [
             {
               "function": "minecraft:set_count",

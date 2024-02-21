@@ -9,11 +9,11 @@
       "item": "minecraft:stick"
     },
     "W": {
-      "item": "providencraft:harano_planks"
+      "item": "dreamaticvoyage:harano_planks"
     }
   },
   "result": {
-    "item": "providencraft:harano_fence",
+    "item": "dreamaticvoyage:harano_fence",
     "count": 3
   }
 }

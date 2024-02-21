@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:nether_light"
+      "item": "dreamaticvoyage:nether_light"
     },
     "title": {
-      "translate": "providencraft.advancement.nether_light"
+      "translate": "dreamaticvoyage.advancement.nether_light"
     },
     "description": {
-      "translate": "providencraft.advancement.nether_light_des"
+      "translate": "dreamaticvoyage.advancement.nether_light_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/root",
+  "parent": "dreamaticvoyage:main/root",
   "criteria": {
     "nether_light": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:nether_light"
+              "dreamaticvoyage:nether_light"
             ]
           }
         ]

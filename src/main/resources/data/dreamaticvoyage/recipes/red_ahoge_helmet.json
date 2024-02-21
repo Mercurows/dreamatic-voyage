@@ -7,7 +7,7 @@
   ],
   "key": {
     "x": {
-      "item": "providencraft:red_ahoge"
+      "item": "dreamaticvoyage:red_ahoge"
     },
     "a": {
       "item": "minecraft:iron_ingot"
@@ -20,7 +20,7 @@
     }
   },
   "result": {
-    "item": "providencraft:red_ahoge_helmet",
+    "item": "dreamaticvoyage:red_ahoge_helmet",
     "count": 1
   }
 }

@@ -29,9 +29,9 @@ public class MomoDaifuku extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> tooltip, TooltipFlag pIsAdvanced) {
-        tooltip.add(Component.translatable("des.providencraft.momo_daifuku_1").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("des.providencraft.momo_daifuku_2").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("des.providencraft.momo_daifuku.warn").withStyle(ChatFormatting.RED));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.momo_daifuku_1").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.momo_daifuku_2").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.momo_daifuku.warn").withStyle(ChatFormatting.RED));
 
         TooltipTool.addChaosInfo(tooltip, 0);
         TooltipTool.addLiverInfo(tooltip, Livers.SHIRAKO);
@@ -48,7 +48,7 @@ public class MomoDaifuku extends Item {
             int random = (int) (Math.random() * 99 + 1);
             if (random > 90) {
                 player.setSecondsOnFire(10);
-                player.displayClientMessage(Component.translatable("des.providencraft.momo_daifuku.fire").withStyle(ChatFormatting.RED), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.momo_daifuku.fire").withStyle(ChatFormatting.RED), true);
             }
 
             ChaosHelper.resetChaos(player);

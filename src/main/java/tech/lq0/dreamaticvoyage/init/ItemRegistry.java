@@ -81,7 +81,7 @@ import tech.lq0.dreamaticvoyage.tools.Livers;
 public class ItemRegistry {
 
     /**
-     * ===PROVIDENCRAFT ITEMS===
+     * ===ITEMS===
      **/
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
 
@@ -375,7 +375,7 @@ public class ItemRegistry {
 
 
     /**
-     * ===PROVIDENCRAFT AUDIO ITEMS===
+     * ===dreamaticvoyage AUDIO ITEMS===
      */
     public static final DeferredRegister<Item> AUDIO_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
 
@@ -422,7 +422,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> MUSIC_DISC_DREAMING_FAIRY = AUDIO_ITEMS.register("music_disc_dreaming_fairy", () -> new MusicDisc(Livers.UNIA, SoundRegistry.DREAMING_FAIRY, (new Item.Properties()).group(ModGroup.tapegroup).maxStackSize(1).rarity(Rarity.RARE), 4));
 
     /**
-     * ===PROVIDENCRAFT DONATE ITEMS===
+     * ===dreamaticvoyage DONATE ITEMS===
      */
     public static final DeferredRegister<Item> DONATE_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
 
@@ -438,7 +438,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> LEAH_PAD = DONATE_ITEMS.register("leah_pad", LeahPad::new);
 
     /**
-     * ===PROVIDENCRAFT COSTUMES===
+     * ===dreamaticvoyage COSTUMES===
      */
     public static final DeferredRegister<Item> COSTUMES = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
 
@@ -458,7 +458,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> MAID_COSTUME = COSTUMES.register("maid_costume", MaidCostume::new);
 
     /**
-     * ===PROVIDENCRAFT BLOCKS===
+     * ===dreamaticvoyage BLOCKS===
      */
     public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
 

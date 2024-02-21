@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "providencraft:item/hayamen"
+		"1": "dreamaticvoyage:item/hayamen"
 	},
 	"elements": [
 		{
@@ -317,9 +317,9 @@
 	"overrides": [
 		{
 			"predicate": {
-				"providencraft:blocking": 1
+				"dreamaticvoyage:blocking": 1
 			},
-			"model": "providencraft:item/hayamen_blocking"
+			"model": "dreamaticvoyage:item/hayamen_blocking"
 		}
 	]
 }

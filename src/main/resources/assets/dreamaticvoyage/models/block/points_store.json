@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "providencraft:block/points_store",
-		"particle": "providencraft:block/points_store"
+		"0": "dreamaticvoyage:block/points_store",
+		"particle": "dreamaticvoyage:block/points_store"
 	},
 	"elements": [
 		{

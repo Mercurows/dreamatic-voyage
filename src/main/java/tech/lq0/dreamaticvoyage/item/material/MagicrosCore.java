@@ -39,8 +39,8 @@ public class MagicrosCore extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.magicros_core_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.magicros_core_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.magicros_core_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.magicros_core_2").withStyle(ChatFormatting.GRAY));
     }
 
     @Override
@@ -141,7 +141,7 @@ public class MagicrosCore extends Item {
             }
 
             if (flagChiram) {
-                player.displayClientMessage(Component.translatable("des.providencraft.magicros_core.chiram").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xFFECE7)), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.magicros_core.chiram").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xFFECE7)), true);
                 ItemNBTTool.setInt(stack, TAG_CHIRAM, Math.min(ItemNBTTool.getInt(stack, TAG_CHIRAM, 0) + 1, 600));
             } else {
                 ItemNBTTool.setInt(stack, TAG_CHIRAM, 0);
@@ -151,7 +151,7 @@ public class MagicrosCore extends Item {
             }
 
             if (flagHaine) {
-                player.displayClientMessage(Component.translatable("des.providencraft.magicros_core.haine").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xADDBFF)), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.magicros_core.haine").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xADDBFF)), true);
                 ItemNBTTool.setInt(stack, TAG_HAINE, Math.min(ItemNBTTool.getInt(stack, TAG_HAINE, 0) + 1, 400));
             } else {
                 ItemNBTTool.setInt(stack, TAG_HAINE, 0);
@@ -161,7 +161,7 @@ public class MagicrosCore extends Item {
             }
 
             if (flagKeroro) {
-                player.displayClientMessage(Component.translatable("des.providencraft.magicros_core.keroro").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xF5FFEA)), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.magicros_core.keroro").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xF5FFEA)), true);
                 ItemNBTTool.setInt(stack, TAG_KERORO, Math.min(ItemNBTTool.getInt(stack, TAG_KERORO, 0) + 1, 300));
             } else {
                 ItemNBTTool.setInt(stack, TAG_KERORO, 0);
@@ -171,7 +171,7 @@ public class MagicrosCore extends Item {
             }
 
             if (flagEkira) {
-                player.displayClientMessage(Component.translatable("des.providencraft.magicros_core.ekira").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xFFF7EA)), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.magicros_core.ekira").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xFFF7EA)), true);
                 ItemNBTTool.setInt(stack, TAG_EKIRA, Math.min(ItemNBTTool.getInt(stack, TAG_EKIRA, 0) + 1, 1200));
             } else {
                 ItemNBTTool.setInt(stack, TAG_EKIRA, 0);

@@ -19,6 +19,6 @@ public class StrippedHaranoWood extends RotatedPillarBlock {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.stripped_harano_wood").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.stripped_harano_wood").withStyle(ChatFormatting.GRAY));
     }
 }

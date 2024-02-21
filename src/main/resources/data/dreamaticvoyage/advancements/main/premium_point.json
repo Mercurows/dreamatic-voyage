@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:premium_pdc_point"
+      "item": "dreamaticvoyage:premium_pdc_point"
     },
     "title": {
-      "translate": "providencraft.advancement.premium_pdc_point"
+      "translate": "dreamaticvoyage.advancement.premium_pdc_point"
     },
     "description": {
-      "translate": "providencraft.advancement.premium_pdc_point_des"
+      "translate": "dreamaticvoyage.advancement.premium_pdc_point_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "frame": "challenge",
     "hidden": false
   },
-  "parent": "providencraft:main/points_store",
+  "parent": "dreamaticvoyage:main/points_store",
   "criteria": {
     "premium_point": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:premium_pdc_point"
+              "dreamaticvoyage:premium_pdc_point"
             ]
           }
         ]

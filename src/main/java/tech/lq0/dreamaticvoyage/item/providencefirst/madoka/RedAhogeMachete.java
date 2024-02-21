@@ -39,9 +39,9 @@ public class RedAhogeMachete extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.red_ahoge_machete_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.red_ahoge_machete_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.STRIKETHROUGH));
-        pTooltipComponents.add(Component.translatable("des.providencraft.red_ahoge_machete.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.red_ahoge_machete_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.red_ahoge_machete_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.STRIKETHROUGH));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.red_ahoge_machete.func").withStyle(ChatFormatting.AQUA));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.MADOKA);
     }

@@ -7,14 +7,14 @@
   ],
   "key": {
     "c": {
-      "item": "providencraft:idol_cloth"
+      "item": "dreamaticvoyage:idol_cloth"
     },
     "d": {
       "item": "minecraft:light_blue_dye"
     }
   },
   "result": {
-    "item": "providencraft:haine_idol_chestplate",
+    "item": "dreamaticvoyage:haine_idol_chestplate",
     "count": 1
   }
 }

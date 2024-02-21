@@ -43,7 +43,7 @@ public class DaifukuSyrup extends Item {
             int random = (int) (Math.random() * 99 + 1);
             if (random > 90) {
                 player.setSecondsOnFire(2);
-                player.displayClientMessage(Component.translatable("des.providencraft.momo_daifuku.fire").withStyle(ChatFormatting.RED), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.momo_daifuku.fire").withStyle(ChatFormatting.RED), true);
             }
         }
         return itemStack;
@@ -51,9 +51,9 @@ public class DaifukuSyrup extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> tooltip, TooltipFlag pIsAdvanced) {
-        tooltip.add(Component.translatable("des.providencraft.daifuku_syrup_1").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("des.providencraft.daifuku_syrup_2").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("des.providencraft.daifuku_syrup_3").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.daifuku_syrup_1").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.daifuku_syrup_2").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.daifuku_syrup_3").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(tooltip, Livers.SHIRAKO);
     }

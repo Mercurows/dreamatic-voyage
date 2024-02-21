@@ -7,14 +7,14 @@
   ],
   "key": {
     "x": {
-      "item": "providencraft:idol_cloth"
+      "item": "dreamaticvoyage:idol_cloth"
     },
     "a": {
-      "item": "providencraft:momo_daifuku"
+      "item": "dreamaticvoyage:momo_daifuku"
     }
   },
   "result": {
-    "item": "providencraft:momo_bandage",
+    "item": "dreamaticvoyage:momo_bandage",
     "count": 1
   }
 }

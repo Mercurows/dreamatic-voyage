@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:fox_fairy_fan"
+      "item": "dreamaticvoyage:fox_fairy_fan"
     },
     "title": {
-      "translate": "providencraft.advancement.fox_fairy_fan"
+      "translate": "dreamaticvoyage.advancement.fox_fairy_fan"
     },
     "description": {
-      "translate": "providencraft.advancement.fox_fairy_fan_des"
+      "translate": "dreamaticvoyage.advancement.fox_fairy_fan_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/tail_pen",
+  "parent": "dreamaticvoyage:main/tail_pen",
   "criteria": {
     "fox_fairy_fan": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:fox_fairy_fan"
+              "dreamaticvoyage:fox_fairy_fan"
             ]
           }
         ]

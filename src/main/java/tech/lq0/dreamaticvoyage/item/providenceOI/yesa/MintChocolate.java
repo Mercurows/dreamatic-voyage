@@ -29,8 +29,8 @@ public class MintChocolate extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.mint_chocolate_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.mint_chocolate_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.mint_chocolate_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.mint_chocolate_2").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addChaosInfo(pTooltipComponents, -5);
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.YESA);

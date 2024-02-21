@@ -22,6 +22,6 @@ public class HaranoButton extends ButtonBlock {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.harano_button").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.harano_button").withStyle(ChatFormatting.GRAY));
     }
 }

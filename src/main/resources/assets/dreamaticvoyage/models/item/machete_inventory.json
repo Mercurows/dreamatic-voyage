@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "providencraft:item/machete"
+    "layer0": "dreamaticvoyage:item/machete"
   }
 }

@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "providencraft:item/daifuku_syrup",
-		"particle": "providencraft:item/daifuku_syrup"
+		"2": "dreamaticvoyage:item/daifuku_syrup",
+		"particle": "dreamaticvoyage:item/daifuku_syrup"
 	},
 	"elements": [
 		{

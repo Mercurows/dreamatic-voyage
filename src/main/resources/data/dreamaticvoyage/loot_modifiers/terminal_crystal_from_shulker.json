@@ -1,5 +1,5 @@
 {
-  "type": "providencraft:add_item",
+  "type": "dreamaticvoyage:add_item",
   "conditions": [
     {
       "condition": "forge:loot_table_id",
@@ -11,5 +11,5 @@
       "looting_multiplier": 0.05
     }
   ],
-  "item": "providencraft:terminal_crystal"
+  "item": "dreamaticvoyage:terminal_crystal"
 }

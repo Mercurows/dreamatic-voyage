@@ -93,8 +93,8 @@ public class MomoGun extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> tooltip, TooltipFlag pIsAdvanced) {
-        tooltip.add(Component.translatable("des.providencraft.momo_gun.func").withStyle(ChatFormatting.AQUA));
-        tooltip.add(Component.translatable("des.providencraft.momo_gun").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.momo_gun.func").withStyle(ChatFormatting.AQUA));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.momo_gun").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(tooltip, Livers.SHIRAKO);
     }

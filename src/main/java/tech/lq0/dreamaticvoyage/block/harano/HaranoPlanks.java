@@ -19,6 +19,6 @@ public class HaranoPlanks extends Block {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.harano_planks").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.harano_planks").withStyle(ChatFormatting.GRAY));
     }
 }

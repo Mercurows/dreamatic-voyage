@@ -1,26 +1,26 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:lucia_rice_cake"
+      "item": "dreamaticvoyage:lucia_rice_cake"
     },
     "title": {
-      "translate": "providencraft.advancement.eat_lucia_rice_cake"
+      "translate": "dreamaticvoyage.advancement.eat_lucia_rice_cake"
     },
     "description": {
-      "translate": "providencraft.advancement.eat_lucia_rice_cake_des"
+      "translate": "dreamaticvoyage.advancement.eat_lucia_rice_cake_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/satou_knife",
+  "parent": "dreamaticvoyage:main/satou_knife",
   "criteria": {
     "eat_lucia_rice_cake": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
-            "providencraft:lucia_rice_cake"
+            "dreamaticvoyage:lucia_rice_cake"
           ]
         }
       }

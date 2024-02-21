@@ -25,15 +25,15 @@ public class ChaosChecker extends Item {
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         if (!pLevel.isClientSide && pUsedHand == InteractionHand.MAIN_HAND) {
             int chaos = ChaosHelper.getChaos(pPlayer);
-            pPlayer.displayClientMessage(Component.translatable("des.providencraft.chaos_checker.info", chaos), true);
+            pPlayer.displayClientMessage(Component.translatable("des.dreamaticvoyage.chaos_checker.info", chaos), true);
         }
         return super.use(pLevel, pPlayer, pUsedHand);
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.chaos_checker_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.chaos_checker_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.chaos_checker_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.chaos_checker_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
     }
 
     @Override

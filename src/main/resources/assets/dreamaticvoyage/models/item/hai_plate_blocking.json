@@ -1,5 +1,5 @@
 {
-  "parent": "providencraft:item/hai_plate",
+  "parent": "dreamaticvoyage:item/hai_plate",
   "display": {
     "thirdperson_righthand": {
       "rotation": [64, -20.71, -0.92],

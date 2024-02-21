@@ -7,7 +7,7 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:harden_crystal_ingot"
+      "item": "dreamaticvoyage:harden_crystal_ingot"
     },
     "b": {
       "item": "minecraft:bowl"
@@ -17,7 +17,7 @@
     }
   },
   "result": {
-    "item": "providencraft:big_spoon",
+    "item": "dreamaticvoyage:big_spoon",
     "count": 1
   }
 }

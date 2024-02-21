@@ -24,7 +24,7 @@ public class LittlePotato extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.little_potato").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.little_potato").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addDonateInfo(pTooltipComponents);
     }
@@ -32,7 +32,7 @@ public class LittlePotato extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if (!pLevel.isClientSide && pLivingEntity instanceof Player player) {
-            player.displayClientMessage(Component.translatable("des.providencraft.little_potato.eaten").withStyle(ChatFormatting.WHITE), true);
+            player.displayClientMessage(Component.translatable("des.dreamaticvoyage.little_potato.eaten").withStyle(ChatFormatting.WHITE), true);
         }
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);
     }

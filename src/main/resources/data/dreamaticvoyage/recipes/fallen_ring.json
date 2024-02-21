@@ -7,14 +7,14 @@
   ],
   "key": {
     "x": {
-      "item": "providencraft:apocryphal_ingot"
+      "item": "dreamaticvoyage:apocryphal_ingot"
     },
     "a": {
-      "item": "providencraft:dark_crystal"
+      "item": "dreamaticvoyage:dark_crystal"
     }
   },
   "result": {
-    "item": "providencraft:fallen_ring",
+    "item": "dreamaticvoyage:fallen_ring",
     "count": 1
   }
 }

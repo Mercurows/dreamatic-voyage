@@ -5,10 +5,10 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:harano_planks"
+      "item": "dreamaticvoyage:harano_planks"
     }
   },
   "result": {
-    "item": "providencraft:harano_pressure_plate"
+    "item": "dreamaticvoyage:harano_pressure_plate"
   }
 }

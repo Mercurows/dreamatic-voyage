@@ -1,18 +1,18 @@
 {
   "values": [
-    "providencraft:uni_millet_block",
-    "providencraft:harano_log",
-    "providencraft:harano_wood",
-    "providencraft:harano_slab",
-    "providencraft:harano_planks",
-    "providencraft:harano_stairs",
-    "providencraft:stripped_harano_log",
-    "providencraft:stripped_harano_wood",
-    "providencraft:harano_fence",
-    "providencraft:harano_fence_gate",
-    "providencraft:harano_pressure_plate",
-    "providencraft:harano_door",
-    "providencraft:harano_trapdoor",
-    "providencraft:harano_button"
+    "dreamaticvoyage:uni_millet_block",
+    "dreamaticvoyage:harano_log",
+    "dreamaticvoyage:harano_wood",
+    "dreamaticvoyage:harano_slab",
+    "dreamaticvoyage:harano_planks",
+    "dreamaticvoyage:harano_stairs",
+    "dreamaticvoyage:stripped_harano_log",
+    "dreamaticvoyage:stripped_harano_wood",
+    "dreamaticvoyage:harano_fence",
+    "dreamaticvoyage:harano_fence_gate",
+    "dreamaticvoyage:harano_pressure_plate",
+    "dreamaticvoyage:harano_door",
+    "dreamaticvoyage:harano_trapdoor",
+    "dreamaticvoyage:harano_button"
   ]
 }

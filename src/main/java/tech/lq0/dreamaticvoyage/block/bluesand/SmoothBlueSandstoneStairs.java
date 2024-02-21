@@ -18,6 +18,6 @@ public class SmoothBlueSandstoneStairs extends StairBlock {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.smooth_blue_sandstone_stairs").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.smooth_blue_sandstone_stairs").withStyle(ChatFormatting.GRAY));
     }
 }

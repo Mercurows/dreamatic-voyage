@@ -53,8 +53,8 @@ public class MountainDestroyer extends PickaxeItem {
         if (!pLevel.isClientSide) {
             boolean flag = ItemNBTTool.getBoolean(stack, TAG_MULTIMINE, false);
             ItemNBTTool.setBoolean(stack, TAG_MULTIMINE, !flag);
-            pPlayer.displayClientMessage(!flag ? Component.translatable("des.providencraft.mountain_destroyer.enable") :
-                    Component.translatable("des.providencraft.mountain_destroyer.disable"), true);
+            pPlayer.displayClientMessage(!flag ? Component.translatable("des.dreamaticvoyage.mountain_destroyer.enable") :
+                    Component.translatable("des.dreamaticvoyage.mountain_destroyer.disable"), true);
         }
         return InteractionResultHolder.fail(stack);
     }
@@ -153,8 +153,8 @@ public class MountainDestroyer extends PickaxeItem {
     @Override
     @ParametersAreNonnullByDefault
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.mountain_destroyer_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.mountain_destroyer_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.mountain_destroyer_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.mountain_destroyer_2").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.MYANNA);
     }

@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:points_store"
+      "item": "dreamaticvoyage:points_store"
     },
     "title": {
-      "translate": "providencraft.advancement.points_store"
+      "translate": "dreamaticvoyage.advancement.points_store"
     },
     "description": {
-      "translate": "providencraft.advancement.points_store_des"
+      "translate": "dreamaticvoyage.advancement.points_store_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/root",
+  "parent": "dreamaticvoyage:main/root",
   "criteria": {
     "points_store": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:points_store"
+              "dreamaticvoyage:points_store"
             ]
           }
         ]

@@ -27,7 +27,7 @@ public class MusicDiscSongOfAutumn extends RecordItem {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(this.getDisplayName().withStyle(ChatFormatting.GRAY));
-        pTooltip.add(Component.translatable("des.providencraft.music_disc_song_of_autumn").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.music_disc_song_of_autumn").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addDonateInfo(pTooltip);
     }

@@ -5,11 +5,11 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:sink_crystal"
+      "item": "dreamaticvoyage:sink_crystal"
     }
   },
   "result": {
-    "item": "providencraft:crystal_powder",
+    "item": "dreamaticvoyage:crystal_powder",
     "count": 3
   }
 }

@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:lunatic_bow"
+      "item": "dreamaticvoyage:lunatic_bow"
     },
     "title": {
-      "translate": "providencraft.advancement.lunatic_bow"
+      "translate": "dreamaticvoyage.advancement.lunatic_bow"
     },
     "description": {
-      "translate": "providencraft.advancement.lunatic_bow_des"
+      "translate": "dreamaticvoyage.advancement.lunatic_bow_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/root",
+  "parent": "dreamaticvoyage:main/root",
   "criteria": {
     "lunatic_bow": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:lunatic_bow"
+              "dreamaticvoyage:lunatic_bow"
             ]
           }
         ]

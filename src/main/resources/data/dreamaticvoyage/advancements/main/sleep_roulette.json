@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:sleep_roulette"
+      "item": "dreamaticvoyage:sleep_roulette"
     },
     "title": {
-      "translate": "providencraft.advancement.sleep_roulette"
+      "translate": "dreamaticvoyage.advancement.sleep_roulette"
     },
     "description": {
-      "translate": "providencraft.advancement.sleep_roulette_des"
+      "translate": "dreamaticvoyage.advancement.sleep_roulette_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/crystal_horn",
+  "parent": "dreamaticvoyage:main/crystal_horn",
   "criteria": {
     "sleep_roulette": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:sleep_roulette"
+              "dreamaticvoyage:sleep_roulette"
             ]
           }
         ]

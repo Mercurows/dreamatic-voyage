@@ -51,12 +51,12 @@ public class IsekaiLollipop extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.isekai_lollipop_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.isekai_lollipop_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.isekai_lollipop_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.isekai_lollipop_2").withStyle(ChatFormatting.GRAY));
         if (checkEnchantments(pStack) >= 30) {
-            pTooltipComponents.add(Component.translatable("des.providencraft.isekai_lollipop_4").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.isekai_lollipop_4").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
         } else if (checkEnchantments(pStack) > 10) {
-            pTooltipComponents.add(Component.translatable("des.providencraft.isekai_lollipop_3").withStyle(ChatFormatting.LIGHT_PURPLE).withStyle(ChatFormatting.ITALIC));
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.isekai_lollipop_3").withStyle(ChatFormatting.LIGHT_PURPLE).withStyle(ChatFormatting.ITALIC));
         }
 
         TooltipTool.addChaosInfo(pTooltipComponents, -50);

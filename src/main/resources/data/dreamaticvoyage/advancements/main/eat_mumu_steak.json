@@ -1,26 +1,26 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:mumu_steak"
+      "item": "dreamaticvoyage:mumu_steak"
     },
     "title": {
-      "translate": "providencraft.advancement.eat_mumu_steak"
+      "translate": "dreamaticvoyage.advancement.eat_mumu_steak"
     },
     "description": {
-      "translate": "providencraft.advancement.eat_mumu_steak_des"
+      "translate": "dreamaticvoyage.advancement.eat_mumu_steak_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/root",
+  "parent": "dreamaticvoyage:main/root",
   "criteria": {
     "eat_mumu_steak": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
-            "providencraft:mumu_steak"
+            "dreamaticvoyage:mumu_steak"
           ]
         }
       }

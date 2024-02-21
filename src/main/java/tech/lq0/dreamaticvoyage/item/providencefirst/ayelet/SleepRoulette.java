@@ -31,12 +31,12 @@ public class SleepRoulette extends Item {
                 playerIn.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 2));
                 playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 2));
                 playerIn.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 2));
-                playerIn.displayClientMessage(Component.translatable("des.providencraft.sleep_roulette.awake").withStyle(ChatFormatting.GOLD), true);
+                playerIn.displayClientMessage(Component.translatable("des.dreamaticvoyage.sleep_roulette.awake").withStyle(ChatFormatting.GOLD), true);
             } else {
                 playerIn.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1200, 0));
                 playerIn.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1200, 0));
                 playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1200, 0));
-                playerIn.displayClientMessage(Component.translatable("des.providencraft.sleep_roulette.asleep").withStyle(ChatFormatting.GRAY), true);
+                playerIn.displayClientMessage(Component.translatable("des.dreamaticvoyage.sleep_roulette.asleep").withStyle(ChatFormatting.GRAY), true);
             }
             playerIn.getCooldowns().addCooldown(itemStack.getItem(), 1800);
             return InteractionResultHolder.success(itemStack);
@@ -46,11 +46,11 @@ public class SleepRoulette extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.sleep_roulette.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.sleep_roulette_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-        pTooltipComponents.add(Component.translatable("des.providencraft.sleep_roulette_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-        pTooltipComponents.add(Component.translatable("des.providencraft.sleep_roulette_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-        pTooltipComponents.add(Component.translatable("des.providencraft.sleep_roulette_4").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.sleep_roulette.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.sleep_roulette_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.sleep_roulette_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.sleep_roulette_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.sleep_roulette_4").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.AYELET);
     }

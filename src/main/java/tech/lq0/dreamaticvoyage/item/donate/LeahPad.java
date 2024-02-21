@@ -28,9 +28,9 @@ public class LeahPad extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         TooltipTool.addDevelopingText(pTooltipComponents);
 
-        pTooltipComponents.add(Component.translatable("des.providencraft.leah_pad_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.leah_pad_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
-        pTooltipComponents.add(Component.translatable("des.providencraft.leah_pad_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.leah_pad_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.leah_pad_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.leah_pad_3").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
         TooltipTool.addDonateInfo(pTooltipComponents);
     }

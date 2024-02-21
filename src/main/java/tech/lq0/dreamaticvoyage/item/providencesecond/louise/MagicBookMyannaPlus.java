@@ -28,9 +28,9 @@ public class MagicBookMyannaPlus extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.magic_book_myanna_plus.func").withStyle(ChatFormatting.AQUA));
-        pTooltipComponents.add(Component.translatable("des.providencraft.magic_book_myanna_plus").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.providencraft.magic_book_myanna_plus.warn").withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.magic_book_myanna_plus.func").withStyle(ChatFormatting.AQUA));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.magic_book_myanna_plus").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.magic_book_myanna_plus.warn").withStyle(ChatFormatting.RED));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.LOUISE);
     }
@@ -47,7 +47,7 @@ public class MagicBookMyannaPlus extends Item {
             int random = (int) (Math.random() * 10 + 1);
             if (random <= 3) {
                 pPlayer.addEffect(new MobEffectInstance(EffectRegistry.CURSE_OF_SERPENT.get(), 600, 2));
-                pPlayer.displayClientMessage(Component.translatable("des.providencraft.magic_book_myanna_plus.be_cursed").withStyle(ChatFormatting.RED), true);
+                pPlayer.displayClientMessage(Component.translatable("des.dreamaticvoyage.magic_book_myanna_plus.be_cursed").withStyle(ChatFormatting.RED), true);
             }
         }
         pPlayer.getCooldowns().addCooldown(stack.getItem(), 3600);

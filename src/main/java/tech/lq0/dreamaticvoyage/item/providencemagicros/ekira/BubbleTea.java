@@ -32,7 +32,7 @@ public class BubbleTea extends Item {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.bubble_tea").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.bubble_tea").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.EKIRA);
     }
@@ -56,7 +56,7 @@ public class BubbleTea extends Item {
             if (random <= .2) {
                 player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, 2));
                 player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 1));
-                player.displayClientMessage(Component.translatable("des.providencraft.bubble_tea.message").withStyle(ChatFormatting.LIGHT_PURPLE), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.bubble_tea.message").withStyle(ChatFormatting.LIGHT_PURPLE), true);
             }
         }
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);

@@ -7,26 +7,26 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:dream_weaving_yarn"
+      "item": "dreamaticvoyage:dream_weaving_yarn"
     },
     "G": {
       "item": "minecraft:golden_helmet"
     },
     "P": {
-      "item": "providencraft:chiram_idol_helmet"
+      "item": "dreamaticvoyage:chiram_idol_helmet"
     },
     "B": {
-      "item": "providencraft:chiram_core"
+      "item": "dreamaticvoyage:chiram_core"
     },
     "C": {
-      "item": "providencraft:chiram_idol_boots"
+      "item": "dreamaticvoyage:chiram_idol_boots"
     },
     "T": {
-      "item": "providencraft:chiram_idol_chestplate"
+      "item": "dreamaticvoyage:chiram_idol_chestplate"
     }
   },
   "result": {
-    "item": "providencraft:breeze_crown",
+    "item": "dreamaticvoyage:breeze_crown",
     "count": 1
   }
 }

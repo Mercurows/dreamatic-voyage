@@ -18,6 +18,6 @@ public class BlueSandstoneWall extends WallBlock {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.blue_sandstone_wall").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.blue_sandstone_wall").withStyle(ChatFormatting.GRAY));
     }
 }

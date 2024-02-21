@@ -7,7 +7,7 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:marshaimallow"
+      "item": "dreamaticvoyage:marshaimallow"
     },
     "b": {
       "item": "minecraft:light_gray_wool"
@@ -26,7 +26,7 @@
     }
   },
   "result": {
-    "item": "providencraft:cursed_marshaimallow",
+    "item": "dreamaticvoyage:cursed_marshaimallow",
     "count": 2
   }
 }

@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:dream_weaving_yarn"
+      "item": "dreamaticvoyage:dream_weaving_yarn"
     },
     "title": {
-      "translate": "providencraft.advancement.dream_weaving_yarn"
+      "translate": "dreamaticvoyage.advancement.dream_weaving_yarn"
     },
     "description": {
-      "translate": "providencraft.advancement.dream_weaving_yarn_des"
+      "translate": "dreamaticvoyage.advancement.dream_weaving_yarn_des"
     },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/chiram_idol_costume",
+  "parent": "dreamaticvoyage:main/chiram_idol_costume",
   "criteria": {
     "dream_weaving_yarn": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "providencraft:dream_weaving_yarn"
+              "dreamaticvoyage:dream_weaving_yarn"
             ]
           }
         ]

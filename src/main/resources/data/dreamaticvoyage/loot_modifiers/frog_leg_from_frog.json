@@ -1,5 +1,5 @@
 {
-  "type": "providencraft:add_item",
+  "type": "dreamaticvoyage:add_item",
   "conditions": [
     {
       "condition": "forge:loot_table_id",
@@ -10,5 +10,5 @@
       "condition": "minecraft:random_chance"
     }
   ],
-  "item": "providencraft:frog_leg"
+  "item": "dreamaticvoyage:frog_leg"
 }

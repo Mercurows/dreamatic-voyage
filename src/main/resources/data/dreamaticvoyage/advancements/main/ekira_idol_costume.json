@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:ekira_idol_chestplate"
+      "item": "dreamaticvoyage:ekira_idol_chestplate"
     },
     "title": {
-      "translate": "providencraft.advancement.ekira_idol_costume"
+      "translate": "dreamaticvoyage.advancement.ekira_idol_costume"
     },
     "description": {
-      "translate": "providencraft.advancement.ekira_idol_costume_des"
+      "translate": "dreamaticvoyage.advancement.ekira_idol_costume_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/haine_idol_costume",
+  "parent": "dreamaticvoyage:main/haine_idol_costume",
   "criteria": {
     "ekira_idol_costume_1": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:ekira_idol_helmet"
+              "dreamaticvoyage:ekira_idol_helmet"
             ]
           }
         ]
@@ -33,7 +33,7 @@
         "items": [
           {
             "items": [
-              "providencraft:ekira_idol_chestplate"
+              "dreamaticvoyage:ekira_idol_chestplate"
             ]
           }
         ]
@@ -45,7 +45,7 @@
         "items": [
           {
             "items": [
-              "providencraft:ekira_idol_boots"
+              "dreamaticvoyage:ekira_idol_boots"
             ]
           }
         ]

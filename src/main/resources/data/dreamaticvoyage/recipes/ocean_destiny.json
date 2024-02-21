@@ -10,14 +10,14 @@
       "item": "minecraft:crying_obsidian"
     },
     "d": {
-      "item": "providencraft:fracture_destiny"
+      "item": "dreamaticvoyage:fracture_destiny"
     },
     "e": {
       "item": "minecraft:nether_star"
     }
   },
   "result": {
-    "item": "providencraft:ocean_destiny",
+    "item": "dreamaticvoyage:ocean_destiny",
     "count": 1
   }
 }

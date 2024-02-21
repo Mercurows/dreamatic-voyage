@@ -1,5 +1,5 @@
 {
-  "type": "providencraft:fishing",
+  "type": "dreamaticvoyage:fishing",
   "conditions":
   [
     {
@@ -7,6 +7,6 @@
       "loot_table_id": "minecraft:gameplay/fishing"
     }
   ],
-  "table": "providencraft:gameplay/fishing/fish",
+  "table": "dreamaticvoyage:gameplay/fishing/fish",
   "chance": 0.1
 }

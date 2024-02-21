@@ -1,26 +1,26 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:banana_milk"
+      "item": "dreamaticvoyage:banana_milk"
     },
     "title": {
-      "translate": "providencraft.advancement.drink_banana_milk"
+      "translate": "dreamaticvoyage.advancement.drink_banana_milk"
     },
     "description": {
-      "translate": "providencraft.advancement.drink_banana_milk_des"
+      "translate": "dreamaticvoyage.advancement.drink_banana_milk_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/schedule",
+  "parent": "dreamaticvoyage:main/schedule",
   "criteria": {
     "drink_banana_milk": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
-            "providencraft:banana_milk"
+            "dreamaticvoyage:banana_milk"
           ]
         }
       }

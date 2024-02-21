@@ -16,14 +16,14 @@
       "item": "minecraft:lapis_lazuli"
     },
     "r": {
-      "item": "providencraft:alienis_crystal"
+      "item": "dreamaticvoyage:alienis_crystal"
     },
     "p": {
       "item": "minecraft:smooth_quartz"
     }
   },
   "result": {
-    "item": "providencraft:yeggy_pearl",
+    "item": "dreamaticvoyage:yeggy_pearl",
     "count": 1
   }
 }

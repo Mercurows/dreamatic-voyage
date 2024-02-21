@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:electric_horn"
+      "item": "dreamaticvoyage:electric_horn"
     },
     "title": {
-      "translate": "providencraft.advancement.electric_horn"
+      "translate": "dreamaticvoyage.advancement.electric_horn"
     },
     "description": {
-      "translate": "providencraft.advancement.electric_horn_des"
+      "translate": "dreamaticvoyage.advancement.electric_horn_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/eat_mumu_steak",
+  "parent": "dreamaticvoyage:main/eat_mumu_steak",
   "criteria": {
     "electric_horn": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:electric_horn"
+              "dreamaticvoyage:electric_horn"
             ]
           }
         ]

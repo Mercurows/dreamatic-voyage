@@ -10,11 +10,11 @@
       "item": "minecraft:white_wool"
     },
     "a": {
-      "item": "providencraft:red_ahoge"
+      "item": "dreamaticvoyage:red_ahoge"
     }
   },
   "result": {
-    "item": "providencraft:white_ahoge",
+    "item": "dreamaticvoyage:white_ahoge",
     "count": 1
   }
 }

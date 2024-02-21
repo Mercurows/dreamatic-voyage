@@ -7,23 +7,23 @@
   ],
   "key": {
     "p": {
-      "item": "providencraft:white_double_ahoge"
+      "item": "dreamaticvoyage:white_double_ahoge"
     },
     "x": {
       "item": "minecraft:redstone"
     },
     "a": {
-      "item": "providencraft:magic_book"
+      "item": "dreamaticvoyage:magic_book"
     },
     "g": {
       "item": "minecraft:gunpowder"
     },
     "y": {
-      "item": "providencraft:radiant_crystal"
+      "item": "dreamaticvoyage:radiant_crystal"
     }
   },
   "result": {
-    "item": "providencraft:magic_book_throw",
+    "item": "dreamaticvoyage:magic_book_throw",
     "count": 1
   }
 }

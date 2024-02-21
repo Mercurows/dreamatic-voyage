@@ -7,7 +7,7 @@
   ],
   "key": {
     "a": {
-      "item": "providencraft:daifuku_syrup"
+      "item": "dreamaticvoyage:daifuku_syrup"
     },
     "g": {
       "tag": "forge:glass/colorless"
@@ -20,7 +20,7 @@
     }
   },
   "result": {
-    "item": "providencraft:momo_syringe",
+    "item": "dreamaticvoyage:momo_syringe",
     "count": 1
   }
 }

@@ -5,7 +5,7 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.Rarity;
 
 public class RarityTool {
-    public static final Rarity LEGACY = Rarity.create("providencraft_legacy", s -> {
+    public static final Rarity LEGACY = Rarity.create("dreamaticvoyage_legacy", s -> {
         long time = System.currentTimeMillis();
         int step = (int) (time % 4000);
 
@@ -30,9 +30,9 @@ public class RarityTool {
         return Style.EMPTY.withColor(rgb);
     });
 
-    public static final Rarity LEGENDARY = Rarity.create("providencraft_legendary", ChatFormatting.GOLD);
+    public static final Rarity LEGENDARY = Rarity.create("dreamaticvoyage_legendary", ChatFormatting.GOLD);
 
-    public static final Rarity APOCRYPHAL =  Rarity.create("providencraft_apocryphal", s -> {
+    public static final Rarity APOCRYPHAL =  Rarity.create("dreamaticvoyage_apocryphal", s -> {
         long time = System.currentTimeMillis();
         int step = (int) (time % 4000);
 
@@ -57,7 +57,7 @@ public class RarityTool {
         return Style.EMPTY.withColor(rgb);
     });
 
-    public static final Rarity DONATE =  Rarity.create("providencraft_donate", s -> {
+    public static final Rarity DONATE =  Rarity.create("dreamaticvoyage_donate", s -> {
         long time = System.currentTimeMillis();
         int step = (int) (time % 4000);
 

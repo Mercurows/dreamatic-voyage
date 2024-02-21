@@ -4,13 +4,13 @@
     "item": "minecraft:eye_armor_trim_smithing_template"
   },
   "base": {
-    "item": "providencraft:crystal_ball"
+    "item": "dreamaticvoyage:crystal_ball"
   },
   "addition": {
-    "item": "providencraft:illusory_crystal"
+    "item": "dreamaticvoyage:illusory_crystal"
   },
   "result": {
-    "item": "providencraft:enchanted_crystal_ball",
+    "item": "dreamaticvoyage:enchanted_crystal_ball",
     "count": 1
   }
 }

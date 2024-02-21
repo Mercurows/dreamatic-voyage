@@ -7,26 +7,26 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:dream_weaving_yarn"
+      "item": "dreamaticvoyage:dream_weaving_yarn"
     },
     "G": {
       "item": "minecraft:golden_chestplate"
     },
     "P": {
-      "item": "providencraft:haine_idol_helmet"
+      "item": "dreamaticvoyage:haine_idol_helmet"
     },
     "B": {
-      "item": "providencraft:haine_core"
+      "item": "dreamaticvoyage:haine_core"
     },
     "C": {
-      "item": "providencraft:haine_idol_boots"
+      "item": "dreamaticvoyage:haine_idol_boots"
     },
     "T": {
-      "item": "providencraft:haine_idol_chestplate"
+      "item": "dreamaticvoyage:haine_idol_chestplate"
     }
   },
   "result": {
-    "item": "providencraft:misty_chestplate",
+    "item": "dreamaticvoyage:misty_chestplate",
     "count": 1
   }
 }

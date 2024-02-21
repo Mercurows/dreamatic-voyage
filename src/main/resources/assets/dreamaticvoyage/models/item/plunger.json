@@ -1,8 +1,8 @@
 {
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "providencraft:item/plunger",
-		"particle": "providencraft:item/plunger"
+		"0": "dreamaticvoyage:item/plunger",
+		"particle": "dreamaticvoyage:item/plunger"
 	},
 	"elements": [
 		{

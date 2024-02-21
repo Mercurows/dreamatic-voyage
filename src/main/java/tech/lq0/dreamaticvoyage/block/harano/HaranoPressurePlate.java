@@ -21,6 +21,6 @@ public class HaranoPressurePlate extends PressurePlateBlock {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.harano_pressure_plate").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.harano_pressure_plate").withStyle(ChatFormatting.GRAY));
     }
 }

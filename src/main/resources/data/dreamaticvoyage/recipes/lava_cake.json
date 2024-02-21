@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "minecraft:cake"
   },
-  "result": "providencraft:lava_cake",
+  "result": "dreamaticvoyage:lava_cake",
   "experience": 2.00,
   "cookingtime": 300
 }

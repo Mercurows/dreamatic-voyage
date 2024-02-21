@@ -1,10 +1,10 @@
 {
   "values": [
-    "providencraft:crystal_powder",
-    "providencraft:purified_crystal_powder",
-    "providencraft:charged_crystal_powder",
-    "providencraft:harden_crystal_ingot",
-    "providencraft:purified_crystal_ingot",
-    "providencraft:charged_crystal_ingot"
+    "dreamaticvoyage:crystal_powder",
+    "dreamaticvoyage:purified_crystal_powder",
+    "dreamaticvoyage:charged_crystal_powder",
+    "dreamaticvoyage:harden_crystal_ingot",
+    "dreamaticvoyage:purified_crystal_ingot",
+    "dreamaticvoyage:charged_crystal_ingot"
   ]
 }

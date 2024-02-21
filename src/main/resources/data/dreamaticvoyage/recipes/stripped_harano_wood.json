@@ -6,11 +6,11 @@
   ],
   "key": {
     "#": {
-      "item": "providencraft:stripped_harano_log"
+      "item": "dreamaticvoyage:stripped_harano_log"
     }
   },
   "result": {
-    "item": "providencraft:stripped_harano_wood",
+    "item": "dreamaticvoyage:stripped_harano_wood",
     "count": 3
   }
 }

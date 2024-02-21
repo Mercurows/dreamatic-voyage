@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:satou_knife"
+      "item": "dreamaticvoyage:satou_knife"
     },
     "title": {
-      "translate": "providencraft.advancement.satou_knife"
+      "translate": "dreamaticvoyage.advancement.satou_knife"
     },
     "description": {
-      "translate": "providencraft.advancement.satou_knife_des"
+      "translate": "dreamaticvoyage.advancement.satou_knife_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/electric_horn",
+  "parent": "dreamaticvoyage:main/electric_horn",
   "criteria": {
     "satou_knife": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:satou_knife"
+              "dreamaticvoyage:satou_knife"
             ]
           }
         ]

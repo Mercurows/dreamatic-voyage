@@ -7,7 +7,7 @@
   ],
   "key": {
     "n": {
-      "item": "providencraft:purified_crystal_ingot"
+      "item": "dreamaticvoyage:purified_crystal_ingot"
     },
     "a": {
       "item": "minecraft:iron_ingot"
@@ -20,7 +20,7 @@
     }
   },
   "result": {
-    "item": "providencraft:drill",
+    "item": "dreamaticvoyage:drill",
     "count": 1
   }
 }

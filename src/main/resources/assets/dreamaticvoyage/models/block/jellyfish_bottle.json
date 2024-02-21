@@ -3,8 +3,8 @@
 	"texture_size": [64, 64],
 	"render_type": "minecraft:translucent",
 	"textures": {
-		"2": "providencraft:block/jellyfish_bottle",
-		"particle": "providencraft:block/jellyfish_bottle"
+		"2": "dreamaticvoyage:block/jellyfish_bottle",
+		"particle": "dreamaticvoyage:block/jellyfish_bottle"
 	},
 	"elements": [
 		{

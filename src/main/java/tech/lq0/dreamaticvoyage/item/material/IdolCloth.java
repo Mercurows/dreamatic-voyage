@@ -33,7 +33,7 @@ public class IdolCloth extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.idol_cloth").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.idol_cloth").withStyle(ChatFormatting.GRAY));
     }
 
     @Override

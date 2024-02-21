@@ -27,12 +27,12 @@ public class CommunicationTable extends Block {
         if (!pLevel.isClientSide && pHand == InteractionHand.MAIN_HAND) {
             int random = (int) (Math.random() * 6 + 1);
             switch (random) {
-                case 1 -> player.displayClientMessage(Component.translatable("des.providencraft.ct_message_1"), false);
-                case 2 -> player.displayClientMessage(Component.translatable("des.providencraft.ct_message_2"), false);
-                case 3 -> player.displayClientMessage(Component.translatable("des.providencraft.ct_message_3"), false);
-                case 4 -> player.displayClientMessage(Component.translatable("des.providencraft.ct_message_4"), false);
-                case 5 -> player.displayClientMessage(Component.translatable("des.providencraft.ct_message_5"), false);
-                default -> player.displayClientMessage(Component.translatable("des.providencraft.ct_message.default"), false);
+                case 1 -> player.displayClientMessage(Component.translatable("des.dreamaticvoyage.ct_message_1"), false);
+                case 2 -> player.displayClientMessage(Component.translatable("des.dreamaticvoyage.ct_message_2"), false);
+                case 3 -> player.displayClientMessage(Component.translatable("des.dreamaticvoyage.ct_message_3"), false);
+                case 4 -> player.displayClientMessage(Component.translatable("des.dreamaticvoyage.ct_message_4"), false);
+                case 5 -> player.displayClientMessage(Component.translatable("des.dreamaticvoyage.ct_message_5"), false);
+                default -> player.displayClientMessage(Component.translatable("des.dreamaticvoyage.ct_message.default"), false);
             }
         }
         return InteractionResult.SUCCESS;
@@ -40,7 +40,7 @@ public class CommunicationTable extends Block {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.providencraft.communication_table_1").withStyle(ChatFormatting.GRAY));
-        pTooltip.add(Component.translatable("des.providencraft.communication_table_2").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.communication_table_1").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.communication_table_2").withStyle(ChatFormatting.GRAY));
     }
 }

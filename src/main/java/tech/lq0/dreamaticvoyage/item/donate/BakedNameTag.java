@@ -25,7 +25,7 @@ public class BakedNameTag extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.providencraft.baked_name_tag").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.baked_name_tag").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addDonateInfo(pTooltipComponents);
     }

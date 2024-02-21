@@ -10,7 +10,7 @@
       "item": "minecraft:red_wool"
     },
     "P": {
-      "item": "providencraft:red_ahoge"
+      "item": "dreamaticvoyage:red_ahoge"
     },
     "N": {
       "item": "minecraft:piston"
@@ -23,7 +23,7 @@
     }
   },
   "result": {
-    "item": "providencraft:crimson_impact",
+    "item": "dreamaticvoyage:crimson_impact",
     "count": 1
   }
 }

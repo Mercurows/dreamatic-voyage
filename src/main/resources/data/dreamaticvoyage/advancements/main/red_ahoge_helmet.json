@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:red_ahoge_helmet"
+      "item": "dreamaticvoyage:red_ahoge_helmet"
     },
     "title": {
-      "translate": "providencraft.advancement.red_ahoge_helmet"
+      "translate": "dreamaticvoyage.advancement.red_ahoge_helmet"
     },
     "description": {
-      "translate": "providencraft.advancement.red_ahoge_helmet_des"
+      "translate": "dreamaticvoyage.advancement.red_ahoge_helmet_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/root",
+  "parent": "dreamaticvoyage:main/root",
   "criteria": {
     "red_ahoge_helmet": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:red_ahoge_helmet"
+              "dreamaticvoyage:red_ahoge_helmet"
             ]
           }
         ]

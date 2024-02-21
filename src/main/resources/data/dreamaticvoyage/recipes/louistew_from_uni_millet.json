@@ -11,17 +11,17 @@
       "item": "minecraft:nether_wart"
     },
     {
-      "item": "providencraft:uni_millet"
+      "item": "dreamaticvoyage:uni_millet"
     },
     {
-      "item": "providencraft:uni_millet"
+      "item": "dreamaticvoyage:uni_millet"
     },
     {
-      "item": "providencraft:uni_millet"
+      "item": "dreamaticvoyage:uni_millet"
     }
   ],
   "result": {
-    "item": "providencraft:louistew",
+    "item": "dreamaticvoyage:louistew",
     "count": 1
   }
 }

@@ -1,19 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "providencraft:jellyfish_bottle"
+      "item": "dreamaticvoyage:jellyfish_bottle"
     },
     "title": {
-      "translate": "providencraft.advancement.jellyfish_bottle"
+      "translate": "dreamaticvoyage.advancement.jellyfish_bottle"
     },
     "description": {
-      "translate": "providencraft.advancement.jellyfish_bottle_des"
+      "translate": "dreamaticvoyage.advancement.jellyfish_bottle_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "providencraft:main/eat_strawberry_cake",
+  "parent": "dreamaticvoyage:main/eat_strawberry_cake",
   "criteria": {
     "jellyfish_bottle": {
       "trigger": "minecraft:inventory_changed",
@@ -21,7 +21,7 @@
         "items": [
           {
             "items": [
-              "providencraft:jellyfish_bottle"
+              "dreamaticvoyage:jellyfish_bottle"
             ]
           }
         ]

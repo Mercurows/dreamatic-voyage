@@ -7,14 +7,14 @@
   ],
   "key": {
     "x": {
-      "item": "providencraft:red_ahoge"
+      "item": "dreamaticvoyage:red_ahoge"
     },
     "a": {
       "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "providencraft:red_ahoge_sword",
+    "item": "dreamaticvoyage:red_ahoge_sword",
     "count": 1
   }
 }

@@ -57,8 +57,8 @@ public class CursedMarshaimallow extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> tooltip, TooltipFlag pIsAdvanced) {
-        tooltip.add((Component.translatable("des.providencraft.cursed_marshaimallow_1")).withStyle(ChatFormatting.GRAY));
-        tooltip.add((Component.translatable("des.providencraft.cursed_marshaimallow_2")).withStyle(ChatFormatting.GRAY));
+        tooltip.add((Component.translatable("des.dreamaticvoyage.cursed_marshaimallow_1")).withStyle(ChatFormatting.GRAY));
+        tooltip.add((Component.translatable("des.dreamaticvoyage.cursed_marshaimallow_2")).withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(tooltip, Livers.HAINE);
     }
