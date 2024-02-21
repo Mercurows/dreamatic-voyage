@@ -1,4 +1,4 @@
-# 虚构远航 / dreamaticvoyage
+# 虚构远航 / Dreamatic Voyage
 
 > 在一个名为Providence的岛屿沉没以后……
 
@@ -24,7 +24,8 @@
 1. 确保你使用的Minecraft版本是1.20.1；
 2. 确保你为Minecraft安装了Forge 47.1.1及以上；
 3. 确保安装了5.4.0-1.20.1版本及以上的Curios Api模组；
-4. 将Mod文件放进mods文件夹。
+4. 确保安装了3.0.0.169版本及以上的TerraBlender模组；
+5. 将Mod文件放进mods文件夹。
 
 #### 协议
 此Mod使用GPL-3.0协议开源  
