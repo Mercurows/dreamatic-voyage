@@ -82,7 +82,7 @@ public class SecondaryCataclysm extends Item {
                 if (!world.isClientSide) {
                     HirenadeGGEntity hirenadeGG = new HirenadeGGEntity(world, player);
                     hirenadeGG.setOwner(player);
-                    hirenadeGG.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, 1.8f, 0.0f);
+                    hirenadeGG.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, 2.4f, 0.0f);
                     world.addFreshEntity(hirenadeGG);
 
                     player.getCooldowns().addCooldown(stack.getItem(), 10);
