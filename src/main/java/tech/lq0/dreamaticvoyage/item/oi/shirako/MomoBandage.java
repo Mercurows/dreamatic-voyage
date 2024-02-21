@@ -47,9 +47,9 @@ public class MomoBandage extends Item implements ICurioItem {
 
         map = HashMultimap.create(map);
         map.put(Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.19f, AttributeModifier.Operation.MULTIPLY_BASE));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -0.19f, AttributeModifier.Operation.MULTIPLY_BASE));
         map.put(Attributes.ATTACK_SPEED,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.19f, AttributeModifier.Operation.MULTIPLY_BASE));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -0.19f, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return map;
     }

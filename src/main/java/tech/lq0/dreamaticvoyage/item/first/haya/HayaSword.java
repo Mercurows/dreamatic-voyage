@@ -53,7 +53,7 @@ public class HayaSword extends SwordItem {
         if (pEquipmentSlot == EquipmentSlot.MAINHAND) {
             map = HashMultimap.create(map);
             map.put(ForgeMod.ENTITY_REACH.get(),
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 2.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 2.0f, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }

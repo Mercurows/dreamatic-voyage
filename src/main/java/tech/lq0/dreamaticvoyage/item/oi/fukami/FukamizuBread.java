@@ -56,7 +56,7 @@ public class FukamizuBread extends Item {
         if (slot == EquipmentSlot.MAINHAND) {
             map = HashMultimap.create(map);
             map.put(Attributes.ATTACK_DAMAGE,
-                    new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, Utils.PDC_ATTRIBUTE_MODIFIER, 2.0, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, Utils.MOD_ATTRIBUTE_MODIFIER, 2.0, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }

@@ -78,13 +78,13 @@ public class HiruHead extends ArmorItem {
         if (pEquipmentSlot == getEquipmentSlot()) {
             map = HashMultimap.create(map);
             map.put(Attributes.KNOCKBACK_RESISTANCE,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 1.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 1.0f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.MOVEMENT_SPEED,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.1f, AttributeModifier.Operation.MULTIPLY_BASE));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -0.1f, AttributeModifier.Operation.MULTIPLY_BASE));
             map.put(AttributeRegistry.CHAOS.get(),
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 100.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 100.0f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.ARMOR_TOUGHNESS,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 1.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 1.0f, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }

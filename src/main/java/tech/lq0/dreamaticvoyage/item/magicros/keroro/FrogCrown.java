@@ -98,9 +98,9 @@ public class FrogCrown extends ArmorItem {
             map = HashMultimap.create(map);
             boolean rain = ItemNBTTool.getBoolean(stack, TAG_RAIN, false);
             map.put(Attributes.MAX_HEALTH,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, rain ? 2.0 : 0, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, rain ? 2.0 : 0, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.ARMOR,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, rain ? 4.0 : 0, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, rain ? 4.0 : 0, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }

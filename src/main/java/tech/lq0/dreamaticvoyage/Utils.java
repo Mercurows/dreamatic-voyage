@@ -21,7 +21,7 @@ public class Utils {
 
     public static final String MOD_ID = "dreamaticvoyage";
 
-    public static final String PDC_ATTRIBUTE_MODIFIER = "pdc_attribute_modifier";
+    public static final String MOD_ATTRIBUTE_MODIFIER = "dmv_attribute_modifier";
 
     public Utils() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

@@ -82,7 +82,7 @@ public class RedAhogeHelmet extends ArmorItem {
         UUID uuid = new UUID(ItemRegistry.RED_AHOGE_HELMET.hashCode() + pEquipmentSlot.toString().hashCode(), 0);
         if (pEquipmentSlot == getEquipmentSlot()) {
             map = HashMultimap.create(map);
-            map.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 4.0, AttributeModifier.Operation.ADDITION));
+            map.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 4.0, AttributeModifier.Operation.ADDITION));
         }
 
         return map;

@@ -54,7 +54,7 @@ public class YeggyPearl extends Item implements ICurioItem {
 
         map = HashMultimap.create(map);
         map.put(Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
         return map;
     }

@@ -120,9 +120,9 @@ public class FukamizuRing extends Item {
             map = HashMultimap.create(map);
             boolean underwater = ItemNBTTool.getBoolean(stack, TAG_WATER, false);
             map.put(Attributes.ARMOR,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, underwater ? 5.0f : 1.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, underwater ? 5.0f : 1.0f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.MAX_HEALTH,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, underwater ? 12.0f : 0.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, underwater ? 12.0f : 0.0f, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }

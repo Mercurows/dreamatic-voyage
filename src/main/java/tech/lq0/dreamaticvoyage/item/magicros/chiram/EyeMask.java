@@ -105,9 +105,9 @@ public class EyeMask extends Item {
         if (equipmentSlot == EquipmentSlot.HEAD) {
             map = HashMultimap.create(map);
             map.put(Attributes.MOVEMENT_SPEED,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL));
             map.put(Attributes.ARMOR,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 1.0, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 1.0, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }

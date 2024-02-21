@@ -61,11 +61,11 @@ public class MoonlightAmulet extends Item implements ICurioItem {
 
         map = HashMultimap.create(map);
         map.put(Attributes.MAX_HEALTH,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 6.0, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 6.0, AttributeModifier.Operation.ADDITION));
         map.put(Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 2.0, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 2.0, AttributeModifier.Operation.ADDITION));
         map.put(Attributes.ARMOR,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 4.0, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 4.0, AttributeModifier.Operation.ADDITION));
 
         return map;
     }

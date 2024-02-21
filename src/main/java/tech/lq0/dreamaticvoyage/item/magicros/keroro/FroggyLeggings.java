@@ -188,11 +188,11 @@ public class FroggyLeggings extends ArmorItem {
         if (slot == getEquipmentSlot()) {
             map = HashMultimap.create(map);
             map.put(Attributes.ARMOR_TOUGHNESS,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 6.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 6.0f, AttributeModifier.Operation.ADDITION));
             map.put(ForgeMod.SWIM_SPEED.get(),
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.4f, AttributeModifier.Operation.MULTIPLY_BASE));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 0.4f, AttributeModifier.Operation.MULTIPLY_BASE));
             map.put(Attributes.ATTACK_DAMAGE,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, hasArmorSet(stack) ? 0.1f : 0.0f, AttributeModifier.Operation.MULTIPLY_BASE));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, hasArmorSet(stack) ? 0.1f : 0.0f, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         return map;
     }

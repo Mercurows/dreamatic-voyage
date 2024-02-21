@@ -45,9 +45,9 @@ public class Bolster extends SwordItem {
         if (pEquipmentSlot == EquipmentSlot.MAINHAND) {
             map = HashMultimap.create(map);
             map.put(Attributes.ATTACK_KNOCKBACK,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.1f, AttributeModifier.Operation.MULTIPLY_BASE));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 0.1f, AttributeModifier.Operation.MULTIPLY_BASE));
             map.put(Attributes.MOVEMENT_SPEED,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.1f, AttributeModifier.Operation.MULTIPLY_BASE));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -0.1f, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         return map;
     }

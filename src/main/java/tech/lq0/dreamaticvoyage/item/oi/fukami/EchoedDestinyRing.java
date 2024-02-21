@@ -149,11 +149,11 @@ public class EchoedDestinyRing extends Item {
             map = HashMultimap.create(map);
             boolean flag = ItemNBTTool.getBoolean(stack, TAG_ECHO, false);
             map.put(Attributes.ARMOR,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 9.0f : 3.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, flag ? 9.0f : 3.0f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.ARMOR_TOUGHNESS,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 6.0f : 0.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, flag ? 6.0f : 0.0f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.MAX_HEALTH,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 20.0f : 6.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, flag ? 20.0f : 6.0f, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }

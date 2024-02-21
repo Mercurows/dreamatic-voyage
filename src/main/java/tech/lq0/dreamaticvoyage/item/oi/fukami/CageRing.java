@@ -84,12 +84,12 @@ public class CageRing extends Item implements ICurioItem {
 
         map = HashMultimap.create(map);
         map.put(Attributes.MOVEMENT_SPEED,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -0.2f, AttributeModifier.Operation.MULTIPLY_BASE));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -0.2f, AttributeModifier.Operation.MULTIPLY_BASE));
         if (ItemNBTTool.getInt(stack, TAG_STOP, 0) >= 40) {
             map.put(Attributes.ARMOR,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 10f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 10f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.ARMOR_TOUGHNESS,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 5f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 5f, AttributeModifier.Operation.ADDITION));
         }
 
         return map;

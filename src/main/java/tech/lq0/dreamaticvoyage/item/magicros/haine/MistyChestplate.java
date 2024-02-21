@@ -133,11 +133,11 @@ public class MistyChestplate extends ArmorItem {
         if (slot == getEquipmentSlot()) {
             map = HashMultimap.create(map);
             map.put(Attributes.ARMOR_TOUGHNESS,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 7.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 7.0f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.MAX_HEALTH,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 20.0f + getShieldCount(stack) * 10.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 20.0f + getShieldCount(stack) * 10.0f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.ATTACK_DAMAGE,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, hasArmorSet(stack) ? 0.1f : 0.0f, AttributeModifier.Operation.MULTIPLY_BASE));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, hasArmorSet(stack) ? 0.1f : 0.0f, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         return map;
     }

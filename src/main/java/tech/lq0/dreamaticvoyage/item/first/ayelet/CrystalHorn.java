@@ -59,11 +59,11 @@ public class CrystalHorn extends ArmorItem {
             map = HashMultimap.create(map);
             boolean night = ItemNBTTool.getBoolean(stack, TAG_NIGHT, false);
             map.put(Attributes.MAX_HEALTH,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, night ? 6.0 : 0, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, night ? 6.0 : 0, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.ATTACK_DAMAGE,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, night ? 4.0 : 0, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, night ? 4.0 : 0, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.ATTACK_SPEED,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, night ? 2 : 0, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, night ? 2 : 0, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }

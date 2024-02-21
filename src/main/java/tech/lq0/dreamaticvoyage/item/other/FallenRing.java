@@ -64,11 +64,11 @@ public class FallenRing extends Item implements ICurioItem {
 
         map = HashMultimap.create(map);
         map.put(Attributes.ARMOR,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -3.0f, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -3.0f, AttributeModifier.Operation.ADDITION));
         map.put(Attributes.ARMOR_TOUGHNESS,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, -1.5f, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -1.5f, AttributeModifier.Operation.ADDITION));
         map.put(AttributeRegistry.CHAOS.get(),
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 30.0f, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 30.0f, AttributeModifier.Operation.ADDITION));
 
         return map;
     }

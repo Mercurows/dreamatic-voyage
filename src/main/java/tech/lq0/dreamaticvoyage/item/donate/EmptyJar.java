@@ -56,7 +56,7 @@ public class EmptyJar extends Item {
         if (slot == EquipmentSlot.HEAD) {
             map = HashMultimap.create(map);
             map.put(Attributes.ARMOR,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 1.0D, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 1.0D, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }

@@ -63,7 +63,7 @@ public class Sneakers extends ArmorItem {
         if (pEquipmentSlot == getEquipmentSlot()) {
             map = HashMultimap.create(map);
             map.put(Attributes.MOVEMENT_SPEED,
-                    new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 0.25f, AttributeModifier.Operation.MULTIPLY_BASE));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 0.25f, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         return map;
     }

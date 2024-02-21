@@ -65,7 +65,7 @@ public class RedNose extends Item implements ICurioItem {
 
         map = HashMultimap.create(map);
         map.put(Attributes.ARMOR,
-                new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, 1.0f, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 1.0f, AttributeModifier.Operation.ADDITION));
 
         return map;
     }

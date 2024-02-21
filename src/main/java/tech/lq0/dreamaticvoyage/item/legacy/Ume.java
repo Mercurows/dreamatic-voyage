@@ -74,7 +74,7 @@ public class Ume extends Item {
         UUID uuid = new UUID(ItemRegistry.UME.hashCode(), 0);
         boolean flag = ItemNBTTool.getBoolean(stack, TAG_INVOKE, false);
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(Attributes.ARMOR, new AttributeModifier(uuid, Utils.PDC_ATTRIBUTE_MODIFIER, flag ? 0 : 4, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ARMOR, new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, flag ? 0 : 4, AttributeModifier.Operation.ADDITION));
         return builder.build();
     }
 
