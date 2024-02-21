@@ -102,5 +102,13 @@
       "dreamaticvoyage:hiru_scream_2",
       "dreamaticvoyage:hiru_scream_3"
     ]
+  },
+  "grenade_shoot": {
+    "subtitle": "subtitle.dreamaticvoyage.grenade_shoot",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:grenade_shoot"
+      }
+    ]
   }
 }
