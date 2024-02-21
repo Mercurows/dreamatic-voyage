@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#P#",
+    "PDP",
+    "#P#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:dragon_breath"
+    },
+    "P": {
+      "item": "dreamaticvoyage:purified_crystal_powder"
+    },
+    "D": {
+      "item": "dreamaticvoyage:premium_pdc_point"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:charged_crystal_powder",
+    "count": 1
+  }
+}

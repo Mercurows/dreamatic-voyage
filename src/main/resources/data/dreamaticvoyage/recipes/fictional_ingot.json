@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#p#",
+    "pPp",
+    "#p#"
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:dark_crystal"
+    },
+    "p": {
+      "item": "dreamaticvoyage:charged_crystal_ingot"
+    },
+    "P": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fictional_ingot",
+    "count": 1
+  }
+}

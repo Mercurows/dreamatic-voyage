@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#p#",
+    "pPp",
+    "#p#"
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:terminal_crystal"
+    },
+    "p": {
+      "item": "dreamaticvoyage:purified_crystal_ingot"
+    },
+    "P": {
+      "item": "dreamaticvoyage:charged_crystal_powder"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:charged_crystal_ingot",
+    "count": 1
+  }
+}
