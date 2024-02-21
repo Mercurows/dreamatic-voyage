@@ -41,13 +41,13 @@ public class HirenadeGGEntity extends ThrowableItemProjectile {
 
     @Override
     protected void onHitEntity(EntityHitResult pResult) {
-        explode(this, 7.0f);
+        explode(this, 6.5f);
     }
 
     @Override
     protected void onHitBlock(BlockHitResult pResult) {
         if (!this.level().isClientSide) {
-            explode(this, 7.0f);
+            explode(this, 6.5f);
             this.discard();
         }
     }
@@ -70,7 +70,7 @@ public class HirenadeGGEntity extends ThrowableItemProjectile {
         if (this.fuse <= 0) {
             this.discard();
             if (!this.level().isClientSide) {
-                explode(this, 7.0f);
+                explode(this, 6.5f);
             }
         } else {
             if (this.level().isClientSide) {
