@@ -33,7 +33,7 @@ import java.util.UUID;
 
 public class LunarEclipse extends SwordItem {
     public LunarEclipse() {
-        super(ModItemTier.CHARGED_CRYSTAL, 2, -2.0f, new Properties().rarity(Rarity.EPIC));
+        super(ModItemTier.CHARGED_CRYSTAL, 5, -2.0f, new Properties().rarity(Rarity.EPIC));
     }
 
     @Override
