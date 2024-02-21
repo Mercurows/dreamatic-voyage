@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DarkCrystal extends Item {
     public DarkCrystal() {
-        super(new Properties().rarity(RarityTool.APOCRYPHAL));
+        super(new Properties().rarity(RarityTool.FICTIONAL));
     }
 
     @Override

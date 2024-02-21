@@ -32,7 +32,7 @@ public class RarityTool {
 
     public static final Rarity LEGENDARY = Rarity.create("dreamaticvoyage_legendary", ChatFormatting.GOLD);
 
-    public static final Rarity APOCRYPHAL =  Rarity.create("dreamaticvoyage_apocryphal", s -> {
+    public static final Rarity FICTIONAL =  Rarity.create("dreamaticvoyage_fictional", s -> {
         long time = System.currentTimeMillis();
         int step = (int) (time % 4000);
 

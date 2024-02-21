@@ -11,13 +11,13 @@ import tech.lq0.dreamaticvoyage.tools.RarityTool;
 
 import java.util.List;
 
-public class ApocryphalIngot extends Item {
-    public ApocryphalIngot() {
-        super(new Properties().rarity(RarityTool.APOCRYPHAL));
+public class FictionalIngot extends Item {
+    public FictionalIngot() {
+        super(new Properties().rarity(RarityTool.FICTIONAL));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.apocryphal_ingot").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fictional_ingot").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
     }
 }
