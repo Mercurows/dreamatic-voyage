@@ -2,6 +2,7 @@ package tech.lq0.dreamaticvoyage.init;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.dreamaticvoyage.models.armor.*;
@@ -58,5 +59,10 @@ public class ModelRegistry {
         event.registerLayerDefinition(HiruHeadModel.LAYER_LOCATION, HiruHeadModel::createBodyLayer);
         event.registerLayerDefinition(PlungerModel.LAYER_LOCATION, PlungerModel::createBodyLayer);
         event.registerLayerDefinition(HirenadeGGModel.LAYER_LOCATION, HirenadeGGModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void onModelBake(ModelEvent.RegisterAdditional event) {
+//        event.register(new ModelResourceLocation(Utils.MOD_ID, "special/secondary_cataclysm", "inventory"));
     }
 }
