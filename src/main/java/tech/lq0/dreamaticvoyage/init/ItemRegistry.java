@@ -12,6 +12,7 @@ import tech.lq0.dreamaticvoyage.item.donate.*;
 import tech.lq0.dreamaticvoyage.item.legacy.*;
 import tech.lq0.dreamaticvoyage.item.material.*;
 import tech.lq0.dreamaticvoyage.item.material.crystal.*;
+import tech.lq0.dreamaticvoyage.item.oi.sorayo.LunarEclipse;
 import tech.lq0.dreamaticvoyage.item.other.*;
 import tech.lq0.dreamaticvoyage.item.oi.ayu.GravityRestraintDevice;
 import tech.lq0.dreamaticvoyage.item.oi.ccelia.CraftBeer0322;
@@ -264,7 +265,7 @@ public class ItemRegistry {
     //sorayo
     public static final RegistryObject<Item> LUNATIC_BOW = ITEMS.register("lunatic_bow", LunaticBow::new);
     public static final RegistryObject<Item> MOON_CAKE = ITEMS.register("moon_cake", MoonCake::new);
-//    public static final RegistryObject<Item> LUNAR_ECLIPSE = ITEMS.register("lunar_eclipse", LunarEclipse::new);
+    public static final RegistryObject<Item> LUNAR_ECLIPSE = ITEMS.register("lunar_eclipse", LunarEclipse::new);
 
     //miya
     public static final RegistryObject<Item> TAIL_PEN = ITEMS.register("tail_pen", TailPen::new);
