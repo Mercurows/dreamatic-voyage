@@ -94,5 +94,13 @@
         "stream": true
       }
     ]
+  },
+  "hiru_scream": {
+    "subtitle": "subtitle.dreamaticvoyage.hiru_scream",
+    "sounds": [
+      "dreamaticvoyage:hiru_scream_1",
+      "dreamaticvoyage:hiru_scream_2",
+      "dreamaticvoyage:hiru_scream_3"
+    ]
   }
 }

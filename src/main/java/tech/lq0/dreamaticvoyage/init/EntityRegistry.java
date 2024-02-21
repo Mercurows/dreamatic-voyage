@@ -58,9 +58,9 @@ public class EntityRegistry {
                     () -> EntityType.Builder.<TailHookEntity>createNothing(MobCategory.MISC)
                             .noSave().clientTrackingRange(4).updateInterval(5).noSummon().sized(0.25f, 0.25f)
                             .setCustomClientFactory(TailHookEntity::new).build("tail_hook"));
-//    public static final RegistryObject<EntityType<HirenadeGGEntity>> HIRENADE_GG_ENTITY =
-//            ENTITY_TYPES.register("hirenade_gg",
-//                    () -> EntityType.Builder.<HirenadeGGEntity>create(HirenadeGGEntity::new, EntityClassification.MISC).size(0.4f, 0.4f).build("hirenade_gg"));
+    public static final RegistryObject<EntityType<HirenadeGGEntity>> HIRENADE_GG_ENTITY =
+            ENTITY_TYPES.register("hirenade_gg",
+                    () -> EntityType.Builder.<HirenadeGGEntity>of(HirenadeGGEntity::new, MobCategory.MISC).sized(0.4f, 0.4f).build("hirenade_gg"));
 //
 //    public static final RegistryObject<EntityType<LeviyBeamEntity>> LEVIY_BEAM_ENTITY =
 //            ENTITY_TYPES.register("leviy_beam",
