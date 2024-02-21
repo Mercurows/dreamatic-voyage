@@ -122,7 +122,7 @@ public class HirenadeGGEntity extends ThrowableItemProjectile {
                 10, 1.0D, 1.0D, 1.0D, 0.05);
 
         for (ServerPlayer serverPlayer : ((ServerLevel) world).players()) {
-            if (serverPlayer.distanceToSqr(entity.getX(), entity.getY(), entity.getZ()) < 4096) {
+            if (serverPlayer.distanceToSqr(entity.getX(), entity.getY(), entity.getZ()) < 16384) {
                 serverPlayer.connection.send(new ClientboundExplodePacket(entity.getX(), entity.getY(), entity.getZ(), 2, explosion.getToBlow(), explosion.getHitPlayers().get(entity)));
             }
         }
