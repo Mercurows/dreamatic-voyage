@@ -11,7 +11,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
-import tech.lq0.dreamaticvoyage.item.providenceOI.yesa.YeggyPearl;
+import tech.lq0.dreamaticvoyage.item.oi.yesa.YeggyPearl;
 import tech.lq0.dreamaticvoyage.tools.RenderTool;
 import top.theillusivec4.curios.api.CuriosApi;
 

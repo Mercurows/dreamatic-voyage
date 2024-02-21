@@ -7,7 +7,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import tech.lq0.dreamaticvoyage.item.providenceOI.shirako.MomoPhone;
+import tech.lq0.dreamaticvoyage.item.oi.shirako.MomoPhone;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 
 import java.awt.*;

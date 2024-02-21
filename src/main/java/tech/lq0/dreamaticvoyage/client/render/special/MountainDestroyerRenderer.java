@@ -19,7 +19,7 @@ import net.minecraftforge.common.TierSortingRegistry;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.joml.Matrix4f;
-import tech.lq0.dreamaticvoyage.item.providencefirst.myanna.MountainDestroyer;
+import tech.lq0.dreamaticvoyage.item.first.myanna.MountainDestroyer;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 
