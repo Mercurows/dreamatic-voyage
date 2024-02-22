@@ -7,10 +7,10 @@
   ],
   "key": {
     "x": {
-      "item": "dreamaticvoyage:apocryphal_ingot"
+      "item": "minecraft:echo_shard"
     },
     "a": {
-      "item": "dreamaticvoyage:dark_crystal"
+      "item": "dreamaticvoyage:fictional_ingot"
     }
   },
   "result": {
