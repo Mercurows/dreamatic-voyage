@@ -191,8 +191,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.TERMINAL_CRYSTAL);
         simpleItem(ItemRegistry.CRYSTAL_POWDER);
         simpleItem(ItemRegistry.PURIFIED_CRYSTAL_POWDER);
+        simpleItem(ItemRegistry.CHARGED_CRYSTAL_POWDER);
         simpleItem(ItemRegistry.HARDEN_CRYSTAL_INGOT);
         simpleItem(ItemRegistry.PURIFIED_CRYSTAL_INGOT);
+        simpleItem(ItemRegistry.CHARGED_CRYSTAL_INGOT);
+        simpleItem(ItemRegistry.FICTIONAL_INGOT);
 
         //donate
         simpleItem(ItemRegistry.LITTLE_POTATO);
