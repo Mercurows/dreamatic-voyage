@@ -67,6 +67,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.HARDEN_CRYSTAL_BLOCK);
         blockWithItem(BlockRegistry.PURIFIED_CRYSTAL_BLOCK);
         blockWithItem(BlockRegistry.CHARGED_CRYSTAL_BLOCK);
+        blockWithItem(BlockRegistry.FICTIONAL_INGOT_BLOCK);
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-23T03:07:42.9886332	Loot Tables
+// 1.20.1	2024-02-23T03:18:01.0750252	Loot Tables
 de907c77e3f973d4cc51e684a7c589816f1f7488 data/dreamaticvoyage/loot_tables/blocks/blue_sand.json
 d7c59f5243134df755eed00c0b7c4d762d809115 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone.json
 22ea59f302064014af02351f18938dbc97043258 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone_slab.json
@@ -9,6 +9,7 @@ e706125d4e729dba0ea51d2aa9a382bd3e71250c data/dreamaticvoyage/loot_tables/blocks
 9789b86ce8393292355285d5c3f42e43d688a5d7 data/dreamaticvoyage/loot_tables/blocks/communication_table.json
 8710f5dde0509e4d903b9213c5748ea8757bb75b data/dreamaticvoyage/loot_tables/blocks/cut_blue_sandstone.json
 df8415be22c59609d5cb018034e6a34f41874ead data/dreamaticvoyage/loot_tables/blocks/cut_blue_sandstone_slab.json
+e05353b755a2ef2425a4f6c141c4af1b8e67b87a data/dreamaticvoyage/loot_tables/blocks/fictional_ingot_block.json
 96490582fdca821df427477c1f8d735a28742a93 data/dreamaticvoyage/loot_tables/blocks/fukamizu_bread_block.json
 84fe28761bb4bcf3d7f037630c813badd99825b3 data/dreamaticvoyage/loot_tables/blocks/harano_button.json
 a9974070e1d84c365705ac8cd0ac16b7eb02b71d data/dreamaticvoyage/loot_tables/blocks/harano_door.json

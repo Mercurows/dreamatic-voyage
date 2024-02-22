@@ -77,6 +77,7 @@ import tech.lq0.dreamaticvoyage.item.third.leciel.ReinaWings;
 import tech.lq0.dreamaticvoyage.item.third.yuki.FoxIceCream;
 import tech.lq0.dreamaticvoyage.item.third.yuki.FoxPudding;
 import tech.lq0.dreamaticvoyage.tools.Livers;
+import tech.lq0.dreamaticvoyage.tools.RarityTool;
 
 @SuppressWarnings("unused")
 public class ItemRegistry {
@@ -118,7 +119,7 @@ public class ItemRegistry {
 
     //usa
     public static final RegistryObject<Item> PLUNGER = ITEMS.register("plunger", Plunger::new);
-//    public static final RegistryObject<Item> KURUMI_BOOMERANG = ITEMS.register("kurumi_boomerang", KurumiBoomerang::new);
+    //    public static final RegistryObject<Item> KURUMI_BOOMERANG = ITEMS.register("kurumi_boomerang", KurumiBoomerang::new);
 //    public static final RegistryObject<Item> KURUMI_HALO = ITEMS.register("kurumi_halo", KurumiHalo::new);
     public static final RegistryObject<Item> BROWNIE_UZZA = ITEMS.register("brownie_uzza", BrownieUzza::new);
 
@@ -535,6 +536,8 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CHARGED_CRYSTAL_BLOCK = BLOCK_ITEMS.register("charged_crystal_block",
             () -> new BlockItem(BlockRegistry.CHARGED_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> FICTIONAL_INGOT_BLOCK = BLOCK_ITEMS.register("fictional_ingot_block",
+            () -> new BlockItem(BlockRegistry.FICTIONAL_INGOT_BLOCK.get(), new Item.Properties().rarity(RarityTool.FICTIONAL)));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
