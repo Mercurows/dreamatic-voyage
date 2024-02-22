@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "dreamaticvoyage:fictional_ingot"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fictional_ingot_block",
+    "count": 1
+  }
+}

@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#P#",
+    "EP#",
     "PAP",
-    "EPE"
+    "#PE"
   ],
   "key": {
     "#": {
@@ -16,7 +16,7 @@
       "item": "dreamaticvoyage:satou_knife"
     },
     "E": {
-      "item": "dreamaticvoyage:terminal_crystal"
+      "item": "dreamaticvoyage:fictional_ingot"
     }
   },
   "result": {
