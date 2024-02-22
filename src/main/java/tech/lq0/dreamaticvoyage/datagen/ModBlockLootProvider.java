@@ -64,6 +64,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
 
         this.dropSelf(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());
         this.dropSelf(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get());
+        this.dropSelf(BlockRegistry.CHARGED_CRYSTAL_BLOCK.get());
     }
 
     @Override

@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-21T15:04:43.0125773	Tags for minecraft:block mod id dreamaticvoyage
+// 1.20.1	2024-02-23T03:07:42.9906295	Tags for minecraft:block mod id dreamaticvoyage
 231a202bbd648d2359364967567e6fd0a2e8d772 data/forge/tags/blocks/sand.json
 aed3ef6f2929a8f19592b8a5c21ca16d3214d7bb data/forge/tags/blocks/sandstone.json
 8db11ffa48c111306ce6bf0eb5dbcc7c9607e91a data/minecraft/tags/blocks/bee_growables.json
@@ -12,8 +12,9 @@ aed3ef6f2929a8f19592b8a5c21ca16d3214d7bb data/forge/tags/blocks/sandstone.json
 67aac4fb0c966d8e762b84688bec9fb61bdd4111 data/minecraft/tags/blocks/logs_that_burn.json
 e571247848d744e446e7a358766c9e06789d99fa data/minecraft/tags/blocks/mineable/axe.json
 674737a9f5f86eca620b6c8a290fde17a3fec2c5 data/minecraft/tags/blocks/mineable/hoe.json
-7d100660759ab2129786e8172578b70841b71944 data/minecraft/tags/blocks/mineable/pickaxe.json
+75a94bc42fa67ea1d6aad2244aec5a1b5a72ad66 data/minecraft/tags/blocks/mineable/pickaxe.json
 231a202bbd648d2359364967567e6fd0a2e8d772 data/minecraft/tags/blocks/mineable/shovel.json
+482b8fbb0cfe4750f1d0cdb14f76248868cccd45 data/minecraft/tags/blocks/needs_diamond_tool.json
 b7bd33a25c1697223dbaa38aa30f865e1b4cf40d data/minecraft/tags/blocks/needs_iron_tool.json
 633a7a153e5709e7019ffd88707bb5028200cb7d data/minecraft/tags/blocks/needs_stone_tool.json
 6baeb2cb01c9eb81d861781b12094ec31f620a5e data/minecraft/tags/blocks/planks.json

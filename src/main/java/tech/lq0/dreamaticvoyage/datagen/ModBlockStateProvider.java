@@ -66,6 +66,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         buttonBlock((ButtonBlock) BlockRegistry.HARANO_BUTTON.get(), blockTexture(BlockRegistry.HARANO_PLANKS.get()));
         blockWithItem(BlockRegistry.HARDEN_CRYSTAL_BLOCK);
         blockWithItem(BlockRegistry.PURIFIED_CRYSTAL_BLOCK);
+        blockWithItem(BlockRegistry.CHARGED_CRYSTAL_BLOCK);
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
