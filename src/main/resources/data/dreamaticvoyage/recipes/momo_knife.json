@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " r ",
+    " n ",
     "bab",
     "bnb"
   ],
@@ -12,11 +12,8 @@
     "b": {
       "item": "minecraft:magenta_concrete"
     },
-    "r": {
-      "item": "minecraft:netherite_sword"
-    },
     "n": {
-      "item": "dreamaticvoyage:dark_crystal"
+      "item": "dreamaticvoyage:purified_crystal_ingot"
     }
   },
   "result": {

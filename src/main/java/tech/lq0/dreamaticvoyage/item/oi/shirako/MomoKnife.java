@@ -18,6 +18,7 @@ import tech.lq0.dreamaticvoyage.capability.escort.IEscortCapability;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.escort.EscortCapabilityProvider;
 import tech.lq0.dreamaticvoyage.init.EffectRegistry;
+import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
@@ -32,7 +33,7 @@ public class MomoKnife extends SwordItem {
     public static final String TAG_TIME = "time";
 
     public MomoKnife() {
-        super(Tiers.NETHERITE, 1, -1.0f, new Properties().durability(1231).rarity(Rarity.EPIC));
+        super(ModItemTier.PURIFIED_CRYSTAL, 1, -1.0f, new Properties().durability(1231).rarity(Rarity.EPIC));
 
         this.energyCapacity = () -> 100.0;
     }
