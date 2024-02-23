@@ -27,9 +27,9 @@ public class ModOverworldRegion extends Region {
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.HOT)
                 .humidity(ParameterUtils.Humidity.DRY)
-                .continentalness(ParameterUtils.Continentalness.span(ParameterUtils.Continentalness.MID_INLAND, ParameterUtils.Continentalness.INLAND))
+                .continentalness(ParameterUtils.Continentalness.span(ParameterUtils.Continentalness.INLAND, ParameterUtils.Continentalness.FAR_INLAND))
                 .erosion(ParameterUtils.Erosion.EROSION_0)
-                .depth(ParameterUtils.Depth.SURFACE)
+                .depth(Climate.Parameter.span(-0.1F, 0.0F))
                 .weirdness(ParameterUtils.Weirdness.VALLEY)
                 .build().forEach(point -> builder.add(point, ModBiomes.BLUE_DESERT));
 
