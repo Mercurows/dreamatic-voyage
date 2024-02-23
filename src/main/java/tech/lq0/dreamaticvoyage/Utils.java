@@ -38,6 +38,7 @@ public class Utils {
         VillagerRegistry.register(modEventBus);
         AttributeRegistry.ATTRIBUTES.register(modEventBus);
         PotionRegistry.POTIONS.register(modEventBus);
+        ParticleRegistry.PARTICLE_TYPES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
