@@ -3,9 +3,11 @@ package tech.lq0.dreamaticvoyage.client;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import tech.lq0.dreamaticvoyage.client.particle.TentacleParticle;
 import tech.lq0.dreamaticvoyage.client.render.*;
 import tech.lq0.dreamaticvoyage.client.render.curios.YeggyPearlRenderer;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
@@ -14,6 +16,7 @@ import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.client.render.curios.ChiramHatRenderer;
 import tech.lq0.dreamaticvoyage.client.render.curios.LunaticBowRenderer;
 import tech.lq0.dreamaticvoyage.client.render.curios.RedNoseRenderer;
+import tech.lq0.dreamaticvoyage.init.ParticleRegistry;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -41,5 +44,10 @@ public class ClientRenderHandler {
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(BlockEntityRegistry.POINTS_STORE_BLOCK_ENTITY.get(), PointsStoreBlockEntityRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerParticles(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(ParticleRegistry.TENTACLE.get(), TentacleParticle.Provider::new);
     }
 }

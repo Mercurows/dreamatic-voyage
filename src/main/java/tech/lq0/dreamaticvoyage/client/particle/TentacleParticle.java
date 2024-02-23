@@ -7,26 +7,20 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class TentacleParticle extends SimpleAnimatedParticle {
-    protected TentacleParticle(ClientLevel pLevel, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed, SpriteSet pSprites) {
-        super(pLevel, pX, pY, pZ, pSprites, 0);
-        this.xd = pXSpeed;
-        this.yd = pYSpeed;
-        this.zd = pZSpeed;
+public class TentacleParticle extends TextureSheetParticle {
+    protected TentacleParticle(ClientLevel pLevel, double pX, double pY, double pZ) {
+        super(pLevel, pX, pY, pZ, 0.0, 0.0, 0.0);
+        this.xd = 0;
+        this.yd = 0;
+        this.zd = 0;
         this.quadSize *= 0.5F;
         this.lifetime = 10;
-        this.setFadeColor(15916745);
-        this.setSpriteFromAge(pSprites);
+        this.hasPhysics = false;
     }
 
     @Override
     public ParticleRenderType getRenderType() {
         return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
-    }
-
-    public void move(double pX, double pY, double pZ) {
-        this.setBoundingBox(this.getBoundingBox().move(pX, pY, pZ));
-        this.setLocationFromBoundingbox();
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -38,7 +32,9 @@ public class TentacleParticle extends SimpleAnimatedParticle {
         }
 
         public Particle createParticle(SimpleParticleType pType, ClientLevel pLevel, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed) {
-            return new TentacleParticle(pLevel, pX, pY, pZ, pXSpeed, pYSpeed, pZSpeed, this.sprites);
+            TentacleParticle tentacleParticle = new TentacleParticle(pLevel, pX, pY, pZ);
+            tentacleParticle.pickSprite(this.sprites);
+            return tentacleParticle;
         }
     }
 }
