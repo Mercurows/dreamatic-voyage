@@ -13,7 +13,7 @@ public class TentacleParticle extends TextureSheetParticle {
         this.xd = 0;
         this.yd = 0;
         this.zd = 0;
-        this.quadSize *= 0.5F;
+        this.quadSize *= 0.8F;
         this.lifetime = 10;
         this.hasPhysics = false;
     }

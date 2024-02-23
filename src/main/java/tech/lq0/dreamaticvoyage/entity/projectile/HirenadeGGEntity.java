@@ -19,6 +19,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import tech.lq0.dreamaticvoyage.init.EntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
+import tech.lq0.dreamaticvoyage.init.ParticleRegistry;
 import tech.lq0.dreamaticvoyage.init.SoundRegistry;
 
 import java.util.Random;
@@ -73,8 +74,7 @@ public class HirenadeGGEntity extends ThrowableItemProjectile {
             }
         } else {
             if (this.level().isClientSide) {
-                //TODO 更改为正确的粒子
-                this.level().addParticle(ParticleTypes.DAMAGE_INDICATOR, this.getX(), this.getY() + 0.5D, this.getZ(), 0.0D, 0.0D, 0.0D);
+                this.level().addParticle(ParticleRegistry.TENTACLE.get(), this.getX(), this.getY() + 0.1D, this.getZ(), 0.0D, 0.0D, 0.0D);
             }
         }
     }
