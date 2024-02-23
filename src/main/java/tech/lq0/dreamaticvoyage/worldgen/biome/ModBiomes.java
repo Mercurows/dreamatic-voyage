@@ -36,10 +36,10 @@ public class ModBiomes {
 
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder(placedFeatureGetter, carverGetter);
 
-        generationSettings
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_CACTUS_DESERT)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_SUGAR_CANE_DESERT);
+//        generationSettings
+//                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT)
+//                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_CACTUS_DESERT)
+//                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_SUGAR_CANE_DESERT);
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(generationSettings);
         BiomeDefaultFeatures.addDefaultOres(generationSettings);
@@ -50,9 +50,6 @@ public class ModBiomes {
                 .hasPrecipitation(false)
                 .downfall(0.0f)
                 .temperature(2.0f)
-//                .depth(0.15f)
-//                .scale(0.15f)
-//                .category(Biome.Category.DESERT)
                 .mobSpawnSettings(spawnInfo.build())
                 .generationSettings(generationSettings.build())
                 .specialEffects(biomeAmbience)

@@ -12,11 +12,13 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource BLUE_SANDSTONE = makeStateRule(BlockRegistry.BLUE_SANDSTONE.get());
 
     public static SurfaceRules.RuleSource makeRules() {
-        return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, BLUE_SAND),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, BLUE_SANDSTONE),
-                SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(5, false, CaveSurface.FLOOR), BLUE_SANDSTONE),
-                SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(5, false, CaveSurface.CEILING), STONE)
+        return SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.BLUE_DESERT),
+                SurfaceRules.sequence(
+                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, BLUE_SAND),
+                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, BLUE_SANDSTONE),
+                        SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(5, false, CaveSurface.FLOOR), BLUE_SANDSTONE),
+                        SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(5, false, CaveSurface.CEILING), STONE)
+                )
         );
     }
 

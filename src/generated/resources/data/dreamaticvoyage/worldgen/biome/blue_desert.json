@@ -42,13 +42,6 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma"
-    ],
-    [],
-    [],
-    [
-      "minecraft:flower_default",
-      "minecraft:patch_cactus_desert",
-      "minecraft:patch_sugar_cane_desert"
     ]
   ],
   "has_precipitation": false,
