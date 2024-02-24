@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_harano",
+  "features": "dreamaticvoyage:harano_tree_placed",
+  "step": "vegetal_decoration"
+}
