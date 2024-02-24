@@ -1,6 +1,8 @@
 {
   "type": "forge:add_features",
-  "biomes": "dreamaticvoyage:harano_plains",
+  "biomes": [
+    "dreamaticvoyage:harano_plains"
+  ],
   "features": "dreamaticvoyage:harano_tree_placed",
   "step": "vegetal_decoration"
 }
