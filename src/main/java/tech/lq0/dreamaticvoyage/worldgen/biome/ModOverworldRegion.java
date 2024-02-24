@@ -33,6 +33,15 @@ public class ModOverworldRegion extends Region {
                 .weirdness(ParameterUtils.Weirdness.VALLEY)
                 .build().forEach(point -> builder.add(point, ModBiomes.BLUE_DESERT));
 
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.HOT)
+                .humidity(ParameterUtils.Humidity.DRY)
+                .continentalness(ParameterUtils.Continentalness.INLAND)
+                .erosion(ParameterUtils.Erosion.EROSION_0)
+                .depth(Climate.Parameter.span(-0.1F, 0.0F))
+                .weirdness(ParameterUtils.Weirdness.VALLEY)
+                .build().forEach(point -> builder.add(point, ModBiomes.HARANO_PLAINS));
+
         builder.build().forEach(mapper);
     }
 }
