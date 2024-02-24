@@ -6,20 +6,9 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "target:harano_tent",
+        "location": "dreamaticvoyage:blue_desert_well",
         "projection": "rigid",
-        "processors": {
-          "processors": [
-            {
-              "processor_type": "minecraft:block_ignore",
-              "blocks": [
-                {
-                  "Name": "minecraft:structure_block"
-                }
-              ]
-            }
-          ]
-        }
+        "processors": "minecraft:empty"
       }
     }
   ]

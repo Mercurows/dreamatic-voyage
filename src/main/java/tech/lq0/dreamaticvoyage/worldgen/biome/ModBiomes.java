@@ -22,7 +22,6 @@ public class ModBiomes {
         context.register(BLUE_DESERT, blueDesertBiome(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER)));
     }
 
-    //TODO 添加蓝色水井生成
     public static Biome blueDesertBiome(HolderGetter<PlacedFeature> placedFeatureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeSpecialEffects biomeAmbience = (new BiomeSpecialEffects.Builder())
                 .skyColor(0x7cb8ff)
