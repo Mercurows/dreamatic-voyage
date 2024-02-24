@@ -1,0 +1,13 @@
+{
+  "feature": "dreamaticvoyage:blue_desert_well",
+  "placement": [
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:count",
+      "count": 1
+    }
+  ]
+}
