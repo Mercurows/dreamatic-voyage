@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "PWP",
+    "PGP"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:black_wool"
+    },
+    "P": {
+      "item": "dreamaticvoyage:idol_cloth"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    },
+    "G": {
+      "item": "minecraft:grass"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:maid_costume",
+    "count": 1
+  }
+}

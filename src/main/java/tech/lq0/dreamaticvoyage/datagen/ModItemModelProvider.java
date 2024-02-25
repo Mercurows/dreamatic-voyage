@@ -207,7 +207,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.BAKED_NAME_TAG);
         simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN);
 
-
         //costume
         simpleItem(ItemRegistry.CHIRAM_IDOL_HELMET);
         simpleItem(ItemRegistry.CHIRAM_IDOL_CHESTPLATE);
@@ -222,6 +221,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.EKIRA_IDOL_CHESTPLATE);
         simpleItem(ItemRegistry.EKIRA_IDOL_BOOTS);
 
+        simpleItem(ItemRegistry.MAID_COSTUME);
 
         //blocks
         evenSimplerBlockItem(BlockRegistry.PORCELAIN_THRONE);

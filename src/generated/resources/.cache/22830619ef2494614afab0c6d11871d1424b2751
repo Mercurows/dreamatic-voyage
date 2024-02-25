@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-26T01:16:27.6749477	Item Models: dreamaticvoyage
+// 1.20.1	2024-02-26T02:01:29.5741027	Item Models: dreamaticvoyage
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 87062f0bab8602cf3083e4dc3acd2c90b2fef4ab assets/dreamaticvoyage/models/item/ayelet_mask.json
 95980ffe50158a7913c92005529ee0df4c956dd0 assets/dreamaticvoyage/models/item/baked_name_tag.json
@@ -110,6 +110,7 @@ e5738d4f6204287cccf3cb8f11a451f279d15c19 assets/dreamaticvoyage/models/item/magi
 32f7128efc128e0e0ab1aba592fd98615de4a9f9 assets/dreamaticvoyage/models/item/magic_book_throw.json
 c65468e7b65a5c8e30c38a75cd307438910e6887 assets/dreamaticvoyage/models/item/magic_mirror.json
 1ac89d4df1f353c90cdacdc61bff6641b104937c assets/dreamaticvoyage/models/item/magic_teapot.json
+1348f9c90b3bc3b830986b2a5567d6bb62ecbfc6 assets/dreamaticvoyage/models/item/maid_costume.json
 8eb0610088ca8c67fbcef72b6b1f7e4ab9c20530 assets/dreamaticvoyage/models/item/mari_stew.json
 49526b0ff79bfb69a07e3022663236d63144e581 assets/dreamaticvoyage/models/item/marshaimallow.json
 93db0f48fb398fc993fc45a244f71a5d4bc3bc1a assets/dreamaticvoyage/models/item/mechanical_horn.json
