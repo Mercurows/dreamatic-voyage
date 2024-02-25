@@ -498,6 +498,8 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(), new Item.Properties()));
     public static final RegistryObject<Item> SMOOTH_BLUE_SANDSTONE_STAIRS = BLOCK_ITEMS.register("smooth_blue_sandstone_stairs",
             () -> new BlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SUSPICIOUS_BLUE_SAND = BLOCK_ITEMS.register("suspicious_blue_sand",
+            () -> new BlockItem(BlockRegistry.SUSPICIOUS_BLUE_SAND.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> HARANO_LOG = BLOCK_ITEMS.register("harano_log",
             () -> new BlockItem(BlockRegistry.HARANO_LOG.get(), new Item.Properties()));
