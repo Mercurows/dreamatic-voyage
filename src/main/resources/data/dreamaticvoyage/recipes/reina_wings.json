@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "aaa",
+    "aba",
     "p p",
     "p p"
   ],
@@ -11,6 +11,9 @@
     },
     "p": {
       "item": "dreamaticvoyage:reina_feather"
+    },
+    "b": {
+      "item": "minecraft:leather"
     }
   },
   "result": {
