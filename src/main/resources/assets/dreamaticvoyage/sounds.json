@@ -110,5 +110,14 @@
         "name": "dreamaticvoyage:grenade_shoot"
       }
     ]
+  },
+  "sorry": {
+    "subtitle": "subtitle.dreamaticvoyage.sorry",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:sorry",
+        "stream": true
+      }
+    ]
   }
 }

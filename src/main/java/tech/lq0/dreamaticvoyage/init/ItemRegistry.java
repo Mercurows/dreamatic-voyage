@@ -72,6 +72,7 @@ import tech.lq0.dreamaticvoyage.item.second.mumu.AyeletMask;
 import tech.lq0.dreamaticvoyage.item.second.mumu.MumuSteak;
 import tech.lq0.dreamaticvoyage.item.second.satou.*;
 import tech.lq0.dreamaticvoyage.item.third.hiru.*;
+import tech.lq0.dreamaticvoyage.item.third.leciel.LecielEarCoverts;
 import tech.lq0.dreamaticvoyage.item.third.leciel.ReinaFeather;
 import tech.lq0.dreamaticvoyage.item.third.leciel.ReinaWings;
 import tech.lq0.dreamaticvoyage.item.third.yuki.FoxIceCream;
@@ -241,7 +242,7 @@ public class ItemRegistry {
     //leciel
     public static final RegistryObject<Item> REINA_WINGS = ITEMS.register("reina_wings", ReinaWings::new);
     public static final RegistryObject<Item> REINA_FEATHER = ITEMS.register("reina_feather", ReinaFeather::new);
-//    public static final RegistryObject<Item> LECIEL_EAR_COVERTS = ITEMS.register("leciel_ear_coverts", LecielEarCoverts::new);
+    public static final RegistryObject<Item> LECIEL_EAR_COVERTS = ITEMS.register("leciel_ear_coverts", LecielEarCoverts::new);
 //    public static final RegistryObject<Item> GIANT_DIAMOND_RING = ITEMS.register("giant_diamond_ring", GiantDiamondRing::new);
 
     //yuki

@@ -118,6 +118,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ItemRegistry.REINA_WINGS);
         simpleItem(ItemRegistry.REINA_FEATHER);
+        simpleItem(ItemRegistry.LECIEL_EAR_COVERTS);
 
         simpleItem(ItemRegistry.FOX_ICE_CREAM);
         simpleItem(ItemRegistry.FOX_PUDDING);

@@ -16,7 +16,7 @@ public class SoundRegistry {
     public static final RegistryObject<SoundEvent> BLADE = SOUNDS.register("blade", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "blade")));
 //    public static final RegistryObject<SoundEvent> HOW_HOLD_BLOOD = SOUNDS.register("how_hold_blood", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "how_hold_blood")));
 //    public static final RegistryObject<SoundEvent> WHY_NOT_DIE = SOUNDS.register("why_not_die", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "why_not_die")));
-//    public static final RegistryObject<SoundEvent> SORRY = SOUNDS.register("sorry", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "sorry")));
+    public static final RegistryObject<SoundEvent> SORRY = SOUNDS.register("sorry", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "sorry")));
     public static final RegistryObject<SoundEvent> BABY_MEOW = SOUNDS.register("baby_meow", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "baby_meow")));
     public static final RegistryObject<SoundEvent> SHUTTER = SOUNDS.register("shutter", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "shutter")));
     //    public static final RegistryObject<SoundEvent> LECIA_HOWL = SOUNDS.register("lecia_howl", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Utils.MOD_ID, "lecia_howl")));
