@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "dreamaticvoyage:qianyun_hoe"
+    },
+    "title": {
+      "translate": "dreamaticvoyage.advancement.qianyun_hoe"
+    },
+    "description": {
+      "translate": "dreamaticvoyage.advancement.qianyun_hoe_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "dreamaticvoyage:main/root",
+  "criteria": {
+    "qianyun_hoe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamaticvoyage:qianyun_hoe"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
