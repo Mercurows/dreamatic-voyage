@@ -61,6 +61,7 @@ import tech.lq0.dreamaticvoyage.item.magicros.chiram.*;
 import tech.lq0.dreamaticvoyage.item.magicros.ekira.*;
 import tech.lq0.dreamaticvoyage.item.magicros.haine.*;
 import tech.lq0.dreamaticvoyage.item.magicros.keroro.*;
+import tech.lq0.dreamaticvoyage.item.other.qianyun.MaidCostume;
 import tech.lq0.dreamaticvoyage.item.second.lecia.ElectricHorn;
 import tech.lq0.dreamaticvoyage.item.second.lecia.MechanicalHorn;
 import tech.lq0.dreamaticvoyage.item.second.louise.*;
@@ -459,7 +460,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> EKIRA_IDOL_CHESTPLATE = COSTUMES.register("ekira_idol_chestplate", EkiraIdolChestplate::new);
     public static final RegistryObject<Item> EKIRA_IDOL_BOOTS = COSTUMES.register("ekira_idol_boots", EkiraIdolBoots::new);
 //    public static final RegistryObject<Item> KRM_963_53 = COSTUMES.register("krm_963_53", KRM_963_53::new);
-//    public static final RegistryObject<Item> MAID_COSTUME = COSTUMES.register("maid_costume", MaidCostume::new);
+    public static final RegistryObject<Item> MAID_COSTUME = COSTUMES.register("maid_costume", MaidCostume::new);
 
     /**
      * ===dreamaticvoyage BLOCKS===
