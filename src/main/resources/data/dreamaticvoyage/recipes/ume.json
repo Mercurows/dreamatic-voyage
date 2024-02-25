@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #d",
+    "#d#",
+    "i# "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stripped_mangrove_wood"
+    },
+    "d": {
+      "item": "dreamaticvoyage:purified_crystal_ingot"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:ume",
+    "count": 1
+  }
+}

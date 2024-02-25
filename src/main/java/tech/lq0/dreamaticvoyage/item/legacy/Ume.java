@@ -64,7 +64,7 @@ public class Ume extends Item {
         boolean flag = ItemNBTTool.getBoolean(stack, TAG_INVOKE, false);
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
-                flag ? 5 : 0, AttributeModifier.Operation.ADDITION));
+                flag ? 7 : 0, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier",
                 -1.0f, AttributeModifier.Operation.ADDITION));
         return builder.build();
@@ -148,7 +148,7 @@ public class Ume extends Item {
 
     @Override
     public int getEnchantmentValue(ItemStack stack) {
-        return 20;
+        return 16;
     }
 
     @Override

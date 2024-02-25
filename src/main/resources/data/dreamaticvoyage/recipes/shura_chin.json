@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "g#d",
+    "#d#",
+    "i#g"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stripped_mangrove_wood"
+    },
+    "d": {
+      "item": "dreamaticvoyage:charged_crystal_ingot"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:shura_chin",
+    "count": 1
+  }
+}

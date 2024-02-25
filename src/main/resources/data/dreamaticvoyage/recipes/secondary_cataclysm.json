@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aSD",
+    "nPN",
+    "nSa"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:shulker_shell"
+    },
+    "n": {
+      "item": "dreamaticvoyage:purified_crystal_block"
+    },
+    "a": {
+      "item": "dreamaticvoyage:charged_crystal_ingot"
+    },
+    "P": {
+      "item": "dreamaticvoyage:gn_star"
+    },
+    "D": {
+      "item": "minecraft:dispenser"
+    },
+    "N": {
+      "item": "minecraft:netherite_sword"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:secondary_cataclysm",
+    "count": 1
+  }
+}

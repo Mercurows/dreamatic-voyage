@@ -82,7 +82,7 @@ public class ShuraChin extends Item {
         boolean flag = ItemNBTTool.getBoolean(stack, TAG_INVOKE, false);
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
-                flag ? 12 : 0, AttributeModifier.Operation.ADDITION));
+                flag ? 14 : 0, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier",
                 -1.5f, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ARMOR, new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, flag ? 0 : 8, AttributeModifier.Operation.ADDITION));
