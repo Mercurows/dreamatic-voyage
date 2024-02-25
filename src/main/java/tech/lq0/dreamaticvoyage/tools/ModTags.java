@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.init;
+package tech.lq0.dreamaticvoyage.tools;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;

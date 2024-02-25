@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.init;
+package tech.lq0.dreamaticvoyage.tools;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -11,6 +11,7 @@ import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -37,6 +38,16 @@ public class MissingMappingHandler {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
                 ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
                 Block remappedResource = ForgeRegistries.BLOCKS.getValue(newResourceLocation);
+                if (remappedResource != null) {
+                    mapping.remap(remappedResource);
+                }
+            }
+        }
+
+        for (MissingMappingsEvent.Mapping<Biome> mapping : event.getAllMappings(Registries.BIOME)) {
+            if ("providencraft".equals(mapping.getKey().getNamespace())) {
+                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                Biome remappedResource = ForgeRegistries.BIOMES.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
                 }
