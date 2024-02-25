@@ -8,6 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Suitcase;
 import tech.lq0.dreamaticvoyage.item.donate.*;
 import tech.lq0.dreamaticvoyage.item.legacy.*;
 import tech.lq0.dreamaticvoyage.item.material.*;
@@ -320,7 +321,7 @@ public class ItemRegistry {
      **/
     //qianyun
     public static final RegistryObject<Item> QIANYUN_HOE = ITEMS.register("qianyun_hoe", QianyunHoe::new);
-//    public static final RegistryObject<Item> SUITCASE = ITEMS.register("suitcase", Suitcase::new);
+    public static final RegistryObject<Item> SUITCASE = ITEMS.register("suitcase", Suitcase::new);
 //    public static final RegistryObject<Item> QIANKELA = ITEMS.register("qiankela", Qiankela::new);
 
     /**
