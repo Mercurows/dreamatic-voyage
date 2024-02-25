@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dreamaticvoyage:block/suspicious_blue_sand_2"
+  }
+}
