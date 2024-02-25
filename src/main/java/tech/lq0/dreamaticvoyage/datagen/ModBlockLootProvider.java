@@ -45,6 +45,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         this.add(BlockRegistry.CUT_BLUE_SANDSTONE_SLAB.get(), block -> createSlabItemTable(BlockRegistry.CUT_BLUE_SANDSTONE_SLAB.get()));
         this.add(BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(), block -> createSlabItemTable(BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get()));
         this.dropSelf(BlockRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get());
+        this.add(BlockRegistry.SUSPICIOUS_BLUE_SAND.get(), block -> noDrop());
 
         this.dropSelf(BlockRegistry.HARANO_LOG.get());
         this.add(BlockRegistry.HARANO_LEAVES.get(), block -> createLeavesDrops(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.HARANO_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));

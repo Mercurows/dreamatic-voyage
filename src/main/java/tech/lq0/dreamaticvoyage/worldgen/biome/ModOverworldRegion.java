@@ -36,7 +36,7 @@ public class ModOverworldRegion extends Region {
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.HOT)
                 .humidity(ParameterUtils.Humidity.DRY)
-                .continentalness(ParameterUtils.Continentalness.INLAND)
+                .continentalness(ParameterUtils.Continentalness.MID_INLAND)
                 .erosion(ParameterUtils.Erosion.EROSION_0)
                 .depth(Climate.Parameter.span(-0.1F, 0.0F))
                 .weirdness(ParameterUtils.Weirdness.VALLEY)
