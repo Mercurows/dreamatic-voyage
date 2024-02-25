@@ -76,11 +76,19 @@ public class QianyunHoe extends HoeItem {
             if (context.getClickedFace() != Direction.DOWN && world.isEmptyBlock(blockPos.above())) {
                 BlockState blockstate = getQianyunHoeTillingState(world.getBlockState(blockPos));
                 if (blockstate != null) {
-
                     world.playSound(player, blockPos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
                     if (!world.isClientSide) {
                         world.setBlock(blockPos, blockstate, 11);
                         shouldCauseDamage = true;
+                    }
+                } else {
+                    BlockState toolModifiedState = world.getBlockState(pos).getToolModifiedState(context, net.minecraftforge.common.ToolActions.HOE_TILL, false);
+                    if (toolModifiedState != null) {
+                        world.playSound(player, blockPos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                        if (!world.isClientSide) {
+                            world.setBlock(blockPos, toolModifiedState, 11);
+                            shouldCauseDamage = true;
+                        }
                     }
                 }
             }
