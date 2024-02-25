@@ -51,11 +51,11 @@ public class OceanDestiny extends Item implements ICurioItem {
 
         map = HashMultimap.create(map);
         map.put(Attributes.MAX_HEALTH,
-                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 10.0, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 20.0, AttributeModifier.Operation.ADDITION));
         map.put(ForgeMod.SWIM_SPEED.get(),
                 new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
         map.put(Attributes.MOVEMENT_SPEED,
-                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -0.1, AttributeModifier.Operation.MULTIPLY_BASE));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 0.05, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return map;
     }
