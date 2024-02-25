@@ -62,6 +62,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(HirenadeGGModel.LAYER_LOCATION, HirenadeGGModel::createBodyLayer);
         event.registerLayerDefinition(LecielEarCovertsModel.LAYER_LOCATION, LecielEarCovertsModel::createBodyLayer);
         event.registerLayerDefinition(BlackEarphonesModel.LAYER_LOCATION, BlackEarphonesModel::createBodyLayer);
+        event.registerLayerDefinition(OrangeTrackerModel.LAYER_LOCATION, OrangeTrackerModel::createBodyLayer);
     }
 
     @SubscribeEvent
