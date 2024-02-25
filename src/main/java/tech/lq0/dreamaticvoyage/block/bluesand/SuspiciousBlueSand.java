@@ -19,7 +19,7 @@ import java.util.List;
 
 public class SuspiciousBlueSand extends BrushableBlock {
     public SuspiciousBlueSand() {
-        super(BlockRegistry.BLUE_SAND.get(), BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.SNARE)
+        super(BlockRegistry.BLUE_SAND.get(), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLUE).instrument(NoteBlockInstrument.SNARE)
                 .strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED);
     }
 

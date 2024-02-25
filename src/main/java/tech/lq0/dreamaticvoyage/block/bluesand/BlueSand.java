@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.SandBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.common.IPlantable;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class BlueSand extends SandBlock {
     public BlueSand() {
-        super(6844335, BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SAND));
+        super(6844335, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLUE).strength(0.5F).sound(SoundType.SAND));
     }
 
     @Override
