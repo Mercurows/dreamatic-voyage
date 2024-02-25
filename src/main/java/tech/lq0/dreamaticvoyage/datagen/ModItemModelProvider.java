@@ -165,6 +165,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //cnt
         handheldItem(ItemRegistry.QIANYUN_HOE);
+        simpleItem(ItemRegistry.QIANKELA);
 
         //others
         simpleItem(ItemRegistry.MMA_STEW);
