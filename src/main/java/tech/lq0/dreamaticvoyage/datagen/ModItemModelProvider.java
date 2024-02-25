@@ -202,7 +202,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.LITTLE_POTATO);
         simpleItem(ItemRegistry.LOLLIPOP);
         simpleItem(ItemRegistry.BLACK_EARPHONES);
-
+        simpleItem(ItemRegistry.ORANGE_TRACKER);
         simpleItem(ItemRegistry.EMERGENCY_ENGINE_POWER);
         simpleItem(ItemRegistry.BAKED_NAME_TAG);
         simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN);

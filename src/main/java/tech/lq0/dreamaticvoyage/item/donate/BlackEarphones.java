@@ -67,7 +67,7 @@ public class BlackEarphones extends ArmorItem {
     }
 
     @Override
-    public @org.jetbrains.annotations.Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+    public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
         return Utils.MOD_ID + ":textures/models/armor/black_earphones.png";
     }
 
