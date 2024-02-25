@@ -15,6 +15,7 @@ import tech.lq0.dreamaticvoyage.models.entity.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModelRegistry {
+
     @SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(BloodCrystalModel.LAYER_LOCATION, BloodCrystalModel::createBodyLayer);
@@ -60,6 +61,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(PlungerModel.LAYER_LOCATION, PlungerModel::createBodyLayer);
         event.registerLayerDefinition(HirenadeGGModel.LAYER_LOCATION, HirenadeGGModel::createBodyLayer);
         event.registerLayerDefinition(LecielEarCovertsModel.LAYER_LOCATION, LecielEarCovertsModel::createBodyLayer);
+        event.registerLayerDefinition(BlackEarphonesModel.LAYER_LOCATION, BlackEarphonesModel::createBodyLayer);
     }
 
     @SubscribeEvent

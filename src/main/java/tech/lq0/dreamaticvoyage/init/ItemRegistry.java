@@ -435,7 +435,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> LITTLE_POTATO = DONATE_ITEMS.register("little_potato", LittlePotato::new);
     public static final RegistryObject<Item> LOLLIPOP = DONATE_ITEMS.register("lollipop", Lollipop::new);
     //    public static final RegistryObject<Item> ORANGE_TRACKER = DONATE_ITEMS.register("orange_tracker", OrangeTracker::new);
-//    public static final RegistryObject<Item> BLACK_EARPHONES = DONATE_ITEMS.register("black_earphones", BlackEarphones::new);
+    public static final RegistryObject<Item> BLACK_EARPHONES = DONATE_ITEMS.register("black_earphones", BlackEarphones::new);
     public static final RegistryObject<Item> EMERGENCY_ENGINE_POWER = DONATE_ITEMS.register("emergency_engine_power", EmergencyEnginePower::new);
     public static final RegistryObject<Item> MUSIC_DISC_SONG_OF_AUTUMN = DONATE_ITEMS.register("music_disc_song_of_autumn", MusicDiscSongOfAutumn::new);
     public static final RegistryObject<Item> BAKED_NAME_TAG = DONATE_ITEMS.register("baked_name_tag", BakedNameTag::new);
