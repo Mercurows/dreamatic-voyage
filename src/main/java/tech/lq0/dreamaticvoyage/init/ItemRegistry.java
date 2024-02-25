@@ -61,7 +61,8 @@ import tech.lq0.dreamaticvoyage.item.magicros.chiram.*;
 import tech.lq0.dreamaticvoyage.item.magicros.ekira.*;
 import tech.lq0.dreamaticvoyage.item.magicros.haine.*;
 import tech.lq0.dreamaticvoyage.item.magicros.keroro.*;
-import tech.lq0.dreamaticvoyage.item.other.qianyun.MaidCostume;
+import tech.lq0.dreamaticvoyage.item.cnt.qianyun.MaidCostume;
+import tech.lq0.dreamaticvoyage.item.cnt.qianyun.QianyunHoe;
 import tech.lq0.dreamaticvoyage.item.second.lecia.ElectricHorn;
 import tech.lq0.dreamaticvoyage.item.second.lecia.MechanicalHorn;
 import tech.lq0.dreamaticvoyage.item.second.louise.*;
@@ -318,7 +319,7 @@ public class ItemRegistry {
      * connections
      **/
     //qianyun
-//    public static final RegistryObject<Item> QIANYUN_HOE = ITEMS.register("qianyun_hoe", QianyunHoe::new);
+    public static final RegistryObject<Item> QIANYUN_HOE = ITEMS.register("qianyun_hoe", QianyunHoe::new);
 //    public static final RegistryObject<Item> SUITCASE = ITEMS.register("suitcase", Suitcase::new);
 //    public static final RegistryObject<Item> QIANKELA = ITEMS.register("qiankela", Qiankela::new);
 

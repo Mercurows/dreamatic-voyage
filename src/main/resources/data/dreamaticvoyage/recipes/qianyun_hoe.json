@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "L ",
+    "L "
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:harden_crystal_ingot"
+    },
+    "L": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:qianyun_hoe",
+    "count": 1
+  }
+}

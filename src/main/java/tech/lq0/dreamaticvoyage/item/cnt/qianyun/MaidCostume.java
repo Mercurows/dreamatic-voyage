@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.other.qianyun;
+package tech.lq0.dreamaticvoyage.item.cnt.qianyun;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
