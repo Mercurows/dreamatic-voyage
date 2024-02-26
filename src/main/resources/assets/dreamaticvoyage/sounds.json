@@ -119,5 +119,36 @@
         "stream": true
       }
     ]
+  },
+  "lecia_howl": {
+    "subtitle": "subtitle.dreamaticvoyage.lecia_howl",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:lecia_howl",
+        "stream": true
+      }
+    ]
+  },
+  "lecia_cast": {
+    "subtitle": "subtitle.dreamaticvoyage.lecia_cast",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:lecia_cast_1",
+        "stream": true
+      },
+      {
+        "name": "dreamaticvoyage:lecia_cast_2",
+        "stream": true
+      }
+    ]
+  },
+  "lecia_scream": {
+    "subtitle": "subtitle.dreamaticvoyage.lecia_scream",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:lecia_scream",
+        "stream": true
+      }
+    ]
   }
 }
