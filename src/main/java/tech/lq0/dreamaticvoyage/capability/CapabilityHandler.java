@@ -23,8 +23,11 @@ public class CapabilityHandler {
 
     @SubscribeEvent
     public static void onPlayerCloned(PlayerEvent.Clone event) {
-        LazyOptional<IChaosCapability> oldChaosCap = event.getOriginal().getCapability(ModCapabilities.CHAOS_CAPABILITY);
-        LazyOptional<IChaosCapability> newChaosCap = event.getEntity().getCapability(ModCapabilities.CHAOS_CAPABILITY);
+        Player player = event.getEntity();
+        Player oldPlayer = event.getOriginal();
+        oldPlayer.revive();
+        LazyOptional<IChaosCapability> oldChaosCap = oldPlayer.getCapability(ModCapabilities.CHAOS_CAPABILITY);
+        LazyOptional<IChaosCapability> newChaosCap = player.getCapability(ModCapabilities.CHAOS_CAPABILITY);
         if (oldChaosCap.isPresent() && newChaosCap.isPresent()) {
             newChaosCap.ifPresent((newCap) -> oldChaosCap.ifPresent((oldCap) -> newCap.deserializeNBT(oldCap.serializeNBT())));
         }
