@@ -352,6 +352,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CHAOS_CHECKER = ITEMS.register("chaos_checker", ChaosChecker::new);
     public static final RegistryObject<Item> FALLEN_RING = ITEMS.register("fallen_ring", FallenRing::new);
     public static final RegistryObject<Item> ESCORT_TOKEN = ITEMS.register("escort_token", EscortToken::new);
+    public static final RegistryObject<Item> ANCIENT_MICROPHONE = ITEMS.register("ancient_microphone", AncientMicrophone::new);
 
     /**
      * legacy
