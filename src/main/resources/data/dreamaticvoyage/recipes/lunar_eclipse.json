@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " n ",
+    " n ",
+    "iQi"
+  ],
+  "key": {
+    "n": {
+      "item": "dreamaticvoyage:purified_crystal_ingot"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Q": {
+      "item": "dreamaticvoyage:dark_crystal"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:lunar_eclipse",
+    "count": 1
+  }
+}
