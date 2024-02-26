@@ -67,6 +67,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(MitsukiCrownModel.LAYER_LOCATION, MitsukiCrownModel::createBodyLayer);
         event.registerLayerDefinition(WaterCardModel.LAYER_LOCATION, WaterCardModel::createBodyLayer);
         event.registerLayerDefinition(HiruTentaclesModel.LAYER_LOCATION, HiruTentaclesModel::createBodyLayer);
+        event.registerLayerDefinition(KRM96353Model.LAYER_LOCATION, KRM96353Model::createBodyLayer);
     }
 
     @SubscribeEvent
