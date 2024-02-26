@@ -11,6 +11,7 @@ import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Qiankela;
 import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Suitcase;
 import tech.lq0.dreamaticvoyage.item.donate.*;
+import tech.lq0.dreamaticvoyage.item.first.mitsuki.MitsukiCrown;
 import tech.lq0.dreamaticvoyage.item.legacy.*;
 import tech.lq0.dreamaticvoyage.item.material.*;
 import tech.lq0.dreamaticvoyage.item.material.crystal.*;
@@ -115,7 +116,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror", MagicMirror::new);
 
     //mitsuki
-//    public static final RegistryObject<Item> CROWN = ITEMS.register("crown", Crown::new);
+    public static final RegistryObject<Item> MITSUKI_CROWN = ITEMS.register("mitsuki_crown", MitsukiCrown::new);
 //    public static final RegistryObject<Item> GOOD_MAN_CARD = ITEMS.register("good_man_card", GoodManCard::new);
 
     //niina

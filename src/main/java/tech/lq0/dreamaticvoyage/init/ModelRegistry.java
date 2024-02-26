@@ -64,6 +64,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(BlackEarphonesModel.LAYER_LOCATION, BlackEarphonesModel::createBodyLayer);
         event.registerLayerDefinition(OrangeTrackerModel.LAYER_LOCATION, OrangeTrackerModel::createBodyLayer);
         event.registerLayerDefinition(MaidCostumeModel.LAYER_LOCATION, MaidCostumeModel::createBodyLayer);
+        event.registerLayerDefinition(MitsukiCrownModel.LAYER_LOCATION, MitsukiCrownModel::createBodyLayer);
     }
 
     @SubscribeEvent
