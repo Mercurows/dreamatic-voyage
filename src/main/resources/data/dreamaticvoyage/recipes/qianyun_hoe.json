@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "##",
-    "L ",
-    "L "
+    "## ",
+    "L a",
+    "L  "
   ],
   "key": {
     "#": {
@@ -11,6 +11,9 @@
     },
     "L": {
       "item": "minecraft:stick"
+    },
+    "a": {
+      "item": "minecraft:red_wool"
     }
   },
   "result": {
