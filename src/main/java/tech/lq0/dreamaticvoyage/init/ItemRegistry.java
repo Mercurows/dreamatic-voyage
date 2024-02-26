@@ -12,6 +12,7 @@ import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Qiankela;
 import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Suitcase;
 import tech.lq0.dreamaticvoyage.item.donate.*;
 import tech.lq0.dreamaticvoyage.item.first.mitsuki.MitsukiCrown;
+import tech.lq0.dreamaticvoyage.item.fourth.hifumi.UnfaithfulHeart;
 import tech.lq0.dreamaticvoyage.item.legacy.*;
 import tech.lq0.dreamaticvoyage.item.material.*;
 import tech.lq0.dreamaticvoyage.item.material.crystal.*;
@@ -334,7 +335,7 @@ public class ItemRegistry {
 
     //hifumi
     public static final RegistryObject<Item> NETHER_LIGHT = ITEMS.register("nether_light", NetherLight::new);
-//    public static final RegistryObject<Item> UNFAITHFUL_HEART = ITEMS.register("unfaithful_heart", UnfaithfulHeart::new);
+    public static final RegistryObject<Item> UNFAITHFUL_HEART = ITEMS.register("unfaithful_heart", UnfaithfulHeart::new);
 
     //sana
     public static final RegistryObject<Item> JELLYFISH_BOTTLE = ITEMS.register("jellyfish_bottle", JellyfishBottle::new);
