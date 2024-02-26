@@ -16,6 +16,7 @@ import tech.lq0.dreamaticvoyage.item.fourth.hifumi.UnfaithfulHeart;
 import tech.lq0.dreamaticvoyage.item.legacy.*;
 import tech.lq0.dreamaticvoyage.item.material.*;
 import tech.lq0.dreamaticvoyage.item.material.crystal.*;
+import tech.lq0.dreamaticvoyage.item.oi.ayu.DelicateMirage;
 import tech.lq0.dreamaticvoyage.item.oi.sorayo.LunarEclipse;
 import tech.lq0.dreamaticvoyage.item.other.*;
 import tech.lq0.dreamaticvoyage.item.oi.ayu.GravityRestraintDevice;
@@ -281,7 +282,7 @@ public class ItemRegistry {
 
     //ayu
     public static final RegistryObject<Item> GRAVITY_RESTRAINT_DEVICE = ITEMS.register("gravity_restraint_device", GravityRestraintDevice::new);
-//    public static final RegistryObject<Item> DELICATE_MIRAGE = ITEMS.register("delicate_mirage", DelicateMirage::new);
+    public static final RegistryObject<Item> DELICATE_MIRAGE = ITEMS.register("delicate_mirage", DelicateMirage::new);
 
     //shirayuki
     public static final RegistryObject<Item> FOX_FAIRY_FAN = ITEMS.register("fox_fairy_fan", FoxFairyFan::new);
