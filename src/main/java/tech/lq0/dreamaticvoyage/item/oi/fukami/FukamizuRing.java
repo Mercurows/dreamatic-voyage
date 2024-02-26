@@ -33,7 +33,7 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
-import tech.lq0.dreamaticvoyage.models.item.FukamizuRingItemModel;
+import tech.lq0.dreamaticvoyage.client.models.item.FukamizuRingItemModel;
 import tech.lq0.dreamaticvoyage.client.render.item.FukamizuRingItemRenderer;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.Livers;

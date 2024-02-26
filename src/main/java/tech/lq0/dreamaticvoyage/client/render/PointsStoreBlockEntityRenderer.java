@@ -14,7 +14,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.entity.PointsStoreBlockEntity;
-import tech.lq0.dreamaticvoyage.models.blockentity.PdCLogoModel;
+import tech.lq0.dreamaticvoyage.client.models.blockentity.PdCLogoModel;
 
 @OnlyIn(Dist.CLIENT)
 public class PointsStoreBlockEntityRenderer implements BlockEntityRenderer<PointsStoreBlockEntity> {

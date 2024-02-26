@@ -14,7 +14,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.entity.projectile.WhiteAhogeEntity;
-import tech.lq0.dreamaticvoyage.models.entity.WhiteAhogeModel;
+import tech.lq0.dreamaticvoyage.client.models.entity.WhiteAhogeModel;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;

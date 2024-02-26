@@ -5,13 +5,13 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import tech.lq0.dreamaticvoyage.models.armor.*;
-import tech.lq0.dreamaticvoyage.models.blockentity.PdCLogoModel;
-import tech.lq0.dreamaticvoyage.models.curios.ChiramHatModel;
-import tech.lq0.dreamaticvoyage.models.curios.LunaticBowModel;
-import tech.lq0.dreamaticvoyage.models.curios.RedNoseModel;
-import tech.lq0.dreamaticvoyage.models.curios.YeggyPearlModel;
-import tech.lq0.dreamaticvoyage.models.entity.*;
+import tech.lq0.dreamaticvoyage.client.models.armor.*;
+import tech.lq0.dreamaticvoyage.client.models.entity.*;
+import tech.lq0.dreamaticvoyage.client.models.blockentity.PdCLogoModel;
+import tech.lq0.dreamaticvoyage.client.models.curios.ChiramHatModel;
+import tech.lq0.dreamaticvoyage.client.models.curios.LunaticBowModel;
+import tech.lq0.dreamaticvoyage.client.models.curios.RedNoseModel;
+import tech.lq0.dreamaticvoyage.client.models.curios.YeggyPearlModel;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModelRegistry {

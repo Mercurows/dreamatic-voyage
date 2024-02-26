@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.entity.projectile.ShuRinoKenEntity;
-import tech.lq0.dreamaticvoyage.models.entity.ShuRinoKenModel;
+import tech.lq0.dreamaticvoyage.client.models.entity.ShuRinoKenModel;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;

@@ -34,7 +34,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
-import tech.lq0.dreamaticvoyage.models.armor.CelestialBootsModel;
+import tech.lq0.dreamaticvoyage.client.models.armor.CelestialBootsModel;
 import tech.lq0.dreamaticvoyage.tiers.ModArmorMaterial;
 import tech.lq0.dreamaticvoyage.tools.*;
 
