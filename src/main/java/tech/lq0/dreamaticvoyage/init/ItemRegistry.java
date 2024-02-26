@@ -239,7 +239,7 @@ public class ItemRegistry {
      **/
     //hiru
     public static final RegistryObject<Item> HIRU_HEAD = ITEMS.register("hiru_head", HiruHead::new);
-    //    public static final RegistryObject<Item> HIRU_TENTACLES = ITEMS.register("hiru_tentacles", HiruTentacles::new);
+    public static final RegistryObject<Item> HIRU_TENTACLES = ITEMS.register("hiru_tentacles", HiruTentacles::new);
     public static final RegistryObject<Item> HIRENADE_GG = ITEMS.register("hirenade_gg", HirenadeGG::new);
     public static final RegistryObject<Item> SECONDARY_CATACLYSM = ITEMS.register("secondary_cataclysm", SecondaryCataclysm::new);
     public static final RegistryObject<Item> GN_SOUL = ITEMS.register("gn_souls", GNSouls::new);
@@ -464,7 +464,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> EKIRA_IDOL_HELMET = COSTUMES.register("ekira_idol_helmet", EkiraIdolHelmet::new);
     public static final RegistryObject<Item> EKIRA_IDOL_CHESTPLATE = COSTUMES.register("ekira_idol_chestplate", EkiraIdolChestplate::new);
     public static final RegistryObject<Item> EKIRA_IDOL_BOOTS = COSTUMES.register("ekira_idol_boots", EkiraIdolBoots::new);
-//    public static final RegistryObject<Item> KRM_963_53 = COSTUMES.register("krm_963_53", KRM_963_53::new);
+    //    public static final RegistryObject<Item> KRM_963_53 = COSTUMES.register("krm_963_53", KRM_963_53::new);
     public static final RegistryObject<Item> MAID_COSTUME = COSTUMES.register("maid_costume", MaidCostume::new);
 
     /**
