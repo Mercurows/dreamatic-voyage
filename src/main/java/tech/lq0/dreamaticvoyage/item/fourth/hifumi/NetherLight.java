@@ -10,8 +10,6 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
@@ -23,7 +21,6 @@ public class NetherLight extends SwordItem {
         super(Tiers.IRON, 1, -1.5f, new Properties().durability(321));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.nether_light_1").withStyle(ChatFormatting.GRAY));
