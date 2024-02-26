@@ -227,7 +227,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.EKIRA_IDOL_HELMET);
         simpleItem(ItemRegistry.EKIRA_IDOL_CHESTPLATE);
         simpleItem(ItemRegistry.EKIRA_IDOL_BOOTS);
-
+        simpleItem(ItemRegistry.KRM_963_53);
         simpleItem(ItemRegistry.MAID_COSTUME);
 
         //blocks
