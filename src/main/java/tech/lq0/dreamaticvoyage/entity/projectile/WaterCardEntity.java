@@ -8,6 +8,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.ForgeHooks;
 import tech.lq0.dreamaticvoyage.init.EntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
@@ -40,7 +42,11 @@ public class WaterCardEntity extends ThrowableItemProjectile {
         if (entity instanceof LivingEntity living) {
             if (this.getOwner() != null && !living.equals(this.getOwner())) {
                 living.hurt(living.level().damageSources().thrown(this, this.getOwner() instanceof LivingEntity owner ? owner : null), 1.0f);
-                living.knockback(this.strength, this.getX() - living.getX(), this.getZ() - living.getZ());
+                Vec3 vec3 = this.getDeltaMovement().multiply(1.0D, 0.0D, 1.0D).normalize().scale(4.0D * this.strength);
+                if (vec3.lengthSqr() > 0.0D) {
+                    ForgeHooks.onLivingKnockBack(living, (float) strength, living.getX(), living.getZ());
+                    living.addDeltaMovement(new Vec3(vec3.x, 0.1D, vec3.z));
+                }
             }
         }
         this.discard();

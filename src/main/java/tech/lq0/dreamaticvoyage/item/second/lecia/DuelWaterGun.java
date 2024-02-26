@@ -59,6 +59,7 @@ public class DuelWaterGun extends Item {
                 if (!player.isCreative()) {
                     pStack.setDamageValue(pStack.getDamageValue() + 1);
                 }
+                player.getCooldowns().addCooldown(this, 20);
             }
         }
     }
