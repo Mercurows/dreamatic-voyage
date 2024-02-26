@@ -65,10 +65,7 @@ import tech.lq0.dreamaticvoyage.item.magicros.haine.*;
 import tech.lq0.dreamaticvoyage.item.magicros.keroro.*;
 import tech.lq0.dreamaticvoyage.item.cnt.qianyun.MaidCostume;
 import tech.lq0.dreamaticvoyage.item.cnt.qianyun.QianyunHoe;
-import tech.lq0.dreamaticvoyage.item.second.lecia.ElectricHorn;
-import tech.lq0.dreamaticvoyage.item.second.lecia.Kuleboh;
-import tech.lq0.dreamaticvoyage.item.second.lecia.Kuleciaboh;
-import tech.lq0.dreamaticvoyage.item.second.lecia.MechanicalHorn;
+import tech.lq0.dreamaticvoyage.item.second.lecia.*;
 import tech.lq0.dreamaticvoyage.item.second.louise.*;
 import tech.lq0.dreamaticvoyage.item.second.lucia.BigFierceOneCoffee;
 import tech.lq0.dreamaticvoyage.item.second.lucia.BigMoeOnePotion;
@@ -175,7 +172,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> DUEL_WATER_GUN = ITEMS.register("duel_water_gun", DuelWaterGun::new);
     public static final RegistryObject<Item> KULEBOH = ITEMS.register("kuleboh", Kuleboh::new);
     public static final RegistryObject<Item> KULECIABOH = ITEMS.register("kuleciaboh", Kuleciaboh::new);
-//    public static final RegistryObject<Item> TURBULENCE_AMBER = ITEMS.register("turbulence_amber", TurbulenceAmber::new);
+    public static final RegistryObject<Item> TURBULENCE_AMBER = ITEMS.register("turbulence_amber", TurbulenceAmber::new);
 //    public static final RegistryObject<Item> SPATIOTEMPORAL_DEVICE = ITEMS.register("spatiotemporal_device", SpatiotemporalDevice::new);
 //    public static final RegistryObject<Item> LEVIY = ITEMS.register("leviy", Leviy::new);
 

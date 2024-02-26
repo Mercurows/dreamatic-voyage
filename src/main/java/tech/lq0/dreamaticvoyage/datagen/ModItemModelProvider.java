@@ -68,6 +68,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.MECHANICAL_HORN);
         simpleItem(ItemRegistry.KULEBOH);
         simpleItem(ItemRegistry.KULECIABOH);
+        simpleItem(ItemRegistry.TURBULENCE_AMBER);
 
         handheldItem(ItemRegistry.SATOU_KNIFE);
         simpleItem(ItemRegistry.ISEKAI_LOLLIPOP);
