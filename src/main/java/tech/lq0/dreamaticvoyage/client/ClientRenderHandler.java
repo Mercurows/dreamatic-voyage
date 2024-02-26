@@ -34,6 +34,7 @@ public class ClientRenderHandler {
         EntityRenderers.register(EntityRegistry.FLUFF_BALL_ENTITY.get(), FluffBallEntityRenderer::new);
         EntityRenderers.register(EntityRegistry.PLUNGER_ENTITY.get(), PlungerEntityRenderer::new);
         EntityRenderers.register(EntityRegistry.HIRENADE_GG_ENTITY.get(), HirenadeGGEntityRenderer::new);
+        EntityRenderers.register(EntityRegistry.WATER_CARD_ENTITY.get(), WaterCardEntityRenderer::new);
 
         CuriosRendererRegistry.register(ItemRegistry.LUNATIC_BOW.get(), LunaticBowRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.RED_NOSE.get(), RedNoseRenderer::new);
