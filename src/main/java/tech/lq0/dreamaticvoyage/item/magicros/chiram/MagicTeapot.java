@@ -30,8 +30,6 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.SoundActions;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tools.Livers;
@@ -47,7 +45,6 @@ public class MagicTeapot extends Item {
         this.containedBlock = Fluids.WATER;
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.magic_teapot").withStyle(ChatFormatting.GRAY));

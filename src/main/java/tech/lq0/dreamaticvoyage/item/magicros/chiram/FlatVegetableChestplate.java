@@ -12,8 +12,6 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
@@ -29,7 +27,6 @@ public class FlatVegetableChestplate extends ArmorItem {
         super(ModArmorMaterial.CHIRAM, Type.CHESTPLATE, new Properties().durability(514).fireResistant());
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.flat_vegetable_chestplate").withStyle(ChatFormatting.GRAY));

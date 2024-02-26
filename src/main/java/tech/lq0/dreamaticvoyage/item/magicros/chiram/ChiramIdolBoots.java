@@ -33,7 +33,6 @@ public class ChiramIdolBoots extends ArmorItem {
         super(ModArmorMaterial.IDOL_COSTUME, Type.BOOTS, new Properties());
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.chiram_idol_costume").withStyle(ChatFormatting.GRAY));

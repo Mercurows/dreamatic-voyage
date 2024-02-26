@@ -57,7 +57,6 @@ public class BreezeCrown extends ArmorItem {
         super(ModArmorMaterial.MAGICROS, Type.HELMET, new Properties().fireResistant().setNoRepair().rarity(RarityTool.LEGENDARY));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.breeze_crown_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
