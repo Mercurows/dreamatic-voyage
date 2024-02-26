@@ -19,6 +19,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
+import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
@@ -27,7 +28,7 @@ import java.util.UUID;
 
 public class TailPen extends SwordItem {
     public TailPen() {
-        super(Tiers.WOOD, 8, -2.5f, new Properties().setNoRepair().durability(723).rarity(Rarity.EPIC));
+        super(ModItemTier.CHARGED_CRYSTAL, 5, -2.5f, new Properties().setNoRepair().rarity(Rarity.EPIC));
     }
 
     @Override

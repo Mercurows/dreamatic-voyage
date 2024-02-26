@@ -1,28 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " fa",
-    "cbf",
-    "eg "
+    "faf",
+    "cbc",
+    " b "
   ],
   "key": {
     "a": {
       "item": "minecraft:brush"
     },
     "b": {
-      "item": "minecraft:nether_star"
+      "item": "dreamaticvoyage:charged_crystal_ingot"
     },
     "c": {
       "item": "minecraft:red_glazed_terracotta"
     },
-    "e": {
-      "item": "minecraft:stick"
-    },
     "f": {
       "item": "minecraft:white_wool"
-    },
-    "g": {
-      "item": "dreamaticvoyage:radiant_crystal"
     }
   },
   "result": {
