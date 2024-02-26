@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-27T00:02:53.2504759	Item Models: dreamaticvoyage
+// 1.20.1	2024-02-27T00:57:23.3184875	Item Models: dreamaticvoyage
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 87062f0bab8602cf3083e4dc3acd2c90b2fef4ab assets/dreamaticvoyage/models/item/ayelet_mask.json
 95980ffe50158a7913c92005529ee0df4c956dd0 assets/dreamaticvoyage/models/item/baked_name_tag.json
@@ -83,6 +83,7 @@ bface3355ed61233bddfdf5d07ddb69608b34b56 assets/dreamaticvoyage/models/item/hara
 7dabea2749f208cb656b3c055862e7bcee2d12e1 assets/dreamaticvoyage/models/item/harden_crystal_ingot.json
 d7ea314fbaeb73b5b2fc28ea0472a2f4fe5bb7dd assets/dreamaticvoyage/models/item/hirenade_gg.json
 52454b3ae0faca47eab341a4c6af6875f7f5b6fd assets/dreamaticvoyage/models/item/hiru_head.json
+dbfbcc43ed08f6212957a6bf84ac98e177ac64cb assets/dreamaticvoyage/models/item/hiru_tentacles.json
 a06d6fc0dfcc1e6aaf07279280e24155544cf673 assets/dreamaticvoyage/models/item/idol_cloth.json
 b955227a6d980f03a86c82e2b45ad37a0d281158 assets/dreamaticvoyage/models/item/illusory_crystal.json
 f17eea81fa7a6c4482b924d172677ac1305ade05 assets/dreamaticvoyage/models/item/isekai_lollipop.json

@@ -37,7 +37,7 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.client.models.armor.HiruHeadModel;
+import tech.lq0.dreamaticvoyage.client.models.armor.HiruTentaclesModel;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.init.ParticleRegistry;
 import tech.lq0.dreamaticvoyage.tiers.ModArmorMaterial;
@@ -63,10 +63,10 @@ public class HiruTentacles extends ArmorItem {
             @OnlyIn(Dist.CLIENT)
             public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
                 HumanoidModel<?> armorModel = new HumanoidModel<>(new ModelPart(Collections.emptyList(), Map.of(
-                        "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+                        "body", new HiruTentaclesModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(HiruTentaclesModel.LAYER_LOCATION)).armorBody,
                         "left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
                         "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-                        "head", new HiruHeadModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(HiruHeadModel.LAYER_LOCATION)).armorHead,
+                        "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
                         "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
                         "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
                         "left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));

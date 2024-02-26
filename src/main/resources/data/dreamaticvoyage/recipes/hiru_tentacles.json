@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "lbl",
+    "ana",
+    "lbl"
+  ],
+  "key": {
+    "a": {
+      "item": "dreamaticvoyage:purified_crystal_ingot"
+    },
+    "b": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "n": {
+      "item": "dreamaticvoyage:gn_star"
+    },
+    "l": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:hiru_tentacles",
+    "count": 1
+  }
+}
