@@ -1,6 +1,7 @@
 package tech.lq0.dreamaticvoyage.item.second.lecia;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.CriteriaRegistry;
 import tech.lq0.dreamaticvoyage.init.SoundRegistry;
@@ -25,6 +27,7 @@ import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class DuelWaterGun extends Item {
     public DuelWaterGun() {
@@ -87,8 +90,8 @@ public class DuelWaterGun extends Item {
                     pPlayer.playSound(SoundRegistry.LECIA_SCREAM.get(), 1.0F, 1.0F);
                     pPlayer.playSound(SoundEvents.BUCKET_FILL_LAVA, 1.0F, 1.0F);
 
-                    if (pPlayer instanceof ServerPlayer serverPlayer) {
-                        CriteriaRegistry.FILL_LAVA.trigger(serverPlayer, stack);
+                    if (!pPlayer.level().isClientSide) {
+                        CriteriaRegistry.FILL_LAVA.trigger((ServerPlayer) pPlayer, stack);
                     }
 
                     return InteractionResultHolder.success(stack);
@@ -100,5 +103,15 @@ public class DuelWaterGun extends Item {
 
         pPlayer.startUsingItem(pUsedHand);
         return InteractionResultHolder.consume(stack);
+    }
+
+    @Override
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            @Override
+            public HumanoidModel.@Nullable ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand, ItemStack itemStack) {
+                return HumanoidModel.ArmPose.BOW_AND_ARROW;
+            }
+        });
     }
 }

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 
 public class FillLavaTrigger extends SimpleCriterionTrigger<FillLavaTrigger.TriggerInstance> {
-    public static final ResourceLocation ID = new ResourceLocation(Utils.MOD_ID, "call_in_thunder");
+    public static final ResourceLocation ID = new ResourceLocation(Utils.MOD_ID, "fill_lava");
 
     @Override
     protected FillLavaTrigger.TriggerInstance createInstance(JsonObject pJson, ContextAwarePredicate pPredicate, DeserializationContext pDeserializationContext) {
@@ -30,7 +30,7 @@ public class FillLavaTrigger extends SimpleCriterionTrigger<FillLavaTrigger.Trig
         private final ItemPredicate itemPredicate;
 
         public TriggerInstance(ContextAwarePredicate pPlayer, ItemPredicate predicate) {
-            super(CallInThunderTrigger.ID, pPlayer);
+            super(FillLavaTrigger.ID, pPlayer);
             this.itemPredicate = predicate;
         }
 
