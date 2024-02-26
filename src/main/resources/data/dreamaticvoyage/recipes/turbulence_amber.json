@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rbr",
+    "bab",
+    "rbr"
+  ],
+  "key": {
+    "a": {
+      "item": "dreamaticvoyage:sink_crystal"
+    },
+    "b": {
+      "item": "dreamaticvoyage:charged_crystal_powder"
+    },
+    "r": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:turbulence_amber",
+    "count": 1
+  }
+}
