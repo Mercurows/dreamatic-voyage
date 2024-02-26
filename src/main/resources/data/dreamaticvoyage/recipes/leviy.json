@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#D#",
+    "PJP",
+    "BKB"
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:mechanical_horn"
+    },
+    "D": {
+      "item": "minecraft:dragon_head"
+    },
+    "B": {
+      "item": "dreamaticvoyage:spatiotemporal_device"
+    },
+    "J": {
+      "item": "dreamaticvoyage:kuleciaboh"
+    },
+    "P": {
+      "item": "dreamaticvoyage:fictional_ingot"
+    },
+    "K": {
+      "item": "dreamaticvoyage:duel_water_gun"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:leviy",
+    "count": 1
+  }
+}
