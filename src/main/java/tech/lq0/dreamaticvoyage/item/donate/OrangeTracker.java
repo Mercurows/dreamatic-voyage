@@ -38,6 +38,7 @@ import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.models.armor.OrangeTrackerModel;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
+import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.Collections;
@@ -51,7 +52,7 @@ public class OrangeTracker extends ArmorItem {
     public static final String TAG_ABLE = "able";
 
     public OrangeTracker() {
-        super(ArmorMaterials.CHAIN, Type.LEGGINGS, new Properties().durability(2022));
+        super(ArmorMaterials.CHAIN, Type.LEGGINGS, new Properties().durability(2022).rarity(RarityTool.DONATE));
     }
 
     @Override

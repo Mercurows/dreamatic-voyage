@@ -208,8 +208,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.BLACK_EARPHONES);
         simpleItem(ItemRegistry.ORANGE_TRACKER);
         simpleItem(ItemRegistry.EMERGENCY_ENGINE_POWER);
-        simpleItem(ItemRegistry.BAKED_NAME_TAG);
         simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN);
+        simpleItem(ItemRegistry.LEAH_PAD);
+        simpleItem(ItemRegistry.BAKED_NAME_TAG);
 
         //costume
         simpleItem(ItemRegistry.CHIRAM_IDOL_HELMET);

@@ -13,6 +13,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.EffectRegistry;
+import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class Lollipop extends Item {
             .effect(() -> new MobEffectInstance(MobEffects.JUMP, 340, 2), 1.0f).build();
 
     public Lollipop() {
-        super(new Properties().food(food).fireResistant());
+        super(new Properties().food(food).fireResistant().rarity(RarityTool.DONATE));
     }
 
     @Override
