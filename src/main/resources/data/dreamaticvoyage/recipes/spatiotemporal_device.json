@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C#",
+    "CPC",
+    "#C#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_block"
+    },
+    "C": {
+      "item": "dreamaticvoyage:purified_crystal_ingot"
+    },
+    "P": {
+      "item": "dreamaticvoyage:turbulence_amber"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:spatiotemporal_device",
+    "count": 1
+  }
+}

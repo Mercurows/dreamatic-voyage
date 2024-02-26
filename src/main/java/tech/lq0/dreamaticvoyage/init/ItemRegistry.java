@@ -176,7 +176,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> KULEBOH = ITEMS.register("kuleboh", Kuleboh::new);
     public static final RegistryObject<Item> KULECIABOH = ITEMS.register("kuleciaboh", Kuleciaboh::new);
     public static final RegistryObject<Item> TURBULENCE_AMBER = ITEMS.register("turbulence_amber", TurbulenceAmber::new);
-//    public static final RegistryObject<Item> SPATIOTEMPORAL_DEVICE = ITEMS.register("spatiotemporal_device", SpatiotemporalDevice::new);
+    public static final RegistryObject<Item> SPATIOTEMPORAL_DEVICE = ITEMS.register("spatiotemporal_device", SpatiotemporalDevice::new);
 //    public static final RegistryObject<Item> LEVIY = ITEMS.register("leviy", Leviy::new);
 
     //satou
