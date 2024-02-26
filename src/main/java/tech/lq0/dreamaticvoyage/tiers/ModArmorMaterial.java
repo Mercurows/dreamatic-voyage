@@ -25,8 +25,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
         p.put(ArmorItem.Type.LEGGINGS, 10);
         p.put(ArmorItem.Type.CHESTPLATE, 16);
         p.put(ArmorItem.Type.HELMET, 5);
-    }),
-            25, SoundEvents.ARMOR_EQUIP_IRON, 6.0F, 0.4F, () -> Ingredient.of(Items.IRON_BLOCK)),
+    }), 25, SoundEvents.ARMOR_EQUIP_IRON, 6.0F, 0.4F, () -> Ingredient.of(Items.IRON_BLOCK)),
     RED_AHOGE("red_ahoge", 18, Util.make(new EnumMap<>(ArmorItem.Type.class), p -> {
         p.put(ArmorItem.Type.BOOTS, 3);
         p.put(ArmorItem.Type.LEGGINGS, 5);
@@ -56,7 +55,13 @@ public enum ModArmorMaterial implements ArmorMaterial {
         p.put(ArmorItem.Type.LEGGINGS, 2);
         p.put(ArmorItem.Type.CHESTPLATE, 3);
         p.put(ArmorItem.Type.HELMET, 1);
-    }), 12, SoundEvents.ARMOR_EQUIP_GENERIC, 0.0F, 0.0F, () -> Ingredient.of(Items.SUGAR));
+    }), 12, SoundEvents.ARMOR_EQUIP_GENERIC, 0.0F, 0.0F, () -> Ingredient.of(Items.SUGAR)),
+    HARDEN_CRYSTAL("harden_crystal", 20, Util.make(new EnumMap<>(ArmorItem.Type.class), p -> {
+        p.put(ArmorItem.Type.BOOTS, 2);
+        p.put(ArmorItem.Type.LEGGINGS, 6);
+        p.put(ArmorItem.Type.CHESTPLATE, 7);
+        p.put(ArmorItem.Type.HELMET, 3);
+    }), 17, SoundEvents.ARMOR_EQUIP_GENERIC, 0.5F, 0.0F, () -> Ingredient.of(ItemRegistry.HARDEN_CRYSTAL_INGOT.get()));
 
     private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266653_) -> {
         p_266653_.put(ArmorItem.Type.BOOTS, 13);

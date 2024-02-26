@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " a ",
+    "aba",
+    "ccc"
+  ],
+  "key": {
+    "a": {
+      "item": "dreamaticvoyage:harden_crystal_ingot"
+    },
+    "b": {
+      "item": "minecraft:melon"
+    },
+    "c": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:mitsuki_crown",
+    "count": 1
+  }
+}

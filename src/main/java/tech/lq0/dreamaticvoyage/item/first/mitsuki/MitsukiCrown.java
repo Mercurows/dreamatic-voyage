@@ -5,22 +5,28 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.models.armor.MitsukiCrownModel;
+import tech.lq0.dreamaticvoyage.tiers.ModArmorMaterial;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
@@ -29,9 +35,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class MitsukiCrown extends ArmorItem {
     public MitsukiCrown() {
-        super(ArmorMaterials.IRON, Type.HELMET, new Properties().durability(411).setNoRepair());
+        super(ModArmorMaterial.HARDEN_CRYSTAL, Type.HELMET, new Properties());
     }
 
     @Override
@@ -69,20 +76,22 @@ public class MitsukiCrown extends ArmorItem {
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.MITSUKI);
     }
 
-//    @SubscribeEvent
-//    public static void crownEffect(AttackEntityEvent event) {
-//        LivingEntity entity = event.getEntityLiving();
-//        Entity target = event.getTarget();
-//        if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-//            PlayerEntity player = (PlayerEntity) entity;
-//            ItemStack helmet = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
-//            if (!helmet.isEmpty() && helmet.getItem().equals(ItemRegistry.CROWN.get())) {
-//                player.heal(0.5f);
-//                if (target instanceof LivingEntity) {
-//                    LivingEntity entityT = (LivingEntity) target;
-//                    entityT.addPotionEffect(new EffectInstance(Effects.WITHER, 60, 0));
-//                }
-//            }
-//        }
-//    }
+    @SubscribeEvent
+    public static void crownEffect(AttackEntityEvent event) {
+        LivingEntity entity = event.getEntity();
+        Entity target = event.getTarget();
+        if (entity instanceof Player player && !player.level().isClientSide) {
+            ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
+            if (!helmet.isEmpty() && helmet.getItem().equals(ItemRegistry.MITSUKI_CROWN.get())
+                    && !player.getCooldowns().isOnCooldown(ItemRegistry.MITSUKI_CROWN.get())) {
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1));
+
+                if (target instanceof LivingEntity entityT) {
+                    entityT.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 0));
+                }
+
+                player.getCooldowns().addCooldown(helmet.getItem(), 100);
+            }
+        }
+    }
 }
