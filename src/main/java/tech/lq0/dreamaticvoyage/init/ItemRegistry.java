@@ -12,6 +12,7 @@ import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Qiankela;
 import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Suitcase;
 import tech.lq0.dreamaticvoyage.item.donate.*;
 import tech.lq0.dreamaticvoyage.item.first.mitsuki.MitsukiCrown;
+import tech.lq0.dreamaticvoyage.item.first.usa.KRM96353;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.UnfaithfulHeart;
 import tech.lq0.dreamaticvoyage.item.legacy.*;
 import tech.lq0.dreamaticvoyage.item.material.*;
@@ -465,7 +466,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> EKIRA_IDOL_HELMET = COSTUMES.register("ekira_idol_helmet", EkiraIdolHelmet::new);
     public static final RegistryObject<Item> EKIRA_IDOL_CHESTPLATE = COSTUMES.register("ekira_idol_chestplate", EkiraIdolChestplate::new);
     public static final RegistryObject<Item> EKIRA_IDOL_BOOTS = COSTUMES.register("ekira_idol_boots", EkiraIdolBoots::new);
-    //    public static final RegistryObject<Item> KRM_963_53 = COSTUMES.register("krm_963_53", KRM_963_53::new);
+    public static final RegistryObject<Item> KRM_963_53 = COSTUMES.register("krm_963_53", KRM96353::new);
     public static final RegistryObject<Item> MAID_COSTUME = COSTUMES.register("maid_costume", MaidCostume::new);
 
     /**
