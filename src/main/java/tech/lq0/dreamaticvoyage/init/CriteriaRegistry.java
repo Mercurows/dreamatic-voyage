@@ -6,16 +6,17 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import tech.lq0.dreamaticvoyage.advancements.criterion.CallInThunderTrigger;
+import tech.lq0.dreamaticvoyage.advancements.criterion.FillLavaTrigger;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CriteriaRegistry {
-    //    public static FillLavaTrigger FILL_LAVA;
+    public static FillLavaTrigger FILL_LAVA;
     public static CallInThunderTrigger CALL_IN_THUNDER;
 
     @SubscribeEvent
     public static void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-//            FILL_LAVA = register(new FillLavaTrigger());
+            FILL_LAVA = register(new FillLavaTrigger());
             CALL_IN_THUNDER = register(new CallInThunderTrigger());
         });
     }

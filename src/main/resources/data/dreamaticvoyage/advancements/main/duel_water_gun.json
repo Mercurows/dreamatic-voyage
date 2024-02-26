@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "dreamaticvoyage:duel_water_gun"
+    },
+    "title": {
+      "translate": "dreamaticvoyage.advancement.duel_water_gun"
+    },
+    "description": {
+      "translate": "dreamaticvoyage.advancement.duel_water_gun_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "frame": "challenge",
+    "hidden": true
+  },
+  "parent": "dreamaticvoyage:main/electric_horn",
+  "criteria": {
+    "duel_water_gun": {
+      "trigger": "dreamaticvoyage:fill_lava",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:duel_water_gun"
+          ]
+        }
+      }
+    }
+  }
+}

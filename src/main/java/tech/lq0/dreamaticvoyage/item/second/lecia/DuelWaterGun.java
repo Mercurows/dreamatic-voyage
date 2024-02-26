@@ -12,8 +12,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.CriteriaRegistry;
 import tech.lq0.dreamaticvoyage.init.SoundRegistry;
@@ -47,7 +51,7 @@ public class DuelWaterGun extends Item {
 //                waterCard.func_234612_a_(player, player.rotationPitch, player.rotationYaw, 0.0f, 4.0f, 0.0f);
 //                worldIn.addEntity(waterCard);
 
-//                player.playSound(SoundRegistry.LECIA_HOWL.get(), 1.0F, 1.0F);
+                player.playSound(SoundRegistry.LECIA_HOWL.get(), 1.0F, 1.0F);
 
                 if (!player.isCreative()) {
                     pStack.setDamageValue(pStack.getDamageValue() + 1);
@@ -71,25 +75,25 @@ public class DuelWaterGun extends Item {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
 
         if (pPlayer.isSteppingCarefully()) {
-//            BlockRayTraceResult raytraceresult = rayTrace(worldIn, playerIn, RayTraceContext.FluidMode.SOURCE_ONLY);
-//            if (raytraceresult.getType() == RayTraceResult.Type.BLOCK) {
-//                BlockState state = worldIn.getBlockState(raytraceresult.getPos());
-//                if (state.isIn(Blocks.WATER)) {
-//                    stack.setDamage(0);
-//                    pPlayer.playSound(SoundEvents.BUCKET_FILL, 1.0F, 1.0F);
-//                    return new ActionResult<>(ActionResultType.SUCCESS, stack);
-//                } else if (state.isIn(Blocks.LAVA)) {
-//                    pPlayer.setSecondsOnFire(10);
-//                    pPlayer.playSound(SoundRegistry.LECIA_SCREAM.get(), 1.0F, 1.0F);
-//                    pPlayer.playSound(SoundEvents.BUCKET_FILL_LAVA, 1.0F, 1.0F);
-//
-//                    if (pPlayer instanceof ServerPlayer serverPlayer) {
-//                        CriteriaRegistry.FILL_LAVA.test(serverPlayer, stack);
-//                    }
-//
-//                    return InteractionResultHolder.success(stack);
-//                }
-//            }
+            BlockHitResult result = getPlayerPOVHitResult(pLevel, pPlayer, ClipContext.Fluid.SOURCE_ONLY);
+            if (result.getType() == BlockHitResult.Type.BLOCK) {
+                BlockState state = pLevel.getBlockState(result.getBlockPos());
+                if (state.is(Blocks.WATER)) {
+                    stack.setDamageValue(0);
+                    pPlayer.playSound(SoundEvents.BUCKET_FILL, 1.0F, 1.0F);
+                    return InteractionResultHolder.success(stack);
+                } else if (state.is(Blocks.LAVA)) {
+                    pPlayer.setSecondsOnFire(10);
+                    pPlayer.playSound(SoundRegistry.LECIA_SCREAM.get(), 1.0F, 1.0F);
+                    pPlayer.playSound(SoundEvents.BUCKET_FILL_LAVA, 1.0F, 1.0F);
+
+                    if (pPlayer instanceof ServerPlayer serverPlayer) {
+                        CriteriaRegistry.FILL_LAVA.trigger(serverPlayer, stack);
+                    }
+
+                    return InteractionResultHolder.success(stack);
+                }
+            }
         } else {
             pPlayer.playSound(SoundRegistry.LECIA_CAST.get(), 1.0F, 1.0F);
         }
