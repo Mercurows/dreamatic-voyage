@@ -14,7 +14,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.entity.projectile.WhiteAhogeEntity;
-import tech.lq0.dreamaticvoyage.models.entity.WhiteAhogeEntityModel;
+import tech.lq0.dreamaticvoyage.models.entity.WhiteAhogeModel;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -22,11 +22,11 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @OnlyIn(Dist.CLIENT)
 public class WhiteAhogeEntityRenderer extends EntityRenderer<WhiteAhogeEntity> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/white_ahoge_entity.png");
-    private final WhiteAhogeEntityModel<WhiteAhogeEntity> model;
+    private final WhiteAhogeModel<WhiteAhogeEntity> model;
 
     public WhiteAhogeEntityRenderer(EntityRendererProvider.Context manager) {
         super(manager);
-        model = new WhiteAhogeEntityModel<>(manager.bakeLayer(WhiteAhogeEntityModel.LAYER_LOCATION));
+        model = new WhiteAhogeModel<>(manager.bakeLayer(WhiteAhogeModel.LAYER_LOCATION));
     }
 
     @Override

@@ -41,9 +41,9 @@ public class EntityRegistry {
 //    public static final RegistryObject<EntityType<GoodManCardEntity>> GOOD_MAN_CARD_ENTITY =
 //            ENTITY_TYPES.register("good_man_card",
 //                    () -> EntityType.Builder.<GoodManCardEntity>create(GoodManCardEntity::new, EntityClassification.MISC).size(0.2f, 0.1f).build("good_man_card"));
-//    public static final RegistryObject<EntityType<WaterCardEntity>> WATER_CARD_ENTITY =
-//            ENTITY_TYPES.register("water_card",
-//                    () -> EntityType.Builder.<WaterCardEntity>create(WaterCardEntity::new, EntityClassification.MISC).size(0.1f, 0.3f).build("water_card"));
+    public static final RegistryObject<EntityType<WaterCardEntity>> WATER_CARD_ENTITY =
+            ENTITY_TYPES.register("water_card",
+                    () -> EntityType.Builder.<WaterCardEntity>of(WaterCardEntity::new, MobCategory.MISC).sized(0.1f, 0.3f).build("water_card"));
     public static final RegistryObject<EntityType<BloodCrystalEntity>> BLOOD_CRYSTAL_ENTITY =
             ENTITY_TYPES.register("blood_crystal",
                     () -> EntityType.Builder.<BloodCrystalEntity>of(BloodCrystalEntity::new, MobCategory.MISC).sized(0.1f, 0.1f).build("blood_crystal"));

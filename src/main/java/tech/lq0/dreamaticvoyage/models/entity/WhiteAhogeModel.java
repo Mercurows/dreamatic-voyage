@@ -14,12 +14,12 @@ import net.minecraft.world.entity.Entity;
 import tech.lq0.dreamaticvoyage.Utils;
 
 @SuppressWarnings("unused")
-public class WhiteAhogeEntityModel<T extends Entity> extends EntityModel<T> {
+public class WhiteAhogeModel<T extends Entity> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Utils.MOD_ID, "white_ahoge_entity_model"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Utils.MOD_ID, "white_ahoge_model"), "main");
     public final ModelPart main;
 
-    public WhiteAhogeEntityModel(ModelPart root) {
+    public WhiteAhogeModel(ModelPart root) {
         this.main = root.getChild("main");
     }
 

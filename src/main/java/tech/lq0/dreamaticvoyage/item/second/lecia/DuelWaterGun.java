@@ -17,10 +17,10 @@ import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.entity.projectile.WaterCardEntity;
 import tech.lq0.dreamaticvoyage.init.CriteriaRegistry;
 import tech.lq0.dreamaticvoyage.init.SoundRegistry;
 import tech.lq0.dreamaticvoyage.tools.Livers;
@@ -49,10 +49,10 @@ public class DuelWaterGun extends Item {
             if (pStack.getDamageValue() < pStack.getMaxDamage()) {
                 int strength = (this.getUseDuration(pStack) - pTimeCharged) / 20;
 
-//                WaterCardEntity waterCard = new WaterCardEntity(worldIn, player, Math.min(strength, 5));
-//                waterCard.setShooter(player);
-//                waterCard.func_234612_a_(player, player.rotationPitch, player.rotationYaw, 0.0f, 4.0f, 0.0f);
-//                worldIn.addEntity(waterCard);
+                WaterCardEntity waterCard = new WaterCardEntity(pLevel, player, Math.min(strength, 5));
+                waterCard.setOwner(player);
+                waterCard.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, 4.0f, 0.0f);
+                pLevel.addFreshEntity(waterCard);
 
                 player.playSound(SoundRegistry.LECIA_HOWL.get(), 1.0F, 1.0F);
 

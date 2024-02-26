@@ -36,7 +36,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(ButterflyAnkletModel.LAYER_LOCATION, ButterflyAnkletModel::createBodyLayer);
         event.registerLayerDefinition(SneakersModel.LAYER_LOCATION, SneakersModel::createBodyLayer);
         event.registerLayerDefinition(CrystalHornModel.LAYER_LOCATION, CrystalHornModel::createBodyLayer);
-        event.registerLayerDefinition(WhiteAhogeEntityModel.LAYER_LOCATION, WhiteAhogeEntityModel::createBodyLayer);
+        event.registerLayerDefinition(WhiteAhogeModel.LAYER_LOCATION, WhiteAhogeModel::createBodyLayer);
         event.registerLayerDefinition(HaineIdolHelmetModel.LAYER_LOCATION, HaineIdolHelmetModel::createBodyLayer);
         event.registerLayerDefinition(HaineIdolChestplateModel.LAYER_LOCATION, HaineIdolChestplateModel::createBodyLayer);
         event.registerLayerDefinition(HaineIdolBootsModel.LAYER_LOCATION, HaineIdolBootsModel::createBodyLayer);
@@ -65,6 +65,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(OrangeTrackerModel.LAYER_LOCATION, OrangeTrackerModel::createBodyLayer);
         event.registerLayerDefinition(MaidCostumeModel.LAYER_LOCATION, MaidCostumeModel::createBodyLayer);
         event.registerLayerDefinition(MitsukiCrownModel.LAYER_LOCATION, MitsukiCrownModel::createBodyLayer);
+        event.registerLayerDefinition(WaterCardModel.LAYER_LOCATION, WaterCardModel::createBodyLayer);
     }
 
     @SubscribeEvent
