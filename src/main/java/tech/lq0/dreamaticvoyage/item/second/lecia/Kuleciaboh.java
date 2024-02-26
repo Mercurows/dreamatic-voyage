@@ -13,10 +13,12 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Kuleciaboh extends Item implements ICurioItem {
     public Kuleciaboh() {
@@ -39,5 +41,14 @@ public class Kuleciaboh extends Item implements ICurioItem {
         }
 
         ICurioItem.super.curioTick(slotContext, stack);
+    }
+
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        LivingEntity livingEntity = slotContext.entity();
+        AtomicBoolean flag = new AtomicBoolean(true);
+        CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(this).ifPresent(s -> flag.set(false)));
+
+        return flag.get();
     }
 }
