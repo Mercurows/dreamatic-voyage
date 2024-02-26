@@ -19,8 +19,12 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.capability.chaos.ChaosHelper;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
@@ -33,10 +37,10 @@ public class DelicateMirage extends Item {
     private final Multimap<Attribute, AttributeModifier> attributeModifiers;
 
     public DelicateMirage() {
-        super(new Properties().rarity(Rarity.RARE).durability(480));
+        super(new Properties().rarity(Rarity.RARE).durability(2321));
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", 1, AttributeModifier.Operation.ADDITION));
-        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", -1, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", 4, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", 2, AttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
 
@@ -50,9 +54,9 @@ public class DelicateMirage extends Item {
     private Multimap<Attribute, AttributeModifier> getModifiers(ItemStack stack) {
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
-                ItemNBTTool.getInt(stack, TAG_ATTACK, 0), AttributeModifier.Operation.ADDITION));
+                ItemNBTTool.getInt(stack, TAG_ATTACK, 0) + 3, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
-                -1, AttributeModifier.Operation.ADDITION));
+                2, AttributeModifier.Operation.ADDITION));
         return builder.build();
     }
 
@@ -94,31 +98,31 @@ public class DelicateMirage extends Item {
                 if (rand < prob) {
                     ChaosHelper.setChaos(player, Math.min(0, ChaosHelper.getPureChaos(player) + 5));
 
-//                    new Object() {
-//                        private int ticks = 0;
-//                        private float waitTicks;
-//
-//                        public void start(int waitTicks) {
-//                            this.waitTicks = waitTicks;
-//                            MinecraftForge.EVENT_BUS.register(this);
-//                        }
-//
-//                        @SubscribeEvent
-//                        public void tick(TickEvent.ServerTickEvent event) {
-//                            if (event.phase == TickEvent.Phase.END) {
-//                                this.ticks++;
-//                                if (this.ticks >= this.waitTicks) {
-//                                    run();
-//                                }
-//                            }
-//                        }
-//
-//                        private void run() {
-//                            target.attackEntityFrom(DamageSource.causePlayerDamage(player), damage);
-//
-//                            MinecraftForge.EVENT_BUS.unregister(this);
-//                        }
-//                    }.start((int) 20);
+                    new Object() {
+                        private int ticks = 0;
+                        private float waitTicks;
+
+                        public void start(int waitTicks) {
+                            this.waitTicks = waitTicks;
+                            MinecraftForge.EVENT_BUS.register(this);
+                        }
+
+                        @SubscribeEvent
+                        public void tick(TickEvent.ServerTickEvent event) {
+                            if (event.phase == TickEvent.Phase.END) {
+                                this.ticks++;
+                                if (this.ticks >= this.waitTicks) {
+                                    run();
+                                }
+                            }
+                        }
+
+                        private void run() {
+                            target.hurt(player.level().damageSources().playerAttack(player), damage);
+
+                            MinecraftForge.EVENT_BUS.unregister(this);
+                        }
+                    }.start((int) 20);
                 }
             }
         }
@@ -174,6 +178,6 @@ public class DelicateMirage extends Item {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return repair.getItem() == Items.DIAMOND;
+        return repair.getItem() == ItemRegistry.PURIFIED_CRYSTAL_INGOT.get();
     }
 }
