@@ -44,5 +44,8 @@ public class PropertyRegistry {
                     }
                 })
         );
+        event.enqueueWork(() -> ItemProperties.register(ItemRegistry.UNFAITHFUL_HEART.get(), new ResourceLocation(Utils.MOD_ID, "damage"),
+                (heldStack, world, livingEntity, seed) -> heldStack.getDamageValue())
+        );
     }
 }

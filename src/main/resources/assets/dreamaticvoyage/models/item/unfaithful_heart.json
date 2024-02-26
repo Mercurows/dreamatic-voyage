@@ -1,0 +1,38 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dreamaticvoyage:item/unfaithful_heart0"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "dreamaticvoyage:damage": 1
+      },
+      "model": "dreamaticvoyage:item/unfaithful_heart1"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:damage": 3
+      },
+      "model": "dreamaticvoyage:item/unfaithful_heart2"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:damage": 5
+      },
+      "model": "dreamaticvoyage:item/unfaithful_heart3"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:damage": 7
+      },
+      "model": "dreamaticvoyage:item/unfaithful_heart4"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:damage": 9
+      },
+      "model": "dreamaticvoyage:item/unfaithful_heart5"
+    }
+  ]
+}
