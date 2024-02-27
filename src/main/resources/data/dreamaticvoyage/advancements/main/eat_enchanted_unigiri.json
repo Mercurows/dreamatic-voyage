@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "dreamaticvoyage:enchanted_unigiri"
+    },
+    "title": {
+      "translate": "dreamaticvoyage.advancement.eat_enchanted_unigiri"
+    },
+    "description": {
+      "translate": "dreamaticvoyage.advancement.eat_enchanted_unigiri_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "frame": "goal"
+  },
+  "parent": "dreamaticvoyage:main/eat_unigiri",
+  "criteria": {
+    "eat_enchanted_unigiri": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:enchanted_unigiri"
+          ]
+        }
+      }
+    }
+  }
+}

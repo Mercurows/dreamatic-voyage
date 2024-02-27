@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "dreamaticvoyage:magic_mirror"
+    },
+    "title": {
+      "translate": "dreamaticvoyage.advancement.magic_mirror"
+    },
+    "description": {
+      "translate": "dreamaticvoyage.advancement.magic_mirror_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "frame": "goal"
+  },
+  "parent": "dreamaticvoyage:main/eat_mari_stew",
+  "criteria": {
+    "magic_mirror": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamaticvoyage:magic_mirror"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

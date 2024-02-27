@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "dreamaticvoyage:hiru_head"
+    },
+    "title": {
+      "translate": "dreamaticvoyage.advancement.hiru_head"
+    },
+    "description": {
+      "translate": "dreamaticvoyage.advancement.hiru_head_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "dreamaticvoyage:main/eat_fox_ice_cream",
+  "criteria": {
+    "hiru_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamaticvoyage:hiru_head"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

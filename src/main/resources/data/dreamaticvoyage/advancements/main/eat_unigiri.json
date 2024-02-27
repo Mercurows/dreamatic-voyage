@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "dreamaticvoyage:unigiri"
+    },
+    "title": {
+      "translate": "dreamaticvoyage.advancement.eat_unigiri"
+    },
+    "description": {
+      "translate": "dreamaticvoyage.advancement.eat_unigiri_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "dreamaticvoyage:main/eat_taro_ice_cream",
+  "criteria": {
+    "eat_unigiri": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:unigiri"
+          ]
+        }
+      }
+    }
+  }
+}

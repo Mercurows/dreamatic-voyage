@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "dreamaticvoyage:krm_963_53"
+    },
+    "title": {
+      "translate": "dreamaticvoyage.advancement.krm_963_53"
+    },
+    "description": {
+      "translate": "dreamaticvoyage.advancement.krm_963_53_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "frame": "challenge"
+  },
+  "parent": "dreamaticvoyage:main/plunger",
+  "criteria": {
+    "krm_963_53": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamaticvoyage:krm_963_53"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
