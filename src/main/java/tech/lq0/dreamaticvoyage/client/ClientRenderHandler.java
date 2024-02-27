@@ -9,13 +9,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import tech.lq0.dreamaticvoyage.client.particle.TentacleParticle;
 import tech.lq0.dreamaticvoyage.client.render.*;
-import tech.lq0.dreamaticvoyage.client.render.curios.YeggyPearlRenderer;
+import tech.lq0.dreamaticvoyage.client.render.curios.*;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.EntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
-import tech.lq0.dreamaticvoyage.client.render.curios.ChiramHatRenderer;
-import tech.lq0.dreamaticvoyage.client.render.curios.LunaticBowRenderer;
-import tech.lq0.dreamaticvoyage.client.render.curios.RedNoseRenderer;
 import tech.lq0.dreamaticvoyage.init.ParticleRegistry;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
@@ -40,6 +37,7 @@ public class ClientRenderHandler {
         CuriosRendererRegistry.register(ItemRegistry.RED_NOSE.get(), RedNoseRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.CHIRAM_HAT.get(), ChiramHatRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.YEGGY_PEARL.get(), YeggyPearlRenderer::new);
+        CuriosRendererRegistry.register(ItemRegistry.DARK_ELF_GLASSES.get(), DarkElfGlassesRenderer::new);
     }
 
     @SubscribeEvent

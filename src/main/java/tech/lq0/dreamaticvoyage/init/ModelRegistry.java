@@ -6,12 +6,9 @@ import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.dreamaticvoyage.client.models.armor.*;
+import tech.lq0.dreamaticvoyage.client.models.curios.*;
 import tech.lq0.dreamaticvoyage.client.models.entity.*;
 import tech.lq0.dreamaticvoyage.client.models.blockentity.PdCLogoModel;
-import tech.lq0.dreamaticvoyage.client.models.curios.ChiramHatModel;
-import tech.lq0.dreamaticvoyage.client.models.curios.LunaticBowModel;
-import tech.lq0.dreamaticvoyage.client.models.curios.RedNoseModel;
-import tech.lq0.dreamaticvoyage.client.models.curios.YeggyPearlModel;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModelRegistry {
@@ -68,6 +65,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(WaterCardModel.LAYER_LOCATION, WaterCardModel::createBodyLayer);
         event.registerLayerDefinition(HiruTentaclesModel.LAYER_LOCATION, HiruTentaclesModel::createBodyLayer);
         event.registerLayerDefinition(KRM96353Model.LAYER_LOCATION, KRM96353Model::createBodyLayer);
+        event.registerLayerDefinition(DarkElfGlassesModel.LAYER_LOCATION, DarkElfGlassesModel::createBodyLayer);
     }
 
     @SubscribeEvent

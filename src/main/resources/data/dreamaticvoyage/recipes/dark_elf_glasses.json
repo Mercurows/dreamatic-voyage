@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#N#",
+    "N N",
+    "P  "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass_pane"
+    },
+    "N": {
+      "item": "minecraft:nether_brick"
+    },
+    "P": {
+      "item": "dreamaticvoyage:dark_elf_core"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:dark_elf_glasses",
+    "count": 1
+  }
+}
