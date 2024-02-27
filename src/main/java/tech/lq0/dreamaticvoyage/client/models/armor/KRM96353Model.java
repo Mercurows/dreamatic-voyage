@@ -2,7 +2,6 @@ package tech.lq0.dreamaticvoyage.client.models.armor;// Made with Blockbench 4.9
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
-import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HumanoidModel;
@@ -12,20 +11,21 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
-import org.joml.Vector3f;
 import tech.lq0.dreamaticvoyage.Utils;
 
 @SuppressWarnings("unused")
 public class KRM96353Model<T extends LivingEntity> extends HumanoidModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Utils.MOD_ID, "krm_963_53_model"), "main");
-    public final ModelPart main;
-    public final ModelPart ring;
+    private final ModelPart main;
+    private final ModelPart rgb;
 
     public KRM96353Model(ModelPart root) {
         super(root);
         this.main = root.getChild("main");
-        this.ring = root.getChild("ring");
+        ModelPart body = main.getChild("body");
+        ModelPart halo = body.getChild("halo");
+        this.rgb = halo.getChild("rgb");
     }
 
     public static LayerDefinition createBodyLayer() {
@@ -214,6 +214,134 @@ public class KRM96353Model<T extends LivingEntity> extends HumanoidModel<T> {
 
         PartDefinition halo = body.addOrReplaceChild("halo", CubeListBuilder.create(), PartPose.offset(0.0F, -3.75F, 0.0F));
 
+        PartDefinition rgb = halo.addOrReplaceChild("rgb", CubeListBuilder.create().texOffs(0, 200).addBox(-1.0F, -20.0137F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -30.9863F, 14.0F));
+
+        PartDefinition rgb_cube_63_r1 = rgb.addOrReplaceChild("rgb_cube_63_r1", CubeListBuilder.create().texOffs(60, 248).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -6.185F));
+
+        PartDefinition rgb_cube_62_r1 = rgb.addOrReplaceChild("rgb_cube_62_r1", CubeListBuilder.create().texOffs(40, 248).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -6.0868F));
+
+        PartDefinition rgb_cube_61_r1 = rgb.addOrReplaceChild("rgb_cube_61_r1", CubeListBuilder.create().texOffs(20, 248).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.9887F));
+
+        PartDefinition rgb_cube_60_r1 = rgb.addOrReplaceChild("rgb_cube_60_r1", CubeListBuilder.create().texOffs(0, 248).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.8905F));
+
+        PartDefinition rgb_cube_59_r1 = rgb.addOrReplaceChild("rgb_cube_59_r1", CubeListBuilder.create().texOffs(180, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.7923F));
+
+        PartDefinition rgb_cube_58_r1 = rgb.addOrReplaceChild("rgb_cube_58_r1", CubeListBuilder.create().texOffs(160, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.6941F));
+
+        PartDefinition rgb_cube_57_r1 = rgb.addOrReplaceChild("rgb_cube_57_r1", CubeListBuilder.create().texOffs(140, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.596F));
+
+        PartDefinition rgb_cube_56_r1 = rgb.addOrReplaceChild("rgb_cube_56_r1", CubeListBuilder.create().texOffs(120, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.4978F));
+
+        PartDefinition rgb_cube_55_r1 = rgb.addOrReplaceChild("rgb_cube_55_r1", CubeListBuilder.create().texOffs(100, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.3996F));
+
+        PartDefinition rgb_cube_54_r1 = rgb.addOrReplaceChild("rgb_cube_54_r1", CubeListBuilder.create().texOffs(80, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.3014F));
+
+        PartDefinition rgb_cube_53_r1 = rgb.addOrReplaceChild("rgb_cube_53_r1", CubeListBuilder.create().texOffs(60, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.2033F));
+
+        PartDefinition rgb_cube_52_r1 = rgb.addOrReplaceChild("rgb_cube_52_r1", CubeListBuilder.create().texOffs(40, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.1051F));
+
+        PartDefinition rgb_cube_51_r1 = rgb.addOrReplaceChild("rgb_cube_51_r1", CubeListBuilder.create().texOffs(20, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.0069F));
+
+        PartDefinition rgb_cube_50_r1 = rgb.addOrReplaceChild("rgb_cube_50_r1", CubeListBuilder.create().texOffs(0, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.9087F));
+
+        PartDefinition rgb_cube_49_r1 = rgb.addOrReplaceChild("rgb_cube_49_r1", CubeListBuilder.create().texOffs(180, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.8106F));
+
+        PartDefinition rgb_cube_48_r1 = rgb.addOrReplaceChild("rgb_cube_48_r1", CubeListBuilder.create().texOffs(160, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.7124F));
+
+        PartDefinition rgb_cube_47_r1 = rgb.addOrReplaceChild("rgb_cube_47_r1", CubeListBuilder.create().texOffs(140, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.6142F));
+
+        PartDefinition rgb_cube_46_r1 = rgb.addOrReplaceChild("rgb_cube_46_r1", CubeListBuilder.create().texOffs(120, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.516F));
+
+        PartDefinition rgb_cube_45_r1 = rgb.addOrReplaceChild("rgb_cube_45_r1", CubeListBuilder.create().texOffs(100, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.4179F));
+
+        PartDefinition rgb_cube_44_r1 = rgb.addOrReplaceChild("rgb_cube_44_r1", CubeListBuilder.create().texOffs(80, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.3197F));
+
+        PartDefinition rgb_cube_43_r1 = rgb.addOrReplaceChild("rgb_cube_43_r1", CubeListBuilder.create().texOffs(60, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.2215F));
+
+        PartDefinition rgb_cube_42_r1 = rgb.addOrReplaceChild("rgb_cube_42_r1", CubeListBuilder.create().texOffs(40, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.1233F));
+
+        PartDefinition rgb_cube_41_r1 = rgb.addOrReplaceChild("rgb_cube_41_r1", CubeListBuilder.create().texOffs(20, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.0252F));
+
+        PartDefinition rgb_cube_40_r1 = rgb.addOrReplaceChild("rgb_cube_40_r1", CubeListBuilder.create().texOffs(0, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.927F));
+
+        PartDefinition rgb_cube_39_r1 = rgb.addOrReplaceChild("rgb_cube_39_r1", CubeListBuilder.create().texOffs(180, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.8288F));
+
+        PartDefinition rgb_cube_38_r1 = rgb.addOrReplaceChild("rgb_cube_38_r1", CubeListBuilder.create().texOffs(160, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.7306F));
+
+        PartDefinition rgb_cube_37_r1 = rgb.addOrReplaceChild("rgb_cube_37_r1", CubeListBuilder.create().texOffs(140, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.6325F));
+
+        PartDefinition rgb_cube_36_r1 = rgb.addOrReplaceChild("rgb_cube_36_r1", CubeListBuilder.create().texOffs(120, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.5343F));
+
+        PartDefinition rgb_cube_35_r1 = rgb.addOrReplaceChild("rgb_cube_35_r1", CubeListBuilder.create().texOffs(100, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.4361F));
+
+        PartDefinition rgb_cube_34_r1 = rgb.addOrReplaceChild("rgb_cube_34_r1", CubeListBuilder.create().texOffs(80, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.3379F));
+
+        PartDefinition rgb_cube_33_r1 = rgb.addOrReplaceChild("rgb_cube_33_r1", CubeListBuilder.create().texOffs(60, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.2398F));
+
+        PartDefinition rgb_cube_32_r1 = rgb.addOrReplaceChild("rgb_cube_32_r1", CubeListBuilder.create().texOffs(40, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.1416F));
+
+        PartDefinition rgb_cube_31_r1 = rgb.addOrReplaceChild("rgb_cube_31_r1", CubeListBuilder.create().texOffs(20, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.0434F));
+
+        PartDefinition rgb_cube_30_r1 = rgb.addOrReplaceChild("rgb_cube_30_r1", CubeListBuilder.create().texOffs(0, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.9452F));
+
+        PartDefinition rgb_cube_29_r1 = rgb.addOrReplaceChild("rgb_cube_29_r1", CubeListBuilder.create().texOffs(180, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.8471F));
+
+        PartDefinition rgb_cube_28_r1 = rgb.addOrReplaceChild("rgb_cube_28_r1", CubeListBuilder.create().texOffs(160, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.7489F));
+
+        PartDefinition rgb_cube_27_r1 = rgb.addOrReplaceChild("rgb_cube_27_r1", CubeListBuilder.create().texOffs(140, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.6507F));
+
+        PartDefinition rgb_cube_26_r1 = rgb.addOrReplaceChild("rgb_cube_26_r1", CubeListBuilder.create().texOffs(120, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.5525F));
+
+        PartDefinition rgb_cube_25_r1 = rgb.addOrReplaceChild("rgb_cube_25_r1", CubeListBuilder.create().texOffs(100, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.4544F));
+
+        PartDefinition rgb_cube_24_r1 = rgb.addOrReplaceChild("rgb_cube_24_r1", CubeListBuilder.create().texOffs(80, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.3562F));
+
+        PartDefinition rgb_cube_23_r1 = rgb.addOrReplaceChild("rgb_cube_23_r1", CubeListBuilder.create().texOffs(60, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.258F));
+
+        PartDefinition rgb_cube_22_r1 = rgb.addOrReplaceChild("rgb_cube_22_r1", CubeListBuilder.create().texOffs(40, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.1598F));
+
+        PartDefinition rgb_cube_21_r1 = rgb.addOrReplaceChild("rgb_cube_21_r1", CubeListBuilder.create().texOffs(20, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.0617F));
+
+        PartDefinition rgb_cube_20_r1 = rgb.addOrReplaceChild("rgb_cube_20_r1", CubeListBuilder.create().texOffs(0, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.9635F));
+
+        PartDefinition rgb_cube_19_r1 = rgb.addOrReplaceChild("rgb_cube_19_r1", CubeListBuilder.create().texOffs(180, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.8653F));
+
+        PartDefinition rgb_cube_18_r1 = rgb.addOrReplaceChild("rgb_cube_18_r1", CubeListBuilder.create().texOffs(160, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.7671F));
+
+        PartDefinition rgb_cube_17_r1 = rgb.addOrReplaceChild("rgb_cube_17_r1", CubeListBuilder.create().texOffs(140, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.669F));
+
+        PartDefinition rgb_cube_16_r1 = rgb.addOrReplaceChild("rgb_cube_16_r1", CubeListBuilder.create().texOffs(120, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.5708F));
+
+        PartDefinition rgb_cube_15_r1 = rgb.addOrReplaceChild("rgb_cube_15_r1", CubeListBuilder.create().texOffs(100, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.4726F));
+
+        PartDefinition rgb_cube_14_r1 = rgb.addOrReplaceChild("rgb_cube_14_r1", CubeListBuilder.create().texOffs(80, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.3744F));
+
+        PartDefinition rgb_cube_13_r1 = rgb.addOrReplaceChild("rgb_cube_13_r1", CubeListBuilder.create().texOffs(60, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.2763F));
+
+        PartDefinition rgb_cube_12_r1 = rgb.addOrReplaceChild("rgb_cube_12_r1", CubeListBuilder.create().texOffs(40, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.1781F));
+
+        PartDefinition rgb_cube_11_r1 = rgb.addOrReplaceChild("rgb_cube_11_r1", CubeListBuilder.create().texOffs(20, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.0799F));
+
+        PartDefinition rgb_cube_10_r1 = rgb.addOrReplaceChild("rgb_cube_10_r1", CubeListBuilder.create().texOffs(0, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.9817F));
+
+        PartDefinition rgb_cube_9_r1 = rgb.addOrReplaceChild("rgb_cube_9_r1", CubeListBuilder.create().texOffs(180, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.8836F));
+
+        PartDefinition rgb_cube_8_r1 = rgb.addOrReplaceChild("rgb_cube_8_r1", CubeListBuilder.create().texOffs(160, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.7854F));
+
+        PartDefinition rgb_cube_7_r1 = rgb.addOrReplaceChild("rgb_cube_7_r1", CubeListBuilder.create().texOffs(140, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.6872F));
+
+        PartDefinition rgb_cube_6_r1 = rgb.addOrReplaceChild("rgb_cube_6_r1", CubeListBuilder.create().texOffs(120, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.589F));
+
+        PartDefinition rgb_cube_5_r1 = rgb.addOrReplaceChild("rgb_cube_5_r1", CubeListBuilder.create().texOffs(100, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.4909F));
+
+        PartDefinition rgb_cube_4_r1 = rgb.addOrReplaceChild("rgb_cube_4_r1", CubeListBuilder.create().texOffs(80, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.3927F));
+
+        PartDefinition rgb_cube_3_r1 = rgb.addOrReplaceChild("rgb_cube_3_r1", CubeListBuilder.create().texOffs(60, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.2945F));
+
+        PartDefinition rgb_cube_2_r1 = rgb.addOrReplaceChild("rgb_cube_2_r1", CubeListBuilder.create().texOffs(40, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.1963F));
+
+        PartDefinition rgb_cube_1_r1 = rgb.addOrReplaceChild("rgb_cube_1_r1", CubeListBuilder.create().texOffs(20, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.0982F));
+
         PartDefinition outer = halo.addOrReplaceChild("outer", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
         PartDefinition dev1 = outer.addOrReplaceChild("dev1", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
@@ -316,174 +444,24 @@ public class KRM96353Model<T extends LivingEntity> extends HumanoidModel<T> {
 
         PartDefinition cube_r70 = od4.addOrReplaceChild("cube_r70", CubeListBuilder.create().texOffs(52, 42).addBox(-2.5F, -2.0F, -1.5F, 5.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-5.1147F, -21.5963F, -1.5F, 0.0F, 0.0F, -0.1745F));
 
-        PartDefinition ring = partdefinition.addOrReplaceChild("ring", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
-
-        PartDefinition rgb = ring.addOrReplaceChild("rgb", CubeListBuilder.create().texOffs(0, 200).addBox(-1.0F, -20.0137F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -34.7363F, 14.0F));
-
-        PartDefinition rgb_cube_63_r2 = rgb.addOrReplaceChild("rgb_cube_63_r2", CubeListBuilder.create().texOffs(60, 248).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -6.185F));
-
-        PartDefinition rgb_cube_62_r2 = rgb.addOrReplaceChild("rgb_cube_62_r2", CubeListBuilder.create().texOffs(40, 248).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -6.0868F));
-
-        PartDefinition rgb_cube_61_r2 = rgb.addOrReplaceChild("rgb_cube_61_r2", CubeListBuilder.create().texOffs(20, 248).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.9887F));
-
-        PartDefinition rgb_cube_60_r2 = rgb.addOrReplaceChild("rgb_cube_60_r2", CubeListBuilder.create().texOffs(0, 248).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.8905F));
-
-        PartDefinition rgb_cube_59_r2 = rgb.addOrReplaceChild("rgb_cube_59_r2", CubeListBuilder.create().texOffs(180, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.7923F));
-
-        PartDefinition rgb_cube_58_r2 = rgb.addOrReplaceChild("rgb_cube_58_r2", CubeListBuilder.create().texOffs(160, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.6941F));
-
-        PartDefinition rgb_cube_57_r2 = rgb.addOrReplaceChild("rgb_cube_57_r2", CubeListBuilder.create().texOffs(140, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.596F));
-
-        PartDefinition rgb_cube_56_r2 = rgb.addOrReplaceChild("rgb_cube_56_r2", CubeListBuilder.create().texOffs(120, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.4978F));
-
-        PartDefinition rgb_cube_55_r2 = rgb.addOrReplaceChild("rgb_cube_55_r2", CubeListBuilder.create().texOffs(100, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.3996F));
-
-        PartDefinition rgb_cube_54_r2 = rgb.addOrReplaceChild("rgb_cube_54_r2", CubeListBuilder.create().texOffs(80, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.3014F));
-
-        PartDefinition rgb_cube_53_r2 = rgb.addOrReplaceChild("rgb_cube_53_r2", CubeListBuilder.create().texOffs(60, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.2033F));
-
-        PartDefinition rgb_cube_52_r2 = rgb.addOrReplaceChild("rgb_cube_52_r2", CubeListBuilder.create().texOffs(40, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.1051F));
-
-        PartDefinition rgb_cube_51_r2 = rgb.addOrReplaceChild("rgb_cube_51_r2", CubeListBuilder.create().texOffs(20, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -5.0069F));
-
-        PartDefinition rgb_cube_50_r2 = rgb.addOrReplaceChild("rgb_cube_50_r2", CubeListBuilder.create().texOffs(0, 240).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.9087F));
-
-        PartDefinition rgb_cube_49_r2 = rgb.addOrReplaceChild("rgb_cube_49_r2", CubeListBuilder.create().texOffs(180, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.8106F));
-
-        PartDefinition rgb_cube_48_r2 = rgb.addOrReplaceChild("rgb_cube_48_r2", CubeListBuilder.create().texOffs(160, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.7124F));
-
-        PartDefinition rgb_cube_47_r2 = rgb.addOrReplaceChild("rgb_cube_47_r2", CubeListBuilder.create().texOffs(140, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.6142F));
-
-        PartDefinition rgb_cube_46_r2 = rgb.addOrReplaceChild("rgb_cube_46_r2", CubeListBuilder.create().texOffs(120, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.516F));
-
-        PartDefinition rgb_cube_45_r2 = rgb.addOrReplaceChild("rgb_cube_45_r2", CubeListBuilder.create().texOffs(100, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.4179F));
-
-        PartDefinition rgb_cube_44_r2 = rgb.addOrReplaceChild("rgb_cube_44_r2", CubeListBuilder.create().texOffs(80, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.3197F));
-
-        PartDefinition rgb_cube_43_r2 = rgb.addOrReplaceChild("rgb_cube_43_r2", CubeListBuilder.create().texOffs(60, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.2215F));
-
-        PartDefinition rgb_cube_42_r2 = rgb.addOrReplaceChild("rgb_cube_42_r2", CubeListBuilder.create().texOffs(40, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.1233F));
-
-        PartDefinition rgb_cube_41_r2 = rgb.addOrReplaceChild("rgb_cube_41_r2", CubeListBuilder.create().texOffs(20, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -4.0252F));
-
-        PartDefinition rgb_cube_40_r2 = rgb.addOrReplaceChild("rgb_cube_40_r2", CubeListBuilder.create().texOffs(0, 232).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.927F));
-
-        PartDefinition rgb_cube_39_r2 = rgb.addOrReplaceChild("rgb_cube_39_r2", CubeListBuilder.create().texOffs(180, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.8288F));
-
-        PartDefinition rgb_cube_38_r2 = rgb.addOrReplaceChild("rgb_cube_38_r2", CubeListBuilder.create().texOffs(160, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.7306F));
-
-        PartDefinition rgb_cube_37_r2 = rgb.addOrReplaceChild("rgb_cube_37_r2", CubeListBuilder.create().texOffs(140, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.6325F));
-
-        PartDefinition rgb_cube_36_r2 = rgb.addOrReplaceChild("rgb_cube_36_r2", CubeListBuilder.create().texOffs(120, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.5343F));
-
-        PartDefinition rgb_cube_35_r2 = rgb.addOrReplaceChild("rgb_cube_35_r2", CubeListBuilder.create().texOffs(100, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.4361F));
-
-        PartDefinition rgb_cube_34_r2 = rgb.addOrReplaceChild("rgb_cube_34_r2", CubeListBuilder.create().texOffs(80, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.3379F));
-
-        PartDefinition rgb_cube_33_r2 = rgb.addOrReplaceChild("rgb_cube_33_r2", CubeListBuilder.create().texOffs(60, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.2398F));
-
-        PartDefinition rgb_cube_32_r2 = rgb.addOrReplaceChild("rgb_cube_32_r2", CubeListBuilder.create().texOffs(40, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.1416F));
-
-        PartDefinition rgb_cube_31_r2 = rgb.addOrReplaceChild("rgb_cube_31_r2", CubeListBuilder.create().texOffs(20, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -3.0434F));
-
-        PartDefinition rgb_cube_30_r2 = rgb.addOrReplaceChild("rgb_cube_30_r2", CubeListBuilder.create().texOffs(0, 224).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.9452F));
-
-        PartDefinition rgb_cube_29_r2 = rgb.addOrReplaceChild("rgb_cube_29_r2", CubeListBuilder.create().texOffs(180, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.8471F));
-
-        PartDefinition rgb_cube_28_r2 = rgb.addOrReplaceChild("rgb_cube_28_r2", CubeListBuilder.create().texOffs(160, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.7489F));
-
-        PartDefinition rgb_cube_27_r2 = rgb.addOrReplaceChild("rgb_cube_27_r2", CubeListBuilder.create().texOffs(140, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.6507F));
-
-        PartDefinition rgb_cube_26_r2 = rgb.addOrReplaceChild("rgb_cube_26_r2", CubeListBuilder.create().texOffs(120, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.5525F));
-
-        PartDefinition rgb_cube_25_r2 = rgb.addOrReplaceChild("rgb_cube_25_r2", CubeListBuilder.create().texOffs(100, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.4544F));
-
-        PartDefinition rgb_cube_24_r2 = rgb.addOrReplaceChild("rgb_cube_24_r2", CubeListBuilder.create().texOffs(80, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.3562F));
-
-        PartDefinition rgb_cube_23_r2 = rgb.addOrReplaceChild("rgb_cube_23_r2", CubeListBuilder.create().texOffs(60, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.258F));
-
-        PartDefinition rgb_cube_22_r2 = rgb.addOrReplaceChild("rgb_cube_22_r2", CubeListBuilder.create().texOffs(40, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.1598F));
-
-        PartDefinition rgb_cube_21_r2 = rgb.addOrReplaceChild("rgb_cube_21_r2", CubeListBuilder.create().texOffs(20, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -2.0617F));
-
-        PartDefinition rgb_cube_20_r2 = rgb.addOrReplaceChild("rgb_cube_20_r2", CubeListBuilder.create().texOffs(0, 216).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.9635F));
-
-        PartDefinition rgb_cube_19_r2 = rgb.addOrReplaceChild("rgb_cube_19_r2", CubeListBuilder.create().texOffs(180, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.8653F));
-
-        PartDefinition rgb_cube_18_r2 = rgb.addOrReplaceChild("rgb_cube_18_r2", CubeListBuilder.create().texOffs(160, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.7671F));
-
-        PartDefinition rgb_cube_17_r2 = rgb.addOrReplaceChild("rgb_cube_17_r2", CubeListBuilder.create().texOffs(140, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.669F));
-
-        PartDefinition rgb_cube_16_r2 = rgb.addOrReplaceChild("rgb_cube_16_r2", CubeListBuilder.create().texOffs(120, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.5708F));
-
-        PartDefinition rgb_cube_15_r2 = rgb.addOrReplaceChild("rgb_cube_15_r2", CubeListBuilder.create().texOffs(100, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.4726F));
-
-        PartDefinition rgb_cube_14_r2 = rgb.addOrReplaceChild("rgb_cube_14_r2", CubeListBuilder.create().texOffs(80, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.3744F));
-
-        PartDefinition rgb_cube_13_r2 = rgb.addOrReplaceChild("rgb_cube_13_r2", CubeListBuilder.create().texOffs(60, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.2763F));
-
-        PartDefinition rgb_cube_12_r2 = rgb.addOrReplaceChild("rgb_cube_12_r2", CubeListBuilder.create().texOffs(40, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.1781F));
-
-        PartDefinition rgb_cube_11_r2 = rgb.addOrReplaceChild("rgb_cube_11_r2", CubeListBuilder.create().texOffs(20, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -1.0799F));
-
-        PartDefinition rgb_cube_10_r2 = rgb.addOrReplaceChild("rgb_cube_10_r2", CubeListBuilder.create().texOffs(0, 208).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.9817F));
-
-        PartDefinition rgb_cube_9_r2 = rgb.addOrReplaceChild("rgb_cube_9_r2", CubeListBuilder.create().texOffs(180, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.8836F));
-
-        PartDefinition rgb_cube_8_r2 = rgb.addOrReplaceChild("rgb_cube_8_r2", CubeListBuilder.create().texOffs(160, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.7854F));
-
-        PartDefinition rgb_cube_7_r2 = rgb.addOrReplaceChild("rgb_cube_7_r2", CubeListBuilder.create().texOffs(140, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.6872F));
-
-        PartDefinition rgb_cube_6_r2 = rgb.addOrReplaceChild("rgb_cube_6_r2", CubeListBuilder.create().texOffs(120, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.589F));
-
-        PartDefinition rgb_cube_5_r2 = rgb.addOrReplaceChild("rgb_cube_5_r2", CubeListBuilder.create().texOffs(100, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.4909F));
-
-        PartDefinition rgb_cube_4_r2 = rgb.addOrReplaceChild("rgb_cube_4_r2", CubeListBuilder.create().texOffs(80, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.3927F));
-
-        PartDefinition rgb_cube_3_r2 = rgb.addOrReplaceChild("rgb_cube_3_r2", CubeListBuilder.create().texOffs(60, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.2945F));
-
-        PartDefinition rgb_cube_2_r2 = rgb.addOrReplaceChild("rgb_cube_2_r2", CubeListBuilder.create().texOffs(40, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.1963F));
-
-        PartDefinition rgb_cube_1_r2 = rgb.addOrReplaceChild("rgb_cube_1_r2", CubeListBuilder.create().texOffs(20, 200).addBox(-1.0F, -20.0F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.0137F, 0.0F, 0.0F, 0.0F, -0.0982F));
-
         return LayerDefinition.create(meshdefinition, 256, 256);
     }
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        float div = 900.0F;
-        float deg = (System.currentTimeMillis() % 36000000) / div;
-
         poseStack.pushPose();
         poseStack.scale(0.5f, 0.5f, 0.5f);
-        poseStack.translate(0, 1.7f, 0);
 
-        main.copyFrom(this.body);
-        poseStack.pushPose();
+        float div = 900.0F;
+        rgb.zRot = (System.currentTimeMillis() % 36000000) / div;
+
+        this.main.copyFrom(this.body);
+        poseStack.translate(0, 1.7f, 0);
         if (this.crouching) {
             poseStack.translate(0, 0.25, 0.45);
         }
+
         main.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         poseStack.popPose();
-
-        //TODO 解决圆环和模型本体不同步的问题
-        //TODO 解决潜行时圆环旋转问题
-        ring.copyFrom(this.body);
-        poseStack.pushPose();
-        ring.offsetPos(new Vector3f(0, -34.7363f, 14));
-        if (this.crouching) {
-            poseStack.translate(0, 0.1, -0.65);
-        } else {
-            ring.zRot = deg;
-        }
-        ring.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        poseStack.popPose();
-
-        poseStack.popPose();
-    }
-
-    @Override
-    protected Iterable<ModelPart> bodyParts() {
-        return ImmutableList.of(this.main, this.ring);
     }
 }
