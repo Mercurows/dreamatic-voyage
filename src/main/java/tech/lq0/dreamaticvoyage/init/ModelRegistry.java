@@ -66,6 +66,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(HiruTentaclesModel.LAYER_LOCATION, HiruTentaclesModel::createBodyLayer);
         event.registerLayerDefinition(KRM96353Model.LAYER_LOCATION, KRM96353Model::createBodyLayer);
         event.registerLayerDefinition(DarkElfGlassesModel.LAYER_LOCATION, DarkElfGlassesModel::createBodyLayer);
+        event.registerLayerDefinition(KurumiHaloModel.LAYER_LOCATION, KurumiHaloModel::createBodyLayer);
     }
 
     @SubscribeEvent
