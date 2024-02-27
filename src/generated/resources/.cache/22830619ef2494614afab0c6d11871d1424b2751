@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-27T02:22:08.281377	Item Models: dreamaticvoyage
+// 1.20.1	2024-02-28T00:30:48.2099085	Item Models: dreamaticvoyage
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 87062f0bab8602cf3083e4dc3acd2c90b2fef4ab assets/dreamaticvoyage/models/item/ayelet_mask.json
 95980ffe50158a7913c92005529ee0df4c956dd0 assets/dreamaticvoyage/models/item/baked_name_tag.json
@@ -35,6 +35,7 @@ cd3383d4af6eef5e801c02070d7a69dc3e96e718 assets/dreamaticvoyage/models/item/craf
 5496695a243ff9ba877ad87a394310ce756523e4 assets/dreamaticvoyage/models/item/cut_blue_sandstone_slab.json
 acf53ad5b5a0f82c3cbc9dcce96174fb69b3111d assets/dreamaticvoyage/models/item/dark_crystal.json
 e47a32b25233973ac1e12b3afac10c563a67e661 assets/dreamaticvoyage/models/item/dark_elf_core.json
+048d297c16658aff2e223f7e43286d353b7d2118 assets/dreamaticvoyage/models/item/dark_elf_glasses.json
 6b6787ed9c178658ab3de6cb5a4d9e0a49c9d1e4 assets/dreamaticvoyage/models/item/dream_weaving_yarn.json
 8877e1fa0c8735580581b996d5b7a2ea96d3650a assets/dreamaticvoyage/models/item/drill.json
 004bb088571dcf3dce697aece98956c0285c2ff0 assets/dreamaticvoyage/models/item/ekira_core.json

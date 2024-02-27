@@ -44,6 +44,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.DARK_ELF_CORE);
         simpleItem(ItemRegistry.DRILL);
         simpleItem(ItemRegistry.SCHEDULE);
+        simpleItem(ItemRegistry.DARK_ELF_GLASSES);
 
         simpleItem(ItemRegistry.TARO_ICE_CREAM);
         simpleItem(ItemRegistry.UNIGIRI);

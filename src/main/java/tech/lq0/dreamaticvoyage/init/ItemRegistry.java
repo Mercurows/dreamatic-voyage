@@ -12,6 +12,7 @@ import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Qiankela;
 import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Suitcase;
 import tech.lq0.dreamaticvoyage.item.donate.*;
 import tech.lq0.dreamaticvoyage.item.first.mitsuki.MitsukiCrown;
+import tech.lq0.dreamaticvoyage.item.first.myanna.*;
 import tech.lq0.dreamaticvoyage.item.first.usa.KRM96353;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.UnfaithfulHeart;
 import tech.lq0.dreamaticvoyage.item.legacy.*;
@@ -47,10 +48,6 @@ import tech.lq0.dreamaticvoyage.item.first.madoka.*;
 import tech.lq0.dreamaticvoyage.item.first.mari.Machete;
 import tech.lq0.dreamaticvoyage.item.first.mari.MagicMirror;
 import tech.lq0.dreamaticvoyage.item.first.mari.MariStew;
-import tech.lq0.dreamaticvoyage.item.first.myanna.DarkElfCore;
-import tech.lq0.dreamaticvoyage.item.first.myanna.Drill;
-import tech.lq0.dreamaticvoyage.item.first.myanna.MountainDestroyer;
-import tech.lq0.dreamaticvoyage.item.first.myanna.Schedule;
 import tech.lq0.dreamaticvoyage.item.first.niina.BananaMilk;
 import tech.lq0.dreamaticvoyage.item.first.unia.ElfWings;
 import tech.lq0.dreamaticvoyage.item.first.unia.EnchantedUnigiri;
@@ -137,7 +134,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> DARK_ELF_CORE = ITEMS.register("dark_elf_core", DarkElfCore::new);
     public static final RegistryObject<Item> DRILL = ITEMS.register("drill", Drill::new);
     public static final RegistryObject<Item> SCHEDULE = ITEMS.register("schedule", Schedule::new);
-//    public static final RegistryObject<Item> DARK_ELF_GLASSES = ITEMS.register("dark_elf_glasses", DarkElfGlasses::new);
+    public static final RegistryObject<Item> DARK_ELF_GLASSES = ITEMS.register("dark_elf_glasses", DarkElfGlasses::new);
 
     //haya
     public static final RegistryObject<Item> HAYAMEN = ITEMS.register("hayamen", Hayamen::new);
