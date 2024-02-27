@@ -16,6 +16,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.entity.projectile.PlungerEntity;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
@@ -40,10 +41,29 @@ public class Plunger extends SwordItem {
         pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.random.nextFloat() * 0.4F + 0.8F));
 
         if (!pLevel.isClientSide) {
-            //TODO 添加KRM特判
-            PlungerEntity plungerEntity = new PlungerEntity(pLevel, pPlayer);
-            plungerEntity.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0f, 4.0f, 0.1f);
-            pLevel.addFreshEntity(plungerEntity);
+            if (pPlayer.getItemBySlot(EquipmentSlot.CHEST).getItem().equals(ItemRegistry.KRM_963_53.get())) {
+                PlungerEntity plungerEntity1 = new PlungerEntity(pLevel, pPlayer);
+                PlungerEntity plungerEntity2 = new PlungerEntity(pLevel, pPlayer);
+                PlungerEntity plungerEntity3 = new PlungerEntity(pLevel, pPlayer);
+                PlungerEntity plungerEntity4 = new PlungerEntity(pLevel, pPlayer);
+                PlungerEntity plungerEntity5 = new PlungerEntity(pLevel, pPlayer);
+
+                plungerEntity1.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot() - 12.0f, 0.0f, 4.0f, 0.0f);
+                plungerEntity2.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot() - 6.0f, 0.0f, 4.0f, 0.0f);
+                plungerEntity3.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0f, 4.0f, 0.0f);
+                plungerEntity4.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot() + 6.0f, 0.0f, 4.0f, 0.0f);
+                plungerEntity5.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot() + 12.0f, 0.0f, 4.0f, 0.0f);
+
+                pLevel.addFreshEntity(plungerEntity1);
+                pLevel.addFreshEntity(plungerEntity2);
+                pLevel.addFreshEntity(plungerEntity3);
+                pLevel.addFreshEntity(plungerEntity4);
+                pLevel.addFreshEntity(plungerEntity5);
+            } else {
+                PlungerEntity plungerEntity = new PlungerEntity(pLevel, pPlayer);
+                plungerEntity.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0f, 3.5f, 0.1f);
+                pLevel.addFreshEntity(plungerEntity);
+            }
 
             stack.hurtAndBreak(1, pPlayer, (p) -> p.broadcastBreakEvent(pUsedHand));
             pPlayer.getCooldowns().addCooldown(this, 5);
