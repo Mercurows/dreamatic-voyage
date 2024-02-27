@@ -28,6 +28,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.RED_AHOGE_HELMET);
         simpleItem(ItemRegistry.PEACH_BEACH);
         simpleItem(ItemRegistry.SNEAKERS);
+        simpleItem(ItemRegistry.ROCK_STATUE);
 
         simpleItem(ItemRegistry.CRYSTAL_HORN);
         simpleItem(ItemRegistry.SLEEP_ROULETTE);
