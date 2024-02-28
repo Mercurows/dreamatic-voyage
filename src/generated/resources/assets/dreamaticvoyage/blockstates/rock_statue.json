@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dreamaticvoyage:block/rock_statue",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dreamaticvoyage:block/rock_statue"
+    },
+    "facing=south": {
+      "model": "dreamaticvoyage:block/rock_statue",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dreamaticvoyage:block/rock_statue",
+      "y": 270
+    }
+  }
+}

@@ -26,6 +26,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ResourceLocation(Utils.MOD_ID, "block/communication_table_bottom"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_top")));
         horizontalBlock(BlockRegistry.PORCELAIN_THRONE.get(), new ModelFile.UncheckedModelFile(modLoc("block/porcelain_throne")));
         simpleBlockWithItem(BlockRegistry.POINTS_STORE.get(), new ModelFile.UncheckedModelFile(modLoc("block/points_store")));
+        horizontalBlock(BlockRegistry.ROCK_STATUE.get(), new ModelFile.UncheckedModelFile(modLoc("block/rock_statue")));
 
         blockWithItem(BlockRegistry.BLUE_SAND);
         simpleBlockWithItem(BlockRegistry.BLUE_SANDSTONE.get(), models().cubeBottomTop("blue_sandstone", new ResourceLocation(Utils.MOD_ID, "block/blue_sandstone"),

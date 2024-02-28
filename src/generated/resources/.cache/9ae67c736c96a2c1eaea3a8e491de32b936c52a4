@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-23T03:18:01.0710263	Block States: dreamaticvoyage
+// 1.20.1	2024-02-29T02:18:49.3419956	Block States: dreamaticvoyage
 528ecd1039fdc2ef5572365202af2e2757c4a308 assets/dreamaticvoyage/blockstates/blue_sand.json
 39000f1fc1ebc393925c217eaf06bbd0e99a2a61 assets/dreamaticvoyage/blockstates/blue_sandstone.json
 0d4a37ef7a091a043bc9cfe55adf529ca00aec55 assets/dreamaticvoyage/blockstates/blue_sandstone_slab.json
@@ -29,6 +29,7 @@ faf41e4c7f528dddb281cd405642bb9f503ac15e assets/dreamaticvoyage/blockstates/hara
 2dcb2a183de33dd23bbe277ef85d835e7435fced assets/dreamaticvoyage/blockstates/porcelain_throne.json
 f610e8cce2dee96d65eaf236bec457924241e2ec assets/dreamaticvoyage/blockstates/purified_crystal_block.json
 88668125dd96bfb3ff354e0db241824c8658c735 assets/dreamaticvoyage/blockstates/red_ahoge_block.json
+7e1d83b0be5f80c424765188c0b08b30f10f540e assets/dreamaticvoyage/blockstates/rock_statue.json
 0e3df759338db756fbf39fbdf0e7d42d9fe225c1 assets/dreamaticvoyage/blockstates/smooth_blue_sandstone.json
 3c937d6e3eba166b13939bdebe64954752a7f240 assets/dreamaticvoyage/blockstates/smooth_blue_sandstone_slab.json
 24359c705d513a81ea0dd49f82abeb764b0fc82c assets/dreamaticvoyage/blockstates/smooth_blue_sandstone_stairs.json
