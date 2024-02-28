@@ -1,13 +1,26 @@
 package tech.lq0.dreamaticvoyage.item.first.madoka;
 
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.init.BlockRegistry;
+import tech.lq0.dreamaticvoyage.tools.Livers;
+import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-public class RockStatue extends Item implements ICurioItem {
+import java.util.List;
+
+public class RockStatue extends BlockItem implements ICurioItem {
     public RockStatue() {
-        super(new Properties().rarity(Rarity.UNCOMMON).stacksTo(1).fireResistant());
+        super(BlockRegistry.ROCK_STATUE.get(), new Properties().rarity(Rarity.UNCOMMON).stacksTo(1).fireResistant());
     }
 
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.rock_statue").withStyle(ChatFormatting.GRAY));
 
+        TooltipTool.addLiverInfo(pTooltipComponents, Livers.MADOKA);
+    }
 }
