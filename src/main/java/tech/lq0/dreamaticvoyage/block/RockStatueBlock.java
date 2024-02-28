@@ -35,6 +35,10 @@ public class RockStatueBlock extends Block {
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return Block.box(4.0D, 0.0D, 4.0D, 12.0D, 9.0D, 12.0D);
+        if (pState.getValue(FACING) == Direction.NORTH || pState.getValue(FACING) == Direction.SOUTH) {
+            return Block.box(4.0D, 0.0D, 5.0D, 12.0D, 11.0D, 11.0D);
+        } else {
+            return Block.box(5.0D, 0.0D, 4.0D, 11.0D, 11.0D, 12.0D);
+        }
     }
 }
