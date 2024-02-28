@@ -17,6 +17,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.BlockRegistry;
@@ -31,6 +32,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class RockStatue extends BlockItem implements ICurioItem {
     public RockStatue() {
         super(BlockRegistry.ROCK_STATUE.get(), new Properties().rarity(Rarity.UNCOMMON).stacksTo(1).fireResistant());
@@ -51,7 +53,7 @@ public class RockStatue extends BlockItem implements ICurioItem {
         map = HashMultimap.create(map);
         map.put(Attributes.ATTACK_DAMAGE,
                 new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 5, AttributeModifier.Operation.ADDITION));
-        map.put(Attributes.ARMOR,
+        map.put(Attributes.MOVEMENT_SPEED,
                 new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -0.1, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return map;
