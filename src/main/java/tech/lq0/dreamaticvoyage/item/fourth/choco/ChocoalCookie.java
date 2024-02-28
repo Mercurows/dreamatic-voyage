@@ -13,8 +13,6 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
 import tech.lq0.dreamaticvoyage.tools.Livers;
@@ -30,7 +28,6 @@ public class ChocoalCookie extends Item {
         super(new Properties().food(food).rarity(Rarity.UNCOMMON));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.chocoal_cookie").withStyle(ChatFormatting.GRAY));
