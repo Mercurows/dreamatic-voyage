@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " r ",
+    "gab",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:polished_andesite"
+    },
+    "b": {
+      "item": "dreamaticvoyage:peach_beach"
+    },
+    "r": {
+      "item": "dreamaticvoyage:red_ahoge"
+    },
+    "g": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:rock_statue",
+    "count": 1
+  }
+}
