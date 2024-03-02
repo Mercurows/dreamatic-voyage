@@ -47,5 +47,7 @@ public class PropertyRegistry {
         event.enqueueWork(() -> ItemProperties.register(ItemRegistry.UNFAITHFUL_HEART.get(), new ResourceLocation(Utils.MOD_ID, "damage"),
                 (heldStack, world, livingEntity, seed) -> heldStack.getDamageValue())
         );
+        event.enqueueWork(() -> ItemProperties.register(ItemRegistry.RED_COW_HORN.get(), new ResourceLocation("tooting"),
+                (heldStack, world, livingEntity, seed) -> livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == heldStack ? 1.0F : 0.0F));
     }
 }

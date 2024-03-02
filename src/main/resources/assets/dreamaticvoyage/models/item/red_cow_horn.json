@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dreamaticvoyage:item/red_cow_horn"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tooting": 1
+      },
+      "model": "dreamaticvoyage:item/red_cow_horn_tooting"
+    }
+  ]
+}

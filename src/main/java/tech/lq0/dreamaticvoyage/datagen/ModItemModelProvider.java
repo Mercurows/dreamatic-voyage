@@ -13,7 +13,7 @@ import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.BlockRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
-@SuppressWarnings({"ConstantConditions", "UnusedReturnValue"})
+@SuppressWarnings({"ConstantConditions", "UnusedReturnValue", "SameParameterValue", "unused"})
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Utils.MOD_ID, existingFileHelper);
