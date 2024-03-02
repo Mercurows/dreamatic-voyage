@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #A",
+    "# #",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:purified_crystal_ingot"
+    },
+    "A": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:cage_ring"
+  }
+}

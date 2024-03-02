@@ -153,6 +153,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.FUKAMIZU_FISH);
         simpleItem(ItemRegistry.FUKAMIZU_BREAD);
         simpleItem(ItemRegistry.GARLIC_MELON_SLICE);
+        simpleItem(ItemRegistry.CAGE_RING);
 
         simpleItem(ItemRegistry.MINT_CHOCOLATE);
         simpleItem(ItemRegistry.YEGGY_PEARL);
