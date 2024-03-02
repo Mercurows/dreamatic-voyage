@@ -2,8 +2,11 @@ package tech.lq0.dreamaticvoyage.item.second.mumu;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -37,12 +40,22 @@ public class RedCowHorn extends Item {
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
         pPlayer.startUsingItem(pUsedHand);
-        pPlayer.getCooldowns().addCooldown(this, 60);
+        pPlayer.getCooldowns().addCooldown(this, 200);
         return InteractionResultHolder.consume(itemstack);
     }
 
     @Override
     public int getUseDuration(ItemStack pStack) {
-        return 60;
+        return 80;
+    }
+
+    @Override
+    public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
+        if (pRemainingUseDuration % 10 == 0 && pRemainingUseDuration <= 20) {
+            pLivingEntity.hurt(pLevel.damageSources().drown(), 1);
+        }
+        if (pRemainingUseDuration == 10 && pLivingEntity instanceof Player player) {
+            pLevel.playSound(player, pLivingEntity.getOnPos(), SoundEvents.COW_AMBIENT, SoundSource.PLAYERS);
+        }
     }
 }
