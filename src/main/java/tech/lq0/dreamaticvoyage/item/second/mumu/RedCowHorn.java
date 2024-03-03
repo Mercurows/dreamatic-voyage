@@ -50,12 +50,17 @@ public class RedCowHorn extends Item {
     }
 
     @Override
+    public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
+        if (pLivingEntity instanceof Player player) {
+            pLevel.playSound(player, pLivingEntity.getOnPos(), SoundEvents.COW_AMBIENT, SoundSource.PLAYERS);
+        }
+        return super.finishUsingItem(pStack, pLevel, pLivingEntity);
+    }
+
+    @Override
     public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
         if (pRemainingUseDuration % 10 == 0 && pRemainingUseDuration <= 20) {
-            pLivingEntity.hurt(pLevel.damageSources().drown(), 1);
-        }
-        if (pRemainingUseDuration == 10 && pLivingEntity instanceof Player player) {
-            pLevel.playSound(player, pLivingEntity.getOnPos(), SoundEvents.COW_AMBIENT, SoundSource.PLAYERS);
+            pLivingEntity.hurt(pLevel.damageSources().inWall(), 1);
         }
     }
 }
