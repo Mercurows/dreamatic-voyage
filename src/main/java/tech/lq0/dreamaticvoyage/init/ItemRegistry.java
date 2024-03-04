@@ -75,6 +75,7 @@ import tech.lq0.dreamaticvoyage.item.second.lucia.LuciaRiceCake;
 import tech.lq0.dreamaticvoyage.item.second.lucia.MoonlightAmulet;
 import tech.lq0.dreamaticvoyage.item.second.mumu.AyeletMask;
 import tech.lq0.dreamaticvoyage.item.second.mumu.MumuSteak;
+import tech.lq0.dreamaticvoyage.item.second.mumu.MushroomCroissant;
 import tech.lq0.dreamaticvoyage.item.second.mumu.RedCowHorn;
 import tech.lq0.dreamaticvoyage.item.second.satou.*;
 import tech.lq0.dreamaticvoyage.item.third.hiru.*;
@@ -192,6 +193,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> AYELET_MASK = ITEMS.register("ayelet_mask", AyeletMask::new);
     public static final RegistryObject<Item> MUMU_STEAK = ITEMS.register("mumu_steak", MumuSteak::new);
     public static final RegistryObject<Item> RED_COW_HORN = ITEMS.register("red_cow_horn", RedCowHorn::new);
+    public static final RegistryObject<Item> MUSHROOM_CROISSANT = ITEMS.register("mushroom_croissant", MushroomCroissant::new);
 
     /**
      * magicros
