@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#B#",
+    "PEP",
+    "#B#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:leather"
+    },
+    "B": {
+      "item": "minecraft:brush"
+    },
+    "P": {
+      "item": "minecraft:item_frame"
+    },
+    "E": {
+      "item": "dreamaticvoyage:harden_crystal_ingot"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:artist_tool_belt",
+    "count": 1
+  }
+}
