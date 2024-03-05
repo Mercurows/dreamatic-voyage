@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " P#",
+    " EP",
+    "P  "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gray_wool"
+    },
+    "P": {
+      "item": "minecraft:iron_ingot"
+    },
+    "E": {
+      "item": "dreamaticvoyage:dark_crystal"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:ancient_microphone",
+    "count": 1
+  }
+}
