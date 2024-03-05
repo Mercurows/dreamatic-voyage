@@ -20,6 +20,7 @@ import tech.lq0.dreamaticvoyage.item.legacy.*;
 import tech.lq0.dreamaticvoyage.item.material.*;
 import tech.lq0.dreamaticvoyage.item.material.crystal.*;
 import tech.lq0.dreamaticvoyage.item.oi.ayu.DelicateMirage;
+import tech.lq0.dreamaticvoyage.item.oi.miya.ArtistToolBelt;
 import tech.lq0.dreamaticvoyage.item.oi.sorayo.LunarEclipse;
 import tech.lq0.dreamaticvoyage.item.other.*;
 import tech.lq0.dreamaticvoyage.item.oi.ayu.GravityRestraintDevice;
@@ -283,6 +284,7 @@ public class ItemRegistry {
     //miya
     public static final RegistryObject<Item> TAIL_PEN = ITEMS.register("tail_pen", TailPen::new);
     public static final RegistryObject<Item> JELLYFISH_SHELL = ITEMS.register("jellyfish_shell", JellyfishShell::new);
+    public static final RegistryObject<Item> ARTIST_TOOL_BELT = ITEMS.register("artist_tool_belt", ArtistToolBelt::new);
 
     //ayu
     public static final RegistryObject<Item> GRAVITY_RESTRAINT_DEVICE = ITEMS.register("gravity_restraint_device", GravityRestraintDevice::new);
