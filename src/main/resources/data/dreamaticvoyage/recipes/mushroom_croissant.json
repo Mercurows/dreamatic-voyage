@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " x ",
+    "gag",
+    " y "
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:red_mushroom"
+    },
+    "a": {
+      "item": "minecraft:bread"
+    },
+    "g": {
+      "item": "dreamaticvoyage:red_cow_horn"
+    },
+    "y": {
+      "item": "minecraft:brown_mushroom"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:mushroom_croissant",
+    "count": 1
+  }
+}
