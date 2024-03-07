@@ -15,6 +15,7 @@ import tech.lq0.dreamaticvoyage.item.first.mitsuki.MitsukiCrown;
 import tech.lq0.dreamaticvoyage.item.first.myanna.*;
 import tech.lq0.dreamaticvoyage.item.first.usa.KRM96353;
 import tech.lq0.dreamaticvoyage.item.first.usa.KurumiHalo;
+import tech.lq0.dreamaticvoyage.item.fourth.hifumi.OminousSickle;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.UnfaithfulHeart;
 import tech.lq0.dreamaticvoyage.item.legacy.*;
 import tech.lq0.dreamaticvoyage.item.material.*;
@@ -343,6 +344,7 @@ public class ItemRegistry {
     //hifumi
     public static final RegistryObject<Item> NETHER_LIGHT = ITEMS.register("nether_light", NetherLight::new);
     public static final RegistryObject<Item> UNFAITHFUL_HEART = ITEMS.register("unfaithful_heart", UnfaithfulHeart::new);
+    public static final RegistryObject<Item> OMINOUS_SICKLE = ITEMS.register("ominous_sickle", OminousSickle::new);
 
     //sana
     public static final RegistryObject<Item> JELLYFISH_BOTTLE = ITEMS.register("jellyfish_bottle", JellyfishBottle::new);
