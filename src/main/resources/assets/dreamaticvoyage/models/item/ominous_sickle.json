@@ -2874,12 +2874,12 @@
 			"translation": [0, 8, 1.5]
 		},
 		"firstperson_righthand": {
-			"rotation": [-10, 0, 0],
+			"rotation": [-9.78, 2.18, -12.03],
 			"translation": [0, -0.75, 1.5],
 			"scale": [0.8, 0.8, 0.8]
 		},
 		"firstperson_lefthand": {
-			"rotation": [-10, 0, 0],
+			"rotation": [-9.78, 2.18, -12.03],
 			"translation": [0, -0.75, 1.5],
 			"scale": [0.8, 0.8, 0.8]
 		},
