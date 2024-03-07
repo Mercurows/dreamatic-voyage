@@ -6,6 +6,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -36,8 +37,15 @@ public class OminousSickle extends SwordItem {
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
                 (int) (12 / ItemNBTTool.getFloat(stack, TAG_HEALTH, 1.0f)) - 1, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier",
-                -2, AttributeModifier.Operation.ADDITION));
+                -2 + (1 - ItemNBTTool.getFloat(stack, TAG_HEALTH, 1.0f)) / 0.8f, AttributeModifier.Operation.ADDITION));
         return builder.build();
+    }
+
+    @Override
+    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        pAttacker.heal((1 - ItemNBTTool.getFloat(pStack, TAG_HEALTH, 1.0f)) / 8f * pAttacker.getMaxHealth());
+
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 
     @Override
