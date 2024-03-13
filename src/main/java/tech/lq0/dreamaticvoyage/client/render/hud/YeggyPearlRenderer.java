@@ -30,6 +30,10 @@ public class YeggyPearlRenderer {
                             return;
                         }
 
+                        if (s.slotContext().cosmetic()) {
+                            return;
+                        }
+
                         ItemStack stack = s.stack();
                         GuiGraphics gui = event.getGuiGraphics();
 

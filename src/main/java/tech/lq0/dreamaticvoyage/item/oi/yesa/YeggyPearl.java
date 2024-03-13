@@ -110,9 +110,11 @@ public class YeggyPearl extends Item implements ICurioItem {
             CuriosApi.getCuriosInventory(player).ifPresent(
                     c -> c.findFirstCurio(ItemRegistry.YEGGY_PEARL.get()).ifPresent(
                             slotResult -> {
-                                ItemStack stack = slotResult.stack();
-                                event.setAmount(event.getAmount() * getDamageTimes(getEnergy(stack)));
-                                setEnergy(stack, 0);
+                                if (!slotResult.slotContext().cosmetic()) {
+                                    ItemStack stack = slotResult.stack();
+                                    event.setAmount(event.getAmount() * getDamageTimes(getEnergy(stack)));
+                                    setEnergy(stack, 0);
+                                }
                             }
                     )
             );
