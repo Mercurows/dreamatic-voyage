@@ -9,6 +9,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.AnvilUpdateEvent;
+import net.minecraftforge.event.GrindstoneEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
@@ -71,6 +72,12 @@ public class FictionalForgingSigil extends Item {
 
     private static int getForgingCount(ItemStack stack) {
         return ItemNBTTool.getInt(stack, TAG_FICTIONAL_FORGING_SIGIL, 0);
+    }
+
+    @SubscribeEvent
+    public static void onGrindstone(GrindstoneEvent event) {
+        ItemStack top = event.getTopItem();
+        ItemNBTTool.setInt(top, TAG_FICTIONAL_FORGING_SIGIL, 0);
     }
 
 }
