@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-15T19:45:26.5831492	Item Models: dreamaticvoyage
+// 1.20.1	2024-03-15T20:14:22.001639	Item Models: dreamaticvoyage
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 f37df339e571439e12f7388bec647a0b97ac128f assets/dreamaticvoyage/models/item/ancient_microphone.json
 87062f0bab8602cf3083e4dc3acd2c90b2fef4ab assets/dreamaticvoyage/models/item/ayelet_mask.json
@@ -54,6 +54,7 @@ aacc4c7c20d075c19a55d0dc323a46e6eb852994 assets/dreamaticvoyage/models/item/fall
 30d10559e6afee850fcb509f0db62501bc08ea17 assets/dreamaticvoyage/models/item/fetuozi.json
 e02d3fa968e888a23c1917841ae1c6d441d688d2 assets/dreamaticvoyage/models/item/fictional_forging_sigil.json
 429e0cac2fe3abeca93fb825f9e78c202cdc3bde assets/dreamaticvoyage/models/item/fictional_ingot.json
+3df71452ac4b81f1b89785732a57c9632729ad66 assets/dreamaticvoyage/models/item/fictional_nugget.json
 f828b48888b9b36914d6e854ce332f7accca8b4b assets/dreamaticvoyage/models/item/flat_vegetable_chestplate.json
 b1ba5e6ad8e0b736d04fe882c6265dc6309c4954 assets/dreamaticvoyage/models/item/fluff_ball.json
 d510852f76234f314a25bccb56e330ec67d2e54c assets/dreamaticvoyage/models/item/fox_ice_cream.json

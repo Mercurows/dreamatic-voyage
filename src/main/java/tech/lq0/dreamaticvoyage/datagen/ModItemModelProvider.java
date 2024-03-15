@@ -210,6 +210,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.PURIFIED_CRYSTAL_INGOT);
         simpleItem(ItemRegistry.CHARGED_CRYSTAL_INGOT);
         simpleItem(ItemRegistry.FICTIONAL_INGOT);
+        simpleItem(ItemRegistry.FICTIONAL_NUGGET);
 
         //donate
         simpleItem(ItemRegistry.LITTLE_POTATO);

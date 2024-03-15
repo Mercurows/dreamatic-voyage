@@ -392,6 +392,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> PURIFIED_CRYSTAL_INGOT = ITEMS.register("purified_crystal_ingot", PurifiedCrystalIngot::new);
     public static final RegistryObject<Item> CHARGED_CRYSTAL_INGOT = ITEMS.register("charged_crystal_ingot", ChargedCrystalIngot::new);
     public static final RegistryObject<Item> FICTIONAL_INGOT = ITEMS.register("fictional_ingot", FictionalIngot::new);
+    public static final RegistryObject<Item> FICTIONAL_NUGGET = ITEMS.register("fictional_nugget", FictionalNugget::new);
 
 
     /**
