@@ -68,7 +68,7 @@ public class FallenRing extends Item implements ICurioItem {
         map.put(Attributes.ARMOR_TOUGHNESS,
                 new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -1.5f, AttributeModifier.Operation.ADDITION));
         map.put(AttributeRegistry.CHAOS.get(),
-                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 30.0f, AttributeModifier.Operation.ADDITION));
+                new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 50.0f, AttributeModifier.Operation.ADDITION));
 
         return map;
     }
@@ -93,8 +93,8 @@ public class FallenRing extends Item implements ICurioItem {
                     CuriosApi.getCuriosInventory(player).ifPresent(
                             c -> c.findFirstCurio(ItemRegistry.FALLEN_RING.get()).ifPresent(
                                     slotResult -> {
-                                        living.hurt(player.level().damageSources().sonicBoom(player), Math.min(living.getMaxHealth() * 0.25f, Math.max(ChaosHelper.getChaos(player), 0) * 1.25f));
-                                        player.getCooldowns().addCooldown(ItemRegistry.FALLEN_RING.get(), 60);
+                                        living.hurt(player.level().damageSources().sonicBoom(player), Math.min(living.getMaxHealth() * 0.4f, Math.max(ChaosHelper.getChaos(player), 0) * 1.5f));
+                                        player.getCooldowns().addCooldown(ItemRegistry.FALLEN_RING.get(), 40);
                                     }
                             )
                     );

@@ -7,10 +7,10 @@
   ],
   "key": {
     "x": {
-      "item": "minecraft:echo_shard"
+      "item": "dreamaticvoyage:fictional_nugget"
     },
     "a": {
-      "item": "dreamaticvoyage:fictional_ingot"
+      "item": "minecraft:echo_shard"
     }
   },
   "result": {
