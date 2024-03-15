@@ -186,6 +186,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.FALLEN_RING);
         simpleItem(ItemRegistry.ESCORT_TOKEN);
         handheldItem(ItemRegistry.ANCIENT_MICROPHONE);
+        simpleItem(ItemRegistry.FICTIONAL_FORGING_SIGIL);
 
         //legacy
         simpleItem(ItemRegistry.FLUFF_BALL);
