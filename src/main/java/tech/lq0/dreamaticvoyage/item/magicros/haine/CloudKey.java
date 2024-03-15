@@ -60,6 +60,10 @@ public class CloudKey extends Item implements ICurioItem {
         if (entity instanceof Player player) {
             CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(ItemRegistry.CLOUD_KEY.get()).ifPresent(slotResult -> {
                 if (damage >= player.getHealth() && !player.getCooldowns().isOnCooldown(ItemRegistry.CLOUD_KEY.get()) && !player.level().isClientSide) {
+                    if (slotResult.slotContext().cosmetic() || !slotResult.slotContext().visible()) {
+                        return;
+                    }
+
                     event.setAmount(player.getHealth() > 2.0f ? player.getHealth() - 2.0f : 0.0f);
                     player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 3));
                     slotResult.stack().hurtAndBreak(1, player, (playerEntity) -> playerEntity.broadcastBreakEvent(EquipmentSlot.CHEST));
