@@ -150,5 +150,14 @@
         "stream": true
       }
     ]
+  },
+  "song/dreaming_fairy": {
+    "subtitle": "subtitle.dreamaticvoyage.dreaming_fairy",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:song/dreaming_fairy",
+        "stream": true
+      }
+    ]
   }
 }

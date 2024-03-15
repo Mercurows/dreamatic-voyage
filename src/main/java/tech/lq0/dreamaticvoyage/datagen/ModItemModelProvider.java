@@ -264,6 +264,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.MUSIC_DISC_DARAKUDATENSHI);
         simpleItem(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL);
         simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_QINGQIU);
+        simpleItem(ItemRegistry.MUSIC_DISC_DREAMING_FAIRY);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
