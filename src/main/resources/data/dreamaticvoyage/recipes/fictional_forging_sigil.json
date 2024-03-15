@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "abc",
+    "adc",
+    "abc"
+  ],
+  "key": {
+    "a": {
+      "item": "dreamaticvoyage:fictional_nugget"
+    },
+    "b": {
+      "item": "minecraft:iron_ingot"
+    },
+    "c": {
+      "item": "minecraft:gold_nugget"
+    },
+    "d": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fictional_forging_sigil",
+    "count": 1
+  }
+}
