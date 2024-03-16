@@ -105,7 +105,6 @@ public class FrogCrown extends ArmorItem {
         return map;
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.frog_crown_1").withStyle(ChatFormatting.GRAY));

@@ -33,7 +33,6 @@ public class KeroroIdolChestplate extends ArmorItem {
         super(ModArmorMaterial.IDOL_COSTUME, Type.CHESTPLATE, new Properties());
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.keroro_idol_costume").withStyle(ChatFormatting.GRAY));
