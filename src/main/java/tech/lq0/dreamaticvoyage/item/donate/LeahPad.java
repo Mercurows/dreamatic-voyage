@@ -47,8 +47,8 @@ public class LeahPad extends Item {
         if (!pLevel.isClientSide) {
             int xp = pPlayer.experienceLevel;
             if (xp >= 10) {
-                pPlayer.giveExperienceLevels(-10);
-                pPlayer.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 3600, 3));
+                pPlayer.giveExperiencePoints(-160);
+                pPlayer.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 4200, 3));
 
                 pPlayer.getCooldowns().addCooldown(this, 6000);
                 stack.hurtAndBreak(1, pPlayer, p -> p.broadcastBreakEvent(pUsedHand));
