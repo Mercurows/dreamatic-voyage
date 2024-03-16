@@ -1,7 +1,9 @@
 package tech.lq0.dreamaticvoyage.item.fourth.choco;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -13,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.RarityTool;
@@ -21,6 +24,8 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import java.util.List;
 
 public class Chocolusion extends Item {
+    private static final double RADIUS = 4;
+
     public Chocolusion() {
         super(new Properties().stacksTo(1).rarity(RarityTool.LEGENDARY));
     }
@@ -57,9 +62,18 @@ public class Chocolusion extends Item {
         if (pLivingEntity instanceof Player player) {
             player.getFoodData().eat(1, 0.5f);
 
+            List<Player> players = player.level().getEntitiesOfClass(Player.class, player.getBoundingBox().inflate(RADIUS))
+                    .stream().filter(e -> e != player && e.distanceTo(player) <= RADIUS).toList();
+            players.forEach(p -> {
+                if (pRemainingUseDuration % 2 == 0) {
+                    p.getFoodData().eat(1, 0.5f);
+                }
+            });
 
+            if (!pLevel.isClientSide && pRemainingUseDuration % 2 == 0) {
+                spawnCircleParticles(player, RADIUS, (int) RADIUS * 10);
+            }
         }
-
 
         super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
     }
@@ -86,5 +100,21 @@ public class Chocolusion extends Item {
         }
 
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);
+    }
+
+    @SuppressWarnings("SameParameterValue")
+    private void spawnCircleParticles(Player player, double radius, int count) {
+        ServerLevel level = (ServerLevel) player.level();
+        Vec3 playerPos = player.position();
+        double angleIncrement = 2 * Math.PI / count;
+
+        for (int i = 0; i < count; ++i) {
+            double angle = i * angleIncrement;
+            double offsetX = radius * Math.cos(angle);
+            double offsetZ = radius * Math.sin(angle);
+
+            level.sendParticles(ParticleTypes.HAPPY_VILLAGER, playerPos.x + offsetX, playerPos.y + 0.1, playerPos.z + offsetZ,
+                    1, 0, 0, 0, 0);
+        }
     }
 }
