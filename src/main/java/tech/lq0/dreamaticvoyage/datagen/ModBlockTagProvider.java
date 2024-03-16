@@ -76,5 +76,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.WOODEN_TRAPDOORS).add(BlockRegistry.HARANO_TRAPDOOR.get());
         this.tag(BlockTags.BUTTONS).add(BlockRegistry.HARANO_BUTTON.get());
         this.tag(BlockTags.WOODEN_BUTTONS).add(BlockRegistry.HARANO_BUTTON.get());
+        this.tag(BlockTags.WITHER_IMMUNE).add(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get());
     }
 }
