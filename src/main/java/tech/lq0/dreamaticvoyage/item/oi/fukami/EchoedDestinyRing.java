@@ -174,6 +174,11 @@ public class EchoedDestinyRing extends Item {
     }
 
     @Override
+    public boolean isFoil(ItemStack pStack) {
+        return false;
+    }
+
+    @Override
     public boolean isEnchantable(ItemStack stack) {
         return true;
     }

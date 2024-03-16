@@ -127,6 +127,11 @@ public class OminousSickle extends SwordItem {
         return enchantment.category == EnchantmentCategory.WEAPON || enchantment.category == EnchantmentCategory.BREAKABLE;
     }
 
+    @Override
+    public boolean isFoil(ItemStack pStack) {
+        return false;
+    }
+
     @SubscribeEvent
     public static void onCriticalHit(CriticalHitEvent event) {
         Player player = event.getEntity();

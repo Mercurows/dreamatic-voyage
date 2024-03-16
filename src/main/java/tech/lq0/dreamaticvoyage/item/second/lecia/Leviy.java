@@ -42,4 +42,9 @@ public class Leviy extends Item {
             }
         });
     }
+
+    @Override
+    public boolean isFoil(ItemStack pStack) {
+        return false;
+    }
 }

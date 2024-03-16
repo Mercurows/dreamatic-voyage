@@ -291,6 +291,11 @@ public class AncientLollipop extends SwordItem {
     }
 
     @Override
+    public boolean isFoil(ItemStack pStack) {
+        return false;
+    }
+
+    @Override
     public boolean isEnchantable(ItemStack stack) {
         return true;
     }
