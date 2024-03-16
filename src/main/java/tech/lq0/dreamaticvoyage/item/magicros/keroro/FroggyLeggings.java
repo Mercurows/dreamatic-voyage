@@ -56,7 +56,6 @@ public class FroggyLeggings extends ArmorItem {
         super(ModArmorMaterial.MAGICROS, Type.LEGGINGS, new Properties().fireResistant().setNoRepair().rarity(RarityTool.LEGENDARY));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.froggy_leggings_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
@@ -217,7 +216,7 @@ public class FroggyLeggings extends ArmorItem {
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return enchantment.category == EnchantmentCategory.ARMOR_CHEST || enchantment.category == EnchantmentCategory.BREAKABLE ||
+        return enchantment.category == EnchantmentCategory.ARMOR_LEGS || enchantment.category == EnchantmentCategory.BREAKABLE ||
                 enchantment.category == EnchantmentCategory.ARMOR;
     }
 
