@@ -45,12 +45,20 @@ public class OminousSickle extends SwordItem {
     private Multimap<Attribute, AttributeModifier> getModifiers(ItemStack stack) {
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
-                (int) (12 / ItemNBTTool.getFloat(stack, TAG_HEALTH, 1.0f)) - 1, AttributeModifier.Operation.ADDITION));
+                Math.max(11, calculateAttackDamage(stack)), AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier",
-                -2 + (1 - ItemNBTTool.getFloat(stack, TAG_HEALTH, 1.0f)) / 0.8f, AttributeModifier.Operation.ADDITION));
+                Math.max(-2f, calculateAttackSpeed(stack)), AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(new UUID(ItemRegistry.OMINOUS_SICKLE.hashCode(), 0), Utils.MOD_ATTRIBUTE_MODIFIER,
                 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
         return builder.build();
+    }
+
+    private int calculateAttackDamage(ItemStack stack) {
+        return (int) (12 / ItemNBTTool.getFloat(stack, TAG_HEALTH, 1.0f)) - 1;
+    }
+
+    private float calculateAttackSpeed(ItemStack stack) {
+        return -2 + (1 - ItemNBTTool.getFloat(stack, TAG_HEALTH, 1.0f)) / 0.8f;
     }
 
     @Override
