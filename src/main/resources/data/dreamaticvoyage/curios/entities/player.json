@@ -1,4 +1,14 @@
 {
-  "entities": ["player"],
-  "slots": ["head","charm","ring","necklace","belt","curio"]
+  "entities": [
+    "player"
+  ],
+  "slots": [
+    "head",
+    "charm",
+    "ring",
+    "necklace",
+    "belt",
+    "curio",
+    "voyage_relic"
+  ]
 }

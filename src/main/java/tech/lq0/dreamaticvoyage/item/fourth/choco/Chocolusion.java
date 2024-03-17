@@ -20,11 +20,12 @@ import tech.lq0.dreamaticvoyage.init.ParticleRegistry;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
 @SuppressWarnings("SameParameterValue")
-public class Chocolusion extends Item {
+public class Chocolusion extends Item implements ICurioItem {
     private static final double RADIUS = 4;
 
     public Chocolusion() {
