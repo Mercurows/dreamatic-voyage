@@ -8,6 +8,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import tech.lq0.dreamaticvoyage.client.particle.TentacleParticle;
+import tech.lq0.dreamaticvoyage.client.particle.UmuLightParticle;
 import tech.lq0.dreamaticvoyage.client.render.*;
 import tech.lq0.dreamaticvoyage.client.render.curios.*;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
@@ -48,5 +49,6 @@ public class ClientRenderHandler {
     @SubscribeEvent
     public static void registerParticles(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(ParticleRegistry.TENTACLE.get(), TentacleParticle.Provider::new);
+        event.registerSpriteSet(ParticleRegistry.UMU_LIGHT.get(), UmuLightParticle.Provider::new);
     }
 }

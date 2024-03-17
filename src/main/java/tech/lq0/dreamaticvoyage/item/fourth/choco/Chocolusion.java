@@ -1,7 +1,6 @@
 package tech.lq0.dreamaticvoyage.item.fourth.choco;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
@@ -17,6 +16,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.init.ParticleRegistry;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
@@ -71,7 +71,7 @@ public class Chocolusion extends Item {
             });
 
             if (!pLevel.isClientSide && pRemainingUseDuration % 2 == 0) {
-                spawnCircleParticles(player, RADIUS, (int) RADIUS * 10);
+                spawnCircleParticles(player, RADIUS, (int) RADIUS * 15);
             }
         }
 
@@ -96,10 +96,17 @@ public class Chocolusion extends Item {
             player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 400, 2));
             player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 400, 2));
 
-            player.getCooldowns().addCooldown(this, 300);
+//            player.getCooldowns().addCooldown(this, 300);
         }
 
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);
+    }
+
+    @Override
+    public void onStopUsing(ItemStack stack, LivingEntity entity, int count) {
+        if (!entity.level().isClientSide && entity instanceof Player player) {
+            player.getCooldowns().addCooldown(stack.getItem(), (getUseDuration(stack) - count) * 10);
+        }
     }
 
     @SuppressWarnings("SameParameterValue")
@@ -113,7 +120,7 @@ public class Chocolusion extends Item {
             double offsetX = radius * Math.cos(angle);
             double offsetZ = radius * Math.sin(angle);
 
-            level.sendParticles(ParticleTypes.HAPPY_VILLAGER, playerPos.x + offsetX, playerPos.y + 0.1, playerPos.z + offsetZ,
+            level.sendParticles(ParticleRegistry.UMU_LIGHT.get(), playerPos.x + offsetX, playerPos.y + 0.1, playerPos.z + offsetZ,
                     1, 0, 0, 0, 0);
         }
     }

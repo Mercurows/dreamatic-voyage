@@ -11,4 +11,5 @@ public class ParticleRegistry {
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, Utils.MOD_ID);
 
     public static final RegistryObject<SimpleParticleType> TENTACLE = PARTICLE_TYPES.register("tentacle", () -> new SimpleParticleType(false));
+    public static final RegistryObject<SimpleParticleType> UMU_LIGHT = PARTICLE_TYPES.register("umu_light", () -> new SimpleParticleType(false));
 }
