@@ -79,33 +79,26 @@ public class Chocolusion extends Item {
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        if (!pLevel.isClientSide && pLivingEntity instanceof Player player) {
-            if (player.getHealth() <= player.getMaxHealth() * 0.5f) {
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 400, 3));
-            } else if (player.getHealth() >= player.getMaxHealth()) {
-                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 3));
-            } else {
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 400, 1));
-            }
-
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 400, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 400, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 400, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 400, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 400, 2));
-
-//            player.getCooldowns().addCooldown(this, 300);
-        }
-
-        return super.finishUsingItem(pStack, pLevel, pLivingEntity);
-    }
-
-    @Override
     public void onStopUsing(ItemStack stack, LivingEntity entity, int count) {
         if (!entity.level().isClientSide && entity instanceof Player player) {
             player.getCooldowns().addCooldown(stack.getItem(), (getUseDuration(stack) - count) * 10);
+
+            int effectDuration = (int) (((float) (getUseDuration(stack) - count) / (float) getUseDuration(stack)) * 400);
+
+            if (player.getHealth() <= player.getMaxHealth() * 0.5f) {
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, effectDuration, 3));
+            } else if (player.getHealth() >= player.getMaxHealth()) {
+                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, effectDuration, 3));
+            } else {
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, effectDuration, 1));
+            }
+
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, effectDuration, 2));
+            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, effectDuration, 2));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, effectDuration, 2));
+            player.addEffect(new MobEffectInstance(MobEffects.JUMP, effectDuration, 2));
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, effectDuration, 2));
+            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, effectDuration, 2));
         }
     }
 
