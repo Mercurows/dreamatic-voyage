@@ -23,6 +23,7 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
 
+@SuppressWarnings("SameParameterValue")
 public class Chocolusion extends Item {
     private static final double RADIUS = 4;
 
@@ -72,6 +73,7 @@ public class Chocolusion extends Item {
 
             if (!pLevel.isClientSide && pRemainingUseDuration % 2 == 0) {
                 spawnCircleParticles(player, RADIUS, (int) RADIUS * 15);
+                spawnVerticalParticles(player, RADIUS, 20);
             }
         }
 
@@ -102,7 +104,6 @@ public class Chocolusion extends Item {
         }
     }
 
-    @SuppressWarnings("SameParameterValue")
     private void spawnCircleParticles(Player player, double radius, int count) {
         ServerLevel level = (ServerLevel) player.level();
         Vec3 playerPos = player.position();
@@ -115,6 +116,21 @@ public class Chocolusion extends Item {
 
             level.sendParticles(ParticleRegistry.UMU_LIGHT.get(), playerPos.x + offsetX, playerPos.y + 0.1, playerPos.z + offsetZ,
                     1, 0, 0, 0, 0);
+        }
+    }
+
+    private void spawnVerticalParticles(Player player, double radius, int count) {
+        ServerLevel level = (ServerLevel) player.level();
+        Vec3 playerPos = player.position();
+
+        for (int i = 0; i < count; i++) {
+            double d0 = playerPos.x + (level.random.nextDouble() - 0.5D) * radius * 1.5;
+            double d1 = playerPos.y + level.random.nextDouble() * 2.0D;
+            double d2 = playerPos.z + (level.random.nextDouble() - 0.5D) * radius * 1.5;
+
+            double yOffset = 0.5D + level.random.nextDouble() * 1.2D;
+
+            level.sendParticles(ParticleRegistry.UMU_LIGHT.get(), d0, d1, d2, 1, 0.0D, yOffset, 0.0D, 0.0D);
         }
     }
 }
