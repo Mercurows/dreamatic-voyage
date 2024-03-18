@@ -14,7 +14,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -29,6 +28,7 @@ import tech.lq0.dreamaticvoyage.capability.escort.IEscortCapability;
 import tech.lq0.dreamaticvoyage.entity.projectile.BloodCrystalEntity;
 import tech.lq0.dreamaticvoyage.init.EffectRegistry;
 import tech.lq0.dreamaticvoyage.init.SoundRegistry;
+import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
@@ -40,7 +40,7 @@ public class WorldPeaceStaff extends SwordItem {
     private final Supplier<Double> energyCapacity;
 
     public WorldPeaceStaff() {
-        super(Tiers.NETHERITE, 18, -2.0f, new Properties().durability(11451).fireResistant()
+        super(ModItemTier.FICTIONAL_INGOT, 14, -2.0f, new Properties().durability(11451).fireResistant()
                 .rarity(RarityTool.LEGENDARY));
 
         this.energyCapacity = () -> 500.0;
@@ -57,7 +57,7 @@ public class WorldPeaceStaff extends SwordItem {
 
     @Override
     public int getEnchantmentValue() {
-        return 22;
+        return 24;
     }
 
     @Override

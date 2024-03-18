@@ -20,7 +20,9 @@ public enum ModItemTier implements Tier {
     PURIFIED_CRYSTAL(4, 2321, 9.0F, 4.0F, 16,
             () -> Ingredient.of(ItemRegistry.PURIFIED_CRYSTAL_INGOT.get())),
     CHARGED_CRYSTAL(5, 3410, 12.0F, 6.0F, 20,
-            () -> Ingredient.of(ItemRegistry.CHARGED_CRYSTAL_INGOT.get()));
+            () -> Ingredient.of(ItemRegistry.CHARGED_CRYSTAL_INGOT.get())),
+    FICTIONAL_INGOT(6, 5601, 14.0F, 8.0F, 24,
+            () -> Ingredient.of(ItemRegistry.FICTIONAL_INGOT.get()));
 
     private final int level;
     private final int uses;

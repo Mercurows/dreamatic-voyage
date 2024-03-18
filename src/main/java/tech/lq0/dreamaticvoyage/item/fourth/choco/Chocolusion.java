@@ -29,7 +29,7 @@ public class Chocolusion extends Item implements ICurioItem {
     private static final double RADIUS = 4;
 
     public Chocolusion() {
-        super(new Properties().stacksTo(1).rarity(RarityTool.LEGENDARY));
+        super(new Properties().stacksTo(1).rarity(RarityTool.LEGENDARY).fireResistant());
     }
 
     @Override
