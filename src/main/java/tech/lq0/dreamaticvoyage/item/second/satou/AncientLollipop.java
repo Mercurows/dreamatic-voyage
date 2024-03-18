@@ -33,6 +33,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.RarityTool;
@@ -47,7 +48,7 @@ public class AncientLollipop extends SwordItem {
     public static final String TAG_LOLLIPOP = "shouldExplode";
 
     public AncientLollipop() {
-        super(Tiers.NETHERITE, 1, -0.8f, new Properties().rarity(RarityTool.LEGENDARY).durability(642).fireResistant().setNoRepair());
+        super(ModItemTier.FICTIONAL_INGOT, -3, -0.8f, new Properties().rarity(RarityTool.LEGENDARY).durability(642).fireResistant().setNoRepair());
     }
 
     @Override
@@ -81,7 +82,7 @@ public class AncientLollipop extends SwordItem {
 
     @Override
     public int getEnchantmentValue() {
-        return 20;
+        return 24;
     }
 
     @Override

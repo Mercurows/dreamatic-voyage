@@ -8,8 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Qiankela;
-import tech.lq0.dreamaticvoyage.item.cnt.qianyun.Suitcase;
+import tech.lq0.dreamaticvoyage.item.cnt.qianyun.*;
 import tech.lq0.dreamaticvoyage.item.donate.*;
 import tech.lq0.dreamaticvoyage.item.first.mitsuki.MitsukiCrown;
 import tech.lq0.dreamaticvoyage.item.first.myanna.*;
@@ -69,8 +68,6 @@ import tech.lq0.dreamaticvoyage.item.magicros.chiram.*;
 import tech.lq0.dreamaticvoyage.item.magicros.ekira.*;
 import tech.lq0.dreamaticvoyage.item.magicros.haine.*;
 import tech.lq0.dreamaticvoyage.item.magicros.keroro.*;
-import tech.lq0.dreamaticvoyage.item.cnt.qianyun.MaidCostume;
-import tech.lq0.dreamaticvoyage.item.cnt.qianyun.QianyunHoe;
 import tech.lq0.dreamaticvoyage.item.second.lecia.*;
 import tech.lq0.dreamaticvoyage.item.second.louise.*;
 import tech.lq0.dreamaticvoyage.item.second.lucia.BigFierceOneCoffee;
@@ -335,6 +332,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> QIANYUN_HOE = ITEMS.register("qianyun_hoe", QianyunHoe::new);
     public static final RegistryObject<Item> SUITCASE = ITEMS.register("suitcase", Suitcase::new);
     public static final RegistryObject<Item> QIANKELA = ITEMS.register("qiankela", Qiankela::new);
+    public static final RegistryObject<Item> GREEN_FIELD_SONG = ITEMS.register("green_field_song", GreenFieldSong::new);
 
     /**
      * 4th
