@@ -30,7 +30,7 @@ public enum Livers {
     SORAYO("sorayo", "poi", "#FC96A1", true),
     MIYA("miya", "poi", "#F9F0D8", true),
     AOI("aoi", "poi", "#EEEEEE", true),
-    AYU("ayu", "poi", "#A9BBD9", true),
+    AYU("ayu", "poi", "#A9BBD9", false),
     YURI("yuri", "poi", "#F9C8DE", true),
     FUKAMI("fukami", "poi", "#E0D7F5", true),
     LUTAFIA("lutafia", "poi", "#6BD2B5", true),
