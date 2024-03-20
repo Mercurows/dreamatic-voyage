@@ -22,6 +22,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> UNI_MILLET_BLOCK = BLOCKS.register("uni_millet_block", UniMilletBlock::new);
     public static final RegistryObject<Block> JELLYFISH_BOTTLE = BLOCKS.register("jellyfish_bottle", JellyfishBottleBlock::new);
     public static final RegistryObject<Block> ROCK_STATUE = BLOCKS.register("rock_statue", RockStatueBlock::new);
+    public static final RegistryObject<Block> VERDANT_SPIRIT_RICH_SOIL = BLOCKS.register("verdant_spirit_rich_soil", VerdantSpiritRichSoilBlock::new);
     public static final RegistryObject<Block> VERDANT_SPIRIT_FARMLAND = BLOCKS.register("verdant_spirit_farmland", VerdantSpiritFarmlandBlock::new);
 
     //Blue Sand Series
