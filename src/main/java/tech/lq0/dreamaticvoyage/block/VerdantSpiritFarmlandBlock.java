@@ -72,7 +72,7 @@ public class VerdantSpiritFarmlandBlock extends FarmBlock {
                 return;
             }
 
-            if (aboveBlock instanceof BonemealableBlock growable && random.nextDouble() < .1D) {
+            if (aboveBlock instanceof BonemealableBlock growable) {
                 if (growable.isValidBonemealTarget(level, pos.above(), aboveState, false) && ForgeHooks.onCropsGrowPre(level, pos.above(), aboveState, true)) {
                     growable.performBonemeal(level, level.random, pos.above(), aboveState);
                     if (!level.isClientSide) {
