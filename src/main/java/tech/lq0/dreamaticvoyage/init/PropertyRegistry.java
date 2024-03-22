@@ -49,5 +49,7 @@ public class PropertyRegistry {
         );
         event.enqueueWork(() -> ItemProperties.register(ItemRegistry.RED_COW_HORN.get(), new ResourceLocation("tooting"),
                 (heldStack, world, livingEntity, seed) -> livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == heldStack ? 1.0F : 0.0F));
+        event.enqueueWork(() -> ItemProperties.register(ItemRegistry.OMINOUS_SICKLE.get(), new ResourceLocation("invoke"),
+                (heldStack, world, livingEntity, seed) -> ItemNBTTool.getBoolean(heldStack, "Invoke", false) ? 1.0F : 0.0F));
     }
 }

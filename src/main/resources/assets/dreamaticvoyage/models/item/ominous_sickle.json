@@ -5,6 +5,14 @@
 		"0": "dreamaticvoyage:item/ominous_sickle",
 		"particle": "dreamaticvoyage:item/ominous_sickle"
 	},
+	"overrides": [
+		{
+			"predicate": {
+				"invoke": 1
+			},
+			"model": "dreamaticvoyage:item/ominous_sickle_alter"
+		}
+	],
 	"elements": [
 		{
 			"from": [7.5, -7.85, 7.1],
