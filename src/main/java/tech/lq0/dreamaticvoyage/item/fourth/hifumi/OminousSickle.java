@@ -65,9 +65,9 @@ public class OminousSickle extends SwordItem {
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
                 isInvoke(stack) ? attackDamage * 3 + 2 : attackDamage, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier",
-                isInvoke(stack) ? -3 : attackSpeed, AttributeModifier.Operation.ADDITION));
+                isInvoke(stack) ? -3.2 : attackSpeed, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(new UUID(ItemRegistry.OMINOUS_SICKLE.hashCode(), 0), Utils.MOD_ATTRIBUTE_MODIFIER,
-                isInvoke(stack) ? 0.4 : 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
+                isInvoke(stack) ? -0.2 : 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
         return builder.build();
     }
 
@@ -99,10 +99,10 @@ public class OminousSickle extends SwordItem {
                 pAttacker.heal(healAmount);
             }
         } else {
-            if (pAttacker.getHealth() > pAttacker.getMaxHealth() * .2f) {
-                float damage = pAttacker.getHealth() - pAttacker.getMaxHealth() * .2f;
+            if (pAttacker.getHealth() > pAttacker.getMaxHealth() * .1f) {
+                float damage = pAttacker.getHealth() - pAttacker.getMaxHealth() * .1f;
                 pAttacker.hurt(pAttacker.level().damageSources().cactus(),
-                        Math.min(damage, pAttacker.getMaxHealth() * .2f));
+                        Math.min(damage, pAttacker.getMaxHealth() * .25f));
             }
         }
 
@@ -158,7 +158,7 @@ public class OminousSickle extends SwordItem {
 
     @Override
     public int getEnchantmentValue(ItemStack stack) {
-        return 20;
+        return 24;
     }
 
     @Override
