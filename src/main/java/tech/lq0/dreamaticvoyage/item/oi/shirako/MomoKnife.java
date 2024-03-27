@@ -82,7 +82,7 @@ public class MomoKnife extends SwordItem {
             lvl = target.getEffect(EffectRegistry.BLEEDING.get()).getAmplifier();
         }
 
-        target.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 120, lvl > 2 ? 3 : lvl + 1));
+        target.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 120, lvl > 2 ? 3 : lvl + 1), attacker);
 
         return super.hurtEnemy(stack, target, attacker);
     }

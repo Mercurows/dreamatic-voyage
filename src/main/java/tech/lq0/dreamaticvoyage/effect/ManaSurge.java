@@ -26,16 +26,18 @@ public class ManaSurge extends MobEffect {
                 }
 
                 if (instance.getEffect().getCategory() != MobEffectCategory.BENEFICIAL) {
-                    if (living.equals(source)) {
-                        return;
-                    } else {
+                    if (!living.equals(source)) {
                         living.removeEffect(instance.getEffect());
                         living.addEffect(new MobEffectInstance(
                                 instance.getEffect(), instance.getDuration(), instance.getAmplifier() + 1,
                                 instance.isAmbient(), instance.isVisible(), instance.showIcon()), null);
                     }
+                } else {
+                    living.removeEffect(instance.getEffect());
+                    living.addEffect(new MobEffectInstance(
+                            instance.getEffect(), instance.getDuration(), instance.getAmplifier() + 1,
+                            instance.isAmbient(), instance.isVisible(), instance.showIcon()), null);
                 }
-
             }
         }
     }

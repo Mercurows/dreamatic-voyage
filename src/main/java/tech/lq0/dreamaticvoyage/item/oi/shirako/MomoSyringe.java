@@ -39,9 +39,9 @@ public class MomoSyringe extends Item {
         } else {
             if (random <= .1) {
                 target.setSecondsOnFire(8);
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 160, 2));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 160, 2), pPlayer);
             } else {
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 160, 1));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 160, 1), pPlayer);
                 target.heal(target.getMaxHealth() * 0.25f);
             }
 
@@ -79,9 +79,9 @@ public class MomoSyringe extends Item {
             double random = Math.random();
             if (random <= .1) {
                 player.setSecondsOnFire(8);
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 160, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 160, 2), player);
             } else {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 160, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 160, 1), player);
                 player.heal(player.getMaxHealth() * 0.25f);
             }
 

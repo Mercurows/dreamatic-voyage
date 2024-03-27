@@ -48,7 +48,7 @@ public class ChocolateBoots extends Item {
             int chaos = ChaosHelper.getChaos(player);
 
             if (chaos < 0) {
-                player.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 100, 0));
+                player.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 100, 0), player);
             }
 
             ChaosHelper.addChaos(player, 200);

@@ -92,37 +92,37 @@ public class EchoedDestinyRing extends Item {
         if (!level.isClientSide) {
             if (player.isInWater() || level.isRaining()) {
                 ItemNBTTool.setBoolean(stack, TAG_ECHO, true);
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 2, true, false));
-                player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, true, false));
-                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, true, false));
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 2, true, false));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 2, false, false), player);
+                player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, false, false));
+                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, false, false), player);
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 2, false, false), player);
 
                 if (player.isSwimming()) {
-                    player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0, true, false));
+                    player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0, false, false));
                 }
                 for (LivingEntity livingentity : player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(30.0D, 30.0D, 30.0D))) {
                     if (livingentity instanceof Player playerEntity && livingentity != player && livingentity.isAlliedTo(player)) {
-                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 1, true, false));
-                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, true, false));
-                        playerEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, true, false));
-                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0, true, false));
-                        playerEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, true, false));
-                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, true, false));
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 1, false, false), player);
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, false, false), player);
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, false, false));
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0, false, false));
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false), player);
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, false, false), player);
 
                         if (player.tickCount % 300 == 0) {
-                            playerEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1, true, false));
+                            playerEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1, false, false), player);
                         }
                     }
                 }
             } else {
                 ItemNBTTool.setBoolean(stack, TAG_ECHO, false);
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, true, false));
-                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, true, false));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, false, false), player);
+                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, false, false), player);
 
                 for (LivingEntity livingentity : player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(10.0D, 10.0D, 10.0D))) {
                     if (livingentity instanceof Player playerEntity && livingentity != player) {
-                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0, true, false));
-                        playerEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, true, false));
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0, false, false), player);
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, false, false));
                     }
                 }
             }
@@ -134,7 +134,7 @@ public class EchoedDestinyRing extends Item {
 
             //give saturation effect when player is dying
             if (player.getHealth() <= 5.0f && !player.getCooldowns().isOnCooldown(stack.getItem())) {
-                player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 100, 0, true, false));
+                player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 100, 0, false, false));
                 player.getCooldowns().addCooldown(stack.getItem(), 2400);
             }
         }

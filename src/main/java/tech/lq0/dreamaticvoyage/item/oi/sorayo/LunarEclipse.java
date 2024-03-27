@@ -68,10 +68,10 @@ public class LunarEclipse extends SwordItem {
 
             if (!pTarget.isAlive()) {
                 if (!player.hasEffect(EffectRegistry.ECLIPSE_NIGHT.get())) {
-                    player.addEffect(new MobEffectInstance(EffectRegistry.ECLIPSE_NIGHT.get(), 200, 0));
+                    player.addEffect(new MobEffectInstance(EffectRegistry.ECLIPSE_NIGHT.get(), 200, 0), player);
                 } else {
                     int level = Objects.requireNonNull(player.getEffect(EffectRegistry.ECLIPSE_NIGHT.get())).getAmplifier();
-                    player.addEffect(new MobEffectInstance(EffectRegistry.ECLIPSE_NIGHT.get(), 200, Math.min(level + 1, 4)));
+                    player.addEffect(new MobEffectInstance(EffectRegistry.ECLIPSE_NIGHT.get(), 200, Math.min(level + 1, 4)), player);
                 }
             }
         }

@@ -85,8 +85,8 @@ public class WorldPeaceStaff extends SwordItem {
         LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
         escortCapabilityLazyOptional.ifPresent(s -> s.addValue(random));
 
-        target.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 200, 5));
-        target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 2));
+        target.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 200, 5), attacker);
+        target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 2), attacker);
         return true;
     }
 

@@ -50,26 +50,26 @@ public class TailPen extends SwordItem {
         if (pAttacker instanceof Player player) {
             int random = (int) (Math.random() * 99 + 1);
             if (random > 90) {
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 2), player);
             } else if (random > 80) {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 2), player);
             } else if (random > 70) {
-                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 100, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 100, 2), player);
             } else if (random > 60) {
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 3));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 3), player);
             } else if (random > 50) {
-                target.addEffect(new MobEffectInstance(MobEffects.WITHER, 300, 3));
+                target.addEffect(new MobEffectInstance(MobEffects.WITHER, 300, 3), player);
             } else if (random > 40) {
-                target.addEffect(new MobEffectInstance(MobEffects.POISON, 300, 3));
+                target.addEffect(new MobEffectInstance(MobEffects.POISON, 300, 3), player);
             } else if (random > 30) {
-                target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 3));
+                target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 3), player);
             } else if (random > 20) {
                 target.addEffect(target.getMobType() == MobType.UNDEAD ? new MobEffectInstance(MobEffects.HEAL, 10, 3)
-                        : new MobEffectInstance(MobEffects.HARM, 10, 3));
+                        : new MobEffectInstance(MobEffects.HARM, 10, 3), player);
             } else if (random > 10) {
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 2), player);
             } else {
-                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 2), player);
             }
         }
         return super.hurtEnemy(pStack, target, pAttacker);

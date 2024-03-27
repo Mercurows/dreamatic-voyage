@@ -63,7 +63,7 @@ public class OceanDestiny extends Item implements ICurioItem {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         LivingEntity entity = slotContext.entity();
-        entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 40, 0, false, false));
+        entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 40, 0, false, false), entity);
 
         ICurioItem.super.curioTick(slotContext, stack);
     }

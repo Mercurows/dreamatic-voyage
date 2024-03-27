@@ -42,16 +42,16 @@ public class ClarityAmulet extends Item implements ICurioItem {
                 int chaos = ChaosHelper.getChaos(player);
 
                 if (chaos <= -70) {
-                    player.addEffect(new MobEffectInstance(MobEffects.LUCK, 100, 0, false, false));
-                    player.addEffect(new MobEffectInstance(EffectRegistry.HOLINESS.get(), 100, 2, false, false));
-                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 0, false, false));
+                    player.addEffect(new MobEffectInstance(MobEffects.LUCK, 100, 0, false, false), player);
+                    player.addEffect(new MobEffectInstance(EffectRegistry.HOLINESS.get(), 100, 2, false, false), player);
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 0, false, false), player);
                 } else if (chaos <= -30) {
-                    player.addEffect(new MobEffectInstance(MobEffects.LUCK, 100, 0, false, false));
-                    player.addEffect(new MobEffectInstance(EffectRegistry.HOLINESS.get(), 100, 1, false, false));
+                    player.addEffect(new MobEffectInstance(MobEffects.LUCK, 100, 0, false, false), player);
+                    player.addEffect(new MobEffectInstance(EffectRegistry.HOLINESS.get(), 100, 1, false, false), player);
                 } else if (chaos < 0) {
-                    player.addEffect(new MobEffectInstance(EffectRegistry.HOLINESS.get(), 100, 0, false, false));
+                    player.addEffect(new MobEffectInstance(EffectRegistry.HOLINESS.get(), 100, 0, false, false), player);
                 } else if (chaos >= 80) {
-                    player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 100, 0, false, false));
+                    player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 100, 0, false, false), player);
                     player.addEffect(new MobEffectInstance(MobEffects.UNLUCK, 100, 0, false, false));
                     player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 300, 0, false, false));
                 }

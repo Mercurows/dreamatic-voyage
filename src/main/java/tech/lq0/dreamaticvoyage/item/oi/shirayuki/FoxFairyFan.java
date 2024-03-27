@@ -36,7 +36,7 @@ public class FoxFairyFan extends Item {
                 float distance = e.distanceTo(playerIn);
                 float strength = distance <= 2 ? 6 : (float) Math.sqrt(Mth.lerp((distance - 2) / 6, 6, 0));
                 e.knockback(strength, playerIn.getX() - e.getX(), playerIn.getZ() - e.getZ());
-                e.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 100, 0));
+                e.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 100, 0), playerIn);
             }
         });
 

@@ -22,10 +22,6 @@ public class DaifukuSyrupEntity extends ThrowableItemProjectile {
         super(EntityRegistry.DAIFUKU_SYRUP_ENTITY.get(), entity, world);
     }
 
-    public DaifukuSyrupEntity(Level p_i1775_1_, double p_i1775_2_, double p_i1775_4_, double p_i1775_6_) {
-        super(EntityRegistry.DAIFUKU_SYRUP_ENTITY.get(), p_i1775_2_, p_i1775_4_, p_i1775_6_, p_i1775_1_);
-    }
-
     @Override
     protected void onHitEntity(EntityHitResult pResult) {
         Entity entity = pResult.getEntity();
@@ -36,7 +32,11 @@ public class DaifukuSyrupEntity extends ThrowableItemProjectile {
             if (random == 1) {
                 entity.setSecondsOnFire(10);
             } else {
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 9));
+                if (this.getOwner() != null) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 9), this.getOwner());
+                } else {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 9));
+                }
             }
         }
 
