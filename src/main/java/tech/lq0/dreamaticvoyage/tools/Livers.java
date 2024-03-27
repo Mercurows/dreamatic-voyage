@@ -20,9 +20,8 @@ public enum Livers {
     KERORO("keroro", "magicros", "#F5FFEA", true),
     EKIRA("ekira", "magicros", "#FFF7EA", true),
     HIRU("hiru", "third", "#68B9F6", true),
-    BENI("beni", "third", "#E26C64", false),
     YUKI("yuki", "third", "#B4CEE3", false),
-    LECIEL("leciel", "third", "#FCBBB1", true),
+    LECIEL("leciel", "third", "#FCBBB1", false),
     CHOCO("choco", "fourth", "#A98880", true),
     HIFUMI("hifumi", "fourth", "#6B5B95", false),
     SANA("sana", "fourth", "#ABCDEF", true),
@@ -39,8 +38,7 @@ public enum Livers {
     RINO("rino", "poi", "#CBE0DF", false),
     CCELIA("ccelia", "poi", "#CAD855", false),
     QIANYUN("qianyun", "connections", "#A33432", true),
-    MARIA("maria", "first", "#AF4657", false),
-    MOJUKO("mojuko", "second", "#FFF6F9", false);
+    MARIA("maria", "first", "#AF4657", false);
 
     private final String name;
     private final String gen;
