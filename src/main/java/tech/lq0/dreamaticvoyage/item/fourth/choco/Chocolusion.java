@@ -16,6 +16,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.init.EffectRegistry;
 import tech.lq0.dreamaticvoyage.init.ParticleRegistry;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.RarityTool;
@@ -101,6 +102,9 @@ public class Chocolusion extends Item {
             player.addEffect(new MobEffectInstance(MobEffects.JUMP, effectDuration, 2), player);
             player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, effectDuration, 2), player);
             player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, effectDuration, 2), player);
+
+            int level = (float) (getUseDuration(stack) - count) / (float) getUseDuration(stack) > 0.5f ? 1 : 0;
+            player.addEffect(new MobEffectInstance(EffectRegistry.SWEET_MIRAGE.get(), effectDuration / 2, level), player);
         }
     }
 
