@@ -101,7 +101,7 @@ public class BlackEarphones extends ArmorItem {
                     for (int q = -5; q <= 5; q++) {
                         if (world.getBlockState(basePos.offset(i, j, q)).is(Blocks.JUKEBOX) || world.getBlockState(basePos.offset(i, j, q)).is(Blocks.NOTE_BLOCK)) {
                             player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 40, 0, true, false));
-                            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 40, 1, true, false));
+                            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 40, 1, true, false), player);
                         }
                     }
                 }

@@ -121,8 +121,8 @@ public class OrangeTracker extends ArmorItem {
             }
         }
 
-        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1, false, false));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 1, false, false));
+        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1, false, false), player);
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 1, false, false), player);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class EmergencyEnginePower extends Item {
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
         if (!pLevel.isClientSide) {
-            pPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 80, 6));
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 80, 6), pPlayer);
             pPlayer.setSecondsOnFire(6);
             pPlayer.getCooldowns().addCooldown(this, 110);
             stack.hurtAndBreak(1, pPlayer, (player) -> player.broadcastBreakEvent(pUsedHand));
