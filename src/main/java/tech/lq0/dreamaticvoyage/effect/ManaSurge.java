@@ -1,9 +1,12 @@
 package tech.lq0.dreamaticvoyage.effect;
 
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -39,6 +42,14 @@ public class ManaSurge extends MobEffect {
                             instance.isAmbient(), instance.isVisible(), instance.showIcon()), null);
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onLivingHurt(LivingHurtEvent event) {
+        DamageSource source = event.getSource();
+        if (source.is(DamageTypes.MAGIC) && event.getEntity().hasEffect(EffectRegistry.MANA_SURGE.get())) {
+            event.setAmount(event.getAmount() / 2.0f);
         }
     }
 }
