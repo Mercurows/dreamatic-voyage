@@ -82,7 +82,7 @@ public class RockStatue extends BlockItem implements ICurioItem {
         LivingEntity livingEntity = event.getEntity();
         if (event.getEffectInstance().getEffect() == MobEffects.CONFUSION) {
             CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(ItemRegistry.ROCK_STATUE.get())
-                    .ifPresent(s -> livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 3))));
+                    .ifPresent(s -> livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 3), livingEntity)));
         }
     }
 }

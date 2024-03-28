@@ -79,8 +79,8 @@ public class RedNose extends Item implements ICurioItem {
                                     if (!player.level().isClientSide) {
                                         player.playNotifySound(SoundRegistry.KERORO_SNEEZE.get(), SoundSource.PLAYERS, 0.5f, 1.0f);
                                     }
-                                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60, 3));
-                                    player.addEffect(new MobEffectInstance(MobEffects.JUMP, 60, 3));
+                                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60, 3), player);
+                                    player.addEffect(new MobEffectInstance(MobEffects.JUMP, 60, 3), player);
                                     player.getCooldowns().addCooldown(ItemRegistry.RED_NOSE.get(), 100);
                                 }
                             }

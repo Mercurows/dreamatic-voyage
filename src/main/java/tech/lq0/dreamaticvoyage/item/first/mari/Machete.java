@@ -24,8 +24,8 @@ public class Machete extends SwordItem {
 
     @Override
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        pTarget.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 4));
-        pTarget.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 200, 1));
+        pTarget.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 4), pAttacker);
+        pTarget.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 200, 1), pAttacker);
         pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60, 0));
 
         return super.hurtEnemy(pStack, pTarget, pAttacker);

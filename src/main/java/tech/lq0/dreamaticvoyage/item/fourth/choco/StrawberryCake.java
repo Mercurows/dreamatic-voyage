@@ -29,10 +29,10 @@ public class StrawberryCake extends Item {
         if (!pLevel.isClientSide && pLivingEntity instanceof Player player) {
             double random = Math.random();
             if (random > .2) {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 1), player);
             } else {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 0));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1), player);
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 0), player);
             }
         }
 

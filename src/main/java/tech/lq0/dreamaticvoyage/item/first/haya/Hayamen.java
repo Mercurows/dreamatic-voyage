@@ -40,9 +40,9 @@ public class Hayamen extends ShieldItem {
         pPlayer.startUsingItem(pHand);
 
         if (pPlayer.isSteppingCarefully()) {
-            pPlayer.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 400, 4));
-            pPlayer.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 4));
-            pPlayer.addEffect(new MobEffectInstance(MobEffects.SATURATION, 400, 1));
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 400, 4), pPlayer);
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 4), pPlayer);
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.SATURATION, 400, 0));
 
             itemstack.hurtAndBreak(80, pPlayer, (playerEntity) -> playerEntity.broadcastBreakEvent(pHand));
             pPlayer.getCooldowns().addCooldown(itemstack.getItem(), 200);

@@ -116,7 +116,7 @@ public class MistyChestplate extends ArmorItem {
 
             //空中抗性
             if (!player.onGround()) {
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, hasArmorSet(stack) ? 1 : 0, false, false));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, hasArmorSet(stack) ? 1 : 0, false, false), player);
             }
         }
     }

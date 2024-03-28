@@ -31,17 +31,17 @@ public class NetherLight extends SwordItem {
 
     @Override
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        pTarget.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 80, 1));
-        pTarget.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 80, 0));
+        pTarget.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 80, 1), pAttacker);
+        pTarget.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 80, 0), pAttacker);
         pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 80, 0));
 
-        pAttacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 0));
+        pAttacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 0), pAttacker);
         pAttacker.addEffect(new MobEffectInstance(MobEffects.GLOWING, 40, 0));
 
         double random = Math.random();
         if (random < 0.123) {
-            pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 0));
-            pAttacker.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0));
+            pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 0), pAttacker);
+            pAttacker.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0), pAttacker);
         }
 
         return super.hurtEnemy(pStack, pTarget, pAttacker);

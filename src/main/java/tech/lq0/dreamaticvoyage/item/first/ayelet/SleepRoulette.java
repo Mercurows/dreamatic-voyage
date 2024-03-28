@@ -28,14 +28,14 @@ public class SleepRoulette extends Item {
         if (!pLevel.isClientSide && !pLevel.isDay()) {
             int random = (int) (Math.random() * 10) + 1;
             if (random > 6) {
-                playerIn.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 2));
-                playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 2));
-                playerIn.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 2));
+                playerIn.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 2), playerIn);
+                playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 2), playerIn);
+                playerIn.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 2), playerIn);
                 playerIn.displayClientMessage(Component.translatable("des.dreamaticvoyage.sleep_roulette.awake").withStyle(ChatFormatting.GOLD), true);
             } else {
-                playerIn.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1200, 0));
-                playerIn.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1200, 0));
-                playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1200, 0));
+                playerIn.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1200, 0), playerIn);
+                playerIn.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1200, 0), playerIn);
+                playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1200, 0), playerIn);
                 playerIn.displayClientMessage(Component.translatable("des.dreamaticvoyage.sleep_roulette.asleep").withStyle(ChatFormatting.GRAY), true);
             }
             playerIn.getCooldowns().addCooldown(itemStack.getItem(), 1800);

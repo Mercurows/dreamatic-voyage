@@ -78,9 +78,9 @@ public class FrogCrown extends ArmorItem {
         if (level.isRaining()) {
             ItemNBTTool.setBoolean(stack, TAG_RAIN, true);
             if (player.tickCount % 300 == 0) {
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0, false, false));
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0, false, false), player);
             }
-            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 300, 0, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 300, 0, false, false), player);
         } else {
             ItemNBTTool.setBoolean(stack, TAG_RAIN, false);
         }

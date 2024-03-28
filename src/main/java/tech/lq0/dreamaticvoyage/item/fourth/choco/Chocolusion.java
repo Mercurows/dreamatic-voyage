@@ -88,19 +88,19 @@ public class Chocolusion extends Item {
             int effectDuration = (int) (((float) (getUseDuration(stack) - count) / (float) getUseDuration(stack)) * 400);
 
             if (player.getHealth() <= player.getMaxHealth() * 0.5f) {
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, effectDuration, 3));
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, effectDuration, 3), player);
             } else if (player.getHealth() >= player.getMaxHealth()) {
-                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, effectDuration, 3));
+                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, effectDuration, 3), player);
             } else {
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, effectDuration, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, effectDuration, 1), player);
             }
 
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, effectDuration, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, effectDuration, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, effectDuration, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.JUMP, effectDuration, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, effectDuration, 2));
-            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, effectDuration, 2));
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, effectDuration, 2), player);
+            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, effectDuration, 2), player);
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, effectDuration, 2), player);
+            player.addEffect(new MobEffectInstance(MobEffects.JUMP, effectDuration, 2), player);
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, effectDuration, 2), player);
+            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, effectDuration, 2), player);
         }
     }
 

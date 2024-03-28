@@ -37,8 +37,8 @@ public class CloudKey extends Item implements ICurioItem {
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         LivingEntity entity = slotContext.entity();
 
-        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 30, 1, false, false));
-        entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 30, 0, false, false));
+        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 30, 1, false, false), entity);
+        entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 30, 0, false, false), entity);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class CloudKey extends Item implements ICurioItem {
                     }
 
                     event.setAmount(player.getHealth() > 2.0f ? player.getHealth() - 2.0f : 0.0f);
-                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 3));
+                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 3), player);
                     slotResult.stack().hurtAndBreak(1, player, (playerEntity) -> playerEntity.broadcastBreakEvent(EquipmentSlot.CHEST));
                     player.getCooldowns().addCooldown(ItemRegistry.CLOUD_KEY.get(), 100);
                 }

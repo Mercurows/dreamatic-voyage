@@ -93,7 +93,7 @@ public class Ume extends Item {
         double random = Math.random();
 
         if (random < .4) {
-            pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 0));
+            pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 0), pAttacker);
         }
 
         return true;

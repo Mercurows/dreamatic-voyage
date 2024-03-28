@@ -68,7 +68,7 @@ public class ChiramLantern extends Item {
 
                     escortCapabilityLazyOptional.ifPresent(s -> {
                         if (s.getEscortValue() < 200) {
-                            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 0, false, false));
+                            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 0, false, false), player);
                             player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 0, false, false));
                             if (player.tickCount % 20 == 0 && !player.isCreative() && !player.isSpectator()) {
                                 s.addValue(1);

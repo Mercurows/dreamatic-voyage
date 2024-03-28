@@ -84,10 +84,10 @@ public class MitsukiCrown extends ArmorItem {
             ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
             if (!helmet.isEmpty() && helmet.getItem().equals(ItemRegistry.MITSUKI_CROWN.get())
                     && !player.getCooldowns().isOnCooldown(ItemRegistry.MITSUKI_CROWN.get())) {
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1), player);
 
                 if (target instanceof LivingEntity entityT) {
-                    entityT.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 0));
+                    entityT.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 0), player);
                 }
 
                 player.getCooldowns().addCooldown(helmet.getItem(), 100);

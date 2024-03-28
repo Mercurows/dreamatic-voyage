@@ -99,8 +99,8 @@ public class ShuraChin extends Item {
     public void inventoryTick(ItemStack stack, Level worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         if (!worldIn.isClientSide && entityIn instanceof Player player) {
             if (player.getOffhandItem().getItem() == ItemRegistry.UME.get() && player.getMainHandItem().getItem() == ItemRegistry.SHURA_CHIN.get()) {
-                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 20, 1, false, false, false));
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 1, false, false, false));
+                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 20, 1, false, false, false), player);
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 1, false, false, false), player);
             }
         }
     }

@@ -51,7 +51,7 @@ public class KurumiHalo extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level level, Player player) {
         if (!level.isClientSide) {
-            player.addEffect(new MobEffectInstance(EffectRegistry.HOLINESS.get(), 300, 0, false, false));
+            player.addEffect(new MobEffectInstance(EffectRegistry.HOLINESS.get(), 300, 0, false, false), player);
         }
     }
 

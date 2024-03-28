@@ -172,7 +172,7 @@ public class BreezeCrown extends ArmorItem {
                     int time = ArmorTool.hasArmorSet(player) ? 50 : 35;
 
                     if (!livingEntity.level().isClientSide) {
-                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 30, level, false, false));
+                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 30, level, false, false), player);
 
                         ((ServerLevel) player.level()).sendParticles(ParticleTypes.CHERRY_LEAVES,
                                 player.getX(), player.getY(), player.getZ(), time, level / 2.0, level / 2.0, level / 2.0, 0.15);

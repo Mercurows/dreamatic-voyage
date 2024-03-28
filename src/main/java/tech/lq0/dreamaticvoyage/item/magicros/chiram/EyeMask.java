@@ -115,9 +115,9 @@ public class EyeMask extends Item {
             player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 0, false, false));
 
             if (player.isSleeping()) {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1));
-                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1));
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), player);
+                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), player);
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), player);
             }
         }
     }

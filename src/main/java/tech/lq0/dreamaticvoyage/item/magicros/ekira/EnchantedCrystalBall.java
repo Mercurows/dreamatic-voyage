@@ -13,8 +13,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
@@ -41,7 +39,6 @@ public class EnchantedCrystalBall extends Item {
         return super.use(pLevel, pPlayer, pUsedHand);
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.crystal_ball.func").withStyle(ChatFormatting.AQUA));
@@ -55,14 +52,14 @@ public class EnchantedCrystalBall extends Item {
     public void inventoryTick(ItemStack stack, Level worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         if (!worldIn.isClientSide && entityIn instanceof Player playerIn) {
             if (worldIn.isThundering()) {
-                playerIn.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 2, false, false));
-                playerIn.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, false, false));
-                playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false));
+                playerIn.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 2, false, false), playerIn);
+                playerIn.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, false, false), playerIn);
+                playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false), playerIn);
             } else if (worldIn.isRaining()) {
-                playerIn.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, false, false));
-                playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false));
+                playerIn.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, false, false), playerIn);
+                playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false), playerIn);
             } else {
-                playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false));
+                playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false), playerIn);
             }
         }
     }

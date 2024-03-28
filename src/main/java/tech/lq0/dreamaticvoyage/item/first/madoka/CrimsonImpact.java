@@ -36,7 +36,7 @@ public class CrimsonImpact extends SwordItem {
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
         double random = Math.random();
         if (random > .7f) {
-            pTarget.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 200, 1));
+            pTarget.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 200, 1), pAttacker);
         }
 
         if (pAttacker instanceof Player player) {

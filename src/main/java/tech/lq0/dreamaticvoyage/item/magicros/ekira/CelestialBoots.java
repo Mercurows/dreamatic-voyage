@@ -194,7 +194,7 @@ public class CelestialBoots extends ArmorItem {
                     if (entity instanceof LivingEntity target) {
 
                         if (target != player) {
-                            target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 50, times - 1));
+                            target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 50, times - 1), player);
                             target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 50, 0));
 
                             if (times == 4) {
@@ -203,7 +203,7 @@ public class CelestialBoots extends ArmorItem {
                         }
                     }
 
-                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 50 + Math.min(3, times) * 50, times == 4 ? 1 : 0));
+                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 50 + Math.min(3, times) * 50, times == 4 ? 1 : 0), player);
 
                     player.getCooldowns().addCooldown(itemStack.getItem(), 120);
                 }

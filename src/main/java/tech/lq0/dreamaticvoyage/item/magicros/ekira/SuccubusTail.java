@@ -36,7 +36,6 @@ public class SuccubusTail extends ArmorItem {
         super(ArmorMaterials.CHAIN, Type.LEGGINGS, new Properties().rarity(Rarity.RARE).durability(530));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.succubus_tail_1").withStyle(ChatFormatting.GRAY));
