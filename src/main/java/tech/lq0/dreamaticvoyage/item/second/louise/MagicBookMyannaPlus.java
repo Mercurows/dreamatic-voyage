@@ -40,13 +40,13 @@ public class MagicBookMyannaPlus extends Item {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
 
         if (!pLevel.isClientSide) {
-            pPlayer.addEffect(new MobEffectInstance(EffectRegistry.BLESS_OF_DARK_ELF.get(), 600, 4));
-            pPlayer.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 2));
-            pPlayer.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 2));
+            pPlayer.addEffect(new MobEffectInstance(EffectRegistry.BLESS_OF_DARK_ELF.get(), 600, 4), pPlayer);
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 2), pPlayer);
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 2), pPlayer);
 
             int random = (int) (Math.random() * 10 + 1);
             if (random <= 3) {
-                pPlayer.addEffect(new MobEffectInstance(EffectRegistry.CURSE_OF_SERPENT.get(), 600, 2));
+                pPlayer.addEffect(new MobEffectInstance(EffectRegistry.CURSE_OF_SERPENT.get(), 600, 2), pPlayer);
                 pPlayer.displayClientMessage(Component.translatable("des.dreamaticvoyage.magic_book_myanna_plus.be_cursed").withStyle(ChatFormatting.RED), true);
             }
         }

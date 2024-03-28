@@ -31,10 +31,6 @@ public class WhiteAhogeEntity extends ThrowableItemProjectile {
         super(EntityRegistry.WHITE_AHOGE_ENTITY.get(), entity, world);
     }
 
-    public WhiteAhogeEntity(Level p_i1775_1_, double p_i1775_2_, double p_i1775_4_, double p_i1775_6_) {
-        super(EntityRegistry.WHITE_AHOGE_ENTITY.get(), p_i1775_2_, p_i1775_4_, p_i1775_6_, p_i1775_1_);
-    }
-
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
@@ -65,7 +61,7 @@ public class WhiteAhogeEntity extends ThrowableItemProjectile {
         Entity entity = pResult.getEntity();
         if (entity instanceof LivingEntity livingEntity) {
             livingEntity.hurt(this.damageSources().explosion(this, this.getOwner() instanceof LivingEntity living ? living : null), 8.0f);
-            livingEntity.addEffect(new MobEffectInstance(EffectRegistry.CURSE_OF_SERPENT.get(), 100, 0));
+            livingEntity.addEffect(new MobEffectInstance(EffectRegistry.CURSE_OF_SERPENT.get(), 100, 0), this.getOwner());
         }
 
         if (!this.level().isClientSide) {

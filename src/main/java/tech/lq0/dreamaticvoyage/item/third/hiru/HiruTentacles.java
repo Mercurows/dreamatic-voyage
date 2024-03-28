@@ -125,7 +125,7 @@ public class HiruTentacles extends ArmorItem {
         int j = (int) (Math.random() * 4);
 
         mobEntity.hurt(mobEntity.level().damageSources().thorns(player), 4);
-        mobEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 4));
+        mobEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 4), player);
 
         if (player.level() instanceof ServerLevel serverLevel) {
             for (int i = 0; i < 20; i++) {

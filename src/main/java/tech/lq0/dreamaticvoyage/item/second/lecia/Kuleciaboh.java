@@ -37,7 +37,7 @@ public class Kuleciaboh extends Item implements ICurioItem {
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         LivingEntity living = slotContext.entity();
         if (!living.level().isClientSide && living.tickCount % 600 == 0) {
-            living.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 300, 1, false, false));
+            living.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 300, 1, false, false), living);
         }
 
         ICurioItem.super.curioTick(slotContext, stack);

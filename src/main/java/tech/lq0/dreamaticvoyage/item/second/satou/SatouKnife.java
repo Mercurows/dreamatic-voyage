@@ -35,9 +35,9 @@ public class SatouKnife extends SwordItem {
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!pLevel.isClientSide && pIsSelected && pEntity instanceof LivingEntity livingEntity) {
             if (livingEntity.isSteppingCarefully()) {
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 3, false, false));
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 20, 0, false, false));
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 3, false, false));
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 3, false, false), livingEntity);
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 20, 0, false, false), livingEntity);
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 3, false, false), livingEntity);
             }
         }
     }

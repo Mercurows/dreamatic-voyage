@@ -197,10 +197,10 @@ public class AncientLollipop extends SwordItem {
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!pLevel.isClientSide && pEntity instanceof Player player && pIsSelected) {
             if (player.isSteppingCarefully()) {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 50, 4, false, false));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 50, 4, false, false), player);
                 player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 50, 0, false, false));
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 50, 4, false, false));
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 50, 1, false, false));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 50, 4, false, false), player);
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 50, 1, false, false), player);
             }
 
             if (player.tickCount % 200 == 0) {
@@ -229,7 +229,7 @@ public class AncientLollipop extends SwordItem {
             if (flag) {
                 ItemNBTTool.setBoolean(stack, TAG_LOLLIPOP, false);
 
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 2));
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 2), player);
 
                 if (!level.isClientSide) {
                     new Object() {

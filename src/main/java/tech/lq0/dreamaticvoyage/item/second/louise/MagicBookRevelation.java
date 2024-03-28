@@ -44,9 +44,9 @@ public class MagicBookRevelation extends Item {
                 if (livingEntity != pPlayer && !pPlayer.isAlliedTo(livingEntity) && !(livingEntity instanceof ArmorStand) && pPlayer.distanceToSqr(livingEntity) <= 100.0D) {
                     if (livingEntity.hasEffect(EffectRegistry.CURSE_OF_SERPENT.get())) {
                         int level = livingEntity.getEffect(EffectRegistry.CURSE_OF_SERPENT.get()).getAmplifier();
-                        livingEntity.addEffect(new MobEffectInstance(EffectRegistry.CURSE_OF_SERPENT.get(), 200, Math.min(level + 1, 4)));
+                        livingEntity.addEffect(new MobEffectInstance(EffectRegistry.CURSE_OF_SERPENT.get(), 200, Math.min(level + 1, 4)), pPlayer);
                     } else {
-                        livingEntity.addEffect(new MobEffectInstance(EffectRegistry.CURSE_OF_SERPENT.get(), 200, 0));
+                        livingEntity.addEffect(new MobEffectInstance(EffectRegistry.CURSE_OF_SERPENT.get(), 200, 0), pPlayer);
                     }
                 }
             }

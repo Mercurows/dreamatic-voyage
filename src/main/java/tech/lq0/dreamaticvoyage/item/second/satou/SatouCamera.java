@@ -82,7 +82,7 @@ public class SatouCamera extends Item {
             }
             for (LivingEntity livingentity : target) {
                 livingentity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 0));
-                livingentity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 4));
+                livingentity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 4), pPlayer);
 
                 livingentity.invulnerableTime = 0;
                 livingentity.hurt(pLevel.damageSources().playerAttack(pPlayer), 0);

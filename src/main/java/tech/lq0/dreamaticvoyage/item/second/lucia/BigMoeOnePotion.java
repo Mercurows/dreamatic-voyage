@@ -29,10 +29,10 @@ public class BigMoeOnePotion extends Item {
         if (pLivingEntity instanceof Player player && !pLevel.isClientSide) {
             int random = (int) (Math.random() * 99 + 1);
             if (random > 10) {
-                player.addEffect(new MobEffectInstance(EffectRegistry.BIG_FIERCE_ONE.get(), 3600, 2));
+                player.addEffect(new MobEffectInstance(EffectRegistry.BIG_FIERCE_ONE.get(), 3600, 2), player);
                 player.displayClientMessage(Component.translatable("des.dreamaticvoyage.big_moe_one_potion.fierce").withStyle(ChatFormatting.GOLD), true);
             } else {
-                player.addEffect(new MobEffectInstance(EffectRegistry.BIG_MOE_ONE.get(), 3600, 0));
+                player.addEffect(new MobEffectInstance(EffectRegistry.BIG_MOE_ONE.get(), 3600, 0), player);
                 player.displayClientMessage(Component.translatable("des.dreamaticvoyage.big_moe_one_potion.moe").withStyle(ChatFormatting.LIGHT_PURPLE), true);
             }
 

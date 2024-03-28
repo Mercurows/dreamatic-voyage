@@ -133,7 +133,7 @@ public class ElectricHorn extends ArmorItem {
             ItemStack item = entity.getItemBySlot(EquipmentSlot.HEAD);
             if (item.getItem().equals(ItemRegistry.ELECTRIC_HORN.get())) {
                 event.setCanceled(true);
-                entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1));
+                entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1), entity);
             }
         }
     }

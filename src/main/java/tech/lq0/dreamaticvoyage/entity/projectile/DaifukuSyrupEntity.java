@@ -32,11 +32,7 @@ public class DaifukuSyrupEntity extends ThrowableItemProjectile {
             if (random == 1) {
                 entity.setSecondsOnFire(10);
             } else {
-                if (this.getOwner() != null) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 9), this.getOwner());
-                } else {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 9));
-                }
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 9), this.getOwner());
             }
         }
 

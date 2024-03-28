@@ -38,9 +38,9 @@ public class MagicBookMyanna extends Item {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
 
         if (!pLevel.isClientSide) {
-            pPlayer.addEffect(new MobEffectInstance(EffectRegistry.BLESS_OF_DARK_ELF.get(), 600, 1));
-            pPlayer.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 1));
-            pPlayer.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 1));
+            pPlayer.addEffect(new MobEffectInstance(EffectRegistry.BLESS_OF_DARK_ELF.get(), 600, 1), pPlayer);
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 1), pPlayer);
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 1), pPlayer);
         }
         pPlayer.getCooldowns().addCooldown(stack.getItem(), 2400);
         pLevel.playSound(pPlayer, pPlayer.getOnPos(), SoundRegistry.MYANNA.get(), SoundSource.AMBIENT, 0.5f, 1f);
