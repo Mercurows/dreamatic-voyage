@@ -37,6 +37,7 @@ public class GourmetMedal extends Item implements ICurioItem {
         }
     }
 
+    //TODO 解决碗装食物无法触发进度的问题
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!pLevel.isClientSide && pEntity instanceof ServerPlayer player && player.getServer() != null) {

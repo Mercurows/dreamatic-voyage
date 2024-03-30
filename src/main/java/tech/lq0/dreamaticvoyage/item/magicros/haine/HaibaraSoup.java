@@ -37,12 +37,7 @@ public class HaibaraSoup extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        if (pLivingEntity instanceof Player player) {
-            if (player.isCreative()) {
-                return pStack;
-            }
-        }
-        return new ItemStack(Items.BOWL);
+        return pLivingEntity instanceof Player player && player.getAbilities().instabuild ? pStack : new ItemStack(Items.BOWL);
     }
 
     @Override

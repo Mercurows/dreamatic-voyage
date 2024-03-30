@@ -45,12 +45,8 @@ public class MariStew extends Item {
             }
 
             ChaosHelper.addChaos(player, 10);
-
-            if (player.isCreative()) {
-                return pStack;
-            }
         }
-        return new ItemStack(Items.BOWL);
+        return pLivingEntity instanceof Player player && player.getAbilities().instabuild ? pStack : new ItemStack(Items.BOWL);
     }
 
     @Override
