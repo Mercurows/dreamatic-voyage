@@ -104,7 +104,7 @@ public class Chocolusion extends Item {
             player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, effectDuration, 2), player);
 
             int level = (float) (getUseDuration(stack) - count) / (float) getUseDuration(stack) > 0.5f ? 1 : 0;
-            player.addEffect(new MobEffectInstance(EffectRegistry.SWEET_MIRAGE.get(), effectDuration / 2, level), player);
+            player.addEffect(new MobEffectInstance(EffectRegistry.SWEET_MIRAGE.get(), effectDuration, level), player);
         }
     }
 
