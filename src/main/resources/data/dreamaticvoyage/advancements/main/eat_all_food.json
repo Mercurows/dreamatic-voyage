@@ -1,0 +1,402 @@
+{
+  "display": {
+    "icon": {
+      "item": "dreamaticvoyage:mma_stew"
+    },
+    "title": {
+      "translate": "dreamaticvoyage.advancement.eat_all_food"
+    },
+    "description": {
+      "translate": "dreamaticvoyage.advancement.eat_all_food_des"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "frame": "challenge"
+  },
+  "parent": "dreamaticvoyage:main/root",
+  "criteria": {
+    "eat_all_food_1": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:mari_stew"
+          ]
+        }
+      }
+    },
+    "eat_all_food_2": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:banana_milk"
+          ]
+        }
+      }
+    },
+    "eat_all_food_3": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:taro_ice_cream"
+          ]
+        }
+      }
+    },
+    "eat_all_food_4": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:lucia_rice_cake"
+          ]
+        }
+      }
+    },
+    "eat_all_food_5": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:lotus_potato"
+          ]
+        }
+      }
+    },
+    "eat_all_food_6": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:frog_leg"
+          ]
+        }
+      }
+    },
+    "eat_all_food_7": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:momo_daifuku"
+          ]
+        }
+      }
+    },
+    "eat_all_food_8": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:lava_cake"
+          ]
+        }
+      }
+    },
+    "eat_all_food_9": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:mma_stew"
+          ]
+        }
+      }
+    },
+    "eat_all_food_10": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:mva_stew"
+          ]
+        }
+      }
+    },
+    "eat_all_food_11": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:fox_ice_cream"
+          ]
+        }
+      }
+    },
+    "eat_all_food_12": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:marshaimallow"
+          ]
+        }
+      }
+    },
+    "eat_all_food_13": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:rabbit_lychee"
+          ]
+        }
+      }
+    },
+    "eat_all_food_14": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:unigiri"
+          ]
+        }
+      }
+    },
+    "eat_all_food_15": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:enchanted_unigiri"
+          ]
+        }
+      }
+    },
+    "eat_all_food_16": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:fox_pudding"
+          ]
+        }
+      }
+    },
+    "eat_all_food_17": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:mumu_steak"
+          ]
+        }
+      }
+    },
+    "eat_all_food_18": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:peach_beach"
+          ]
+        }
+      }
+    },
+    "eat_all_food_19": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:moon_cake"
+          ]
+        }
+      }
+    },
+    "eat_all_food_20": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:louistew"
+          ]
+        }
+      }
+    },
+    "eat_all_food_21": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:fukamizu_fish"
+          ]
+        }
+      }
+    },
+    "eat_all_food_22": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:bubble_tea"
+          ]
+        }
+      }
+    },
+    "eat_all_food_23": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:big_fierce_one_coffee"
+          ]
+        }
+      }
+    },
+    "eat_all_food_24": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:mint_chocolate"
+          ]
+        }
+      }
+    },
+    "eat_all_food_25": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:fukamizu_bread"
+          ]
+        }
+      }
+    },
+    "eat_all_food_26": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:xiaolongbao"
+          ]
+        }
+      }
+    },
+    "eat_all_food_27": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:uni_millet"
+          ]
+        }
+      }
+    },
+    "eat_all_food_28": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:isekai_lollipop"
+          ]
+        }
+      }
+    },
+    "eat_all_food_29": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:brownie_uzza"
+          ]
+        }
+      }
+    },
+    "eat_all_food_30": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:haibara_soup"
+          ]
+        }
+      }
+    },
+    "eat_all_food_31": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:lemon_tea"
+          ]
+        }
+      }
+    },
+    "eat_all_food_32": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:large_lemon_tea"
+          ]
+        }
+      }
+    },
+    "eat_all_food_33": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:hirenade_gg"
+          ]
+        }
+      }
+    },
+    "eat_all_food_34": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:craft_beer_0322"
+          ]
+        }
+      }
+    },
+    "eat_all_food_35": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:strawberry_cake"
+          ]
+        }
+      }
+    },
+    "eat_all_food_36": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:chocoal_cookie"
+          ]
+        }
+      }
+    },
+    "eat_all_food_37": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:garlic_melon_slice"
+          ]
+        }
+      }
+    },
+    "eat_all_food_38": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:shakana"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

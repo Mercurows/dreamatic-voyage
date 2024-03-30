@@ -364,6 +364,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ESCORT_TOKEN = ITEMS.register("escort_token", EscortToken::new);
     public static final RegistryObject<Item> ANCIENT_MICROPHONE = ITEMS.register("ancient_microphone", AncientMicrophone::new);
     public static final RegistryObject<Item> FICTIONAL_FORGING_SIGIL = ITEMS.register("fictional_forging_sigil", FictionalForgingSigil::new);
+    public static final RegistryObject<Item> GOURMET_MEDAL = ITEMS.register("gourmet_medal", GourmetMedal::new);
 
     /**
      * legacy
