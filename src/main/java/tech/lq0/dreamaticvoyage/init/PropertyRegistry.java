@@ -51,5 +51,18 @@ public class PropertyRegistry {
                 (heldStack, world, livingEntity, seed) -> livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == heldStack ? 1.0F : 0.0F));
         event.enqueueWork(() -> ItemProperties.register(ItemRegistry.OMINOUS_SICKLE.get(), new ResourceLocation("invoke"),
                 (heldStack, world, livingEntity, seed) -> ItemNBTTool.getBoolean(heldStack, "Invoke", false) ? 1.0F : 0.0F));
+        event.enqueueWork(() -> ItemProperties.register(ItemRegistry.TETRIS_CAT.get(), new ResourceLocation(Utils.MOD_ID, "tetriscat_blocking"),
+                (heldStack, world, livingEntity, seed) ->
+                        livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == heldStack ? 1.0F : 0.0F));
+        event.enqueueWork(() -> ItemProperties.register(ItemRegistry.TETRIS_CAT.get(), new ResourceLocation(Utils.MOD_ID, "tetriscat_tetrisblock"),
+                (heldStack, world, livingEntity, seed) -> {
+                    if (livingEntity != null){
+                        return (float)ItemNBTTool.getInt(heldStack, "tetris_block", 0 );
+                    }
+                    return 0.0f;
+                }));
+        event.enqueueWork(() -> ItemProperties.register(ItemRegistry.TETRIS_CAT.get(), new ResourceLocation(Utils.MOD_ID, "tetriscat_isshield"),
+                (heldStack, world, livingEntity, seed) ->
+                        livingEntity != null && livingEntity.getOffhandItem().getItem() == ItemRegistry.TETRIS_CAT.get() ? 1.0f : 0.0f));
     }
 }

@@ -7,10 +7,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.capability.chaos.ChaosHelper;
@@ -29,7 +26,7 @@ public class MariStew extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        if (pLivingEntity instanceof Player player) {
+        if (pLivingEntity instanceof Player player && !pLevel.isClientSide) {
             int random = (int) (Math.random() * 99 + 1);
             if (random > 95) {
                 player.hurt(DamageSourceRegistry.causeMariFoodDamage(pLevel.registryAccess(), null), 20.0f);

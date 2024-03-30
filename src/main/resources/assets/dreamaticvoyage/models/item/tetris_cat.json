@@ -1,0 +1,58 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dreamaticvoyage:item/tetris_cat"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "dreamaticvoyage:tetriscat_isshield": 1
+      },
+      "model": "dreamaticvoyage:item/tetris_cat_shield"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:tetriscat_isshield": 1,
+        "dreamaticvoyage:tetriscat_blocking": 1
+      },
+      "model": "dreamaticvoyage:item/tetris_cat_blocking"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:tetriscat_tetrisblock": 1
+      },
+      "model": "dreamaticvoyage:item/tetris_cat_1"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:tetriscat_tetrisblock": 2
+      },
+      "model": "dreamaticvoyage:item/tetris_cat_2"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:tetriscat_tetrisblock": 3
+      },
+      "model": "dreamaticvoyage:item/tetris_cat_3"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:tetriscat_tetrisblock": 4
+      },
+      "model": "dreamaticvoyage:item/tetris_cat_4"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:tetriscat_tetrisblock": 5
+      },
+      "model": "dreamaticvoyage:item/tetris_cat_5"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:tetriscat_tetrisblock": 6
+      },
+      "model": "dreamaticvoyage:item/tetris_cat_6"
+    }
+
+  ]
+}
