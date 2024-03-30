@@ -4,10 +4,10 @@
       "item": "dreamaticvoyage:mma_stew"
     },
     "title": {
-      "translate": "dreamaticvoyage.advancement.eat_all_food"
+      "translate": "dreamaticvoyage.advancement.apex_gourmet"
     },
     "description": {
-      "translate": "dreamaticvoyage.advancement.eat_all_food_des"
+      "translate": "dreamaticvoyage.advancement.apex_gourmet_des"
     },
     "show_toast": true,
     "announce_to_chat": true,
@@ -15,7 +15,7 @@
   },
   "parent": "dreamaticvoyage:main/root",
   "criteria": {
-    "eat_all_food_1": {
+    "apex_gourmet_1": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -25,7 +25,7 @@
         }
       }
     },
-    "eat_all_food_2": {
+    "apex_gourmet_2": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -35,7 +35,7 @@
         }
       }
     },
-    "eat_all_food_3": {
+    "apex_gourmet_3": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -45,7 +45,7 @@
         }
       }
     },
-    "eat_all_food_4": {
+    "apex_gourmet_4": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -55,7 +55,7 @@
         }
       }
     },
-    "eat_all_food_5": {
+    "apex_gourmet_5": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -65,7 +65,7 @@
         }
       }
     },
-    "eat_all_food_6": {
+    "apex_gourmet_6": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -75,7 +75,7 @@
         }
       }
     },
-    "eat_all_food_7": {
+    "apex_gourmet_7": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -85,7 +85,7 @@
         }
       }
     },
-    "eat_all_food_8": {
+    "apex_gourmet_8": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "eat_all_food_9": {
+    "apex_gourmet_9": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -105,7 +105,7 @@
         }
       }
     },
-    "eat_all_food_10": {
+    "apex_gourmet_10": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -115,7 +115,7 @@
         }
       }
     },
-    "eat_all_food_11": {
+    "apex_gourmet_11": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -125,7 +125,7 @@
         }
       }
     },
-    "eat_all_food_12": {
+    "apex_gourmet_12": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -135,7 +135,7 @@
         }
       }
     },
-    "eat_all_food_13": {
+    "apex_gourmet_13": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -145,7 +145,7 @@
         }
       }
     },
-    "eat_all_food_14": {
+    "apex_gourmet_14": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -155,7 +155,7 @@
         }
       }
     },
-    "eat_all_food_15": {
+    "apex_gourmet_15": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -165,7 +165,7 @@
         }
       }
     },
-    "eat_all_food_16": {
+    "apex_gourmet_16": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -175,7 +175,7 @@
         }
       }
     },
-    "eat_all_food_17": {
+    "apex_gourmet_17": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -185,7 +185,7 @@
         }
       }
     },
-    "eat_all_food_18": {
+    "apex_gourmet_18": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -195,7 +195,7 @@
         }
       }
     },
-    "eat_all_food_19": {
+    "apex_gourmet_19": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -205,7 +205,7 @@
         }
       }
     },
-    "eat_all_food_20": {
+    "apex_gourmet_20": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -215,7 +215,7 @@
         }
       }
     },
-    "eat_all_food_21": {
+    "apex_gourmet_21": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -225,7 +225,7 @@
         }
       }
     },
-    "eat_all_food_22": {
+    "apex_gourmet_22": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -235,7 +235,7 @@
         }
       }
     },
-    "eat_all_food_23": {
+    "apex_gourmet_23": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -245,7 +245,7 @@
         }
       }
     },
-    "eat_all_food_24": {
+    "apex_gourmet_24": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -255,7 +255,7 @@
         }
       }
     },
-    "eat_all_food_25": {
+    "apex_gourmet_25": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -265,7 +265,7 @@
         }
       }
     },
-    "eat_all_food_26": {
+    "apex_gourmet_26": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -275,7 +275,7 @@
         }
       }
     },
-    "eat_all_food_27": {
+    "apex_gourmet_27": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -285,7 +285,7 @@
         }
       }
     },
-    "eat_all_food_28": {
+    "apex_gourmet_28": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -295,7 +295,7 @@
         }
       }
     },
-    "eat_all_food_29": {
+    "apex_gourmet_29": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -305,7 +305,7 @@
         }
       }
     },
-    "eat_all_food_30": {
+    "apex_gourmet_30": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -315,7 +315,7 @@
         }
       }
     },
-    "eat_all_food_31": {
+    "apex_gourmet_31": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -325,7 +325,7 @@
         }
       }
     },
-    "eat_all_food_32": {
+    "apex_gourmet_32": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -335,7 +335,7 @@
         }
       }
     },
-    "eat_all_food_33": {
+    "apex_gourmet_33": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -345,7 +345,7 @@
         }
       }
     },
-    "eat_all_food_34": {
+    "apex_gourmet_34": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -355,7 +355,7 @@
         }
       }
     },
-    "eat_all_food_35": {
+    "apex_gourmet_35": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -365,7 +365,7 @@
         }
       }
     },
-    "eat_all_food_36": {
+    "apex_gourmet_36": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -375,7 +375,7 @@
         }
       }
     },
-    "eat_all_food_37": {
+    "apex_gourmet_37": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
@@ -385,7 +385,7 @@
         }
       }
     },
-    "eat_all_food_38": {
+    "apex_gourmet_38": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
