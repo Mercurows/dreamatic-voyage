@@ -38,6 +38,7 @@ public class Louistew extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        return pLivingEntity instanceof Player player && player.getAbilities().instabuild ? pStack : new ItemStack(Items.BOWL);
+        ItemStack itemstack = super.finishUsingItem(pStack, pLevel, pLivingEntity);
+        return pLivingEntity instanceof Player && ((Player)pLivingEntity).getAbilities().instabuild ? itemstack : new ItemStack(Items.BOWL);
     }
 }

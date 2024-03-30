@@ -18,7 +18,7 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import java.util.List;
 
 public class MariStew extends Item {
-    private static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.6f).nutrition(10).build();
+    private static final FoodProperties food = new FoodProperties.Builder().saturationMod(0.6f).nutrition(10).build();
 
     public MariStew() {
         super(new Properties().food(food).stacksTo(1));
@@ -43,7 +43,8 @@ public class MariStew extends Item {
 
             ChaosHelper.addChaos(player, 10);
         }
-        return pLivingEntity instanceof Player player && player.getAbilities().instabuild ? pStack : new ItemStack(Items.BOWL);
+        ItemStack itemstack = super.finishUsingItem(pStack, pLevel, pLivingEntity);
+        return pLivingEntity instanceof Player && ((Player)pLivingEntity).getAbilities().instabuild ? itemstack : new ItemStack(Items.BOWL);
     }
 
     @Override
