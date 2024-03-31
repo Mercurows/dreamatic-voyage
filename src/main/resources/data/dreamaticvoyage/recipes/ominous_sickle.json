@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "PW#",
-    "EAF",
+    "EWA",
+    "P#F",
     "#WF"
   ],
   "key": {
@@ -18,11 +18,11 @@
     "F": {
       "item": "dreamaticvoyage:fictional_ingot"
     },
-    "P": {
-      "item": "minecraft:wither_rose"
-    },
     "E": {
       "item": "minecraft:soul_lantern"
+    },
+    "P": {
+      "item": "minecraft:mojang_banner_pattern"
     }
   },
   "result": {
