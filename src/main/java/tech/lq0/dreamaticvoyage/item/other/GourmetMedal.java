@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.RarityTool;
+import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
@@ -52,11 +53,17 @@ public class GourmetMedal extends Item implements ICurioItem {
 
         float progress = ItemNBTTool.getFloat(pStack, TAG_GOURMET_MEDAL, 0f);
         if (progress >= 1f) {
-            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.gourmet_medal.done").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.gourmet_medal.done").withStyle(ChatFormatting.LIGHT_PURPLE).withStyle(ChatFormatting.ITALIC));
+        } else if (progress >= .75f) {
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.gourmet_medal.almost").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
+        } else if (progress >= .5f) {
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.gourmet_medal.half").withStyle(ChatFormatting.YELLOW).withStyle(ChatFormatting.ITALIC));
         } else {
-            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.gourmet_medal.need").withStyle(ChatFormatting.WHITE)
-                    .append(Component.literal(String.format(" %.2f%%", progress * 100))));
+            pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.gourmet_medal.begin").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         }
+
+        TooltipTool.addHideText(pTooltipComponents, Component.translatable("des.dreamaticvoyage.gourmet_medal.need").withStyle(ChatFormatting.GRAY)
+                .append(Component.literal(String.format(" %.2f%%", progress * 100))));
     }
 
     @Override
@@ -93,9 +100,7 @@ public class GourmetMedal extends Item implements ICurioItem {
                     int level = effectInstance.getAmplifier();
 
                     if (progress >= 1f) {
-                        if (level <= 2) {
-                            entity.removeEffect(mobEffect);
-                        }
+                        entity.removeEffect(mobEffect);
                     } else if (progress >= 0.75f) {
                         if (level <= 1) {
                             entity.removeEffect(mobEffect);
