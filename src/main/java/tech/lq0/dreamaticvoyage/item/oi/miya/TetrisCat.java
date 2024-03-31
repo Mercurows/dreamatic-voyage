@@ -11,7 +11,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShieldItem;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,6 +22,7 @@ import tech.lq0.dreamaticvoyage.entity.projectile.TetrisIBlockEntity;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.Livers;
+import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import javax.annotation.Nullable;
@@ -29,25 +32,26 @@ import java.util.List;
 public class TetrisCat extends ShieldItem {
     public static final String TAG_TETRIS_ENERGY = "tetris_energy";
     public static final String TAG_TETRIS_BLOCK = "tetris_block";
-    public TetrisCat(){
-        super(new Properties().stacksTo(1).rarity(Rarity.EPIC));
+
+    public TetrisCat() {
+        super(new Properties().stacksTo(1).rarity(RarityTool.LEGENDARY));
     }
 
     @SubscribeEvent
-    public static void TetrisPowerIncrease(LivingDamageEvent e){
+    public static void tetrisPowerIncrease(LivingDamageEvent e) {
         Entity entity = e.getSource().getEntity();
         LivingEntity target = e.getEntity();
-        if (entity instanceof Player player&& !entity.level().isClientSide()){
+        if (entity instanceof Player player && !entity.level().isClientSide()) {
             ItemStack offhand = player.getItemBySlot(EquipmentSlot.OFFHAND);
             ItemStack mainhand = player.getItemBySlot(EquipmentSlot.MAINHAND);
-            if (!offhand.isEmpty() && offhand.getItem().equals(ItemRegistry.TETRIS_CAT.get()) && mainhand.getItem().equals(ItemRegistry.TAIL_PEN.get())){
+            if (!offhand.isEmpty() && offhand.getItem().equals(ItemRegistry.TETRIS_CAT.get()) && mainhand.getItem().equals(ItemRegistry.TAIL_PEN.get())) {
                 setTetrisEnergy(offhand, getTetrisEnergy(offhand) + Math.min(target.getHealth(), e.getAmount()));
             }
         }
     }
 
     private static float getTetrisEnergy(ItemStack stack) {
-        return ItemNBTTool.getFloat(stack, TAG_TETRIS_ENERGY, 0.0f );
+        return ItemNBTTool.getFloat(stack, TAG_TETRIS_ENERGY, 0.0f);
     }
 
     private static void setTetrisEnergy(ItemStack stack, float num) {
@@ -55,36 +59,33 @@ public class TetrisCat extends ShieldItem {
     }
 
     private static int getTetrisBlock(ItemStack stack) {
-        return ItemNBTTool.getInt(stack, TAG_TETRIS_BLOCK, 0 );
+        return ItemNBTTool.getInt(stack, TAG_TETRIS_BLOCK, 0);
     }
 
     private static void setTetrisBlock(ItemStack stack, int num) {
         ItemNBTTool.setInt(stack, TAG_TETRIS_BLOCK, num);
     }
 
-//    @Override
     public boolean isShield(@Nullable LivingEntity entity) {
         if (entity != null) {
             if (entity instanceof Player player && !entity.level().isClientSide()) {
                 ItemStack offhand = player.getItemBySlot(EquipmentSlot.OFFHAND);
-                if (!offhand.isEmpty() && offhand.getItem().equals(ItemRegistry.TETRIS_CAT.get()) ){
-                    return true;
-                }
+                return !offhand.isEmpty() && offhand.getItem().equals(ItemRegistry.TETRIS_CAT.get());
             }
         }
         return false;
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand){
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         ItemStack item = pPlayer.getItemInHand(pHand);
         if (isShield(pPlayer)) {
             pPlayer.startUsingItem(pHand);
             return InteractionResultHolder.consume(item);
         } else {
-            if (getTetrisEnergy(item) >= 20){
+            if (getTetrisEnergy(item) >= 20) {
                 pLevel.playSound(null, pPlayer.getOnPos(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.random.nextFloat() * 0.4F + 0.8F));
-                if( !pLevel.isClientSide()) {
+                if (!pLevel.isClientSide()) {
                     TetrisIBlockEntity tetrisIBlockEntity = new TetrisIBlockEntity(pLevel, pPlayer);
                     tetrisIBlockEntity.shootFromRotation(pPlayer, pPlayer.getRotationVector().x, pPlayer.getRotationVector().y, 0.0f, 1.0f, 0.2f);
                     pLevel.addFreshEntity(tetrisIBlockEntity);
@@ -97,19 +98,20 @@ public class TetrisCat extends ShieldItem {
             return new InteractionResultHolder<>(InteractionResult.FAIL, item);
         }
     }
+
     @Override
-    public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity, int pTimeCharged){
-        if(!pLevel.isClientSide()){
-            setTetrisBlock(pStack, (int)(Math.random()*7));
+    public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity, int pTimeCharged) {
+        if (!pLevel.isClientSide()) {
+            setTetrisBlock(pStack, (int) (Math.random() * 7));
         }
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @org.jetbrains.annotations.Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced){
+    public void appendHoverText(ItemStack pStack, @org.jetbrains.annotations.Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         TooltipTool.addDevelopingText(pTooltipComponents);
 
-        //pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.tetris_cat_1").withStyle(ChatFormatting.GRAY));
-        //pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.tetris_cat_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.tetris_cat_1").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.tetris_cat_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
         pTooltipComponents.add(Component.literal("Tetris energy: " + getTetrisEnergy(pStack)));
 
