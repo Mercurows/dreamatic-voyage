@@ -394,6 +394,36 @@
           ]
         }
       }
+    },
+    "apex_gourmet_39": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:kuleboh"
+          ]
+        }
+      }
+    },
+    "apex_gourmet_40": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:mushroom_croissant"
+          ]
+        }
+      }
+    },
+    "apex_gourmet_41": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "dreamaticvoyage:chocolate_boots"
+          ]
+        }
+      }
     }
   },
   "rewards": {
