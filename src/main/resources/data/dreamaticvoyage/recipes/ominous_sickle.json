@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PW#",
+    "EAF",
+    "#WF"
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:ominous_bone"
+    },
+    "W": {
+      "item": "minecraft:twisting_vines"
+    },
+    "A": {
+      "item": "dreamaticvoyage:unfaithful_heart"
+    },
+    "F": {
+      "item": "dreamaticvoyage:fictional_ingot"
+    },
+    "P": {
+      "item": "minecraft:wither_rose"
+    },
+    "E": {
+      "item": "minecraft:soul_lantern"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:ominous_sickle",
+    "count": 1
+  }
+}
