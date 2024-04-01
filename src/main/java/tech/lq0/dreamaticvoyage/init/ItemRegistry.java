@@ -14,8 +14,7 @@ import tech.lq0.dreamaticvoyage.item.first.mitsuki.MitsukiCrown;
 import tech.lq0.dreamaticvoyage.item.first.myanna.*;
 import tech.lq0.dreamaticvoyage.item.first.usa.KRM96353;
 import tech.lq0.dreamaticvoyage.item.first.usa.KurumiHalo;
-import tech.lq0.dreamaticvoyage.item.fourth.choco.Chocolusion;
-import tech.lq0.dreamaticvoyage.item.fourth.choco.UntouchableLove;
+import tech.lq0.dreamaticvoyage.item.fourth.choco.*;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.OminousBone;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.OminousSickle;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.UnfaithfulHeart;
@@ -61,8 +60,6 @@ import tech.lq0.dreamaticvoyage.item.first.unia.TaroIceCream;
 import tech.lq0.dreamaticvoyage.item.first.unia.Unigiri;
 import tech.lq0.dreamaticvoyage.item.first.usa.BrownieUzza;
 import tech.lq0.dreamaticvoyage.item.first.usa.Plunger;
-import tech.lq0.dreamaticvoyage.item.fourth.choco.ChocoalCookie;
-import tech.lq0.dreamaticvoyage.item.fourth.choco.StrawberryCake;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.NetherLight;
 import tech.lq0.dreamaticvoyage.item.fourth.sana.JellyfishBottle;
 import tech.lq0.dreamaticvoyage.item.fourth.sana.Shakana;
@@ -344,6 +341,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> STRAWBERRY_CAKE = ITEMS.register("strawberry_cake", StrawberryCake::new);
     public static final RegistryObject<Item> CHOCOAL_COOKIE = ITEMS.register("chocoal_cookie", ChocoalCookie::new);
     public static final RegistryObject<Item> UNTOUCHABLE_LOVE = ITEMS.register("untouchable_love", UntouchableLove::new);
+    public static final RegistryObject<Item> STRAWBERRY_CHOCOLATE = ITEMS.register("strawberry_chocolate", StrawberryChocolate::new);
     public static final RegistryObject<Item> CHOCOLUSION = ITEMS.register("chocolusion", Chocolusion::new);
 
     //hifumi
