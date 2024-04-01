@@ -342,6 +342,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CHOCOAL_COOKIE = ITEMS.register("chocoal_cookie", ChocoalCookie::new);
     public static final RegistryObject<Item> UNTOUCHABLE_LOVE = ITEMS.register("untouchable_love", UntouchableLove::new);
     public static final RegistryObject<Item> STRAWBERRY_CHOCOLATE = ITEMS.register("strawberry_chocolate", StrawberryChocolate::new);
+    public static final RegistryObject<Item> ACTIVATED_CREAM = ITEMS.register("activated_cream", ActivatedCream::new);
     public static final RegistryObject<Item> CHOCOLUSION = ITEMS.register("chocolusion", Chocolusion::new);
 
     //hifumi
