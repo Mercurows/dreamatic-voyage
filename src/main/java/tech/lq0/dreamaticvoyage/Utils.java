@@ -53,6 +53,8 @@ public class Utils {
                 Ingredient.of(ItemRegistry.PAST_SUGAR.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), PotionRegistry.SUPER_BLEEDING.get())));
         event.enqueueWork(() -> BrewingRecipeRegistry.addRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.AWKWARD)),
                 Ingredient.of(ItemRegistry.LUCIA_RICE_CAKE.get()), new ItemStack(ItemRegistry.BIG_MOE_ONE_POTION.get())));
+        event.enqueueWork(() -> BrewingRecipeRegistry.addRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.STRONG_POISON)),
+                Ingredient.of(ItemRegistry.GARLIC_MELON_SLICE.get()), new ItemStack(Items.DRAGON_BREATH)));
     }
 
     private void registerForgeEvents() {
