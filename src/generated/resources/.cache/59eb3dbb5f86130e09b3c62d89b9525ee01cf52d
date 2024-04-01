@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-29T02:18:49.3482479	Loot Tables
+// 1.20.1	2024-04-01T20:52:58.3696664	Loot Tables
 de907c77e3f973d4cc51e684a7c589816f1f7488 data/dreamaticvoyage/loot_tables/blocks/blue_sand.json
 d7c59f5243134df755eed00c0b7c4d762d809115 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone.json
 22ea59f302064014af02351f18938dbc97043258 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone_slab.json
@@ -38,4 +38,6 @@ e390ca4254856b58ed857add30e3651c9d76b7b6 data/dreamaticvoyage/loot_tables/blocks
 0d0cc27642d67cd68b970447f8656ee68a8daa82 data/dreamaticvoyage/loot_tables/blocks/stripped_harano_wood.json
 3312dc4643bf5c6a0e63d130da5aa7c744bd7f6d data/dreamaticvoyage/loot_tables/blocks/suspicious_blue_sand.json
 76f8fdece3fa4c793fbdb25913f85d623ddc5563 data/dreamaticvoyage/loot_tables/blocks/uni_millet_block.json
+851daa68d9da32361fabf58406b681621fda2444 data/dreamaticvoyage/loot_tables/blocks/verdant_spirit_farmland.json
+e9ddc6e308b9815e44dc709ab9bf7b0237f2fc12 data/dreamaticvoyage/loot_tables/blocks/verdant_spirit_rich_soil.json
 805b990145e7425030b4319cd24098ab7685fafd data/dreamaticvoyage/loot_tables/blocks/white_ahoge_block.json

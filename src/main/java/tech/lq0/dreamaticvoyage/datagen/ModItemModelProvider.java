@@ -173,6 +173,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.JELLYFISH_BOTTLE, "translucent");
         simpleItem(ItemRegistry.SHAKANA);
 
+        handheldItem(ItemRegistry.OMINOUS_BONE);
+
         //cnt
         handheldItem(ItemRegistry.QIANYUN_HOE);
         simpleItem(ItemRegistry.QIANKELA);
