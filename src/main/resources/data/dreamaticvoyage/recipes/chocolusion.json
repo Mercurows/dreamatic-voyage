@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AFA",
+    "PEP",
+    "APA"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "P": {
+      "item": "dreamaticvoyage:activated_cream"
+    },
+    "A": {
+      "item": "dreamaticvoyage:strawberry_chocolate"
+    },
+    "E": {
+      "item": "dreamaticvoyage:fictional_ingot"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:chocolusion",
+    "count": 1
+  }
+}
