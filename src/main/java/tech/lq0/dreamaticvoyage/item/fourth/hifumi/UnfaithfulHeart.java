@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class UnfaithfulHeart extends Item implements ICurioItem {
     public UnfaithfulHeart() {
-        super(new Properties().rarity(Rarity.UNCOMMON).durability(9));
+        super(new Properties().rarity(Rarity.RARE).durability(9));
     }
 
     @Override
