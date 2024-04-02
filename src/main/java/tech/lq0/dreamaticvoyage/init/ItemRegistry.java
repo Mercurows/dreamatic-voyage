@@ -18,6 +18,7 @@ import tech.lq0.dreamaticvoyage.item.fourth.choco.*;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.OminousBone;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.OminousSickle;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.UnfaithfulHeart;
+import tech.lq0.dreamaticvoyage.item.fourth.sana.AureliaSceptre;
 import tech.lq0.dreamaticvoyage.item.legacy.*;
 import tech.lq0.dreamaticvoyage.item.material.*;
 import tech.lq0.dreamaticvoyage.item.material.crystal.*;
@@ -354,6 +355,8 @@ public class ItemRegistry {
     //sana
     public static final RegistryObject<Item> JELLYFISH_BOTTLE = ITEMS.register("jellyfish_bottle", JellyfishBottle::new);
     public static final RegistryObject<Item> SHAKANA = ITEMS.register("shakana", Shakana::new);
+
+    public static final RegistryObject<Item> AURELIA_SCEPTRE = ITEMS.register("aurelia_sceptre", AureliaSceptre::new);
 
     /**
      * others
