@@ -36,19 +36,15 @@ public class HirenadeGGEntity extends ThrowableItemProjectile {
         super(EntityRegistry.HIRENADE_GG_ENTITY.get(), entity, world);
     }
 
-    public HirenadeGGEntity(Level p_i1775_1_, double p_i1775_2_, double p_i1775_4_, double p_i1775_6_) {
-        super(EntityRegistry.HIRENADE_GG_ENTITY.get(), p_i1775_2_, p_i1775_4_, p_i1775_6_, p_i1775_1_);
-    }
-
     @Override
     protected void onHitEntity(EntityHitResult pResult) {
-        explode(this, 6.5f);
+        explode(this, 5.0f);
         this.discard();
     }
 
     @Override
     protected void onHitBlock(BlockHitResult pResult) {
-        explode(this, 6.5f);
+        explode(this, 5.0f);
         this.discard();
     }
 
@@ -70,7 +66,7 @@ public class HirenadeGGEntity extends ThrowableItemProjectile {
         if (this.fuse <= 0) {
             this.discard();
             if (!this.level().isClientSide) {
-                explode(this, 6.5f);
+                explode(this, 5.0f);
             }
         } else {
             if (this.level().isClientSide) {

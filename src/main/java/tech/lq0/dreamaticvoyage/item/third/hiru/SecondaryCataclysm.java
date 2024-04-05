@@ -68,7 +68,7 @@ public class SecondaryCataclysm extends Item {
 
         ItemStack ammo = this.findAmmo(player);
 
-        if (ItemNBTTool.getInt(stack, TAG_AMMO, 0) < 6) {
+        if (ItemNBTTool.getInt(stack, TAG_AMMO, 0) < MAX_AMMO_SIZE) {
             if (player.isSteppingCarefully()) {
                 if (!ammo.isEmpty() || player.isCreative()) {
                     player.startUsingItem(handIn);
