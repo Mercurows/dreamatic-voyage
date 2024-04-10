@@ -87,12 +87,14 @@ public class RedAhogeMachete extends SwordItem {
     public static void onPlayerFall(LivingFallEvent event) {
         if (event.getEntity() instanceof Player player) {
             ItemStack stack = player.getMainHandItem();
-            float distance = event.getDistance();
+            if (stack.getItem() == ItemRegistry.RED_AHOGE_MACHETE.get()) {
+                float distance = event.getDistance();
 
-            if (ItemNBTTool.getBoolean(stack, TAG_FALL, false)) {
-                event.setDistance(0);
+                if (ItemNBTTool.getBoolean(stack, TAG_FALL, false)) {
+                    event.setDistance(0);
+                }
+                doDamage(player, distance, stack, false);
             }
-            doDamage(player, distance, stack, false);
         }
     }
 
