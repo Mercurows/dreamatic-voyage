@@ -41,7 +41,6 @@ public class ButterflyAnklet extends ArmorItem {
         super(ArmorMaterials.LEATHER, Type.BOOTS, new Properties().durability(386));
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.butterfly_anklet_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
