@@ -142,6 +142,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.MOON_CAKE);
 
         simpleItem(ItemRegistry.JELLYFISH_SHELL);
+        simpleItem(ItemRegistry.ARTIST_TOOL_BELT);
 
         simpleItem(ItemRegistry.GRAVITY_RESTRAINT_DEVICE);
 
@@ -169,6 +170,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         //4th
         simpleItem(ItemRegistry.STRAWBERRY_CAKE);
         simpleItem(ItemRegistry.CHOCOAL_COOKIE);
+        simpleItem(ItemRegistry.UNTOUCHABLE_LOVE);
         simpleItem(ItemRegistry.STRAWBERRY_CHOCOLATE);
 
         simpleItem(ItemRegistry.JELLYFISH_BOTTLE, "translucent");

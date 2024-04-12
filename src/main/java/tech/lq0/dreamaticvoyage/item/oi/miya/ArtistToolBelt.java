@@ -38,8 +38,6 @@ public class ArtistToolBelt extends Item implements ICurioItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        TooltipTool.addDevelopingText(pTooltipComponents);
-
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.artist_tool_belt_1").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.artist_tool_belt_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
