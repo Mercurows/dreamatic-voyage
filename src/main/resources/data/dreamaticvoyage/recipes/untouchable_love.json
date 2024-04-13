@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DED",
+    "PAP",
+    "DED"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:pink_dye"
+    },
+    "P": {
+      "item": "minecraft:pufferfish"
+    },
+    "A": {
+      "item": "minecraft:book"
+    },
+    "E": {
+      "item": "minecraft:poisonous_potato"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:untouchable_love",
+    "count": 1
+  }
+}
