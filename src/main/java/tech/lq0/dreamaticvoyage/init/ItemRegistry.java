@@ -575,6 +575,9 @@ public class ItemRegistry {
     public static final RegistryObject<Item> VERDANT_SPIRIT_FARMLAND = BLOCK_ITEMS.register("verdant_spirit_farmland",
             () -> new BlockItem(BlockRegistry.VERDANT_SPIRIT_FARMLAND.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
 
+    public static final RegistryObject<Item> PHANTASMAL_VOYAGER = BLOCK_ITEMS.register("phantasmal_voyager",
+            () -> new BlockItem(BlockRegistry.PHANTASMAL_VOYAGER.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
+
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
         AUDIO_ITEMS.register(bus);
