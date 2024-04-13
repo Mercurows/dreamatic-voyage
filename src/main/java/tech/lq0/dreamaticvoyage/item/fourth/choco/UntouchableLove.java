@@ -42,6 +42,7 @@ public class UntouchableLove extends SwordItem {
             pTarget.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 400, 4));
             pTarget.addEffect(new MobEffectInstance(MobEffects.POISON, 400, 4));
             pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 400, 0));
+            pTarget.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 400, 0));
         }
 
         return super.hurtEnemy(pStack, pTarget, pAttacker);
@@ -59,7 +60,7 @@ public class UntouchableLove extends SwordItem {
         if (pEquipmentSlot == EquipmentSlot.MAINHAND) {
             map = HashMultimap.create(map);
             map.put(ForgeMod.ENTITY_REACH.get(),
-                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -1.0f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, -1.5f, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }
