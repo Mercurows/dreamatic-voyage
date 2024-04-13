@@ -68,6 +68,7 @@ import tech.lq0.dreamaticvoyage.item.magicros.chiram.*;
 import tech.lq0.dreamaticvoyage.item.magicros.ekira.*;
 import tech.lq0.dreamaticvoyage.item.magicros.haine.*;
 import tech.lq0.dreamaticvoyage.item.magicros.keroro.*;
+import tech.lq0.dreamaticvoyage.item.other.fictional.*;
 import tech.lq0.dreamaticvoyage.item.second.lecia.*;
 import tech.lq0.dreamaticvoyage.item.second.louise.*;
 import tech.lq0.dreamaticvoyage.item.second.lucia.BigFierceOneCoffee;

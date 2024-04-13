@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.other;
+package tech.lq0.dreamaticvoyage.item.other.fictional;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
