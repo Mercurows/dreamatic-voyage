@@ -1,0 +1,8 @@
+{
+  "name": "item.dreamaticvoyage.observation_diary",
+  "landing_text": "des.dreamaticvoyage.observation_diary",
+  "version": 1,
+  "creative_tab": "dreamaticvoyage:dmv_tab",
+  "use_resource_pack": true,
+  "model": "dreamaticvoyage:untouchable_love"
+}
