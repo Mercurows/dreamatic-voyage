@@ -5,6 +5,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.block.entity.PhantasmalVoyagerBlockEntity;
 import tech.lq0.dreamaticvoyage.block.entity.PointsStoreBlockEntity;
 
 public class BlockEntityRegistry {
@@ -13,4 +14,7 @@ public class BlockEntityRegistry {
     public static final RegistryObject<BlockEntityType<PointsStoreBlockEntity>> POINTS_STORE_BLOCK_ENTITY =
             BLOCK_ENTITY_TYPES.register("points_store_block_entity",
                     () -> BlockEntityType.Builder.of(PointsStoreBlockEntity::new, BlockRegistry.POINTS_STORE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<PhantasmalVoyagerBlockEntity>> PHANTASMAL_VOYAGER_BLOCK_ENTITY =
+            BLOCK_ENTITY_TYPES.register("phantasmal_voyager_block_entity",
+                    () -> BlockEntityType.Builder.of(PhantasmalVoyagerBlockEntity::new, BlockRegistry.PHANTASMAL_VOYAGER.get()).build(null));
 }
