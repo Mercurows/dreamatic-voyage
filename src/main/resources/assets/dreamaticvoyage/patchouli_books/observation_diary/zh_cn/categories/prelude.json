@@ -1,5 +1,6 @@
 {
   "name": "序章",
   "description": "在普罗维登岛沉没以后……$(br)位于虚构世界边缘的你，接下来的路该何去何从？",
-  "icon": "dreamaticvoyage:magic_book"
+  "icon": "dreamaticvoyage:magic_book",
+  "sortnum": 0
 }

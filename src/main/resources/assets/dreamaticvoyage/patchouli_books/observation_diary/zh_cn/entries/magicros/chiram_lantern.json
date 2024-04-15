@@ -1,0 +1,25 @@
+{
+  "name": "提灯",
+  "icon": "dreamaticvoyage:chiram_lantern",
+  "category": "dreamaticvoyage:magicros",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "我在遗迹中残存的记录中发现了一种形似提灯的物品，记录表明这个工具曾是由管家$(3)倾澜Chiram$()所使用的。$(br2)为了防止遗忘，我将制作方法记录如下："
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:chiram_lantern",
+      "text": "$(o)闪耀于内心的花火。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "当我制作了一个提灯，并把它拿在手上时，它并未发出光芒，而是……使得我在黑暗中感受到了光明。它所散发出的能量，照亮了我的内心，驱散了我对黑暗的恐惧。$(br2)不过提灯仍需要燃料来发挥这一作用，用普通的火把就可以很方便的补充燃料。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "副手持有提灯时可以提供在黑暗中看清物体的能力，用火把以补充燃料。",
+      "title": "观察结论"
+    }
+  ]
+}
