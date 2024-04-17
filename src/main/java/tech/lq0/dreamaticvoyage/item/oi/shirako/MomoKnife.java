@@ -9,12 +9,13 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.capability.escort.IEscortCapability;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.escort.EscortCapabilityProvider;
 import tech.lq0.dreamaticvoyage.init.EffectRegistry;
@@ -50,9 +51,7 @@ public class MomoKnife extends SwordItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
-        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
-
-        escortCapabilityLazyOptional.ifPresent(s -> {
+        stack.getCapability(ModCapabilities.ESCORT_CAPABILITY).ifPresent(s -> {
             pPlayer.heal(getAllDamage(stack, pLevel.getGameTime()));
             s.setValue(0);
             ItemNBTTool.setLong(stack, TAG_TIME, pPlayer.level().getGameTime());
@@ -72,9 +71,7 @@ public class MomoKnife extends SwordItem {
 
         double random = ((Math.random() * (damage * 10)) + 20) / 10.0;
 
-        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
-
-        escortCapabilityLazyOptional.ifPresent(s -> s.addValue(random));
+        stack.getCapability(ModCapabilities.ESCORT_CAPABILITY).ifPresent(s -> s.addValue(random));
         ItemNBTTool.setLong(stack, TAG_TIME, attacker.level().getGameTime());
 
         int lvl = -1;
@@ -102,9 +99,7 @@ public class MomoKnife extends SwordItem {
         long lastDamageTime = ItemNBTTool.getLong(stack, TAG_TIME, 9223372036854775807L);
         AtomicReference<Float> damage = new AtomicReference<>((float) 0);
 
-        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
-
-        escortCapabilityLazyOptional.ifPresent(s -> {
+        stack.getCapability(ModCapabilities.ESCORT_CAPABILITY).ifPresent(s -> {
             damage.set((float) (s.getEscortValue() - (time - lastDamageTime) * 0.1f));
             if (damage.get() < 0 || time <= lastDamageTime) {
                 damage.set(0f);

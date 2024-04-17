@@ -12,11 +12,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.escort.EscortCapabilityProvider;
-import tech.lq0.dreamaticvoyage.capability.escort.IEscortCapability;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
 import java.util.List;
@@ -43,9 +41,7 @@ public class IdolCloth extends Item {
 
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = pStack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
-
-        escortCapabilityLazyOptional.ifPresent(s -> {
+        pStack.getCapability(ModCapabilities.ESCORT_CAPABILITY).ifPresent(s -> {
             boolean flag = false;
             if (!pLevel.isClientSide && pEntity instanceof Player player) {
                 if (pIsSelected) {

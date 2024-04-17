@@ -20,11 +20,9 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.escort.EscortCapabilityProvider;
-import tech.lq0.dreamaticvoyage.capability.escort.IEscortCapability;
 import tech.lq0.dreamaticvoyage.entity.projectile.BloodCrystalEntity;
 import tech.lq0.dreamaticvoyage.init.EffectRegistry;
 import tech.lq0.dreamaticvoyage.init.SoundRegistry;
@@ -82,8 +80,7 @@ public class WorldPeaceStaff extends SwordItem {
         double damage = attacker.getAttributeValue(Attributes.ATTACK_DAMAGE);
         double random = ((Math.random() * (damage * 10)) + 100) / 10.0;
 
-        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
-        escortCapabilityLazyOptional.ifPresent(s -> s.addValue(random));
+        stack.getCapability(ModCapabilities.ESCORT_CAPABILITY).ifPresent(s -> s.addValue(random));
 
         target.addEffect(new MobEffectInstance(EffectRegistry.BLEEDING.get(), 200, 5), attacker);
         target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 2), attacker);
@@ -113,8 +110,7 @@ public class WorldPeaceStaff extends SwordItem {
 
     @Override
     public void onUseTick(Level pLevel, LivingEntity player, ItemStack pStack, int pRemainingUseDuration) {
-        LazyOptional<IEscortCapability> escortCapabilityLazyOptional = pStack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
-        escortCapabilityLazyOptional.ifPresent(s -> {
+        pStack.getCapability(ModCapabilities.ESCORT_CAPABILITY).ifPresent(s -> {
             if (pRemainingUseDuration % 2 == 0 && s.getEscortValue() >= 5.0) {
                 if (player.isSteppingCarefully()) {
                     player.heal(3.0f);

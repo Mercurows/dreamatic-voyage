@@ -12,14 +12,12 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.entity.player.TradeWithVillagerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.escort.EscortCapabilityProvider;
-import tech.lq0.dreamaticvoyage.capability.escort.IEscortCapability;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -55,8 +53,7 @@ public class EscortToken extends Item implements ICurioItem {
         LivingEntity entity = slotContext.entity();
 
         if (entity instanceof Player player && !player.level().isClientSide) {
-            LazyOptional<IEscortCapability> escortCapabilityLazyOptional = stack.getCapability(ModCapabilities.ESCORT_CAPABILITY);
-            escortCapabilityLazyOptional.ifPresent(s -> {
+            stack.getCapability(ModCapabilities.ESCORT_CAPABILITY).ifPresent(s -> {
                 if (s.getEscortValue() >= 1) {
                     s.subValue(1);
                     player.addItem(new ItemStack(ItemRegistry.PDC_POINT.get()));
@@ -95,9 +92,9 @@ public class EscortToken extends Item implements ICurioItem {
                 count += costB.getCount();
             }
 
-            LazyOptional<IEscortCapability> escortCapabilityLazyOptional = s.stack().getCapability(ModCapabilities.ESCORT_CAPABILITY);
             int finalCount = count;
-            escortCapabilityLazyOptional.ifPresent(st -> st.addValue(finalCount / 10.0));
+            s.stack().getCapability(ModCapabilities.ESCORT_CAPABILITY)
+                    .ifPresent(st -> st.addValue(finalCount / 10.0));
         }));
     }
 }

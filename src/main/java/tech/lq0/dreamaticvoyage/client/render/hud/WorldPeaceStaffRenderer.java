@@ -8,11 +8,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderGuiOverlayEvent;
-import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.capability.escort.IEscortCapability;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
@@ -38,8 +36,7 @@ public class WorldPeaceStaffRenderer {
 
             AtomicDouble atValue = new AtomicDouble(0);
 
-            LazyOptional<IEscortCapability> escortCapabilityLazyOptional = item.getCapability(ModCapabilities.ESCORT_CAPABILITY);
-            escortCapabilityLazyOptional.ifPresent(s -> {
+            item.getCapability(ModCapabilities.ESCORT_CAPABILITY).ifPresent(s -> {
                 atValue.set(s.getEscortValue());
 
                 double value = s.getEscortValue();
