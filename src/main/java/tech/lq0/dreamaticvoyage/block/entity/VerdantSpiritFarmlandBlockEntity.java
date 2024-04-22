@@ -20,7 +20,8 @@ import javax.annotation.Nullable;
 
 public class VerdantSpiritFarmlandBlockEntity extends BlockEntity {
     private static final String TAG_TIME = "time";
-    int time = 0;
+    Double time = 0.0;
+
     public VerdantSpiritFarmlandBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.VERDANT_SPIRIT_FARMLAND_BLOCK_ENTITY.get(), pPos, pBlockState);
     }
@@ -28,8 +29,8 @@ public class VerdantSpiritFarmlandBlockEntity extends BlockEntity {
     @SuppressWarnings("unused")
     public static void tick(Level level, BlockPos pos, BlockState state, VerdantSpiritFarmlandBlockEntity self) {
 
-        if (self.time < 100 * level.getGameRules().getRule(GameRules.RULE_RANDOMTICKING).get()) {
-            self.time++;
+        if (self.time < 400) {
+            self.time += level.getGameRules().getRule(GameRules.RULE_RANDOMTICKING).get() / 3.0;
         } else {
             BlockState aboveState = level.getBlockState(pos.above());
             Block aboveBlock = aboveState.getBlock();
@@ -47,20 +48,20 @@ public class VerdantSpiritFarmlandBlockEntity extends BlockEntity {
                     ForgeHooks.onCropsGrowPost(level, pos.above(), aboveState);
                 }
             }
-            self.time = 0;
+            self.time = 0.0;
         }
     }
 
     @Override
     public void saveAdditional(CompoundTag tag) {
         super.saveAdditional(tag);
-        tag.putInt(TAG_TIME, time);
+        tag.putDouble(TAG_TIME, time);
     }
 
     @Override
     public void load(CompoundTag pTag) {
         super.load(pTag);
-        time = pTag.getInt(TAG_TIME);
+        time = pTag.getDouble(TAG_TIME);
     }
 
     @Nullable
