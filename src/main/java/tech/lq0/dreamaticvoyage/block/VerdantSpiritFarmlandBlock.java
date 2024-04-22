@@ -14,19 +14,30 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
+import tech.lq0.dreamaticvoyage.block.entity.VerdantSpiritFarmlandBlockEntity;
+import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.BlockRegistry;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
-public class VerdantSpiritFarmlandBlock extends FarmBlock {
+public class VerdantSpiritFarmlandBlock extends FarmBlock implements EntityBlock{
     public VerdantSpiritFarmlandBlock() {
         super(Properties.of().mapColor(MapColor.DIRT).randomTicks().strength(0.6F).sound(SoundType.GRAVEL).
                 isViewBlocking((state, getter, pos) -> true).isSuffocating((state, getter, pos) -> true));
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+        return new VerdantSpiritFarmlandBlockEntity(pPos, pState);
     }
 
     @Override
@@ -52,38 +63,6 @@ public class VerdantSpiritFarmlandBlock extends FarmBlock {
         return net.minecraftforge.common.FarmlandWaterManager.hasBlockWaterTicket(pLevel, pPos);
     }
 
-    /**
-     * From Farmer's Delight
-     */
-    @Override
-    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        int moisture = state.getValue(MOISTURE);
-        if (!isNearWater(level, pos) && !level.isRainingAt(pos.above())) {
-            if (moisture > 0) {
-                level.setBlock(pos, state.setValue(MOISTURE, moisture - 1), 2);
-            }
-        } else if (moisture < 7) {
-            level.setBlock(pos, state.setValue(MOISTURE, 7), 2);
-        } else if (moisture == 7) {
-            BlockState aboveState = level.getBlockState(pos.above());
-            Block aboveBlock = aboveState.getBlock();
-
-            if (aboveBlock instanceof TallFlowerBlock) {
-                return;
-            }
-
-            if (aboveBlock instanceof BonemealableBlock growable) {
-                if (growable.isValidBonemealTarget(level, pos.above(), aboveState, false) && ForgeHooks.onCropsGrowPre(level, pos.above(), aboveState, true)) {
-                    growable.performBonemeal(level, level.random, pos.above(), aboveState);
-                    if (!level.isClientSide) {
-                        level.levelEvent(2005, pos.above(), 0);
-                    }
-                    ForgeHooks.onCropsGrowPost(level, pos.above(), aboveState);
-                }
-            }
-        }
-    }
-
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockState aboveState = level.getBlockState(pos.above());
@@ -105,6 +84,20 @@ public class VerdantSpiritFarmlandBlock extends FarmBlock {
     public boolean canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction facing, IPlantable plantable) {
         PlantType plantType = plantable.getPlantType(world, pos.relative(facing));
         return plantType == PlantType.CROP || plantType == PlantType.PLAINS;
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+        if (!pLevel.isClientSide) {
+            return createTickerHelper(pBlockEntityType, BlockEntityRegistry.VERDANT_SPIRIT_FARMLAND_BLOCK_ENTITY.get(), VerdantSpiritFarmlandBlockEntity::tick);
+        }
+        return null;
+    }
+
+    @Nullable
+    protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> pServerType, BlockEntityType<E> pClientType, BlockEntityTicker<? super E> pTicker) {
+        return pClientType == pServerType ? (BlockEntityTicker<A>)pTicker : null;
     }
 
     @Override
