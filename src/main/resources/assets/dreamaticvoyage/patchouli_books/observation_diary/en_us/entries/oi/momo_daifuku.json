@@ -1,0 +1,16 @@
+{
+  "name": "桃大福",
+  "icon": "dreamaticvoyage:momo_daifuku",
+  "category": "dreamaticvoyage:oi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "毛毛毛。$(br2)未完待续"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:momo_daifuku",
+      "text": "$(o)据说是染色食品，还是少吃点吧。"
+    }
+  ]
+}
