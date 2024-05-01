@@ -5,5 +5,8 @@
   "creative_tab": "dreamaticvoyage:dmv_tab",
   "use_resource_pack": true,
   "model": "dreamaticvoyage:untouchable_love",
-  "i18n": true
+  "i18n": true,
+  "macros": {
+    "$(liver)": "$(#FCBBB1)"
+  }
 }

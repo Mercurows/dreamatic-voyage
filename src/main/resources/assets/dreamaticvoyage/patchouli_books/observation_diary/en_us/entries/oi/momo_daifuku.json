@@ -1,20 +1,24 @@
 {
-  "name": "桃大福",
+  "name": "dreamaticvoyage.entry.momo_daifuku",
   "icon": "dreamaticvoyage:momo_daifuku",
   "category": "dreamaticvoyage:oi",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(item)桃大福$(0)是一个粉色的甜品，"
+      "text": "dreamaticvoyage.page.momo_daifuku1"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "dreamaticvoyage:momo_daifuku",
-      "text": "$(o)据说是染色食品，还是少吃点吧。"
+      "text": "dreamaticvoyage.page.momo_daifuku2"
     },
     {
       "type": "patchouli:text",
-      "text": "“我在野外发现了一个有着耳朵的粉色团状物品，捏起来手感很好，闻起来有股桃子的清香”"
+      "text": "dreamaticvoyage.page.momo_daifuku3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.momo_daifuku4"
     }
   ]
 }
