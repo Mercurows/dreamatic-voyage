@@ -1,8 +1,9 @@
 {
-  "name": "patchouli.dreamaticvoyage.observation_diary",
-  "landing_text": "patchouli.dreamaticvoyage.observation_diary.des",
+  "name": "dreamaticvoyage.book.observation_diary",
+  "landing_text": "dreamaticvoyage.book.observation_diary.des",
   "version": 1,
   "creative_tab": "dreamaticvoyage:dmv_tab",
   "use_resource_pack": true,
-  "model": "dreamaticvoyage:untouchable_love"
+  "model": "dreamaticvoyage:untouchable_love",
+  "i18n": true
 }
