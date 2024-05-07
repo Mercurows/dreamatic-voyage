@@ -1219,6 +1219,7 @@
   "dreamaticvoyage.advancement.magicros_des": "集齐魔力交织套装",
   "dreamaticvoyage.advancement.call_in_thunder": "劈你的雷正在路上",
   "dreamaticvoyage.advancement.call_in_thunder_des": "请不要模仿哦",
+
   "dreamaticvoyage.book.observation_diary": "观察日记",
   "dreamaticvoyage.book.observation_diary.des": "普罗维登遗址考察报告",
   "dreamaticvoyage.category.prelude": "序章",
@@ -1237,6 +1238,10 @@
   "dreamaticvoyage.category.oi.des": "作为游走在大陆边缘的旅者们，她们会发生什么样的故事呢？",
   "dreamaticvoyage.category.legendary": "最终章：虚构传说",
   "dreamaticvoyage.category.legendary.des": "那么，接下来就是本次远航的终点了。",
+
+  "dreamaticvoyage.entry.observers": "观测者",
+
+
   "dreamaticvoyage.entry.chiram_lantern": "提灯",
   "dreamaticvoyage.page.chiram_lantern1": "我在遗迹中残存的记录中发现了一种形似提灯的物品，记录表明这个工具曾是由管家$(3)倾澜Chiram$()所使用的。$(br2)为了防止遗忘，我将制作方法记录如下：",
   "dreamaticvoyage.page.chiram_lantern2": "$(o)闪耀于内心的花火。",

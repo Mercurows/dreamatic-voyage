@@ -1,0 +1,27 @@
+{
+  "name": "dreamaticvoyage.entry.observers",
+  "icon": "minecraft:spyglass",
+  "category": "dreamaticvoyage:prelude",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This is a test entry, but it should show up!"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This is a test entry, but it should show up!"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "dreamaticvoyage:textures/character/yorune_default.png"
+      ],
+      "border": true,
+      "text": "看板娘"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This is a test entry, but it should show up!"
+    }
+  ]
+}
