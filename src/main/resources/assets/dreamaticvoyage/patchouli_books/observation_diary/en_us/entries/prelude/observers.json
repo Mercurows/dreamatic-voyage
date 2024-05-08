@@ -5,23 +5,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "This is a test entry, but it should show up!"
+      "text": "dreamaticvoyage.page.observers1"
     },
     {
       "type": "patchouli:text",
-      "text": "This is a test entry, but it should show up!"
+      "text": "dreamaticvoyage.page.observers2"
     },
     {
       "type": "patchouli:image",
       "images": [
-        "dreamaticvoyage:textures/character/yorune_default.png"
+        "dreamaticvoyage:textures/character/yorune_default_256x.png"
       ],
       "border": true,
-      "text": "看板娘"
+      "title": "dreamaticvoyage.title.observers1"
     },
     {
       "type": "patchouli:text",
-      "text": "This is a test entry, but it should show up!"
+      "text": "dreamaticvoyage.page.observers3"
     }
   ]
 }
