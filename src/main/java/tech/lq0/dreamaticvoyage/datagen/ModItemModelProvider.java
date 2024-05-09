@@ -172,6 +172,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.CHOCOAL_COOKIE);
         simpleItem(ItemRegistry.UNTOUCHABLE_LOVE);
         simpleItem(ItemRegistry.STRAWBERRY_CHOCOLATE);
+        simpleItem(ItemRegistry.ACTIVATED_CREAM);
 
         simpleItem(ItemRegistry.JELLYFISH_BOTTLE, "translucent");
         simpleItem(ItemRegistry.SHAKANA);
