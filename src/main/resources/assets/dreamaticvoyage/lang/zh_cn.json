@@ -1247,6 +1247,9 @@
   "dreamaticvoyage.category.shirako": "白桃Shirako",
   "dreamaticvoyage.category.shirako.des": "一只粉色的安哥拉兔，开启了她独自一人的冒险旅程。",
 
+  "dreamaticvoyage.category.fukamizu": "海栖深水",
+  "dreamaticvoyage.category.fukamizu.des": "憧憬陆地生活的人鱼公主，当她第一次踏上这片土地时，迎接她的会是什么呢？",
+
   "dreamaticvoyage.entry.observers": "观测者",
   "dreamaticvoyage.page.observers1": "",
   "dreamaticvoyage.page.observers2": "",
@@ -1267,5 +1270,9 @@
   "dreamaticvoyage.page.momo_phone1": "我们目前还无法得知这片岛屿曾经的科技水平，但$(item)毛毛手机$(0)的发现说明了这里曾经有过现代科技的影子。$(p)潜行时使用会标记当前位置，非潜行状态下使用会传送至该位置。",
   "dreamaticvoyage.page.momo_phone2": "$(o)智能电子设备，但貌似没那么智能……",
   "dreamaticvoyage.page.momo_phone3": "以下内容摘自$(l:dreamaticvoyage:prelude/observers#yorune)观察员$(/l)$(0)的日记：$(p)“Day 1$(br)今天走路的时候突然天降一部手机砸在了头上，拿起来也没发现什么特别的，直接点点点会提示<噗噗打车目前无法到达那里>。”",
-  "dreamaticvoyage.page.momo_phone4": "“Day 2$(br)学会了，今天蹲在床头的时候，发现可以把当前位置设置为目的地，然后手机亮了起来，还会出现粉毛可爱萝莉的屏保，真好。”$(p)“Day 3$(br)不是，哥们前一秒还在上课，怎么下一秒到家了啊？$(br)啊……是不小心点到手机了……老师您信吗？”"
+  "dreamaticvoyage.page.momo_phone4": "“Day 2$(br)学会了，今天蹲在床头的时候，发现可以把当前位置设置为目的地，然后手机亮了起来，还会出现粉毛可爱萝莉的屏保，真好。”$(p)“Day 3$(br)不是，哥们前一秒还在上课，怎么下一秒到家了啊？$(br)啊……是不小心点到手机了……老师您信吗？”",
+
+  "dreamaticvoyage.entry.fukamizu_bread": "深水面包",
+  "dreamaticvoyage.page.fukamizu_bread1": "作为一种独特的面包，$(item)深水面包$(0)比起食物，更像是一种坚固的建材，其结构强度已经突破了材料力学的极限。",
+  "dreamaticvoyage.page.fukamizu_bread2": "$(o)牙口好，吃啥都香"
 }
