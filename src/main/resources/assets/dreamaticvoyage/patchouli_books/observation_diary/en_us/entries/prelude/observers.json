@@ -17,7 +17,8 @@
         "dreamaticvoyage:textures/character/yorune_default_256x.png"
       ],
       "border": true,
-      "title": "dreamaticvoyage.title.observers1"
+      "title": "dreamaticvoyage.title.observers1",
+      "anchor": "yorune"
     },
     {
       "type": "patchouli:text",
