@@ -838,6 +838,10 @@
   "item.dreamaticvoyage.dg_fukami": "Dream Guardian",
   "item.dreamaticvoyage.dg_yesa": "Dream Guardian",
   "item.dreamaticvoyage.dg_shirako": "Dream Guardian",
+  "item.dreamaticvoyage.hqss_bread_ingot": "HQSS Bread Ingot",
+  "des.dreamaticvoyage.hqss_bread_ingot_1": "深水科技的最新产品，全称是\"High-density Quasi-stable Sophisticated Sintered Bread Ingot\"",
+  "des.dreamaticvoyage.hqss_bread_ingot_2": "很难想象深水面包是怎么变成这个东西的",
+
   "itemGroup.dreamaticvoyage_tapes_tab": "Dreamatic Voyage Tapes",
   "item.dreamaticvoyage.audio_tape_haine_1": "Audio Tape (Haine)",
   "subtitle.dreamaticvoyage.haine_broadcast": "Haine: Warning for emergency of Creepers",
@@ -999,6 +1003,7 @@
   "enchantment.dreamaticvoyage.uni_husk.desc": "Poison attacker when being attacked",
   "enchantment.dreamaticvoyage.magicros.desc": "When there are 3 or more friendly creatures around you, when attacked, you will recover a certain amount of HP, cause damage to the attacker and bounce it back",
   "enchantment.dreamaticvoyage.peace_wish.desc": "Make attacker bleeding when being attacked",
+
   "liver.dreamaticvoyage.liver": "From:",
   "liver.dreamaticvoyage.mitsuki": "Kanna Mitsuki",
   "liver.dreamaticvoyage.usa": "Kurumi=Usiel=Saturnalia",

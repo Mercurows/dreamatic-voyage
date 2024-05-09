@@ -838,6 +838,10 @@
   "item.dreamaticvoyage.dg_fukami": "梦行守卫",
   "item.dreamaticvoyage.dg_yesa": "梦行守卫",
   "item.dreamaticvoyage.dg_shirako": "梦行守卫",
+  "item.dreamaticvoyage.hqss_bread_ingot": "HQSS面包锭",
+  "des.dreamaticvoyage.hqss_bread_ingot_1": "深水科技的最新产品，全称是“高密度准稳态精密烧结面包锭”",
+  "des.dreamaticvoyage.hqss_bread_ingot_2": "很难想象深水面包是怎么变成这个东西的",
+
   "itemGroup.dreamaticvoyage_tapes_tab": "虚构远航：音声",
   "item.dreamaticvoyage.audio_tape_haine_1": "音声磁带（灰音）",
   "subtitle.dreamaticvoyage.haine_broadcast": "灰音：紧急苦力怕播报",
@@ -999,6 +1003,7 @@
   "enchantment.dreamaticvoyage.uni_husk.desc": "被攻击时会使攻击者中毒",
   "enchantment.dreamaticvoyage.magicros.desc": "当玩家周围存在3个及以上的友方生物时，被攻击时会恢复一定的生命值，对攻击者造成伤害并击退",
   "enchantment.dreamaticvoyage.peace_wish.desc": "被攻击时会使攻击者流血",
+
   "liver.dreamaticvoyage.liver": "所属Liver:",
   "liver.dreamaticvoyage.mitsuki": "神奈满月",
   "liver.dreamaticvoyage.usa": "胡桃Usa",
