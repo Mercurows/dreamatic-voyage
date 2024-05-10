@@ -1,7 +1,7 @@
 {
   "name": "dreamaticvoyage.entry.fukamizu_bread",
   "icon": "dreamaticvoyage:fukamizu_bread",
-  "category": "dreamaticvoyage:fukamizu",
+  "category": "dreamaticvoyage:oi",
   "pages": [
     {
       "type": "patchouli:text",
@@ -20,5 +20,6 @@
       "type": "patchouli:text",
       "text": "dreamaticvoyage.page.fukamizu_bread4"
     }
-  ]
+  ],
+  "sortnum": 605
 }

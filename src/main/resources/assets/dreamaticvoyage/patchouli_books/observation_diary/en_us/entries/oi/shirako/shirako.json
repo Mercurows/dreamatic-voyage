@@ -1,7 +1,7 @@
 {
   "name": "dreamaticvoyage.entry.shirako",
   "icon": "minecraft:writable_book",
-  "category": "dreamaticvoyage:shirako",
+  "category": "dreamaticvoyage:oi",
   "pages": [
     {
       "type": "patchouli:text",

@@ -1,7 +1,7 @@
 {
   "name": "dreamaticvoyage.entry.momo_phone",
   "icon": "dreamaticvoyage:momo_phone",
-  "category": "dreamaticvoyage:shirako",
+  "category": "dreamaticvoyage:oi",
   "pages": [
     {
       "type": "patchouli:text",
@@ -20,5 +20,6 @@
       "type": "patchouli:text",
       "text": "dreamaticvoyage.page.momo_phone4"
     }
-  ]
+  ],
+  "sortnum": 5
 }

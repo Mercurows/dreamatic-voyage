@@ -1,7 +1,7 @@
 {
   "name": "dreamaticvoyage.entry.momo_daifuku",
   "icon": "dreamaticvoyage:momo_daifuku",
-  "category": "dreamaticvoyage:shirako",
+  "category": "dreamaticvoyage:oi",
   "pages": [
     {
       "type": "patchouli:text",
@@ -19,6 +19,16 @@
     {
       "type": "patchouli:text",
       "text": "dreamaticvoyage.page.momo_daifuku4"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.momo_daifuku5"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:daifuku_syrup",
+      "text": "dreamaticvoyage.page.momo_daifuku6"
     }
-  ]
+  ],
+  "sortnum": 1
 }

@@ -1,0 +1,25 @@
+{
+  "name": "dreamaticvoyage.entry.fetuozi",
+  "icon": "dreamaticvoyage:fetuozi",
+  "category": "dreamaticvoyage:oi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.fetuozi1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:fetuozi",
+      "text": "dreamaticvoyage.page.fetuozi2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.fetuozi3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.fetuozi4"
+    }
+  ],
+  "sortnum": 2
+}
