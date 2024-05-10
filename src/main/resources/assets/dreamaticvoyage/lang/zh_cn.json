@@ -1261,6 +1261,7 @@
   "dreamaticvoyage.page.chiram_lantern2": "$(o)闪耀于内心的花火。",
   "dreamaticvoyage.page.chiram_lantern3": "当我制作了一个提灯，并把它拿在手上时，它并未发出光芒，而是……使得我在黑暗中感受到了光明。它所散发出的能量，照亮了我的内心，驱散了我对黑暗的恐惧。$(br2)不过提灯仍需要燃料来发挥这一作用，用普通的火把就可以很方便的补充燃料。",
   "dreamaticvoyage.page.chiram_lantern4": "观察结论$(br)副手持有提灯时可以提供在黑暗中看清物体的能力，用火把以补充燃料。",
+
   "dreamaticvoyage.entry.momo_daifuku": "桃大福",
   "dreamaticvoyage.page.momo_daifuku1": "这里的世界从不缺乏奇特的甜品，长着耳朵的粉色$(item)桃大福$(0)就是其中之一。$(p)食用后会获得$(thing)漂浮$(0)效果。",
   "dreamaticvoyage.page.momo_daifuku2": "$(o)据说是染色食品，还是少吃点吧。",
@@ -1271,6 +1272,9 @@
   "dreamaticvoyage.page.momo_phone2": "$(o)智能电子设备，但貌似没那么智能……",
   "dreamaticvoyage.page.momo_phone3": "以下内容摘自$(l:dreamaticvoyage:prelude/observers#yorune)观察员$(/l)$(0)的日记：$(p)“Day 1$(br)今天走路的时候突然天降一部手机砸在了头上，拿起来也没发现什么特别的，直接点点点会提示<噗噗打车目前无法到达那里>。”",
   "dreamaticvoyage.page.momo_phone4": "“Day 2$(br)学会了，今天蹲在床头的时候，发现可以把当前位置设置为目的地，然后手机亮了起来，还会出现粉毛可爱萝莉的屏保，真好。”$(p)“Day 3$(br)不是，哥们前一秒还在上课，怎么下一秒到家了啊？$(br)啊……是不小心点到手机了……老师您信吗？”",
+  "dreamaticvoyage.entry.shirako": "毛毛",
+  "dreamaticvoyage.page.shirako1": "毛毛是一种毛毛",
+  "dreamaticvoyage.title.shirako": "毛毛",
 
   "dreamaticvoyage.entry.fukamizu_bread": "深水面包",
   "dreamaticvoyage.page.fukamizu_bread1": "作为一种独特的面包，$(item)深水面包$(0)比起食物，更像是一种坚固的建材，其结构强度已经突破了材料力学的极限。",
