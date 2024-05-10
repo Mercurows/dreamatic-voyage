@@ -1268,7 +1268,7 @@
   "dreamaticvoyage.page.momo_daifuku3": "“我在野外发现了一个有着耳朵的粉色团状物品，捏起来手感很好，闻起来有股桃子的清香。$(br2)……我实在是太饿了，就把没忍住把它吃了下去。$(br2)它吃起来QQ弹弹带着微甜，下一秒仿佛自己置身云端……等下好像是真的飞起来了？！”",
   "dreamaticvoyage.page.momo_daifuku4": "“这东西吃多了不行，第十个的时候我噌的一下子就燃起来了！”$(br2)——$(l:dreamaticvoyage:prelude/observers#yorune)受害人$(/l)$(0)在被采访的时候是这么说的。",
   "dreamaticvoyage.page.momo_daifuku5": "对于那些吃不完的桃大福，我们还可以把它做成$(item)大福糖浆$(0)。$(p)同样地，食用大福糖浆后也会获得$(thing)漂浮$(0)效果，有概率会使自身$(c)燃烧$(0)起来，但效果持续时间更短。",
-  "dreamaticvoyage.page.momo_daifuku6": "$(o)罐中的炽热爱意。$(0)$(p)明明什么都没有放，这几个罐子是哪来的呢？",
+  "dreamaticvoyage.page.momo_daifuku6": "$(o)罐中的炽热爱意。$()$(p)明明什么都没有放，这几个罐子是哪来的呢？",
   "dreamaticvoyage.entry.fetuozi": "铁坨子",
   "dreamaticvoyage.page.fetuozi1": "如果一个物品看上去像听诊器，摸起来像听诊器，那它……真不一定是听诊器。$(item)铁坨子$(0)就是这样的一个例子。$(p)用该武器攻击生物时会造成极强的击退效果。",
   "dreamaticvoyage.page.fetuozi2": "$(o)密度极大的听诊器，让你听到心灵的声音（物理）。",
