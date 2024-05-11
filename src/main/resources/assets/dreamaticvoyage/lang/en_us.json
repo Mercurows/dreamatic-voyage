@@ -1244,11 +1244,7 @@
   "dreamaticvoyage.category.legendary": "Chapter Final: Legendary",
   "dreamaticvoyage.category.legendary.des": "那么，接下来就是本次远航的终点了。",
 
-  "dreamaticvoyage.category.shirako": "Shirako",
-  "dreamaticvoyage.category.shirako.des": "一只粉色的安哥拉兔，开启了她独自一人的冒险旅程。",
-
-  "dreamaticvoyage.category.fukamizu": "Fukamizu",
-  "dreamaticvoyage.category.fukamizu.des": "憧憬陆地生活的人鱼公主，当她第一次踏上这片土地时，迎接她的会是什么呢？",
+  "dreamaticvoyage.title.leah": "综合考察日志",
 
   "dreamaticvoyage.entry.observers": "Observers",
   "dreamaticvoyage.page.observers1": "",
@@ -1284,6 +1280,10 @@
   "dreamaticvoyage.title.shirako": "毛毛",
 
   "dreamaticvoyage.entry.fukamizu_bread": "深水面包",
-  "dreamaticvoyage.page.fukamizu_bread1": "作为一种独特的面包，$(item)深水面包$(0)比起食物，更像是一种坚固的建材，其结构强度已经突破了材料力学的极限。",
-  "dreamaticvoyage.page.fukamizu_bread2": "$(o)牙口好，吃啥都香"
+  "dreamaticvoyage.page.fukamizu_bread1": "作为一种独特的面包，$(item)深水面包$(0)比起食物，更像是一种坚固的建材，其结构强度已经突破了材料力学的极限。$(p)如果对自己的牙口感到十分自信，或许可以尝试食用它，注意，后果自负。",
+  "dreamaticvoyage.page.fukamizu_bread2": "$(o)牙口好，吃啥都香。",
+  "dreamaticvoyage.page.fukamizu_bread3": "$(l)[读取开始……]$(br)[序列号 IATAE-06-05]$()$(p)随着探索的深入，这里出现了更多有价值的物品早已成为明确的事实。在遗迹深处我发现了……一个还能读取的SSD？$(p)里面存有一个大概是初中水平的通识测试题（答题者错了不少），一件魔法戒指的设计图和……一种流传已久的面包烤制方法。",
+  "dreamaticvoyage.page.fukamizu_bread4": "先从面包说起吧，这种面包由普通面包深度烤制而成，但意外的是它完全没有碳化，而是形成了一种高强度的交联淀粉结构……同时伴随一定的失水，使之具有极高的结构强度，真是见鬼了！非常不推荐食用这玩意，这可能划伤你自己。",
+  "dreamaticvoyage.page.fukamizu_bread5": "我推荐将其用作基础的武器（就像你会拿板砖打人那样，它甚至比板砖更坚硬）或者……压缩用作建筑材料，但是你压缩了它就别想再拆开了。$(p)$(l)[读取结束]",
+  "dreamaticvoyage.page.fukamizu_bread6": "$(o)怎么回事？这不符合任何材料学理论！"
 }

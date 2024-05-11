@@ -14,11 +14,21 @@
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.fukamizu_bread3"
+      "text": "dreamaticvoyage.page.fukamizu_bread3",
+      "title": "dreamaticvoyage.title.leah"
     },
     {
       "type": "patchouli:text",
       "text": "dreamaticvoyage.page.fukamizu_bread4"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.fukamizu_bread5"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:fukamizu_bread_block",
+      "text": "dreamaticvoyage.page.fukamizu_bread6"
     }
   ],
   "sortnum": 605
