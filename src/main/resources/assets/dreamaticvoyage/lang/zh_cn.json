@@ -1243,6 +1243,8 @@
   "dreamaticvoyage.category.oi.des": "作为游走在大陆边缘的旅者们，她们会发生什么样的故事呢？",
   "dreamaticvoyage.category.legendary": "最终章：虚构传说",
   "dreamaticvoyage.category.legendary.des": "那么，接下来就是本次远航的终点了。",
+  "dreamaticvoyage.category.extra": "额外章节",
+  "dreamaticvoyage.category.extra.des": "这里收录了主线之外的内容，或许可以常来看看。",
 
   "dreamaticvoyage.title.leah": "综合考察日志",
 
@@ -1282,14 +1284,21 @@
   "dreamaticvoyage.entry.fukamizu_bread": "深水面包",
   "dreamaticvoyage.page.fukamizu_bread1": "作为一种独特的面包，$(item)深水面包$(0)比起食物，更像是一种坚固的建材，其结构强度已经突破了材料力学的极限。$(p)如果对自己的牙口感到十分自信，或许可以尝试食用它，注意，后果自负。",
   "dreamaticvoyage.page.fukamizu_bread2": "$(o)牙口好，吃啥都香。",
-  "dreamaticvoyage.page.fukamizu_bread3": "$(l)[读取开始……]$(br)[序列号 IATAE-06-05]$()$(p)随着探索的深入，这里出现了更多有价值的物品早已成为明确的事实。在遗迹深处我发现了……一个还能读取的SSD？$(p)里面存有一个大概是初中水平的通识测试题（答题者错了不少），一件魔法戒指的设计图和……一种流传已久的面包烤制方法。",
+  "dreamaticvoyage.page.fukamizu_bread3": "$(l)[读取开始……]$(br)[序列号 IATAE-06-07-06]$()$(p)随着探索的深入，这里出现了更多有价值的物品早已成为明确的事实。在遗迹深处我发现了……一个还能读取的SSD？$(p)里面存有一个大概是初中水平的通识测试题（答题者错了不少），一件$(l:dreamaticvoyage:oi/fukamizu/cage_ring)魔法戒指$(/l)的设计图和……一种流传已久的面包烤制方法。",
   "dreamaticvoyage.page.fukamizu_bread4": "先从面包说起吧，这种面包由普通面包深度烤制而成，但意外的是它完全没有碳化，而是形成了一种高强度的交联淀粉结构……同时伴随一定的失水，使之具有极高的结构强度，真是见鬼了！非常不推荐食用这玩意，这可能划伤你自己。",
   "dreamaticvoyage.page.fukamizu_bread5": "我推荐将其用作基础的武器（就像你会拿板砖打人那样，它甚至比板砖更坚硬）或者……压缩用作建筑材料，但是你压缩了它就别想再拆开了。$(p)$(l)[读取结束]",
   "dreamaticvoyage.page.fukamizu_bread6": "$(o)怎么回事？这不符合任何材料学理论！",
   "dreamaticvoyage.entry.cage_ring": "“同笼”",
   "dreamaticvoyage.page.cage_ring1": "如果想要什么困住其他人的道具，$(item)“同笼”$(0)一定会成为你的不二选择。$(p)佩戴时会产生一个减速光环，任何进入光环范围内的生物都会获得$(thing)缓慢$(0)效果，但自身的速度也会下降。$(p)保持不动时，持续一段时间还会获得额外的$(thing)盔甲$(0)和$(thing)盔甲韧性$(0)加成。",
   "dreamaticvoyage.page.cage_ring2": "$(o)囚禁在深海的牢笼中吧。",
-  "dreamaticvoyage.page.cage_ring3": "$(l)[读取开始……]$(br)[序列号 IATAE-06-07]$()$(p)上文中我所说的“高价值物品”当然不是那块硬的和黑曜石一样的面包，而是名为“同笼”的魔法戒指和随附的一篇传说故事。$(br)很多内容读不出了，我需要按上下文进行增补。",
+  "dreamaticvoyage.page.cage_ring3": "$(l)[读取开始……]$(br)[序列号 IATAE-06-07-08]$()$(p)上文中我所说的“高价值物品”当然不是那块硬的和黑曜石一样的面包，而是名为“同笼”的魔法戒指和随附的一篇传说故事。$(br)很多内容读不出了，我需要按上下文进行增补。",
   "dreamaticvoyage.page.cage_ring4": "“从前有一位魔法人鱼……无法做出……鸡兔同笼并烤制了和中子星一般致密的面包，她的追随者们为此感到极为震惊吓得四散而逃……于是她用面包攻击他们并给他们赋予了减速效果……”$(p)……这都什么玩意啊，我不能理解，真正的故事一定已经遗失在历史的长河之中了吧。",
-  "dreamaticvoyage.page.cage_ring5": "想必那里一定有想永远与追随者相伴的智慧魔法人鱼，多么感人啊。$(p)无论如何，根据这张制作图，我成功复现了魔法装备“同笼”，它可以减缓你附近生物的行动并让你在站立不动时变得更为坚韧。听说它和所谓的“鸡兔同笼”有关，但是从效果上说没看出来。$(p)$(l)[读取结束]"
+  "dreamaticvoyage.page.cage_ring5": "想必那里一定有想永远与追随者相伴的智慧魔法人鱼，多么感人啊。$(p)无论如何，根据这张制作图，我成功复现了魔法装备“同笼”，它可以减缓你附近生物的行动并让你在站立不动时变得更为坚韧。听说它和所谓的“鸡兔同笼”有关，但是从效果上说没看出来。$(p)$(l)[读取结束]",
+
+  "dreamaticvoyage.entry.leah_pad": "阿卡纳林区划图",
+  "dreamaticvoyage.page.leah_pad1": "这可能是迄今为止最便宜的平板电脑，不知为何一制造出来里面就带有名为$(item)阿卡纳林区划图$(0)的文件。$(p)据说向村民介绍其内容可以受村民尊重并获得折扣，只不过需要消耗一定的经验。$(p)$(o)“如果向人们做出了承诺的话，就要好好兑现啊。”",
+  "dreamaticvoyage.page.leah_pad2": "$(o)这东西到底是怎么运行起来的……",
+  "dreamaticvoyage.page.leah_pad3": "$(l)[读取开始……]$(br)[序列号 IATAE-08-04-09]$()$(p)在经历了一些困难以后，我成功利用当地名为“红石”的物质，在这片物理定律与母星完全不同的地带复刻了我的个人信息设备。令人极度意外的是，这个设备中自带阿卡纳林地区的城市规划图，尽管它几乎是全新的。",
+  "dreamaticvoyage.page.leah_pad4": "在我向本地的友好村民展示了这些设计图，并承诺未来将按照图示的建设方案帮他们获得更好的居住环境后，他们为我提供了更优惠的交易价格。$(p)虽然首要任务是在这里站稳脚跟，但实现这些承诺也在我的计划之中，毕竟享受了特殊优待就应当做些实事。",
+  "dreamaticvoyage.page.leah_pad5": "不过这些村民好像挺健忘的，之前还在翘首以盼，半天后就忘的一干二净了……$(p)$(l)[读取结束]"
 }
