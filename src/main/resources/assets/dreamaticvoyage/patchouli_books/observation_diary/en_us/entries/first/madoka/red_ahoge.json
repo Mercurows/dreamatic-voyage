@@ -1,0 +1,25 @@
+{
+  "name": "dreamaticvoyage.entry.red_ahoge",
+  "icon": "dreamaticvoyage:red_ahoge",
+  "category": "dreamaticvoyage:first",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.red_ahoge1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:red_ahoge",
+      "text": "dreamaticvoyage.page.red_ahoge2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.red_ahoge3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.red_ahoge4"
+    }
+  ],
+  "sortnum": 10101
+}

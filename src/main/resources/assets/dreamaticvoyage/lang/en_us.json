@@ -1254,6 +1254,10 @@
   "dreamaticvoyage.title.observers1": "Yorune",
   "dreamaticvoyage.page.observers3": "A107纪元研究所的学生助理，在一次事故后意外变成电子宠物的形态，被{神秘组织}救助后更换了全新的机体，目前在该组织担任看板娘工作。",
 
+  "dreamaticvoyage.entry.red_ahoge": "Red Ahoge",
+  "dreamaticvoyage.page.red_ahoge1": "如果你是第一次进入虚构远航的世界，不妨尝试制作一个$(item)红色呆毛$(0)。$(p)那么，对于熟练的远航者来说呢？他们早已武装好了自己——用呆毛来武装自己。",
+  "dreamaticvoyage.page.red_ahoge2": "$(o)你见过铁制的呆毛吗？",
+
   "dreamaticvoyage.entry.chiram_lantern": "Chiram Lantern",
   "dreamaticvoyage.page.chiram_lantern1": "我在遗迹中残存的记录中发现了一种形似提灯的物品，记录表明这个工具曾是由管家$(liver)倾澜Chiram$()所使用的。$(br2)为了防止遗忘，我将制作方法记录如下：",
   "dreamaticvoyage.page.chiram_lantern2": "$(o)闪耀于内心的花火。",
