@@ -1,0 +1,30 @@
+{
+  "name": "dreamaticvoyage.entry.cage_ring",
+  "icon": "dreamaticvoyage:cage_ring",
+  "category": "dreamaticvoyage:oi",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.cage_ring1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:cage_ring",
+      "text": "dreamaticvoyage.page.cage_ring2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.cage_ring3",
+      "title": "dreamaticvoyage.title.leah"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.cage_ring4"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.cage_ring5"
+    }
+  ],
+  "sortnum": 607
+}
