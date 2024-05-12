@@ -17,8 +17,9 @@
       "text": "dreamaticvoyage.page.red_ahoge3"
     },
     {
-      "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.red_ahoge4"
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:red_ahoge_block",
+      "recipe2": "dreamaticvoyage:red_ahoge_from_ahoge_block"
     }
   ],
   "sortnum": 10101
