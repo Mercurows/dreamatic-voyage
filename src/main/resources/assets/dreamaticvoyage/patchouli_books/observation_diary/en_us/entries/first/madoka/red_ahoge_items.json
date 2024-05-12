@@ -1,0 +1,36 @@
+{
+  "name": "dreamaticvoyage.entry.red_ahoge_items",
+  "icon": "dreamaticvoyage:red_ahoge_sword",
+  "category": "dreamaticvoyage:first",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.red_ahoge_items1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:red_ahoge_sword",
+      "recipe2": "dreamaticvoyage:red_ahoge_boomerang"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.red_ahoge_items2"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:crimson_impact",
+      "text": "dreamaticvoyage.page.red_ahoge_items3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.red_ahoge_items4"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:red_ahoge_machete",
+      "text": "dreamaticvoyage.page.red_ahoge_items5"
+    }
+  ],
+  "sortnum": 10102
+}
