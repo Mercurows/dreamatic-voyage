@@ -2,6 +2,7 @@
   "name": "dreamaticvoyage.entry.chiram_lantern",
   "icon": "dreamaticvoyage:chiram_lantern",
   "category": "dreamaticvoyage:magicros",
+  "advancement": "dreamaticvoyage:main/root",
   "pages": [
     {
       "type": "patchouli:text",

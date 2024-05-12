@@ -1,0 +1,27 @@
+{
+  "name": "dreamaticvoyage.entry.world_peace_staff",
+  "icon": "dreamaticvoyage:world_peace_staff",
+  "category": "dreamaticvoyage:legendary",
+  "advancement": "dreamaticvoyage:legendary/legendary",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.world_peace_staff1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:world_peace_staff",
+      "text": "dreamaticvoyage.page.world_peace_staff2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.world_peace_staff3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.world_peace_staff4"
+    }
+  ],
+  "sortnum": 70101,
+  "entry_color": "FFAA00"
+}

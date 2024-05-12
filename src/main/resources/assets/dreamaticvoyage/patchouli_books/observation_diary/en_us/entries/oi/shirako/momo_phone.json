@@ -2,6 +2,7 @@
   "name": "dreamaticvoyage.entry.momo_phone",
   "icon": "dreamaticvoyage:momo_phone",
   "category": "dreamaticvoyage:oi",
+  "advancement": "dreamaticvoyage:main/root",
   "pages": [
     {
       "type": "patchouli:text",

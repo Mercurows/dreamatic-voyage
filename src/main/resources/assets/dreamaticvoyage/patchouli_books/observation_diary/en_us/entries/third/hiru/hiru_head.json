@@ -1,0 +1,26 @@
+{
+  "name": "dreamaticvoyage.entry.hiru_head",
+  "icon": "dreamaticvoyage:hiru_head",
+  "category": "dreamaticvoyage:third",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.hiru_head1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:hiru_head",
+      "text": "dreamaticvoyage.page.hiru_head2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.hiru_head3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.hiru_head4"
+    }
+  ],
+  "sortnum": 30101
+}

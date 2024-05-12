@@ -16,17 +16,15 @@
   },
   "criteria": {
     "legendary": {
-      "trigger": "minecraft:tick",
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "player": {
-          "type": "minecraft:player",
-          "type_specific": {
-            "type": "player",
-            "advancements": {
-              "dreamaticvoyage:main/root": true
-            }
+        "items": [
+          {
+            "items": [
+              "dreamaticvoyage:fictional_ingot"
+            ]
           }
-        }
+        ]
       }
     }
   }

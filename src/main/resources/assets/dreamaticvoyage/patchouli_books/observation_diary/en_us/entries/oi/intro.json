@@ -2,6 +2,7 @@
   "name": "边缘的旅人们",
   "icon": "minecraft:book",
   "category": "dreamaticvoyage:oi",
+  "advancement": "dreamaticvoyage:main/root",
   "pages": [
     {
       "type": "patchouli:text",

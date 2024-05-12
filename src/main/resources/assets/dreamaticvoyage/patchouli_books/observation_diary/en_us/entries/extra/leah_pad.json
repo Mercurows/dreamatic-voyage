@@ -2,6 +2,7 @@
   "name": "dreamaticvoyage.entry.leah_pad",
   "icon": "dreamaticvoyage:leah_pad",
   "category": "dreamaticvoyage:extra",
+  "advancement": "dreamaticvoyage:main/root",
   "pages": [
     {
       "type": "patchouli:text",
