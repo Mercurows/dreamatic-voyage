@@ -15,6 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import tech.lq0.dreamaticvoyage.init.*;
 import tech.lq0.dreamaticvoyage.loot.ModLootTables;
+import tech.lq0.dreamaticvoyage.network.DmvNetwork;
 
 @Mod(Utils.MOD_ID)
 public class Utils {
@@ -55,6 +56,7 @@ public class Utils {
                 Ingredient.of(ItemRegistry.LUCIA_RICE_CAKE.get()), new ItemStack(ItemRegistry.BIG_MOE_ONE_POTION.get())));
         event.enqueueWork(() -> BrewingRecipeRegistry.addRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.STRONG_POISON)),
                 Ingredient.of(ItemRegistry.GARLIC_MELON_SLICE.get()), new ItemStack(Items.DRAGON_BREATH)));
+        DmvNetwork.init();
     }
 
     private void registerForgeEvents() {

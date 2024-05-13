@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.entity.LeviyBeamEntity;
 import tech.lq0.dreamaticvoyage.entity.SeatEntity;
 import tech.lq0.dreamaticvoyage.entity.TailHookEntity;
 import tech.lq0.dreamaticvoyage.entity.projectile.*;
@@ -61,10 +62,10 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<HirenadeGGEntity>> HIRENADE_GG_ENTITY =
             ENTITY_TYPES.register("hirenade_gg",
                     () -> EntityType.Builder.<HirenadeGGEntity>of(HirenadeGGEntity::new, MobCategory.MISC).sized(0.4f, 0.4f).build("hirenade_gg"));
-//
-//    public static final RegistryObject<EntityType<LeviyBeamEntity>> LEVIY_BEAM_ENTITY =
-//            ENTITY_TYPES.register("leviy_beam",
-//                    () -> EntityType.Builder.create(LeviyBeamEntity::new, EntityClassification.MISC).size(1, 100).disableSerialization().trackingRange(300).func_233608_b_(Integer.MAX_VALUE).build("leviy_beam"));
+
+    public static final RegistryObject<EntityType<LeviyBeamEntity>> LEVIY_BEAM_ENTITY =
+            ENTITY_TYPES.register("leviy_beam",
+                    () -> EntityType.Builder.of(LeviyBeamEntity::new, MobCategory.MISC).sized(1, 100).noSave().clientTrackingRange(300).updateInterval(Integer.MAX_VALUE).build("leviy_beam"));
     public static final RegistryObject<EntityType<TetrisIBlockEntity>> TETRIS_I_BLOCK_ENTITY =
             ENTITY_TYPES.register("tetris_i_bolck",
                     () -> EntityType.Builder.<TetrisIBlockEntity>of(TetrisIBlockEntity::new, MobCategory.MISC).sized(1.0f, 1.0f).build("tetris_i_bolck"));

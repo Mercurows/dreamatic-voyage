@@ -151,6 +151,24 @@
       }
     ]
   },
+  "leviy_beam": {
+    "subtitle": "subtitle.dreamaticvoyage.leviy_beam",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:leviy_beam",
+        "stream": true
+      }
+    ]
+  },
+  "leviy_fail": {
+    "subtitle": "subtitle.dreamaticvoyage.leviy_fail",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:leviy_fail",
+        "stream": true
+      }
+    ]
+  },
   "song/dreaming_fairy": {
     "subtitle": "subtitle.dreamaticvoyage.dreaming_fairy",
     "sounds": [
