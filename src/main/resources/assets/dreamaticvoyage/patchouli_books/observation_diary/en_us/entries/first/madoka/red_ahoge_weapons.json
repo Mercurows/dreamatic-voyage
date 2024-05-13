@@ -1,12 +1,12 @@
 {
-  "name": "dreamaticvoyage.entry.red_ahoge_items",
+  "name": "dreamaticvoyage.entry.red_ahoge_weapons",
   "icon": "dreamaticvoyage:red_ahoge_sword",
   "category": "dreamaticvoyage:first",
   "advancement": "dreamaticvoyage:main/root",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.red_ahoge_items1"
+      "text": "dreamaticvoyage.page.red_ahoge_weapons1"
     },
     {
       "type": "patchouli:crafting",
@@ -15,21 +15,21 @@
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.red_ahoge_items2"
+      "text": "dreamaticvoyage.page.red_ahoge_weapons2"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "dreamaticvoyage:crimson_impact",
-      "text": "dreamaticvoyage.page.red_ahoge_items3"
+      "text": "dreamaticvoyage.page.red_ahoge_weapons3"
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.red_ahoge_items4"
+      "text": "dreamaticvoyage.page.red_ahoge_weapons4"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "dreamaticvoyage:red_ahoge_machete",
-      "text": "dreamaticvoyage.page.red_ahoge_items5"
+      "text": "dreamaticvoyage.page.red_ahoge_weapons5"
     }
   ],
   "sortnum": 10102

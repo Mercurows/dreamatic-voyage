@@ -22,6 +22,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -64,6 +65,8 @@ public class Sneakers extends ArmorItem {
             map = HashMultimap.create(map);
             map.put(Attributes.MOVEMENT_SPEED,
                     new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 0.25f, AttributeModifier.Operation.MULTIPLY_BASE));
+            map.put(ForgeMod.STEP_HEIGHT_ADDITION.get(),
+                    new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 0.5f, AttributeModifier.Operation.ADDITION));
         }
         return map;
     }
