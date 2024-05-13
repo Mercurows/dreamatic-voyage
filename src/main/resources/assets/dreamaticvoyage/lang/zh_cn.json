@@ -1298,6 +1298,11 @@
   "dreamaticvoyage.page.shirako1": "$(liver)白桃Shirako$(0)，简称毛毛，是一种毛毛。$(p)因为很可爱，所以我把毛毛的图片放在了这里。",
   "dreamaticvoyage.title.shirako": "毛毛",
 
+  "dreamaticvoyage.entry.fukamizu_fish": "深水鱼",
+  "dreamaticvoyage.page.fukamizu_fish1": "这个遗迹坐落在四面环海的孤岛上，自然不会缺少鱼类。$(item)深水鱼$(0)是这些鱼类中较为特殊的一种。$(p)它只能在深海群系及其变种中钓到，食用后会获得一段时间的$(thing)幸运$(0)效果。",
+  "dreamaticvoyage.page.fukamizu_fish2": "$(o)你见过如此聪明的鱼吗？",
+  "dreamaticvoyage.page.fukamizu_fish3": "$(l)[读取开始……]$(br)[序列号 IATAE-06-07-05]$()$(p)遗迹的异常现象似乎影响到了附近的海域，在这里我发现了一种特殊的鱼类。$(p)深度组织扫描显示，它具有比其他鱼类更发达一些的神经系统，以及更高的营养价值。这种鱼几乎无毒性，具有蓝紫色的外表和看似很智慧的眼神。",
+  "dreamaticvoyage.page.fukamizu_fish4": "但是由于未知原因，这种鱼不能进行任何形式的烹饪——我在尝试加热它后，它似乎变成了一种具有无法理解的形态的物质，随后就消失不见了。$(p)不过，要是把这种鱼和其他材料连接起来，做成一个神经处理器之类的方案，应该具有一定的可行性。$(p)$(l)[读取结束]",
   "dreamaticvoyage.entry.fukamizu_bread": "深水面包",
   "dreamaticvoyage.page.fukamizu_bread1": "作为一种独特的面包，$(item)深水面包$(0)比起食物，更像是一种坚固的建材，其结构强度已经突破了材料力学的极限。$(p)如果对自己的牙口感到十分自信，或许可以尝试食用它，注意，后果自负。",
   "dreamaticvoyage.page.fukamizu_bread2": "$(o)牙口好，吃啥都香。",

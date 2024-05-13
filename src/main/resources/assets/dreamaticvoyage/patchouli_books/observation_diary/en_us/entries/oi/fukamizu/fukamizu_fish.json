@@ -1,0 +1,27 @@
+{
+  "name": "dreamaticvoyage.entry.fukamizu_fish",
+  "icon": "dreamaticvoyage:fukamizu_fish",
+  "category": "dreamaticvoyage:oi",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.fukamizu_fish1"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dreamaticvoyage:fukamizu_fish",
+      "text": "dreamaticvoyage.page.fukamizu_fish2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.fukamizu_fish3",
+      "title": "dreamaticvoyage.title.leah"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.fukamizu_fish4"
+    }
+  ],
+  "sortnum": 60705
+}
