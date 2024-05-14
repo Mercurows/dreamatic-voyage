@@ -311,6 +311,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ECHOED_DESTINY_RING = ITEMS.register("echoed_destiny_ring", EchoedDestinyRing::new);
     public static final RegistryObject<Item> GARLIC_MELON_SLICE = ITEMS.register("garlic_melon_slice", GarlicMelonSlice::new);
     public static final RegistryObject<Item> CAGE_RING = ITEMS.register("cage_ring", CageRing::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_INGOT = ITEMS.register("fukamizu_bread_ingot", FukamizuBreadIngot::new);
     public static final RegistryObject<Item> HQSS_BREAD_INGOT = ITEMS.register("hqss_bread_ingot", HQSSBreadIngot::new);
     public static final RegistryObject<Item> FUKAMIZU_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("fukamizu_upgrade_smithing_template", FukamizuUpgradeSmithingTemplate::new);
 
