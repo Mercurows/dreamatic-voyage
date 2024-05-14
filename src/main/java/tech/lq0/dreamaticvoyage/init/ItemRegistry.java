@@ -312,6 +312,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> GARLIC_MELON_SLICE = ITEMS.register("garlic_melon_slice", GarlicMelonSlice::new);
     public static final RegistryObject<Item> CAGE_RING = ITEMS.register("cage_ring", CageRing::new);
     public static final RegistryObject<Item> HQSS_BREAD_INGOT = ITEMS.register("hqss_bread_ingot", HQSSBreadIngot::new);
+    public static final RegistryObject<Item> FUKAMIZU_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("fukamizu_upgrade_smithing_template", FukamizuUpgradeSmithingTemplate::new);
 
     //lutafia
     public static final RegistryObject<Item> FIAXE = ITEMS.register("fiaxe", Fiaxe::new);

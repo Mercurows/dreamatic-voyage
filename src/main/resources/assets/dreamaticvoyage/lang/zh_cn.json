@@ -841,6 +841,12 @@
   "item.dreamaticvoyage.hqss_bread_ingot": "HQSS面包锭",
   "des.dreamaticvoyage.hqss_bread_ingot_1": "深水科技的最新产品，全称是“高密度准稳态精密烧结面包锭”",
   "des.dreamaticvoyage.hqss_bread_ingot_2": "很难想象深水面包是怎么变成这个东西的",
+  "item.dreamaticvoyage.fukamizu_upgrade_smithing_template": "锻造模板",
+  "item.dreamaticvoyage.smithing_template.fukamizu_upgrade.applies_to": "深水之环",
+  "item.dreamaticvoyage.smithing_template.fukamizu_upgrade.ingredients": "深海宿命之石",
+  "upgrade.dreamaticvoyage.fukamizu_upgrade": "深水升级",
+  "item.dreamaticvoyage.smithing_template.fukamizu_upgrade.base_slot_description": "放入深水之环",
+  "item.dreamaticvoyage.smithing_template.fukamizu_upgrade.addition_slot_description": "放入深海宿命之石",
 
   "itemGroup.dreamaticvoyage_tapes_tab": "虚构远航：音声",
   "item.dreamaticvoyage.audio_tape_haine_1": "音声磁带（灰音）",

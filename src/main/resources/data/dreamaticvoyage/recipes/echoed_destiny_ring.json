@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "template": {
-    "item": "minecraft:tide_armor_trim_smithing_template"
+    "item": "dreamaticvoyage:fukamizu_upgrade_smithing_template"
   },
   "base": {
     "item": "dreamaticvoyage:fukamizu_ring"
