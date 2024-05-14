@@ -1,0 +1,40 @@
+{
+  "name": "dreamaticvoyage.entry.ocean_destiny",
+  "icon": "dreamaticvoyage:ocean_destiny",
+  "category": "dreamaticvoyage:oi",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.ocean_destiny1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:fracture_destiny",
+      "text": "dreamaticvoyage.page.ocean_destiny2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.ocean_destiny3"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:ocean_destiny",
+      "text": "dreamaticvoyage.page.ocean_destiny4"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.ocean_destiny5",
+      "title": "dreamaticvoyage.title.leah"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.ocean_destiny6"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.ocean_destiny7"
+    }
+  ],
+  "sortnum": 60705
+}
