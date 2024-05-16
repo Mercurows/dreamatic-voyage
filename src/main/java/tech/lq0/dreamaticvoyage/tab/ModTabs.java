@@ -26,6 +26,7 @@ public class ModTabs {
                     output.accept(registryObject.get());
                 }
             }))
+            .withSearchBar()
             .build();
 
     public static CreativeModeTab MOD_BLOCK_TAB = CreativeModeTab.builder()
