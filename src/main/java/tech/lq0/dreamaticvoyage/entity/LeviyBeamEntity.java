@@ -1,9 +1,14 @@
 package tech.lq0.dreamaticvoyage.entity;
 
+import io.netty.buffer.Unpooled;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -12,12 +17,17 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
+import tech.lq0.dreamaticvoyage.init.SoundRegistry;
 
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
 public class LeviyBeamEntity extends Entity {
+    private static final EntityDataAccessor<Float> POWER = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.FLOAT);
+    private static final EntityDataAccessor<Float> RADIUS = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.FLOAT);
+    private static final EntityDataAccessor<Integer> DURATION = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.INT);
+
     public float getPower() {
         return power;
     }
@@ -50,24 +60,33 @@ public class LeviyBeamEntity extends Entity {
 
     public LeviyBeamEntity(EntityType<?> entityTypeIn, Level level) {
         super(entityTypeIn, level);
-        this.power = 6;
-        this.radius = 10;
+        this.power = 6f;
+        this.radius = 10f;
         this.duration = 200;
     }
 
     @Override
     protected void defineSynchedData() {
-
+        this.entityData.define(POWER, 6.0f);
+        this.entityData.define(RADIUS, 10.0f);
+        this.entityData.define(DURATION, 200);
     }
 
     @Override
     public void tick() {
         super.tick();
-        if (this.level().isClientSide) return;
+        if (this.level().isClientSide) {
+            return;
+        }
 
         if (this.tickCount >= this.duration) {
             this.discard();
         }
+
+        if (this.tickCount == 1) {
+            this.playSound(SoundRegistry.LEVIY_BEAM.get(), 1.0f, 1.0f);
+        }
+
         float r = getCurrentRadius();
         List<LivingEntity> targets = this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(r, 0, r));
         if (!targets.isEmpty()) {
@@ -110,12 +129,16 @@ public class LeviyBeamEntity extends Entity {
 
     @Override
     protected void readAdditionalSaveData(CompoundTag pCompound) {
-
+        this.power = pCompound.getFloat("power");
+        this.radius = pCompound.getFloat("radius");
+        this.duration = pCompound.getInt("duration");
     }
 
     @Override
     protected void addAdditionalSaveData(CompoundTag pCompound) {
-
+        pCompound.putFloat("power", this.power);
+        pCompound.putFloat("radius", this.radius);
+        pCompound.putInt("duration", this.duration);
     }
 
     private float getDamage(double d, float r) {
@@ -171,19 +194,20 @@ public class LeviyBeamEntity extends Entity {
 
     @Override
     public Packet<ClientGamePacketListener> getAddEntityPacket() {
-//        var pack = new PacketBuffer(Unpooled.buffer());
-//        pack.writeDouble(getPosX());
-//        pack.writeDouble(getPosY());
-//        pack.writeDouble(getPosZ());
-//
-//        pack.writeFloat(this.power);
-//        pack.writeFloat(this.radius);
-//        pack.writeInt(this.duration);
-//
-//        pack.writeInt(getEntityId());
-//        pack.writeUniqueId(getUniqueID());
-//        return NetworkHooks.getEntitySpawningPacket(this);
-        return new ClientboundAddEntityPacket(this, this.getOwner() == null ? 0 : this.getOwner().getId());
+        FriendlyByteBuf byteBuf = new FriendlyByteBuf(Unpooled.buffer());
+
+        byteBuf.writeDouble(this.getX());
+        byteBuf.writeDouble(this.getY());
+        byteBuf.writeDouble(this.getZ());
+
+        byteBuf.writeFloat(this.power);
+        byteBuf.writeFloat(this.radius);
+        byteBuf.writeInt(this.duration);
+
+        byteBuf.writeInt(this.getId());
+        byteBuf.writeUUID(this.getUUID());
+
+        return new ClientboundAddEntityPacket(this);
     }
 
     private static float ease(float start, float end, float rate) {

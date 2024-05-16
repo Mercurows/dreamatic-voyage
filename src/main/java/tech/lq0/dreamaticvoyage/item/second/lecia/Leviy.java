@@ -4,7 +4,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -66,7 +65,9 @@ public class Leviy extends Item {
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if (pLivingEntity instanceof Player player) {
             player.getCooldowns().addCooldown(this, 400);
-            if (!pLevel.isClientSide) return pStack;
+            if (!pLevel.isClientSide) {
+                return pStack;
+            }
 
             var look = player.getLookAngle();
             int distance = 512;
@@ -80,8 +81,6 @@ public class Leviy extends Item {
             if (!result.getType().equals(HitResult.Type.MISS)) {
                 BlockPos pos = result.getBlockPos();
                 DmvNetwork.CHANNEL.sendToServer(new LeviyLaunchPacket(pos.getX(), pos.getY() + 1, pos.getZ()));
-
-                pLevel.playSound(player, pos.getX(), pos.getY() + 1, pos.getZ(), SoundRegistry.LEVIY_BEAM.get(), SoundSource.AMBIENT, 1.0f, 1.0f);
             } else {
                 player.displayClientMessage(Component.translatable("des.dreamaticvoyage.leviy.invalid_select").withStyle(ChatFormatting.RED), true);
                 player.playSound(SoundRegistry.LEVIY_FAIL.get(), 1.0f, 1.0f);

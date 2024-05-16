@@ -126,7 +126,6 @@ public class LeviyRenderer {
                 float beamAffectRadius = ease(0, beam.getRadius(), (float) beam.tickCount / beam.getDuration()) * 8;
 
                 if (distance <= beamAffectRadius) {
-                    // TODO 修改为更合理的晃动
                     float shakeRate = ease(1, 5, (float) Math.pow((beamAffectRadius - distance) / beamAffectRadius, 2));
                     Random random = new Random();
                     evt.setYaw(evt.getYaw() - shakeRate * 0.3f + random.nextFloat() * shakeRate);
