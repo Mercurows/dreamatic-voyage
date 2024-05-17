@@ -29,7 +29,7 @@ public class Utils {
 
         ItemRegistry.register(modEventBus);
         BlockRegistry.BLOCKS.register(modEventBus);
-        TabRegistry.TABS.register(modEventBus);
+        TabRegistry.register(modEventBus);
         EffectRegistry.EFFECTS.register(modEventBus);
         EntityRegistry.ENTITY_TYPES.register(modEventBus);
         SoundRegistry.SOUNDS.register(modEventBus);
