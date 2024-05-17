@@ -1282,6 +1282,11 @@
   "dreamaticvoyage.page.chiram_lantern3": "当我制作了一个提灯，并把它拿在手上时，它并未发出光芒，而是……使得我在黑暗中感受到了光明。它所散发出的能量，照亮了我的内心，驱散了我对黑暗的恐惧。$(br2)不过提灯仍需要燃料来发挥这一作用，用普通的火把就可以很方便的补充燃料。",
   "dreamaticvoyage.page.chiram_lantern4": "观察结论$(br)副手持有提灯时可以提供在黑暗中看清物体的能力，用火把以补充燃料。",
 
+  "dreamaticvoyage.entry.cursed_marshaimallow": "巫毒棉灰糖",
+  "dreamaticvoyage.page.cursed_marshaimallow1": "棉灰糖也有不高兴的时候，如果积攒的怨气足够多，那就会变成$(item)巫毒棉灰糖$(0)。$(p)长按使用键进行蓄力，松开时可以将其投掷出去，造成一次巨大的爆炸，并留下$(thing)凋零$(0)、$(thing)缓慢$(0)、$(thing)虚弱$(0)的粒子云效果。",
+  "dreamaticvoyage.page.cursed_marshaimallow2": "$(o)地雷系少女的玩偶，真是太可爱了！",
+  "dreamaticvoyage.page.cursed_marshaimallow3": "“好耶！送给自己的漂亮娃娃，看起来非常亚系且十分可爱，就是摸上去的时候老感觉身后凉飕飕的。”$(p)——后来根据邻居所说，大半夜听见了一声爆响，大家都慌忙逃窜，还以为是地震了，不过这户居民从那晚后消失不见了，大家都不知道她去了哪里。",
+
   "dreamaticvoyage.entry.momo_daifuku": "Momo Daifuku",
   "dreamaticvoyage.page.momo_daifuku1": "这里的世界从不缺乏奇特的甜品，长着耳朵的粉色$(item)桃大福$(0)就是其中之一。$(p)食用后会获得$(thing)漂浮$(0)效果，有概率会使自身$(c)燃烧$(0)起来。",
   "dreamaticvoyage.page.momo_daifuku2": "$(o)据说是染色食品，还是少吃点吧。",

@@ -30,7 +30,7 @@ public class ModTabs {
     public static CreativeModeTab MISC_TAB = CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.dreamaticvoyage_misc_tab"))
             .withTabsBefore(TabRegistry.MOD_ITEM_TAB.getKey())
-            .icon(() -> new ItemStack(ItemRegistry.LAVA_CAKE.get()))
+            .icon(() -> new ItemStack(ItemRegistry.SINK_CRYSTAL.get()))
             .displayItems((param, output) -> ItemRegistry.MISC_ITEMS.getEntries().forEach((registryObject) -> {
                 if (!HIDDEN.contains(registryObject)) {
                     output.accept(registryObject.get());
