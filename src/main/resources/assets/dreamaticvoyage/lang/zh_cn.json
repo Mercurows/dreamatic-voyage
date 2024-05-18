@@ -1255,6 +1255,7 @@
   "dreamaticvoyage.page.observers2": "",
   "dreamaticvoyage.title.observers1": "夜音Yorune",
   "dreamaticvoyage.page.observers3": "A107纪元研究所的学生助理，在一次事故后意外变成电子宠物的形态，被{神秘组织}救助后更换了全新的机体，目前在该组织担任看板娘工作。",
+  "dreamaticvoyage.entry.chaos": "混沌值",
 
   "dreamaticvoyage.entry.red_ahoge": "红色呆毛",
   "dreamaticvoyage.page.red_ahoge1": "如果你是第一次进入虚构远航的世界，不妨尝试制作一个$(item)红色呆毛$(0)。$(p)那么，对于熟练的远航者来说呢？他们早已武装好了自己——用呆毛来武装自己。",
@@ -1341,6 +1342,11 @@
   "dreamaticvoyage.page.cage_ring3": "$(l)[读取开始……]$(br)[序列号 IATAE-06-07-08]$()$(p)上文中我所说的“高价值物品”当然不是那块硬的和黑曜石一样的面包，而是名为“同笼”的魔法戒指和随附的一篇传说故事。$(p)很多内容读不出了，我需要按上下文进行增补。",
   "dreamaticvoyage.page.cage_ring4": "“从前有一位魔法人鱼……无法做出……鸡兔同笼并烤制了和中子星一般致密的面包，她的追随者们为此感到极为震惊吓得四散而逃……于是她用面包攻击他们并给他们赋予了减速效果……”$(p)……这都什么玩意啊，我不能理解，真正的故事一定已经遗失在历史的长河之中了吧。",
   "dreamaticvoyage.page.cage_ring5": "想必那里一定有想永远与追随者相伴的智慧魔法人鱼，多么感人啊。$(p)无论如何，根据这张制作图，我成功复现了魔法装备“同笼”，它可以减缓你附近生物的行动并让你在站立不动时变得更为坚韧。听说它和所谓的“鸡兔同笼”有关，但是从效果上说没看出来。$(p)$(l)[读取结束]",
+
+  "dreamaticvoyage.entry.craft_beer_0322": "0322精酿",
+  "dreamaticvoyage.page.craft_beer_03221": "$(item)0322精酿$(0)是一种来自外星球的绿色啤酒。$(p)饮用后会提升10点$(l:dreamaticvoyage:prelude/chaos)混沌值$(/l)，并获得$(thing)急迫$(0)、$(thing)生命恢复$(0)效果，有概率获得$(thing)反胃$(0)效果。",
+  "dreamaticvoyage.page.craft_beer_03222": "$(o)看上去就很可疑的饮品。$()$(p)在积分商店处兑换。",
+  "dreamaticvoyage.page.craft_beer_03223": "“喝星球劲酒！胜利尽在我手！0322星球特产精酿！你值得拥有！嘿嘿……”$(p)——来自毫无酒精抗性的看板娘",
 
   "dreamaticvoyage.entry.world_peace_staff": "世界和平之杖",
 

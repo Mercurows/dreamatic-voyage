@@ -1,0 +1,11 @@
+{
+  "name": "dreamaticvoyage.entry.chaos",
+  "icon": "dreamaticvoyage:chaos_checker",
+  "category": "dreamaticvoyage:prelude",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.chaos1"
+    }
+  ]
+}
