@@ -1282,6 +1282,10 @@
   "dreamaticvoyage.page.chiram_lantern2": "$(o)闪耀于内心的花火。",
   "dreamaticvoyage.page.chiram_lantern3": "当我制作了一个提灯，并把它拿在手上时，它并未发出光芒，而是……使得我在黑暗中感受到了光明。它所散发出的能量，照亮了我的内心，驱散了我对黑暗的恐惧。$(br2)不过提灯仍需要燃料来发挥这一作用，用普通的火把就可以很方便的补充燃料。",
   "dreamaticvoyage.page.chiram_lantern4": "观察结论$(br)副手持有提灯时可以提供在黑暗中看清物体的能力，用火把以补充燃料。",
+  "dreamaticvoyage.entry.eye_mask": "眼罩",
+  "dreamaticvoyage.page.eye_mask1": "如果感到睡眠质量很差，那么就戴上$(item)眼罩$(0)试试吧。$(p)佩戴时会减少一定的速度，并获得$(thing)虚弱$(0)效果。$(p)睡觉时会获得$(thing)速度$(0)、$(thing)急迫$(0)和$(thing)生命恢复$(0)效果。",
+  "dreamaticvoyage.page.eye_mask2": "$(o)呼呼时间到。",
+  "dreamaticvoyage.page.eye_mask3": "“锵锵！好睡眠眼罩！今晚大睡特睡！”$(p)“再一醒来发现人都在医院里了，据说已经过去五天五夜了，啊？大夫……我还没死吗？”",
 
   "dreamaticvoyage.entry.cursed_marshaimallow": "巫毒棉灰糖",
   "dreamaticvoyage.page.cursed_marshaimallow1": "棉灰糖也有不高兴的时候，如果积攒的怨气足够多，那就会变成$(item)巫毒棉灰糖$(0)。$(p)长按使用键进行蓄力，松开时可以将其投掷出去，造成一次巨大的爆炸，并留下$(thing)凋零$(0)、$(thing)缓慢$(0)、$(thing)虚弱$(0)的粒子云效果。",
