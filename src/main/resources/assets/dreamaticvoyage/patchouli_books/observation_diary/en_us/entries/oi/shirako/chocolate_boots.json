@@ -1,0 +1,22 @@
+{
+  "name": "dreamaticvoyage.entry.chocolate_boots",
+  "icon": "dreamaticvoyage:chocolate_boots",
+  "category": "dreamaticvoyage:oi",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.chocolate_boots1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:chocolate_boots",
+      "text": "dreamaticvoyage.page.chocolate_boots2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.chocolate_boots3"
+    }
+  ],
+  "sortnum": 60110
+}

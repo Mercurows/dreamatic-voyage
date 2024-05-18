@@ -1308,6 +1308,10 @@
   "dreamaticvoyage.entry.shirako": "白桃Shirako",
   "dreamaticvoyage.page.shirako1": "$(liver)白桃Shirako$(0)，简称毛毛，是一种毛毛。$(p)因为很可爱，所以我把毛毛的图片放在了这里。",
   "dreamaticvoyage.title.shirako": "毛毛",
+  "dreamaticvoyage.entry.chocolate_boots": "巧克力鞋",
+  "dreamaticvoyage.page.chocolate_boots1": "你知道吗？毛毛的最近穿的新鞋子竟然是用巧克力做的！如果能把这双$(item)巧克力鞋$(0)弄到手的话……$(p)食用后会提升200点$(l:dreamaticvoyage:prelude/chaos)混沌值$(/l)，并获得$(thing)力量$(0)和$(thing)急迫$(0)效果。$(p)当混沌值小于0时，食用后会额外获得$(thing)流血$(0)效果。",
+  "dreamaticvoyage.page.chocolate_boots2": "$(o)并不能当做饭盒使用。",
+  "dreamaticvoyage.page.chocolate_boots3": "巧克力工艺店的一双巧克力鞋，嘿，您甭说，瞧着跟真的似的。$(p)吔了一口感觉浑身充满了帕瓦！！力量！！急迫！！$(p)——嚼了一口鞋子的夜音如是说",
 
   "dreamaticvoyage.entry.fukamizu_bread": "深水面包",
   "dreamaticvoyage.page.fukamizu_bread1": "作为一种独特的面包，$(item)深水面包$(0)比起食物，更像是一种坚固的建材，其结构强度已经突破了材料力学的极限。$(p)如果对自己的牙口感到十分自信，或许可以尝试食用它，注意，后果自负。",
