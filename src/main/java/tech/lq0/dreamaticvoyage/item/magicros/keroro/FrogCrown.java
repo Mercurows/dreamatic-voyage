@@ -15,7 +15,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
@@ -27,8 +26,8 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.client.models.armor.FrogCrownModel;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
@@ -74,20 +73,24 @@ public class FrogCrown extends ArmorItem {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (level.isRaining()) {
-            ItemNBTTool.setBoolean(stack, TAG_RAIN, true);
-            if (player.tickCount % 300 == 0) {
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0, false, false), player);
+    public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == getEquipmentSlot().getIndex() && !level.isClientSide && pEntity instanceof LivingEntity living) {
+            if (level.isRaining()) {
+                ItemNBTTool.setBoolean(stack, TAG_RAIN, true);
+                if (living.tickCount % 300 == 0) {
+                    living.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0, false, false), living);
+                }
+                living.addEffect(new MobEffectInstance(MobEffects.JUMP, 300, 0, false, false), living);
+            } else {
+                ItemNBTTool.setBoolean(stack, TAG_RAIN, false);
             }
-            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 300, 0, false, false), player);
-        } else {
-            ItemNBTTool.setBoolean(stack, TAG_RAIN, false);
+
+            if (living.isSwimming()) {
+                living.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 0, false, false));
+            }
         }
 
-        if (player.isSwimming()) {
-            player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 0, false, false));
-        }
+        super.inventoryTick(stack, level, pEntity, pSlotId, pIsSelected);
     }
 
     @Override

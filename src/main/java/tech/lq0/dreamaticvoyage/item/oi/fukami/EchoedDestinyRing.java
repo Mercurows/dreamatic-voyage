@@ -86,10 +86,10 @@ public class EchoedDestinyRing extends Item {
     public boolean isDamageable(ItemStack stack) {
         return false;
     }
-
+    
     @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide) {
+    public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == EquipmentSlot.HEAD.getIndex() && !level.isClientSide && pEntity instanceof Player player) {
             if (player.isInWater() || level.isRaining()) {
                 ItemNBTTool.setBoolean(stack, TAG_ECHO, true);
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 2, false, false), player);
@@ -138,7 +138,8 @@ public class EchoedDestinyRing extends Item {
                 player.getCooldowns().addCooldown(stack.getItem(), 2400);
             }
         }
-        super.onArmorTick(stack, level, player);
+
+        super.inventoryTick(stack, level, pEntity, pSlotId, pIsSelected);
     }
 
     @Override

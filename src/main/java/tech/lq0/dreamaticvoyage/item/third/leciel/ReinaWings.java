@@ -76,13 +76,15 @@ public class ReinaWings extends ArmorItem {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide) {
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == getEquipmentSlot().getIndex() && !pLevel.isClientSide && pEntity instanceof Player player) {
             player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 300, 0, true, false));
             if (player.tickCount % 200 == 0) {
                 player.getFoodData().eat(1, 0.5f);
             }
         }
+
+        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
     }
 
     @Override

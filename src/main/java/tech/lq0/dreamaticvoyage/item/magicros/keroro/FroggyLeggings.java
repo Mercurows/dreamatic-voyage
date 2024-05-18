@@ -89,50 +89,47 @@ public class FroggyLeggings extends ArmorItem {
     }
 
     @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-        if (!pLevel.isClientSide && pEntity instanceof Player player) {
-            setArmorSet(pStack, player);
-        }
-    }
-
-    @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide) {
+    public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (!level.isClientSide && pEntity instanceof Player player) {
             setArmorSet(stack, player);
 
-            boolean set = hasArmorSet(stack);
+            if (pSlotId == getEquipmentSlot().getIndex()) {
+                setArmorSet(stack, player);
 
-            if (player.isSteppingCarefully()) {
-                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 40, set ? 2 : 1, false, false));
-            }
+                boolean set = hasArmorSet(stack);
 
-            //净化
-            if (player.isSwimming() || level.isRaining() || set) {
-                int time = set ? 300 : 600;
+                if (player.isSteppingCarefully()) {
+                    player.addEffect(new MobEffectInstance(MobEffects.JUMP, 40, set ? 2 : 1, false, false));
+                }
 
-                List<MobEffectInstance> effectList = new ArrayList<>(player.getActiveEffects());
+                //净化
+                if (player.isSwimming() || level.isRaining() || set) {
+                    int time = set ? 300 : 600;
 
-                if (player.tickCount % time == 0) {
-                    if (!effectList.isEmpty()) {
-                        for (MobEffectInstance effectInstance : effectList) {
-                            if (effectInstance.getEffect().getCategory() == MobEffectCategory.HARMFUL) {
-                                player.removeEffect(effectInstance.getEffect());
-                                break;
+                    List<MobEffectInstance> effectList = new ArrayList<>(player.getActiveEffects());
+
+                    if (player.tickCount % time == 0) {
+                        if (!effectList.isEmpty()) {
+                            for (MobEffectInstance effectInstance : effectList) {
+                                if (effectInstance.getEffect().getCategory() == MobEffectCategory.HARMFUL) {
+                                    player.removeEffect(effectInstance.getEffect());
+                                    break;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            //生命恢复
-            if (player.isSwimming() || level.isRaining()) {
-                if (player.tickCount % 40 == 0) {
-                    player.heal(1);
+                //生命恢复
+                if (player.isSwimming() || level.isRaining()) {
+                    if (player.tickCount % 40 == 0) {
+                        player.heal(1);
+                    }
                 }
-            }
 
-            if (player.isInWater()) {
-                player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 300, 0, false, false));
+                if (player.isInWater()) {
+                    player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 300, 0, false, false));
+                }
             }
         }
     }

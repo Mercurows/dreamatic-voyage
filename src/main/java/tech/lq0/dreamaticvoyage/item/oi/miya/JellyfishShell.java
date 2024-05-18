@@ -9,7 +9,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
@@ -64,9 +63,11 @@ public class JellyfishShell extends ArmorItem {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide) {
-            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 40, 0, false, false));
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == getEquipmentSlot().getIndex() && !pLevel.isClientSide && pEntity instanceof LivingEntity living) {
+            living.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 40, 0, false, false));
         }
+
+        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
     }
 }

@@ -16,7 +16,6 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Cow;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -30,8 +29,8 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.client.models.armor.CrystalHornModel;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tiers.ModArmorMaterial;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.Livers;
@@ -69,21 +68,23 @@ public class CrystalHorn extends ArmorItem {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide) {
+    public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == getEquipmentSlot().getIndex() && !level.isClientSide && pEntity instanceof LivingEntity living) {
             if (!level.isDay()) {
                 ItemNBTTool.setBoolean(stack, TAG_NIGHT, true);
-                player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 0));
+                living.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 0));
             } else {
                 ItemNBTTool.setBoolean(stack, TAG_NIGHT, false);
             }
 
-            if (player.isSleeping()) {
-                player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 12000, 2));
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 12000, 2));
-                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 12000, 0));
+            if (living.isSleeping()) {
+                living.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 12000, 2));
+                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 12000, 2));
+                living.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 12000, 0));
             }
         }
+
+        super.inventoryTick(stack, level, pEntity, pSlotId, pIsSelected);
     }
 
     @Override

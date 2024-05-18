@@ -34,6 +34,6 @@ public class MusicDiscSongOfAutumn extends RecordItem {
 
     @Override
     public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+        return super.getDisplayName();
     }
 }

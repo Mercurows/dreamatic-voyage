@@ -88,28 +88,31 @@ public class FukamizuRing extends Item {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide) {
-            if (player.isInWater() || level.isRaining()) {
+    public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == EquipmentSlot.HEAD.getIndex() && !level.isClientSide && pEntity instanceof LivingEntity living) {
+            if (living.isInWater() || level.isRaining()) {
                 ItemNBTTool.setBoolean(stack, TAG_WATER, true);
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 2, false, false), player);
-                player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, false, false));
+                living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 2, false, false), living);
+                living.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, false, false));
 
-                if (player.isSwimming()) {
-                    player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0, false, false));
+                if (living.isSwimming()) {
+                    living.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0, false, false));
                 }
 
-                for (LivingEntity livingentity : player.level().getEntitiesOfClass(LivingEntity.class, player.getBoundingBox().inflate(10.0D, 10.0D, 10.0D))) {
-                    if (livingentity instanceof Player playerEntity && livingentity != player && livingentity.isAlliedTo(player)) {
-                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0, false, false), player);
+                for (LivingEntity livingentity : living.level().getEntitiesOfClass(LivingEntity.class, living.getBoundingBox().inflate(10.0D, 10.0D, 10.0D))) {
+                    if (livingentity instanceof Player playerEntity && livingentity != living && livingentity.isAlliedTo(living)) {
+                        playerEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0, false, false), living);
                         playerEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, false, false));
                     }
                 }
             } else {
                 ItemNBTTool.setBoolean(stack, TAG_WATER, false);
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 0, false, false), player);
+                living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 0, false, false), living);
             }
+
         }
+
+        super.inventoryTick(stack, level, pEntity, pSlotId, pIsSelected);
     }
 
     @Override

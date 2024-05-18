@@ -107,7 +107,7 @@ public class MagicTeapot extends Item {
             boolean flag1 = blockstate.isAir() || flag || block instanceof LiquidBlockContainer && ((LiquidBlockContainer) block).canPlaceLiquid(pLevel, pPos, blockstate, this.containedBlock);
             java.util.Optional<net.minecraftforge.fluids.FluidStack> containedFluidStack = java.util.Optional.ofNullable(container).flatMap(net.minecraftforge.fluids.FluidUtil::getFluidContained);
             if (!flag1) {
-                return pResult != null && this.emptyContents(pPlayer, pLevel, pResult.getBlockPos().relative(pResult.getDirection()), (BlockHitResult) null, container);
+                return pResult != null && this.emptyContents(pPlayer, pLevel, pResult.getBlockPos().relative(pResult.getDirection()), null, container);
             } else if (containedFluidStack.isPresent() && this.containedBlock.getFluidType().isVaporizedOnPlacement(pLevel, pPos, containedFluidStack.get())) {
                 this.containedBlock.getFluidType().onVaporize(pPlayer, pLevel, pPos, containedFluidStack.get());
                 return true;

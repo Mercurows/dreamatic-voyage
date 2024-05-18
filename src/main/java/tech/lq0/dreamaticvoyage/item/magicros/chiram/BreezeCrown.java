@@ -93,13 +93,10 @@ public class BreezeCrown extends ArmorItem {
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!pLevel.isClientSide && pEntity instanceof Player player) {
             setArmorSet(pStack, player);
-        }
-    }
 
-    @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide) {
-            setHealthAmount(stack, player);
+            if (pSlotId == getEquipmentSlot().getIndex()) {
+                setHealthAmount(pStack, player);
+            }
         }
     }
 

@@ -85,38 +85,35 @@ public class MistyChestplate extends ArmorItem {
     }
 
     @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+    public void inventoryTick(ItemStack stack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!pLevel.isClientSide && pEntity instanceof Player player) {
-            setArmorSet(pStack, player);
-        }
-    }
+            setArmorSet(stack, player);
 
-    @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide) {
-            //生成护盾
-            int maxCount = hasArmorSet(stack) ? 2 : 1;
+            if (pSlotId == getEquipmentSlot().getIndex()) {
+                // 生成护盾
+                int maxCount = hasArmorSet(stack) ? 2 : 1;
 
-            if (getShieldCount(stack) < maxCount) {
-                if (player.tickCount % 20 == 0) {
-                    setShieldTime(player, Math.min(getShieldTime(player) + 1, 60));
+                if (getShieldCount(stack) < maxCount) {
+                    if (player.tickCount % 20 == 0) {
+                        setShieldTime(player, Math.min(getShieldTime(player) + 1, 60));
+                    }
+                } else {
+                    setShieldTime(player, 0);
+
+                    if (getShieldCount(stack) > maxCount) {
+                        setShieldCount(stack, maxCount);
+                    }
                 }
-            } else {
-                setShieldTime(player, 0);
 
-                if (getShieldCount(stack) > maxCount) {
-                    setShieldCount(stack, maxCount);
+                if (getShieldTime(player) >= 60) {
+                    setShieldTime(player, 0);
+                    setShieldCount(stack, getShieldCount(stack) + 1);
                 }
-            }
 
-            if (getShieldTime(player) >= 60) {
-                setShieldTime(player, 0);
-                setShieldCount(stack, getShieldCount(stack) + 1);
-            }
-
-            //空中抗性
-            if (!player.onGround()) {
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, hasArmorSet(stack) ? 1 : 0, false, false), player);
+                // 空中抗性
+                if (!player.onGround()) {
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, hasArmorSet(stack) ? 1 : 0, false, false), player);
+                }
             }
         }
     }

@@ -2,6 +2,7 @@ package tech.lq0.dreamaticvoyage.item.second.satou;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
@@ -28,8 +29,8 @@ public class SatouChestplate extends ArmorItem {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide) {
+    public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == getEquipmentSlot().getIndex() && !level.isClientSide && pEntity instanceof Player player) {
             if (player.getFoodData().needsFood()) {
                 if (player.tickCount % 20 == 0) {
                     player.getFoodData().eat(1, 0.5f);
@@ -44,5 +45,7 @@ public class SatouChestplate extends ArmorItem {
                 }
             }
         }
+
+        super.inventoryTick(stack, level, pEntity, pSlotId, pIsSelected);
     }
 }

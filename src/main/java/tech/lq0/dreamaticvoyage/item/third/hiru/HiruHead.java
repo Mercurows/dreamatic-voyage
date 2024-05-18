@@ -15,7 +15,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
@@ -27,9 +26,9 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.client.models.armor.HiruHeadModel;
 import tech.lq0.dreamaticvoyage.init.AttributeRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
-import tech.lq0.dreamaticvoyage.client.models.armor.HiruHeadModel;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
@@ -90,13 +89,15 @@ public class HiruHead extends ArmorItem {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide && player.isInWater()) {
-            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 20, 0, false, false));
-            player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 20, 0, false, false));
+    public void inventoryTick(ItemStack pStack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == EquipmentSlot.HEAD.getIndex() && !level.isClientSide && pEntity instanceof LivingEntity living) {
+            if (living.isInWater()) {
+                living.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 20, 0, false, false));
+                living.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 20, 0, false, false));
+            }
         }
 
-        super.onArmorTick(stack, level, player);
+        super.inventoryTick(pStack, level, pEntity, pSlotId, pIsSelected);
     }
 
     @Override

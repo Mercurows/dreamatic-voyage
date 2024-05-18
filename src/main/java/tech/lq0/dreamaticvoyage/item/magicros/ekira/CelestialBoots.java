@@ -85,30 +85,27 @@ public class CelestialBoots extends ArmorItem {
     }
 
     @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+    public void inventoryTick(ItemStack stack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!pLevel.isClientSide && pEntity instanceof Player player) {
-            setArmorSet(pStack, player);
-        }
-    }
-
-    @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
-        if (!level.isClientSide) {
             setArmorSet(stack, player);
 
-            int times = getEnhanceTimes(player, hasArmorSet(stack));
-            if (times == 4) {
-                if (player.getFoodData().getFoodLevel() > 10) {
-                    if (player.tickCount % 80 == 0) {
-                        player.getFoodData().eat(2, 1.0f);
+            if (pSlotId == getEquipmentSlot().getIndex()) {
+                setArmorSet(stack, player);
+
+                int times = getEnhanceTimes(player, hasArmorSet(stack));
+                if (times == 4) {
+                    if (player.getFoodData().getFoodLevel() > 10) {
+                        if (player.tickCount % 80 == 0) {
+                            player.getFoodData().eat(2, 1.0f);
+                        }
+                    } else {
+                        if (player.tickCount % 160 == 0) {
+                            player.getFoodData().eat(2, 0.5f);
+                        }
                     }
-                } else {
-                    if (player.tickCount % 160 == 0) {
-                        player.getFoodData().eat(2, 0.5f);
-                    }
+                } else if (player.tickCount % HUNGER_TIME[times - 1] == 0) {
+                    player.getFoodData().eat(1, 0.5f);
                 }
-            } else if (player.tickCount % HUNGER_TIME[times - 1] == 0) {
-                player.getFoodData().eat(1, 0.5f);
             }
         }
     }

@@ -13,6 +13,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -110,16 +111,18 @@ public class EyeMask extends Item {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level world, Player player) {
-        if (!world.isClientSide) {
-            player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 0, false, false));
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == EquipmentSlot.HEAD.getIndex() && !pLevel.isClientSide && pEntity instanceof LivingEntity living) {
+            living.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 0, false, false));
 
-            if (player.isSleeping()) {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), player);
-                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), player);
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), player);
+            if (living.isSleeping()) {
+                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), living);
+                living.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), living);
+                living.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 0), living);
             }
         }
+
+        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
     }
 
     @SubscribeEvent
