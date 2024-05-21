@@ -52,24 +52,21 @@ public class LeviyBeamEntity extends Entity {
         this.duration = duration;
     }
 
-    private float power;
-    private float radius;
-    private int duration;
+    private float power = 6f;
+    private float radius = 10f;
+    private int duration = 200;
     private LivingEntity owner;
     private UUID ownerUniqueId;
 
     public LeviyBeamEntity(EntityType<?> entityTypeIn, Level level) {
         super(entityTypeIn, level);
-        this.power = 6f;
-        this.radius = 10f;
-        this.duration = 200;
     }
 
     @Override
     protected void defineSynchedData() {
-        this.entityData.define(POWER, 6.0f);
-        this.entityData.define(RADIUS, 10.0f);
-        this.entityData.define(DURATION, 200);
+        this.entityData.define(POWER, this.power);
+        this.entityData.define(RADIUS, this.radius);
+        this.entityData.define(DURATION, this.duration);
     }
 
     @Override
@@ -182,13 +179,15 @@ public class LeviyBeamEntity extends Entity {
         float tickCount = this.tickCount + partialTicks;
 
         if (tickCount <= 5) {
-            return .25f;
-        } else if (tickCount <= 100) {
-            return .00108f * tickCount * tickCount - .011f * tickCount + .277f;
-        } else if (tickCount <= 180) {
-            return 10f;
+            return 0.25f;
+        } else if (tickCount <= 0.5 * this.duration) {
+//            return .00108f * tickCount * tickCount - .011f * tickCount + .277f;
+            return (this.radius - 0.25f) / ((this.duration * 0.5f - 5) * (this.duration * 0.5f - 5)) * (tickCount - 5) * (tickCount - 5) + 0.25f;
+        } else if (tickCount <= 0.9 * this.duration) {
+            return this.radius;
         } else {
-            return Math.max(0.05f, -0.025f * tickCount * tickCount + 9 * tickCount - 800);
+            return (25 - 100 * this.radius) / this.duration / this.duration * (tickCount - 0.9f * this.duration) * (tickCount - 0.9f * this.duration) + this.radius;
+//            return Math.max(0.005f * this.radius, -0.025f * tickCount * tickCount + 9 * tickCount - 800);
         }
     }
 

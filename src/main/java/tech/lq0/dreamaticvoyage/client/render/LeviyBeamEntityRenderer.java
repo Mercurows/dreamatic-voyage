@@ -27,6 +27,7 @@ public class LeviyBeamEntityRenderer extends EntityRenderer<LeviyBeamEntity> {
     public void render(LeviyBeamEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         matrixStackIn.pushPose();
 
+        // TODO 正确获取半径
         float r = entityIn.getCurrentRadius(partialTicks);
 
         // 渲染光柱
