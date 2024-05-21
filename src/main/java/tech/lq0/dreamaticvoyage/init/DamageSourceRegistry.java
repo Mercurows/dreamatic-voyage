@@ -31,14 +31,6 @@ public class DamageSourceRegistry {
     public static final ResourceKey<DamageType> LEVIY_BEAM = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "leviy_beam"));
     public static final ResourceKey<DamageType> LEVIY_BEAM_ABSOLUTE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "leviy_beam_absolute"));
 
-    public static DamageSource causeLeviyBeamDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LEVIY_BEAM), entity);
-    }
-
-    public static DamageSource causeAbsoluteLeviyBeamDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LEVIY_BEAM_ABSOLUTE), entity);
-    }
-
     public static DamageSource causeLavaCakeDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
         return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LAVA_CAKE), entity);
     }
@@ -84,7 +76,15 @@ public class DamageSourceRegistry {
     }
 
     public static DamageSource causeChocoalCookieDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(CHOCOAL_COOKIE), entity);
+    }
+
+    public static DamageSource causeLeviyBeamDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
         return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LEVIY_BEAM), entity);
+    }
+
+    public static DamageSource causeAbsoluteLeviyBeamDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LEVIY_BEAM_ABSOLUTE), entity);
     }
 
     private static class DamageMessages extends DamageSource {
@@ -101,6 +101,8 @@ public class DamageSourceRegistry {
             Entity entity = this.getDirectEntity() == null ? this.getEntity() : this.getDirectEntity();
             if (entity == null) {
                 return Component.translatable("death.attack." + this.getMsgId(), pLivingEntity.getDisplayName());
+            } else if (entity instanceof LivingEntity living && living.getMainHandItem().hasCustomHoverName()) {
+                return Component.translatable("death.attack." + this.getMsgId() + ".item", pLivingEntity.getDisplayName(), entity.getDisplayName(), living.getMainHandItem().getDisplayName());
             } else {
                 return Component.translatable("death.attack." + this.getMsgId() + ".entity", pLivingEntity.getDisplayName(), entity.getDisplayName());
             }
