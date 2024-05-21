@@ -106,23 +106,27 @@ public class OrangeTracker extends ArmorItem {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level world, Player player) {
-        if (ItemNBTTool.getBoolean(stack, TAG_ABLE, false)) {
-            if (player.tickCount % 40 == 0) {
-                int r = 5;
-                AABB area = new AABB(player.getOnPos().offset(-r, -r, -r), player.getOnPos().offset(r, r, r));
+    public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == getEquipmentSlot().getIndex() && !level.isClientSide && pEntity instanceof LivingEntity living) {
+            if (ItemNBTTool.getBoolean(stack, TAG_ABLE, false)) {
+                if (living.tickCount % 40 == 0) {
+                    int r = 5;
+                    AABB area = new AABB(living.getOnPos().offset(-r, -r, -r), living.getOnPos().offset(r, r, r));
 
-                List<ItemEntity> items = player.level().getEntities(EntityType.ITEM, area,
-                        item -> item.isAlive() && (player.level().isClientSide || item.tickCount > 1) &&
-                                (item.getOwner() == null || !item.getOwner().equals(player) || !item.hasPickUpDelay()) &&
-                                !item.getItem().isEmpty()
-                );
-                items.forEach(item -> item.setPos(player.getX(), player.getY(), player.getZ()));
+                    List<ItemEntity> items = living.level().getEntities(EntityType.ITEM, area,
+                            item -> item.isAlive() && (living.level().isClientSide || item.tickCount > 1) &&
+                                    (item.getOwner() == null || !item.getOwner().equals(living) || !item.hasPickUpDelay()) &&
+                                    !item.getItem().isEmpty()
+                    );
+                    items.forEach(item -> item.setPos(living.getX(), living.getY(), living.getZ()));
+                }
             }
+
+            living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1, false, false), living);
+            living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 1, false, false), living);
         }
 
-        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1, false, false), player);
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 1, false, false), player);
+        super.inventoryTick(stack, level, pEntity, pSlotId, pIsSelected);
     }
 
     @Override

@@ -16,7 +16,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
@@ -29,8 +28,8 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.client.models.armor.BlackEarphonesModel;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
@@ -93,20 +92,20 @@ public class BlackEarphones extends ArmorItem {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level world, Player player) {
-        if (!world.isClientSide) {
-            BlockPos basePos = player.getOnPos();
+    public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pSlotId == getEquipmentSlot().getIndex() && !level.isClientSide && pEntity instanceof LivingEntity living) {
+            BlockPos basePos = living.getOnPos();
             for (int i = -5; i <= 5; i++) {
                 for (int j = -5; j <= 5; j++) {
                     for (int q = -5; q <= 5; q++) {
-                        if (world.getBlockState(basePos.offset(i, j, q)).is(Blocks.JUKEBOX) || world.getBlockState(basePos.offset(i, j, q)).is(Blocks.NOTE_BLOCK)) {
-                            player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 40, 0, true, false));
-                            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 40, 1, true, false), player);
+                        if (level.getBlockState(basePos.offset(i, j, q)).is(Blocks.JUKEBOX) || level.getBlockState(basePos.offset(i, j, q)).is(Blocks.NOTE_BLOCK)) {
+                            living.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 40, 0, true, false));
+                            living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 40, 1, true, false), living);
                         }
                     }
                 }
             }
         }
-        super.onArmorTick(stack, world, player);
+        super.inventoryTick(stack, level, pEntity, pSlotId, pIsSelected);
     }
 }
