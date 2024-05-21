@@ -5,7 +5,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
@@ -36,12 +36,16 @@ public class Bleeding extends MobEffect {
         }
     }
 
-    @SubscribeEvent
-    public static void effects(LivingHurtEvent event) {
+    @SubscribeEvent()
+    public static void effects(LivingAttackEvent event) {
         LivingEntity entity = event.getEntity();
         MobEffect effect = EffectRegistry.BLEEDING.get();
 
         if (EntityType.getKey(entity.getType()).equals(new ResourceLocation("twilightforest:snow_queen"))) {
+            return;
+        }
+
+        if (entity.getHealth() <= 0) {
             return;
         }
 
