@@ -28,7 +28,10 @@ public class LeviyBeamEntityRenderer extends EntityRenderer<LeviyBeamEntity> {
         matrixStackIn.pushPose();
 
         // TODO 正确获取半径
-        float r = entityIn.getCurrentRadius(partialTicks);
+        int duration = entityIn.getDuration();
+        float radius = entityIn.getRadius();
+
+        float r = entityIn.getCurrentRadius(partialTicks, duration, radius);
 
         // 渲染光柱
         LeviyRenderer.renderBeamSegment(matrixStackIn,

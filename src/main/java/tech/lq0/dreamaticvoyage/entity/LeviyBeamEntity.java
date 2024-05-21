@@ -16,6 +16,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.entity.IEntityAdditionalSpawnData;
 import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
 import tech.lq0.dreamaticvoyage.init.SoundRegistry;
 
@@ -23,10 +24,10 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
-public class LeviyBeamEntity extends Entity {
-    private static final EntityDataAccessor<Float> POWER = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.FLOAT);
-    private static final EntityDataAccessor<Float> RADIUS = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.FLOAT);
-    private static final EntityDataAccessor<Integer> DURATION = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.INT);
+public class LeviyBeamEntity extends Entity implements IEntityAdditionalSpawnData {
+    public static final EntityDataAccessor<Float> POWER = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.FLOAT);
+    public static final EntityDataAccessor<Float> RADIUS = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.FLOAT);
+    public static final EntityDataAccessor<Integer> DURATION = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.INT);
 
     public float getPower() {
         return power;
@@ -176,17 +177,34 @@ public class LeviyBeamEntity extends Entity {
     }
 
     public float getCurrentRadius(float partialTicks) {
+//        float tickCount = this.tickCount + partialTicks;
+//
+//        if (tickCount <= 5) {
+//            return 0.25f;
+//        } else if (tickCount <= 0.5 * this.duration) {
+////            return .00108f * tickCount * tickCount - .011f * tickCount + .277f;
+//            return (this.radius - 0.25f) / ((this.duration * 0.5f - 5) * (this.duration * 0.5f - 5)) * (tickCount - 5) * (tickCount - 5) + 0.25f;
+//        } else if (tickCount <= 0.9 * this.duration) {
+//            return this.radius;
+//        } else {
+//            return (25 - 100 * this.radius) / this.duration / this.duration * (tickCount - 0.9f * this.duration) * (tickCount - 0.9f * this.duration) + this.radius;
+////            return Math.max(0.005f * this.radius, -0.025f * tickCount * tickCount + 9 * tickCount - 800);
+//        }
+        return getCurrentRadius(partialTicks, this.duration, this.radius);
+    }
+
+    public float getCurrentRadius(float partialTicks, float duration, float radius) {
         float tickCount = this.tickCount + partialTicks;
 
         if (tickCount <= 5) {
             return 0.25f;
-        } else if (tickCount <= 0.5 * this.duration) {
+        } else if (tickCount <= 0.5 * duration) {
 //            return .00108f * tickCount * tickCount - .011f * tickCount + .277f;
-            return (this.radius - 0.25f) / ((this.duration * 0.5f - 5) * (this.duration * 0.5f - 5)) * (tickCount - 5) * (tickCount - 5) + 0.25f;
-        } else if (tickCount <= 0.9 * this.duration) {
-            return this.radius;
+            return (radius - 0.25f) / ((duration * 0.5f - 5) * (duration * 0.5f - 5)) * (tickCount - 5) * (tickCount - 5) + 0.25f;
+        } else if (tickCount <= 0.9 * duration) {
+            return radius;
         } else {
-            return (25 - 100 * this.radius) / this.duration / this.duration * (tickCount - 0.9f * this.duration) * (tickCount - 0.9f * this.duration) + this.radius;
+            return Math.max(0.005f * radius, (25 - 100 * radius) / duration / duration * (tickCount - 0.9f * duration) * (tickCount - 0.9f * duration) + radius);
 //            return Math.max(0.005f * this.radius, -0.025f * tickCount * tickCount + 9 * tickCount - 800);
         }
     }
@@ -211,5 +229,19 @@ public class LeviyBeamEntity extends Entity {
 
     private static float ease(float start, float end, float rate) {
         return start + (end - start) * rate;
+    }
+
+    @Override
+    public void writeSpawnData(FriendlyByteBuf buffer) {
+        buffer.writeFloat(this.power);
+        buffer.writeFloat(this.radius);
+        buffer.writeInt(this.duration);
+    }
+
+    @Override
+    public void readSpawnData(FriendlyByteBuf additionalData) {
+        this.power = additionalData.readFloat();
+        this.radius = additionalData.readFloat();
+        this.duration = additionalData.readInt();
     }
 }
