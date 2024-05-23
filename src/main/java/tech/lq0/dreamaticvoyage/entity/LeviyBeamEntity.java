@@ -1,11 +1,9 @@
 package tech.lq0.dreamaticvoyage.entity;
 
-import io.netty.buffer.Unpooled;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -17,6 +15,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.entity.IEntityAdditionalSpawnData;
+import net.minecraftforge.network.NetworkHooks;
 import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
 import tech.lq0.dreamaticvoyage.init.SoundRegistry;
 
@@ -25,36 +24,11 @@ import java.util.List;
 import java.util.UUID;
 
 public class LeviyBeamEntity extends Entity implements IEntityAdditionalSpawnData {
-    public static final EntityDataAccessor<Float> POWER = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.FLOAT);
     public static final EntityDataAccessor<Float> RADIUS = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.FLOAT);
-    public static final EntityDataAccessor<Integer> DURATION = SynchedEntityData.defineId(LeviyBeamEntity.class, EntityDataSerializers.INT);
-
-    public float getPower() {
-        return power;
-    }
-
-    public void setPower(float power) {
-        this.power = power;
-    }
-
-    public float getRadius() {
-        return radius;
-    }
-
-    public void setRadius(float radius) {
-        this.radius = radius;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
 
     private float power = 6f;
-    private float radius = 10f;
+    private float maxRadius = 10f;
+    private float currentRadius;
     private int duration = 200;
     private LivingEntity owner;
     private UUID ownerUniqueId;
@@ -65,9 +39,7 @@ public class LeviyBeamEntity extends Entity implements IEntityAdditionalSpawnDat
 
     @Override
     protected void defineSynchedData() {
-        this.entityData.define(POWER, this.power);
-        this.entityData.define(RADIUS, this.radius);
-        this.entityData.define(DURATION, this.duration);
+        this.entityData.define(RADIUS, this.currentRadius);
     }
 
     @Override
@@ -86,6 +58,10 @@ public class LeviyBeamEntity extends Entity implements IEntityAdditionalSpawnDat
         }
 
         float r = getCurrentRadius();
+
+        this.currentRadius = r;
+        this.entityData.set(RADIUS, this.currentRadius);
+
         List<LivingEntity> targets = this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(r, 0, r));
         if (!targets.isEmpty()) {
             for (LivingEntity target : targets) {
@@ -128,15 +104,15 @@ public class LeviyBeamEntity extends Entity implements IEntityAdditionalSpawnDat
     @Override
     protected void readAdditionalSaveData(CompoundTag pCompound) {
         this.power = pCompound.getFloat("power");
-        this.radius = pCompound.getFloat("radius");
-        this.duration = pCompound.getInt("duration");
+        this.maxRadius = Math.min(64, pCompound.getFloat("radius"));
+        this.duration = Math.min(3600, pCompound.getInt("duration"));
     }
 
     @Override
     protected void addAdditionalSaveData(CompoundTag pCompound) {
         pCompound.putFloat("power", this.power);
-        pCompound.putFloat("radius", this.radius);
-        pCompound.putInt("duration", this.duration);
+        pCompound.putFloat("radius", Math.min(64, this.maxRadius));
+        pCompound.putInt("duration", Math.min(3600, this.duration));
     }
 
     private float getDamage(double d, float r) {
@@ -177,20 +153,7 @@ public class LeviyBeamEntity extends Entity implements IEntityAdditionalSpawnDat
     }
 
     public float getCurrentRadius(float partialTicks) {
-//        float tickCount = this.tickCount + partialTicks;
-//
-//        if (tickCount <= 5) {
-//            return 0.25f;
-//        } else if (tickCount <= 0.5 * this.duration) {
-////            return .00108f * tickCount * tickCount - .011f * tickCount + .277f;
-//            return (this.radius - 0.25f) / ((this.duration * 0.5f - 5) * (this.duration * 0.5f - 5)) * (tickCount - 5) * (tickCount - 5) + 0.25f;
-//        } else if (tickCount <= 0.9 * this.duration) {
-//            return this.radius;
-//        } else {
-//            return (25 - 100 * this.radius) / this.duration / this.duration * (tickCount - 0.9f * this.duration) * (tickCount - 0.9f * this.duration) + this.radius;
-////            return Math.max(0.005f * this.radius, -0.025f * tickCount * tickCount + 9 * tickCount - 800);
-//        }
-        return getCurrentRadius(partialTicks, this.duration, this.radius);
+        return getCurrentRadius(partialTicks, this.duration, this.maxRadius);
     }
 
     public float getCurrentRadius(float partialTicks, float duration, float radius) {
@@ -199,49 +162,58 @@ public class LeviyBeamEntity extends Entity implements IEntityAdditionalSpawnDat
         if (tickCount <= 5) {
             return 0.25f;
         } else if (tickCount <= 0.5 * duration) {
-//            return .00108f * tickCount * tickCount - .011f * tickCount + .277f;
             return (radius - 0.25f) / ((duration * 0.5f - 5) * (duration * 0.5f - 5)) * (tickCount - 5) * (tickCount - 5) + 0.25f;
         } else if (tickCount <= 0.9 * duration) {
             return radius;
         } else {
             return Math.max(0.005f * radius, (25 - 100 * radius) / duration / duration * (tickCount - 0.9f * duration) * (tickCount - 0.9f * duration) + radius);
-//            return Math.max(0.005f * this.radius, -0.025f * tickCount * tickCount + 9 * tickCount - 800);
         }
     }
 
     @Override
     public Packet<ClientGamePacketListener> getAddEntityPacket() {
-        FriendlyByteBuf byteBuf = new FriendlyByteBuf(Unpooled.buffer());
-
-        byteBuf.writeDouble(this.getX());
-        byteBuf.writeDouble(this.getY());
-        byteBuf.writeDouble(this.getZ());
-
-        byteBuf.writeFloat(this.power);
-        byteBuf.writeFloat(this.radius);
-        byteBuf.writeInt(this.duration);
-
-        byteBuf.writeInt(this.getId());
-        byteBuf.writeUUID(this.getUUID());
-
-        return new ClientboundAddEntityPacket(this);
+        return NetworkHooks.getEntitySpawningPacket(this);
     }
 
     private static float ease(float start, float end, float rate) {
         return start + (end - start) * rate;
     }
 
+    public float getPower() {
+        return power;
+    }
+
+    public void setPower(float power) {
+        this.power = power;
+    }
+
+    public float getMaxRadius() {
+        return maxRadius;
+    }
+
+    public void setMaxRadius(float maxRadius) {
+        this.maxRadius = maxRadius;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
     @Override
     public void writeSpawnData(FriendlyByteBuf buffer) {
         buffer.writeFloat(this.power);
-        buffer.writeFloat(this.radius);
+        buffer.writeFloat(this.maxRadius);
         buffer.writeInt(this.duration);
     }
 
     @Override
     public void readSpawnData(FriendlyByteBuf additionalData) {
         this.power = additionalData.readFloat();
-        this.radius = additionalData.readFloat();
+        this.maxRadius = additionalData.readFloat();
         this.duration = additionalData.readInt();
     }
 }

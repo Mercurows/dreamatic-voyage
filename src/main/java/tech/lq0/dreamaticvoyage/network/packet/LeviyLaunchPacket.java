@@ -66,7 +66,7 @@ public class LeviyLaunchPacket {
             assert beam != null;
             beam.setPos(packet.x, packet.y, packet.z);
             beam.setPower(packet.power);
-            beam.setRadius(packet.radius);
+            beam.setMaxRadius(packet.radius);
             beam.setDuration(packet.duration);
             beam.setOwner(player);
             world.addFreshEntity(beam);

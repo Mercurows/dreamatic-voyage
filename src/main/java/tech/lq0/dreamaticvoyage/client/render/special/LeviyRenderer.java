@@ -123,7 +123,7 @@ public class LeviyRenderer {
                 double zDiff = player.getZ() - beam.getZ();
                 double distance = Math.sqrt(xDiff * xDiff + yDiff * yDiff + zDiff * zDiff);
 
-                float beamAffectRadius = ease(0, beam.getRadius(), (float) beam.tickCount / beam.getDuration()) * 8;
+                float beamAffectRadius = ease(0, beam.getMaxRadius(), (float) beam.tickCount / beam.getDuration()) * 8;
 
                 if (distance <= beamAffectRadius) {
                     float shakeRate = ease(1, 5, (float) Math.pow((beamAffectRadius - distance) / beamAffectRadius, 2));
