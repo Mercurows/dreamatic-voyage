@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.oi.sorayo;
+package tech.lq0.dreamaticvoyage.item.legacy;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -12,7 +12,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -23,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
-import tech.lq0.dreamaticvoyage.tools.Livers;
+import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
@@ -36,7 +35,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class LunaticBow extends Item implements ICurioItem {
     public LunaticBow() {
-        super(new Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
+        super(new Properties().rarity(RarityTool.LEGACY).stacksTo(1));
     }
 
     @Override
@@ -44,7 +43,7 @@ public class LunaticBow extends Item implements ICurioItem {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lunatic_bow_1").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lunatic_bow_2").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.SORAYO);
+        TooltipTool.addLegacyInfo(pTooltipComponents);
     }
 
     @Override
@@ -66,7 +65,7 @@ public class LunaticBow extends Item implements ICurioItem {
 
         CuriosApi.getCuriosInventory(player).ifPresent(
                 c -> c.findFirstCurio(ItemRegistry.LUNATIC_BOW.get()).ifPresent(
-                        slotResult -> player.hurt(DamageSourceRegistry.causeSorayoDamage(player.level().registryAccess(), null), 2.0f)
+                        slotResult -> player.hurt(DamageSourceRegistry.causeLunaticHowlDamage(player.level().registryAccess(), null), 2.0f)
                 )
         );
     }

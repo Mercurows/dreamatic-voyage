@@ -60,9 +60,9 @@ import tech.lq0.dreamaticvoyage.item.oi.roky.Xiaolongbao;
 import tech.lq0.dreamaticvoyage.item.oi.shirako.*;
 import tech.lq0.dreamaticvoyage.item.oi.shirayuki.ButterflyAnklet;
 import tech.lq0.dreamaticvoyage.item.oi.shirayuki.FoxFairyFan;
-import tech.lq0.dreamaticvoyage.item.oi.sorayo.LunarEclipse;
-import tech.lq0.dreamaticvoyage.item.oi.sorayo.LunaticBow;
-import tech.lq0.dreamaticvoyage.item.oi.sorayo.MoonCake;
+import tech.lq0.dreamaticvoyage.item.legacy.LunarEclipse;
+import tech.lq0.dreamaticvoyage.item.legacy.LunaticBow;
+import tech.lq0.dreamaticvoyage.item.legacy.MoonCake;
 import tech.lq0.dreamaticvoyage.item.oi.yesa.MintChocolate;
 import tech.lq0.dreamaticvoyage.item.oi.yesa.TailFishingRod;
 import tech.lq0.dreamaticvoyage.item.oi.yesa.YeggyPearl;
@@ -290,11 +290,6 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MOMO_BANDAGE = ITEMS.register("momo_bandage", MomoBandage::new);
     public static final RegistryObject<Item> CHOCOLATE_BOOTS = ITEMS.register("chocolate_boots", ChocolateBoots::new);
 
-    //sorayo
-    public static final RegistryObject<Item> LUNATIC_BOW = ITEMS.register("lunatic_bow", LunaticBow::new);
-    public static final RegistryObject<Item> MOON_CAKE = ITEMS.register("moon_cake", MoonCake::new);
-    public static final RegistryObject<Item> LUNAR_ECLIPSE = ITEMS.register("lunar_eclipse", LunarEclipse::new);
-
     //miya
     public static final RegistryObject<Item> TAIL_PEN = ITEMS.register("tail_pen", TailPen::new);
     public static final RegistryObject<Item> JELLYFISH_SHELL = ITEMS.register("jellyfish_shell", JellyfishShell::new);
@@ -447,6 +442,9 @@ public class ItemRegistry {
     public static final RegistryObject<Item> LAVA_CAKE = MISC_ITEMS.register("lava_cake", LavaCake::new);
     public static final RegistryObject<Item> SHURA_CHIN = MISC_ITEMS.register("shura_chin", ShuraChin::new);
     public static final RegistryObject<Item> UME = MISC_ITEMS.register("ume", Ume::new);
+    public static final RegistryObject<Item> LUNATIC_BOW = MISC_ITEMS.register("lunatic_bow", LunaticBow::new);
+    public static final RegistryObject<Item> MOON_CAKE = MISC_ITEMS.register("moon_cake", MoonCake::new);
+    public static final RegistryObject<Item> LUNAR_ECLIPSE = MISC_ITEMS.register("lunar_eclipse", LunarEclipse::new);
 
 
     /**

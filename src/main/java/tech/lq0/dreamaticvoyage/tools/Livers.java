@@ -26,7 +26,6 @@ public enum Livers {
     HIFUMI("hifumi", "fourth", "#6B5B95", false),
     SANA("sana", "fourth", "#ABCDEF", true),
     SHIRAKO("shirako", "poi", "#F4ADB4", false),
-    SORAYO("sorayo", "poi", "#FC96A1", true),
     MIYA("miya", "poi", "#F9F0D8", true),
     AOI("aoi", "poi", "#EEEEEE", true),
     AYU("ayu", "poi", "#A9BBD9", false),

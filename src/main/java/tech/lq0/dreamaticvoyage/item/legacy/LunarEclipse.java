@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.oi.sorayo;
+package tech.lq0.dreamaticvoyage.item.legacy;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -13,7 +13,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -24,7 +23,7 @@ import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
 import tech.lq0.dreamaticvoyage.init.EffectRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
-import tech.lq0.dreamaticvoyage.tools.Livers;
+import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
@@ -33,14 +32,15 @@ import java.util.UUID;
 
 public class LunarEclipse extends SwordItem {
     public LunarEclipse() {
-        super(ModItemTier.CHARGED_CRYSTAL, 5, -2.0f, new Properties().rarity(Rarity.EPIC));
+        super(ModItemTier.CHARGED_CRYSTAL, 5, -2.0f,
+                new Properties().rarity(RarityTool.LEGACY));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.lunar_eclipse").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.SORAYO);
+        TooltipTool.addLegacyInfo(pTooltipComponents);
     }
 
     @Override

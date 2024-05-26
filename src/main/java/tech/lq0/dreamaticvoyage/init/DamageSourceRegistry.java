@@ -20,7 +20,7 @@ public class DamageSourceRegistry {
     public static final ResourceKey<DamageType> MARI_FOOD = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "mari_food"));
     public static final ResourceKey<DamageType> EMOTIONAL_DAMAGE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "emotional_damage"));
     public static final ResourceKey<DamageType> LOTUS_POTATO = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "lotus_potato"));
-    public static final ResourceKey<DamageType> SORAYO = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "sorayo"));
+    public static final ResourceKey<DamageType> LUNATIC_HOWL = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "lunatic_howl"));
     public static final ResourceKey<DamageType> OVERLOAD = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "overload"));
     public static final ResourceKey<DamageType> BLEEDING = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "bleeding"));
     public static final ResourceKey<DamageType> BLOOD_CRYSTAL = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, "blood_crystal"));
@@ -47,8 +47,8 @@ public class DamageSourceRegistry {
         return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LOTUS_POTATO), entity);
     }
 
-    public static DamageSource causeSorayoDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(SORAYO), entity);
+    public static DamageSource causeLunaticHowlDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LUNATIC_HOWL), entity);
     }
 
     public static DamageSource causeOverloadDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
