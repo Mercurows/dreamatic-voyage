@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "dreamaticvoyage:smooth_blue_sandstone"
+  },
+  "result": "dreamaticvoyage:smooth_blue_sandstone_slab",
+  "count": 2
+}
