@@ -586,6 +586,7 @@
   "item.dreamaticvoyage.magicros_core": "Magicros Core",
   "des.dreamaticvoyage.magicros_core_1": "The core that converges four types of magic",
   "des.dreamaticvoyage.magicros_core_2": "Hold it in main hand, and accept their challenges...",
+  "des.dreamaticvoyage.magicros_core_3": "交错的愿望已经汇集，新的奇迹即将开幕……",
   "des.dreamaticvoyage.magicros_core.chiram": "Embrace the kiss of the breeze...",
   "des.dreamaticvoyage.magicros_core.haine": "Witness the rise of the light...",
   "des.dreamaticvoyage.magicros_core.keroro": "Waiting for the erosion of the hypocrisy...",
@@ -1234,8 +1235,8 @@
   "dreamaticvoyage.advancement.jellyfish_bottle_des": "The undersea moon all in a bottle",
   "dreamaticvoyage.advancement.dream_weaving_yarn": "星河入梦",
   "dreamaticvoyage.advancement.dream_weaving_yarn_des": "获得轻盈的织梦纱",
-  "dreamaticvoyage.advancement.magicros": "四色交织的奇迹",
-  "dreamaticvoyage.advancement.magicros_des": "集齐魔力交织套装",
+  "dreamaticvoyage.advancement.magicros_core": "四色交织的奇迹",
+  "dreamaticvoyage.advancement.magicros_core_des": "集齐四种魔力交织套装的核心",
   "dreamaticvoyage.advancement.call_in_thunder": "Lightning is on its way to you",
   "dreamaticvoyage.advancement.call_in_thunder_des": "请不要模仿哦",
 

@@ -4,10 +4,10 @@
       "item": "dreamaticvoyage:magicros_core"
     },
     "title": {
-      "translate": "dreamaticvoyage.advancement.magicros"
+      "translate": "dreamaticvoyage.advancement.magicros_core"
     },
     "description": {
-      "translate": "dreamaticvoyage.advancement.magicros_des"
+      "translate": "dreamaticvoyage.advancement.magicros_core_des"
     },
     "frame": "challenge",
     "show_toast": true,
@@ -16,28 +16,28 @@
   },
   "parent": "dreamaticvoyage:main/dream_weaving_yarn",
   "criteria": {
-    "magicros": {
+    "magicros_core": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "dreamaticvoyage:breeze_crown"
+              "dreamaticvoyage:chiram_core"
             ]
           },
           {
             "items": [
-              "dreamaticvoyage:misty_chestplate"
+              "dreamaticvoyage:haine_core"
             ]
           },
           {
             "items": [
-              "dreamaticvoyage:froggy_leggings"
+              "dreamaticvoyage:keroro_core"
             ]
           },
           {
             "items": [
-              "dreamaticvoyage:celestial_boots"
+              "dreamaticvoyage:ekira_core"
             ]
           }
         ]
