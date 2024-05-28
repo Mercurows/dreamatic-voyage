@@ -82,6 +82,36 @@ public class RarityTool {
         return Style.EMPTY.withColor(rgb);
     });
 
+    public static final Rarity MAGICROS = Rarity.create("dreamaticvoyage_magicros", s -> {
+        long time = System.currentTimeMillis();
+        int step = (int) (time % 8000);
+
+        int[][] colors = {
+                {0xFF, 0xEC, 0xE7},
+                {0xAD, 0xDB, 0xFF},
+                {0xF5, 0xFF, 0xEA},
+                {0xFF, 0xF7, 0xEA}
+        };
+
+        int segment = step / 2000;
+        int rgb = getCurrentRgb(step, colors, segment);
+
+        return Style.EMPTY.withColor(rgb);
+    });
+
+    private static int getCurrentRgb(int step, int[][] colors, int segment) {
+        int localStep = step % 2000;
+
+        int[] startColor = colors[segment % colors.length];
+        int[] endColor = colors[(segment + 1) % colors.length];
+
+        int finalR = (int) (startColor[0] + (endColor[0] - startColor[0]) * localStep / 2000f);
+        int finalG = (int) (startColor[1] + (endColor[1] - startColor[1]) * localStep / 2000f);
+        int finalB = (int) (startColor[2] + (endColor[2] - startColor[2]) * localStep / 2000f);
+
+        return finalR * 65536 + finalG * 256 + finalB;
+    }
+
     public static final Rarity FUKAMI_TECH = Rarity.create("dreamaticvoyage_fukami_tech", s -> {
         long time = System.currentTimeMillis();
         int step = (int) (time % 4000);

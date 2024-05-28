@@ -221,7 +221,7 @@ public class MagicrosCore extends Item {
             }
 
             if (flagMiracle) {
-                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.magicros_core.miracle").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xB4DDFF)), true);
+                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.magicros_core.miracle").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xFFAA11)), true);
                 ItemNBTTool.setInt(stack, TAG_MIRACLE, Math.min(ItemNBTTool.getInt(stack, TAG_MIRACLE, 0) + 1, 200));
 
                 if (ItemNBTTool.getInt(stack, TAG_MIRACLE, 0) >= 60 && player.tickCount % 20 == 0) {

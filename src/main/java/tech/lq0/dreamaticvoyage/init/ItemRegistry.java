@@ -414,6 +414,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> FICTIONAL_FORGING_SIGIL = MISC_ITEMS.register("fictional_forging_sigil", FictionalForgingSigil::new);
     public static final RegistryObject<Item> GOURMET_MEDAL = MISC_ITEMS.register("gourmet_medal", GourmetMedal::new);
     public static final RegistryObject<Item> APOCALYPSE_CARNIVAL = MISC_ITEMS.register("apocalypse_carnival", ApocalypseCarnival::new);
+    public static final RegistryObject<Item> MIRACLE_BADGE = MISC_ITEMS.register("miracle_badge", MiracleBadge::new);
 
     /**
      * donate
