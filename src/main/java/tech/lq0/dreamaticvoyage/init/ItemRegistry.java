@@ -397,6 +397,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> FICTIONAL_NUGGET = MISC_ITEMS.register("fictional_nugget", FictionalNugget::new);
     public static final RegistryObject<Item> IDOL_CLOTH = MISC_ITEMS.register("idol_cloth", IdolCloth::new);
     public static final RegistryObject<Item> MAGICROS_CORE = MISC_ITEMS.register("magicros_core", MagicrosCore::new);
+    public static final RegistryObject<Item> MIRACLE_CORE = MISC_ITEMS.register("miracle_core", MiracleCore::new);
     public static final RegistryObject<Item> DREAM_WEAVING_YARN = MISC_ITEMS.register("dream_weaving_yarn", DreamWeavingYarn::new);
 
     /**
