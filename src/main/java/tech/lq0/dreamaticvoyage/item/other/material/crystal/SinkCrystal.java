@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.material;
+package tech.lq0.dreamaticvoyage.item.other.material.crystal;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -11,13 +11,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class DreamWeavingYarn extends Item {
-    public DreamWeavingYarn() {
-        super(new Properties().fireResistant().rarity(Rarity.EPIC));
+public class SinkCrystal extends Item {
+    public SinkCrystal() {
+        super(new Properties().rarity(Rarity.UNCOMMON));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.dream_weaving_yarn").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.sink_crystal").withStyle(ChatFormatting.GRAY));
     }
 }

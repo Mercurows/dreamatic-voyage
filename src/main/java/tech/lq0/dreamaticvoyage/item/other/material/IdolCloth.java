@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.material;
+package tech.lq0.dreamaticvoyage.item.other.material;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;

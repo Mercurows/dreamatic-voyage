@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.material.crystal;
+package tech.lq0.dreamaticvoyage.item.other.material.crystal;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -11,18 +11,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class AlienisCrystal extends Item {
-    public AlienisCrystal() {
-        super(new Properties().rarity(Rarity.RARE));
+public class TerminalCrystal extends Item {
+    public TerminalCrystal() {
+        super(new Properties().rarity(Rarity.EPIC));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.alienis_crystal").withStyle(ChatFormatting.GRAY));
-    }
-
-    @Override
-    public boolean isFoil(ItemStack pStack) {
-        return true;
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.terminal_crystal").withStyle(ChatFormatting.GRAY));
     }
 }

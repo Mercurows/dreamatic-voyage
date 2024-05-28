@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.other.fictional;
+package tech.lq0.dreamaticvoyage.item.other;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -13,6 +13,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
@@ -23,7 +24,6 @@ import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.capability.chaos.ChaosHelper;
 import tech.lq0.dreamaticvoyage.init.AttributeRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
-import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
@@ -35,7 +35,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class FallenRing extends Item implements ICurioItem {
     public FallenRing() {
-        super(new Properties().stacksTo(1).rarity(RarityTool.FICTIONAL));
+        super(new Properties().stacksTo(1).rarity(Rarity.EPIC));
     }
 
     @Override

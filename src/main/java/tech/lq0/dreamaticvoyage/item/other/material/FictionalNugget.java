@@ -1,19 +1,19 @@
-package tech.lq0.dreamaticvoyage.item.material;
+package tech.lq0.dreamaticvoyage.item.other.material;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.tools.RarityTool;
 
 import java.util.List;
 
 public class FictionalNugget extends Item {
     public FictionalNugget() {
-        super(new Properties().rarity(RarityTool.FICTIONAL));
+        super(new Properties().rarity(Rarity.EPIC));
     }
 
     @Override

@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.other.fictional;
+package tech.lq0.dreamaticvoyage.item.other;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -11,12 +11,12 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
-import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
@@ -44,7 +44,7 @@ public class GourmetMedal extends Item implements ICurioItem {
     public static final String TAG_GOURMET_MEDAL = "GourmetMedal";
 
     public GourmetMedal() {
-        super(new Properties().stacksTo(1).fireResistant().rarity(RarityTool.FICTIONAL));
+        super(new Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC));
     }
 
     @Override

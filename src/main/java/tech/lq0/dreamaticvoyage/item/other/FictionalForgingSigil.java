@@ -1,9 +1,10 @@
-package tech.lq0.dreamaticvoyage.item.other.fictional;
+package tech.lq0.dreamaticvoyage.item.other;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -15,7 +16,6 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
-import tech.lq0.dreamaticvoyage.tools.RarityTool;
 
 import java.util.List;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class FictionalForgingSigil extends Item {
     public static final String TAG_FICTIONAL_FORGING_SIGIL = "FictionalForgingSigil";
 
     public FictionalForgingSigil() {
-        super(new Properties().rarity(RarityTool.FICTIONAL));
+        super(new Properties().rarity(Rarity.EPIC));
     }
 
     @Override

@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.material;
+package tech.lq0.dreamaticvoyage.item.other.material;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class PurifiedCrystalIngot extends Item {
     public PurifiedCrystalIngot() {
-        super(new Properties().rarity(Rarity.RARE));
+        super(new Properties().rarity(Rarity.UNCOMMON));
     }
 
     @Override

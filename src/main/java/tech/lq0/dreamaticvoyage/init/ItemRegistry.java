@@ -43,8 +43,6 @@ import tech.lq0.dreamaticvoyage.item.magicros.chiram.*;
 import tech.lq0.dreamaticvoyage.item.magicros.ekira.*;
 import tech.lq0.dreamaticvoyage.item.magicros.haine.*;
 import tech.lq0.dreamaticvoyage.item.magicros.keroro.*;
-import tech.lq0.dreamaticvoyage.item.material.*;
-import tech.lq0.dreamaticvoyage.item.material.crystal.*;
 import tech.lq0.dreamaticvoyage.item.oi.ayu.DelicateMirage;
 import tech.lq0.dreamaticvoyage.item.oi.ayu.GravityRestraintDevice;
 import tech.lq0.dreamaticvoyage.item.oi.ccelia.CraftBeer0322;
@@ -60,15 +58,13 @@ import tech.lq0.dreamaticvoyage.item.oi.roky.Xiaolongbao;
 import tech.lq0.dreamaticvoyage.item.oi.shirako.*;
 import tech.lq0.dreamaticvoyage.item.oi.shirayuki.ButterflyAnklet;
 import tech.lq0.dreamaticvoyage.item.oi.shirayuki.FoxFairyFan;
-import tech.lq0.dreamaticvoyage.item.legacy.LunarEclipse;
-import tech.lq0.dreamaticvoyage.item.legacy.LunaticBow;
-import tech.lq0.dreamaticvoyage.item.legacy.MoonCake;
 import tech.lq0.dreamaticvoyage.item.oi.yesa.MintChocolate;
 import tech.lq0.dreamaticvoyage.item.oi.yesa.TailFishingRod;
 import tech.lq0.dreamaticvoyage.item.oi.yesa.YeggyPearl;
 import tech.lq0.dreamaticvoyage.item.oi.yuri.RabbitLychee;
 import tech.lq0.dreamaticvoyage.item.other.*;
-import tech.lq0.dreamaticvoyage.item.other.fictional.*;
+import tech.lq0.dreamaticvoyage.item.other.material.*;
+import tech.lq0.dreamaticvoyage.item.other.material.crystal.*;
 import tech.lq0.dreamaticvoyage.item.second.lecia.*;
 import tech.lq0.dreamaticvoyage.item.second.louise.*;
 import tech.lq0.dreamaticvoyage.item.second.lucia.BigFierceOneCoffee;
@@ -88,7 +84,6 @@ import tech.lq0.dreamaticvoyage.item.third.leciel.ReinaWings;
 import tech.lq0.dreamaticvoyage.item.third.yuki.FoxIceCream;
 import tech.lq0.dreamaticvoyage.item.third.yuki.FoxPudding;
 import tech.lq0.dreamaticvoyage.tools.Livers;
-import tech.lq0.dreamaticvoyage.tools.RarityTool;
 
 @SuppressWarnings("unused")
 public class ItemRegistry {
@@ -569,13 +564,13 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> HARDEN_CRYSTAL_BLOCK = BLOCK_ITEMS.register("harden_crystal_block",
-            () -> new BlockItem(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
+            () -> new BlockItem(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> PURIFIED_CRYSTAL_BLOCK = BLOCK_ITEMS.register("purified_crystal_block",
-            () -> new BlockItem(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.RARE).fireResistant()));
+            () -> new BlockItem(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
     public static final RegistryObject<Item> CHARGED_CRYSTAL_BLOCK = BLOCK_ITEMS.register("charged_crystal_block",
-            () -> new BlockItem(BlockRegistry.CHARGED_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.EPIC).fireResistant()));
+            () -> new BlockItem(BlockRegistry.CHARGED_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.RARE).fireResistant()));
     public static final RegistryObject<Item> FICTIONAL_INGOT_BLOCK = BLOCK_ITEMS.register("fictional_ingot_block",
-            () -> new BlockItem(BlockRegistry.FICTIONAL_INGOT_BLOCK.get(), new Item.Properties().rarity(RarityTool.FICTIONAL).fireResistant()));
+            () -> new BlockItem(BlockRegistry.FICTIONAL_INGOT_BLOCK.get(), new Item.Properties().rarity(Rarity.EPIC).fireResistant()));
 
     public static final RegistryObject<Item> VERDANT_SPIRIT_RICH_SOIL = BLOCK_ITEMS.register("verdant_spirit_rich_soil",
             () -> new BlockItem(BlockRegistry.VERDANT_SPIRIT_RICH_SOIL.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
