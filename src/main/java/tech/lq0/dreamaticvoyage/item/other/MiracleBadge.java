@@ -3,6 +3,7 @@ package tech.lq0.dreamaticvoyage.item.other;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -14,10 +15,12 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tools.ArmorTool;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.RarityTool;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MiracleBadge extends Item implements ICurioItem {
     public static final String TAG_SET = "Set";
@@ -36,6 +39,14 @@ public class MiracleBadge extends Item implements ICurioItem {
     }
 
     @Override
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (!pLevel.isClientSide && pEntity instanceof Player player) {
+            setArmorSet(pStack, player);
+        }
+        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
+    }
+
+    @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         LivingEntity livingEntity = slotContext.entity();
         if (!livingEntity.level().isClientSide && livingEntity instanceof Player player) {
@@ -43,6 +54,15 @@ public class MiracleBadge extends Item implements ICurioItem {
         }
 
         ICurioItem.super.curioTick(slotContext, stack);
+    }
+
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        LivingEntity livingEntity = slotContext.entity();
+        AtomicBoolean flag = new AtomicBoolean(true);
+        CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(this).ifPresent(s -> flag.set(false)));
+
+        return flag.get();
     }
 
     public static void setArmorSet(ItemStack stack, Player player) {

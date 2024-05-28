@@ -20,6 +20,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -37,9 +38,11 @@ import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.client.models.armor.CelestialBootsModel;
 import tech.lq0.dreamaticvoyage.tiers.ModArmorMaterial;
 import tech.lq0.dreamaticvoyage.tools.*;
+import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -47,6 +50,7 @@ public class CelestialBoots extends ArmorItem {
     private static final int[] HUNGER_TIME = new int[]{320, 240, 160, 160};
 
     public static final String TAG_SET = "Set";
+    public static final String TAG_SET_WITH_CURIOS = "SetWithCurios";
 
     public CelestialBoots() {
         super(ModArmorMaterial.MAGICROS, Type.BOOTS, new Properties().fireResistant().setNoRepair().rarity(RarityTool.LEGENDARY));
@@ -89,6 +93,11 @@ public class CelestialBoots extends ArmorItem {
         if (!pLevel.isClientSide && pEntity instanceof Player player) {
             setArmorSet(stack, player);
 
+            AtomicBoolean flag = new AtomicBoolean(false);
+            CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(ItemRegistry.MIRACLE_BADGE.get())
+                    .ifPresent(slotResult -> flag.set(true)));
+            ItemNBTTool.setBoolean(stack, TAG_SET_WITH_CURIOS, flag.get() && hasArmorSet(stack));
+
             if (pSlotId == getEquipmentSlot().getIndex()) {
                 setArmorSet(stack, player);
 
@@ -108,6 +117,11 @@ public class CelestialBoots extends ArmorItem {
                 }
             }
         }
+    }
+
+    @Override
+    public Rarity getRarity(ItemStack pStack) {
+        return ItemNBTTool.getBoolean(pStack, TAG_SET_WITH_CURIOS, false) ? RarityTool.MAGICROS : RarityTool.LEGENDARY;
     }
 
     @Override

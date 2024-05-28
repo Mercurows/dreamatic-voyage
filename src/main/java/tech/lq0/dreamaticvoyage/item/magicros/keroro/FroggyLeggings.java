@@ -22,6 +22,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -42,15 +43,18 @@ import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.client.models.armor.FroggyLeggingsModel;
 import tech.lq0.dreamaticvoyage.tiers.ModArmorMaterial;
 import tech.lq0.dreamaticvoyage.tools.*;
+import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class FroggyLeggings extends ArmorItem {
     public static final String TAG_SET = "Set";
+    public static final String TAG_SET_WITH_CURIOS = "SetWithCurios";
 
     public FroggyLeggings() {
         super(ModArmorMaterial.MAGICROS, Type.LEGGINGS, new Properties().fireResistant().setNoRepair().rarity(RarityTool.LEGENDARY));
@@ -92,6 +96,11 @@ public class FroggyLeggings extends ArmorItem {
     public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!level.isClientSide && pEntity instanceof Player player) {
             setArmorSet(stack, player);
+
+            AtomicBoolean flag = new AtomicBoolean(false);
+            CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(ItemRegistry.MIRACLE_BADGE.get())
+                    .ifPresent(slotResult -> flag.set(true)));
+            ItemNBTTool.setBoolean(stack, TAG_SET_WITH_CURIOS, flag.get() && hasArmorSet(stack));
 
             if (pSlotId == getEquipmentSlot().getIndex()) {
                 setArmorSet(stack, player);
@@ -150,6 +159,11 @@ public class FroggyLeggings extends ArmorItem {
                 player.setDeltaMovement(base);
             }
         }
+    }
+
+    @Override
+    public Rarity getRarity(ItemStack pStack) {
+        return ItemNBTTool.getBoolean(pStack, TAG_SET_WITH_CURIOS, false) ? RarityTool.MAGICROS : RarityTool.LEGENDARY;
     }
 
     @SubscribeEvent
