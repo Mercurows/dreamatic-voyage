@@ -103,7 +103,7 @@ public class CelestialBoots extends ArmorItem {
 
                 int times = getEnhanceTimes(player, hasArmorSet(stack));
                 if (times == 4) {
-                    if (player.getFoodData().getFoodLevel() > 10) {
+                    if (player.getFoodData().getFoodLevel() > 10 || ItemNBTTool.getBoolean(stack, TAG_SET_WITH_CURIOS, false)) {
                         if (player.tickCount % 80 == 0) {
                             player.getFoodData().eat(2, 1.0f);
                         }
@@ -201,20 +201,20 @@ public class CelestialBoots extends ArmorItem {
             if (livingEntity instanceof Player player && !itemStack.isEmpty() && itemStack.getItem().equals(ItemRegistry.CELESTIAL_BOOTS.get())) {
                 if (!player.getCooldowns().isOnCooldown(ItemRegistry.CELESTIAL_BOOTS.get())) {
                     int times = getEnhanceTimes(player, hasArmorSet(itemStack));
+                    boolean setCurios = ItemNBTTool.getBoolean(itemStack, TAG_SET_WITH_CURIOS, false);
 
                     if (entity instanceof LivingEntity target) {
-
                         if (target != player) {
-                            target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 50, times - 1), player);
-                            target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 50, 0));
+                            target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, setCurios ? 100 : 50, times - 1), player);
+                            target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, setCurios ? 100 : 50, 0));
 
                             if (times == 4) {
-                                target.addEffect(new MobEffectInstance(MobEffects.GLOWING, 50, 0));
+                                target.addEffect(new MobEffectInstance(MobEffects.GLOWING, setCurios ? 100 : 50, 0));
                             }
                         }
                     }
 
-                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 50 + Math.min(3, times) * 50, times == 4 ? 1 : 0), player);
+                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, setCurios ? 300 : 50 + Math.min(3, times) * 50, setCurios ? 2 : times == 4 ? 1 : 0), player);
 
                     player.getCooldowns().addCooldown(itemStack.getItem(), 120);
                 }

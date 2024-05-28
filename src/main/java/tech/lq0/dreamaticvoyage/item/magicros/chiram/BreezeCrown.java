@@ -219,7 +219,9 @@ public class BreezeCrown extends ArmorItem {
 
         if (!livingEntity.level().isClientSide) {
             if (!itemStack.isEmpty() && itemStack.getItem().equals(ItemRegistry.BREEZE_CROWN.get())) {
-                event.setAmount(heal * 1.3f);
+                boolean flag = ItemNBTTool.getBoolean(itemStack, TAG_SET_WITH_CURIOS, false);
+
+                event.setAmount(flag ? heal * 1.8f : heal * 1.3f);
             }
         }
     }
@@ -244,7 +246,8 @@ public class BreezeCrown extends ArmorItem {
         if (!livingEntity.level().isClientSide) {
             if (!itemStack.isEmpty() && itemStack.getItem().equals(ItemRegistry.BREEZE_CROWN.get())) {
                 if (hasArmorSet(itemStack)) {
-                    event.setDamageModifier(event.getDamageModifier() * 1.5f);
+                    float modifier = ItemNBTTool.getBoolean(itemStack, TAG_SET_WITH_CURIOS, false) ? 2f : 1.5f;
+                    event.setDamageModifier(event.getDamageModifier() * modifier);
                 }
             }
         }

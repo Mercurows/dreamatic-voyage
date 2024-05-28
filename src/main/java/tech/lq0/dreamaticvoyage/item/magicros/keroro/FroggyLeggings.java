@@ -131,7 +131,9 @@ public class FroggyLeggings extends ArmorItem {
 
                 //生命恢复
                 if (player.isSwimming() || level.isRaining()) {
-                    if (player.tickCount % 40 == 0) {
+                    int tickSeg = ItemNBTTool.getBoolean(stack, TAG_SET_WITH_CURIOS, false) ? 20 : 40;
+
+                    if (player.tickCount % tickSeg == 0) {
                         player.heal(1);
                     }
                 }
@@ -148,12 +150,16 @@ public class FroggyLeggings extends ArmorItem {
         LivingEntity livingEntity = event.getEntity();
 
         if (livingEntity instanceof Player player) {
-            if (player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ItemRegistry.FROGGY_LEGGINGS.get()) {
-                Vec3 base = player.getDeltaMovement().add(0, 0.275, 0);
+            ItemStack stack = player.getItemBySlot(EquipmentSlot.LEGS);
+            if (stack.getItem() == ItemRegistry.FROGGY_LEGGINGS.get()) {
+                boolean setCurios = ItemNBTTool.getBoolean(stack, TAG_SET_WITH_CURIOS, false);
+                float sprintModifier = setCurios ? 0.6f : 0.45f;
+
+                Vec3 base = player.getDeltaMovement().add(0, setCurios ? 0.35 : 0.275, 0);
 
                 if (player.isSprinting()) {
                     float f1 = player.getYRot() * ((float) Math.PI / 180F);
-                    base = base.add(-Mth.sin(f1) * 0.45F, 0.0D, Mth.cos(f1) * 0.45F);
+                    base = base.add(-Mth.sin(f1) * sprintModifier, 0.0D, Mth.cos(f1) * sprintModifier);
                 }
 
                 player.setDeltaMovement(base);

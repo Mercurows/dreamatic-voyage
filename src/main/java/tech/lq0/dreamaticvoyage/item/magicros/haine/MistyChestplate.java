@@ -170,6 +170,9 @@ public class MistyChestplate extends ArmorItem {
                         event.setCanceled(true);
                     } else {
                         setShieldCount(itemStack, --count);
+                        if (ItemNBTTool.getBoolean(itemStack, TAG_SET_WITH_CURIOS, false)) {
+                            event.setCanceled(true);
+                        }
                     }
                 }
             }
@@ -187,8 +190,9 @@ public class MistyChestplate extends ArmorItem {
             if (!itemStack.isEmpty() && itemStack.getItem().equals(ItemRegistry.MISTY_CHESTPLATE.get())) {
                 if (source.is(DamageTypeTags.IS_PROJECTILE)) {
                     double rand = Math.random();
+                    double prob = ItemNBTTool.getBoolean(itemStack, TAG_SET_WITH_CURIOS, false) ? .41 : .17;
 
-                    if (rand < .17) {
+                    if (rand < prob) {
                         event.setCanceled(true);
                     }
                 }
