@@ -251,7 +251,7 @@ public class ItemRegistry {
     /**
      * 3rd
      **/
-    //hiru
+    // hiru
     public static final RegistryObject<Item> HIRU_HEAD = ITEMS.register("hiru_head", HiruHead::new);
     public static final RegistryObject<Item> HIRU_TENTACLES = ITEMS.register("hiru_tentacles", HiruTentacles::new);
     public static final RegistryObject<Item> HIRENADE_GG = ITEMS.register("hirenade_gg", HirenadeGG::new);
@@ -260,11 +260,11 @@ public class ItemRegistry {
     public static final RegistryObject<Item> GN_SPIRIT = ITEMS.register("gn_spirit", GNSpirit::new);
     public static final RegistryObject<Item> GN_STAR = ITEMS.register("gn_star", GNStar::new);
 
-    //yuki
+    // yuki
     public static final RegistryObject<Item> FOX_ICE_CREAM = ITEMS.register("fox_ice_cream", FoxIceCream::new);
     public static final RegistryObject<Item> FOX_PUDDING = ITEMS.register("fox_pudding", FoxPudding::new);
 
-    //leciel
+    // leciel
     public static final RegistryObject<Item> REINA_WINGS = ITEMS.register("reina_wings", ReinaWings::new);
     public static final RegistryObject<Item> REINA_FEATHER = ITEMS.register("reina_feather", ReinaFeather::new);
     public static final RegistryObject<Item> LECIEL_EAR_COVERTS = ITEMS.register("leciel_ear_coverts", LecielEarCoverts::new);
@@ -273,7 +273,7 @@ public class ItemRegistry {
     /**
      * POI
      **/
-    //shirako
+    // shirako
     public static final RegistryObject<Item> MOMO_DAIFUKU = ITEMS.register("momo_daifuku", MomoDaifuku::new);
     public static final RegistryObject<Item> FETUOZI = ITEMS.register("fetuozi", Fetuozi::new);
     public static final RegistryObject<Item> DAIFUKU_SYRUP = ITEMS.register("daifuku_syrup", DaifukuSyrup::new);
@@ -285,13 +285,13 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MOMO_BANDAGE = ITEMS.register("momo_bandage", MomoBandage::new);
     public static final RegistryObject<Item> CHOCOLATE_BOOTS = ITEMS.register("chocolate_boots", ChocolateBoots::new);
 
-    //miya
+    // miya
     public static final RegistryObject<Item> TAIL_PEN = ITEMS.register("tail_pen", TailPen::new);
     public static final RegistryObject<Item> JELLYFISH_SHELL = ITEMS.register("jellyfish_shell", JellyfishShell::new);
     public static final RegistryObject<Item> ARTIST_TOOL_BELT = ITEMS.register("artist_tool_belt", ArtistToolBelt::new);
     public static final RegistryObject<Item> TETRIS_CAT = ITEMS.register("tetris_cat", TetrisCat::new);
 
-    //aoi
+    // aoi
     public static final RegistryObject<Item> FOX_FAIRY_FAN = ITEMS.register("fox_fairy_fan", FoxFairyFan::new);
     public static final RegistryObject<Item> BUTTERFLY_ANKLET = ITEMS.register("butterfly_anklet", ButterflyAnklet::new);
 
