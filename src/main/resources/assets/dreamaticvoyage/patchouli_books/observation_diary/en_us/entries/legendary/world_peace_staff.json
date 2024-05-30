@@ -20,6 +20,14 @@
     {
       "type": "patchouli:text",
       "text": "dreamaticvoyage.page.world_peace_staff4"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.world_peace_staff5"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.world_peace_staff6"
     }
   ],
   "sortnum": 70101,

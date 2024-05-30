@@ -1392,6 +1392,12 @@
   "dreamaticvoyage.page.craft_beer_03223": "“喝星球劲酒！胜利尽在我手！0322星球特产精酿！你值得拥有！嘿嘿……”$(p)——来自毫无酒精抗性的看板娘",
 
   "dreamaticvoyage.entry.world_peace_staff": "世界和平之杖",
+  "dreamaticvoyage.page.world_peace_staff1": "“洗脑壳的愿望是世界和平！”$(item)世界和平之杖$(0)就是毛毛用来守护世界和平的手杖。$(p)攻击生物时会造成强大的击退效果和$(thing)流血$(0)效果，与$(l:dreamaticvoyage:oi/shirako/momo_knife)美工刀$(/l)类似，使用本武器攻击生物时会在武器中存储一定的生命值，但不会随时间减少。",
+  "dreamaticvoyage.page.world_peace_staff2": "$(o)愿你的旅行，不再孤身一人。",
+  "dreamaticvoyage.page.world_peace_staff3": "手持本武器时会在准星左侧显示一个血槽，用于展示武器目前存储的生命值。$(p)长按使用键可以将存储的生命值转化为$(thing)凝血水晶$(0)发射出去，能够为与自己处于同一队伍的生物恢复生命值，对其他生物造成伤害并$(c)取消$(0)无敌帧。$(p)潜行时使用会为自身恢复一定的生命值。",
+  "dreamaticvoyage.page.world_peace_staff4": "本物品的描述有隐藏文本，是《一人旅行》中的部分歌词，对应了配方中的音乐唱片（一人旅行）。",
+  "dreamaticvoyage.page.world_peace_staff5": "致$(playername)：$(p)当你读到这封信的时候，我已经在前往新世界的路途上了。$(p)也许我不会怀念这里的一草一木……但，我会永远记住，那些与你共同创造的美好回忆。$(p)这是为你而做的手杖，请带上它，继续守护世界的和平吧。",
+  "dreamaticvoyage.page.world_peace_staff6": "请原谅我的不辞而别，即使没有我的存在，也请你一如既往地勇敢走下去。$(p)答应我，好吗？$(p)……如果还有机会的话，希望我们能在崭新的世界中再次相遇。$(p)那就……再见啦。$(p)永远爱你的$(br)$(k)白桃Shirako",
 
   "dreamaticvoyage.entry.crystals": "结晶",
 
