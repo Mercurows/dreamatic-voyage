@@ -1,0 +1,281 @@
+{
+  "name": "dreamaticvoyage.entry.rock_statue",
+  "icon": "dreamaticvoyage:rock_statue",
+  "category": "dreamaticvoyage:first",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.rock_statue1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:rock_statue",
+      "text": "dreamaticvoyage.page.rock_statue2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.rock_statue3"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "pattern": [
+          [
+            "                ",
+            "                ",
+            "      RR        ",
+            "      RR        ",
+            "      RR        ",
+            "                ",
+            "                ",
+            "                ",
+            "                "
+          ],
+          [
+            "                ",
+            "      RR        ",
+            "                ",
+            "                ",
+            "                ",
+            "      RR        ",
+            "      RR        ",
+            "                ",
+            "                "
+          ],
+          [
+            "      RR        ",
+            "                ",
+            "                ",
+            "                ",
+            "                ",
+            "                ",
+            "                ",
+            "      RR        ",
+            "                "
+          ],
+          [
+            "                ",
+            "      RR        ",
+            "                ",
+            "                ",
+            "                ",
+            "                ",
+            "                ",
+            "                ",
+            "                "
+          ],
+          [
+            "                ",
+            "                ",
+            "      RR        ",
+            "                ",
+            "             O  ",
+            "                ",
+            "                ",
+            "                ",
+            "                "
+          ],
+          [
+            "                ",
+            "                ",
+            "                ",
+            "      RR        ",
+            "            OOO ",
+            "                ",
+            "                ",
+            "                ",
+            "                "
+          ],
+          [
+            "                ",
+            "                ",
+            "                ",
+            "      RR        ",
+            "      RR    OOO ",
+            "                ",
+            "                ",
+            "                ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP OOO ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P OOO ",
+            "   P      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P OOO ",
+            "   P      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P OOO ",
+            "   P      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "     R  R       "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P OOO ",
+            "   P      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P OOO ",
+            "   P      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "     R  R       "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "GGGP      P     ",
+            "GLGP      P OOO ",
+            "GGGP      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "      RR        "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "GGGP      POOOOO",
+            "GLGP      POOOOO",
+            "GGGP      POOOOO",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "GGGP      P     ",
+            "GLGP      P OOO ",
+            "GGGP      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "GGGP      P     ",
+            "GLGP      P OOO ",
+            "GGGP      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "GGGP      P     ",
+            "GGGP      P  O  ",
+            "GGGP      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P     ",
+            " G P      P     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   P      P     ",
+            " G P      P     ",
+            "   P      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   P      P     ",
+            "   P      P     ",
+            "GGGP      P     ",
+            "GGGP      P     ",
+            "GGGP      P     ",
+            "   P      P     ",
+            "   PPPPPPPP     ",
+            "                "
+          ],
+          [
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "   PPPPPPPP     ",
+            "        0       "
+          ]
+        ],
+        "mapping": {
+          "P": "minecraft:polished_andesite",
+          "O": "minecraft:obsidian",
+          "R": "minecraft:red_concrete",
+          "G": "minecraft:glass",
+          "L": "minecraft:lava"
+        },
+        "symmetrical": true
+      },
+      "name": "dreamaticvoyage.page.rock_statue4",
+      "text": "dreamaticvoyage.page.rock_statue5"
+    }
+  ],
+  "sortnum": 10109
+}

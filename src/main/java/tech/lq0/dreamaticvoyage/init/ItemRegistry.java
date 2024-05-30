@@ -96,7 +96,7 @@ public class ItemRegistry {
     /**
      * 1st
      **/
-    //madoka
+    // madoka
     public static final RegistryObject<Item> RED_AHOGE = ITEMS.register("red_ahoge", RedAhoge::new);
     public static final RegistryObject<Item> RED_AHOGE_SWORD = ITEMS.register("red_ahoge_sword", RedAhogeSword::new);
     public static final RegistryObject<Item> RED_AHOGE_BOOMERANG = ITEMS.register("red_ahoge_boomerang", RedAhogeBoomerang::new);
@@ -107,18 +107,18 @@ public class ItemRegistry {
     public static final RegistryObject<Item> PEACH_BEACH = ITEMS.register("peach_beach", PeachBeach::new);
     public static final RegistryObject<Item> ROCK_STATUE = ITEMS.register("rock_statue", RockStatue::new);
 
-    //myanna
+    // myanna
     public static final RegistryObject<Item> DARK_ELF_CORE = ITEMS.register("dark_elf_core", DarkElfCore::new);
     public static final RegistryObject<Item> DRILL = ITEMS.register("drill", Drill::new);
     public static final RegistryObject<Item> MOUNTAIN_DESTROYER = ITEMS.register("mountain_destroyer", MountainDestroyer::new);
     public static final RegistryObject<Item> SCHEDULE = ITEMS.register("schedule", Schedule::new);
     public static final RegistryObject<Item> DARK_ELF_GLASSES = ITEMS.register("dark_elf_glasses", DarkElfGlasses::new);
 
-    //niina
+    // niina
     public static final RegistryObject<Item> BANANA_MILK = ITEMS.register("banana_milk", BananaMilk::new);
     //    public static final RegistryObject<Item> BLUE_SMALL_BALL = ITEMS.register("blue_small_ball", BlueSmallBall::new);
 
-    //unia
+    // unia
     public static final RegistryObject<Item> TARO_ICE_CREAM = ITEMS.register("taro_ice_cream", TaroIceCream::new);
     public static final RegistryObject<Item> UNIGIRI = ITEMS.register("unigiri", Unigiri::new);
     public static final RegistryObject<Item> ENCHANTED_UNIGIRI = ITEMS.register("enchanted_unigiri", EnchantedUnigiri::new);

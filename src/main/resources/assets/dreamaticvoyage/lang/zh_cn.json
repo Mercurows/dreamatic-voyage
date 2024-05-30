@@ -1292,6 +1292,15 @@
   "dreamaticvoyage.entry.sneakers": "运动鞋",
   "dreamaticvoyage.page.sneakers1": "出门在外，经常翻山越岭，一双$(item)运动鞋$(0)是必不可少的。$(p)装备时能够提高玩家的速度、跳跃高度和台阶高度，并且能减免摔落伤害。",
   "dreamaticvoyage.page.sneakers2": "$(o)所以说呆毛去哪了？我记得刚才还放了来着……",
+  "dreamaticvoyage.entry.peach_beach": "性感沙滩",
+  "dreamaticvoyage.page.peach_beach1": "有什么是能比在闲暇时刻，来上一杯$(item)性感沙滩$(0)更舒服的事情呢？$(p)饮用后会获得短暂的$(thing)力量$(0)效果，并有概率获得$(thing)反胃$(0)效果。",
+  "dreamaticvoyage.page.peach_beach2": "在积分商店处兑换。$(p)$(o)嘿嘿……性感沙滩……走一个……",
+  "dreamaticvoyage.entry.rock_statue": "岩石塑像",
+  "dreamaticvoyage.page.rock_statue1": "一手酒，一手刀，头上插着红呆毛——说的当然是这个神秘的$(item)岩石塑像$(0)了。$(p)佩戴时能够提供额外的伤害，但会减少速度。此外会免疫反胃效果，在获得$(thing)反胃$(0)效果时能够额外获得$(thing)生命恢复$(0)效果。",
+  "dreamaticvoyage.page.rock_statue2": "$(o)原野牟牟的得意之作。",
+  "dreamaticvoyage.page.rock_statue3": "当然，你还能在野外遇到自然生成的$(thing)巨型岩石塑像$(0)，其中会生成两个宝藏箱，有几率在箱子中找到岩石塑像。",
+  "dreamaticvoyage.page.rock_statue4": "巨型岩石塑像",
+  "dreamaticvoyage.page.rock_statue5": "你甚至可以自己造一个出来！",
 
   "dreamaticvoyage.entry.chiram_lantern": "提灯",
   "dreamaticvoyage.page.chiram_lantern1": "我在遗迹中残存的记录中发现了一种形似提灯的物品，记录表明这个工具曾是由管家$(liver)倾澜Chiram$()所使用的。$(br2)为了防止遗忘，我将制作方法记录如下：",
@@ -1369,7 +1378,7 @@
 
   "dreamaticvoyage.entry.craft_beer_0322": "0322精酿",
   "dreamaticvoyage.page.craft_beer_03221": "$(item)0322精酿$(0)是一种来自外星球的绿色啤酒。$(p)饮用后会提升10点$(l:dreamaticvoyage:prelude/chaos)混沌值$(/l)，并获得$(thing)急迫$(0)、$(thing)生命恢复$(0)效果，有概率获得$(thing)反胃$(0)效果。",
-  "dreamaticvoyage.page.craft_beer_03222": "$(o)看上去就很可疑的饮品。$()$(p)在积分商店处兑换。",
+  "dreamaticvoyage.page.craft_beer_03222": "在积分商店处兑换。$(p)$(o)看上去就很可疑的饮品。",
   "dreamaticvoyage.page.craft_beer_03223": "“喝星球劲酒！胜利尽在我手！0322星球特产精酿！你值得拥有！嘿嘿……”$(p)——来自毫无酒精抗性的看板娘",
 
   "dreamaticvoyage.entry.world_peace_staff": "世界和平之杖",
