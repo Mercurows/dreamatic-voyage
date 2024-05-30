@@ -1,0 +1,22 @@
+{
+  "name": "dreamaticvoyage.entry.momo_knife",
+  "icon": "dreamaticvoyage:momo_knife",
+  "category": "dreamaticvoyage:oi",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.momo_knife1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:momo_knife",
+      "text": "dreamaticvoyage.page.momo_knife2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.momo_knife3"
+    }
+  ],
+  "sortnum": 60106
+}
