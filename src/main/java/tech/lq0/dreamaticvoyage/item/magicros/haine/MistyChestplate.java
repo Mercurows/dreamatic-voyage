@@ -170,7 +170,12 @@ public class MistyChestplate extends ArmorItem {
                         event.setCanceled(true);
                     } else {
                         setShieldCount(itemStack, --count);
+                        event.setAmount(event.getAmount() * 0.5f);
+
                         if (ItemNBTTool.getBoolean(itemStack, TAG_SET_WITH_CURIOS, false)) {
+                            if (livingEntity instanceof Player player) {
+                                setShieldTime(player, Math.min(getShieldTime(player) + 30, 60));
+                            }
                             event.setCanceled(true);
                         }
                     }

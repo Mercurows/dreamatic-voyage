@@ -28,6 +28,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -103,7 +104,7 @@ public class CelestialBoots extends ArmorItem {
 
                 int times = getEnhanceTimes(player, hasArmorSet(stack));
                 if (times == 4) {
-                    if (player.getFoodData().getFoodLevel() > 10 || ItemNBTTool.getBoolean(stack, TAG_SET_WITH_CURIOS, false)) {
+                    if (player.getFoodData().getFoodLevel() > 10) {
                         if (player.tickCount % 80 == 0) {
                             player.getFoodData().eat(2, 1.0f);
                         }
@@ -141,6 +142,10 @@ public class CelestialBoots extends ArmorItem {
                     new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 0.4f, AttributeModifier.Operation.MULTIPLY_BASE));
             map.put(Attributes.ATTACK_DAMAGE,
                     new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, hasArmorSet(stack) ? 0.1f : 0.0f, AttributeModifier.Operation.MULTIPLY_BASE));
+            if (ItemNBTTool.getBoolean(stack, TAG_SET_WITH_CURIOS, false)) {
+                map.put(ForgeMod.STEP_HEIGHT_ADDITION.get(),
+                        new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, 1.0f, AttributeModifier.Operation.ADDITION));
+            }
         }
         return map;
     }
@@ -241,5 +246,10 @@ public class CelestialBoots extends ArmorItem {
     @Override
     public boolean isFoil(ItemStack stack) {
         return false;
+    }
+
+    @Override
+    public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {
+        return ItemNBTTool.getBoolean(stack, TAG_SET_WITH_CURIOS, false);
     }
 }

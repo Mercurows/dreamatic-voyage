@@ -240,14 +240,17 @@ public class BreezeCrown extends ArmorItem {
 
     @SubscribeEvent
     public static void breezeCrownCriticalEvent(CriticalHitEvent event) {
-        Player livingEntity = event.getEntity();
-        ItemStack itemStack = livingEntity.getItemBySlot(EquipmentSlot.HEAD);
+        Player player = event.getEntity();
+        ItemStack itemStack = player.getItemBySlot(EquipmentSlot.HEAD);
 
-        if (!livingEntity.level().isClientSide) {
+        if (!player.level().isClientSide) {
             if (!itemStack.isEmpty() && itemStack.getItem().equals(ItemRegistry.BREEZE_CROWN.get())) {
                 if (hasArmorSet(itemStack)) {
-                    float modifier = ItemNBTTool.getBoolean(itemStack, TAG_SET_WITH_CURIOS, false) ? 2f : 1.5f;
-                    event.setDamageModifier(event.getDamageModifier() * modifier);
+                    event.setDamageModifier(event.getDamageModifier() * 1.5f);
+                }
+
+                if (ItemNBTTool.getBoolean(itemStack, TAG_SET_WITH_CURIOS, false)) {
+                    player.heal(player.getMaxHealth() * 0.2f);
                 }
             }
         }

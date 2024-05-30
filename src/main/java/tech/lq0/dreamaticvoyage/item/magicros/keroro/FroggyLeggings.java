@@ -47,6 +47,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
@@ -152,14 +153,11 @@ public class FroggyLeggings extends ArmorItem {
         if (livingEntity instanceof Player player) {
             ItemStack stack = player.getItemBySlot(EquipmentSlot.LEGS);
             if (stack.getItem() == ItemRegistry.FROGGY_LEGGINGS.get()) {
-                boolean setCurios = ItemNBTTool.getBoolean(stack, TAG_SET_WITH_CURIOS, false);
-                float sprintModifier = setCurios ? 0.6f : 0.45f;
-
-                Vec3 base = player.getDeltaMovement().add(0, setCurios ? 0.35 : 0.275, 0);
+                Vec3 base = player.getDeltaMovement().add(0, 0.275, 0);
 
                 if (player.isSprinting()) {
                     float f1 = player.getYRot() * ((float) Math.PI / 180F);
-                    base = base.add(-Mth.sin(f1) * sprintModifier, 0.0D, Mth.cos(f1) * sprintModifier);
+                    base = base.add(-Mth.sin(f1) * 0.45f, 0.0D, Mth.cos(f1) * 0.45f);
                 }
 
                 player.setDeltaMovement(base);
@@ -185,6 +183,13 @@ public class FroggyLeggings extends ArmorItem {
 
                 if (hasArmorSet(stack)) {
                     if (type.is(DamageTypeTags.IS_FIRE)) {
+                        event.setCanceled(true);
+                    }
+                }
+
+                if (ItemNBTTool.getBoolean(stack, TAG_SET_WITH_CURIOS, false) && player.isSprinting()) {
+                    double random = new Random().nextDouble();
+                    if (random < 0.1) {
                         event.setCanceled(true);
                     }
                 }
