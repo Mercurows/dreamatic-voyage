@@ -1349,7 +1349,7 @@
   "dreamaticvoyage.page.chocolate_boots2": "$(o)并不能当做饭盒使用。",
   "dreamaticvoyage.page.chocolate_boots3": "巧克力工艺店的一双巧克力鞋，嘿，您甭说，瞧着跟真的似的。$(p)吔了一口感觉浑身充满了帕瓦！！力量！！急迫！！$(p)——嚼了一口鞋子的夜音如是说",
 
-  "dreamaticvoyage.entry.rabbit_lychee": "兔荔枝",
+  "dreamaticvoyage.entry.rabbit_lychee": "Rabbit Lychee",
   "dreamaticvoyage.page.rabbit_lychee1": "魔法之森有一种独特的生物，明明是荔枝，却长出了兔耳——或者说，是一只兔子，却变成了荔枝的模样？总之，$(item)兔荔枝$(0)就是这样的神奇的生物。$(p)食用后会获得$(thing)跳跃提升$(0)效果。",
   "dreamaticvoyage.page.rabbit_lychee2": "在积分商店处兑换。$(p)$(o)独特的水果，就是太贵了。",
 
@@ -1386,6 +1386,10 @@
   "dreamaticvoyage.page.cage_ring3": "$(l)[读取开始……]$(br)[序列号 IATAE-06-07-08]$()$(p)上文中我所说的“高价值物品”当然不是那块硬的和黑曜石一样的面包，而是名为“同笼”的魔法戒指和随附的一篇传说故事。$(p)很多内容读不出了，我需要按上下文进行增补。",
   "dreamaticvoyage.page.cage_ring4": "“从前有一位魔法人鱼……无法做出……鸡兔同笼并烤制了和中子星一般致密的面包，她的追随者们为此感到极为震惊吓得四散而逃……于是她用面包攻击他们并给他们赋予了减速效果……”$(p)……这都什么玩意啊，我不能理解，真正的故事一定已经遗失在历史的长河之中了吧。",
   "dreamaticvoyage.page.cage_ring5": "想必那里一定有想永远与追随者相伴的智慧魔法人鱼，多么感人啊。$(p)无论如何，根据这张制作图，我成功复现了魔法装备“同笼”，它可以减缓你附近生物的行动并让你在站立不动时变得更为坚韧。听说它和所谓的“鸡兔同笼”有关，但是从效果上说没看出来。$(p)$(l)[读取结束]",
+
+  "dreamaticvoyage.entry.fiaxe": "Fiaxe",
+  "dreamaticvoyage.page.fiaxe1": "外星电子龙随身携带的武器，看上去和地球的消防斧没什么区别，这个$(item)斐雅斧$(0)到底有什么神奇之处呢？$(p)挖掘树叶时不会消耗耐久，有20%%的概率$(thing)恢复$(0)耐久。",
+  "dreamaticvoyage.page.fiaxe2": "在积分商店处兑换。$(p)$(o)“不听话的人要被姐姐收割掉哦~”",
 
   "dreamaticvoyage.entry.craft_beer_0322": "0322精酿",
   "dreamaticvoyage.page.craft_beer_03221": "$(item)0322精酿$(0)是一种来自外星球的绿色啤酒。$(p)饮用后会提升10点$(l:dreamaticvoyage:prelude/chaos)混沌值$(/l)，并获得$(thing)急迫$(0)、$(thing)生命恢复$(0)效果，有概率获得$(thing)反胃$(0)效果。",
