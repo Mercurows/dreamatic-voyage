@@ -18,7 +18,11 @@
       "text": "dreamaticvoyage.page.world_peace_staff3"
     },
     {
-      "type": "patchouli:text",
+      "type": "patchouli:image",
+      "images": [
+        "dreamaticvoyage:textures/character/shirako_default_256x.png"
+      ],
+      "border": true,
       "text": "dreamaticvoyage.page.world_peace_staff4"
     },
     {
@@ -28,6 +32,23 @@
     {
       "type": "patchouli:text",
       "text": "dreamaticvoyage.page.world_peace_staff6"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dreamaticvoyage:world_peace_staff",
+      "text": "dreamaticvoyage.page.world_peace_staff7"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.world_peace_staff8"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.world_peace_staff9"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.world_peace_staff10"
     }
   ],
   "sortnum": 70101,
