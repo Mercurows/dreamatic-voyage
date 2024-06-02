@@ -84,8 +84,8 @@ public class LeviyBeamEntity extends Entity implements IEntityAdditionalSpawnDat
                 double zMotion = target.getDeltaMovement().z - 10 * zDiff / r / 20;
 
                 if (this.tickCount % 4 == 0) {
-                    motionFlag = target.hurt(DamageSourceRegistry.causeLeviyBeamDamage(this.level().registryAccess(), this.owner), damage * 3.5f);
-                    target.hurt(DamageSourceRegistry.causeAbsoluteLeviyBeamDamage(this.level().registryAccess(), this.owner), damage * 0.5f);
+                    motionFlag = target.hurt(DamageSourceRegistry.causeLeviyBeamDamage(this.level().registryAccess(), this, this.owner), damage * 3.5f);
+                    target.hurt(DamageSourceRegistry.causeAbsoluteLeviyBeamDamage(this.level().registryAccess(), this, this.owner), damage * 0.5f);
                 }
 
                 if (motionFlag) {

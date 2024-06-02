@@ -59,8 +59,8 @@ public class DamageSourceRegistry {
         return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(BLEEDING), entity);
     }
 
-    public static DamageSource causeBloodCrystalDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(BLOOD_CRYSTAL), entity);
+    public static DamageSource causeBloodCrystalDamage(RegistryAccess registryAccess, @Nullable Entity entity, @Nullable Entity attacker) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(BLOOD_CRYSTAL), entity, attacker);
     }
 
     public static DamageSource causeLunarEclipseDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
@@ -79,12 +79,12 @@ public class DamageSourceRegistry {
         return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(CHOCOAL_COOKIE), entity);
     }
 
-    public static DamageSource causeLeviyBeamDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LEVIY_BEAM), entity);
+    public static DamageSource causeLeviyBeamDamage(RegistryAccess registryAccess, @Nullable Entity entity, @Nullable Entity attacker) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LEVIY_BEAM), entity, attacker);
     }
 
-    public static DamageSource causeAbsoluteLeviyBeamDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
-        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LEVIY_BEAM_ABSOLUTE), entity);
+    public static DamageSource causeAbsoluteLeviyBeamDamage(RegistryAccess registryAccess, @Nullable Entity entity, @Nullable Entity attacker) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LEVIY_BEAM_ABSOLUTE), entity, attacker);
     }
 
     private static class DamageMessages extends DamageSource {
@@ -96,9 +96,13 @@ public class DamageSourceRegistry {
             super(typeReference, entity);
         }
 
+        public DamageMessages(Holder.Reference<DamageType> typeReference, Entity directEntity, Entity attacker) {
+            super(typeReference, directEntity, attacker);
+        }
+
         @Override
         public Component getLocalizedDeathMessage(LivingEntity pLivingEntity) {
-            Entity entity = this.getDirectEntity() == null ? this.getEntity() : this.getDirectEntity();
+            Entity entity = this.getEntity() == null ? this.getDirectEntity() : this.getEntity();
             if (entity == null) {
                 return Component.translatable("death.attack." + this.getMsgId(), pLivingEntity.getDisplayName());
             } else if (entity instanceof LivingEntity living && living.getMainHandItem().hasCustomHoverName()) {
