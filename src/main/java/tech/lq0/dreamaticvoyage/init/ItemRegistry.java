@@ -429,6 +429,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MUSIC_DISC_SONG_OF_AUTUMN = MISC_ITEMS.register("music_disc_song_of_autumn", MusicDiscSongOfAutumn::new);
     public static final RegistryObject<Item> BAKED_NAME_TAG = MISC_ITEMS.register("baked_name_tag", BakedNameTag::new);
     public static final RegistryObject<Item> LEAH_PAD = MISC_ITEMS.register("leah_pad", LeahPad::new);
+    public static final RegistryObject<Item> SAKURA_BEAN_CURD = MISC_ITEMS.register("sakura_bean_curd", SakuraBeanCurd::new);
 
     /**
      * legacy

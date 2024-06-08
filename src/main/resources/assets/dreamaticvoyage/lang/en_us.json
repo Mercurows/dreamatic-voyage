@@ -821,6 +821,8 @@
   "upgrade.dreamaticvoyage.fukamizu_upgrade": "深水升级",
   "item.dreamaticvoyage.smithing_template.fukamizu_upgrade.base_slot_description": "放入深水之环",
   "item.dreamaticvoyage.smithing_template.fukamizu_upgrade.addition_slot_description": "放入深海宿命之石",
+  "item.dreamaticvoyage.sakura_bean_curd": "Sakura Fermented Bean Curd",
+  "des.dreamaticvoyage.sakura_bean_curd": "“嗯……被治愈到了……”",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

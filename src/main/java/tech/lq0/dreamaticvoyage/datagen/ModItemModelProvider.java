@@ -219,6 +219,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.CHARGED_CRYSTAL_INGOT);
         simpleItem(ItemRegistry.FICTIONAL_INGOT);
         simpleItem(ItemRegistry.FICTIONAL_NUGGET);
+        simpleItem(ItemRegistry.FUKAMIZU_UPGRADE_SMITHING_TEMPLATE);
 
         //donate
         simpleItem(ItemRegistry.LITTLE_POTATO);
@@ -229,6 +230,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN);
         simpleItem(ItemRegistry.LEAH_PAD);
         simpleItem(ItemRegistry.BAKED_NAME_TAG);
+        simpleItem(ItemRegistry.SAKURA_BEAN_CURD);
 
         //costume
         simpleItem(ItemRegistry.CHIRAM_IDOL_HELMET);

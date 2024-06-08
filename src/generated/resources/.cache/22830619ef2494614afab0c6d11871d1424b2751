@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-14T23:50:19.1520218	Item Models: dreamaticvoyage
+// 1.20.1	2024-06-08T20:03:25.2195574	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 f37df339e571439e12f7388bec647a0b97ac128f assets/dreamaticvoyage/models/item/ancient_microphone.json
@@ -68,6 +68,7 @@ b8061a285cf67c8a2ff38dc047e6802a51cc9c2d assets/dreamaticvoyage/models/item/frog
 2fbbb0fe23ecce9bf28f5383ca373cd9ebc9a300 assets/dreamaticvoyage/models/item/fukamizu_bread.json
 4ccce4cd1d68a8eba2525654a09a1cbbcb02cd1d assets/dreamaticvoyage/models/item/fukamizu_bread_ingot.json
 1ddcc57e355ddbd5bd19349c746a3bf7268beae9 assets/dreamaticvoyage/models/item/fukamizu_fish.json
+bcadf6b16b549bec1ef9adfdd48a1d2955dc3981 assets/dreamaticvoyage/models/item/fukamizu_upgrade_smithing_template.json
 098e6ede5459359ea7d9aa11e95f6160c2fad5af assets/dreamaticvoyage/models/item/garlic_melon_slice.json
 cce59e8c4dc2f90cc1a71a99b143d33f5e1fe9f1 assets/dreamaticvoyage/models/item/gn_souls.json
 f96c580f3d3f73de671c2b691fd15b2ba1bd486a assets/dreamaticvoyage/models/item/gn_spirit.json
@@ -167,6 +168,7 @@ e83802034b78175686d921f1870d2619b7ceadd5 assets/dreamaticvoyage/models/item/rabb
 a6ba4e6c10e7f7a32a0d520e8dc69034c7c9363d assets/dreamaticvoyage/models/item/reina_feather.json
 ad325a26b295999596c92669003eb9dcd705daba assets/dreamaticvoyage/models/item/reina_wings.json
 6559d3f1fabf8e0cf8ae9c4a4c5bef91174b01a6 assets/dreamaticvoyage/models/item/rock_statue.json
+b6ef3f3be94d47c154a190f945960a1de6476c5d assets/dreamaticvoyage/models/item/sakura_bean_curd.json
 86d424f8f2d8beefc5d6b618d4dedf8d4a938443 assets/dreamaticvoyage/models/item/satou_chestplate.json
 b40099f079a2819cca6fbc3bf365e590dfbd2f06 assets/dreamaticvoyage/models/item/satou_knife.json
 bea9c6b4cd9b07818fe174048d5f05445ab2dc5e assets/dreamaticvoyage/models/item/schedule.json
