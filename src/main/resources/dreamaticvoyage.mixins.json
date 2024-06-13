@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "tech.lq0.dreamaticvoyage.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "dreamaticvoyage.refmap.json",
+  "client": [
+    "JukeboxBlockEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
