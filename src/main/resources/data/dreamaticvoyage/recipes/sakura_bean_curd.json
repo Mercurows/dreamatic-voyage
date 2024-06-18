@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C#",
+    "CPC",
+    "#C#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:cherry_leaves"
+    },
+    "C": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "P": {
+      "item": "minecraft:pink_dye"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:sakura_bean_curd",
+    "count": 2
+  }
+}

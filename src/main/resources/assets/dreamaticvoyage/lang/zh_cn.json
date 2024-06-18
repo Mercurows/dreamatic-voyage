@@ -1273,6 +1273,12 @@
   "dreamaticvoyage.page.observers2": "",
   "dreamaticvoyage.title.observers1": "夜音Yorune",
   "dreamaticvoyage.page.observers3": "A107纪元研究所的学生助理，在一次事故后意外变成电子宠物的形态，被{神秘组织}救助后更换了全新的机体，目前在该组织担任看板娘工作。",
+  "dreamaticvoyage.title.observers2": "莉娅·多伦",
+  "dreamaticvoyage.page.observers4": "理想主义的天才合法萝莉，不知为何而流落到此处。据信这一意外与位面传送系统的意外坠机有关，正在寻找材料修复她的设备并收集遗迹的资料。",
+  "dreamaticvoyage.title.observers3": "有点白的黑米饭",
+  "dreamaticvoyage.page.observers5": "虚构远航世界的缔造者，樱花酱腐乳的代言人，剩下的不想写了。",
+  "dreamaticvoyage.title.observers4": "电子熊古力",
+  "dreamaticvoyage.page.observers6": "甜度爆表的熊耳少女，擅长使用音乐治愈身边的一切。但有传闻说，有时候的她并不像看上去的那样纯良？",
   "dreamaticvoyage.entry.chaos": "混沌值",
 
   "dreamaticvoyage.entry.red_ahoge": "红色呆毛",
@@ -1408,7 +1414,7 @@
   "dreamaticvoyage.page.world_peace_staff7": "为了这段告别，我为你制作了一根特别的手杖。这不仅是一件帮助你战斗的工具，更是我对你无尽信任和深情的象征。希望它能在你未来的旅程中，成为你最忠实的伙伴，帮助你战胜一切困难，继续守护这片我们曾经一起守护的世界。",
   "dreamaticvoyage.page.world_peace_staff8": "……请原谅我的不辞而别。我知道，这个决定会让你感到困惑和伤心，但我希望你能理解，我所走的每一步，都是为了寻找内心的宁静和新的开始。$(p)或许，在没有我的日子里，你会感到孤单，但请相信，你的勇气和力量足以支撑你走过任何风雨。",
   "dreamaticvoyage.page.world_peace_staff9": "无论未来的道路多么崎岖，请你一定要坚持下去，不要放弃……答应我，好吗？$(p)你的梦想、你的使命，都值得你去为之奋斗。我相信，总有一天，我们会在新的世界中再次相遇，那时的我们，将会变得更加强大。",
-  "dreamaticvoyage.page.world_peace_staff10": "最后，请接受我最真挚的祝福。愿你在未来的日子里，每一步都走得坚定而有力，每一个梦想都能实现。$(p)那就……再见啦。$(p)永远爱你的$(br)$(k)白桃Shirako",
+  "dreamaticvoyage.page.world_peace_staff10": "最后，请接受我最真挚的祝福。愿你在未来的日子里，每一步都走得坚定而有力，每一个梦想都能实现。$(p)那就……再见啦。$(p)永远爱你的$(br)$(liver)白桃Shirako",
 
   "dreamaticvoyage.entry.crystals": "结晶",
 
@@ -1421,5 +1427,8 @@
   "dreamaticvoyage.page.leah_pad2": "$(o)这东西到底是怎么运行起来的……",
   "dreamaticvoyage.page.leah_pad3": "$(l)[读取开始……]$(br)[序列号 IATAE-08-03-10]$()$(p)在经历了一些困难以后，我成功利用当地名为“红石”的物质，在这片物理定律与母星完全不同的地带复刻了我的个人信息设备。令人极度意外的是，这个设备中自带阿卡纳林地区的城市规划图，尽管它几乎是全新的。",
   "dreamaticvoyage.page.leah_pad4": "在我向本地的友好村民展示了这些设计图，并承诺未来将按照图示的建设方案帮他们获得更好的居住环境后，他们为我提供了更优惠的交易价格。$(p)虽然首要任务是在这里站稳脚跟，但实现这些承诺也在我的计划之中，毕竟享受了特殊优待就应当做些实事。",
-  "dreamaticvoyage.page.leah_pad5": "不过这些村民好像挺健忘的，之前还在翘首以盼，半天后就忘的一干二净了……$(p)$(l)[读取结束]"
+  "dreamaticvoyage.page.leah_pad5": "不过这些村民好像挺健忘的，之前还在翘首以盼，半天后就忘的一干二净了……$(p)$(l)[读取结束]",
+  "dreamaticvoyage.entry.sakura_bean_curd": "樱花酱腐乳",
+  "dreamaticvoyage.page.sakura_bean_curd1": "$(item)樱花酱腐乳$(0)是一种经过特殊发酵工艺制作的食物，看起来应该味道不错吧？$(p)食用后会获得强力的$(thing)生命恢复$(0)效果。",
+  "dreamaticvoyage.page.sakura_bean_curd2": "$(o)“砍完怪物，憋了一肚子火，来尝尝刚做的酱腐乳，被治愈到了。”"
 }

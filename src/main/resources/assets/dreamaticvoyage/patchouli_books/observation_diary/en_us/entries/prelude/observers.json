@@ -23,6 +23,33 @@
     {
       "type": "patchouli:text",
       "text": "dreamaticvoyage.page.observers3"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "dreamaticvoyage.title.observers2",
+      "anchor": "leah"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers4"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "dreamaticvoyage.title.observers3",
+      "anchor": "roki27"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers5"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "dreamaticvoyage.title.observers4",
+      "anchor": "kuma77"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers6"
     }
   ],
   "sortnum": 1
