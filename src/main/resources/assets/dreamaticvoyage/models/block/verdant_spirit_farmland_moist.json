@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_farmland",
+  "textures": {
+    "dirt": "dreamaticvoyage:block/verdant_spirit_rich_soil",
+    "top": "dreamaticvoyage:block/verdant_spirit_farmland_moist"
+  }
+}

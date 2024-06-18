@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "dad",
+    "dbd",
+    "ddd"
+  ],
+  "key": {
+    "a": {
+      "item": "dreamaticvoyage:fukamizu_upgrade_smithing_template"
+    },
+    "b": {
+      "item": "dreamaticvoyage:fukamizu_bread_block"
+    },
+    "d": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fukamizu_upgrade_smithing_template",
+    "count": 2
+  }
+}
