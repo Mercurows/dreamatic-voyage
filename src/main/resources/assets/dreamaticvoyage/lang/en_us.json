@@ -812,6 +812,9 @@
   "item.dreamaticvoyage.dg_fukami": "Dream Guardian",
   "item.dreamaticvoyage.dg_yesa": "Dream Guardian",
   "item.dreamaticvoyage.dg_shirako": "Dream Guardian",
+  "item.dreamaticvoyage.fukamizu_bread_ingot": "深水面包锭",
+  "des.dreamaticvoyage.fukamizu_bread_ingot_1": "致密的深水面包块经过压制切割制成的材料",
+  "des.dreamaticvoyage.fukamizu_bread_ingot_2": "虽然原料不含任何金属元素，但表面却闪烁着金属的光芒",
   "item.dreamaticvoyage.hqss_bread_ingot": "HQSS Bread Ingot",
   "des.dreamaticvoyage.hqss_bread_ingot_1": "深水科技的最新产品，全称是\"High-density Quasi-stable Sophisticated Sintered Bread Ingot\"",
   "des.dreamaticvoyage.hqss_bread_ingot_2": "很难想象深水面包是怎么变成这个东西的",
@@ -1430,5 +1433,5 @@
   "dreamaticvoyage.page.leah_pad5": "不过这些村民好像挺健忘的，之前还在翘首以盼，半天后就忘的一干二净了……$(p)$(l)[读取结束]",
   "dreamaticvoyage.entry.sakura_bean_curd": "樱花酱腐乳",
   "dreamaticvoyage.page.sakura_bean_curd1": "$(item)樱花酱腐乳$(0)是一种经过特殊发酵工艺制作的食物，看起来应该味道不错吧？$(p)食用后会获得强力的$(thing)生命恢复$(0)效果。",
-  "dreamaticvoyage.page.sakura_bean_curd2": "$(o)“砍完怪物，憋了一肚子火，来尝尝刚做的酱腐乳，被治愈到了。”"
+  "dreamaticvoyage.page.sakura_bean_curd2": "$(o)砍完怪物，憋了一肚子火，来尝尝刚做的酱腐乳，被治愈到了。$()$(p)“……闹麻了！”"
 }

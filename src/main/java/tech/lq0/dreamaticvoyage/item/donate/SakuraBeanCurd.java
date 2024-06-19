@@ -17,7 +17,7 @@ import java.util.List;
 
 public class SakuraBeanCurd extends Item {
     public static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(4).alwaysEat()
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200, 3), 1.0f).build();
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).build();
 
     public SakuraBeanCurd() {
         super(new Properties().rarity(RarityTool.DONATE).food(food));

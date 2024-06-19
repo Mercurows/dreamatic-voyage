@@ -15,7 +15,7 @@ import java.util.List;
 
 public class HQSSBreadIngot extends Item {
     public HQSSBreadIngot() {
-        super(new Item.Properties().rarity(RarityTool.FUKAMI_TECH));
+        super(new Item.Properties().rarity(RarityTool.FUKAMI_TECH).fireResistant());
     }
 
     @Override

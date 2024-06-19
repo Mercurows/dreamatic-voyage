@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "dreamaticvoyage:fukamizu_bread_block"
+  },
+  "result": "dreamaticvoyage:fukamizu_bread_ingot",
+  "experience": 1.00,
+  "cookingtime": 200
+}
