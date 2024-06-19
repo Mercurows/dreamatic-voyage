@@ -53,5 +53,17 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.WOODEN_BUTTONS).add(ItemRegistry.HARANO_BUTTON.get());
         this.tag(ItemTags.PIGLIN_LOVED).add(ItemRegistry.CRYSTAL_POWDER.get(), ItemRegistry.PURIFIED_CRYSTAL_POWDER.get(), ItemRegistry.CHARGED_CRYSTAL_POWDER.get(),
                 ItemRegistry.HARDEN_CRYSTAL_INGOT.get(), ItemRegistry.PURIFIED_CRYSTAL_INGOT.get(), ItemRegistry.CHARGED_CRYSTAL_INGOT.get());
+
+        this.tag(ItemTags.SWORDS).add(ItemRegistry.RED_AHOGE_SWORD.get(), ItemRegistry.RED_AHOGE_BOOMERANG.get(),
+                ItemRegistry.RED_AHOGE_MACHETE.get(), ItemRegistry.HAYA_SWORD.get(), ItemRegistry.BIG_SPOON.get(),
+                ItemRegistry.MACHETE.get(), ItemRegistry.PLUNGER.get(), ItemRegistry.SATOU_KNIFE.get(),
+                ItemRegistry.ANCIENT_LOLLIPOP.get(), ItemRegistry.FETUOZI.get(), ItemRegistry.WORLD_PEACE_STAFF.get(),
+                ItemRegistry.MOMO_KNIFE.get(), ItemRegistry.TAIL_PEN.get(), ItemRegistry.SHU_RINO_KEN.get(),
+                ItemRegistry.SHURA_CHIN.get(), ItemRegistry.UME.get(), ItemRegistry.LUNAR_ECLIPSE.get(),
+                ItemRegistry.OMINOUS_SICKLE.get(), ItemRegistry.FUKAMIZU_BREAD_SWORD.get());
+        this.tag(ItemTags.PICKAXES).add(ItemRegistry.MOUNTAIN_DESTROYER.get(), ItemRegistry.FUKAMIZU_BREAD_PICKAXE.get());
+        this.tag(ItemTags.AXES).add(ItemRegistry.FIAXE.get(), ItemRegistry.FUKAMIZU_BREAD_AXE.get());
+        this.tag(ItemTags.HOES).add(ItemRegistry.QIANYUN_HOE.get(), ItemRegistry.GREEN_FIELD_SONG.get(), ItemRegistry.FUKAMIZU_BREAD_HOE.get());
+        this.tag(ItemTags.SHOVELS).add(ItemRegistry.MOUNTAIN_DESTROYER.get(), ItemRegistry.FUKAMIZU_BREAD_SHOVEL.get());
     }
 }

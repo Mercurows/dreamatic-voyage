@@ -63,6 +63,7 @@ import tech.lq0.dreamaticvoyage.item.oi.yesa.TailFishingRod;
 import tech.lq0.dreamaticvoyage.item.oi.yesa.YeggyPearl;
 import tech.lq0.dreamaticvoyage.item.oi.yuri.RabbitLychee;
 import tech.lq0.dreamaticvoyage.item.other.*;
+import tech.lq0.dreamaticvoyage.item.other.fukamizutech.tool.*;
 import tech.lq0.dreamaticvoyage.item.other.material.*;
 import tech.lq0.dreamaticvoyage.item.other.material.crystal.*;
 import tech.lq0.dreamaticvoyage.item.second.lecia.*;
@@ -415,6 +416,16 @@ public class ItemRegistry {
     public static final RegistryObject<Item> GOURMET_MEDAL = MISC_ITEMS.register("gourmet_medal", GourmetMedal::new);
     public static final RegistryObject<Item> APOCALYPSE_CARNIVAL = MISC_ITEMS.register("apocalypse_carnival", ApocalypseCarnival::new);
     public static final RegistryObject<Item> MIRACLE_BADGE = MISC_ITEMS.register("miracle_badge", MiracleBadge::new);
+
+    /**
+     * fukamizu tech
+     */
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_SWORD = MISC_ITEMS.register("fukamizu_bread_sword", FukamizuBreadSword::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_SHOVEL = MISC_ITEMS.register("fukamizu_bread_shovel", FukamizuBreadShovel::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_PICKAXE = MISC_ITEMS.register("fukamizu_bread_pickaxe", FukamizuBreadPickaxe::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_AXE = MISC_ITEMS.register("fukamizu_bread_axe", FukamizuBreadAxe::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_HOE = MISC_ITEMS.register("fukamizu_bread_hoe", FukamizuBreadHoe::new);
+
 
     /**
      * donate

@@ -1,0 +1,25 @@
+package tech.lq0.dreamaticvoyage.item.other.fukamizutech.tool;
+
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
+
+import java.util.List;
+
+public class FukamizuBreadHoe extends HoeItem {
+
+    public FukamizuBreadHoe() {
+        super(ModItemTier.FUKAMIZU_BREAD, -3, 0.0F, new Properties().fireResistant());
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fukamizu_bread_hoe").withStyle(ChatFormatting.GRAY));
+    }
+
+}
