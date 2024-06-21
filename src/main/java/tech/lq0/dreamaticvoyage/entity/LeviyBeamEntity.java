@@ -103,16 +103,16 @@ public class LeviyBeamEntity extends Entity implements IEntityAdditionalSpawnDat
 
     @Override
     protected void readAdditionalSaveData(CompoundTag pCompound) {
-        this.power = pCompound.getFloat("power");
-        this.maxRadius = Math.min(64, pCompound.getFloat("radius"));
-        this.duration = Math.min(3600, pCompound.getInt("duration"));
+        this.power = pCompound.getFloat("Power");
+        this.maxRadius = Math.min(64, pCompound.getFloat("Radius"));
+        this.duration = Math.min(3600, pCompound.getInt("Duration"));
     }
 
     @Override
     protected void addAdditionalSaveData(CompoundTag pCompound) {
-        pCompound.putFloat("power", this.power);
-        pCompound.putFloat("radius", Math.min(64, this.maxRadius));
-        pCompound.putInt("duration", Math.min(3600, this.duration));
+        pCompound.putFloat("Power", this.power);
+        pCompound.putFloat("Radius", Math.min(64, this.maxRadius));
+        pCompound.putInt("Duration", Math.min(3600, this.duration));
     }
 
     private float getDamage(double d, float r) {
