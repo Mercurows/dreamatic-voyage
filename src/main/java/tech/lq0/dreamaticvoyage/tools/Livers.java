@@ -4,7 +4,7 @@ public enum Livers {
     MITSUKI("mitsuki", "zero", "#F9E7E8", true),
     USA("usa", "zero", "#FFEDFE", true),
     MADOKA("madoka", "first", "#F4F0FF", true),
-    MYANNA("myanna", "first", "#EAF6EE", true),
+    MYANNA("myanna", "first", "#EAF6EE", false),
     NIINA("niina", "first", "#FCDEE3", true),
     UNIA("unia", "first", "#D2C5F9", true),
     AYELET("ayelet", "first", "#EDF4FF", true),
@@ -36,8 +36,7 @@ public enum Livers {
     ROKY("roky", "poi", "#E1849E", true),
     RINO("rino", "poi", "#CBE0DF", false),
     CCELIA("ccelia", "poi", "#CAD855", false),
-    QIANYUN("qianyun", "connections", "#A33432", true),
-    MARIA("maria", "first", "#AF4657", false);
+    QIANYUN("qianyun", "connections", "#A33432", true);
 
     private final String name;
     private final String gen;
