@@ -23,7 +23,7 @@ public enum ModItemTier implements Tier {
             () -> Ingredient.of(ItemRegistry.CHARGED_CRYSTAL_INGOT.get())),
     FICTIONAL_INGOT(6, 5601, 14.0F, 8.0F, 24,
             () -> Ingredient.of(ItemRegistry.FICTIONAL_INGOT.get())),
-    FUKAMIZU_BREAD(3, 404, 7.0F, 2.5F, 16,
+    FUKAMIZU_BREAD(3, 404, 7.0F, 5.5F, 16,
             () -> Ingredient.of(ItemRegistry.FUKAMIZU_BREAD_INGOT.get()));
 
     private final int level;
