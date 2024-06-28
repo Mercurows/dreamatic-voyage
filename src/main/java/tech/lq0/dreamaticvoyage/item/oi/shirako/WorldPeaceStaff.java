@@ -38,6 +38,7 @@ import tech.lq0.dreamaticvoyage.tools.RarityTool;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
 
 public class WorldPeaceStaff extends SwordItem {
@@ -62,8 +63,21 @@ public class WorldPeaceStaff extends SwordItem {
             if (state.getValue(JukeboxBlock.HAS_RECORD)) {
                 var blockEntity = level.getBlockEntity(pos);
                 if (blockEntity instanceof JukeboxBlockEntity jukeboxBlockEntity) {
-                    jukeboxBlockEntity.setFirstItem(new ItemStack(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL.get()));
-                    return InteractionResult.SUCCESS;
+                    ItemStack stack = pContext.getItemInHand();
+
+                    AtomicBoolean flag = new AtomicBoolean(false);
+                    stack.getCapability(ModCapabilities.ESCORT_CAPABILITY).ifPresent(s -> {
+                        if (s.getEscortValue() >= 400) {
+                            flag.set(true);
+                        }
+                    });
+
+                    if (flag.get()) {
+                        jukeboxBlockEntity.setFirstItem(new ItemStack(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL.get()));
+                        stack.getCapability(ModCapabilities.ESCORT_CAPABILITY).ifPresent(s -> s.subValue(400.0));
+
+                        return InteractionResult.SUCCESS;
+                    }
                 }
             }
         }
