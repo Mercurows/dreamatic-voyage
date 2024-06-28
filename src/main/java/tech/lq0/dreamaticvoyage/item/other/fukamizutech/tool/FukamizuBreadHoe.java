@@ -5,6 +5,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
@@ -22,4 +24,8 @@ public class FukamizuBreadHoe extends HoeItem {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fukamizu_bread_hoe").withStyle(ChatFormatting.GRAY));
     }
 
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return super.canApplyAtEnchantingTable(stack, enchantment) && enchantment != Enchantments.MENDING;
+    }
 }

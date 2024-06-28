@@ -196,6 +196,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ItemRegistry.ANCIENT_MICROPHONE);
         simpleItem(ItemRegistry.FICTIONAL_FORGING_SIGIL);
 
+        //fukamizu tech
+        handheldItem(ItemRegistry.FUKAMIZU_BREAD_AXE);
+        handheldItem(ItemRegistry.FUKAMIZU_BREAD_HOE);
+        handheldItem(ItemRegistry.FUKAMIZU_BREAD_SHOVEL);
+        handheldItem(ItemRegistry.FUKAMIZU_BREAD_PICKAXE);
+        handheldItem(ItemRegistry.FUKAMIZU_BREAD_SWORD);
+
         //legacy
         simpleItem(ItemRegistry.FLUFF_BALL);
         simpleItem(ItemRegistry.YAGI_STAFF_CARD);
