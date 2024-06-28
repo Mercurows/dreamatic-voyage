@@ -4,7 +4,7 @@
   "version": 1,
   "creative_tab": "dreamaticvoyage:dmv_item_tab",
   "use_resource_pack": true,
-  "model": "dreamaticvoyage:untouchable_love",
+  "model": "dreamaticvoyage:observation_diary",
   "i18n": true,
   "macros": {
     "$(liver)": "$(#FCBBB1)"
