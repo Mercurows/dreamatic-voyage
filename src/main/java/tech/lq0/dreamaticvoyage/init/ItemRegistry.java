@@ -254,6 +254,7 @@ public class ItemRegistry {
      **/
     // hiru
     public static final RegistryObject<Item> HIRU_HEAD = ITEMS.register("hiru_head", HiruHead::new);
+    public static final RegistryObject<Item> WITHER_BOUQUET = ITEMS.register("wither_bouquet", WitherBouquet::new);
     public static final RegistryObject<Item> HIRU_TENTACLES = ITEMS.register("hiru_tentacles", HiruTentacles::new);
     public static final RegistryObject<Item> HIRENADE_GG = ITEMS.register("hirenade_gg", HirenadeGG::new);
     public static final RegistryObject<Item> SECONDARY_CATACLYSM = ITEMS.register("secondary_cataclysm", SecondaryCataclysm::new);

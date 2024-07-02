@@ -836,6 +836,8 @@
   "des.dreamaticvoyage.fukamizu_bread_shovel": "用深水面包锭制成的铲子",
   "item.dreamaticvoyage.fukamizu_bread_sword": "深水面包剑",
   "des.dreamaticvoyage.fukamizu_bread_sword": "用深水面包锭制成的宝剑",
+  "item.dreamaticvoyage.wither_bouquet": "Wither Bouquet",
+  "des.dreamaticvoyage.wither_bouquet": "“生命终将如花般凋落”",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",
@@ -876,6 +878,9 @@
   "death.attack.leviy_beam": "%1$s消失在了时空乱流之中",
   "death.attack.leviy_beam.entity": "%2$s让%1$s消失在了时空乱流之中",
   "death.attack.leviy_beam.item": "%2$s用%3$s让%1$s消失在了时空乱流之中",
+  "death.attack.wither_absolute": "%1$s枯萎了",
+  "death.attack.wither_absolute.entity": "%1$s在与%2$s战斗时枯萎了",
+  "death.attack.wither_absolute.item": "%1$s在与%2$s战斗时枯萎了",
 
   "itemGroup.dreamaticvoyage_tapes_tab": "Dreamatic Voyage Tapes",
   "item.dreamaticvoyage.audio_tape_haine_1": "Audio Tape (Haine)",
