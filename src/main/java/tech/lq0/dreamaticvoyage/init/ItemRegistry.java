@@ -315,6 +315,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CAGE_RING = ITEMS.register("cage_ring", CageRing::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_INGOT = ITEMS.register("fukamizu_bread_ingot", FukamizuBreadIngot::new);
     public static final RegistryObject<Item> HQSS_BREAD_INGOT = ITEMS.register("hqss_bread_ingot", HQSSBreadIngot::new);
+    public static final RegistryObject<Item> HEAVY_BREAD_COMPONENT = ITEMS.register("heavy_bread_component", HeavyBreadComponent::new);
 
     // lutafia
     public static final RegistryObject<Item> FIAXE = ITEMS.register("fiaxe", Fiaxe::new);

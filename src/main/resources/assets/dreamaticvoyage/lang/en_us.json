@@ -838,6 +838,9 @@
   "des.dreamaticvoyage.fukamizu_bread_sword": "用深水面包锭制成的宝剑",
   "item.dreamaticvoyage.wither_bouquet": "Wither Bouquet",
   "des.dreamaticvoyage.wither_bouquet": "“生命终将如花般凋落”",
+  "item.dreamaticvoyage.heavy_bread_component": "Heavy Bread Component",
+  "des.dreamaticvoyage.heavy_bread_component_1": "经过磨制的压缩面包，看上去像一个锤子的部件",
+  "des.dreamaticvoyage.heavy_bread_component_2": "把它作为武器的配重或许会很不错？",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",
