@@ -120,6 +120,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         //3rd
         simpleItem(ItemRegistry.HIRU_HEAD);
         simpleItem(ItemRegistry.HIRENADE_GG);
+        simpleItem(ItemRegistry.WITHER_BOUQUET);
         simpleItem(ItemRegistry.HIRU_TENTACLES);
         simpleItem(ItemRegistry.GN_SOUL);
         simpleItem(ItemRegistry.GN_SPIRIT);
@@ -158,6 +159,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.CAGE_RING);
         simpleItem(ItemRegistry.FUKAMIZU_BREAD_INGOT);
         simpleItem(ItemRegistry.HQSS_BREAD_INGOT);
+        simpleItem(ItemRegistry.HEAVY_BREAD_COMPONENT);
 
         simpleItem(ItemRegistry.MINT_CHOCOLATE);
         simpleItem(ItemRegistry.YEGGY_PEARL);

@@ -9,7 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
@@ -48,7 +48,7 @@ public class WitherBouquet extends Item implements ICurioItem {
     }
 
     @SubscribeEvent
-    public static void onLivingDamaged(LivingDamageEvent event) {
+    public static void onLivingHurt(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
 
         if (event.getSource().getEntity() instanceof Player player &&
@@ -56,9 +56,10 @@ public class WitherBouquet extends Item implements ICurioItem {
 
             CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(ItemRegistry.WITHER_BOUQUET.get())
                     .ifPresent(s -> {
-                        event.setAmount(event.getAmount() * .7f);
+                        event.setAmount(event.getAmount() * 0.7f);
+                        entity.invulnerableTime = 0;
                         entity.hurt(DamageSourceRegistry.causeAbsoluteWitherDamage(player.level().registryAccess(),
-                                player), event.getAmount() * .3f);
+                                player), event.getAmount() * 0.3f);
                     }));
         }
     }

@@ -75,11 +75,22 @@ public class HeavyBreadComponent extends Item implements ICurioItem {
 
             CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(ItemRegistry.HEAVY_BREAD_COMPONENT.get())
                     .ifPresent(s -> {
+                        float damage = event.getAmount();
                         double armor = entity.getAttribute(Attributes.ARMOR) == null ? 0 : entity.getAttributeValue(Attributes.ARMOR);
-                        double armorToughness = entity.getAttribute(Attributes.ARMOR_TOUGHNESS) == null ? 0 : entity.getAttributeValue(Attributes.ARMOR_TOUGHNESS);
+                        double toughness = entity.getAttribute(Attributes.ARMOR_TOUGHNESS) == null ? 0 : entity.getAttributeValue(Attributes.ARMOR_TOUGHNESS);
 
-                        float res = CombatRules.getDamageAfterAbsorb(event.getAmount(),
-                                (float) armor * .7f, (float) armorToughness * .7f);
+                        float limit = (float) ((1 - armor / 125) * (1.6 * armor + 0.2 * armor * toughness));
+
+                        float originDamage;
+                        if (damage > limit) {
+                            originDamage = (float) (damage / (1 - armor / 125));
+                        } else {
+                            originDamage = (float) ((6.25 * toughness + 50) * ((armor / 25 - 1) +
+                                    Math.sqrt(Math.pow(1 - armor / 25, 2) + 4 * damage / (6.25 * toughness + 50))) / 2);
+                        }
+
+                        float res = CombatRules.getDamageAfterAbsorb(originDamage,
+                                (float) armor * .5f, (float) toughness * .7f);
                         event.setAmount(res);
                     }));
         }

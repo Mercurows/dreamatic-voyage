@@ -36,7 +36,7 @@ public class Bleeding extends MobEffect {
         }
     }
 
-    @SubscribeEvent()
+    @SubscribeEvent
     public static void effects(LivingAttackEvent event) {
         LivingEntity entity = event.getEntity();
         MobEffect effect = EffectRegistry.BLEEDING.get();
