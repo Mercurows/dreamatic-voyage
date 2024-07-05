@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "bbb",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "dreamaticvoyage:fukamizu_bread_ingot"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fukamizu_bread_bricks",
+    "count": 1
+  }
+}

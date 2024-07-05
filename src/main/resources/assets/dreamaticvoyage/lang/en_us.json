@@ -841,6 +841,8 @@
   "item.dreamaticvoyage.heavy_bread_component": "Heavy Bread Component",
   "des.dreamaticvoyage.heavy_bread_component_1": "经过磨制的压缩面包，看上去像一个锤子的部件",
   "des.dreamaticvoyage.heavy_bread_component_2": "把它作为武器的配重或许会很不错？",
+  "block.dreamaticvoyage.fukamizu_bread_bricks": "Fukamizu Bread Bricks",
+  "des.dreamaticvoyage.fukamizu_bread_bricks": "完全脱离食物范畴的致密面包",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

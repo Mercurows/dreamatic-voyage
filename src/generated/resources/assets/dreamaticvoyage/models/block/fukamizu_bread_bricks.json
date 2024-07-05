@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dreamaticvoyage:block/fukamizu_bread_bricks"
+  }
+}

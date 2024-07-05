@@ -26,6 +26,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         this.dropSelf(BlockRegistry.PORCELAIN_THRONE.get());
         this.dropSelf(BlockRegistry.POINTS_STORE.get());
         this.dropSelf(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get());
+        this.dropSelf(BlockRegistry.FUKAMIZU_BREAD_BRICKS.get());
         this.dropOther(BlockRegistry.JELLYFISH_BOTTLE.get(), ItemRegistry.JELLYFISH_BOTTLE.get());
         this.dropOther(BlockRegistry.ROCK_STATUE.get(), ItemRegistry.ROCK_STATUE.get());
 

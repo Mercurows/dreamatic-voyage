@@ -522,6 +522,8 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.POINTS_STORE.get(), new Item.Properties()));
     public static final RegistryObject<Item> FUKAMIZU_BREAD_BLOCK = BLOCK_ITEMS.register("fukamizu_bread_block",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_BRICKS = BLOCK_ITEMS.register("fukamizu_bread_bricks",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_BREAD_BRICKS.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> BLUE_SAND = BLOCK_ITEMS.register("blue_sand",
             () -> new BlockItem(BlockRegistry.BLUE_SAND.get(), new Item.Properties()));

@@ -22,6 +22,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.RED_AHOGE_BLOCK);
         blockWithItem(BlockRegistry.WHITE_AHOGE_BLOCK);
         blockWithItem(BlockRegistry.FUKAMIZU_BREAD_BLOCK);
+        blockWithItem(BlockRegistry.FUKAMIZU_BREAD_BRICKS);
         simpleBlockWithItem(BlockRegistry.COMMUNICATION_TABLE.get(), models().cubeBottomTop("communication_table", new ResourceLocation(Utils.MOD_ID, "block/communication_table_side"),
                 new ResourceLocation(Utils.MOD_ID, "block/communication_table_bottom"), new ResourceLocation(Utils.MOD_ID, "block/communication_table_top")));
         horizontalBlock(BlockRegistry.PORCELAIN_THRONE.get(), new ModelFile.UncheckedModelFile(modLoc("block/porcelain_throne")));
