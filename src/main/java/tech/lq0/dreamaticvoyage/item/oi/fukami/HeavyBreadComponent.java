@@ -35,7 +35,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class HeavyBreadComponent extends Item implements ICurioItem {
 
     public HeavyBreadComponent() {
-        super(new Properties().stacksTo(1));
+        super(new Properties().stacksTo(1).fireResistant());
     }
 
     @Override

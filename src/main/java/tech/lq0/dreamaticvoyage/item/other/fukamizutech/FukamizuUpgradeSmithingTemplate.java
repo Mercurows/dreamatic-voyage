@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.oi.fukami;
+package tech.lq0.dreamaticvoyage.item.other.fukamizutech;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -16,5 +16,10 @@ public class FukamizuUpgradeSmithingTemplate extends SmithingTemplateItem {
                 Component.translatable("item.dreamaticvoyage.smithing_template.fukamizu_upgrade.base_slot_description"),
                 Component.translatable("item.dreamaticvoyage.smithing_template.fukamizu_upgrade.addition_slot_description"),
                 List.of(new ResourceLocation("item/empty_slot_ingot")), List.of(new ResourceLocation(Utils.MOD_ID, "item/ocean_destiny")));
+    }
+
+    @Override
+    public boolean isFireResistant() {
+        return true;
     }
 }

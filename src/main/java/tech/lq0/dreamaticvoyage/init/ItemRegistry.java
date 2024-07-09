@@ -63,6 +63,7 @@ import tech.lq0.dreamaticvoyage.item.oi.yesa.TailFishingRod;
 import tech.lq0.dreamaticvoyage.item.oi.yesa.YeggyPearl;
 import tech.lq0.dreamaticvoyage.item.oi.yuri.RabbitLychee;
 import tech.lq0.dreamaticvoyage.item.other.*;
+import tech.lq0.dreamaticvoyage.item.other.fukamizutech.FukamizuUpgradeSmithingTemplate;
 import tech.lq0.dreamaticvoyage.item.other.fukamizutech.tool.*;
 import tech.lq0.dreamaticvoyage.item.other.guardian.DGShirako;
 import tech.lq0.dreamaticvoyage.item.other.guardian.DGYorune;
@@ -396,7 +397,6 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MAGICROS_CORE = MISC_ITEMS.register("magicros_core", MagicrosCore::new);
     public static final RegistryObject<Item> MIRACLE_CORE = MISC_ITEMS.register("miracle_core", MiracleCore::new);
     public static final RegistryObject<Item> DREAM_WEAVING_YARN = MISC_ITEMS.register("dream_weaving_yarn", DreamWeavingYarn::new);
-    public static final RegistryObject<Item> FUKAMIZU_UPGRADE_SMITHING_TEMPLATE = MISC_ITEMS.register("fukamizu_upgrade_smithing_template", FukamizuUpgradeSmithingTemplate::new);
 
     /**
      * others
@@ -443,6 +443,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> FUKAMIZU_BREAD_PICKAXE = MISC_ITEMS.register("fukamizu_bread_pickaxe", FukamizuBreadPickaxe::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_AXE = MISC_ITEMS.register("fukamizu_bread_axe", FukamizuBreadAxe::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_HOE = MISC_ITEMS.register("fukamizu_bread_hoe", FukamizuBreadHoe::new);
+    public static final RegistryObject<Item> FUKAMIZU_UPGRADE_SMITHING_TEMPLATE = MISC_ITEMS.register("fukamizu_upgrade_smithing_template", FukamizuUpgradeSmithingTemplate::new);
 
     /**
      * legacy
@@ -521,9 +522,9 @@ public class ItemRegistry {
     public static final RegistryObject<Item> POINTS_STORE = BLOCK_ITEMS.register("points_store",
             () -> new BlockItem(BlockRegistry.POINTS_STORE.get(), new Item.Properties()));
     public static final RegistryObject<Item> FUKAMIZU_BREAD_BLOCK = BLOCK_ITEMS.register("fukamizu_bread_block",
-            () -> new BlockItem(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), new Item.Properties()));
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FUKAMIZU_BREAD_BRICKS = BLOCK_ITEMS.register("fukamizu_bread_bricks",
-            () -> new BlockItem(BlockRegistry.FUKAMIZU_BREAD_BRICKS.get(), new Item.Properties()));
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_BREAD_BRICKS.get(), new Item.Properties().fireResistant()));
 
     public static final RegistryObject<Item> BLUE_SAND = BLOCK_ITEMS.register("blue_sand",
             () -> new BlockItem(BlockRegistry.BLUE_SAND.get(), new Item.Properties()));
