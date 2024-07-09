@@ -70,7 +70,7 @@ public class MagicrosCore extends Item {
         if (!level.isClientSide && entityIn instanceof Player player) {
             if (player instanceof ServerPlayer serverPlayer && serverPlayer.getServer() != null) {
                 var advancements = player.getServer().getAdvancements();
-                var adv = advancements.getAdvancement(new ResourceLocation(Utils.MOD_ID, "main/apex_gourmet"));
+                var adv = advancements.getAdvancement(new ResourceLocation(Utils.MOD_ID, "main/magicros_core"));
                 if (adv != null) {
                     ItemNBTTool.setBoolean(stack, TAG_MAGICROS, serverPlayer.getAdvancements().getOrStartProgress(adv).isDone());
                 }
@@ -221,11 +221,14 @@ public class MagicrosCore extends Item {
             }
 
             if (flagMiracle) {
-                player.displayClientMessage(Component.translatable("des.dreamaticvoyage.magicros_core.miracle").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xFFAA11)), true);
                 ItemNBTTool.setInt(stack, TAG_MIRACLE, Math.min(ItemNBTTool.getInt(stack, TAG_MIRACLE, 0) + 1, 200));
 
                 if (ItemNBTTool.getInt(stack, TAG_MIRACLE, 0) >= 60 && player.tickCount % 20 == 0) {
                     player.hurt(level.damageSources().magic(), player.getMaxHealth() * 0.4f);
+                }
+
+                if (player.fallDistance >= 5) {
+                    player.displayClientMessage(Component.translatable("des.dreamaticvoyage.magicros_core.miracle").withStyle(ChatFormatting.ITALIC).withStyle(Style.EMPTY.withColor(0xFFAA11)), true);
                 }
 
                 if (player.fallDistance >= 16) {
