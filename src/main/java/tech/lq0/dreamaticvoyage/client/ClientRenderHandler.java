@@ -3,6 +3,7 @@ package tech.lq0.dreamaticvoyage.client;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -11,6 +12,8 @@ import tech.lq0.dreamaticvoyage.client.particle.TentacleParticle;
 import tech.lq0.dreamaticvoyage.client.particle.UmuLightParticle;
 import tech.lq0.dreamaticvoyage.client.render.*;
 import tech.lq0.dreamaticvoyage.client.render.curios.*;
+import tech.lq0.dreamaticvoyage.client.render.tooltip.ClientImageTooltip;
+import tech.lq0.dreamaticvoyage.client.render.tooltip.ImageTooltip;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.EntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
@@ -52,5 +55,10 @@ public class ClientRenderHandler {
     public static void registerParticles(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(ParticleRegistry.TENTACLE.get(), TentacleParticle.Provider::new);
         event.registerSpriteSet(ParticleRegistry.UMU_LIGHT.get(), UmuLightParticle.Provider::new);
+    }
+
+    @SubscribeEvent
+    public static void registerTooltip(RegisterClientTooltipComponentFactoriesEvent event) {
+        event.register(ImageTooltip.class, ClientImageTooltip::new);
     }
 }
