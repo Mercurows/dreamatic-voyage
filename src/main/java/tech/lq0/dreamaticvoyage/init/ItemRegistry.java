@@ -19,6 +19,7 @@ import tech.lq0.dreamaticvoyage.item.first.madoka.*;
 import tech.lq0.dreamaticvoyage.item.first.mari.Machete;
 import tech.lq0.dreamaticvoyage.item.first.mari.MagicMirror;
 import tech.lq0.dreamaticvoyage.item.first.mari.MariStew;
+import tech.lq0.dreamaticvoyage.item.first.mitsuki.LunarCross;
 import tech.lq0.dreamaticvoyage.item.first.mitsuki.MitsukiCrown;
 import tech.lq0.dreamaticvoyage.item.first.myanna.*;
 import tech.lq0.dreamaticvoyage.item.first.niina.BananaMilk;
@@ -146,6 +147,7 @@ public class ItemRegistry {
     // mitsuki
     public static final RegistryObject<Item> MITSUKI_CROWN = ITEMS.register("mitsuki_crown", MitsukiCrown::new);
 //    public static final RegistryObject<Item> GOOD_MAN_CARD = ITEMS.register("good_man_card", GoodManCard::new);
+    public static final RegistryObject<Item> LUNAR_CROSS = ITEMS.register("lunar_cross", LunarCross::new);
 
     // usa
     public static final RegistryObject<Item> PLUNGER = ITEMS.register("plunger", Plunger::new);
