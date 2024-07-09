@@ -43,6 +43,7 @@ import tech.lq0.dreamaticvoyage.item.magicros.chiram.*;
 import tech.lq0.dreamaticvoyage.item.magicros.ekira.*;
 import tech.lq0.dreamaticvoyage.item.magicros.haine.*;
 import tech.lq0.dreamaticvoyage.item.magicros.keroro.*;
+import tech.lq0.dreamaticvoyage.item.misc.material.ingot.*;
 import tech.lq0.dreamaticvoyage.item.oi.ayu.DelicateMirage;
 import tech.lq0.dreamaticvoyage.item.oi.ayu.GravityRestraintDevice;
 import tech.lq0.dreamaticvoyage.item.oi.ccelia.CraftBeer0322;
@@ -403,6 +404,7 @@ public class ItemRegistry {
      */
     public static final RegistryObject<Item> MMA_STEW = MISC_ITEMS.register("mma_stew", MMAStew::new);
     public static final RegistryObject<Item> MVA_STEW = MISC_ITEMS.register("mva_stew", MVAStew::new);
+    public static final RegistryObject<Item> CRYSTAL_POPCORN = MISC_ITEMS.register("crystal_popcorn", CrystalPopcorn::new);
     public static final RegistryObject<Item> PDC_POINT = MISC_ITEMS.register("pdc_point", PdcPoint::new);
     public static final RegistryObject<Item> PREMIUM_PDC_POINT = MISC_ITEMS.register("premium_pdc_point", PremiumPdcPoint::new);
     public static final RegistryObject<Item> CHAOS_CHECKER = MISC_ITEMS.register("chaos_checker", ChaosChecker::new);

@@ -197,6 +197,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.ESCORT_TOKEN);
         handheldItem(ItemRegistry.ANCIENT_MICROPHONE);
         simpleItem(ItemRegistry.FICTIONAL_FORGING_SIGIL);
+        simpleItem(ItemRegistry.CRYSTAL_POPCORN);
 
         //fukamizu tech
         handheldItem(ItemRegistry.FUKAMIZU_BREAD_AXE);
@@ -229,6 +230,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.FICTIONAL_INGOT);
         simpleItem(ItemRegistry.FICTIONAL_NUGGET);
         simpleItem(ItemRegistry.FUKAMIZU_UPGRADE_SMITHING_TEMPLATE);
+        simpleItem(ItemRegistry.MIRACLE_CORE);
 
         //donate
         simpleItem(ItemRegistry.LITTLE_POTATO);
