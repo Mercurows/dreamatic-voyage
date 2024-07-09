@@ -1,0 +1,17 @@
+{
+  "type": "immersiveengineering:squeezer",
+  "energy": 6400,
+  "fluid": {
+    "amount": 150,
+    "fluid": "immersiveengineering:plantoil"
+  },
+  "input": {
+    "item": "dreamaticvoyage:uni_millet"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ]
+}
