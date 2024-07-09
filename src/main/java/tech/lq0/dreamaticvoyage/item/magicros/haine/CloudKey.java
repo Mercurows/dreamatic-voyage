@@ -5,7 +5,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -30,7 +29,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CloudKey extends Item implements ICurioItem {
     public CloudKey() {
-        super(new Properties().stacksTo(1).rarity(Rarity.EPIC).durability(4));
+        super(new Properties().stacksTo(1).rarity(Rarity.EPIC));
     }
 
     @Override
@@ -52,24 +51,13 @@ public class CloudKey extends Item implements ICurioItem {
     @SubscribeEvent
     public static void cloudKeyHurtEvent(LivingDamageEvent event) {
         LivingEntity entity = event.getEntity();
-        float damage = event.getAmount();
         if (event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
             return;
         }
 
         if (entity instanceof Player player) {
-            CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(ItemRegistry.CLOUD_KEY.get()).ifPresent(slotResult -> {
-                if (damage >= player.getHealth() && !player.getCooldowns().isOnCooldown(ItemRegistry.CLOUD_KEY.get()) && !player.level().isClientSide) {
-                    if (slotResult.slotContext().cosmetic() || !slotResult.slotContext().visible()) {
-                        return;
-                    }
-
-                    event.setAmount(player.getHealth() > 2.0f ? player.getHealth() - 2.0f : 0.0f);
-                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 3), player);
-                    slotResult.stack().hurtAndBreak(1, player, (playerEntity) -> playerEntity.broadcastBreakEvent(EquipmentSlot.CHEST));
-                    player.getCooldowns().addCooldown(ItemRegistry.CLOUD_KEY.get(), 100);
-                }
-            }));
+            CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(ItemRegistry.CLOUD_KEY.get())
+                    .ifPresent(slotResult -> event.setAmount(Math.min(event.getAmount(), player.getMaxHealth() * .5f))));
         }
     }
 
