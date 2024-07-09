@@ -14,16 +14,21 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import java.util.List;
 
 public abstract class DreamGuardian extends Item {
-    private final Livers liver;
+    private final String liverName;
 
     public DreamGuardian(Livers liver) {
         super(new Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
-        this.liver = liver;
+        this.liverName = liver.getName();
+    }
+
+    public DreamGuardian(String liverName) {
+        super(new Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
+        this.liverName = liverName;
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("liver.dreamaticvoyage." + this.liver.getName()).withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("liver.dreamaticvoyage." + this.liverName).withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addDevelopingText(pTooltip);
     }

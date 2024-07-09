@@ -64,8 +64,8 @@ import tech.lq0.dreamaticvoyage.item.oi.yesa.YeggyPearl;
 import tech.lq0.dreamaticvoyage.item.oi.yuri.RabbitLychee;
 import tech.lq0.dreamaticvoyage.item.other.*;
 import tech.lq0.dreamaticvoyage.item.other.fukamizutech.tool.*;
-import tech.lq0.dreamaticvoyage.item.other.guardian.DGFukami;
 import tech.lq0.dreamaticvoyage.item.other.guardian.DGShirako;
+import tech.lq0.dreamaticvoyage.item.other.guardian.DGYorune;
 import tech.lq0.dreamaticvoyage.item.other.material.*;
 import tech.lq0.dreamaticvoyage.item.other.material.crystal.*;
 import tech.lq0.dreamaticvoyage.item.second.lecia.*;
@@ -376,11 +376,6 @@ public class ItemRegistry {
     public static final DeferredRegister<Item> MISC_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
 
     /**
-     * dream guardians
-     */
-    public static final RegistryObject<Item> DG_SHIRAKO = ITEMS.register("dg_shirako", DGShirako::new);
-
-    /**
      * material
      */
     public static final RegistryObject<Item> RADIANT_CRYSTAL = MISC_ITEMS.register("radiant_crystal", RadiantCrystal::new);
@@ -420,16 +415,6 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MIRACLE_BADGE = MISC_ITEMS.register("miracle_badge", MiracleBadge::new);
 
     /**
-     * fukamizu tech
-     */
-    public static final RegistryObject<Item> FUKAMIZU_BREAD_SWORD = MISC_ITEMS.register("fukamizu_bread_sword", FukamizuBreadSword::new);
-    public static final RegistryObject<Item> FUKAMIZU_BREAD_SHOVEL = MISC_ITEMS.register("fukamizu_bread_shovel", FukamizuBreadShovel::new);
-    public static final RegistryObject<Item> FUKAMIZU_BREAD_PICKAXE = MISC_ITEMS.register("fukamizu_bread_pickaxe", FukamizuBreadPickaxe::new);
-    public static final RegistryObject<Item> FUKAMIZU_BREAD_AXE = MISC_ITEMS.register("fukamizu_bread_axe", FukamizuBreadAxe::new);
-    public static final RegistryObject<Item> FUKAMIZU_BREAD_HOE = MISC_ITEMS.register("fukamizu_bread_hoe", FukamizuBreadHoe::new);
-
-
-    /**
      * donate
      */
     public static final RegistryObject<Item> ATSUISHIO = MISC_ITEMS.register("atsuishio", AtsuiShio::new);
@@ -443,6 +428,21 @@ public class ItemRegistry {
     public static final RegistryObject<Item> BAKED_NAME_TAG = MISC_ITEMS.register("baked_name_tag", BakedNameTag::new);
     public static final RegistryObject<Item> LEAH_PAD = MISC_ITEMS.register("leah_pad", LeahPad::new);
     public static final RegistryObject<Item> SAKURA_BEAN_CURD = MISC_ITEMS.register("sakura_bean_curd", SakuraBeanCurd::new);
+
+    /**
+     * dream guardians
+     */
+    public static final RegistryObject<Item> DG_SHIRAKO = MISC_ITEMS.register("dg_shirako", DGShirako::new);
+    public static final RegistryObject<Item> DG_YORUNE = MISC_ITEMS.register("dg_yorune", DGYorune::new);
+
+    /**
+     * fukamizu tech
+     */
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_SWORD = MISC_ITEMS.register("fukamizu_bread_sword", FukamizuBreadSword::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_SHOVEL = MISC_ITEMS.register("fukamizu_bread_shovel", FukamizuBreadShovel::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_PICKAXE = MISC_ITEMS.register("fukamizu_bread_pickaxe", FukamizuBreadPickaxe::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_AXE = MISC_ITEMS.register("fukamizu_bread_axe", FukamizuBreadAxe::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_HOE = MISC_ITEMS.register("fukamizu_bread_hoe", FukamizuBreadHoe::new);
 
     /**
      * legacy

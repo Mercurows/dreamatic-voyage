@@ -812,6 +812,7 @@
   "item.dreamaticvoyage.dg_fukami": "Dream Guardian",
   "item.dreamaticvoyage.dg_yesa": "Dream Guardian",
   "item.dreamaticvoyage.dg_shirako": "Dream Guardian",
+  "item.dreamaticvoyage.dg_yorune": "Dream Guardian",
   "item.dreamaticvoyage.fukamizu_bread_ingot": "深水面包锭",
   "des.dreamaticvoyage.fukamizu_bread_ingot_1": "致密的深水面包块经过压制切割制成的材料",
   "des.dreamaticvoyage.fukamizu_bread_ingot_2": "虽然原料不含任何金属元素，但表面却闪烁着金属的光芒",
@@ -1086,6 +1087,9 @@
   "liver.dreamaticvoyage.rino": "Kurozawa Rino",
   "liver.dreamaticvoyage.ccelia": "C Celia",
   "liver.dreamaticvoyage.qianyun": "Qianyun",
+
+  "liver.dreamaticvoyage.yorune": "Yorune",
+
   "des.dreamaticvoyage.legacy": "<<< Legacy >>>",
   "dreamaticvoyage.advancement.root": "Dreamatic Voyage",
   "dreamaticvoyage.advancement.root_des": "在虚拟的世界中扬帆起航吧",
