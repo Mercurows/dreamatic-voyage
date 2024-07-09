@@ -64,6 +64,8 @@ import tech.lq0.dreamaticvoyage.item.oi.yesa.YeggyPearl;
 import tech.lq0.dreamaticvoyage.item.oi.yuri.RabbitLychee;
 import tech.lq0.dreamaticvoyage.item.other.*;
 import tech.lq0.dreamaticvoyage.item.other.fukamizutech.tool.*;
+import tech.lq0.dreamaticvoyage.item.other.guardian.DGFukami;
+import tech.lq0.dreamaticvoyage.item.other.guardian.DGShirako;
 import tech.lq0.dreamaticvoyage.item.other.material.*;
 import tech.lq0.dreamaticvoyage.item.other.material.crystal.*;
 import tech.lq0.dreamaticvoyage.item.second.lecia.*;
@@ -373,12 +375,10 @@ public class ItemRegistry {
      **/
     public static final DeferredRegister<Item> MISC_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
 
-//    /**
-//     * dream guardians
-//     */
-//    public static final RegistryObject<Item> DG_FUKAMI = ITEMS.register("dg_fukami", DGFukami::new);
-//    public static final RegistryObject<Item> DG_YESA = ITEMS.register("dg_yesa", DGYesa::new);
-//    public static final RegistryObject<Item> DG_SHIRAKO = ITEMS.register("dg_shirako", DGShirako::new);
+    /**
+     * dream guardians
+     */
+    public static final RegistryObject<Item> DG_SHIRAKO = ITEMS.register("dg_shirako", DGShirako::new);
 
     /**
      * material
