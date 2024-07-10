@@ -1,0 +1,18 @@
+{
+  "name": "dreamaticvoyage.entry.chocoal_cookie",
+  "icon": "dreamaticvoyage:chocoal_cookie",
+  "category": "dreamaticvoyage:fourth",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.chocoal_cookie1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:chocoal_cookie",
+      "text": "dreamaticvoyage.page.chocoal_cookie2"
+    }
+  ],
+  "sortnum": 40102
+}

@@ -1356,6 +1356,13 @@
   "dreamaticvoyage.page.cursed_marshaimallow2": "$(o)地雷系少女的玩偶，真是太可爱了！",
   "dreamaticvoyage.page.cursed_marshaimallow3": "“好耶！送给自己的漂亮娃娃，看起来非常亚系且十分可爱，就是摸上去的时候老感觉身后凉飕飕的。”$(p)——后来根据邻居所说，大半夜听见了一声爆响，大家都慌忙逃窜，还以为是地震了，不过这户居民从那晚后消失不见了，大家都不知道她去了哪里。",
 
+  "dreamaticvoyage.entry.strawberry_cake": "唔姆蛋糕",
+  "dreamaticvoyage.page.strawberry_cake1": "$(item)唔姆蛋糕$(0)是由神奇的甜品精灵创造出来的甜品，吃多了大概会变胖吧。$(p)食用后有80%%的概率获得$(thing)速度$(0)效果，有20%%的概率获得$(thing)缓慢$(0)和$(thing)力量$(0)效果。",
+  "dreamaticvoyage.page.strawberry_cake2": "$(o)“你这肥驹……”",
+  "dreamaticvoyage.entry.chocoal_cookie": "焦可曲奇",
+  "dreamaticvoyage.page.chocoal_cookie1": "明明使用了正常的食材，怎么做出来会变成这个样子……这种名为$(item)焦可曲奇$(0)的甜品，看起来不是很能吃的样子。$(p)食用后会获得$(thing)凋零$(0)效果，并受到一定的伤害。$(p)焦可曲奇还可以用作燃料，提供3200游戏刻的燃烧时间。",
+  "dreamaticvoyage.page.chocoal_cookie2": "$(o)我决定把它喂给烦人的幻翼……怎么这东西还会动啊！？",
+
   "dreamaticvoyage.entry.momo_daifuku": "桃大福",
   "dreamaticvoyage.page.momo_daifuku1": "这里的世界从不缺乏奇特的甜品，长着耳朵的粉色$(item)桃大福$(0)就是其中之一。$(p)食用后会获得$(thing)漂浮$(0)效果，有概率会使自身$(c)燃烧$(0)起来。",
   "dreamaticvoyage.page.momo_daifuku2": "$(o)据说是染色食品，还是少吃点吧。",

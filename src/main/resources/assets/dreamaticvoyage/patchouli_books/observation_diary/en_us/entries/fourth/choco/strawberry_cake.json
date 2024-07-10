@@ -12,14 +12,6 @@
       "type": "patchouli:crafting",
       "recipe": "dreamaticvoyage:strawberry_cake",
       "text": "dreamaticvoyage.page.strawberry_cake2"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.strawberry_cake3"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.strawberry_cake4"
     }
   ],
   "sortnum": 40101
