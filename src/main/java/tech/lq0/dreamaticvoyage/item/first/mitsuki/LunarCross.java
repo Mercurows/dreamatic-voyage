@@ -49,9 +49,9 @@ public class LunarCross extends Item implements ICurioItem {
 
     @SubscribeEvent
     public static void onLivingDamaged(LivingDamageEvent event) {
-        Entity entity = event.getSource().getDirectEntity();
+        Entity entity = event.getSource().getEntity();
 
-        if (entity instanceof Player player && !entity.level().isClientSide) {
+        if (entity instanceof Player player && !entity.level().isClientSide && event.getEntity() != player) {
             CuriosApi.getCuriosInventory(player).ifPresent(s -> s.findFirstCurio(ItemRegistry.LUNAR_CROSS.get()).ifPresent(
                     r -> {
                         float damage = event.getAmount();
@@ -59,7 +59,7 @@ public class LunarCross extends Item implements ICurioItem {
                         if (player.level().isNight()) {
                             player.heal(damage * 0.25f);
                         } else {
-                            player.heal(damage * 0.1f);
+                            player.heal(damage * 0.15f);
                         }
                     }
             ));

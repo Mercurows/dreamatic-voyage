@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bpb",
+    "cec",
+    "aca"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "b": {
+      "item": "minecraft:wither_rose"
+    },
+    "c": {
+      "item": "minecraft:iron_ingot"
+    },
+    "e": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "p": {
+      "item": "dreamaticvoyage:purified_crystal_ingot"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:lunar_cross",
+    "count": 1
+  }
+}
