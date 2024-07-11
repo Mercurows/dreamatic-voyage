@@ -221,6 +221,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> QINGLAN_UMBRELLA = ITEMS.register("qinglan_umbrella", QinglanUmbrella::new);
     public static final RegistryObject<Item> MAGIC_TEAPOT = ITEMS.register("magic_teapot", MagicTeapot::new);
     public static final RegistryObject<Item> CHIRAM_HAT = ITEMS.register("chiram_hat", ChiramHat::new);
+    public static final RegistryObject<Item> BOWL_OF_VEGETABLE = ITEMS.register("bowl_of_vegetable", BowlOfVegetable::new);
 
     // haine
     public static final RegistryObject<Item> HAI_PLATE = ITEMS.register("hai_plate", HaiPlate::new);

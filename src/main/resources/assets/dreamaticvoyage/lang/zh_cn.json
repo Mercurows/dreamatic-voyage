@@ -851,6 +851,9 @@
   "item.dreamaticvoyage.swollen_fukamizu_bread_ingot": "溶胀深水面包锭",
   "des.dreamaticvoyage.swollen_fukamizu_bread_ingot_1": "在极高水压下形成的不稳定弹性深水面包凝胶，富含巨大的能量",
   "des.dreamaticvoyage.swollen_fukamizu_bread_ingot_2": "高分子材料学界对于深水面包如何变成了这个样子暂无定论",
+  "item.dreamaticvoyage.bowl_of_vegetable": "一碗菜",
+  "des.dreamaticvoyage.bowl_of_vegetable_1": "请享用这碗秘制炖菜吧——",
+  "des.dreamaticvoyage.bowl_of_vegetable_2": "怎么碗里还有只猫猫？",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

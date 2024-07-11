@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "CWC",
+    " B "
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:lotus_potato"
+    },
+    "C": {
+      "item": "minecraft:carrot"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "B": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:bowl_of_vegetable",
+    "count": 1
+  }
+}
