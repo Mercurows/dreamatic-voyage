@@ -22,7 +22,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.observers3"
+      "text": "dreamaticvoyage.page.observers.yorune1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.yorune2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.yorune3"
     },
     {
       "type": "patchouli:text",
@@ -31,7 +39,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.observers4"
+      "text": "dreamaticvoyage.page.observers.leah1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.leah2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.leah3"
     },
     {
       "type": "patchouli:text",
@@ -40,7 +56,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.observers5"
+      "text": "dreamaticvoyage.page.observers.roki271"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.roki272"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.roki273"
     },
     {
       "type": "patchouli:text",
@@ -49,7 +73,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.observers6"
+      "text": "dreamaticvoyage.page.observers.kuma771"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.kuma772"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.kuma773"
     }
   ],
   "sortnum": 1
