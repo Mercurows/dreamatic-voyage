@@ -1,0 +1,18 @@
+{
+  "name": "dreamaticvoyage.entry.shu_rino_ken",
+  "icon": "dreamaticvoyage:shu_rino_ken",
+  "category": "dreamaticvoyage:oi",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.shu_rino_ken1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:shu_rino_ken",
+      "text": "dreamaticvoyage.page.shu_rino_ken2"
+    }
+  ],
+  "sortnum": 61001
+}

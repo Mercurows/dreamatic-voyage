@@ -1470,6 +1470,10 @@
   "dreamaticvoyage.page.xiaolongbao1": "说到早餐，最具代表性的还得是小笼包，这款$(item)蟹黄小笼包$(0)更是不可多得的美味！$(p)食用后有小概率以自身为中心发生一次$(c)爆炸$(0)，并不会对自身造成伤害。",
   "dreamaticvoyage.page.xiaolongbao2": "$(o)好吃到爆炸！！！",
 
+  "dreamaticvoyage.entry.shu_rino_ken": "莉乃手里剑",
+  "dreamaticvoyage.page.shu_rino_ken1": "戴在头上的，是头饰，还是武器？总之，$(item)莉乃手里剑$(0)就是这样可爱但又危险的物品。$(p)使用时会依次发射1/2/3/2/1个不受重力影响的投射物。",
+  "dreamaticvoyage.page.shu_rino_ken2": "$(o)这样的发饰真的安全吗……",
+
   "dreamaticvoyage.entry.craft_beer_0322": "0322精酿",
   "dreamaticvoyage.page.craft_beer_03221": "$(item)0322精酿$(0)是一种来自外星球的绿色啤酒。$(p)饮用后会提升10点$(l:dreamaticvoyage:prelude/chaos)混沌值$(/l)，并获得$(thing)急迫$(0)、$(thing)生命恢复$(0)效果，有概率获得$(thing)反胃$(0)效果。",
   "dreamaticvoyage.page.craft_beer_03222": "在积分商店处兑换。$(p)$(o)看上去就很可疑的饮品。",
