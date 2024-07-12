@@ -1,0 +1,22 @@
+{
+  "name": "dreamaticvoyage.entry.mountain_destroyer",
+  "icon": "dreamaticvoyage:mountain_destroyer",
+  "category": "dreamaticvoyage:first",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.mountain_destroyer1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:drill",
+      "recipe2": "dreamaticvoyage:mountain_destroyer"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.mountain_destroyer2"
+    }
+  ],
+  "sortnum": 10203
+}
