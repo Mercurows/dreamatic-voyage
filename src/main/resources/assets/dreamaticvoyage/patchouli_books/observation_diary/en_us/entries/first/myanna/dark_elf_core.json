@@ -1,0 +1,18 @@
+{
+  "name": "dreamaticvoyage.entry.dark_elf_core",
+  "icon": "dreamaticvoyage:dark_elf_core",
+  "category": "dreamaticvoyage:first",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.dark_elf_core1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:dark_elf_core",
+      "text": "dreamaticvoyage.page.dark_elf_core2"
+    }
+  ],
+  "sortnum": 10201
+}

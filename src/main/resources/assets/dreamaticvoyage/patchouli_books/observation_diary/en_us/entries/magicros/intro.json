@@ -1,0 +1,13 @@
+{
+  "name": "dreamaticvoyage.entry.magicros.intro",
+  "icon": "minecraft:book",
+  "category": "dreamaticvoyage:magicros",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.magicros.intro1"
+    }
+  ],
+  "sortnum": 30000
+}
