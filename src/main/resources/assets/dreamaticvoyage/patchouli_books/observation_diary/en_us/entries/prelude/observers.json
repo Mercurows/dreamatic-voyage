@@ -82,6 +82,27 @@
     {
       "type": "patchouli:text",
       "text": "dreamaticvoyage.page.observers.kuma773"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "dreamaticvoyage:textures/character/hurricane_default_256x.png"
+      ],
+      "border": true,
+      "title": "dreamaticvoyage.title.observers5",
+      "anchor": "hurricane"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.hurricane1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.hurricane2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.observers.hurricane3"
     }
   ],
   "sortnum": 1
