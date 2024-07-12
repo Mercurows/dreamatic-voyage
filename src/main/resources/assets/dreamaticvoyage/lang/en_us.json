@@ -1466,6 +1466,10 @@
   "dreamaticvoyage.page.fiaxe1": "外星电子龙随身携带的武器，看上去和地球的消防斧没什么区别，这个$(item)斐雅斧$(0)到底有什么神奇之处呢？$(p)挖掘树叶时不会消耗耐久，有20%%的概率$(thing)恢复$(0)耐久。",
   "dreamaticvoyage.page.fiaxe2": "在积分商店处兑换。$(p)$(o)“不听话的人要被姐姐收割掉哦~”",
 
+  "dreamaticvoyage.entry.xiaolongbao": "Crab Roe Xiaolongbao",
+  "dreamaticvoyage.page.xiaolongbao1": "说到早餐，最具代表性的还得是小笼包，这款$(item)蟹黄小笼包$(0)更是不可多得的美味！$(p)食用后有小概率以自身为中心发生一次$(c)爆炸$(0)，并不会对自身造成伤害。",
+  "dreamaticvoyage.page.xiaolongbao2": "$(o)好吃到爆炸！！！",
+
   "dreamaticvoyage.entry.craft_beer_0322": "0322精酿",
   "dreamaticvoyage.page.craft_beer_03221": "$(item)0322精酿$(0)是一种来自外星球的绿色啤酒。$(p)饮用后会提升10点$(l:dreamaticvoyage:prelude/chaos)混沌值$(/l)，并获得$(thing)急迫$(0)、$(thing)生命恢复$(0)效果，有概率获得$(thing)反胃$(0)效果。",
   "dreamaticvoyage.page.craft_beer_03222": "在积分商店处兑换。$(p)$(o)看上去就很可疑的饮品。",
