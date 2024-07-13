@@ -1319,9 +1319,9 @@
   "dreamaticvoyage.title.observers4": "电子熊古力",
   "dreamaticvoyage.page.observers.kuma771": "甜度爆表的熊耳少女，擅长使用音乐治愈身边的一切。但有传闻说，有时候的她并不像看上去的那样纯良？",
   "dreamaticvoyage.title.observers5": "哈莉可",
-  "dreamaticvoyage.page.observers.hurric1": "",
-  "dreamaticvoyage.page.observers.hurric2": "",
-  "dreamaticvoyage.page.observers.hurric3": "",
+  "dreamaticvoyage.page.observers.hurric1": "虚拟远航世界设计师，早期观察员之一。$(p)拥有极具辨识度的银灰色散发和蓝红色挑染，以及看起来与发色格格不入的棕色熊耳。据说这曾经是她很喜欢佩戴的熊耳头饰，有一天她因过度劳累戴着熊耳睡着了，第二天醒来发现熊耳变成了真正的耳朵长在了头上。",
+  "dreamaticvoyage.page.observers.hurric2": "拥有敏锐的观察力和缜密的思维，行动力极强，但却沉默寡言不善交流。$(p)在开发团队的一次变故后离开，不知所踪。据说她进行了一次跨洋远行，但没人知道她究竟去了哪里，又为何而行。",
+  "dreamaticvoyage.page.observers.hurric3": "直到数年后，团队成员在一个不起眼的角落意外发现了一些影像资料，上面用熟悉的风格记录了一些他们从未获取过的内容。$(p)说不定在接下来的探索中，会再次见到那个时常带着记录仪的银灰色的身影。",
   "dreamaticvoyage.entry.chaos": "混沌值",
 
   "dreamaticvoyage.entry.first.intro": "希望起源",
@@ -1508,6 +1508,11 @@
 
   "dreamaticvoyage.entry.crystals": "结晶",
 
+  "dreamaticvoyage.entry.emergency_engine_power": "公海法拉利套件",
+  "dreamaticvoyage.page.emergency_engine_power1": "$(item)公海法拉利套件$(0)是一个能够大幅强化移动速度的装置。$(p)使用时获得强大的$(thing)速度$(0)效果，但会使自身$(c)燃烧$(0)起来。",
+  "dreamaticvoyage.page.emergency_engine_power2": "$(o)我燃起来了！",
+  "dreamaticvoyage.page.emergency_engine_power3": "$(l:dreamaticvoyage:prelude/observers#hurric)哈莉可$(/l)在前往普罗维登岛时，在一位名叫保罗的老船长那里得到的奇怪装置的设计图纸，据说看到这东西的人总会产生想要极速奔跑的冲动。$(p)使用这套装置后会大幅提升使用者的速度，但同时装置会产生高温使其燃烧。",
+  "dreamaticvoyage.page.emergency_engine_power4": "“……在那次海战之后，那个奇怪的装置便不知所踪，只在后续的搜救行动中找到了这份残存的图纸。我也始终没能真正复现那个奇怪的装置，制作出来的东西也只会让我自己变得异常渴望奔跑。”$(br)“如今的我也没有精力去研究这东西了……看你这么有兴趣，就把它带走吧，说不定你们能有什么新发现。”$(p)同行的其他观察员们从未见到过哈莉可如此激动的神情。",
   "dreamaticvoyage.entry.baked_name_tag": "炭烤命名牌",
   "dreamaticvoyage.page.baked_name_tag1": "谁都想不到，新来的$(l:dreamaticvoyage:prelude/observers#yorune)看板娘$(/l)会把我们的命名牌给烤了——这个$(item)炭烤命名牌$(0)，真的能吃吗？$(p)食用后会获得$(thing)凋零$(0)效果。",
   "dreamaticvoyage.page.baked_name_tag2": "$(o)天才般的美食创想。",

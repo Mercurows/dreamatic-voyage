@@ -1,0 +1,26 @@
+{
+  "name": "dreamaticvoyage.entry.emergency_engine_power",
+  "icon": "dreamaticvoyage:emergency_engine_power",
+  "category": "dreamaticvoyage:extra",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.emergency_engine_power1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:emergency_engine_power",
+      "text": "dreamaticvoyage.page.emergency_engine_power2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.emergency_engine_power3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.emergency_engine_power4"
+    }
+  ],
+  "sortnum": 80307
+}
