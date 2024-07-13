@@ -1,0 +1,18 @@
+{
+  "name": "dreamaticvoyage.entry.clarity_amulet",
+  "icon": "dreamaticvoyage:clarity_amulet",
+  "category": "dreamaticvoyage:oi",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.clarity_amulet1"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "dreamaticvoyage:clarity_amulet",
+      "text": "dreamaticvoyage.page.clarity_amulet2"
+    }
+  ],
+  "sortnum": 61002
+}

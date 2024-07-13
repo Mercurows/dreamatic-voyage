@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ClarityAmulet extends Item implements ICurioItem {
     public ClarityAmulet() {
-        super(new Properties().rarity(Rarity.RARE));
+        super(new Properties().rarity(Rarity.RARE).stacksTo(1));
     }
 
     @Override

@@ -1482,6 +1482,9 @@
   "dreamaticvoyage.entry.shu_rino_ken": "莉乃手里剑",
   "dreamaticvoyage.page.shu_rino_ken1": "戴在头上的，是头饰，还是武器？总之，$(item)莉乃手里剑$(0)就是这样可爱但又危险的物品。$(p)使用时会依次发射1/2/3/2/1个不受重力影响的投射物。",
   "dreamaticvoyage.page.shu_rino_ken2": "$(o)这样的发饰真的安全吗……",
+  "dreamaticvoyage.entry.clarity_amulet": "清楚护符",
+  "dreamaticvoyage.page.clarity_amulet1": "$(item)清楚护符$(0)是一个可爱小猫形状的护符。$(p)佩戴时，如果自身的$(l:dreamaticvoyage:prelude/chaos)混沌值$(/l)在-100~-70之间，获得$(thing)圣洁III$(0)、$(thing)抗性提升$(0)和$(thing)幸运$(0)效果；$(br)在-70~-30之间，获得$(thing)圣洁II$(0)和$(thing)幸运$(0)效果；$(br)在-30~0之间，获得$(thing)圣洁$(0)效果；$(br)在80~100之间，获得$(c)反胃$(0)、$(c)霉运$(0)和$(thing)急迫$(0)效果；",
+  "dreamaticvoyage.page.clarity_amulet2": "在积分商店处兑换。$(p)$(o)谁不想拥有一只可爱的小猫呢？",
 
   "dreamaticvoyage.entry.craft_beer_0322": "0322精酿",
   "dreamaticvoyage.page.craft_beer_03221": "$(item)0322精酿$(0)是一种来自外星球的绿色啤酒。$(p)饮用后会提升10点$(l:dreamaticvoyage:prelude/chaos)混沌值$(/l)，并获得$(thing)急迫$(0)、$(thing)生命恢复$(0)效果，有概率获得$(thing)反胃$(0)效果。",
