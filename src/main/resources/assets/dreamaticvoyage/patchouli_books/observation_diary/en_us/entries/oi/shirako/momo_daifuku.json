@@ -23,7 +23,8 @@
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.momo_daifuku5"
+      "text": "dreamaticvoyage.page.momo_daifuku5",
+      "anchor": "daifuku_syrup"
     },
     {
       "type": "patchouli:crafting",
