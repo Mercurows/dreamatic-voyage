@@ -1,0 +1,13 @@
+{
+  "name": "dreamaticvoyage.entry.second.intro",
+  "icon": "minecraft:book",
+  "category": "dreamaticvoyage:second",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.second.intro1"
+    }
+  ],
+  "sortnum": 20000
+}

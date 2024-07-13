@@ -1288,8 +1288,8 @@
   "dreamaticvoyage.category.prelude.des": "在普罗维登岛沉没以后……$(br)位于虚构世界边缘的你，接下来的路该何去何从？",
   "dreamaticvoyage.category.first": "第一章",
   "dreamaticvoyage.category.first.des": "这里是先行者们发生的故事。",
-  "dreamaticvoyage.category.second": "第二章：寻梦之盛",
-  "dreamaticvoyage.category.second.des": "时代的车轮滚滚向前，无数的寻梦者开始了新的征途，一个新的繁荣时代在这里缓缓展开。",
+  "dreamaticvoyage.category.second": "第二章",
+  "dreamaticvoyage.category.second.des": "这里是第二批到达虚构世界的寻梦者们的故事。",
   "dreamaticvoyage.category.magicros": "第二点五章",
   "dreamaticvoyage.category.magicros.des": "这里是作为“Magicros”组合的少女们所发生的故事。",
   "dreamaticvoyage.category.third": "第三章：梦幻泡影",
@@ -1367,6 +1367,9 @@
   "dreamaticvoyage.entry.dark_elf_glasses": "暗精灵眼镜",
   "dreamaticvoyage.page.dark_elf_glasses1": "把暗精灵能量注入到玻璃之中，做出了一副能够突破黑暗的$(item)暗精灵眼镜$(0)。$(p)佩戴后提供$(thing)夜视$(0)效果，并允许你在直视末影人时不激怒它们。",
   "dreamaticvoyage.page.dark_elf_glasses2": "$(o)成熟大姐姐的气质。",
+
+  "dreamaticvoyage.entry.second.intro": "寻梦之盛",
+  "dreamaticvoyage.page.second.intro1": "时代的车轮滚滚向前，无数的寻梦者开始了新的征途，一个新的繁荣时代在这里缓缓展开。",
 
   "dreamaticvoyage.entry.magicros.intro": "Magicros",
   "dreamaticvoyage.page.magicros.intro1": "旧时的天空之下，四位跨越时空的少女，在命运的编织下相聚于此。$(p)作为“Magicros”组合的少女们，$(liver)倾澜Chiram$(0)、$(liver)灰音Haine$(0)、$(liver)蛙吹Keroro$(0)、$(liver)星宫颜Ekira$(0)，她们在这片天空下又有怎样的故事呢？",
