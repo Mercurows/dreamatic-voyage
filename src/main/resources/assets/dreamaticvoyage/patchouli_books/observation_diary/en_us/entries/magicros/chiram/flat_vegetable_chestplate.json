@@ -1,0 +1,31 @@
+{
+  "name": "dreamaticvoyage.entry.flat_vegetable_chestplate",
+  "icon": "dreamaticvoyage:flat_vegetable_chestplate",
+  "category": "dreamaticvoyage:magicros",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.flat_vegetable_chestplate1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:flat_vegetable_chestplate",
+      "text": "dreamaticvoyage.page.flat_vegetable_chestplate2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.flat_vegetable_chestplate3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.flat_vegetable_chestplate4"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:steel_plate",
+      "text": "dreamaticvoyage.page.flat_vegetable_chestplate5"
+    }
+  ],
+  "sortnum": 30101
+}

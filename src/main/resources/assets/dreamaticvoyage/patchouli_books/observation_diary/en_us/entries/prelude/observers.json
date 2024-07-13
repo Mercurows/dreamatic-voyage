@@ -86,23 +86,23 @@
     {
       "type": "patchouli:image",
       "images": [
-        "dreamaticvoyage:textures/character/hurricane_default_256x.png"
+        "dreamaticvoyage:textures/character/hurric_default_256x.png"
       ],
       "border": true,
       "title": "dreamaticvoyage.title.observers5",
-      "anchor": "hurricane"
+      "anchor": "hurric"
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.observers.hurricane1"
+      "text": "dreamaticvoyage.page.observers.hurric1"
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.observers.hurricane2"
+      "text": "dreamaticvoyage.page.observers.hurric2"
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.observers.hurricane3"
+      "text": "dreamaticvoyage.page.observers.hurric3"
     }
   ],
   "sortnum": 1
