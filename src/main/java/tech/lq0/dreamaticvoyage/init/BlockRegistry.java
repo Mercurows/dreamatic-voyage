@@ -7,6 +7,7 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.*;
 import tech.lq0.dreamaticvoyage.block.bluesand.*;
+import tech.lq0.dreamaticvoyage.block.fukamizutech.FukamizuCompressor;
 import tech.lq0.dreamaticvoyage.block.harano.*;
 import tech.lq0.dreamaticvoyage.block.voyage.PhantasmalVoyager;
 
@@ -27,7 +28,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> VERDANT_SPIRIT_RICH_SOIL = BLOCKS.register("verdant_spirit_rich_soil", VerdantSpiritRichSoilBlock::new);
     public static final RegistryObject<Block> VERDANT_SPIRIT_FARMLAND = BLOCKS.register("verdant_spirit_farmland", VerdantSpiritFarmlandBlock::new);
 
-    //Blue Sand Series
+    // Blue Sand Series
     public static final RegistryObject<Block> BLUE_SAND = BLOCKS.register("blue_sand", BlueSand::new);
     public static final RegistryObject<Block> BLUE_SANDSTONE = BLOCKS.register("blue_sandstone", BlueSandstone::new);
     public static final RegistryObject<Block> CUT_BLUE_SANDSTONE = BLOCKS.register("cut_blue_sandstone", CutBlueSandstone::new);
@@ -41,7 +42,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> SMOOTH_BLUE_SANDSTONE_STAIRS = BLOCKS.register("smooth_blue_sandstone_stairs", SmoothBlueSandstoneStairs::new);
     public static final RegistryObject<Block> SUSPICIOUS_BLUE_SAND = BLOCKS.register("suspicious_blue_sand", SuspiciousBlueSand::new);
 
-    //Harano Wood Series
+    // Harano Wood Series
     public static final RegistryObject<Block> HARANO_LOG = BLOCKS.register("harano_log", HaranoLog::new);
     public static final RegistryObject<Block> HARANO_LEAVES = BLOCKS.register("harano_leaves", HaranoLeaves::new);
     public static final RegistryObject<Block> HARANO_SAPLING = BLOCKS.register("harano_sapling", HaranoSapling::new);
@@ -58,12 +59,15 @@ public class BlockRegistry {
     public static final RegistryObject<Block> HARANO_TRAPDOOR = BLOCKS.register("harano_trapdoor", HaranoTrapDoor::new);
     public static final RegistryObject<Block> HARANO_BUTTON = BLOCKS.register("harano_button", HaranoButton::new);
 
-    //Crystal Series
+    // Crystal Series
     public static final RegistryObject<Block> HARDEN_CRYSTAL_BLOCK = BLOCKS.register("harden_crystal_block", HardenCrystalBlock::new);
     public static final RegistryObject<Block> PURIFIED_CRYSTAL_BLOCK = BLOCKS.register("purified_crystal_block", PurifiedCrystalBlock::new);
     public static final RegistryObject<Block> CHARGED_CRYSTAL_BLOCK = BLOCKS.register("charged_crystal_block", ChargedCrystalBlock::new);
     public static final RegistryObject<Block> FICTIONAL_INGOT_BLOCK = BLOCKS.register("fictional_ingot_block", FictionalIngotBlock::new);
 
-    //Voyage Series
+    // Voyage Series
     public static final RegistryObject<Block> PHANTASMAL_VOYAGER = BLOCKS.register("phantasmal_voyager", PhantasmalVoyager::new);
+
+    // Fukamizu Tech Series
+    public static final RegistryObject<Block> FUKAMIZU_COMPRESSOR = BLOCKS.register("fukamizu_compressor", FukamizuCompressor::new);
 }
