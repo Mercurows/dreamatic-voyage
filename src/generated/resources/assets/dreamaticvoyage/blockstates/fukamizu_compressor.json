@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dreamaticvoyage:block/fukamizu_compressor",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dreamaticvoyage:block/fukamizu_compressor"
+    },
+    "facing=south": {
+      "model": "dreamaticvoyage:block/fukamizu_compressor",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dreamaticvoyage:block/fukamizu_compressor",
+      "y": 270
+    }
+  }
+}

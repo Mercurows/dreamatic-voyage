@@ -1,4 +1,4 @@
-// 1.20.1	2024-07-05T21:01:48.085834	Block States: dreamaticvoyage
+// 1.20.1	2024-07-15T00:24:11.4368492	Block States: dreamaticvoyage
 528ecd1039fdc2ef5572365202af2e2757c4a308 assets/dreamaticvoyage/blockstates/blue_sand.json
 39000f1fc1ebc393925c217eaf06bbd0e99a2a61 assets/dreamaticvoyage/blockstates/blue_sandstone.json
 0d4a37ef7a091a043bc9cfe55adf529ca00aec55 assets/dreamaticvoyage/blockstates/blue_sandstone_slab.json
@@ -12,6 +12,7 @@ a7461f8b276f92ac14beaa5595e00d7b253ef821 assets/dreamaticvoyage/blockstates/cut_
 9735f31caa3733dbd639cc67dafaf8330bbff514 assets/dreamaticvoyage/blockstates/fictional_ingot_block.json
 0320d6ee98ced854d5c25fdbf2655e6cfc287200 assets/dreamaticvoyage/blockstates/fukamizu_bread_block.json
 c858cd286aec9b919844c3ebf043ff2eaff4ca5a assets/dreamaticvoyage/blockstates/fukamizu_bread_bricks.json
+5a3100ea77999766c6ddcfc62979855d0e49a0f9 assets/dreamaticvoyage/blockstates/fukamizu_compressor.json
 27e1b1161be6e9814fa3be9f8ccb3ebd42d796b1 assets/dreamaticvoyage/blockstates/harano_button.json
 bf46db128a33e0a868c8c88d9fc833dd0b8d6751 assets/dreamaticvoyage/blockstates/harano_door.json
 f48f982e9cf659c66152c945b79a0704a895ac4a assets/dreamaticvoyage/blockstates/harano_fence.json

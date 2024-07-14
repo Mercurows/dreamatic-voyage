@@ -284,6 +284,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trapdoorItem(BlockRegistry.HARANO_TRAPDOOR);
         buttonItem(BlockRegistry.HARANO_BUTTON, BlockRegistry.HARANO_PLANKS);
 
+        evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);
+
         //audio
         simpleItem(ItemRegistry.MUSIC_DISC_DARAKUDATENSHI);
         simpleItem(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL);

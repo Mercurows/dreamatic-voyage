@@ -74,6 +74,8 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         this.dropOther(BlockRegistry.VERDANT_SPIRIT_FARMLAND.get(), BlockRegistry.VERDANT_SPIRIT_RICH_SOIL.get());
 
         this.dropSelf(BlockRegistry.PHANTASMAL_VOYAGER.get());
+
+        this.dropSelf(BlockRegistry.FUKAMIZU_COMPRESSOR.get());
     }
 
     @Override

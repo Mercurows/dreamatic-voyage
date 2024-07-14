@@ -31,7 +31,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         BlockRegistry.HARDEN_CRYSTAL_BLOCK.get(), BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get(),
                         BlockRegistry.CHARGED_CRYSTAL_BLOCK.get(), BlockRegistry.FICTIONAL_INGOT_BLOCK.get(),
                         BlockRegistry.ROCK_STATUE.get(), BlockRegistry.PHANTASMAL_VOYAGER.get(),
-                        BlockRegistry.FUKAMIZU_BREAD_BRICKS.get());
+                        BlockRegistry.FUKAMIZU_BREAD_BRICKS.get(), BlockRegistry.FUKAMIZU_COMPRESSOR.get());
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(BlockRegistry.BLUE_SAND.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.HARANO_LOG.get(),
                 BlockRegistry.HARANO_WOOD.get(), BlockRegistry.HARANO_SLAB.get(), BlockRegistry.HARANO_PLANKS.get(),

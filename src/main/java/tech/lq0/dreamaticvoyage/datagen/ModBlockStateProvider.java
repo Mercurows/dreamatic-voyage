@@ -72,6 +72,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.FICTIONAL_INGOT_BLOCK);
 
         blockWithItem(BlockRegistry.VERDANT_SPIRIT_RICH_SOIL);
+
+        horizontalBlock(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), new ModelFile.UncheckedModelFile(modLoc("block/fukamizu_compressor")));
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

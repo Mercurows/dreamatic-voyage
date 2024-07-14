@@ -608,6 +608,9 @@ public class ItemRegistry {
     public static final RegistryObject<Item> PHANTASMAL_VOYAGER = BLOCK_ITEMS.register("phantasmal_voyager",
             () -> new BlockItem(BlockRegistry.PHANTASMAL_VOYAGER.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
 
+    public static final RegistryObject<Item> FUKAMIZU_COMPRESSOR = BLOCK_ITEMS.register("fukamizu_compressor",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), new Item.Properties()));
+
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
         AUDIO_ITEMS.register(bus);
