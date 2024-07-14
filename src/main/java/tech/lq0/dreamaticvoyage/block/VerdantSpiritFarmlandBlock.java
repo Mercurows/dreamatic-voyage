@@ -31,7 +31,7 @@ import java.util.List;
 public class VerdantSpiritFarmlandBlock extends FarmBlock implements EntityBlock {
     public VerdantSpiritFarmlandBlock() {
         super(Properties.of().mapColor(MapColor.DIRT).randomTicks().strength(0.6F).sound(SoundType.GRAVEL).
-                isViewBlocking((state, getter, pos) -> true).isSuffocating((state, getter, pos) -> true));
+                isViewBlocking((state, getter, pos) -> true).isSuffocating((state, getter, pos) -> true).randomTicks());
     }
 
     @Nullable
@@ -74,6 +74,26 @@ public class VerdantSpiritFarmlandBlock extends FarmBlock implements EntityBlock
         if (!state.canSurvive(level, pos)) {
             turnToDirt(state, level, pos);
         }
+    }
+
+    @Override
+    public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+        int i = pState.getValue(MOISTURE);
+        if (!isNearWater(pLevel, pPos) && !pLevel.isRainingAt(pPos.above())) {
+            if (i > 0) {
+                pLevel.setBlock(pPos, pState.setValue(MOISTURE, i - 1), 2);
+            } else if (!shouldMaintainFarmland(pLevel, pPos)) {
+                turnToDirt(pState, pLevel, pPos);
+            }
+        } else if (i < 7) {
+            pLevel.setBlock(pPos, pState.setValue(MOISTURE, 7), 2);
+        }
+    }
+
+    private static boolean shouldMaintainFarmland(BlockGetter pLevel, BlockPos pPos) {
+        BlockState plant = pLevel.getBlockState(pPos.above());
+        BlockState state = pLevel.getBlockState(pPos);
+        return plant.getBlock() instanceof net.minecraftforge.common.IPlantable && state.canSustainPlant(pLevel, pPos, Direction.UP, (net.minecraftforge.common.IPlantable) plant.getBlock());
     }
 
     public static void turnToDirt(BlockState state, Level level, BlockPos pos) {

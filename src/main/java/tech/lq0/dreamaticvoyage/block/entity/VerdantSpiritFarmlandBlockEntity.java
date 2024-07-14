@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 
 public class VerdantSpiritFarmlandBlockEntity extends BlockEntity {
     private static final String TAG_TIME = "time";
-    Double time = 0.0;
+    private double time = 0.0;
 
     public VerdantSpiritFarmlandBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.VERDANT_SPIRIT_FARMLAND_BLOCK_ENTITY.get(), pPos, pBlockState);
@@ -28,7 +28,6 @@ public class VerdantSpiritFarmlandBlockEntity extends BlockEntity {
 
     @SuppressWarnings("unused")
     public static void tick(Level level, BlockPos pos, BlockState state, VerdantSpiritFarmlandBlockEntity self) {
-
         if (self.time < 400) {
             self.time += level.getGameRules().getRule(GameRules.RULE_RANDOMTICKING).get() / 3.0;
         } else {
