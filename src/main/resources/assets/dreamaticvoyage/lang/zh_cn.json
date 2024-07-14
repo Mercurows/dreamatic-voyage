@@ -1381,7 +1381,7 @@
   "dreamaticvoyage.page.flat_vegetable_chestplate4": "$(item)钢板$(0)是女仆长倾澜贴身护甲的加强版，是对坚固一词的完美诠释，唯一的缺点是过于沉重。$(p)装备后提供更高的盔甲、盔甲韧性和击退抗性，但是会减少更多的移动速度。",
   "dreamaticvoyage.page.flat_vegetable_chestplate5": "$(o)其他人穿上后并不能像女仆长那样发出钢板碰撞的声音。",
   "dreamaticvoyage.entry.lotus_potato": "荷叶土豆",
-  "dreamaticvoyage.page.lotus_potato1": "$(item)荷叶土豆$(0)是模仿荷叶鸡制作的土豆，凝聚了女仆长的心血$(m)，是非常美味的美食$()。$(p)吃下后会在脑内播放女仆长倾澜的游戏实况，使食用者精力充沛。（据说对于治疗低血压有非常显著的效果）",
+  "dreamaticvoyage.page.lotus_potato1": "$(item)荷叶土豆$(0)是模仿荷叶鸡制作的土豆，凝聚了女仆长的心血$(m)，是非常美味的美食$()。$(p)吃下后会在脑内播放女仆长倾澜的游戏实况，使食用者精力充沛。（据说对于治疗低血压有非常显著的效果）$(p)满生命值时食用会受到大量伤害，其他情况会恢复一定的生命值。",
   "dreamaticvoyage.page.lotus_potato2": "$(o)我血压炸了我不吃了。",
   "dreamaticvoyage.entry.chiram_lantern": "提灯",
   "dreamaticvoyage.page.chiram_lantern1": "我在遗迹中残存的记录中发现了一种形似提灯的物品，记录表明这个工具曾是由管家$(liver)倾澜Chiram$()所使用的。$(br2)为了防止遗忘，我将制作方法记录如下：",
