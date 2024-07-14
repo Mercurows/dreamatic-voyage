@@ -75,6 +75,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
 
         this.dropSelf(BlockRegistry.PHANTASMAL_VOYAGER.get());
 
+        this.dropSelf(BlockRegistry.FUKAMIZU_MACHINE_CASING.get());
         this.dropSelf(BlockRegistry.FUKAMIZU_COMPRESSOR.get());
     }
 

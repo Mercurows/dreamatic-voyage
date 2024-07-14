@@ -16,7 +16,7 @@ public class FukamizuCompressor extends Block implements EntityBlock {
     private static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
     public FukamizuCompressor() {
-        super(BlockBehaviour.Properties.of().strength(5f).requiresCorrectToolForDrops());
+        super(BlockBehaviour.Properties.of().strength(5f, 6f).requiresCorrectToolForDrops());
     }
 
     @Nullable

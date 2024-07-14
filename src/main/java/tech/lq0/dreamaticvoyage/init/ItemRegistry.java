@@ -149,7 +149,7 @@ public class ItemRegistry {
 
     // mitsuki
     public static final RegistryObject<Item> MITSUKI_CROWN = ITEMS.register("mitsuki_crown", MitsukiCrown::new);
-//    public static final RegistryObject<Item> GOOD_MAN_CARD = ITEMS.register("good_man_card", GoodManCard::new);
+    //    public static final RegistryObject<Item> GOOD_MAN_CARD = ITEMS.register("good_man_card", GoodManCard::new);
     public static final RegistryObject<Item> LUNAR_CROSS = ITEMS.register("lunar_cross", LunarCross::new);
 
     // usa
@@ -608,8 +608,10 @@ public class ItemRegistry {
     public static final RegistryObject<Item> PHANTASMAL_VOYAGER = BLOCK_ITEMS.register("phantasmal_voyager",
             () -> new BlockItem(BlockRegistry.PHANTASMAL_VOYAGER.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
 
+    public static final RegistryObject<Item> FUKAMIZU_MACHINE_CASING = BLOCK_ITEMS.register("fukamizu_machine_casing",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_MACHINE_CASING.get(), new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FUKAMIZU_COMPRESSOR = BLOCK_ITEMS.register("fukamizu_compressor",
-            () -> new BlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), new Item.Properties()));
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), new Item.Properties().fireResistant()));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

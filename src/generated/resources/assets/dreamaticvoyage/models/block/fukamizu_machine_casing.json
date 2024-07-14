@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dreamaticvoyage:block/fukamizu_machine_casing_top",
+    "side": "dreamaticvoyage:block/fukamizu_machine_casing_side"
+  }
+}

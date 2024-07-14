@@ -8,6 +8,7 @@ import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.*;
 import tech.lq0.dreamaticvoyage.block.bluesand.*;
 import tech.lq0.dreamaticvoyage.block.fukamizutech.FukamizuCompressor;
+import tech.lq0.dreamaticvoyage.block.fukamizutech.FukamizuMachineCasing;
 import tech.lq0.dreamaticvoyage.block.harano.*;
 import tech.lq0.dreamaticvoyage.block.voyage.PhantasmalVoyager;
 
@@ -69,5 +70,6 @@ public class BlockRegistry {
     public static final RegistryObject<Block> PHANTASMAL_VOYAGER = BLOCKS.register("phantasmal_voyager", PhantasmalVoyager::new);
 
     // Fukamizu Tech Series
+    public static final RegistryObject<Block> FUKAMIZU_MACHINE_CASING = BLOCKS.register("fukamizu_machine_casing", FukamizuMachineCasing::new);
     public static final RegistryObject<Block> FUKAMIZU_COMPRESSOR = BLOCKS.register("fukamizu_compressor", FukamizuCompressor::new);
 }
