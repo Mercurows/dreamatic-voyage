@@ -21,7 +21,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.client.gui.PointsStoreMenu;
+import tech.lq0.dreamaticvoyage.block.menu.PointsStoreMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
