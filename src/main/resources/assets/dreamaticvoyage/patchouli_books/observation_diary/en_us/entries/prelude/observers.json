@@ -33,7 +33,11 @@
       "text": "dreamaticvoyage.page.observers.yorune3"
     },
     {
-      "type": "patchouli:text",
+      "type": "patchouli:image",
+      "images": [
+        "dreamaticvoyage:textures/character/leah_default_256x.png"
+      ],
+      "border": true,
       "title": "dreamaticvoyage.title.observers2",
       "anchor": "leah"
     },
