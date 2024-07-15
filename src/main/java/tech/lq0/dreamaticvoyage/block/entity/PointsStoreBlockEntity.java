@@ -148,7 +148,7 @@ public class PointsStoreBlockEntity extends BlockEntity implements Merchant {
         Collections.addAll(merchantOffers, offers);
     }
 
-    private static final MerchantOffer[] offers = {
+    public static final MerchantOffer[] offers = {
             new MerchantOffer(getGoods(Items.EMERALD, 10), getPoints(1), 10000, 0, 0),
             new MerchantOffer(getPoints(64), getPremiumPoints(1), 10000, 0, 0),
             new MerchantOffer(getPremiumPoints(1), getPoints(64), 10000, 0, 0),
