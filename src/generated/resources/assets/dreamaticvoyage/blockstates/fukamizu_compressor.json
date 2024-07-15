@@ -1,17 +1,32 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,overpressure=false": {
       "model": "dreamaticvoyage:block/fukamizu_compressor",
       "y": 90
     },
-    "facing=north": {
+    "facing=east,overpressure=true": {
+      "model": "dreamaticvoyage:block/fukamizu_compressor",
+      "y": 90
+    },
+    "facing=north,overpressure=false": {
       "model": "dreamaticvoyage:block/fukamizu_compressor"
     },
-    "facing=south": {
+    "facing=north,overpressure=true": {
+      "model": "dreamaticvoyage:block/fukamizu_compressor"
+    },
+    "facing=south,overpressure=false": {
       "model": "dreamaticvoyage:block/fukamizu_compressor",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,overpressure=true": {
+      "model": "dreamaticvoyage:block/fukamizu_compressor",
+      "y": 180
+    },
+    "facing=west,overpressure=false": {
+      "model": "dreamaticvoyage:block/fukamizu_compressor",
+      "y": 270
+    },
+    "facing=west,overpressure=true": {
       "model": "dreamaticvoyage:block/fukamizu_compressor",
       "y": 270
     }

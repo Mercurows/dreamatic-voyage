@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.block.fukamizutech.FukamizuCompressor;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
@@ -29,17 +30,20 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     public static final int MAX_PRESSURE = 24;
 
     public static final int PROCESS_TIME = 5000;
+    public static final int MAX_DAMAGE = 200;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(2, ItemStack.EMPTY);
 
     public int pressure;
     public int compressingProgress;
+    public int damage;
 
     protected final ContainerData dataAccess = new ContainerData() {
         public int get(int pIndex) {
             return switch (pIndex) {
                 case 0 -> FukamizuCompressorBlockEntity.this.pressure;
                 case 1 -> FukamizuCompressorBlockEntity.this.compressingProgress;
+                case 2 -> FukamizuCompressorBlockEntity.this.damage;
                 default -> 0;
             };
         }
@@ -52,11 +56,14 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
                 case 1:
                     FukamizuCompressorBlockEntity.this.compressingProgress = pValue;
                     break;
+                case 2:
+                    FukamizuCompressorBlockEntity.this.damage = pValue;
+                    break;
             }
         }
 
         public int getCount() {
-            return 2;
+            return 3;
         }
     };
 
@@ -67,10 +74,45 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuCompressorBlockEntity blockEntity) {
         blockEntity.pressure = calculatePressure(pLevel, pPos);
 
+        boolean overpressure = blockEntity.pressure > MAX_PRESSURE;
+        if (overpressure) {
+            if (pLevel.random.nextDouble() > .5) {
+                blockEntity.damage++;
+            }
+        }
+        pState = pState.setValue(FukamizuCompressor.OVERPRESSURE, overpressure);
+        pLevel.setBlock(pPos, pState, 3);
+
+        if (blockEntity.damage > MAX_DAMAGE) {
+            pLevel.destroyBlock(pPos, false);
+            return;
+        }
+
         if (blockEntity.canProcess()) {
             // TODO 完成加工逻辑
+            ItemStack input = blockEntity.items.get(SLOT_INPUT);
 
+            if (!input.is(ItemRegistry.FUKAMIZU_BREAD_INGOT.get())) {
+                blockEntity.compressingProgress = 0;
+                return;
+            }
 
+            blockEntity.compressingProgress++;
+
+            if (blockEntity.compressingProgress >= PROCESS_TIME) {
+                blockEntity.compressingProgress = 0;
+
+                ItemStack result = blockEntity.items.get(SLOT_RESULT);
+
+                if (result == ItemStack.EMPTY) {
+                    blockEntity.items.set(SLOT_RESULT, new ItemStack(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT.get()));
+                } else {
+                    result.grow(1);
+                }
+                input.shrink(1);
+            }
+        } else {
+            blockEntity.compressingProgress = 0;
         }
 
     }
@@ -93,6 +135,7 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
         ContainerHelper.loadAllItems(pTag, this.items);
         this.pressure = pTag.getInt("Pressure");
         this.compressingProgress = pTag.getInt("CompressingProgress");
+        this.damage = pTag.getInt("Damage");
     }
 
     @Override
@@ -102,6 +145,7 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
         ContainerHelper.saveAllItems(pTag, this.items);
         pTag.putInt("Pressure", this.pressure);
         pTag.putInt("CompressingProgress", this.compressingProgress);
+        pTag.putInt("Damage", this.damage);
     }
 
     private boolean canProcess() {
