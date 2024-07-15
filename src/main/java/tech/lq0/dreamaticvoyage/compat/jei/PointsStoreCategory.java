@@ -20,7 +20,6 @@ import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 public class PointsStoreCategory implements IRecipeCategory<MerchantOffer> {
-    public static final ResourceLocation UID = new ResourceLocation(Utils.MOD_ID, "points_store");
     public static final ResourceLocation TEXTURE = new ResourceLocation("minecraft", "textures/gui/container/villager2.png");
 
     public static final RecipeType<MerchantOffer> TYPE = RecipeType.create(Utils.MOD_ID, "points_store", MerchantOffer.class);
@@ -28,7 +27,7 @@ public class PointsStoreCategory implements IRecipeCategory<MerchantOffer> {
     private final IDrawable icon;
 
     public PointsStoreCategory(IGuiHelper helper) {
-        this.background = helper.drawableBuilder(TEXTURE, 122, 23, 129, 46)
+        this.background = helper.drawableBuilder(TEXTURE, 127, 28, 119, 36)
                 .setTextureSize(512, 256)
                 .build();
 
@@ -58,8 +57,8 @@ public class PointsStoreCategory implements IRecipeCategory<MerchantOffer> {
     @Override
     @ParametersAreNonnullByDefault
     public void setRecipe(IRecipeLayoutBuilder builder, MerchantOffer recipe, IFocusGroup group) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 14, 14).addIngredients(Ingredient.of(recipe.getCostA()));
-        builder.addSlot(RecipeIngredientRole.INPUT, 40, 14).addIngredients(Ingredient.of(recipe.getCostB()));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 98, 15).addIngredients(Ingredient.of(recipe.getResult()));
+        builder.addSlot(RecipeIngredientRole.INPUT, 9, 9).addIngredients(Ingredient.of(recipe.getCostA()));
+        builder.addSlot(RecipeIngredientRole.INPUT, 35, 9).addIngredients(Ingredient.of(recipe.getCostB()));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 93, 10).addIngredients(Ingredient.of(recipe.getResult()));
     }
 }
