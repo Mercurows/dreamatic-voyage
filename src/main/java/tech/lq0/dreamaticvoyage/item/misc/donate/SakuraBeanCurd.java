@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.donate;
+package tech.lq0.dreamaticvoyage.item.misc.donate;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -15,17 +15,17 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
 
-public class BakedNameTag extends Item {
-    public static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(2).alwaysEat()
-            .effect(() -> new MobEffectInstance(MobEffects.WITHER, 100, 0), 0.2f).build();
+public class SakuraBeanCurd extends Item {
+    public static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(4).alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0f).build();
 
-    public BakedNameTag() {
-        super(new Properties().food(food).rarity(RarityTool.DONATE));
+    public SakuraBeanCurd() {
+        super(new Properties().rarity(RarityTool.DONATE).food(food));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.baked_name_tag").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.sakura_bean_curd").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addDonateInfo(pTooltipComponents);
     }

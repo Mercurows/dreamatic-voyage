@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.donate;
+package tech.lq0.dreamaticvoyage.item.misc.donate;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

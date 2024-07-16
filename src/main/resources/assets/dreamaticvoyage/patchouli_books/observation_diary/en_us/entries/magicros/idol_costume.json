@@ -1,0 +1,58 @@
+{
+  "name": "dreamaticvoyage.entry.idol_costume",
+  "icon": "dreamaticvoyage:chiram_idol_chestplate",
+  "category": "dreamaticvoyage:magicros",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.idol_costume1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:idol_cloth",
+      "text": "dreamaticvoyage.page.idol_costume2"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:chiram_idol_helmet",
+      "recipe2": "dreamaticvoyage:chiram_idol_chestplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:chiram_idol_boots",
+      "text": "dreamaticvoyage.page.idol_costume3"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:haine_idol_helmet",
+      "recipe2": "dreamaticvoyage:haine_idol_chestplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:haine_idol_boots",
+      "text": "dreamaticvoyage.page.idol_costume4"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:keroro_idol_helmet",
+      "recipe2": "dreamaticvoyage:keroro_idol_chestplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:keroro_idol_boots",
+      "text": "dreamaticvoyage.page.idol_costume5"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:ekira_idol_helmet",
+      "recipe2": "dreamaticvoyage:ekira_idol_chestplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:ekira_idol_boots",
+      "text": "dreamaticvoyage.page.idol_costume6"
+    }
+  ],
+  "sortnum": 30501
+}

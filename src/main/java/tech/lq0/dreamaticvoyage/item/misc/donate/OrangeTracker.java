@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.donate;
+package tech.lq0.dreamaticvoyage.item.misc.donate;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
