@@ -17,8 +17,6 @@ public class FukamizuCompressorMenu extends AbstractContainerMenu {
     private final Container container;
     private final ContainerData containerData;
 
-    private final Slot inputSlot;
-
     public static final int X_OFFSET = 0;
     public static final int Y_OFFSET = 0;
 
@@ -35,7 +33,7 @@ public class FukamizuCompressorMenu extends AbstractContainerMenu {
         this.container = container;
         this.containerData = containerData;
 
-        this.inputSlot = this.addSlot(new FukamizuCompressorMenu.InputSlot(container, 0, 67, 45));
+        this.addSlot(new FukamizuCompressorMenu.InputSlot(container, 0, 56, 35));
         this.addSlot(new FukamizuCompressorMenu.ResultSlot(container, 1, 116, 35));
 
         this.addDataSlots(containerData);

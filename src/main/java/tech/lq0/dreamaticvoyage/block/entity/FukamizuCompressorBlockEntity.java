@@ -96,7 +96,6 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
         }
 
         if (blockEntity.canProcess()) {
-            // TODO 完成加工逻辑
             ItemStack input = blockEntity.items.get(SLOT_INPUT);
 
             if (!input.is(ItemRegistry.FUKAMIZU_BREAD_INGOT.get())) {
@@ -163,10 +162,8 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     public int[] getSlotsForFace(Direction pSide) {
         if (pSide == Direction.DOWN) {
             return SLOTS_FOR_DOWN;
-        } else if (pSide != Direction.UP) {
-            return SLOTS_FOR_SIDES;
         } else {
-            return null;
+            return SLOTS_FOR_SIDES;
         }
     }
 
