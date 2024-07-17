@@ -1,0 +1,18 @@
+{
+  "name": "dreamaticvoyage.entry.bowl_of_vegetable",
+  "icon": "dreamaticvoyage:bowl_of_vegetable",
+  "category": "dreamaticvoyage:magicros",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.bowl_of_vegetable1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:bowl_of_vegetable",
+      "text": "dreamaticvoyage.page.bowl_of_vegetable2"
+    }
+  ],
+  "sortnum": 30115
+}
