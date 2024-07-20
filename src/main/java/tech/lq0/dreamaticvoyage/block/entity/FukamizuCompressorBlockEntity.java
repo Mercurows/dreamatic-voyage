@@ -28,10 +28,11 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     private static final int[] SLOTS_FOR_SIDES = new int[]{0};
     private static final int[] SLOTS_FOR_DOWN = new int[]{1};
 
-    public static final int MIN_PRESSURE = 16;
+    public static final int MIN_PRESSURE = 12;
+    public static final int MIN_NORMAL_PRESSURE = 16;
     public static final int MAX_PRESSURE = 24;
 
-    public static final int PROCESS_TIME = 4800;
+    public static final int PROCESS_TIME = 9600;
     public static final int MAX_DAMAGE = 200;
 
     public static final int MAX_DATA_COUNT = 3;
@@ -102,6 +103,9 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
             }
 
             blockEntity.compressingProgress++;
+            if (blockEntity.pressure >= MIN_NORMAL_PRESSURE) {
+                blockEntity.compressingProgress++;
+            }
 
             if (blockEntity.compressingProgress >= PROCESS_TIME) {
                 blockEntity.compressingProgress = 0;

@@ -30,12 +30,12 @@ public class FukamizuCompressorScreen extends AbstractContainerScreen<FukamizuCo
 
         int pressure = this.menu.getPressure();
         float pressureY;
-        if (pressure <= 16) {
-            pressureY = 64 - pressure / 16f * 10;
+        if (pressure < 16) {
+            pressureY = 64 - pressure / 15f * 9;
         } else if (pressure <= 24) {
-            pressureY = 54 - (pressure - 16) / 8f * 10;
+            pressureY = 56 - (pressure - 15) / 8f * 10;
         } else {
-            pressureY = Math.max(44 - (pressure - 24) / 8f * 10, 34);
+            pressureY = Math.max(45 - (pressure - 24) / 8f * 9, 34);
         }
 
         pGuiGraphics.blit(TEXTURE, i + 28, (int) (j + pressureY), 177, 13, 8, 3);
