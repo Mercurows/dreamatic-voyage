@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " b ",
+    "sft",
+    " p "
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:iron_bars"
+    },
+    "s": {
+      "item": "minecraft:compass"
+    },
+    "t": {
+      "item": "minecraft:water_bucket"
+    },
+    "p": {
+      "item": "minecraft:piston"
+    },
+    "f": {
+      "item": "dreamaticvoyage:fukamizu_machine_casing"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fukamizu_compressor",
+    "count": 1
+  }
+}

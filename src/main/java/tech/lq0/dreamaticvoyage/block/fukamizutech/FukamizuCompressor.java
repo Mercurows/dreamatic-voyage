@@ -1,15 +1,20 @@
 package tech.lq0.dreamaticvoyage.block.fukamizutech;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
@@ -29,6 +34,8 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.FukamizuCompressorBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 
+import java.util.List;
+
 public class FukamizuCompressor extends Block implements EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty OVERPRESSURE = BooleanProperty.create("overpressure");
@@ -36,6 +43,11 @@ public class FukamizuCompressor extends Block implements EntityBlock {
     public FukamizuCompressor() {
         super(BlockBehaviour.Properties.of().strength(5f, 6f).requiresCorrectToolForDrops());
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OVERPRESSURE, Boolean.FALSE));
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.fukamizu_compressor").withStyle(ChatFormatting.GRAY));
     }
 
     @Override

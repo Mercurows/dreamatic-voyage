@@ -855,7 +855,9 @@
   "des.dreamaticvoyage.bowl_of_vegetable_1": "请享用这碗秘制炖菜吧——",
   "des.dreamaticvoyage.bowl_of_vegetable_2": "怎么碗里还有只猫猫？",
   "block.dreamaticvoyage.fukamizu_machine_casing": "深水机器外壳",
+  "des.dreamaticvoyage.fukamizu_machine_casing": "用面包做的机壳，应该靠谱吧……",
   "block.dreamaticvoyage.fukamizu_compressor": "深水压缩机",
+  "des.dreamaticvoyage.fukamizu_compressor": "用于制作注水面包的机器，需要水压驱动",
   "container.dreamaticvoyage.fukamizu_compressor": "深水压缩机",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
