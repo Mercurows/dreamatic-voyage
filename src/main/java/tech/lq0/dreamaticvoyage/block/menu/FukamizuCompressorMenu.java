@@ -18,7 +18,7 @@ public class FukamizuCompressorMenu extends AbstractContainerMenu {
     private final ContainerData containerData;
 
     public static final int X_OFFSET = 0;
-    public static final int Y_OFFSET = 0;
+    public static final int Y_OFFSET = 11;
 
     public FukamizuCompressorMenu(int id, Inventory inventory) {
         this(id, inventory, new SimpleContainer(2), new SimpleContainerData(FukamizuCompressorBlockEntity.MAX_DATA_COUNT));
@@ -33,8 +33,8 @@ public class FukamizuCompressorMenu extends AbstractContainerMenu {
         this.container = container;
         this.containerData = containerData;
 
-        this.addSlot(new FukamizuCompressorMenu.InputSlot(container, 0, 56, 35));
-        this.addSlot(new FukamizuCompressorMenu.ResultSlot(container, 1, 116, 35));
+        this.addSlot(new FukamizuCompressorMenu.InputSlot(container, 0, 51, 43));
+        this.addSlot(new FukamizuCompressorMenu.ResultSlot(container, 1, 110, 43));
 
         this.addDataSlots(containerData);
 
@@ -97,6 +97,14 @@ public class FukamizuCompressorMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return this.container.stillValid(pPlayer);
+    }
+
+    public int getPressure() {
+        return this.containerData.get(0);
+    }
+
+    public int getCompressingProgress() {
+        return this.containerData.get(1);
     }
 
     static class InputSlot extends Slot {

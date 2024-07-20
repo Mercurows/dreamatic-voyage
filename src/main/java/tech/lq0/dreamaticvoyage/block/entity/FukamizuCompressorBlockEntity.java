@@ -15,9 +15,9 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Fluids;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.fukamizutech.FukamizuCompressor;
 import tech.lq0.dreamaticvoyage.block.menu.FukamizuCompressorMenu;
@@ -34,7 +34,7 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     public static final int MIN_PRESSURE = 16;
     public static final int MAX_PRESSURE = 24;
 
-    public static final int PROCESS_TIME = 5000;
+    public static final int PROCESS_TIME = 4800;
     public static final int MAX_DAMAGE = 200;
 
     public static final int MAX_DATA_COUNT = 3;
@@ -126,7 +126,7 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     private static int calculatePressure(Level pLevel, BlockPos pPos) {
         int count = 0;
 
-        while (pLevel.getBlockState(pPos.above()).getFluidState().is(Fluids.WATER)) {
+        while (pLevel.getBlockState(pPos.above()).is(Blocks.WATER)) {
             count++;
             pPos = pPos.above();
         }
