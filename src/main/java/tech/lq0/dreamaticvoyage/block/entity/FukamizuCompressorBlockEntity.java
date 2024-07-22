@@ -32,7 +32,7 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     public static final int MIN_NORMAL_PRESSURE = 16;
     public static final int MAX_PRESSURE = 24;
 
-    public static final int PROCESS_TIME = 9600;
+    public static final int PROCESS_TIME = 1200;
     public static final int MAX_DAMAGE = 200;
 
     public static final int MAX_DATA_COUNT = 3;
