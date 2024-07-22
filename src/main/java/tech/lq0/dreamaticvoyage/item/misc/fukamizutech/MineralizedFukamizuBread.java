@@ -2,7 +2,6 @@ package tech.lq0.dreamaticvoyage.item.misc.fukamizutech;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -12,16 +11,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.loot.LootDataResolver;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
+import java.util.Random;
 
 public class MineralizedFukamizuBread extends Item {
     public MineralizedFukamizuBread() {
@@ -35,21 +31,26 @@ public class MineralizedFukamizuBread extends Item {
         TooltipTool.addDevelopingText(pTooltipComponents);
     }
 
+    private static List<Item> rawMaterials = List.of();
+
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-        if (!pLevel.isClientSide && pLevel instanceof ServerLevel serverLevel) {
-            LootDataResolver manager = serverLevel.getServer().getLootData();
-            LootTable lootTable = manager.getLootTable(new ResourceLocation(Utils.MOD_ID, "fukamizutech/mineralized_fukamizu_bread"));
-
+        if (!pLevel.isClientSide && pLevel instanceof ServerLevel) {
             ItemStack stack = pPlayer.getItemInHand(pUsedHand);
 
             if (!pPlayer.getAbilities().instabuild) {
                 stack.shrink(1);
             }
 
-            List<ItemStack> items = lootTable.getRandomItems((new LootParams.Builder(serverLevel)).withParameter(LootContextParams.ORIGIN,
-                    pPlayer.getEyePosition()).create(LootContextParamSets.CHEST));
-            pPlayer.addItem(new ItemStack(items.get(0).getItem()));
+            if (rawMaterials.isEmpty()) {
+                rawMaterials = ForgeRegistries.ITEMS.getValues()
+                        .stream()
+                        .filter(item -> item.getDefaultInstance().is(Tags.Items.RAW_MATERIALS))
+                        .toList();
+            }
+
+            int index = new Random().nextInt(rawMaterials.size());
+            pPlayer.addItem(new ItemStack(rawMaterials.get(index)));
         }
 
         return super.use(pLevel, pPlayer, pUsedHand);
