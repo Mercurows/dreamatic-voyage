@@ -90,7 +90,6 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
 
         if (blockEntity.damage > MAX_DAMAGE) {
             pLevel.destroyBlock(pPos, false);
-            Containers.dropContents(pLevel, pPos, blockEntity);
             return;
         }
 
@@ -105,6 +104,10 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
             blockEntity.compressingProgress++;
             if (blockEntity.pressure >= MIN_NORMAL_PRESSURE) {
                 blockEntity.compressingProgress++;
+            }
+
+            if (overpressure) {
+                blockEntity.compressingProgress += 2;
             }
 
             if (blockEntity.compressingProgress >= PROCESS_TIME) {
@@ -157,7 +160,7 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     }
 
     private boolean canProcess() {
-        return this.pressure >= MIN_PRESSURE && this.pressure <= MAX_PRESSURE;
+        return this.pressure >= MIN_PRESSURE;
     }
 
     @Override

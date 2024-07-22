@@ -16,7 +16,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
@@ -100,7 +99,7 @@ public class FukamizuCompressor extends Block implements EntityBlock {
     }
 
     @Override
-    public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
         if (pLevel instanceof ServerLevel serverLevel) {
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
             if (blockentity instanceof FukamizuCompressorBlockEntity fukamizuCompressorBlockEntity) {
@@ -108,7 +107,7 @@ public class FukamizuCompressor extends Block implements EntityBlock {
             }
         }
 
-        super.destroy(pLevel, pPos, pState);
+        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
     }
 
     @Override
