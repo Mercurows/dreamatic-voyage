@@ -1,4 +1,4 @@
-// 1.20.1	2024-07-15T00:19:36.2539601	Item Models: dreamaticvoyage
+// 1.20.1	2024-07-23T02:09:28.2495155	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 f37df339e571439e12f7388bec647a0b97ac128f assets/dreamaticvoyage/models/item/ancient_microphone.json
@@ -140,6 +140,7 @@ c65468e7b65a5c8e30c38a75cd307438910e6887 assets/dreamaticvoyage/models/item/magi
 8eb0610088ca8c67fbcef72b6b1f7e4ab9c20530 assets/dreamaticvoyage/models/item/mari_stew.json
 49526b0ff79bfb69a07e3022663236d63144e581 assets/dreamaticvoyage/models/item/marshaimallow.json
 93db0f48fb398fc993fc45a244f71a5d4bc3bc1a assets/dreamaticvoyage/models/item/mechanical_horn.json
+eaec8d4f11206b21cc3d745273445aa1e24f78e8 assets/dreamaticvoyage/models/item/mineralized_fukamizu_bread.json
 93561c5c67f8f1ce8c2e576ae09b8ca5e1921ddb assets/dreamaticvoyage/models/item/mint_chocolate.json
 1b4e071169fbe1ee306daf6ccaef6824abb6e2aa assets/dreamaticvoyage/models/item/miracle_core.json
 ec6fc55237edba1ec65a7069497f5bd112d8156d assets/dreamaticvoyage/models/item/misty_chestplate.json

@@ -208,6 +208,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ItemRegistry.FUKAMIZU_BREAD_PICKAXE);
         handheldItem(ItemRegistry.FUKAMIZU_BREAD_SWORD);
         simpleItem(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT);
+        simpleItem(ItemRegistry.MINERALIZED_FUKAMIZU_BREAD);
 
         //legacy
         simpleItem(ItemRegistry.FLUFF_BALL);

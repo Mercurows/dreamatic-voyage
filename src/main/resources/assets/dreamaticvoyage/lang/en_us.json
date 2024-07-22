@@ -859,6 +859,8 @@
   "block.dreamaticvoyage.fukamizu_compressor": "Fukamizu Compressor",
   "des.dreamaticvoyage.fukamizu_compressor": "用于制作注水面包的机器，需要水压驱动",
   "container.dreamaticvoyage.fukamizu_compressor": "Fukamizu Compressor",
+  "item.dreamaticvoyage.mineralized_fukamizu_bread": "Mineralized Fukamizu Bread",
+  "des.dreamaticvoyage.mineralized_fukamizu_bread": "被人鱼公主注入魔力的面包，表面呈现了矿物的性质",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",
