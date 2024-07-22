@@ -2,6 +2,7 @@ package tech.lq0.dreamaticvoyage.compat.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -11,20 +12,24 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.entity.PointsStoreBlockEntity;
+import tech.lq0.dreamaticvoyage.client.screen.FukamizuCompressorScreen;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
 import java.util.Arrays;
+import java.util.List;
 
 @JeiPlugin
 public class DmvJEIPlugin implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new PointsStoreCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new FukamizuCompressorCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         registration.addRecipeCatalyst(new ItemStack(ItemRegistry.POINTS_STORE.get()), PointsStoreCategory.TYPE);
+        registration.addRecipeCatalyst(new ItemStack(ItemRegistry.FUKAMIZU_COMPRESSOR.get()), FukamizuCompressorCategory.TYPE);
     }
 
     @Override
@@ -33,8 +38,16 @@ public class DmvJEIPlugin implements IModPlugin {
         var pointsStoreRecipes = Arrays.asList(PointsStoreBlockEntity.offers);
         registration.addRecipes(PointsStoreCategory.TYPE, pointsStoreRecipes);
 
+        // 深水压缩机
+        registration.addRecipes(FukamizuCompressorCategory.TYPE, List.of(new Object()));
+
         // 其他物品获取方式描述
         registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL.get()), Component.translatable("jei.dreamaticvoyage.around_the_travel"));
+    }
+
+    @Override
+    public void registerGuiHandlers(IGuiHandlerRegistration registration) {
+        registration.addRecipeClickArea(FukamizuCompressorScreen.class, 73, 43, 27, 16, FukamizuCompressorCategory.TYPE);
     }
 
     @Override
