@@ -605,6 +605,8 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> PHANTASMAL_VOYAGER = BLOCK_ITEMS.register("phantasmal_voyager",
             () -> new BlockItem(BlockRegistry.PHANTASMAL_VOYAGER.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> CRYSTAL_POPPER = BLOCK_ITEMS.register("crystal_popper",
+            () -> new BlockItem(BlockRegistry.CRYSTAL_POPPER.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> FUKAMIZU_MACHINE_CASING = BLOCK_ITEMS.register("fukamizu_machine_casing",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_MACHINE_CASING.get(), new Item.Properties().fireResistant()));

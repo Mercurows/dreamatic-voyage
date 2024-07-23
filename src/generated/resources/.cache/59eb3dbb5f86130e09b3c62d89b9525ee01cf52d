@@ -1,4 +1,4 @@
-// 1.20.1	2024-07-15T02:42:31.2101503	Loot Tables
+// 1.20.1	2024-07-24T01:09:02.8831223	Loot Tables
 de907c77e3f973d4cc51e684a7c589816f1f7488 data/dreamaticvoyage/loot_tables/blocks/blue_sand.json
 d7c59f5243134df755eed00c0b7c4d762d809115 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone.json
 22ea59f302064014af02351f18938dbc97043258 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone_slab.json
@@ -7,6 +7,7 @@ a5b120a62a59d72a64eb36b2938231ea6a88714c data/dreamaticvoyage/loot_tables/blocks
 e706125d4e729dba0ea51d2aa9a382bd3e71250c data/dreamaticvoyage/loot_tables/blocks/charged_crystal_block.json
 61b4d065f41a92405a4e99c542acb94908642304 data/dreamaticvoyage/loot_tables/blocks/chiseled_blue_sandstone.json
 9789b86ce8393292355285d5c3f42e43d688a5d7 data/dreamaticvoyage/loot_tables/blocks/communication_table.json
+c531bbc5f2a29e83bb61828c79a96a8395f1d233 data/dreamaticvoyage/loot_tables/blocks/crystal_popper.json
 8710f5dde0509e4d903b9213c5748ea8757bb75b data/dreamaticvoyage/loot_tables/blocks/cut_blue_sandstone.json
 df8415be22c59609d5cb018034e6a34f41874ead data/dreamaticvoyage/loot_tables/blocks/cut_blue_sandstone_slab.json
 e05353b755a2ef2425a4f6c141c4af1b8e67b87a data/dreamaticvoyage/loot_tables/blocks/fictional_ingot_block.json

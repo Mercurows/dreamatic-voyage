@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dreamaticvoyage:block/crystal_popper",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dreamaticvoyage:block/crystal_popper"
+    },
+    "facing=south": {
+      "model": "dreamaticvoyage:block/crystal_popper",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dreamaticvoyage:block/crystal_popper",
+      "y": 270
+    }
+  }
+}

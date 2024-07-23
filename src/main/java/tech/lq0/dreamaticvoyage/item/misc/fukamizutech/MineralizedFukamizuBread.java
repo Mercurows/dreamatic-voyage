@@ -14,7 +14,6 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
-import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
 import java.util.Random;
@@ -32,8 +31,6 @@ public class MineralizedFukamizuBread extends Item {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.mineralized_fukamizu_bread").withStyle(ChatFormatting.GRAY));
-
-        TooltipTool.addDevelopingText(pTooltipComponents);
     }
 
     @Override
