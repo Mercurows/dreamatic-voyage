@@ -71,7 +71,11 @@
       "text": "dreamaticvoyage.page.observers.roki273"
     },
     {
-      "type": "patchouli:text",
+      "type": "patchouli:image",
+      "images": [
+        "dreamaticvoyage:textures/character/kuriko_default_256x.png"
+      ],
+      "border": true,
       "title": "dreamaticvoyage.title.observers4",
       "anchor": "Kuriko"
     },
