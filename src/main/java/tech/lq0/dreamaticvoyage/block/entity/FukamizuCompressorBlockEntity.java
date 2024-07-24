@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.fukamizutech.FukamizuCompressor;
-import tech.lq0.dreamaticvoyage.block.menu.FukamizuCompressorMenu;
+import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCompressorMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 

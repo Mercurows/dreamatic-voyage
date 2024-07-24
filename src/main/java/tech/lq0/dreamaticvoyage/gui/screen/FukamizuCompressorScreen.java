@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.client.screen;
+package tech.lq0.dreamaticvoyage.gui.screen;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -9,7 +9,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.entity.FukamizuCompressorBlockEntity;
-import tech.lq0.dreamaticvoyage.block.menu.FukamizuCompressorMenu;
+import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCompressorMenu;
 
 @OnlyIn(Dist.CLIENT)
 public class FukamizuCompressorScreen extends AbstractContainerScreen<FukamizuCompressorMenu> {

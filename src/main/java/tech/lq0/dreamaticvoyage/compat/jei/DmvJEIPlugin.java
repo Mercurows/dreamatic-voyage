@@ -12,7 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.entity.PointsStoreBlockEntity;
-import tech.lq0.dreamaticvoyage.client.screen.FukamizuCompressorScreen;
+import tech.lq0.dreamaticvoyage.gui.screen.FukamizuCompressorScreen;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
 import java.util.Arrays;

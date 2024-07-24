@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.block.menu;
+package tech.lq0.dreamaticvoyage.gui.menu;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;

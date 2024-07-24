@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.block.menu;
+package tech.lq0.dreamaticvoyage.gui.menu;
 
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
