@@ -47,8 +47,7 @@ import tech.lq0.dreamaticvoyage.item.misc.*;
 import tech.lq0.dreamaticvoyage.item.misc.donate.*;
 import tech.lq0.dreamaticvoyage.item.misc.fukamizutech.*;
 import tech.lq0.dreamaticvoyage.item.misc.fukamizutech.tool.*;
-import tech.lq0.dreamaticvoyage.item.misc.guardian.DGShirako;
-import tech.lq0.dreamaticvoyage.item.misc.guardian.DGYorune;
+import tech.lq0.dreamaticvoyage.item.misc.guardian.*;
 import tech.lq0.dreamaticvoyage.item.misc.material.*;
 import tech.lq0.dreamaticvoyage.item.misc.material.crystal.*;
 import tech.lq0.dreamaticvoyage.item.misc.material.ingot.*;
@@ -437,6 +436,9 @@ public class ItemRegistry {
      */
     public static final RegistryObject<Item> DG_SHIRAKO = MISC_ITEMS.register("dg_shirako", DGShirako::new);
     public static final RegistryObject<Item> DG_YORUNE = MISC_ITEMS.register("dg_yorune", DGYorune::new);
+    public static final RegistryObject<Item> DG_LEAH = MISC_ITEMS.register("dg_leah", DGLeah::new);
+    public static final RegistryObject<Item> DG_HURRIC = MISC_ITEMS.register("dg_hurric", DGHurric::new);
+    public static final RegistryObject<Item> DG_KURIKO = MISC_ITEMS.register("dg_kuriko", DGKuriko::new);
 
     /**
      * fukamizu tech

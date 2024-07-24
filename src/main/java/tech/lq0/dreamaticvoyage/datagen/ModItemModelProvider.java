@@ -21,7 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        //1st
+        // 1st
         simpleItem(ItemRegistry.RED_AHOGE);
         handheldItem(ItemRegistry.RED_AHOGE_SWORD);
         handheldItem(ItemRegistry.RED_AHOGE_BOOMERANG);
@@ -54,7 +54,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.ENCHANTED_UNIGIRI);
         simpleItem(ItemRegistry.ELF_WINGS);
 
-        //2nd
+        // 2nd
         simpleItem(ItemRegistry.LUCIA_RICE_CAKE);
         simpleItem(ItemRegistry.BIG_MOE_ONE_POTION);
         simpleItem(ItemRegistry.MOONLIGHT_AMULET);
@@ -85,7 +85,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.MUMU_STEAK);
         simpleItem(ItemRegistry.MUSHROOM_CROISSANT);
 
-        //mc
+        // magicros
         simpleItem(ItemRegistry.FLAT_VEGETABLE_CHESTPLATE);
         simpleItem(ItemRegistry.STEEL_PLATE);
         simpleItem(ItemRegistry.LOTUS_POTATO);
@@ -119,7 +119,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.CELESTIAL_BOOTS);
         simpleItem(ItemRegistry.EKIRA_CORE);
 
-        //3rd
+        // 3rd
         simpleItem(ItemRegistry.HIRU_HEAD);
         simpleItem(ItemRegistry.HIRENADE_GG);
         simpleItem(ItemRegistry.WITHER_BOUQUET);
@@ -135,7 +135,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.FOX_ICE_CREAM);
         simpleItem(ItemRegistry.FOX_PUDDING);
 
-        //oi
+        // oi
         simpleItem(ItemRegistry.MOMO_DAIFUKU);
         handheldItem(ItemRegistry.FETUOZI);
         simpleItem(ItemRegistry.MOMO_BANDAGE);
@@ -173,7 +173,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ItemRegistry.CRAFT_BEER_0322);
 
-        //4th
+        // 4th
         simpleItem(ItemRegistry.STRAWBERRY_CAKE);
         simpleItem(ItemRegistry.CHOCOAL_COOKIE);
         simpleItem(ItemRegistry.UNTOUCHABLE_LOVE);
@@ -185,11 +185,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         handheldItem(ItemRegistry.OMINOUS_BONE);
 
-        //cnt
+        // cnt
         handheldItem(ItemRegistry.QIANYUN_HOE);
         simpleItem(ItemRegistry.QIANKELA);
 
-        //others
+        // others
         simpleItem(ItemRegistry.MMA_STEW);
         simpleItem(ItemRegistry.MVA_STEW);
         simpleItem(ItemRegistry.PDC_POINT);
@@ -201,7 +201,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.FICTIONAL_FORGING_SIGIL);
         simpleItem(ItemRegistry.CRYSTAL_POPCORN);
 
-        //fukamizu tech
+        // dream guardian
+        simpleItem(ItemRegistry.DG_SHIRAKO);
+        simpleItem(ItemRegistry.DG_YORUNE);
+        simpleItem(ItemRegistry.DG_LEAH);
+        simpleItem(ItemRegistry.DG_HURRIC);
+        simpleItem(ItemRegistry.DG_KURIKO);
+
+        // fukamizu tech
         handheldItem(ItemRegistry.FUKAMIZU_BREAD_AXE);
         handheldItem(ItemRegistry.FUKAMIZU_BREAD_HOE);
         handheldItem(ItemRegistry.FUKAMIZU_BREAD_SHOVEL);
@@ -210,12 +217,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT);
         simpleItem(ItemRegistry.MINERALIZED_FUKAMIZU_BREAD);
 
-        //legacy
+        // legacy
         simpleItem(ItemRegistry.FLUFF_BALL);
         simpleItem(ItemRegistry.YAGI_STAFF_CARD);
         simpleItem(ItemRegistry.LAVA_CAKE);
 
-        //material
+        // material
         simpleItem(ItemRegistry.IDOL_CLOTH);
         simpleItem(ItemRegistry.MAGICROS_CORE);
         simpleItem(ItemRegistry.DREAM_WEAVING_YARN);
@@ -236,7 +243,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.FUKAMIZU_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ItemRegistry.MIRACLE_CORE);
 
-        //donate
+        // donate
         simpleItem(ItemRegistry.LITTLE_POTATO);
         simpleItem(ItemRegistry.LOLLIPOP);
         simpleItem(ItemRegistry.BLACK_EARPHONES);
@@ -247,7 +254,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.BAKED_NAME_TAG);
         simpleItem(ItemRegistry.SAKURA_BEAN_CURD);
 
-        //costume
+        // costume
         simpleItem(ItemRegistry.CHIRAM_IDOL_HELMET);
         simpleItem(ItemRegistry.CHIRAM_IDOL_CHESTPLATE);
         simpleItem(ItemRegistry.CHIRAM_IDOL_BOOTS);
@@ -263,7 +270,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.KRM_963_53);
         simpleItem(ItemRegistry.MAID_COSTUME);
 
-        //blocks
+        // blocks
         evenSimplerBlockItem(BlockRegistry.PORCELAIN_THRONE);
         evenSimplerBlockItem(BlockRegistry.BLUE_SANDSTONE_SLAB);
         evenSimplerBlockItem(BlockRegistry.SMOOTH_BLUE_SANDSTONE_SLAB);
@@ -287,7 +294,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);
 
-        //audio
+        // audio
         simpleItem(ItemRegistry.MUSIC_DISC_DARAKUDATENSHI);
         simpleItem(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL);
         simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_QINGQIU);

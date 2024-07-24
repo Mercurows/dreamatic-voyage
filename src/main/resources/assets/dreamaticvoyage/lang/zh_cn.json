@@ -809,10 +809,11 @@
   "des.dreamaticvoyage.apocalypse_carnival_1": "“请大家有序入场，最后的好戏即将上演",
   "des.dreamaticvoyage.apocalypse_carnival_2": "望您在最后的旅途中，保持愉快的心情”",
   "block.dreamaticvoyage.phantasmal_voyager": "幻想远航仪",
-  "item.dreamaticvoyage.dg_fukami": "梦行守卫",
-  "item.dreamaticvoyage.dg_yesa": "梦行守卫",
   "item.dreamaticvoyage.dg_shirako": "梦行守卫",
   "item.dreamaticvoyage.dg_yorune": "梦行守卫",
+  "item.dreamaticvoyage.dg_leah": "梦行守卫",
+  "item.dreamaticvoyage.dg_hurric": "梦行守卫",
+  "item.dreamaticvoyage.dg_kuriko": "梦行守卫",
   "item.dreamaticvoyage.fukamizu_bread_ingot": "深水面包锭",
   "des.dreamaticvoyage.fukamizu_bread_ingot_1": "致密的深水面包块经过压制切割制成的材料",
   "des.dreamaticvoyage.fukamizu_bread_ingot_2": "虽然原料不含任何金属元素，但表面却闪烁着金属的光芒",
@@ -1109,6 +1110,9 @@
   "liver.dreamaticvoyage.qianyun": "千耘",
 
   "liver.dreamaticvoyage.yorune": "夜音Yorune",
+  "liver.dreamaticvoyage.leah": "莉娅·多伦",
+  "liver.dreamaticvoyage.hurric": "哈莉可",
+  "liver.dreamaticvoyage.kuriko": "电子熊古力",
 
   "des.dreamaticvoyage.legacy": "<<< 旧日之遗 >>>",
   "dreamaticvoyage.advancement.root": "虚构远航",

@@ -809,10 +809,11 @@
   "des.dreamaticvoyage.apocalypse_carnival_1": "“请大家有序入场，最后的好戏即将上演",
   "des.dreamaticvoyage.apocalypse_carnival_2": "望您在最后的旅途中，保持愉快的心情”",
   "block.dreamaticvoyage.phantasmal_voyager": "Phantasmal Voyager",
-  "item.dreamaticvoyage.dg_fukami": "Dream Guardian",
-  "item.dreamaticvoyage.dg_yesa": "Dream Guardian",
   "item.dreamaticvoyage.dg_shirako": "Dream Guardian",
   "item.dreamaticvoyage.dg_yorune": "Dream Guardian",
+  "item.dreamaticvoyage.dg_leah": "Dream Guardian",
+  "item.dreamaticvoyage.dg_hurric": "Dream Guardian",
+  "item.dreamaticvoyage.dg_kuriko": "Dream Guardian",
   "item.dreamaticvoyage.fukamizu_bread_ingot": "深水面包锭",
   "des.dreamaticvoyage.fukamizu_bread_ingot_1": "致密的深水面包块经过压制切割制成的材料",
   "des.dreamaticvoyage.fukamizu_bread_ingot_2": "虽然原料不含任何金属元素，但表面却闪烁着金属的光芒",
@@ -1109,6 +1110,9 @@
   "liver.dreamaticvoyage.qianyun": "Qianyun",
 
   "liver.dreamaticvoyage.yorune": "Yorune",
+  "liver.dreamaticvoyage.leah": "Leah Torham",
+  "liver.dreamaticvoyage.hurric": "Hurric",
+  "liver.dreamaticvoyage.kuriko": "Kuriko",
 
   "des.dreamaticvoyage.legacy": "<<< Legacy >>>",
   "dreamaticvoyage.advancement.root": "Dreamatic Voyage",
