@@ -217,6 +217,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT);
         simpleItem(ItemRegistry.MINERALIZED_FUKAMIZU_BREAD);
 
+        simpleItem(ItemRegistry.FUKAMIZU_CRUMB);
+        simpleItem(ItemRegistry.IRON_RICH_CRUMB);
+        simpleItem(ItemRegistry.GOLD_RICH_CRUMB);
+        simpleItem(ItemRegistry.COPPER_RICH_CRUMB);
+
         // legacy
         simpleItem(ItemRegistry.FLUFF_BALL);
         simpleItem(ItemRegistry.YAGI_STAFF_CARD);
