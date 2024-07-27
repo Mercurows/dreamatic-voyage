@@ -454,6 +454,10 @@ public class ItemRegistry {
     public static final RegistryObject<Item> FUKAMIZU_BREAD_HOE = MISC_ITEMS.register("fukamizu_bread_hoe", FukamizuBreadHoe::new);
     public static final RegistryObject<Item> FUKAMIZU_UPGRADE_SMITHING_TEMPLATE = MISC_ITEMS.register("fukamizu_upgrade_smithing_template", FukamizuUpgradeSmithingTemplate::new);
 
+    public static final RegistryObject<Item> IRON_RICH_CRUMB = MISC_ITEMS.register("iron_rich_crumb", () -> new MetalRichCrumb("iron"));
+    public static final RegistryObject<Item> GOLD_RICH_CRUMB = MISC_ITEMS.register("gold_rich_crumb", () -> new MetalRichCrumb("gold"));
+    public static final RegistryObject<Item> COPPER_RICH_CRUMB = MISC_ITEMS.register("copper_rich_crumb", () -> new MetalRichCrumb("copper"));
+
     /**
      * legacy
      **/
