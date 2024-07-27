@@ -4,10 +4,13 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.compat.data.CompatMetals;
+import tech.lq0.dreamaticvoyage.compat.data.CompatMods;
 import tech.lq0.dreamaticvoyage.item.cnt.qianyun.*;
 import tech.lq0.dreamaticvoyage.item.first.ayelet.CrystalHorn;
 import tech.lq0.dreamaticvoyage.item.first.ayelet.SleepRoulette;
@@ -458,6 +461,14 @@ public class ItemRegistry {
     public static final RegistryObject<Item> IRON_RICH_CRUMB = MISC_ITEMS.register("iron_rich_crumb", () -> new MetalRichCrumb("iron"));
     public static final RegistryObject<Item> GOLD_RICH_CRUMB = MISC_ITEMS.register("gold_rich_crumb", () -> new MetalRichCrumb("gold"));
     public static final RegistryObject<Item> COPPER_RICH_CRUMB = MISC_ITEMS.register("copper_rich_crumb", () -> new MetalRichCrumb("copper"));
+    public static final RegistryObject<Item> ZINC_RICH_CRUMB = compatMetalCrumb(CompatMetals.ZINC);
+    public static final RegistryObject<Item> LEAD_RICH_CRUMB = compatMetalCrumb(CompatMetals.LEAD);
+    public static final RegistryObject<Item> NICKEL_RICH_CRUMB = compatMetalCrumb(CompatMetals.NICKEL);
+    public static final RegistryObject<Item> SILVER_RICH_CRUMB = compatMetalCrumb(CompatMetals.SILVER);
+    public static final RegistryObject<Item> TIN_RICH_CRUMB = compatMetalCrumb(CompatMetals.TIN);
+    public static final RegistryObject<Item> ALUMINUM_RICH_CRUMB = compatMetalCrumb(CompatMetals.ALUMINUM);
+    public static final RegistryObject<Item> OSMIUM_RICH_CRUMB = compatMetalCrumb(CompatMetals.OSMIUM);
+    public static final RegistryObject<Item> URANIUM_RICH_CRUMB = compatMetalCrumb(CompatMetals.URANIUM);
 
     /**
      * legacy
@@ -625,5 +636,15 @@ public class ItemRegistry {
         AUDIO_ITEMS.register(bus);
         MISC_ITEMS.register(bus);
         BLOCK_ITEMS.register(bus);
+    }
+
+    private static RegistryObject<Item> compatMetalCrumb(CompatMetals metal) {
+        for (CompatMods mod : metal.getMods()) {
+            if (ModList.get().isLoaded(mod.getModId())) {
+                return MISC_ITEMS.register(metal.getName() + "_rich_crumb", () -> new MetalRichCrumb(metal.getName()));
+            }
+        }
+
+        return null;
     }
 }

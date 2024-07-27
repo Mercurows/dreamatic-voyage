@@ -891,6 +891,8 @@
   "des.dreamaticvoyage.tin_rich_crumb": "含有大量锡元素的深水面包屑",
   "item.dreamaticvoyage.uranium_rich_crumb": "富铀面包屑",
   "des.dreamaticvoyage.uranium_rich_crumb": "含有大量铀元素的深水面包屑",
+  "item.dreamaticvoyage.aluminum_rich_crumb": "富铝面包屑",
+  "des.dreamaticvoyage.aluminum_rich_crumb": "含有大量铝元素的深水面包屑",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",
