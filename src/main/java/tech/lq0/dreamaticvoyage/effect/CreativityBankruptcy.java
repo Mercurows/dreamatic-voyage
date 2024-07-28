@@ -79,16 +79,18 @@ public class CreativityBankruptcy extends MobEffect {
             if (player.hasEffect(EffectRegistry.CREATIVITY_BANKRUPTCY.get()) && player.hasEffect(VrcHolder.BUSINESS_OBSTRUCTION)) {
                 entity.hurt(player.level().damageSources().explosion(null, null), 500f);
 
-                Explosion explosion = new Explosion(player.level(), entity, player.level().damageSources().explosion(entity, entity),
-                        null, entity.getX(), entity.getY(), entity.getZ(), 4, false, Explosion.BlockInteraction.KEEP);
-                explosion.explode();
-                explosion.finalizeExplosion(true);
+                if (!player.level().isClientSide) {
+                    Explosion explosion = new Explosion(player.level(), entity, player.level().damageSources().explosion(entity, entity),
+                            null, entity.getX(), entity.getY(), entity.getZ(), 4, false, Explosion.BlockInteraction.KEEP);
+                    explosion.explode();
+                    explosion.finalizeExplosion(true);
 
-                explosion.clearToBlow();
+                    explosion.clearToBlow();
 
-                for (ServerPlayer serverPlayer : ((ServerLevel) player.level()).players()) {
-                    if (serverPlayer.distanceToSqr(entity.getX(), entity.getY(), entity.getZ()) < 1024) {
-                        serverPlayer.connection.send(new ClientboundExplodePacket(entity.getX(), entity.getY(), entity.getZ(), 4, explosion.getToBlow(), explosion.getHitPlayers().get(serverPlayer)));
+                    for (ServerPlayer serverPlayer : ((ServerLevel) player.level()).players()) {
+                        if (serverPlayer.distanceToSqr(entity.getX(), entity.getY(), entity.getZ()) < 1024) {
+                            serverPlayer.connection.send(new ClientboundExplodePacket(entity.getX(), entity.getY(), entity.getZ(), 4, explosion.getToBlow(), explosion.getHitPlayers().get(serverPlayer)));
+                        }
                     }
                 }
             }
