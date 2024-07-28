@@ -247,6 +247,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.FICTIONAL_NUGGET);
         simpleItem(ItemRegistry.FUKAMIZU_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ItemRegistry.MIRACLE_CORE);
+        simpleItem(ItemRegistry.EARTH_DEBRIS);
 
         // donate
         simpleItem(ItemRegistry.LITTLE_POTATO);
