@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "dreamaticvoyage.refmap.json",
   "client": [
+    "AbstractContainerScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
