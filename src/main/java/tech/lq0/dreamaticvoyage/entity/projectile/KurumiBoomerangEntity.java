@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 public class KurumiBoomerangEntity extends AbstractArrow {
 
     private boolean dealtDamage;
-    public int flyingTicks = 0, inGroundTicks = 0;
+    public int flyingTicks = 0;
 
     public KurumiBoomerangEntity(EntityType<? extends KurumiBoomerangEntity> entityType, Level level) {
         super(entityType, level);
@@ -35,15 +35,19 @@ public class KurumiBoomerangEntity extends AbstractArrow {
         super(EntityRegistry.KURUMI_BOOMERANG_ENTITY.get(), entity, level);
     }
 
+    public int getInGroundTime() {
+        return this.inGroundTime;
+    }
+
     @Override
     public void tick() {
-        if (this.inGroundTicks > 1) {
+        if (this.inGroundTime > 1) {
             // first time hit ground
             if (!this.dealtDamage) {
                 this.playSound(SoundRegistry.WHY_NOT_DIE.get(), 0.5F, 1.0F);
             }
             this.dealtDamage = true;
-            this.inGroundTicks++;
+            this.inGroundTime++;
         } else {
             this.flyingTicks++;
         }

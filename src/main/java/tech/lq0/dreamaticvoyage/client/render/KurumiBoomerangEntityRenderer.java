@@ -44,14 +44,14 @@ public class KurumiBoomerangEntityRenderer extends EntityRenderer<KurumiBoomeran
 
         int rotateSpeed = 60;
 
-        if (entityIn.inGroundTicks == 0) {
+        if (entityIn.getInGroundTime() == 0) {
             matrixStackIn.mulPose(Axis.YP.rotationDegrees((entityIn.flyingTicks + partialTicks) * rotateSpeed));
         } else {
             double base = entityIn.flyingTicks * rotateSpeed;
             double pitch = Math.abs(entityIn.getYRot());
             double endTick = (float) (0.0148148148 * pitch * pitch - 2.664 * pitch + 140);
 
-            double x = entityIn.inGroundTicks + partialTicks;
+            double x = entityIn.getInGroundTime() + partialTicks;
             if (x > endTick) {
                 x = endTick;
             }
