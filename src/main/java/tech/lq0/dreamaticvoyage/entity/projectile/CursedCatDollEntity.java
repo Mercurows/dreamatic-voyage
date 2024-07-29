@@ -88,22 +88,28 @@ public class CursedCatDollEntity extends ThrowableItemProjectile {
             if (result.getType() == HitResult.Type.BLOCK) {
                 BlockHitResult blockResult = (BlockHitResult) result;
 
-                //From TaC
-                Direction direction = blockResult.getDirection();
-                switch (direction.getAxis()) {
-                    case X -> this.setDeltaMovement(this.getDeltaMovement().multiply(-0.5, 0.75, 0.75));
-                    case Y -> {
-                        this.setDeltaMovement(this.getDeltaMovement().multiply(0.75, -0.25, 0.75));
-                        if (this.getDeltaMovement().get(Direction.Axis.Y) < this.getGravity()) {
-                            this.setDeltaMovement(this.getDeltaMovement().multiply(1, 0, 1));
-                        }
-                    }
-                    case Z -> this.setDeltaMovement(this.getDeltaMovement().multiply(0.75, 0.75, -0.5));
-                }
+                this.bounce(blockResult.getDirection());
             } else {
                 this.discard();
                 explode(this, 10.0f);
             }
+        }
+    }
+
+    private void bounce(Direction direction) {
+        switch (direction.getAxis()) {
+            case X:
+                this.setDeltaMovement(this.getDeltaMovement().multiply(-0.5, 0.75, 0.75));
+                break;
+            case Y:
+                this.setDeltaMovement(this.getDeltaMovement().multiply(0.75, -0.25, 0.75));
+                if (this.getDeltaMovement().y() < this.getGravity()) {
+                    this.setDeltaMovement(this.getDeltaMovement().multiply(1, 0, 1));
+                }
+                break;
+            case Z:
+                this.setDeltaMovement(this.getDeltaMovement().multiply(0.75, 0.75, -0.5));
+                break;
         }
     }
 

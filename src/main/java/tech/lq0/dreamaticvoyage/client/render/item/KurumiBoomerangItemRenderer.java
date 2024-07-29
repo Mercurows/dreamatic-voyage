@@ -26,7 +26,6 @@ public class KurumiBoomerangItemRenderer extends BlockEntityWithoutLevelRenderer
         pPoseStack.scale(0.6F, 0.6F, 0.6F);
         pPoseStack.translate(0.2F, 1.5F, 0.8F);
         pPoseStack.mulPose(Axis.ZP.rotationDegrees(-155.5F));
-//        pPoseStack.mulPose(Axis.XP.rotationDegrees(10.0F));
         float xOffset = -1 / 32f;
         float zOffset = 0;
         pPoseStack.translate(-xOffset, 0, -zOffset);
