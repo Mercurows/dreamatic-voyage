@@ -23,7 +23,7 @@ public enum Livers {
     YUKI("yuki", "third", "#B4CEE3", false),
     LECIEL("leciel", "third", "#FCBBB1", false),
     CHOCO("choco", "fourth", "#A98880", true),
-    HIFUMI("hifumi", "fourth", "#6B5B95", false),
+    HIFUMI("hifumi", "fourth", "#6B5B95", true),
     SANA("sana", "fourth", "#ABCDEF", true),
     SHIRAKO("shirako", "poi", "#F4ADB4", false),
     MIYA("miya", "poi", "#F9F0D8", true),
