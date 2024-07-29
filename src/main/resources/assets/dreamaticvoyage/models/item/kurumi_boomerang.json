@@ -1,0 +1,12 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "dreamaticvoyage:item/kurumi_boomerang_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "dreamaticvoyage:item/kurumi_boomerang_inventory"
+    }
+  }
+}
