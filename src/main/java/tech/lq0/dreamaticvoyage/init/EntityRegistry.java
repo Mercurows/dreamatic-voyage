@@ -30,9 +30,9 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<FluffBallEntity>> FLUFF_BALL_ENTITY =
             ENTITY_TYPES.register("fluff_ball",
                     () -> EntityType.Builder.<FluffBallEntity>of(FluffBallEntity::new, MobCategory.MISC).sized(0.3f, 0.3f).build("fluff_ball"));
-    //    public static final RegistryObject<EntityType<KurumiBoomerangEntity>> KURUMI_BOOMERANG_ENTITY =
-//            ENTITY_TYPES.register("kurumi_boomerang_entity",
-//                    () -> EntityType.Builder.<KurumiBoomerangEntity>create(KurumiBoomerangEntity::new, EntityClassification.MISC).size(1.0f, 0.3f).build("kurumi_boomerang_entity"));
+    public static final RegistryObject<EntityType<KurumiBoomerangEntity>> KURUMI_BOOMERANG_ENTITY =
+            ENTITY_TYPES.register("kurumi_boomerang",
+                    () -> EntityType.Builder.<KurumiBoomerangEntity>of(KurumiBoomerangEntity::new, MobCategory.MISC).sized(1.0f, 0.3f).build("kurumi_boomerang"));
     public static final RegistryObject<EntityType<WhiteAhogeEntity>> WHITE_AHOGE_ENTITY =
             ENTITY_TYPES.register("white_ahoge",
                     () -> EntityType.Builder.<WhiteAhogeEntity>of(WhiteAhogeEntity::new, MobCategory.MISC).sized(0.8f, 0.3f).build("white_ahoge"));

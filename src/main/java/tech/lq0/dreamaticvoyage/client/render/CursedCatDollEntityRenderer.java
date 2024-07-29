@@ -10,6 +10,8 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.entity.projectile.CursedCatDollEntity;
 import tech.lq0.dreamaticvoyage.client.models.entity.CursedCatDollModel;
@@ -17,6 +19,7 @@ import tech.lq0.dreamaticvoyage.client.models.entity.CursedCatDollModel;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+@OnlyIn(Dist.CLIENT)
 public class CursedCatDollEntityRenderer extends EntityRenderer<CursedCatDollEntity> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/cursed_cat_doll.png");
     private final CursedCatDollModel<CursedCatDollEntity> model;

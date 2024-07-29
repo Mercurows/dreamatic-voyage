@@ -68,6 +68,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(DarkElfGlassesModel.LAYER_LOCATION, DarkElfGlassesModel::createBodyLayer);
         event.registerLayerDefinition(KurumiHaloModel.LAYER_LOCATION, KurumiHaloModel::createBodyLayer);
         event.registerLayerDefinition(TetrisIBlockModel.LAYER_LOCATION, TetrisIBlockModel::createBodyLayer);
+        event.registerLayerDefinition(KurumiBoomerangModel.LAYER_LOCATION, KurumiBoomerangModel::createBodyLayer);
     }
 
     @SubscribeEvent

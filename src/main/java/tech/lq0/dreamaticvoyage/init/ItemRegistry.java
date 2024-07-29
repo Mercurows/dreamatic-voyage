@@ -29,10 +29,7 @@ import tech.lq0.dreamaticvoyage.item.first.unia.ElfWings;
 import tech.lq0.dreamaticvoyage.item.first.unia.EnchantedUnigiri;
 import tech.lq0.dreamaticvoyage.item.first.unia.TaroIceCream;
 import tech.lq0.dreamaticvoyage.item.first.unia.Unigiri;
-import tech.lq0.dreamaticvoyage.item.first.usa.BrownieUzza;
-import tech.lq0.dreamaticvoyage.item.first.usa.KRM96353;
-import tech.lq0.dreamaticvoyage.item.first.usa.KurumiHalo;
-import tech.lq0.dreamaticvoyage.item.first.usa.Plunger;
+import tech.lq0.dreamaticvoyage.item.first.usa.*;
 import tech.lq0.dreamaticvoyage.item.fourth.choco.*;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.NetherLight;
 import tech.lq0.dreamaticvoyage.item.fourth.hifumi.OminousBone;
@@ -153,7 +150,7 @@ public class ItemRegistry {
 
     // usa
     public static final RegistryObject<Item> PLUNGER = ITEMS.register("plunger", Plunger::new);
-    //    public static final RegistryObject<Item> KURUMI_BOOMERANG = ITEMS.register("kurumi_boomerang", KurumiBoomerang::new);
+    public static final RegistryObject<Item> KURUMI_BOOMERANG = ITEMS.register("kurumi_boomerang", KurumiBoomerang::new);
     public static final RegistryObject<Item> KURUMI_HALO = ITEMS.register("kurumi_halo", KurumiHalo::new);
     public static final RegistryObject<Item> BROWNIE_UZZA = ITEMS.register("brownie_uzza", BrownieUzza::new);
     public static final RegistryObject<Item> KRM_963_53 = ITEMS.register("krm_963_53", KRM96353::new);

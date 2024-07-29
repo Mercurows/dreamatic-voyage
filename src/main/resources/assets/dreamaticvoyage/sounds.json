@@ -32,6 +32,22 @@
       }
     ]
   },
+  "how_hold_blood": {
+    "subtitle": "subtitle.dreamaticvoyage.how_hold_blood",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:how_hold_blood"
+      }
+    ]
+  },
+  "why_not_die": {
+    "subtitle": "subtitle.dreamaticvoyage.why_not_die",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:why_not_die"
+      }
+    ]
+  },
   "baby_meow": {
     "subtitle": "subtitle.dreamaticvoyage.baby_meow",
     "sounds": [
