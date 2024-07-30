@@ -27,4 +27,7 @@ public class BlockEntityRegistry {
     public static final RegistryObject<BlockEntityType<FukamizuCompressorBlockEntity>> FUKAMIZU_COMPRESSOR_BLOCK_ENTITY =
             BLOCK_ENTITY_TYPES.register("fukamizu_compressor_block_entity",
                     () -> BlockEntityType.Builder.of(FukamizuCompressorBlockEntity::new, BlockRegistry.FUKAMIZU_COMPRESSOR.get()).build(null));
+    public static final RegistryObject<BlockEntityType<FukamizuCrusherBlockEntity>> FUKAMIZU_CRUSHER_BLOCK_ENTITY =
+            BLOCK_ENTITY_TYPES.register("fukamizu_crusher_block_entity",
+                    () -> BlockEntityType.Builder.of(FukamizuCrusherBlockEntity::new, BlockRegistry.FUKAMIZU_CRUSHER.get()).build(null));
 }

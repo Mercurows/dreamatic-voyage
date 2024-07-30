@@ -50,6 +50,7 @@ public class ClientRenderHandler {
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(BlockEntityRegistry.POINTS_STORE_BLOCK_ENTITY.get(), PointsStoreBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(BlockEntityRegistry.FUKAMIZU_CRUSHER_BLOCK_ENTITY.get(), FukamizuCrusherBlockEntityRenderer::new);
     }
 
     @SubscribeEvent

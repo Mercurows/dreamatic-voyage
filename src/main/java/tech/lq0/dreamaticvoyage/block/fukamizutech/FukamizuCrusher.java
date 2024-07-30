@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.block.entity.FukamizuCrusherBlockEntity;
 
 public class FukamizuCrusher extends Block implements EntityBlock {
 
@@ -25,7 +26,7 @@ public class FukamizuCrusher extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return null;
+        return new FukamizuCrusherBlockEntity(pPos, pState);
     }
 
     @Override

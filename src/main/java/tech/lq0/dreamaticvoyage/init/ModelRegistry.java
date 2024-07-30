@@ -6,6 +6,7 @@ import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.dreamaticvoyage.client.models.armor.*;
+import tech.lq0.dreamaticvoyage.client.models.blockentity.FukamizuCrusherModel;
 import tech.lq0.dreamaticvoyage.client.models.curios.*;
 import tech.lq0.dreamaticvoyage.client.models.entity.*;
 import tech.lq0.dreamaticvoyage.client.models.blockentity.PdCLogoModel;
@@ -69,6 +70,7 @@ public class ModelRegistry {
         event.registerLayerDefinition(KurumiHaloModel.LAYER_LOCATION, KurumiHaloModel::createBodyLayer);
         event.registerLayerDefinition(TetrisIBlockModel.LAYER_LOCATION, TetrisIBlockModel::createBodyLayer);
         event.registerLayerDefinition(KurumiBoomerangModel.LAYER_LOCATION, KurumiBoomerangModel::createBodyLayer);
+        event.registerLayerDefinition(FukamizuCrusherModel.LAYER_LOCATION, FukamizuCrusherModel::createBodyLayer);
     }
 
     @SubscribeEvent
