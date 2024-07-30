@@ -22,11 +22,13 @@ import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
 public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
-    protected static final int SLOT_INPUT = 0;
-    protected static final int SLOT_RESULT = 1;
+    protected static final int SLOT_ENERGY = 0;
+    protected static final int SLOT_INPUT = 1;
+    protected static final int SLOT_RESULT = 2;
 
-    private static final int[] SLOTS_FOR_SIDES = new int[]{0};
-    private static final int[] SLOTS_FOR_DOWN = new int[]{1};
+    private static final int[] SLOTS_FOR_UP = new int[]{0};
+    private static final int[] SLOTS_FOR_SIDES = new int[]{1};
+    private static final int[] SLOTS_FOR_DOWN = new int[]{2};
 
     public static final int PROCESS_TIME = 1200;
 
@@ -91,7 +93,9 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
     @Override
     public int[] getSlotsForFace(Direction pSide) {
-        if (pSide == Direction.DOWN) {
+        if (pSide == Direction.UP) {
+            return SLOTS_FOR_UP;
+        } else if (pSide == Direction.DOWN) {
             return SLOTS_FOR_DOWN;
         } else {
             return SLOTS_FOR_SIDES;
@@ -104,18 +108,14 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
     }
 
     public boolean canPlaceItem(int pIndex, ItemStack pStack) {
-        if (pIndex == 1) {
-            return false;
-        } else return pIndex == 0 && pStack.is(ItemRegistry.FUKAMIZU_BREAD_INGOT.get());
+        if (pIndex == 0) {
+            return pStack.is(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT.get());
+        } else return pIndex != 2;
     }
 
     @Override
     public boolean canTakeItemThroughFace(int pIndex, ItemStack pStack, Direction pDirection) {
-        if (pDirection == Direction.DOWN && pIndex == 1) {
-            return pStack.is(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT.get());
-        } else {
-            return true;
-        }
+        return pDirection == Direction.DOWN && pIndex == 2;
     }
 
     @Override

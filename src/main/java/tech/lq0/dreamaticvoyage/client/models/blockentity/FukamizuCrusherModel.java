@@ -20,9 +20,13 @@ public class FukamizuCrusherModel<T extends Entity> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Utils.MOD_ID, "fukamizu_crusher_model"), "main");
     public final ModelPart main;
+    public final ModelPart wheel1;
+    public final ModelPart wheel2;
 
     public FukamizuCrusherModel(ModelPart root) {
         this.main = root.getChild("main");
+        this.wheel1 = this.main.getChild("wheel1");
+        this.wheel2 = this.main.getChild("wheel2");
     }
 
     public static LayerDefinition createBodyLayer() {

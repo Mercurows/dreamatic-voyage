@@ -26,7 +26,6 @@ public class FukamizuCrusherBlockEntityRenderer implements BlockEntityRenderer<F
         this.model = new FukamizuCrusherModel(pContext.bakeLayer(FukamizuCrusherModel.LAYER_LOCATION));
     }
 
-    // TODO 完成粉碎机BE的渲染，实现高光效果
     @Override
     public void render(FukamizuCrusherBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
         pPoseStack.pushPose();
@@ -35,9 +34,14 @@ public class FukamizuCrusherBlockEntityRenderer implements BlockEntityRenderer<F
         pPoseStack.translate(-0.5f, -1.5f, 0.5f);
         pPoseStack.mulPose(Axis.YP.rotationDegrees(pBlockEntity.getBlockState().getValue(FukamizuCrusher.FACING).toYRot()));
 
-        VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(pBuffer, this.model.renderType(TEXTURE), false, false);
+        pPoseStack.pushPose();
+        // TODO 完成加工时的旋转动画
 
-        this.model.renderToBuffer(pPoseStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+
+        pPoseStack.popPose();
+
+        VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(pBuffer, this.model.renderType(TEXTURE), false, false);
+        this.model.renderToBuffer(pPoseStack, vertexconsumer, 0xffffff, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
         pPoseStack.popPose();
     }
 }
