@@ -12,6 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.BlockRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
+import tech.lq0.dreamaticvoyage.tools.Livers;
 
 @SuppressWarnings({"ConstantConditions", "UnusedReturnValue", "SameParameterValue", "unused"})
 public class ModItemModelProvider extends ItemModelProvider {
@@ -301,6 +302,43 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);
 
         // audio
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_HAINE_1, Livers.HAINE);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_HAINE_2, Livers.HAINE);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_HAINE_3, Livers.HAINE);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_CHIRAM_1, Livers.CHIRAM);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_CHIRAM_2, Livers.CHIRAM);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_CHIRAM_3, Livers.CHIRAM);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_EKIRA_1, Livers.EKIRA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_EKIRA_2, Livers.EKIRA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_EKIRA_3, Livers.EKIRA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_KERORO_1, Livers.KERORO);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_KERORO_2, Livers.KERORO);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_KERORO_3, Livers.KERORO);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_FUKAMIZU_1, Livers.FUKAMIZU);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_FUKAMIZU_2, Livers.FUKAMIZU);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_FUKAMIZU_3, Livers.FUKAMIZU);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_FUKAMIZU_4, Livers.FUKAMIZU);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_FUKAMIZU_5, Livers.FUKAMIZU);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_FUKAMIZU_6, Livers.FUKAMIZU);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_LOUISE_1, Livers.LOUISE);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_LOUISE_2, Livers.LOUISE);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_LOUISE_3, Livers.LOUISE);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_MADOKA_1, Livers.MADOKA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_MADOKA_2, Livers.MADOKA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_MADOKA_3, Livers.MADOKA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_MUMU_1, Livers.MUMU);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_MUMU_2, Livers.MUMU);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_MUMU_3, Livers.MUMU);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_QIANYUN_1, Livers.QIANYUN);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_QIANYUN_2, Livers.QIANYUN);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_QIANYUN_3, Livers.QIANYUN);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_UNIA_1, Livers.UNIA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_UNIA_2, Livers.UNIA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_UNIA_3, Livers.UNIA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_USA_1, Livers.USA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_USA_2, Livers.USA);
+        audioTapeItem(ItemRegistry.AUDIO_TAPE_USA_3, Livers.USA);
+
         simpleItem(ItemRegistry.MUSIC_DISC_DARAKUDATENSHI);
         simpleItem(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL);
         simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_QINGQIU);
@@ -366,5 +404,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Utils.MOD_ID, "block/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder audioTapeItem(RegistryObject<Item> item, Livers livers) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Utils.MOD_ID, "item/" + "audio_tape_" + livers.getName()));
     }
 }

@@ -27,6 +27,6 @@ public class GarlicMelonSlice extends Item {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.garlic_melon_slice").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMI);
+        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMIZU);
     }
 }

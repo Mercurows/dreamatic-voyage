@@ -57,7 +57,7 @@ public class EchoedDestinyRing extends Item {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.echoed_destiny_ring_1").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.echoed_destiny_ring_2").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMI);
+        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMIZU);
     }
 
     @OnlyIn(Dist.CLIENT)

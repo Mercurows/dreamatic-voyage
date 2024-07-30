@@ -1,4 +1,4 @@
-// 1.20.1	2024-07-10T01:31:13.9577628	Tags for minecraft:item mod id dreamaticvoyage
+// 1.20.1	2024-07-30T23:34:38.8964227	Tags for minecraft:item mod id dreamaticvoyage
 231a202bbd648d2359364967567e6fd0a2e8d772 data/forge/tags/items/sand.json
 aed3ef6f2929a8f19592b8a5c21ca16d3214d7bb data/forge/tags/items/sandstone.json
 fb0153b2c8162a3937a1dbf7abdf268ac73bef04 data/forge/tags/items/seeds.json
@@ -11,7 +11,7 @@ c2d255826b7cd85950f5a41cb9382983f558f9eb data/minecraft/tags/items/hoes.json
 5b517182fdcd8f7d7bbda9adda2a7f99d1f5db99 data/minecraft/tags/items/leaves.json
 67aac4fb0c966d8e762b84688bec9fb61bdd4111 data/minecraft/tags/items/logs.json
 67aac4fb0c966d8e762b84688bec9fb61bdd4111 data/minecraft/tags/items/logs_that_burn.json
-3d830c14013ae9895bc6742fb9812b3cfac85346 data/minecraft/tags/items/music_discs.json
+b2d4d04c2a86bd6fe855dd683cf636b2aab31d24 data/minecraft/tags/items/music_discs.json
 d25d9293e63c702850cc17bbd60f0cada2907251 data/minecraft/tags/items/pickaxes.json
 147df96e9f75e69e4d365880d2473ac60d43f7f9 data/minecraft/tags/items/piglin_loved.json
 6baeb2cb01c9eb81d861781b12094ec31f620a5e data/minecraft/tags/items/planks.json

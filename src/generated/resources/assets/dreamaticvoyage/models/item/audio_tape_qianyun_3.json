@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dreamaticvoyage:item/audio_tape_qianyun"
+  }
+}

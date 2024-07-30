@@ -46,7 +46,7 @@ public class CageRing extends Item implements ICurioItem {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.cage_ring").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMI);
+        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMIZU);
     }
 
     @Override

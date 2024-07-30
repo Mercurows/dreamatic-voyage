@@ -37,7 +37,7 @@ public class OceanDestiny extends Item implements ICurioItem {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.ocean_destiny").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMI);
+        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMIZU);
     }
 
     @Override

@@ -39,7 +39,6 @@ public class ModTabs {
             .withSearchBar()
             .build();
 
-
     public static CreativeModeTab BLOCK_TAB = CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.dreamaticvoyage_blocks_tab"))
             .withTabsBefore(TabRegistry.MOD_MISC_TAB.getKey())
@@ -54,7 +53,7 @@ public class ModTabs {
     public static CreativeModeTab TAPE_TAB = CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.dreamaticvoyage_tapes_tab"))
             .withTabsBefore(TabRegistry.MOD_BLOCK_TAB.getKey())
-            .icon(() -> new ItemStack(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL.get()))
+            .icon(() -> new ItemStack(ItemRegistry.AUDIO_TAPE_HAINE_1.get()))
             .displayItems((param, output) -> ItemRegistry.AUDIO_ITEMS.getEntries().forEach((registryObject) -> {
                 if (!HIDDEN.contains(registryObject)) {
                     output.accept(registryObject.get());

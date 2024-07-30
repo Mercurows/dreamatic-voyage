@@ -28,6 +28,6 @@ public class FukamizuFish extends Item {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fukamizu_fish_1").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fukamizu_fish_2").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMI);
+        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMIZU);
     }
 }

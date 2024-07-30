@@ -57,7 +57,7 @@ public class FukamizuRing extends Item {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fukamizu_ring_1").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fukamizu_ring_2").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMI);
+        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMIZU);
     }
 
     @OnlyIn(Dist.CLIENT)

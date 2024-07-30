@@ -11,7 +11,7 @@ import java.util.List;
 
 public class DGFukami extends DreamGuardian {
     public DGFukami() {
-        super(Livers.FUKAMI);
+        super(Livers.FUKAMIZU);
     }
 
     @Override

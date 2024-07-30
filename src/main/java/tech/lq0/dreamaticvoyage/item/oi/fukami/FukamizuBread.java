@@ -42,7 +42,7 @@ public class FukamizuBread extends Item {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fukamizu_bread_1").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fukamizu_bread_2").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMI);
+        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMIZU);
     }
 
     @Override

@@ -43,7 +43,7 @@ public class HeavyBreadComponent extends Item implements ICurioItem {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.heavy_bread_component_1").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.heavy_bread_component_2").withStyle(ChatFormatting.GRAY));
 
-        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMI);
+        TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMIZU);
     }
 
     @Override
