@@ -1448,6 +1448,9 @@
   "dreamaticvoyage.page.bowl_of_vegetable1": "$(item)一碗菜$(0)是女仆长倾澜的特制炖菜，据说加入了多种蔬菜，味道鲜美无比。$(p)食用后会获得$(thing)幸运$(0)和$(thing)抗性提升$(0)效果。$(p)“里面怎么还有只猫啊！“",
   "dreamaticvoyage.page.bowl_of_vegetable2": "$(o)据说，每制作一碗就要消耗一个不听话的DD……",
 
+  "dreamaticvoyage.entry.hai_plate": "Haiplate",
+  "dreamaticvoyage.page.hai_plate1": "$(item)灰板$(0)是一面坚固的盾牌，硬度和平整度与灰音的前置装甲相当。$(p)潜行时按下使用键可以祈求祝福，获得$(thing)抗性提升V$(0)效果。$(p)使用时还会发出奇怪的声音。",
+  "dreamaticvoyage.page.hai_plate2": "$(o)我是钢板我是钢板我是钢板。",
   "dreamaticvoyage.entry.cursed_marshaimallow": "巫毒棉灰糖",
   "dreamaticvoyage.page.cursed_marshaimallow1": "棉灰糖也有不高兴的时候，如果积攒的怨气足够多，那就会变成$(item)巫毒棉灰糖$(0)。$(p)长按使用键进行蓄力，松开时可以将其投掷出去，造成一次巨大的爆炸，并留下$(thing)凋零$(0)、$(thing)缓慢$(0)、$(thing)虚弱$(0)的粒子云效果。",
   "dreamaticvoyage.page.cursed_marshaimallow2": "$(o)地雷系少女的玩偶，真是太可爱了！",
