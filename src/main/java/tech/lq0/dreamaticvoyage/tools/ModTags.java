@@ -10,6 +10,9 @@ import tech.lq0.dreamaticvoyage.Utils;
 
 public class ModTags {
     public static class Blocks {
+
+        public static final TagKey<Block> FUKAMIZU_MACHINE = tag("fukamizu_machine");
+
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(Utils.MOD_ID, name));
         }
