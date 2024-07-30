@@ -4,25 +4,24 @@ package tech.lq0.dreamaticvoyage.client.models.blockentity;// Made with Blockben
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.Model;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
 
 @OnlyIn(Dist.CLIENT)
-public class FukamizuCrusherModel extends Model {
+public class FukamizuCrusherModel<T extends Entity> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Utils.MOD_ID, "fukamizu_crusher_model"), "main");
     public final ModelPart main;
 
     public FukamizuCrusherModel(ModelPart root) {
-        super(RenderType::entitySolid);
         this.main = root.getChild("main");
     }
 
@@ -60,5 +59,10 @@ public class FukamizuCrusherModel extends Model {
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         main.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+    }
+
+    @Override
+    public void setupAnim(T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
+
     }
 }
