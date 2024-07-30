@@ -78,7 +78,7 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items);
-        this.energy = pTag.getInt("Energy");
+        this.energy = pTag.getInt("UmisuEnergy");
         this.crushingProgress = pTag.getInt("CrushingProgress");
     }
 
@@ -87,7 +87,7 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         super.saveAdditional(pTag);
 
         ContainerHelper.saveAllItems(pTag, this.items);
-        pTag.putInt("Energy", this.energy);
+        pTag.putInt("UmisuEnergy", this.energy);
         pTag.putInt("CrushingProgress", this.crushingProgress);
     }
 

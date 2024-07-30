@@ -15,6 +15,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
 
+@SuppressWarnings("unused")
 @OnlyIn(Dist.CLIENT)
 public class FukamizuCrusherModel<T extends Entity> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
@@ -35,7 +36,7 @@ public class FukamizuCrusherModel<T extends Entity> extends EntityModel<T> {
 
         PartDefinition main = partdefinition.addOrReplaceChild("main", CubeListBuilder.create(), PartPose.offset(0.0F, 16.0F, 0.0F));
 
-        PartDefinition wheel2 = main.addOrReplaceChild("wheel2", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition wheel2 = main.addOrReplaceChild("wheel2", CubeListBuilder.create(), PartPose.offset(-2.75F, -2.25F, 0.4375F));
 
         PartDefinition cube_r1 = wheel2.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -3.0F, -5.5F, 6.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 7).addBox(-3.0F, -3.0F, -3.5F, 6.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
@@ -44,9 +45,9 @@ public class FukamizuCrusherModel<T extends Entity> extends EntityModel<T> {
                 .texOffs(18, 7).addBox(-3.0F, -3.0F, 2.5F, 6.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(18, 16).addBox(-3.0F, -3.0F, 6.5F, 6.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 23).addBox(-3.0F, -3.0F, 4.5F, 6.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
-                .texOffs(0, 0).addBox(-1.0F, -1.0F, -6.5F, 2.0F, 2.0F, 14.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.75F, -2.25F, -0.5F, 0.0F, 0.0F, 0.3927F));
+                .texOffs(0, 0).addBox(-1.0F, -1.0F, -6.5F, 2.0F, 2.0F, 14.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, -0.9375F, 0.0F, 0.0F, 0.3927F));
 
-        PartDefinition wheel1 = main.addOrReplaceChild("wheel1", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition wheel1 = main.addOrReplaceChild("wheel1", CubeListBuilder.create(), PartPose.offset(2.75F, -2.25F, -0.4375F));
 
         PartDefinition cube_r2 = wheel1.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(31, 31).addBox(-3.0F, -3.0F, 4.5F, 6.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 32).addBox(-3.0F, -3.0F, 2.5F, 6.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
@@ -55,7 +56,7 @@ public class FukamizuCrusherModel<T extends Entity> extends EntityModel<T> {
                 .texOffs(14, 32).addBox(-3.0F, -3.0F, -3.5F, 6.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(18, 23).addBox(-3.0F, -3.0F, -7.5F, 6.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(32, 14).addBox(-3.0F, -3.0F, -5.5F, 6.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
-                .texOffs(0, 16).addBox(-1.0F, -1.0F, -7.5F, 2.0F, 2.0F, 14.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.75F, -2.25F, 0.5F, 0.0F, 0.0F, -0.3927F));
+                .texOffs(0, 16).addBox(-1.0F, -1.0F, -7.5F, 2.0F, 2.0F, 14.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.9375F, 0.0F, 0.0F, -0.3927F));
 
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
