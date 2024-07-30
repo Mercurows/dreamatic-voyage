@@ -193,5 +193,329 @@
         "stream": true
       }
     ]
+  },
+  "audio/magicros/chiram_bolster": {
+    "subtitle": "subtitle.dreamaticvoyage.chiram_bolster",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/chiram_bolster",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/chiram_intro": {
+    "subtitle": "subtitle.dreamaticvoyage.chiram_intro",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/chiram_intro",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/chiram_tales": {
+    "subtitle": "subtitle.dreamaticvoyage.chiram_tales",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/chiram_tales",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/haine_broadcast": {
+    "subtitle": "subtitle.dreamaticvoyage.haine_broadcast",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/haine_broadcast",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/haine_haiplate": {
+    "subtitle": "subtitle.dreamaticvoyage.haine_haiplate",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/haine_haiplate",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/haine_taunt": {
+    "subtitle": "subtitle.dreamaticvoyage.haine_taunt",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/haine_taunt",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/ekira_taunt": {
+    "subtitle": "subtitle.dreamaticvoyage.ekira_taunt",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/ekira_taunt",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/ekira_star": {
+    "subtitle": "subtitle.dreamaticvoyage.ekira_star",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/ekira_star",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/ekira_gourmet": {
+    "subtitle": "subtitle.dreamaticvoyage.ekira_gourmet",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/ekira_gourmet",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/keroro_electric_frog": {
+    "subtitle": "subtitle.dreamaticvoyage.keroro_electric_frog",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/keroro_electric_frog",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/keroro_frog_crown": {
+    "subtitle": "subtitle.dreamaticvoyage.keroro_frog_crown",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/keroro_frog_crown",
+        "stream": true
+      }
+    ]
+  },
+  "audio/magicros/keroro_walking": {
+    "subtitle": "subtitle.dreamaticvoyage.keroro_walking",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/magicros/keroro_walking",
+        "stream": true
+      }
+    ]
+  },
+  "audio/poi/fukamizu_ocean_monument": {
+    "subtitle": "subtitle.dreamaticvoyage.fukamizu_ocean_monument",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/poi/fukamizu_ocean_monument",
+        "stream": true
+      }
+    ]
+  },
+  "audio/poi/fukamizu_diamond": {
+    "subtitle": "subtitle.dreamaticvoyage.fukamizu_diamond",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/poi/fukamizu_diamond",
+        "stream": true
+      }
+    ]
+  },
+  "audio/poi/fukamizu_ring": {
+    "subtitle": "subtitle.dreamaticvoyage.fukamizu_ring",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/poi/fukamizu_ring",
+        "stream": true
+      }
+    ]
+  },
+  "audio/second/louise_summon": {
+    "subtitle": "subtitle.dreamaticvoyage.louise_summon",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/second/louise_summon",
+        "stream": true
+      }
+    ]
+  },
+  "audio/second/louise_farming": {
+    "subtitle": "subtitle.dreamaticvoyage.louise_farming",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/second/louise_farming",
+        "stream": true
+      }
+    ]
+  },
+  "audio/second/louise_food": {
+    "subtitle": "subtitle.dreamaticvoyage.louise_food",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/second/louise_food",
+        "stream": true
+      }
+    ]
+  },
+  "audio/poi/fukamizu_cats": {
+    "subtitle": "subtitle.dreamaticvoyage.fukamizu_cats",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/poi/fukamizu_cats",
+        "stream": true
+      }
+    ]
+  },
+  "audio/poi/fukamizu_math": {
+    "subtitle": "subtitle.dreamaticvoyage.fukamizu_math",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/poi/fukamizu_math",
+        "stream": true
+      }
+    ]
+  },
+  "audio/poi/fukamizu_sun_bath": {
+    "subtitle": "subtitle.dreamaticvoyage.fukamizu_sun_bath",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/poi/fukamizu_sun_bath",
+        "stream": true
+      }
+    ]
+  },
+  "audio/first/madoka_exchange_student": {
+    "subtitle": "subtitle.dreamaticvoyage.madoka_exchange_student",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/first/madoka_exchange_student",
+        "stream": true
+      }
+    ]
+  },
+  "audio/first/madoka_red_ahoge": {
+    "subtitle": "subtitle.dreamaticvoyage.madoka_red_ahoge",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/first/madoka_red_ahoge",
+        "stream": true
+      }
+    ]
+  },
+  "audio/first/madoka_party": {
+    "subtitle": "subtitle.dreamaticvoyage.madoka_party",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/first/madoka_party",
+        "stream": true
+      }
+    ]
+  },
+  "audio/second/mumu_ayelet": {
+    "subtitle": "subtitle.dreamaticvoyage.mumu_ayelet",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/second/mumu_ayelet",
+        "stream": true
+      }
+    ]
+  },
+  "audio/second/mumu_travel": {
+    "subtitle": "subtitle.dreamaticvoyage.mumu_travel",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/second/mumu_travel",
+        "stream": true
+      }
+    ]
+  },
+  "audio/second/mumu_beef": {
+    "subtitle": "subtitle.dreamaticvoyage.mumu_beef",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/second/mumu_beef",
+        "stream": true
+      }
+    ]
+  },
+  "audio/cnt/qianyun_intro": {
+    "subtitle": "subtitle.dreamaticvoyage.qianyun_intro",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/cnt/qianyun_intro",
+        "stream": true
+      }
+    ]
+  },
+  "audio/cnt/qianyun_explore": {
+    "subtitle": "subtitle.dreamaticvoyage.qianyun_explore",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/cnt/qianyun_explore",
+        "stream": true
+      }
+    ]
+  },
+  "audio/cnt/qianyun_protection": {
+    "subtitle": "subtitle.dreamaticvoyage.qianyun_protection",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/cnt/qianyun_protection",
+        "stream": true
+      }
+    ]
+  },
+  "audio/first/unia_legion": {
+    "subtitle": "subtitle.dreamaticvoyage.unia_legion",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/first/unia_legion",
+        "stream": true
+      }
+    ]
+  },
+  "audio/first/unia_explore": {
+    "subtitle": "subtitle.dreamaticvoyage.unia_explore",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/first/unia_explore",
+        "stream": true
+      }
+    ]
+  },
+  "audio/first/unia_unigiri": {
+    "subtitle": "subtitle.dreamaticvoyage.unia_unigiri",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/first/unia_unigiri",
+        "stream": true
+      }
+    ]
+  },
+  "audio/first/usa_duoduo_angel": {
+    "subtitle": "subtitle.dreamaticvoyage.usa_duoduo_angel",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/first/usa_duoduo_angel",
+        "stream": true
+      }
+    ]
+  },
+  "audio/first/usa_boomerang": {
+    "subtitle": "subtitle.dreamaticvoyage.usa_boomerang",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/first/usa_boomerang",
+        "stream": true
+      }
+    ]
+  },
+  "audio/first/usa_gundam": {
+    "subtitle": "subtitle.dreamaticvoyage.usa_gundam",
+    "sounds": [
+      {
+        "name": "dreamaticvoyage:audio/first/usa_gundam",
+        "stream": true
+      }
+    ]
   }
 }
