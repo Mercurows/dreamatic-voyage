@@ -628,6 +628,8 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.FUKAMIZU_MACHINE_CASING.get(), new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FUKAMIZU_COMPRESSOR = BLOCK_ITEMS.register("fukamizu_compressor",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> FUKAMIZU_CRUSHER = BLOCK_ITEMS.register("fukamizu_crusher",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_CRUSHER.get(), new Item.Properties().fireResistant()));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

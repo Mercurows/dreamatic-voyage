@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dreamaticvoyage:block/fukamizu_crusher",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dreamaticvoyage:block/fukamizu_crusher"
+    },
+    "facing=south": {
+      "model": "dreamaticvoyage:block/fukamizu_crusher",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dreamaticvoyage:block/fukamizu_crusher",
+      "y": 270
+    }
+  }
+}

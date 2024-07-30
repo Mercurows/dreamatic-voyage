@@ -76,6 +76,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(BlockRegistry.FUKAMIZU_MACHINE_CASING.get(), models().cubeColumn("fukamizu_machine_casing", new ResourceLocation(Utils.MOD_ID, "block/fukamizu_machine_casing_side"),
                 new ResourceLocation(Utils.MOD_ID, "block/fukamizu_machine_casing_top")));
         horizontalBlock(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), new ModelFile.UncheckedModelFile(modLoc("block/fukamizu_compressor")));
+        horizontalBlock(BlockRegistry.FUKAMIZU_CRUSHER.get(), new ModelFile.UncheckedModelFile(modLoc("block/fukamizu_crusher")));
+
         horizontalBlock(BlockRegistry.CRYSTAL_POPPER.get(), new ModelFile.UncheckedModelFile(modLoc("block/crystal_popper")));
     }
 
