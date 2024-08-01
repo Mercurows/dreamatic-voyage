@@ -17,6 +17,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -58,20 +60,38 @@ public class FukamizuCrusher extends Block implements EntityBlock {
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+        if (!pLevel.isClientSide) {
+            return createTickerHelper(pBlockEntityType, BlockEntityRegistry.FUKAMIZU_CRUSHER_BLOCK_ENTITY.get(), FukamizuCrusherBlockEntity::serverTick);
+        }
+        return null;
+    }
+
+    @Nullable
+    protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> pServerType, BlockEntityType<E> pClientType, BlockEntityTicker<? super E> pTicker) {
+        return pClientType == pServerType ? (BlockEntityTicker<A>) pTicker : null;
+    }
+
     @Override
     public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
-        if (!player.getItemInHand(handIn).isEmpty())
+        if (!player.getItemInHand(handIn).isEmpty()) {
             return InteractionResult.PASS;
-        if (worldIn.isClientSide)
+        }
+        if (worldIn.isClientSide) {
             return InteractionResult.SUCCESS;
+        }
 
         worldIn.getBlockEntity(pos, BlockEntityRegistry.FUKAMIZU_CRUSHER_BLOCK_ENTITY.get()).ifPresent(crusher -> {
             boolean emptyOutput = true;
             IItemHandlerModifiable inv = crusher.outputInv;
 
             ItemStack stackInSlot = inv.getStackInSlot(0);
-            if (!stackInSlot.isEmpty())
+            if (!stackInSlot.isEmpty()) {
                 emptyOutput = false;
+            }
+
             player.getInventory().placeItemBackInInventory(stackInSlot);
             inv.setStackInSlot(0, ItemStack.EMPTY);
 
@@ -91,23 +111,26 @@ public class FukamizuCrusher extends Block implements EntityBlock {
     public void updateEntityAfterFallOn(BlockGetter pLevel, Entity entity) {
         super.updateEntityAfterFallOn(pLevel, entity);
 
-        if (entity.level().isClientSide || !(entity instanceof ItemEntity itemEntity) || !entity.isAlive())
+        if (entity.level().isClientSide || !(entity instanceof ItemEntity itemEntity) || !entity.isAlive()) {
             return;
+        }
 
         var blockEntity = pLevel.getBlockEntity(entity.blockPosition().below());
         if (!(blockEntity instanceof FukamizuCrusherBlockEntity crusher)) return;
 
         LazyOptional<IItemHandler> capability = crusher.getCapability(ForgeCapabilities.ITEM_HANDLER);
-        if (!capability.isPresent())
+        if (!capability.isPresent()) {
             return;
+        }
 
-        ItemStack remainder = capability.orElse(new ItemStackHandler())
-                .insertItem(0, itemEntity.getItem(), false);
-        if (remainder.isEmpty())
+        ItemStack remainder = capability.orElse(new ItemStackHandler()).insertItem(0, itemEntity.getItem(), false);
+        if (remainder.isEmpty()) {
             itemEntity.discard();
-        if (remainder.getCount() < itemEntity.getItem()
-                .getCount())
+        }
+        
+        if (remainder.getCount() < itemEntity.getItem().getCount()) {
             itemEntity.setItem(remainder);
+        }
     }
 
     @Override

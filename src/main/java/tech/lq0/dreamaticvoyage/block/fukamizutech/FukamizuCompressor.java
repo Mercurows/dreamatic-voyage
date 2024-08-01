@@ -35,6 +35,7 @@ import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 
 import java.util.List;
 
+@SuppressWarnings("deprecation")
 public class FukamizuCompressor extends Block implements EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty OVERPRESSURE = BooleanProperty.create("overpressure");

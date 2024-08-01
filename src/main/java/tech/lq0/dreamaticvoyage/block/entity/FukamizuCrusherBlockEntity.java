@@ -67,7 +67,6 @@ public class FukamizuCrusherBlockEntity extends BlockEntity {
         return super.getCapability(cap, side);
     }
 
-
     private class FukamizuCrusherInventoryHandler extends CombinedInvWrapper {
         public FukamizuCrusherInventoryHandler() {
             super(inputInv, outputInv);
@@ -75,25 +74,29 @@ public class FukamizuCrusherBlockEntity extends BlockEntity {
 
         @Override
         public boolean isItemValid(int slot, ItemStack stack) {
-            if (outputInv == getHandlerFromIndex(getIndexForSlot(slot)))
+            if (outputInv == getHandlerFromIndex(getIndexForSlot(slot))) {
                 return false;
+            }
             // TODO 修改为正确的有效物品判断
             return stack.getItem() == ItemRegistry.FUKAMIZU_BREAD.get() && super.isItemValid(slot, stack);
         }
 
         @Override
         public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
-            if (outputInv == getHandlerFromIndex(getIndexForSlot(slot)))
+            if (outputInv == getHandlerFromIndex(getIndexForSlot(slot))) {
                 return stack;
-            if (!isItemValid(slot, stack))
+            }
+            if (!isItemValid(slot, stack)) {
                 return stack;
+            }
             return super.insertItem(slot, stack, simulate);
         }
 
         @Override
         public ItemStack extractItem(int slot, int amount, boolean simulate) {
-            if (inputInv == getHandlerFromIndex(getIndexForSlot(slot)))
+            if (inputInv == getHandlerFromIndex(getIndexForSlot(slot))) {
                 return ItemStack.EMPTY;
+            }
             return super.extractItem(slot, amount, simulate);
         }
 
