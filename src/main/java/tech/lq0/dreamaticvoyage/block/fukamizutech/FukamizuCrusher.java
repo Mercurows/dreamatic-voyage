@@ -2,6 +2,8 @@ package tech.lq0.dreamaticvoyage.block.fukamizutech;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -29,6 +31,7 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.FukamizuCrusherBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 
+@SuppressWarnings("deprecation")
 public class FukamizuCrusher extends Block implements EntityBlock {
 
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -105,5 +108,25 @@ public class FukamizuCrusher extends Block implements EntityBlock {
         if (remainder.getCount() < itemEntity.getItem()
                 .getCount())
             itemEntity.setItem(remainder);
+    }
+
+    @Override
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
+        if (pLevel instanceof ServerLevel) {
+            BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+            if (blockentity instanceof FukamizuCrusherBlockEntity blockEntity) {
+                IItemHandler inputInv = blockEntity.inputInv;
+                for (int slot = 0; slot < inputInv.getSlots(); slot++) {
+                    Containers.dropItemStack(pLevel, pPos.getX(), pPos.getY(), pPos.getZ(), inputInv.getStackInSlot(slot));
+                }
+
+                IItemHandler outputInv = blockEntity.outputInv;
+                for (int slot = 0; slot < outputInv.getSlots(); slot++) {
+                    Containers.dropItemStack(pLevel, pPos.getX(), pPos.getY(), pPos.getZ(), outputInv.getStackInSlot(slot));
+                }
+            }
+        }
+
+        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
     }
 }
