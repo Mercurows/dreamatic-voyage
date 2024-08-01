@@ -17,6 +17,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.items.wrapper.CombinedInvWrapper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
@@ -38,6 +45,19 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
     public int energy;
     public int crushingProgress;
+
+    // from Create
+    public ItemStackHandler inputInv;
+    public ItemStackHandler outputInv;
+    public LazyOptional<IItemHandler> capability;
+
+    public FukamizuCrusherBlockEntity(BlockPos pPos, BlockState pBlockState) {
+        super(BlockEntityRegistry.FUKAMIZU_CRUSHER_BLOCK_ENTITY.get(), pPos, pBlockState);
+
+        inputInv = new ItemStackHandler(1);
+        outputInv = new ItemStackHandler(1);
+        capability = LazyOptional.of(FukamizuCrusherInventoryHandler::new);
+    }
 
     protected final ContainerData dataAccess = new ContainerData() {
         public int get(int pIndex) {
@@ -64,9 +84,6 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         }
     };
 
-    public FukamizuCrusherBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(BlockEntityRegistry.FUKAMIZU_CRUSHER_BLOCK_ENTITY.get(), pPos, pBlockState);
-    }
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuCrusherBlockEntity blockEntity) {
 
@@ -163,6 +180,22 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         }
     }
 
+    // TODO 修复NBT存储问题
+    @Override
+    public CompoundTag serializeNBT() {
+        var tag = super.serializeNBT();
+        tag.put("input", inputInv.serializeNBT());
+        tag.put("output", outputInv.serializeNBT());
+        return tag;
+    }
+
+    @Override
+    public void deserializeNBT(CompoundTag nbt) {
+        inputInv.deserializeNBT(nbt.getCompound("input"));
+        outputInv.deserializeNBT(nbt.getCompound("output"));
+        super.deserializeNBT(nbt);
+    }
+
     @Override
     public boolean stillValid(Player pPlayer) {
         return Container.stillValidBlockEntity(this, pPlayer);
@@ -178,9 +211,49 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         return Component.translatable("container.dreamaticvoyage.fukamizu_crusher");
     }
 
+    @Override
+    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
+        if (cap == ForgeCapabilities.ITEM_HANDLER)
+            return capability.cast();
+        return super.getCapability(cap, side);
+    }
+
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
         return null;
+    }
+
+
+    private class FukamizuCrusherInventoryHandler extends CombinedInvWrapper {
+
+        public FukamizuCrusherInventoryHandler() {
+            super(inputInv, outputInv);
+        }
+
+        @Override
+        public boolean isItemValid(int slot, ItemStack stack) {
+            if (outputInv == getHandlerFromIndex(getIndexForSlot(slot)))
+                return false;
+            // TODO 修改为正确的有效物品判断
+            return stack.getItem() == ItemRegistry.FUKAMIZU_BREAD.get() && super.isItemValid(slot, stack);
+        }
+
+        @Override
+        public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+            if (outputInv == getHandlerFromIndex(getIndexForSlot(slot)))
+                return stack;
+            if (!isItemValid(slot, stack))
+                return stack;
+            return super.insertItem(slot, stack, simulate);
+        }
+
+        @Override
+        public ItemStack extractItem(int slot, int amount, boolean simulate) {
+            if (inputInv == getHandlerFromIndex(getIndexForSlot(slot)))
+                return ItemStack.EMPTY;
+            return super.extractItem(slot, amount, simulate);
+        }
+
     }
 }
