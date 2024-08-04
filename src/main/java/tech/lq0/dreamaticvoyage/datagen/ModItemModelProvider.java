@@ -301,6 +301,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);
 
+        evenSimplerBlockItem(BlockRegistry.CRYSTAL_POPPER);
+
         // audio
         audioTapeItem(ItemRegistry.AUDIO_TAPE_HAINE_1, Livers.HAINE);
         audioTapeItem(ItemRegistry.AUDIO_TAPE_HAINE_2, Livers.HAINE);
