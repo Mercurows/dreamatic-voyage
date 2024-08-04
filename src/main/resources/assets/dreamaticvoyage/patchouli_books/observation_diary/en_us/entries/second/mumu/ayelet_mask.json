@@ -12,14 +12,6 @@
       "type": "patchouli:crafting",
       "recipe": "dreamaticvoyage:ayelet_mask",
       "text": "dreamaticvoyage.page.ayelet_mask2"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.ayelet_mask3"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.ayelet_mask4"
     }
   ],
   "sortnum": 20101

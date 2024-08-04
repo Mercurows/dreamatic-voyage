@@ -1417,6 +1417,9 @@
 
   "dreamaticvoyage.entry.second.intro": "寻梦之盛",
   "dreamaticvoyage.page.second.intro1": "时代的车轮滚滚向前，无数的寻梦者开始了新的征途，一个新的繁荣时代在这里缓缓展开。",
+  "dreamaticvoyage.entry.ayelet_mask": "阿伊蕾特面具",
+  "dreamaticvoyage.page.ayelet_mask1": "因为喜欢阿伊蕾特，所以想成为阿伊蕾特——那就戴上$(item)阿伊蕾特面具$(0)吧！$(p)佩戴后提高$(thing)击退$(0)效果，增加对$(thing)幼年动物$(0)的伤害，$(c)无法$(0)对牛造成伤害。",
+  "dreamaticvoyage.page.ayelet_mask2": "$(o)我好喜欢阿伊蕾特。",
 
   "dreamaticvoyage.entry.magicros.intro": "Magicros",
   "dreamaticvoyage.page.magicros.intro1": "旧时的天空之下，四位跨越时空的少女，在命运的编织下相聚于此。$(p)作为“Magicros”组合的少女们，$(liver)倾澜Chiram$(0)、$(liver)灰音Haine$(0)、$(liver)蛙吹Keroro$(0)、$(liver)星宫颜Ekira$(0)，她们在这片天空下又有怎样的故事呢？",
