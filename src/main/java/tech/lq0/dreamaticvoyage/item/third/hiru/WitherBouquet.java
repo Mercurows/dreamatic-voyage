@@ -73,8 +73,11 @@ public class WitherBouquet extends Item implements ICurioItem {
                 event.getSource().is(DamageTypes.PLAYER_ATTACK)) {
 
             CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(ItemRegistry.WITHER_BOUQUET.get())
-                    .ifPresent(s -> entity.hurt(DamageSourceRegistry.causeAbsoluteWitherDamage(
-                            player.level().registryAccess(), player), event.getAmount() * 0.3f)));
+                    .ifPresent(s -> {
+                        entity.invulnerableTime = 0;
+                        entity.hurt(DamageSourceRegistry.causeAbsoluteWitherDamage(
+                                player.level().registryAccess(), player), event.getAmount() * 0.3f);
+                    }));
         }
     }
 
