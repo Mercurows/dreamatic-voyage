@@ -11,6 +11,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import tech.lq0.dreamaticvoyage.client.particle.TentacleParticle;
 import tech.lq0.dreamaticvoyage.client.particle.UmuLightParticle;
 import tech.lq0.dreamaticvoyage.client.render.*;
+import tech.lq0.dreamaticvoyage.client.render.blockentity.CrystalPopperBlockEntityRenderer;
+import tech.lq0.dreamaticvoyage.client.render.blockentity.FukamizuCrusherBlockEntityRenderer;
+import tech.lq0.dreamaticvoyage.client.render.blockentity.PointsStoreBlockEntityRenderer;
 import tech.lq0.dreamaticvoyage.client.render.curios.*;
 import tech.lq0.dreamaticvoyage.client.render.tooltip.ClientImageTooltip;
 import tech.lq0.dreamaticvoyage.client.render.tooltip.ImageTooltip;
@@ -51,6 +54,7 @@ public class ClientRenderHandler {
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(BlockEntityRegistry.POINTS_STORE_BLOCK_ENTITY.get(), PointsStoreBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityRegistry.FUKAMIZU_CRUSHER_BLOCK_ENTITY.get(), FukamizuCrusherBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(BlockEntityRegistry.CRYSTAL_POPPER_BLOCK_ENTITY.get(), CrystalPopperBlockEntityRenderer::new);
     }
 
     @SubscribeEvent

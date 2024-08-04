@@ -4,175 +4,106 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.Container;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.WorldlyContainer;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.items.wrapper.CombinedInvWrapper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
-import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
-public class CrystalPopperBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
-    protected static final int SLOT_INPUT = 0;
-    protected static final int SLOT_RESULT = 1;
+public class CrystalPopperBlockEntity extends BlockEntity {
 
-    private static final int[] SLOTS_FOR_SIDES = new int[]{0};
-    private static final int[] SLOTS_FOR_DOWN = new int[]{1};
-
-    public static final int PROCESS_TIME = 1200;
-
-    public static final int MAX_DATA_COUNT = 3;
-
-    protected NonNullList<ItemStack> items = NonNullList.withSize(2, ItemStack.EMPTY);
+    public ItemStackHandler inputInv;
+    public ItemStackHandler outputInv;
+    public LazyOptional<IItemHandler> capability;
 
     public int progress;
 
-    protected final ContainerData dataAccess = new ContainerData() {
-        public int get(int pIndex) {
-            return switch (pIndex) {
-                case 0 -> CrystalPopperBlockEntity.this.progress;
-                default -> 0;
-            };
-        }
-
-        public void set(int pIndex, int pValue) {
-            switch (pIndex) {
-                case 0:
-                    CrystalPopperBlockEntity.this.progress = pValue;
-                    break;
-            }
-        }
-
-        public int getCount() {
-            return MAX_DATA_COUNT;
-        }
-    };
-
     public CrystalPopperBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.CRYSTAL_POPPER_BLOCK_ENTITY.get(), pPos, pBlockState);
+
+        inputInv = new ItemStackHandler(1);
+        outputInv = new ItemStackHandler(2);
+        capability = LazyOptional.of(CrystalPopperBlockEntity.InventoryHandler::new);
     }
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPopperBlockEntity blockEntity) {
 
     }
 
+    public ItemStack getInput() {
+        return inputInv.getStackInSlot(0);
+    }
+
+    public NonNullList<ItemStack> getOutput() {
+        return NonNullList.of(outputInv.getStackInSlot(0), outputInv.getStackInSlot(1));
+    }
+
     @Override
     public void load(CompoundTag pTag) {
         super.load(pTag);
 
-        this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        ContainerHelper.loadAllItems(pTag, this.items);
+        this.progress = pTag.getInt("Progress");
+        this.inputInv.deserializeNBT(pTag.getCompound("Input"));
+        this.outputInv.deserializeNBT(pTag.getCompound("Output"));
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag) {
         super.saveAdditional(pTag);
 
-        ContainerHelper.saveAllItems(pTag, this.items);
+        pTag.putInt("Progress", this.progress);
+        pTag.put("Input", inputInv.serializeNBT());
+        pTag.put("Output", outputInv.serializeNBT());
     }
 
     @Override
-    public int[] getSlotsForFace(Direction pSide) {
-        if (pSide == Direction.DOWN) {
-            return SLOTS_FOR_DOWN;
-        } else {
-            return SLOTS_FOR_SIDES;
+    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
+        if (cap == ForgeCapabilities.ITEM_HANDLER)
+            return capability.cast();
+        return super.getCapability(cap, side);
+    }
+
+    private class InventoryHandler extends CombinedInvWrapper {
+        public InventoryHandler() {
+            super(inputInv, outputInv);
         }
-    }
 
-    @Override
-    public boolean canPlaceItemThroughFace(int pIndex, ItemStack pItemStack, @Nullable Direction pDirection) {
-        return this.canPlaceItem(pIndex, pItemStack);
-    }
-
-    public boolean canPlaceItem(int pIndex, ItemStack pStack) {
-        if (pIndex == 1) {
-            return false;
-        } else return pIndex == 0 && pStack.is(ItemRegistry.FUKAMIZU_BREAD_INGOT.get());
-    }
-
-    @Override
-    public boolean canTakeItemThroughFace(int pIndex, ItemStack pStack, Direction pDirection) {
-        if (pDirection == Direction.DOWN && pIndex == 1) {
-            return pStack.is(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT.get());
-        } else {
-            return true;
-        }
-    }
-
-    @Override
-    public int getContainerSize() {
-        return this.items.size();
-    }
-
-    @Override
-    public boolean isEmpty() {
-        for (ItemStack itemstack : this.items) {
-            if (!itemstack.isEmpty()) {
+        @Override
+        public boolean isItemValid(int slot, ItemStack stack) {
+            if (outputInv == getHandlerFromIndex(getIndexForSlot(slot))) {
                 return false;
             }
+
+            return stack.is(Tags.Items.INGOTS_GOLD) && super.isItemValid(slot, stack);
         }
 
-        return true;
-    }
-
-    @Override
-    public ItemStack getItem(int pSlot) {
-        return this.items.get(pSlot);
-    }
-
-    @Override
-    public ItemStack removeItem(int pSlot, int pAmount) {
-        return ContainerHelper.removeItem(this.items, pSlot, pAmount);
-    }
-
-    @Override
-    public ItemStack removeItemNoUpdate(int pSlot) {
-        return ContainerHelper.takeItem(this.items, pSlot);
-    }
-
-    @Override
-    public void setItem(int pSlot, ItemStack pStack) {
-        ItemStack itemstack = this.items.get(pSlot);
-        boolean flag = !pStack.isEmpty() && ItemStack.isSameItemSameTags(itemstack, pStack);
-        this.items.set(pSlot, pStack);
-        if (pStack.getCount() > this.getMaxStackSize()) {
-            pStack.setCount(this.getMaxStackSize());
+        @Override
+        public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+            if (outputInv == getHandlerFromIndex(getIndexForSlot(slot))) {
+                return stack;
+            }
+            if (!isItemValid(slot, stack)) {
+                return stack;
+            }
+            return super.insertItem(slot, stack, simulate);
         }
 
-        if (pSlot == 0 && !flag) {
-
-            this.setChanged();
+        @Override
+        public ItemStack extractItem(int slot, int amount, boolean simulate) {
+            if (inputInv == getHandlerFromIndex(getIndexForSlot(slot))) {
+                return ItemStack.EMPTY;
+            }
+            return super.extractItem(slot, amount, simulate);
         }
-    }
 
-    @Override
-    public boolean stillValid(Player pPlayer) {
-        return Container.stillValidBlockEntity(this, pPlayer);
-    }
-
-    @Override
-    public void clearContent() {
-        this.items.clear();
-    }
-
-    @Override
-    public Component getDisplayName() {
-        return Component.translatable("container.dreamaticvoyage.crystal_popper");
-    }
-
-    @Nullable
-    @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return null;
     }
 }
