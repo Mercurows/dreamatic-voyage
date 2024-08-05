@@ -4,7 +4,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "dreamaticvoyage:block/fukamizu_compressor",
-		"particle": "dreamaticvoyage:block/fukamizu_compressor"
+		"particle": "dreamaticvoyage:block/fukamizu_machine_casing_side"
 	},
 	"elements": [
 		{

@@ -30,7 +30,6 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.CrystalPopperBlockEntity;
-import tech.lq0.dreamaticvoyage.block.entity.FukamizuCrusherBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
@@ -59,35 +58,35 @@ public class CrystalPopper extends Block implements EntityBlock {
         }
 
         // TODO 实现正确的物品存取逻辑
-        worldIn.getBlockEntity(pos, BlockEntityRegistry.CRYSTAL_POPPER_BLOCK_ENTITY.get()).ifPresent(blockEntity -> {
-            IItemHandlerModifiable inputInv = blockEntity.inputInv;
-            if (inputInv.getStackInSlot(0).isEmpty()) {
-                inputInv.insertItem(0, player.getItemInHand(handIn), false);
-                player.getItemInHand(handIn).shrink(1);
-            } else {
-                player.getInventory().placeItemBackInInventory(inputInv.getStackInSlot(0));
-                inputInv.setStackInSlot(0, ItemStack.EMPTY);
-            }
-
-            boolean emptyOutput = true;
-            IItemHandlerModifiable outputInv = blockEntity.outputInv;
-
-            ItemStack stackInSlot = outputInv.getStackInSlot(0);
-            if (!stackInSlot.isEmpty()) {
-                emptyOutput = false;
-            }
-
-            player.getInventory().placeItemBackInInventory(stackInSlot);
-            outputInv.setStackInSlot(0, ItemStack.EMPTY);
-
-            if (emptyOutput) {
-                outputInv = blockEntity.inputInv;
-                player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(0));
-                outputInv.setStackInSlot(0, ItemStack.EMPTY);
-            }
-
-            blockEntity.setChanged();
-        });
+//        worldIn.getBlockEntity(pos, BlockEntityRegistry.CRYSTAL_POPPER_BLOCK_ENTITY.get()).ifPresent(blockEntity -> {
+//            IItemHandlerModifiable inputInv = blockEntity.inputInv;
+//            if (inputInv.getStackInSlot(0).isEmpty()) {
+//                inputInv.insertItem(0, player.getItemInHand(handIn), false);
+//                player.getItemInHand(handIn).shrink(1);
+//            } else {
+//                player.getInventory().placeItemBackInInventory(inputInv.getStackInSlot(0));
+//                inputInv.setStackInSlot(0, ItemStack.EMPTY);
+//            }
+//
+//            boolean emptyOutput = true;
+//            IItemHandlerModifiable outputInv = blockEntity.outputInv;
+//
+//            ItemStack stackInSlot = outputInv.getStackInSlot(0);
+//            if (!stackInSlot.isEmpty()) {
+//                emptyOutput = false;
+//            }
+//
+//            player.getInventory().placeItemBackInInventory(stackInSlot);
+//            outputInv.setStackInSlot(0, ItemStack.EMPTY);
+//
+//            if (emptyOutput) {
+//                outputInv = blockEntity.inputInv;
+//                player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(0));
+//                outputInv.setStackInSlot(0, ItemStack.EMPTY);
+//            }
+//
+//            blockEntity.setChanged();
+//        });
 
         return InteractionResult.SUCCESS;
     }
@@ -119,7 +118,7 @@ public class CrystalPopper extends Block implements EntityBlock {
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
         if (pLevel instanceof ServerLevel) {
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-            if (blockentity instanceof FukamizuCrusherBlockEntity blockEntity) {
+            if (blockentity instanceof CrystalPopperBlockEntity blockEntity) {
                 IItemHandler inputInv = blockEntity.inputInv;
                 for (int slot = 0; slot < inputInv.getSlots(); slot++) {
                     Containers.dropItemStack(pLevel, pPos.getX(), pPos.getY(), pPos.getZ(), inputInv.getStackInSlot(slot));
