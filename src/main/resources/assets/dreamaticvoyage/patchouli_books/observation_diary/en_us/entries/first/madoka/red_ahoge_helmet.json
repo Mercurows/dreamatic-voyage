@@ -15,14 +15,17 @@
     },
     {
       "type": "patchouli:text",
+      "advancement": "dreamaticvoyage:main/red_ahoge_helmet",
       "text": "dreamaticvoyage.page.red_ahoge_helmet3"
     },
     {
       "type": "patchouli:text",
+      "advancement": "dreamaticvoyage:main/red_ahoge_helmet",
       "text": "dreamaticvoyage.page.red_ahoge_helmet4"
     },
     {
       "type": "patchouli:text",
+      "advancement": "dreamaticvoyage:main/red_ahoge_helmet",
       "text": "dreamaticvoyage.page.red_ahoge_helmet5"
     }
   ],

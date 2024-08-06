@@ -15,10 +15,12 @@
     },
     {
       "type": "patchouli:text",
+      "advancement": "dreamaticvoyage:main/fetuozi",
       "text": "dreamaticvoyage.page.fetuozi3"
     },
     {
       "type": "patchouli:text",
+      "advancement": "dreamaticvoyage:main/fetuozi",
       "text": "dreamaticvoyage.page.fetuozi4"
     }
   ],

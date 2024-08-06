@@ -15,10 +15,12 @@
     },
     {
       "type": "patchouli:text",
+      "advancement": "dreamaticvoyage:main/momo_phone",
       "text": "dreamaticvoyage.page.momo_phone3"
     },
     {
       "type": "patchouli:text",
+      "advancement": "dreamaticvoyage:main/momo_phone",
       "text": "dreamaticvoyage.page.momo_phone4"
     }
   ],
