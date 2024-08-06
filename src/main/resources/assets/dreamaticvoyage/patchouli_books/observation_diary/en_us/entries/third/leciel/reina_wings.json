@@ -1,0 +1,27 @@
+{
+  "name": "dreamaticvoyage.entry.reina_wings",
+  "icon": "dreamaticvoyage:reina_wings",
+  "category": "dreamaticvoyage:third",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.reina_wings1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:reina_wings",
+      "text": "dreamaticvoyage.page.reina_wings2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.reina_wings3"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:reina_feather",
+      "text": "dreamaticvoyage.page.reina_wings4"
+    }
+  ],
+  "sortnum": 30301
+}

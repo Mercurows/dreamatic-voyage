@@ -1469,6 +1469,12 @@
   "dreamaticvoyage.entry.third.intro": "梦幻泡影",
   "dreamaticvoyage.page.third.intro1": "我所见的，是真实的繁荣吗？$(br)我所闻的，是虚伪的和睦吗？",
 
+  "dreamaticvoyage.entry.reina_wings": "怜奈之翼",
+  "dreamaticvoyage.page.reina_wings1": "$(item)怜奈之翼$(0)是一件能够提供饥饿值恢复的装备，尽管不知道它的原理是什么。$(p)装备时提供$(thing)缓降$(0)效果，每10秒会恢复1点$(thing)饥饿值$(0)和1点$(thing)饱和度$(0)。$(p)此外还会降低佩戴者的重力。",
+  "dreamaticvoyage.page.reina_wings2": "$(o)红烧翅膀我喜欢吃。",
+  "dreamaticvoyage.page.reina_wings3": "制作怜奈系列物品需要用到粉红色的$(item)怜奈之羽$(0)，奇怪的是，原料中并没有可以吃的东西……",
+  "dreamaticvoyage.page.reina_wings4": "$(o)钢铁羽毛。",
+
   "dreamaticvoyage.entry.fourth.intro": "黄昏之歌",
   "dreamaticvoyage.page.fourth.intro1": "由内向外，逐步瓦解，分崩离析。$(br)往日的辉煌不再，旅人们又会去往何方？",
   "dreamaticvoyage.entry.strawberry_cake": "Strawberry Cake",
