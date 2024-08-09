@@ -5,7 +5,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
@@ -37,7 +37,7 @@ public class Bleeding extends MobEffect {
     }
 
     @SubscribeEvent
-    public static void effects(LivingAttackEvent event) {
+    public static void onLivingHurt(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
         MobEffect effect = EffectRegistry.BLEEDING.get();
 
@@ -51,10 +51,10 @@ public class Bleeding extends MobEffect {
 
         if (!event.getSource().is(DamageSourceRegistry.BLEEDING)) {
             if (entity.hasEffect(effect)) {
-                entity.invulnerableTime = 0;
                 int level = entity.getEffect(EffectRegistry.BLEEDING.get()).getAmplifier();
-
                 float damage = 1.0f + level * (level + 1.0f) / 2.0f;
+
+                entity.invulnerableTime = 0;
                 entity.hurt(DamageSourceRegistry.causeBleedingDamage(entity.level().registryAccess(), event.getSource().getDirectEntity()), damage);
             }
         }
