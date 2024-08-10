@@ -694,7 +694,6 @@
   "item.dreamaticvoyage.cage_ring": "“同笼”",
   "des.dreamaticvoyage.cage_ring": "“答应我，不要离开我的身边，好吗？”",
   "enchantment.dreamaticvoyage.fair_means": "先礼后兵",
-  "enchantment.dreamaticvoyage.fair_means.desc": "第一次攻击造成部分伤害，第二次攻击造成高额伤害",
   "item.dreamaticvoyage.baked_name_tag": "炭烤命名牌",
   "des.dreamaticvoyage.baked_name_tag": "为什么会有人能把命名牌拿去烤了……",
   "item.minecraft.potion.effect.dmv_bleeding": "流血药水",
@@ -896,6 +895,7 @@
   "des.dreamaticvoyage.earth_debris": "粉碎大地后的产物",
   "effect.dreamaticvoyage.creativity_bankruptcy": "创意破产",
   "block.dreamaticvoyage.fukamizu_crusher": "深水粉碎机",
+  "enchantment.dreamaticvoyage.shadow_of_void": "虚无之影",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",
@@ -1098,10 +1098,13 @@
   "item.dreamaticvoyage.music_disc_dreaming_fairy": "音乐唱片（Dreaming Fairy）",
   "subtitle.dreamaticvoyage.dreaming_fairy": "正在播放：Dreaming Fairy",
   "item.dreamaticvoyage.music_disc_dreaming_fairy.desc": "七濑Unia - Dreaming Fairy",
+
   "enchantment.dreamaticvoyage.ahoge_parasitic.desc": "击杀生物时会恢复一定的生命值",
   "enchantment.dreamaticvoyage.uni_husk.desc": "被攻击时会使攻击者中毒",
   "enchantment.dreamaticvoyage.magicros.desc": "当玩家周围存在3个及以上的友方生物时，被攻击时会恢复一定的生命值，对攻击者造成伤害并击退",
   "enchantment.dreamaticvoyage.peace_wish.desc": "被攻击时会使攻击者流血",
+  "enchantment.dreamaticvoyage.fair_means.desc": "第一次攻击造成部分伤害，第二次攻击造成高额伤害",
+  "enchantment.dreamaticvoyage.shadow_of_void.desc": "减少视线外的生物造成的伤害",
 
   "liver.dreamaticvoyage.liver": "所属Liver:",
   "liver.dreamaticvoyage.mitsuki": "神奈满月",
@@ -1466,7 +1469,7 @@
   "dreamaticvoyage.page.idol_costume5": "$(o)化身蛙吹Keroro。",
   "dreamaticvoyage.page.idol_costume6": "$(o)化身星宫颜Ekira。",
 
-  "dreamaticvoyage.entry.third.intro": "梦幻泡影",
+  "dreamaticvoyage.entry.third.intro": "虚无之影",
   "dreamaticvoyage.page.third.intro1": "我所见的，是真实的繁荣吗？$(br)我所闻的，是虚伪的和睦吗？",
 
   "dreamaticvoyage.entry.reina_wings": "怜奈之翼",

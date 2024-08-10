@@ -27,7 +27,7 @@ public class PeaceWish extends Enchantment {
 
     @Override
     public int getMaxLevel() {
-        return 1;
+        return super.getMaxLevel();
     }
 
     @Override

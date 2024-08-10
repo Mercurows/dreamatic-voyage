@@ -15,4 +15,5 @@ public class EnchantmentRegistry {
     public static final RegistryObject<Enchantment> MAGICROS = ENCHANTMENTS.register("magicros", Magicros::new);
     public static final RegistryObject<Enchantment> PEACE_WISH = ENCHANTMENTS.register("peace_wish", PeaceWish::new);
     public static final RegistryObject<Enchantment> FAIR_MEANS = ENCHANTMENTS.register("fair_means", FairMeans::new);
+    public static final RegistryObject<Enchantment> SHADOW_OF_VOID = ENCHANTMENTS.register("shadow_of_void", ShadowOfVoid::new);
 }

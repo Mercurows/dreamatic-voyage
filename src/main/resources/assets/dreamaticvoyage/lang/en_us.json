@@ -694,7 +694,6 @@
   "item.dreamaticvoyage.cage_ring": "\"The Same Cage\"",
   "des.dreamaticvoyage.cage_ring": "\"Promise me, you would not leave my side, okay?\"",
   "enchantment.dreamaticvoyage.fair_means": "Fair Means",
-  "enchantment.dreamaticvoyage.fair_means.desc": "First attack causes partial damage, second attack causes high damage",
   "item.dreamaticvoyage.baked_name_tag": "Baked Name Tag",
   "des.dreamaticvoyage.baked_name_tag": "Why would anyone able to bake the name tag...",
   "item.minecraft.potion.effect.dmv_bleeding": "Potion of Bleeding",
@@ -896,6 +895,7 @@
   "des.dreamaticvoyage.earth_debris": "粉碎大地后的产物",
   "effect.dreamaticvoyage.creativity_bankruptcy": "Creativity Bankruptcy",
   "block.dreamaticvoyage.fukamizu_crusher": "Fukamizu Crusher",
+  "enchantment.dreamaticvoyage.shadow_of_void": "Shadow of Void",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",
@@ -1098,10 +1098,13 @@
   "item.dreamaticvoyage.music_disc_dreaming_fairy": "Music Disc (Dreaming Fairy)",
   "subtitle.dreamaticvoyage.dreaming_fairy": "Now Playing: Dreaming Fairy",
   "item.dreamaticvoyage.music_disc_dreaming_fairy.desc": "Nanase Unia - Dreaming Fairy",
+
   "enchantment.dreamaticvoyage.ahoge_parasitic.desc": "Killing creatures to restore HP",
   "enchantment.dreamaticvoyage.uni_husk.desc": "Poison attacker when being attacked",
   "enchantment.dreamaticvoyage.magicros.desc": "When there are 3 or more friendly creatures around you, when attacked, you will recover a certain amount of HP, cause damage to the attacker and bounce it back",
   "enchantment.dreamaticvoyage.peace_wish.desc": "Make attacker bleeding when being attacked",
+  "enchantment.dreamaticvoyage.fair_means.desc": "First attack causes partial damage, second attack causes high damage",
+  "enchantment.dreamaticvoyage.shadow_of_void.desc": "Reduce the damage caused by mobs out of sight",
 
   "liver.dreamaticvoyage.liver": "From:",
   "liver.dreamaticvoyage.mitsuki": "Kanna Mitsuki",
@@ -1466,7 +1469,7 @@
   "dreamaticvoyage.page.idol_costume5": "$(o)化身蛙吹Keroro。",
   "dreamaticvoyage.page.idol_costume6": "$(o)化身星宫颜Ekira。",
 
-  "dreamaticvoyage.entry.third.intro": "梦幻泡影",
+  "dreamaticvoyage.entry.third.intro": "Shadow of Void",
   "dreamaticvoyage.page.third.intro1": "我所见的，是真实的繁荣吗？$(br)我所闻的，是虚伪的和睦吗？",
 
   "dreamaticvoyage.entry.reina_wings": "怜奈之翼",
