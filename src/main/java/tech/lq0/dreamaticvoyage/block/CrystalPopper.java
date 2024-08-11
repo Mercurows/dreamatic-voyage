@@ -18,6 +18,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -29,6 +31,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.CrystalPopperBlockEntity;
+import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
@@ -36,6 +39,20 @@ import java.util.List;
 @SuppressWarnings("deprecation")
 public class CrystalPopper extends Block implements EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+        if (!pLevel.isClientSide) {
+            return createTickerHelper(pBlockEntityType, BlockEntityRegistry.CRYSTAL_POPPER_BLOCK_ENTITY.get(), CrystalPopperBlockEntity::serverTick);
+        }
+        return null;
+    }
+
+    @Nullable
+    protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> pServerType, BlockEntityType<E> pClientType, BlockEntityTicker<? super E> pTicker) {
+        return pClientType == pServerType ? (BlockEntityTicker<A>) pTicker : null;
+    }
 
     public CrystalPopper() {
         super(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops());
@@ -61,12 +78,14 @@ public class CrystalPopper extends Block implements EntityBlock {
         if (blockentity instanceof CrystalPopperBlockEntity popper) {
             if (mainHandItem.isEmpty()) {
                 var outputInv = popper.outputInv;
-                if (!outputInv.getStackInSlot(0).isEmpty() || !outputInv.getStackInSlot(1).isEmpty()) {
+                if (!outputInv.getStackInSlot(0).isEmpty() || !outputInv.getStackInSlot(1).isEmpty() || !outputInv.getStackInSlot(2).isEmpty()) {
                     // 取出输出槽物品
                     player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(0));
                     player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(1));
+                    player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(2));
                     outputInv.setStackInSlot(0, ItemStack.EMPTY);
                     outputInv.setStackInSlot(1, ItemStack.EMPTY);
+                    outputInv.setStackInSlot(2, ItemStack.EMPTY);
                 } else {
                     // 取出输入槽物品
                     var inputInv = popper.inputInv;

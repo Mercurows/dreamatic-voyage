@@ -19,6 +19,9 @@ import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
+
+import java.util.Random;
 
 public class CrystalPopperBlockEntity extends BlockEntity {
 
@@ -27,17 +30,65 @@ public class CrystalPopperBlockEntity extends BlockEntity {
     public LazyOptional<IItemHandler> capability;
 
     public int progress;
+    public int energy;
 
     public CrystalPopperBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.CRYSTAL_POPPER_BLOCK_ENTITY.get(), pPos, pBlockState);
 
         inputInv = new ItemStackHandler(1);
-        outputInv = new ItemStackHandler(2);
+        outputInv = new ItemStackHandler(3);
         capability = LazyOptional.of(CrystalPopperBlockEntity.InventoryHandler::new);
     }
 
-    public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPopperBlockEntity blockEntity) {
+    public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPopperBlockEntity popper) {
+        if (!popper.canProcess()) {
+            return;
+        }
 
+        popper.progress += 1;
+
+        // 每5s消耗一个金锭，能量+1
+        if (popper.progress % 100 == 0) {
+            popper.inputInv.getStackInSlot(0).shrink(1);
+            popper.energy = Math.min(popper.energy + 1, 100);
+        }
+
+        // 每15s尝试生成一次产物
+        if (popper.progress >= 300) {
+            popper.progress = 0;
+            popper.generateOutput();
+        }
+    }
+
+    private void generateOutput() {
+        // 爆米花
+        if (!outputInv.getStackInSlot(0).is(ItemRegistry.CRYSTAL_POPCORN.get())) {
+            outputInv.setStackInSlot(0, new ItemStack(ItemRegistry.CRYSTAL_POPCORN.get()));
+        } else {
+            outputInv.getStackInSlot(0).grow(1);
+        }
+
+        Random random = new Random();
+
+        // 结晶粉
+        boolean generatePowder = 20 + 2 * this.energy > random.nextInt(100);
+        if (generatePowder) {
+            if (!outputInv.getStackInSlot(1).is(ItemRegistry.CRYSTAL_POWDER.get())) {
+                outputInv.setStackInSlot(1, new ItemStack(ItemRegistry.CRYSTAL_POWDER.get()));
+            } else {
+                outputInv.getStackInSlot(1).grow(1);
+            }
+        }
+
+        // 纯净结晶粉
+        boolean generatePurifiedPowder = this.energy - 90 > random.nextInt(100);
+        if (generatePurifiedPowder) {
+            if (!outputInv.getStackInSlot(2).is(ItemRegistry.PURIFIED_CRYSTAL_POWDER.get())) {
+                outputInv.setStackInSlot(2, new ItemStack(ItemRegistry.PURIFIED_CRYSTAL_POWDER.get()));
+            } else {
+                outputInv.getStackInSlot(2).grow(1);
+            }
+        }
     }
 
     public boolean tryInsertGold(ItemStack itemStack) {
@@ -65,11 +116,26 @@ public class CrystalPopperBlockEntity extends BlockEntity {
         return NonNullList.of(outputInv.getStackInSlot(0), outputInv.getStackInSlot(1));
     }
 
+    private boolean canProcess() {
+        if (inputInv.getStackInSlot(0).getCount() > 0) {
+            return true;
+        }
+        if (outputInv.getStackInSlot(0).getCount() == 64
+                || outputInv.getStackInSlot(1).getCount() == 64
+                || outputInv.getStackInSlot(2).getCount() == 64
+        ) {
+            return false;
+        }
+
+        return this.energy > 0;
+    }
+
     @Override
     public void load(CompoundTag pTag) {
         super.load(pTag);
 
         this.progress = pTag.getInt("Progress");
+        this.energy = pTag.getInt("Energy");
         this.inputInv.deserializeNBT(pTag.getCompound("Input"));
         this.outputInv.deserializeNBT(pTag.getCompound("Output"));
     }
@@ -79,6 +145,7 @@ public class CrystalPopperBlockEntity extends BlockEntity {
         super.saveAdditional(pTag);
 
         pTag.putInt("Progress", this.progress);
+        pTag.putInt("Energy", this.energy);
         pTag.put("Input", inputInv.serializeNBT());
         pTag.put("Output", outputInv.serializeNBT());
     }
