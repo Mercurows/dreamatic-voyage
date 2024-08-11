@@ -56,6 +56,7 @@ public class CrystalPopperBlockEntity extends BlockEntity {
         // 每15s尝试生成一次产物
         if (popper.progress >= 300) {
             popper.progress = 0;
+            popper.energy--;
             popper.generateOutput();
         }
     }
