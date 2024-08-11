@@ -14,7 +14,7 @@
     "frame": "challenge",
     "hidden": false
   },
-  "parent": "dreamaticvoyage:main/lunatic_bow",
+  "parent": "dreamaticvoyage:main/root",
   "criteria": {
     "tail_pen": {
       "trigger": "minecraft:inventory_changed",
