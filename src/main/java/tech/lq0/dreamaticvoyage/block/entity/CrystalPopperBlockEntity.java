@@ -5,6 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -37,6 +38,23 @@ public class CrystalPopperBlockEntity extends BlockEntity {
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPopperBlockEntity blockEntity) {
 
+    }
+
+    public boolean tryInsertGold(ItemStack itemStack) {
+        if (!itemStack.is(Items.GOLD_INGOT)) {
+            return false;
+        }
+
+        var inputItem = this.inputInv.getStackInSlot(0);
+        if (inputItem.getCount() == 64) return false;
+
+        var countToInsert = 64 - inputItem.getCount();
+        var itemToInsert = itemStack.split(countToInsert);
+        itemToInsert.setCount(itemToInsert.getCount() + inputItem.getCount());
+
+        this.inputInv.setStackInSlot(0, itemToInsert);
+
+        return true;
     }
 
     public ItemStack getInput() {

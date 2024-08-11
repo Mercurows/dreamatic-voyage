@@ -27,10 +27,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.CrystalPopperBlockEntity;
-import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
@@ -57,37 +55,31 @@ public class CrystalPopper extends Block implements EntityBlock {
             return InteractionResult.SUCCESS;
         }
 
-        // TODO 实现正确的物品存取逻辑
-//        worldIn.getBlockEntity(pos, BlockEntityRegistry.CRYSTAL_POPPER_BLOCK_ENTITY.get()).ifPresent(blockEntity -> {
-//            IItemHandlerModifiable inputInv = blockEntity.inputInv;
-//            if (inputInv.getStackInSlot(0).isEmpty()) {
-//                inputInv.insertItem(0, player.getItemInHand(handIn), false);
-//                player.getItemInHand(handIn).shrink(1);
-//            } else {
-//                player.getInventory().placeItemBackInInventory(inputInv.getStackInSlot(0));
-//                inputInv.setStackInSlot(0, ItemStack.EMPTY);
-//            }
-//
-//            boolean emptyOutput = true;
-//            IItemHandlerModifiable outputInv = blockEntity.outputInv;
-//
-//            ItemStack stackInSlot = outputInv.getStackInSlot(0);
-//            if (!stackInSlot.isEmpty()) {
-//                emptyOutput = false;
-//            }
-//
-//            player.getInventory().placeItemBackInInventory(stackInSlot);
-//            outputInv.setStackInSlot(0, ItemStack.EMPTY);
-//
-//            if (emptyOutput) {
-//                outputInv = blockEntity.inputInv;
-//                player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(0));
-//                outputInv.setStackInSlot(0, ItemStack.EMPTY);
-//            }
-//
-//            blockEntity.setChanged();
-//        });
+        BlockEntity blockentity = worldIn.getBlockEntity(pos);
+        ItemStack mainHandItem = player.getItemInHand(handIn);
 
+        if (blockentity instanceof CrystalPopperBlockEntity popper) {
+            if (mainHandItem.isEmpty()) {
+                var outputInv = popper.outputInv;
+                if (!outputInv.getStackInSlot(0).isEmpty() || !outputInv.getStackInSlot(1).isEmpty()) {
+                    // 取出输出槽物品
+                    player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(0));
+                    player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(1));
+                    outputInv.setStackInSlot(0, ItemStack.EMPTY);
+                    outputInv.setStackInSlot(1, ItemStack.EMPTY);
+                } else {
+                    // 取出输入槽物品
+                    var inputInv = popper.inputInv;
+                    player.getInventory().placeItemBackInInventory(inputInv.getStackInSlot(0));
+                    inputInv.setStackInSlot(0, ItemStack.EMPTY);
+                }
+                popper.setChanged();
+            } else if (popper.tryInsertGold(mainHandItem)) {
+                // 尝试输入金锭
+                return InteractionResult.CONSUME;
+            }
+            return InteractionResult.PASS;
+        }
         return InteractionResult.SUCCESS;
     }
 
