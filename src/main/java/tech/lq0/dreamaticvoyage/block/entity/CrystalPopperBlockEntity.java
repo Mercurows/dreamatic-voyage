@@ -48,9 +48,9 @@ public class CrystalPopperBlockEntity extends BlockEntity {
         popper.progress += 1;
 
         // 每5s消耗一个金锭，能量+1
-        if (popper.progress % 100 == 0) {
+        if (popper.progress % 100 == 0 && popper.energy < 100) {
             popper.inputInv.getStackInSlot(0).shrink(1);
-            popper.energy = Math.min(popper.energy + 1, 100);
+            popper.energy++;
         }
 
         // 每15s尝试生成一次产物
