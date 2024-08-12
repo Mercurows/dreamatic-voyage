@@ -29,7 +29,8 @@ public class CrystalPopperBlockEntity extends BlockEntity {
     public ItemStackHandler outputInv;
     public LazyOptional<IItemHandler> capability;
 
-    public int progress;
+    public int inputProgress;
+    public int outputProgress;
     public int energy;
 
     public CrystalPopperBlockEntity(BlockPos pPos, BlockState pBlockState) {
@@ -41,23 +42,28 @@ public class CrystalPopperBlockEntity extends BlockEntity {
     }
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPopperBlockEntity popper) {
-        if (!popper.canProcess()) {
-            return;
-        }
-
-        popper.progress += 1;
-
         // 每5s消耗一个金锭，能量+1
-        if (popper.progress % 100 == 0 && popper.energy < 100) {
-            popper.inputInv.getStackInSlot(0).shrink(1);
-            popper.energy++;
+        if (popper.canInputProcess()) {
+            popper.inputProgress++;
+
+            if (popper.inputProgress >= 100) {
+                popper.inputProgress = 0;
+                popper.inputInv.getStackInSlot(0).shrink(1);
+                popper.energy++;
+                setChanged(pLevel, pPos, pState);
+            }
         }
 
         // 每15s尝试生成一次产物
-        if (popper.progress >= 300) {
-            popper.progress = 0;
-            popper.energy--;
-            popper.generateOutput();
+        if (popper.canOutputProcess()) {
+            popper.outputProgress++;
+
+            if (popper.outputProgress >= 300) {
+                popper.outputProgress = 0;
+                popper.energy--;
+                popper.generateOutput();
+                setChanged(pLevel, pPos, pState);
+            }
         }
     }
 
@@ -110,17 +116,18 @@ public class CrystalPopperBlockEntity extends BlockEntity {
     }
 
     public ItemStack getInput() {
-        return inputInv.getStackInSlot(0);
+        return this.inputInv.getStackInSlot(0);
     }
 
     public NonNullList<ItemStack> getOutput() {
-        return NonNullList.of(outputInv.getStackInSlot(0), outputInv.getStackInSlot(1));
+        return NonNullList.of(this.outputInv.getStackInSlot(0), this.outputInv.getStackInSlot(1), this.outputInv.getStackInSlot(2));
     }
 
-    private boolean canProcess() {
-        if (inputInv.getStackInSlot(0).getCount() > 0) {
-            return true;
-        }
+    private boolean canInputProcess() {
+        return inputInv.getStackInSlot(0).getCount() > 0 && this.energy < 100;
+    }
+
+    private boolean canOutputProcess() {
         if (outputInv.getStackInSlot(0).getCount() == 64
                 || outputInv.getStackInSlot(1).getCount() == 64
                 || outputInv.getStackInSlot(2).getCount() == 64
@@ -132,10 +139,17 @@ public class CrystalPopperBlockEntity extends BlockEntity {
     }
 
     @Override
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        capability.invalidate();
+    }
+
+    @Override
     public void load(CompoundTag pTag) {
         super.load(pTag);
 
-        this.progress = pTag.getInt("Progress");
+        this.inputProgress = pTag.getInt("InputProgress");
+        this.outputProgress = pTag.getInt("OutputProgress");
         this.energy = pTag.getInt("Energy");
         this.inputInv.deserializeNBT(pTag.getCompound("Input"));
         this.outputInv.deserializeNBT(pTag.getCompound("Output"));
@@ -145,10 +159,11 @@ public class CrystalPopperBlockEntity extends BlockEntity {
     protected void saveAdditional(CompoundTag pTag) {
         super.saveAdditional(pTag);
 
-        pTag.putInt("Progress", this.progress);
+        pTag.putInt("InputProgress", this.inputProgress);
+        pTag.putInt("OutputProgress", this.outputProgress);
         pTag.putInt("Energy", this.energy);
-        pTag.put("Input", inputInv.serializeNBT());
-        pTag.put("Output", outputInv.serializeNBT());
+        pTag.put("Input", this.inputInv.serializeNBT());
+        pTag.put("Output", this.outputInv.serializeNBT());
     }
 
     @Override
