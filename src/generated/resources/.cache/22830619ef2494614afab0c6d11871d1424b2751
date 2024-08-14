@@ -1,4 +1,4 @@
-// 1.20.1	2024-08-05T01:27:20.6053686	Item Models: dreamaticvoyage
+// 1.20.1	2024-08-14T17:32:59.1898085	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 f37df339e571439e12f7388bec647a0b97ac128f assets/dreamaticvoyage/models/item/ancient_microphone.json
@@ -122,6 +122,8 @@ b8061a285cf67c8a2ff38dc047e6802a51cc9c2d assets/dreamaticvoyage/models/item/frog
 f5d494896a2ea74c3b18b69d28c3e836b822cbb8 assets/dreamaticvoyage/models/item/fukamizu_crumb.json
 1ddcc57e355ddbd5bd19349c746a3bf7268beae9 assets/dreamaticvoyage/models/item/fukamizu_fish.json
 bcadf6b16b549bec1ef9adfdd48a1d2955dc3981 assets/dreamaticvoyage/models/item/fukamizu_upgrade_smithing_template.json
+139e87637a4b0d8fae9af8dc11ccbdc355677cc8 assets/dreamaticvoyage/models/item/gachi_ingot.json
+f932e5e6bcf03b00286883306bf9f6eafadf0bf3 assets/dreamaticvoyage/models/item/gachi_nugget.json
 098e6ede5459359ea7d9aa11e95f6160c2fad5af assets/dreamaticvoyage/models/item/garlic_melon_slice.json
 cce59e8c4dc2f90cc1a71a99b143d33f5e1fe9f1 assets/dreamaticvoyage/models/item/gn_souls.json
 f96c580f3d3f73de671c2b691fd15b2ba1bd486a assets/dreamaticvoyage/models/item/gn_spirit.json

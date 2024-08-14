@@ -246,6 +246,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.CHARGED_CRYSTAL_INGOT);
         simpleItem(ItemRegistry.FICTIONAL_INGOT);
         simpleItem(ItemRegistry.FICTIONAL_NUGGET);
+        simpleItem(ItemRegistry.GACHI_INGOT);
+        simpleItem(ItemRegistry.GACHI_NUGGET);
         simpleItem(ItemRegistry.FUKAMIZU_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ItemRegistry.MIRACLE_CORE);
         simpleItem(ItemRegistry.EARTH_DEBRIS);

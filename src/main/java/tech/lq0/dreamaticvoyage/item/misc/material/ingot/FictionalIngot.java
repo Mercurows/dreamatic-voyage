@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.misc.material;
+package tech.lq0.dreamaticvoyage.item.misc.material.ingot;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

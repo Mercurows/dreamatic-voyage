@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "dreamaticvoyage:gachi_nugget"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:gachi_ingot",
+    "count": 1
+  }
+}

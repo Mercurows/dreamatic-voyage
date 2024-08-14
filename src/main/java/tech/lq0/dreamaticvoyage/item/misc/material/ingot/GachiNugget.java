@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.item.misc.material;
+package tech.lq0.dreamaticvoyage.item.misc.material.ingot;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -11,13 +11,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class FictionalNugget extends Item {
-    public FictionalNugget() {
+public class GachiNugget extends Item {
+    public GachiNugget() {
         super(new Properties().rarity(Rarity.EPIC));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fictional_nugget").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.gachi_nugget").withStyle(ChatFormatting.GRAY));
     }
 }
