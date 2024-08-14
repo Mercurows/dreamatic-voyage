@@ -615,6 +615,8 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.CHARGED_CRYSTAL_BLOCK.get(), new Item.Properties().rarity(Rarity.RARE).fireResistant()));
     public static final RegistryObject<Item> FICTIONAL_INGOT_BLOCK = BLOCK_ITEMS.register("fictional_ingot_block",
             () -> new BlockItem(BlockRegistry.FICTIONAL_INGOT_BLOCK.get(), new Item.Properties().rarity(Rarity.EPIC).fireResistant()));
+    public static final RegistryObject<Item> GACHI_INGOT_BLOCK = BLOCK_ITEMS.register("gachi_ingot_block",
+            () -> new BlockItem(BlockRegistry.GACHI_INGOT_BLOCK.get(), new Item.Properties().rarity(Rarity.EPIC).fireResistant()));
 
     public static final RegistryObject<Item> VERDANT_SPIRIT_RICH_SOIL = BLOCK_ITEMS.register("verdant_spirit_rich_soil",
             () -> new BlockItem(BlockRegistry.VERDANT_SPIRIT_RICH_SOIL.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));

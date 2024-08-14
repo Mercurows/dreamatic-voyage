@@ -34,7 +34,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         BlockRegistry.ROCK_STATUE.get(), BlockRegistry.PHANTASMAL_VOYAGER.get(),
                         BlockRegistry.FUKAMIZU_BREAD_BRICKS.get(), BlockRegistry.FUKAMIZU_MACHINE_CASING.get(),
                         BlockRegistry.FUKAMIZU_COMPRESSOR.get(), BlockRegistry.CRYSTAL_POPPER.get(),
-                        BlockRegistry.FUKAMIZU_CRUSHER.get());
+                        BlockRegistry.FUKAMIZU_CRUSHER.get(), BlockRegistry.GACHI_INGOT_BLOCK.get());
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(BlockRegistry.BLUE_SAND.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.HARANO_LOG.get(),
                 BlockRegistry.HARANO_WOOD.get(), BlockRegistry.HARANO_SLAB.get(), BlockRegistry.HARANO_PLANKS.get(),
@@ -46,7 +46,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(BlockRegistry.CHARGED_CRYSTAL_BLOCK.get());
-        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(BlockRegistry.FICTIONAL_INGOT_BLOCK.get());
+        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(BlockRegistry.FICTIONAL_INGOT_BLOCK.get(), BlockRegistry.GACHI_INGOT_BLOCK.get());
         this.tag(BlockTags.BEE_GROWABLES).add(BlockRegistry.UNI_MILLET_BLOCK.get());
         this.tag(BlockTags.CROPS).add(BlockRegistry.UNI_MILLET_BLOCK.get());
         this.tag(BlockTags.SAND).add(BlockRegistry.BLUE_SAND.get());

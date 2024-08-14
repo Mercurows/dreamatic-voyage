@@ -69,6 +69,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         this.dropSelf(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get());
         this.dropSelf(BlockRegistry.CHARGED_CRYSTAL_BLOCK.get());
         this.dropSelf(BlockRegistry.FICTIONAL_INGOT_BLOCK.get());
+        this.dropSelf(BlockRegistry.GACHI_INGOT_BLOCK.get());
 
         this.dropSelf(BlockRegistry.VERDANT_SPIRIT_RICH_SOIL.get());
         this.dropOther(BlockRegistry.VERDANT_SPIRIT_FARMLAND.get(), BlockRegistry.VERDANT_SPIRIT_RICH_SOIL.get());
