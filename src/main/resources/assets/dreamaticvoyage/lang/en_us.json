@@ -1616,5 +1616,11 @@
   "dreamaticvoyage.entry.sakura_bean_curd": "樱花酱腐乳",
   "dreamaticvoyage.page.sakura_bean_curd1": "$(item)樱花酱腐乳$(0)是一种经过特殊发酵工艺制作的食物，看起来应该味道不错吧？$(p)食用后会获得强力的$(thing)生命恢复$(0)效果。",
   "dreamaticvoyage.page.sakura_bean_curd2": "$(o)砍完怪物，憋了一肚子火，来尝尝刚做的酱腐乳，被治愈到了。$()$(p)“……闹麻了！”",
-  "jei.dreamaticvoyage.around_the_travel": "能够在末地城的宝藏箱中发现\n使用血槽大于400的世界和平之杖，潜行对有唱片的唱片机按下使用键，即可将已有唱片转换成该唱片\n\n“不忘初心，继续探索追寻那终点”"
+
+  "jei.dreamaticvoyage.around_the_travel": "能够在末地城的宝藏箱中发现\n使用血槽大于400的世界和平之杖，潜行对有唱片的唱片机按下使用键，即可将已有唱片转换成该唱片\n\n“不忘初心，继续探索追寻那终点。”",
+  "jei.dreamaticvoyage.song_of_qingqiu": "能够在雪屋的宝藏箱中发现。",
+  "jei.dreamaticvoyage.darakudatenshi": "能够在地牢、沙漠神殿和废弃矿井的宝藏箱或箱子矿车中发现。",
+  "jei.dreamaticvoyage.song_of_autumn": "能够在原野平原的帐篷内的木桶中发现。",
+  "jei.dreamaticvoyage.elf_wings": "能够在丛林神庙和林地府邸的宝藏箱中发现。",
+  "jei.dreamaticvoyage.past_sugar": "通过食用附魔后的异界棒棒糖获取。\n当异界棒棒糖的附魔等级之和大于11时，食用后有 (附魔等级 - 10) * 5%% 的概率获得流血效果，并获得一个昔日糖砂。"
 }
