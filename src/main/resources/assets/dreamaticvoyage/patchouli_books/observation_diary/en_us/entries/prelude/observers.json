@@ -54,21 +54,25 @@
       "text": "dreamaticvoyage.page.observers.leah3"
     },
     {
-      "type": "patchouli:text",
+      "type": "patchouli:image",
+      "images": [
+        "dreamaticvoyage:textures/character/roki_default_256x.png"
+      ],
+      "border": true,
       "title": "dreamaticvoyage.title.observers3",
-      "anchor": "roki27"
+      "anchor": "roki"
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.observers.roki271"
+      "text": "dreamaticvoyage.page.observers.roki1"
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.observers.roki272"
+      "text": "dreamaticvoyage.page.observers.roki2"
     },
     {
       "type": "patchouli:text",
-      "text": "dreamaticvoyage.page.observers.roki273"
+      "text": "dreamaticvoyage.page.observers.roki3"
     },
     {
       "type": "patchouli:image",
@@ -77,7 +81,7 @@
       ],
       "border": true,
       "title": "dreamaticvoyage.title.observers4",
-      "anchor": "Kuriko"
+      "anchor": "kuriko"
     },
     {
       "type": "patchouli:text",
