@@ -33,6 +33,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
@@ -50,7 +51,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class AncientLollipop extends SwordItem {
     public static final String TAG_LOLLIPOP = "shouldExplode";
 
@@ -312,7 +313,7 @@ public class AncientLollipop extends SwordItem {
     public static void setPlayerInvisible(RenderPlayerEvent.Pre event) {
         var otherPlayer = event.getEntity();
         var currentPlayer = Minecraft.getInstance().player;
-        assert currentPlayer != null;
+        if (currentPlayer == null) return;
 
         if (otherPlayer.isInvisibleTo(currentPlayer) && otherPlayer.isInvisible() && otherPlayer.getMainHandItem().getItem() instanceof AncientLollipop) {
             event.setCanceled(true);
