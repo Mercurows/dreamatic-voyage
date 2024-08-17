@@ -2,6 +2,7 @@ package tech.lq0.dreamaticvoyage.item.second.satou;
 
 import com.google.common.collect.Streams;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -19,7 +20,10 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.ClipContext;
@@ -29,9 +33,11 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
@@ -44,6 +50,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class AncientLollipop extends SwordItem {
     public static final String TAG_LOLLIPOP = "shouldExplode";
 
@@ -299,5 +306,16 @@ public class AncientLollipop extends SwordItem {
     @Override
     public boolean isEnchantable(ItemStack stack) {
         return true;
+    }
+
+    @SubscribeEvent
+    public static void setPlayerInvisible(RenderPlayerEvent.Pre event) {
+        var otherPlayer = event.getEntity();
+        var currentPlayer = Minecraft.getInstance().player;
+        assert currentPlayer != null;
+
+        if (otherPlayer.isInvisibleTo(currentPlayer) && otherPlayer.isInvisible() && otherPlayer.getMainHandItem().getItem() instanceof AncientLollipop) {
+            event.setCanceled(true);
+        }
     }
 }
