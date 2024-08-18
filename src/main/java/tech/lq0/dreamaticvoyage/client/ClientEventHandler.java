@@ -1,6 +1,7 @@
 package tech.lq0.dreamaticvoyage.client;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.TickEvent;
@@ -31,9 +32,10 @@ public class ClientEventHandler {
         var otherPlayer = event.getEntity();
         var currentPlayer = Minecraft.getInstance().player;
         if (currentPlayer == null) return;
+        if (currentPlayer.equals(otherPlayer)) return;
 
         if (otherPlayer.isInvisibleTo(currentPlayer) && otherPlayer.isInvisible() && otherPlayer.getMainHandItem().getItem() instanceof AncientLollipop) {
-            event.setCanceled(true);
+            event.setCanceled(!otherPlayer.hasEffect(MobEffects.GLOWING));
         }
     }
 }
