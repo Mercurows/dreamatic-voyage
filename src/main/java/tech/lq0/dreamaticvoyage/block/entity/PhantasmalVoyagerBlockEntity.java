@@ -11,11 +11,13 @@ import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 
@@ -31,6 +33,22 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     protected static final int[] SLOTS_RESULT = new int[]{4, 5, 6, 7, 8, 9, 10, 11};
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(12, ItemStack.EMPTY);
+
+    // TODO 你最好是个有用的数据
+    protected final ContainerData dataAccess = new ContainerData() {
+        public int get(int pIndex) {
+            return 1;
+        }
+
+        public void set(int pIndex, int pValue) {
+
+        }
+
+        @Override
+        public int getCount() {
+            return 12;
+        }
+    };
 
     public PhantasmalVoyagerBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.PHANTASMAL_VOYAGER_BLOCK_ENTITY.get(), pPos, pBlockState);
@@ -128,6 +146,6 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return null;
+        return new PhantasmalVoyagerMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
     }
 }
