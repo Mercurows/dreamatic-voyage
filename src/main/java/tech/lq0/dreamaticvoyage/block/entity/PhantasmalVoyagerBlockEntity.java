@@ -83,7 +83,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
     @Nullable
     private VoyageEvent generateVoyageEvent() {
-        var availableEvents = VoyageEventRegistry.EVENTS.getEntries().stream().filter(r -> voyageData.appearConditionMatch(r.get())).toList();
+        var availableEvents = VoyageEventRegistry.EVENTS.getEntries().stream().filter(r -> voyageData.appearConditionMatch(r.get()) && r.get().level == 1).toList();
         if (availableEvents.isEmpty()) return null;
 
         return availableEvents.get((int) (Math.random() * availableEvents.size())).get();
