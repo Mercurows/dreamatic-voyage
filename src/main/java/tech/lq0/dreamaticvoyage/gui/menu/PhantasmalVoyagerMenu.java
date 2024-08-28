@@ -26,14 +26,14 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
     public static final int Y_OFFSET = 56;
 
     public PhantasmalVoyagerMenu(int id, Inventory inventory) {
-        this(id, inventory, new SimpleContainer(12), new SimpleContainerData(12));
+        this(id, inventory, new SimpleContainer(12), new SimpleContainerData(1));
     }
 
     public PhantasmalVoyagerMenu(int id, Inventory inventory, Container container, ContainerData containerData) {
         super(MenuTypeRegistry.PHANTASMAL_VOYAGER_MENU.get(), id);
 
         checkContainerSize(container, 2);
-        checkContainerDataCount(containerData, 12);
+        checkContainerDataCount(containerData, 1);
 
         this.container = container;
         this.containerData = containerData;

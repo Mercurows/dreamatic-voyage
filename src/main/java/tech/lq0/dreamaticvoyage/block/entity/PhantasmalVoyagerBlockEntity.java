@@ -46,7 +46,6 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     protected final Voyage voyageData = new Voyage();
     public int finished;
 
-    // TODO 完成物品的存储
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
         var data = blockEntity.voyageData;
         if (data.finished) {
@@ -64,6 +63,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
                 return;
             }
 
+            // TODO 完成远航事件的文本存储与显示
             System.out.println("发现事件：" + Component.translatable("voyage." + Utils.MOD_ID + "." + event.descriptionId + ".name").getString());
             System.out.println(Component.translatable("voyage." + Utils.MOD_ID + "." + event.descriptionId + ".des").getString());
 
