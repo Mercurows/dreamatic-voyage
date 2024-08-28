@@ -5,7 +5,6 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootDataManager;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -14,6 +13,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.INBTSerializable;
+import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.VoyageEventRegistry;
 
@@ -44,34 +44,27 @@ public class Voyage implements INBTSerializable<CompoundTag> {
     public final NonNullList<ItemStack> items = NonNullList.create();
     public boolean finished;
 
-    public boolean generateDrop(ServerLevel level, BlockPos pos) {
+    @Nullable
+    public List<ItemStack> generateDrop(ServerLevel level, BlockPos pos) {
         LootDataManager manager = level.getServer().getLootData();
 
         var availableEvents = VoyageEventRegistry.EVENTS.getEntries().stream().filter(r -> appearConditionMatch(r.get())).toList();
-        if (availableEvents.isEmpty()) return false;
+        if (availableEvents.isEmpty()) return null;
 
         VoyageEvent randomEvent = availableEvents.get((int) (Math.random() * availableEvents.size())).get();
 
+        System.out.println(Component.translatable("voyage." + Utils.MOD_ID + "." + randomEvent.descriptionId + ".name").getString());
+        System.out.println(Component.translatable("voyage." + Utils.MOD_ID + "." + randomEvent.descriptionId + ".des").getString());
+
         if (this.successConditionMatch(randomEvent)) {
-            // TODO 正确实现战利品生成
             LootTable successTable = manager.getLootTable(randomEvent.successLoot);
-            List<ItemStack> itemList = successTable.getRandomItems(new LootParams.Builder(level)
+            return successTable.getRandomItems(new LootParams.Builder(level)
                     .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)).create(LootContextParamSets.CHEST));
-            itemList.forEach(stack -> {
-                ItemEntity itementity = new ItemEntity(level, pos.getX(), pos.getY() + 1, pos.getZ(), stack.copy());
-                itementity.setDefaultPickUpDelay();
-                level.addFreshEntity(itementity);
-            });
-
-            System.out.println(Component.translatable("voyage." + Utils.MOD_ID + "." + randomEvent.descriptionId + ".name").getString());
-            System.out.println(Component.translatable("voyage." + Utils.MOD_ID + "." + randomEvent.descriptionId + ".des").getString());
-
-            return true;
+        } else {
+            LootTable successTable = manager.getLootTable(randomEvent.failLoot);
+            return successTable.getRandomItems(new LootParams.Builder(level)
+                    .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)).create(LootContextParamSets.CHEST));
         }
-
-        System.out.println("没有生成战利品");
-
-        return false;
     }
 
     private boolean appearConditionMatch(VoyageEvent event) {
@@ -96,27 +89,27 @@ public class Voyage implements INBTSerializable<CompoundTag> {
     public CompoundTag serializeNBT() {
         CompoundTag nbt = new CompoundTag();
 
-        nbt.putInt("level", this.level);
-        nbt.putInt("time", this.time);
-        nbt.putInt("current_time", this.currentTime);
-        nbt.putInt("capacity", this.capacity);
-        nbt.putFloat("luck", this.luck);
-        nbt.putFloat("intelligence", this.intelligence);
-        nbt.putFloat("insight", this.insight);
-        nbt.putFloat("sociability", this.sociability);
+        nbt.putInt("Level", this.level);
+        nbt.putInt("Time", this.time);
+        nbt.putInt("CurrentTime", this.currentTime);
+        nbt.putInt("Capacity", this.capacity);
+        nbt.putFloat("Luck", this.luck);
+        nbt.putFloat("Intelligence", this.intelligence);
+        nbt.putFloat("Insight", this.insight);
+        nbt.putFloat("Sociability", this.sociability);
 
         return nbt;
     }
 
     @Override
     public void deserializeNBT(CompoundTag nbt) {
-        this.level = nbt.getInt("level");
-        this.time = nbt.getInt("time");
-        this.currentTime = nbt.getInt("current_time");
-        this.capacity = nbt.getInt("capacity");
-        this.luck = nbt.getFloat("luck");
-        this.intelligence = nbt.getFloat("intelligence");
-        this.insight = nbt.getFloat("insight");
-        this.sociability = nbt.getFloat("sociability");
+        this.level = nbt.getInt("Level");
+        this.time = nbt.getInt("Time");
+        this.currentTime = nbt.getInt("CurrentTime");
+        this.capacity = nbt.getInt("Capacity");
+        this.luck = nbt.getFloat("Luck");
+        this.intelligence = nbt.getFloat("Intelligence");
+        this.insight = nbt.getFloat("Insight");
+        this.sociability = nbt.getFloat("Sociability");
     }
 }

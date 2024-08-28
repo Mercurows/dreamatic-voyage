@@ -25,6 +25,8 @@ import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 import tech.lq0.dreamaticvoyage.voyage.core.Voyage;
 
+import java.util.List;
+
 // TODO 完成远航仪BlockEntity
 public class PhantasmalVoyagerBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
     /**
@@ -40,7 +42,6 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
     protected final Voyage voyageData = new Voyage();
 
-
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
         var data = blockEntity.voyageData;
         if (data.finished) return;
@@ -49,7 +50,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
         if (data.currentTime % (data.time / 4) == 0) {
 //            System.out.println(data.currentTime);
-            boolean flag = data.generateDrop((ServerLevel) level, pos);
+            List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos);
         }
 
         if (data.currentTime >= data.time) {
@@ -61,14 +62,14 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     public void load(CompoundTag pTag) {
         super.load(pTag);
 
-        this.voyageData.deserializeNBT(pTag.getCompound("voyage"));
+        this.voyageData.deserializeNBT(pTag.getCompound("Voyage"));
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag) {
         super.saveAdditional(pTag);
 
-        pTag.put("voyage", this.voyageData.serializeNBT());
+        pTag.put("Voyage", this.voyageData.serializeNBT());
     }
 
     // TODO 你最好是个有用的数据
