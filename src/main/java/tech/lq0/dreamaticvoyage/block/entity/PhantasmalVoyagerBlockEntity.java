@@ -93,7 +93,38 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
      * 将tempList的物品合并至resultList上
      */
     private void mergeList(List<ItemStack> temp, List<ItemStack> result) {
+        for (ItemStack itemStack : temp) {
+            insertNewItem(result, itemStack);
+        }
+    }
 
+    private void insertNewItem(List<ItemStack> result, ItemStack stack) {
+        if (stack.isEmpty()) return;
+
+        for (int i = 4; i < result.size(); i++) {
+            var slot = result.get(i);
+            if (slot.isEmpty()) {
+                result.set(i, stack);
+                break;
+            }
+
+            if (slot.getCount() >= 64) continue;
+            if (!ItemStack.isSameItemSameTags(slot, stack)) continue;
+
+            int slotItemCount = slot.getCount();
+            int itemCount = stack.getCount();
+
+            int maxAddableCount = 64 - slotItemCount;
+
+            if (maxAddableCount >= itemCount) {
+                stack.setCount(0);
+                slot.setCount(slotItemCount + itemCount);
+                break;
+            }
+
+            stack.setCount(itemCount - maxAddableCount);
+            slot.setCount(64);
+        }
     }
 
     @Override
