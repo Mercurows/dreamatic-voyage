@@ -5,6 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.MenuProvider;
@@ -48,7 +49,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
         if (data.currentTime % (data.time / 4) == 0) {
 //            System.out.println(data.currentTime);
-            data.generateDrop();
+            boolean flag = data.generateDrop((ServerLevel) level, pos);
         }
 
         if (data.currentTime >= data.time) {

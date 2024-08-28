@@ -36,14 +36,20 @@ public class VoyageEvent {
     }
 
     public VoyageEvent(String descriptionId, Type type, float[] successCondition, float[] appearCondition, ResultType resultType, boolean hidden, int level) {
-        this(descriptionId, type, new ResourceLocation(Utils.MOD_ID, descriptionId + "_success"),
-                new ResourceLocation(Utils.MOD_ID, descriptionId + "_fail"), successCondition, appearCondition, resultType, hidden, level);
+        this(descriptionId, type, new ResourceLocation(Utils.MOD_ID, "voyage/" + type.name + "/" + descriptionId + "_success"),
+                new ResourceLocation(Utils.MOD_ID, "voyage/" + type.name + "/" + descriptionId + "_fail"), successCondition, appearCondition, resultType, hidden, level);
     }
 
     public enum Type {
-        BENEFICIAL,
-        NEUTRAL,
-        HARMFUL,
+        BENEFICIAL("beneficial"),
+        NEUTRAL("neutral"),
+        HARMFUL("harmful");
+
+        public final String name;
+
+        Type(String name) {
+            this.name = name;
+        }
     }
 
     public enum ResultType {

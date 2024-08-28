@@ -1,10 +1,23 @@
 package tech.lq0.dreamaticvoyage.voyage.core;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.loot.LootDataManager;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.INBTSerializable;
+import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.VoyageEventRegistry;
+
+import java.util.List;
 
 public class Voyage implements INBTSerializable<CompoundTag> {
 
@@ -31,17 +44,27 @@ public class Voyage implements INBTSerializable<CompoundTag> {
     public final NonNullList<ItemStack> items = NonNullList.create();
     public boolean finished;
 
-    public boolean generateDrop() {
+    public boolean generateDrop(ServerLevel level, BlockPos pos) {
+        LootDataManager manager = level.getServer().getLootData();
 
-        // TODO 正确实现事件读取
         var availableEvents = VoyageEventRegistry.EVENTS.getEntries().stream().filter(r -> appearConditionMatch(r.get())).toList();
         if (availableEvents.isEmpty()) return false;
 
-        var randomEvent = availableEvents.get((int) (Math.random() * availableEvents.size()));
+        VoyageEvent randomEvent = availableEvents.get((int) (Math.random() * availableEvents.size())).get();
 
-        if (this.successConditionMatch(randomEvent.get())) {
+        if (this.successConditionMatch(randomEvent)) {
             // TODO 正确实现战利品生成
-            System.out.println("生成战利品");
+            LootTable successTable = manager.getLootTable(randomEvent.successLoot);
+            List<ItemStack> itemList = successTable.getRandomItems(new LootParams.Builder(level)
+                    .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)).create(LootContextParamSets.CHEST));
+            itemList.forEach(stack -> {
+                ItemEntity itementity = new ItemEntity(level, pos.getX(), pos.getY() + 1, pos.getZ(), stack.copy());
+                itementity.setDefaultPickUpDelay();
+                level.addFreshEntity(itementity);
+            });
+
+            System.out.println(Component.translatable("voyage." + Utils.MOD_ID + "." + randomEvent.descriptionId + ".name").getString());
+            System.out.println(Component.translatable("voyage." + Utils.MOD_ID + "." + randomEvent.descriptionId + ".des").getString());
 
             return true;
         }
@@ -57,7 +80,7 @@ public class Voyage implements INBTSerializable<CompoundTag> {
         var insight = event.appearCondition[2];
         var sociability = event.appearCondition[3];
 
-        return luck >= this.luck && intelligence >= this.intelligence && insight >= this.insight && sociability >= this.sociability;
+        return this.luck >= luck && this.intelligence >= intelligence && this.insight >= insight && this.sociability >= sociability;
     }
 
     private boolean successConditionMatch(VoyageEvent event) {
@@ -66,7 +89,7 @@ public class Voyage implements INBTSerializable<CompoundTag> {
         var insight = event.successCondition[2];
         var sociability = event.successCondition[3];
 
-        return luck >= this.luck && intelligence >= this.intelligence && insight >= this.insight && sociability >= this.sociability;
+        return this.luck >= luck && this.intelligence >= intelligence && this.insight >= insight && this.sociability >= sociability;
     }
 
     @Override
