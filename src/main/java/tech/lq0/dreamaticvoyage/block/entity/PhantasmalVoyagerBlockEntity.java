@@ -20,10 +20,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
+import tech.lq0.dreamaticvoyage.init.VoyageEventRegistry;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 import tech.lq0.dreamaticvoyage.voyage.core.Voyage;
+import tech.lq0.dreamaticvoyage.voyage.core.VoyageEvent;
 
 import java.util.List;
 
@@ -42,15 +45,28 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
     protected final Voyage voyageData = new Voyage();
 
+    // TODO 完成物品的存储
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
         var data = blockEntity.voyageData;
         if (data.finished) return;
 
         data.currentTime++;
 
-        if (data.currentTime % (data.time / 4) == 0) {
-//            System.out.println(data.currentTime);
-            List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos);
+        if (data.currentTime % (data.time / 3) == 0) {
+            VoyageEvent event = blockEntity.generateVoyageEvent();
+            if (event == null) {
+                return;
+            }
+
+            System.out.println("发现事件：" + Component.translatable("voyage." + Utils.MOD_ID + "." + event.descriptionId + ".name").getString());
+            System.out.println(Component.translatable("voyage." + Utils.MOD_ID + "." + event.descriptionId + ".des").getString());
+
+            List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos, event);
+
+            if (event.resultType == VoyageEvent.ResultType.BREAK) {
+                data.finished = true;
+                return;
+            }
         }
 
         if (data.currentTime >= data.time) {
@@ -58,10 +74,20 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         }
     }
 
+    @Nullable
+    private VoyageEvent generateVoyageEvent() {
+        var availableEvents = VoyageEventRegistry.EVENTS.getEntries().stream().filter(r -> voyageData.appearConditionMatch(r.get())).toList();
+        if (availableEvents.isEmpty()) return null;
+
+        return availableEvents.get((int) (Math.random() * availableEvents.size())).get();
+    }
+
     @Override
     public void load(CompoundTag pTag) {
         super.load(pTag);
 
+        this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(pTag, this.items);
         this.voyageData.deserializeNBT(pTag.getCompound("Voyage"));
     }
 
@@ -69,6 +95,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     protected void saveAdditional(CompoundTag pTag) {
         super.saveAdditional(pTag);
 
+        ContainerHelper.saveAllItems(pTag, this.items);
         pTag.put("Voyage", this.voyageData.serializeNBT());
     }
 
