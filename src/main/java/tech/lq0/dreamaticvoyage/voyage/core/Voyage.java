@@ -6,8 +6,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.util.INBTSerializable;
 import tech.lq0.dreamaticvoyage.init.VoyageEventRegistry;
 
-import java.util.ArrayList;
-
 public class Voyage implements INBTSerializable<CompoundTag> {
 
     /**
@@ -34,18 +32,14 @@ public class Voyage implements INBTSerializable<CompoundTag> {
     public boolean finished;
 
     public boolean generateDrop() {
-        var events = new ArrayList<VoyageEvent>();
 
         // TODO 正确实现事件读取
-        events.add(VoyageEventRegistry.BREAD);
-
-        var availableEvents = events.stream().filter(this::appearConditionMatch).toList();
+        var availableEvents = VoyageEventRegistry.EVENTS.getEntries().stream().filter(r -> appearConditionMatch(r.get())).toList();
         if (availableEvents.isEmpty()) return false;
 
         var randomEvent = availableEvents.get((int) (Math.random() * availableEvents.size()));
 
-        if (this.successConditionMatch(randomEvent)) {
-
+        if (this.successConditionMatch(randomEvent.get())) {
             // TODO 正确实现战利品生成
             System.out.println("生成战利品");
 

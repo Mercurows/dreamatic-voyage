@@ -1,20 +1,32 @@
 package tech.lq0.dreamaticvoyage.init;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.NewRegistryEvent;
+import net.minecraftforge.registries.RegistryBuilder;
+import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.voyage.core.VoyageEvent;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VoyageEventRegistry {
-    // TODO 正确实现事件注册
-    public static final VoyageEvent BREAD = new VoyageEvent(
+
+    public static final DeferredRegister<VoyageEvent> EVENTS = DeferredRegister.create(new ResourceLocation(Utils.MOD_ID, "voyage_event"), Utils.MOD_ID);
+
+    public static final RegistryObject<VoyageEvent> FUKAMIZU_BAKERY = EVENTS.register("fukamizu_bakery", () -> new VoyageEvent(
             "fukamizu_bakery",
             VoyageEvent.Type.BENEFICIAL,
-            new ResourceLocation(Utils.MOD_ID, ""),
-            new ResourceLocation(Utils.MOD_ID, ""),
             new float[]{0.0f, 0.0f, 0.0f, 0.0f},
             new float[]{0.0f, 0.0f, 0.0f, 0.0f},
             VoyageEvent.ResultType.CONTINUE,
             false,
             1
-    );
+    ));
+
+    @SubscribeEvent
+    public static void registry(NewRegistryEvent event) {
+        event.create(new RegistryBuilder<VoyageEvent>().setName(new ResourceLocation(Utils.MOD_ID, "voyage_event")));
+    }
 }

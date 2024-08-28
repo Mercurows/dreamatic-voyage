@@ -1,6 +1,7 @@
 package tech.lq0.dreamaticvoyage.voyage.core;
 
 import net.minecraft.resources.ResourceLocation;
+import tech.lq0.dreamaticvoyage.Utils;
 
 public class VoyageEvent {
 
@@ -34,6 +35,10 @@ public class VoyageEvent {
         this.level = level;
     }
 
+    public VoyageEvent(String descriptionId, Type type, float[] successCondition, float[] appearCondition, ResultType resultType, boolean hidden, int level) {
+        this(descriptionId, type, new ResourceLocation(Utils.MOD_ID, descriptionId + "_success"),
+                new ResourceLocation(Utils.MOD_ID, descriptionId + "_fail"), successCondition, appearCondition, resultType, hidden, level);
+    }
 
     public enum Type {
         BENEFICIAL,
