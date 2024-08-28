@@ -1,57 +1,105 @@
 package tech.lq0.dreamaticvoyage.voyage.core;
 
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.util.INBTSerializable;
+import tech.lq0.dreamaticvoyage.init.VoyageEventRegistry;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
-public class Voyage {
+public class Voyage implements INBTSerializable<CompoundTag> {
 
     /**
      * 远航的基础属性，会影响远航期间的事件以及战利品等
      */
     // 远航的等级
-    private final int level;
+    public int level = 1;
     // 远航的时间
-    private final int time;
+    public int time = 300;
+    // 当前时间
+    public int currentTime;
     // 远航的载货量
-    private final int capacity;
+    public int capacity;
     // 幸运
-    private final float luck;
+    public float luck;
     // 智力
-    private final float intelligence;
+    public float intelligence;
     // 洞察力
-    private final float insight;
+    public float insight;
     // 社交能力
-    private final float sociability;
+    public float sociability;
 
-    private int currentTime;
-    private int currentCapacity;
-    private final List<ItemStack> items = new ArrayList<>();
-    private UUID uuid;
-    private int currentEventCount;
-    private boolean isFinished;
+    public final NonNullList<ItemStack> items = NonNullList.create();
+    public boolean finished;
 
-    public Voyage(int level, int time, int capacity, float luck, float intelligence, float insight, float sociability) {
-        this.level = level;
-        this.time = time;
-        this.capacity = capacity;
-        this.luck = luck;
-        this.intelligence = intelligence;
-        this.insight = insight;
-        this.sociability = sociability;
-    }
+    public boolean generateDrop() {
+        var events = new ArrayList<VoyageEvent>();
 
-    public void tick() {
-        if (isFinished) return;
+        // TODO 正确实现事件读取
+        events.add(VoyageEventRegistry.BREAD);
 
-        this.currentTime++;
+        var availableEvents = events.stream().filter(this::appearConditionMatch).toList();
+        if (availableEvents.isEmpty()) return false;
 
+        var randomEvent = availableEvents.get((int) (Math.random() * availableEvents.size()));
 
-        if (this.currentTime >= this.time) {
-            this.isFinished = true;
+        if (this.successConditionMatch(randomEvent)) {
+
+            // TODO 正确实现战利品生成
+            System.out.println("生成战利品");
+
+            return true;
         }
+
+        System.out.println("没有生成战利品");
+
+        return false;
     }
 
+    private boolean appearConditionMatch(VoyageEvent event) {
+        var luck = event.appearCondition[0];
+        var intelligence = event.appearCondition[1];
+        var insight = event.appearCondition[2];
+        var sociability = event.appearCondition[3];
+
+        return luck >= this.luck && intelligence >= this.intelligence && insight >= this.insight && sociability >= this.sociability;
+    }
+
+    private boolean successConditionMatch(VoyageEvent event) {
+        var luck = event.successCondition[0];
+        var intelligence = event.successCondition[1];
+        var insight = event.successCondition[2];
+        var sociability = event.successCondition[3];
+
+        return luck >= this.luck && intelligence >= this.intelligence && insight >= this.insight && sociability >= this.sociability;
+    }
+
+    @Override
+    public CompoundTag serializeNBT() {
+        CompoundTag nbt = new CompoundTag();
+
+        nbt.putInt("level", this.level);
+        nbt.putInt("time", this.time);
+        nbt.putInt("current_time", this.currentTime);
+        nbt.putInt("capacity", this.capacity);
+        nbt.putFloat("luck", this.luck);
+        nbt.putFloat("intelligence", this.intelligence);
+        nbt.putFloat("insight", this.insight);
+        nbt.putFloat("sociability", this.sociability);
+
+        return nbt;
+    }
+
+    @Override
+    public void deserializeNBT(CompoundTag nbt) {
+        this.level = nbt.getInt("level");
+        this.time = nbt.getInt("time");
+        this.currentTime = nbt.getInt("current_time");
+        this.capacity = nbt.getInt("capacity");
+        this.luck = nbt.getFloat("luck");
+        this.intelligence = nbt.getFloat("intelligence");
+        this.insight = nbt.getFloat("insight");
+        this.sociability = nbt.getFloat("sociability");
+    }
 }

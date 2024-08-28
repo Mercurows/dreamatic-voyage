@@ -3,6 +3,7 @@ package tech.lq0.dreamaticvoyage.block.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
@@ -14,12 +15,14 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
+import tech.lq0.dreamaticvoyage.voyage.core.Voyage;
 
 // TODO 完成远航仪BlockEntity
 public class PhantasmalVoyagerBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
@@ -33,6 +36,39 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     protected static final int[] SLOTS_RESULT = new int[]{4, 5, 6, 7, 8, 9, 10, 11};
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(12, ItemStack.EMPTY);
+
+    protected final Voyage voyageData = new Voyage();
+
+
+    public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
+        var data = blockEntity.voyageData;
+        if (data.finished) return;
+
+        data.currentTime++;
+
+        if (data.currentTime % (data.time / 4) == 0) {
+//            System.out.println(data.currentTime);
+            data.generateDrop();
+        }
+
+        if (data.currentTime >= data.time) {
+            data.finished = true;
+        }
+    }
+
+    @Override
+    public void load(CompoundTag pTag) {
+        super.load(pTag);
+
+        this.voyageData.deserializeNBT(pTag.getCompound("voyage"));
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag pTag) {
+        super.saveAdditional(pTag);
+
+        pTag.put("voyage", this.voyageData.serializeNBT());
+    }
 
     // TODO 你最好是个有用的数据
     protected final ContainerData dataAccess = new ContainerData() {

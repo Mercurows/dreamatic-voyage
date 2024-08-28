@@ -1,30 +1,49 @@
 package tech.lq0.dreamaticvoyage.voyage.core;
 
+import net.minecraft.resources.ResourceLocation;
+
 public class VoyageEvent {
-//
-//    public final Type type;
-//
-//    private final String name;
-//
-//    private final String description;
-//
-//    private final boolean isSecret;
-//
-//    private final int level;
 
+    public final String descriptionId;
 
+    public final Type type;
 
+    public final ResourceLocation successLoot;
 
+    public final ResourceLocation failLoot;
 
+    public final float[] successCondition;
 
+    public final float[] appearCondition;
 
+    public final ResultType resultType;
 
+    public final boolean hidden;
+
+    public final int level;
+
+    public VoyageEvent(String descriptionId, Type type, ResourceLocation successLoot, ResourceLocation failLoot, float[] successCondition, float[] appearCondition, ResultType resultType, boolean hidden, int level) {
+        this.descriptionId = descriptionId;
+        this.type = type;
+        this.successLoot = successLoot;
+        this.failLoot = failLoot;
+        this.successCondition = successCondition;
+        this.appearCondition = appearCondition;
+        this.resultType = resultType;
+        this.hidden = hidden;
+        this.level = level;
+    }
 
 
     public enum Type {
         BENEFICIAL,
         NEUTRAL,
-        HARMFUL
+        HARMFUL,
+    }
+
+    public enum ResultType {
+        CONTINUE,
+        BREAK,
     }
 
 }
