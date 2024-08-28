@@ -1,6 +1,8 @@
 package tech.lq0.dreamaticvoyage.block.voyage;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -16,6 +18,7 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.PhantasmalVoyagerBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 
+@SuppressWarnings("deprecation")
 public class PhantasmalVoyager extends Block implements EntityBlock {
     public PhantasmalVoyager() {
         super(Properties.of().lightLevel(light -> 15).requiresCorrectToolForDrops().strength(5.0f));
@@ -54,5 +57,17 @@ public class PhantasmalVoyager extends Block implements EntityBlock {
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new PhantasmalVoyagerBlockEntity(pPos, pState);
+    }
+
+    @Override
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
+        if (pLevel instanceof ServerLevel serverLevel) {
+            BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+            if (blockentity instanceof PhantasmalVoyagerBlockEntity blockEntity) {
+                Containers.dropContents(serverLevel, pPos, blockEntity);
+            }
+        }
+
+        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
     }
 }

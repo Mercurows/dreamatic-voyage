@@ -44,11 +44,17 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     protected NonNullList<ItemStack> items = NonNullList.withSize(12, ItemStack.EMPTY);
 
     protected final Voyage voyageData = new Voyage();
+    public int finished;
 
     // TODO 完成物品的存储
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
         var data = blockEntity.voyageData;
-        if (data.finished) return;
+        if (data.finished) {
+            blockEntity.finished = 1;
+            return;
+        } else {
+            blockEntity.finished = 0;
+        }
 
         data.currentTime++;
 
@@ -62,6 +68,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
             System.out.println(Component.translatable("voyage." + Utils.MOD_ID + "." + event.descriptionId + ".des").getString());
 
             List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos, event);
+            blockEntity.mergeList(lootItems, blockEntity.items);
 
             if (event.resultType == VoyageEvent.ResultType.BREAK) {
                 data.finished = true;
@@ -82,6 +89,13 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         return availableEvents.get((int) (Math.random() * availableEvents.size())).get();
     }
 
+    /**
+     * 将tempList的物品合并至resultList上
+     */
+    private void mergeList(List<ItemStack> temp, List<ItemStack> result) {
+
+    }
+
     @Override
     public void load(CompoundTag pTag) {
         super.load(pTag);
@@ -89,6 +103,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items);
         this.voyageData.deserializeNBT(pTag.getCompound("Voyage"));
+        this.finished = pTag.getInt("Finished");
     }
 
     @Override
@@ -97,21 +112,21 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
         ContainerHelper.saveAllItems(pTag, this.items);
         pTag.put("Voyage", this.voyageData.serializeNBT());
+        pTag.putInt("Finished", this.finished);
     }
 
-    // TODO 你最好是个有用的数据
     protected final ContainerData dataAccess = new ContainerData() {
         public int get(int pIndex) {
-            return 1;
+            return finished;
         }
 
         public void set(int pIndex, int pValue) {
-
+            finished = pValue;
         }
 
         @Override
         public int getCount() {
-            return 12;
+            return 1;
         }
     };
 
@@ -148,7 +163,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
     @Override
     public boolean canTakeItemThroughFace(int pIndex, ItemStack pStack, Direction pDirection) {
-        return pDirection == Direction.DOWN && pIndex >= 4 && pIndex <= 11;
+        return false;
     }
 
     @Override

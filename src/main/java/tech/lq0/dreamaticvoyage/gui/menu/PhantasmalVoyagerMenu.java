@@ -45,7 +45,7 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
 
         for (int i = 0; i < 2; ++i) {
             for (int j = 0; j < 4; ++j) {
-                this.addSlot(new Slot(container, j + i * 4 + 4, 8 + j * 18, 84 + i * 18));
+                this.addSlot(new ResultSlot(container, j + i * 4 + 4, 8 + j * 18, 84 + i * 18));
             }
         }
 
@@ -117,5 +117,27 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return this.container.stillValid(pPlayer);
+    }
+
+    public class ResultSlot extends Slot {
+
+        public ResultSlot(Container pContainer, int pSlot, int pX, int pY) {
+            super(pContainer, pSlot, pX, pY);
+        }
+
+        @Override
+        public boolean mayPlace(ItemStack pStack) {
+            return false;
+        }
+
+        @Override
+        public int getMaxStackSize() {
+            return 64;
+        }
+
+        @Override
+        public boolean mayPickup(Player pPlayer) {
+            return containerData.get(0) == 1;
+        }
     }
 }
