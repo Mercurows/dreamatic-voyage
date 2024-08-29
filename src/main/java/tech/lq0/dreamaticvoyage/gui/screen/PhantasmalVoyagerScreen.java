@@ -1,16 +1,21 @@
 package tech.lq0.dreamaticvoyage.gui.screen;
 
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.AbstractButton;
+import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 
+@OnlyIn(Dist.CLIENT)
 public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalVoyagerMenu> {
 
     public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/gui/phantasmal_voyager.png");
@@ -51,5 +56,70 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
         this.titleLabelY = 46;
         this.inventoryLabelX = 108;
         this.inventoryLabelY = 115;
+
+        int i = (this.width - this.imageWidth) / 2;
+        int j = (this.height - this.imageHeight) / 2;
+
+        StartButton startButton = new StartButton(i + 222, j + 87);
+        EndButton endButton = new EndButton(i + 244, j + 87);
+
+        this.addRenderableWidget(startButton);
+        this.addRenderableWidget(endButton);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    static class StartButton extends AbstractButton {
+
+        public StartButton(int pX, int pY) {
+            super(pX, pY, 21, 15, Component.translatable("button.dreamaticvoyage.start_voyage"));
+        }
+
+        @Override
+        protected void renderWidget(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
+            pGuiGraphics.blit(TEXTURE, this.getX(), this.getY(), this.isHovered() ? 58 : 14, 168, 21, 15, 384, 240);
+        }
+
+        @Override
+        public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
+            super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
+        }
+
+        @Override
+        public void onPress() {
+
+        }
+
+        @Override
+        protected void updateWidgetNarration(NarrationElementOutput pNarrationElementOutput) {
+
+        }
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    static class EndButton extends AbstractButton {
+
+        public EndButton(int pX, int pY) {
+            super(pX, pY, 21, 15, Component.translatable("button.dreamaticvoyage.end_voyage"));
+        }
+
+        @Override
+        protected void renderWidget(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
+            pGuiGraphics.blit(TEXTURE, this.getX(), this.getY(), this.isHovered() ? 80 : 36, 168, 21, 15, 384, 240);
+        }
+
+        @Override
+        public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
+            super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
+        }
+
+        @Override
+        public void onPress() {
+
+        }
+
+        @Override
+        protected void updateWidgetNarration(NarrationElementOutput pNarrationElementOutput) {
+
+        }
     }
 }

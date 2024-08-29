@@ -10,10 +10,7 @@ import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import tech.lq0.dreamaticvoyage.gui.slot.DreamGuardianSlot;
-import tech.lq0.dreamaticvoyage.gui.slot.VoyagerBookSlot;
-import tech.lq0.dreamaticvoyage.gui.slot.VoyagerFuelSlot;
-import tech.lq0.dreamaticvoyage.gui.slot.VoyagerUpgradeSlot;
+import tech.lq0.dreamaticvoyage.gui.slot.*;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.init.MenuTypeRegistry;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
@@ -38,14 +35,14 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
         this.container = container;
         this.containerData = containerData;
 
-        this.addSlot(new DreamGuardianSlot(container, 0, 170, 87));
+        this.addSlot(new DreamGuardianSlot(container, 0, 170, 87, this.containerData.get(0) == 0));
         this.addSlot(new VoyagerFuelSlot(container, 1, 189, 87));
-        this.addSlot(new VoyagerBookSlot(container, 2, 75, 183));
-        this.addSlot(new VoyagerUpgradeSlot(container, 3, 285, 183));
+        this.addSlot(new VoyagerBookSlot(container, 2, 75, 183, this.containerData.get(0) == 0));
+        this.addSlot(new VoyagerUpgradeSlot(container, 3, 285, 183, this.containerData.get(0) == 0));
 
         for (int i = 0; i < 7; ++i) {
             for (int j = 0; j < 4; ++j) {
-                this.addSlot(new ResultSlot(container, j + i * 4 + 4, 285 + j * 18, 53 + i * 18));
+                this.addSlot(new VoyageResultSlot(container, j + i * 4 + 4, 285 + j * 18, 53 + i * 18, this.containerData.get(0) == 1));
             }
         }
 
@@ -119,27 +116,5 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
 
     public ItemStack getDreamGuardian() {
         return this.container.getItem(0);
-    }
-
-    public class ResultSlot extends Slot {
-
-        public ResultSlot(Container pContainer, int pSlot, int pX, int pY) {
-            super(pContainer, pSlot, pX, pY);
-        }
-
-        @Override
-        public boolean mayPlace(ItemStack pStack) {
-            return false;
-        }
-
-        @Override
-        public int getMaxStackSize() {
-            return 64;
-        }
-
-        @Override
-        public boolean mayPickup(Player pPlayer) {
-            return containerData.get(0) == 1;
-        }
     }
 }

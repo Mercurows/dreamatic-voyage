@@ -1338,6 +1338,9 @@
   "dreamaticvoyage.advancement.call_in_thunder": "Lightning is on its way to you",
   "dreamaticvoyage.advancement.call_in_thunder_des": "请不要模仿哦",
 
+  "button.dreamaticvoyage.start_voyage": "开始远航",
+  "button.dreamaticvoyage.end_voyage": "终止远航",
+
   "voyage.dreamaticvoyage.fukamizu_bakery.name": "深水面包房",
   "voyage.dreamaticvoyage.fukamizu_bakery.des": "你在旅行中遇到了一座神秘的建筑，顺着传来的香味，走到了它的门前，上面的牌匾写着“深水面包房”。要不要去敲门呢？",
   "voyage.dreamaticvoyage.fukamizu_bakery.des.success": "你敲了敲门，面包房的主人出来迎接了你，并给了你许多特色面包作为礼物。",

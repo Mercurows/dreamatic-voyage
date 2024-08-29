@@ -1,5 +1,6 @@
 package tech.lq0.dreamaticvoyage.block.entity;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
@@ -44,40 +45,41 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     protected NonNullList<ItemStack> items = NonNullList.withSize(32, ItemStack.EMPTY);
 
     protected final Voyage voyageData = new Voyage();
-    public int finished;
+    public int nowVoyaging;
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
         var data = blockEntity.voyageData;
-        if (data.finished) {
-            blockEntity.finished = 1;
-            return;
-        } else {
-            blockEntity.finished = 0;
-        }
 
-        data.currentTime++;
-
-        if (data.currentTime % (data.time / 3) == 0) {
-            VoyageEvent event = VoyageHelper.generateVoyageEvent(blockEntity.voyageData);
-            if (event == null) {
+        if (blockEntity.nowVoyaging == 1) {
+            if (data.finished) {
+                blockEntity.nowVoyaging = 0;
                 return;
             }
 
-            // TODO 完成远航事件的文本存储与显示
-            System.out.println("发现事件：" + event.getDisplayName().getString());
-            System.out.println(event.getDescription().getString());
+            data.currentTime++;
 
-            List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos, event);
-            VoyageHelper.mergeList(lootItems, blockEntity.items, 4);
+            if (data.currentTime % (data.time / 3) == 0) {
+                VoyageEvent event = VoyageHelper.generateVoyageEvent(blockEntity.voyageData);
+                if (event == null) {
+                    return;
+                }
 
-            if (event.resultType == VoyageEvent.ResultType.BREAK && !blockEntity.voyageData.successConditionMatch(event)) {
+                // TODO 完成远航事件的文本存储与显示
+                System.out.println("发现事件：" + event.getDisplayName().getString());
+                System.out.println(event.getDescription().getString());
+
+                List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos, event);
+                VoyageHelper.mergeList(lootItems, blockEntity.items, 4);
+
+                if (event.resultType == VoyageEvent.ResultType.BREAK && !blockEntity.voyageData.successConditionMatch(event)) {
+                    data.finished = true;
+                    return;
+                }
+            }
+
+            if (data.currentTime >= data.time) {
                 data.finished = true;
-                return;
             }
-        }
-
-        if (data.currentTime >= data.time) {
-            data.finished = true;
         }
     }
 
@@ -88,7 +90,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items);
         this.voyageData.deserializeNBT(pTag.getCompound("Voyage"));
-        this.finished = pTag.getInt("Finished");
+        this.nowVoyaging = pTag.getInt("NowVoyaging");
     }
 
     @Override
@@ -97,16 +99,16 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
         ContainerHelper.saveAllItems(pTag, this.items);
         pTag.put("Voyage", this.voyageData.serializeNBT());
-        pTag.putInt("Finished", this.finished);
+        pTag.putInt("NowVoyaging", this.nowVoyaging);
     }
 
     protected final ContainerData dataAccess = new ContainerData() {
         public int get(int pIndex) {
-            return finished;
+            return nowVoyaging;
         }
 
         public void set(int pIndex, int pValue) {
-            finished = pValue;
+            nowVoyaging = pValue;
         }
 
         @Override
@@ -205,7 +207,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("container.dreamaticvoyage.phantasmal_voyager");
+        return Component.translatable("container.dreamaticvoyage.phantasmal_voyager").withStyle(ChatFormatting.WHITE);
     }
 
     @Nullable

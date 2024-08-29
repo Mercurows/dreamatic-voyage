@@ -4,22 +4,23 @@ import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 
-public class DreamGuardianSlot extends Slot {
+public class VoyageResultSlot extends Slot {
     public boolean flag;
 
-    public DreamGuardianSlot(Container pContainer, int pSlot, int pX, int pY, boolean flag) {
+    public VoyageResultSlot(Container pContainer, int pSlot, int pX, int pY, boolean flag) {
         super(pContainer, pSlot, pX, pY);
         this.flag = flag;
     }
 
+    @Override
     public boolean mayPlace(ItemStack pStack) {
-        return pStack.getItem() instanceof DreamGuardian;
+        return false;
     }
 
+    @Override
     public int getMaxStackSize() {
-        return 1;
+        return 64;
     }
 
     @Override
