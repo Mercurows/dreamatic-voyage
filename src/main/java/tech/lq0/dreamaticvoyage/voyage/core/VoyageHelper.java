@@ -55,4 +55,17 @@ public class VoyageHelper {
         }
     }
 
+    public static void processAttributes(Voyage voyage, VoyageEvent event) {
+        if (voyage.successConditionMatch(event)) {
+            voyage.luck += event.successAttributeBonus[0];
+            voyage.intelligence += event.successAttributeBonus[1];
+            voyage.insight += event.successAttributeBonus[2];
+            voyage.sociability += event.successAttributeBonus[3];
+        } else {
+            voyage.luck += event.failAttributeBonus[0];
+            voyage.intelligence += event.failAttributeBonus[1];
+            voyage.insight += event.failAttributeBonus[2];
+            voyage.sociability += event.failAttributeBonus[3];
+        }
+    }
 }

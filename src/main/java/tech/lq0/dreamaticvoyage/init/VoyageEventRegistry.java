@@ -25,6 +25,31 @@ public class VoyageEventRegistry {
             false,
             1
     ));
+
+    public static final RegistryObject<VoyageEvent> BITE_THE_HOOK = EVENTS.register("bite_the_hook", () -> new VoyageEvent(
+            "bite_the_hook",
+            VoyageEvent.Type.NEUTRAL,
+            new float[]{0.2f, 0.0f, 0.0f, 0.0f},
+            new float[]{0.0f, 0.0f, 0.0f, 0.0f},
+            new float[]{0.1f, 0.0f, 0.0f, 0.0f},
+            new float[]{0.0f, -0.1f, 0.0f, 0.0f},
+            VoyageEvent.ResultType.CONTINUE,
+            false,
+            1
+    ));
+
+    public static final RegistryObject<VoyageEvent> MERMAID_GOD = EVENTS.register("mermaid_god", () -> new VoyageEvent(
+            "mermaid_god",
+            VoyageEvent.Type.NEUTRAL,
+            new float[]{0.1f, 0.0f, 0.0f, 0.2f},
+            new float[]{0.0f, 0.0f, 0.0f, 0.0f},
+            new float[]{0.0f, 0.0f, 0.1f, 0.1f},
+            new float[]{-0.1f, -0.1f, 0.0f, 0.0f},
+            VoyageEvent.ResultType.CONTINUE,
+            false,
+            1
+    ));
+
     public static final RegistryObject<VoyageEvent> EVIL_BOSS = EVENTS.register("evil_boss", () -> new VoyageEvent(
             "evil_boss",
             VoyageEvent.Type.HARMFUL,

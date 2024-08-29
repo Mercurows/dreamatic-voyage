@@ -51,41 +51,43 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
         var data = blockEntity.voyageData;
 
-        if (blockEntity.nowVoyaging == 0 && !data.finished) {
-            blockEntity.resetVoyageData();
+//        if (blockEntity.nowVoyaging == 0 && !data.finished) {
+//            blockEntity.resetVoyageData();
+//        }
+
+        if (data.finished) {
+            blockEntity.nowVoyaging = 0;
+//            blockEntity.resetVoyageData();
+            return;
         }
 
-        if (blockEntity.nowVoyaging == 1) {
-            if (data.finished) {
-                blockEntity.nowVoyaging = 0;
-                blockEntity.resetVoyageData();
+        data.currentTime++;
+
+        if (data.currentTime % (data.time / 3) == 0) {
+            VoyageEvent event = VoyageHelper.generateVoyageEvent(blockEntity.voyageData);
+            if (event == null) {
                 return;
             }
 
-            data.currentTime++;
+            boolean success = data.successConditionMatch(event);
 
-            if (data.currentTime % (data.time / 3) == 0) {
-                VoyageEvent event = VoyageHelper.generateVoyageEvent(blockEntity.voyageData);
-                if (event == null) {
-                    return;
-                }
+            // TODO 完成远航事件的文本存储与显示
+            System.out.println("发现事件：" + event.getDisplayName().getString());
+            System.out.println(event.getDescription().getString());
+            System.out.println(success ? event.getSuccessMessage().getString() : event.getFailMessage().getString());
 
-                // TODO 完成远航事件的文本存储与显示
-                System.out.println("发现事件：" + event.getDisplayName().getString());
-                System.out.println(event.getDescription().getString());
+            List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos, event);
+            VoyageHelper.mergeList(lootItems, blockEntity.items, 4);
+            VoyageHelper.processAttributes(blockEntity.voyageData, event);
 
-                List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos, event);
-                VoyageHelper.mergeList(lootItems, blockEntity.items, 4);
-
-                if (event.resultType == VoyageEvent.ResultType.BREAK && !blockEntity.voyageData.successConditionMatch(event)) {
-                    data.finished = true;
-                    return;
-                }
-            }
-
-            if (data.currentTime >= data.time) {
+            if (event.resultType == VoyageEvent.ResultType.BREAK && !success) {
                 data.finished = true;
+                return;
             }
+        }
+
+        if (data.currentTime >= data.time) {
+            data.finished = true;
         }
     }
 
