@@ -18,5 +18,5 @@ public class MenuTypeRegistry {
 
     public static final RegistryObject<MenuType<PhantasmalVoyagerMenu>> PHANTASMAL_VOYAGER_MENU =
             MENU_TYPES.register("phantasmal_voyager_menu",
-                    () -> IForgeMenuType.create((windowId, inv, data) -> new PhantasmalVoyagerMenu(windowId, inv)));
+                    () -> IForgeMenuType.create(PhantasmalVoyagerMenu::new));
 }

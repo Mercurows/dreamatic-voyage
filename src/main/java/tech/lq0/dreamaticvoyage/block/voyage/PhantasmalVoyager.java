@@ -2,6 +2,7 @@ package tech.lq0.dreamaticvoyage.block.voyage;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -14,6 +15,7 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.PhantasmalVoyagerBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
@@ -47,9 +49,11 @@ public class PhantasmalVoyager extends Block implements EntityBlock {
     }
 
     protected void openContainer(Level pLevel, BlockPos pPos, Player pPlayer) {
+        if (pLevel.isClientSide) return;
+
         BlockEntity blockentity = pLevel.getBlockEntity(pPos);
         if (blockentity instanceof PhantasmalVoyagerBlockEntity voyager) {
-            pPlayer.openMenu(voyager);
+            NetworkHooks.openScreen((ServerPlayer) pPlayer, voyager, buf -> buf.writeComponent(voyager.getComponent()));
         }
     }
 

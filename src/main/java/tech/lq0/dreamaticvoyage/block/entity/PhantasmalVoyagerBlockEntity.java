@@ -1,10 +1,12 @@
 package tech.lq0.dreamaticvoyage.block.entity;
 
+import io.netty.buffer.Unpooled;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
@@ -48,6 +50,8 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     public int nowVoyaging;
     public int progress;
     public int maxTime;
+
+    private final Component component = Component.literal("1145141919810");
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
         if (blockEntity.nowVoyaging == 1) {
@@ -259,6 +263,10 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return new PhantasmalVoyagerMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
+        return new PhantasmalVoyagerMenu(pContainerId, pPlayerInventory, this, this.dataAccess, new FriendlyByteBuf(Unpooled.buffer()).writeComponent(this.component));
+    }
+
+    public Component getComponent() {
+        return component;
     }
 }

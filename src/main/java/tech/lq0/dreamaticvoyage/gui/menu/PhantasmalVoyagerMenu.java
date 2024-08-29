@@ -1,5 +1,7 @@
 package tech.lq0.dreamaticvoyage.gui.menu;
 
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -19,15 +21,19 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
     private final Container container;
     private final ContainerData containerData;
 
+    private final Component component;
+
     public static final int X_OFFSET = 100;
     public static final int Y_OFFSET = 41;
 
-    public PhantasmalVoyagerMenu(int id, Inventory inventory) {
-        this(id, inventory, new SimpleContainer(32), new SimpleContainerData(3));
+    public PhantasmalVoyagerMenu(int id, Inventory inventory, FriendlyByteBuf data) {
+        this(id, inventory, new SimpleContainer(32), new SimpleContainerData(3), data);
     }
 
-    public PhantasmalVoyagerMenu(int id, Inventory inventory, Container container, ContainerData containerData) {
+    public PhantasmalVoyagerMenu(int id, Inventory inventory, Container container, ContainerData containerData, FriendlyByteBuf data) {
         super(MenuTypeRegistry.PHANTASMAL_VOYAGER_MENU.get(), id);
+
+        this.component = data.readComponent();
 
         checkContainerSize(container, 32);
         checkContainerDataCount(containerData, 3);
@@ -132,5 +138,9 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
 
     public int getVoyageMaxTime() {
         return this.containerData.get(2);
+    }
+
+    public Component getComponent() {
+        return this.component;
     }
 }

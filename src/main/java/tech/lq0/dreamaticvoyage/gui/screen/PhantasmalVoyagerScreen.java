@@ -28,6 +28,9 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
         this.renderBackground(pGuiGraphics);
         super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
         this.renderTooltip(pGuiGraphics, pMouseX, pMouseY);
+
+        var component = menu.getComponent();
+        // TODO 实现远航信息渲染
     }
 
     public PhantasmalVoyagerScreen(PhantasmalVoyagerMenu menu, Inventory inventory, Component title) {
