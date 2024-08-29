@@ -53,7 +53,13 @@ public class PhantasmalVoyager extends Block implements EntityBlock {
 
         BlockEntity blockentity = pLevel.getBlockEntity(pPos);
         if (blockentity instanceof PhantasmalVoyagerBlockEntity voyager) {
-            NetworkHooks.openScreen((ServerPlayer) pPlayer, voyager, buf -> buf.writeComponent(voyager.getComponent()));
+            NetworkHooks.openScreen((ServerPlayer) pPlayer, voyager, buf -> {
+                var components = voyager.getComponents();
+                buf.writeInt(components.size());
+                for (var component : components) {
+                    buf.writeUtf(component.getString());
+                }
+            });
         }
     }
 

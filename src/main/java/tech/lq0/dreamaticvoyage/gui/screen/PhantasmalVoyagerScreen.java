@@ -29,7 +29,7 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
         super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
         this.renderTooltip(pGuiGraphics, pMouseX, pMouseY);
 
-        var component = menu.getComponent();
+        var components = menu.getComponents();
         // TODO 实现远航信息渲染
     }
 

@@ -17,11 +17,14 @@ import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.init.MenuTypeRegistry;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
     private final Container container;
     private final ContainerData containerData;
 
-    private final Component component;
+    private final List<Component> components = new ArrayList<>();
 
     public static final int X_OFFSET = 100;
     public static final int Y_OFFSET = 41;
@@ -33,7 +36,11 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
     public PhantasmalVoyagerMenu(int id, Inventory inventory, Container container, ContainerData containerData, FriendlyByteBuf data) {
         super(MenuTypeRegistry.PHANTASMAL_VOYAGER_MENU.get(), id);
 
-        this.component = data.readComponent();
+        int count = data.readInt();
+
+        for (int i = 0; i < count; ++i) {
+            this.components.add(data.readComponent());
+        }
 
         checkContainerSize(container, 32);
         checkContainerDataCount(containerData, 3);
@@ -140,7 +147,7 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
         return this.containerData.get(2);
     }
 
-    public Component getComponent() {
-        return this.component;
+    public List<Component> getComponents() {
+        return this.components;
     }
 }

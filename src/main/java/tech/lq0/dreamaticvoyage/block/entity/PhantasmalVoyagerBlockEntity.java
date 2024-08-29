@@ -31,6 +31,7 @@ import tech.lq0.dreamaticvoyage.voyage.core.Voyage;
 import tech.lq0.dreamaticvoyage.voyage.core.VoyageEvent;
 import tech.lq0.dreamaticvoyage.voyage.core.VoyageHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // TODO 完成远航仪BlockEntity
@@ -51,7 +52,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     public int progress;
     public int maxTime;
 
-    private final Component component = Component.literal("1145141919810");
+    private final List<Component> components = new ArrayList<>();
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
         if (blockEntity.nowVoyaging == 1) {
@@ -263,10 +264,16 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return new PhantasmalVoyagerMenu(pContainerId, pPlayerInventory, this, this.dataAccess, new FriendlyByteBuf(Unpooled.buffer()).writeComponent(this.component));
+        var buffer = new FriendlyByteBuf(Unpooled.buffer());
+        buffer.writeInt(this.components.size());
+        for (var component : this.components) {
+            buffer.writeComponent(component);
+        }
+
+        return new PhantasmalVoyagerMenu(pContainerId, pPlayerInventory, this, this.dataAccess, buffer);
     }
 
-    public Component getComponent() {
-        return component;
+    public List<Component> getComponents() {
+        return components;
     }
 }
