@@ -8,13 +8,13 @@ import tech.lq0.dreamaticvoyage.init.EntityRegistry;
 import java.util.function.Supplier;
 
 public class LeviyLaunchPacket {
-    private int x;
-    private int y;
-    private int z;
+    private final int x;
+    private final int y;
+    private final int z;
 
-    private float power;
-    private float radius;
-    private int duration;
+    private final float power;
+    private final float radius;
+    private final int duration;
 
     public LeviyLaunchPacket(int x, int y, int z) {
         this(x, y, z, 6, 10, 200);
@@ -48,7 +48,6 @@ public class LeviyLaunchPacket {
     }
 
     public static void handle(LeviyLaunchPacket packet, Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().setPacketHandled(true);
         ctx.get().enqueueWork(() -> {
             var player = ctx.get().getSender();
             if (player == null) return;
@@ -71,6 +70,7 @@ public class LeviyLaunchPacket {
             beam.setOwner(player);
             world.addFreshEntity(beam);
         });
+        ctx.get().setPacketHandled(true);
     }
 
 }

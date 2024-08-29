@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
+import tech.lq0.dreamaticvoyage.network.DmvNetwork;
+import tech.lq0.dreamaticvoyage.network.packet.PhantasmalVoyagerPacket;
 
 @OnlyIn(Dist.CLIENT)
 public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalVoyagerMenu> {
@@ -86,7 +88,7 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
 
         @Override
         public void onPress() {
-
+            DmvNetwork.CHANNEL.sendToServer(new PhantasmalVoyagerPacket(1));
         }
 
         @Override
@@ -114,7 +116,7 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
 
         @Override
         public void onPress() {
-
+            DmvNetwork.CHANNEL.sendToServer(new PhantasmalVoyagerPacket(0));
         }
 
         @Override

@@ -44,15 +44,21 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(32, ItemStack.EMPTY);
 
-    protected final Voyage voyageData = new Voyage();
+    protected Voyage voyageData = new Voyage();
     public int nowVoyaging;
 
+    // TODO 修改为正确的逻辑
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
         var data = blockEntity.voyageData;
+
+        if (blockEntity.nowVoyaging == 0 && !data.finished) {
+            blockEntity.resetVoyageData();
+        }
 
         if (blockEntity.nowVoyaging == 1) {
             if (data.finished) {
                 blockEntity.nowVoyaging = 0;
+                blockEntity.resetVoyageData();
                 return;
             }
 
@@ -81,6 +87,11 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
                 data.finished = true;
             }
         }
+    }
+
+    // TODO 根据属性完成远航的创建
+    private void resetVoyageData() {
+        this.voyageData = new Voyage();
     }
 
     @Override

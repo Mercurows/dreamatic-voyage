@@ -117,4 +117,8 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
     public ItemStack getDreamGuardian() {
         return this.container.getItem(0);
     }
+
+    public void setVoyageState(int state) {
+        this.containerData.set(0, state);
+    }
 }
