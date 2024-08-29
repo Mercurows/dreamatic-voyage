@@ -22,9 +22,8 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
     private final Container container;
     private final ContainerData containerData;
 
-    // TODO 这改的是个锤子位置
-    public static final int X_OFFSET = 97;
-    public static final int Y_OFFSET = 56;
+    public static final int X_OFFSET = 100;
+    public static final int Y_OFFSET = 41;
 
     public PhantasmalVoyagerMenu(int id, Inventory inventory) {
         this(id, inventory, new SimpleContainer(32), new SimpleContainerData(1));
@@ -39,14 +38,14 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
         this.container = container;
         this.containerData = containerData;
 
-        this.addSlot(new DreamGuardianSlot(container, 0, 51, 43));
-        this.addSlot(new VoyagerFuelSlot(container, 1, 110, 43));
-        this.addSlot(new VoyagerBookSlot(container, 2, 178, 43));
-        this.addSlot(new VoyagerUpgradeSlot(container, 3, 246, 43));
+        this.addSlot(new DreamGuardianSlot(container, 0, 170, 87));
+        this.addSlot(new VoyagerFuelSlot(container, 1, 189, 87));
+        this.addSlot(new VoyagerBookSlot(container, 2, 75, 183));
+        this.addSlot(new VoyagerUpgradeSlot(container, 3, 285, 183));
 
         for (int i = 0; i < 7; ++i) {
             for (int j = 0; j < 4; ++j) {
-                this.addSlot(new ResultSlot(container, j + i * 4 + 4, 8 + j * 18, 84 + i * 18));
+                this.addSlot(new ResultSlot(container, j + i * 4 + 4, 285 + j * 18, 53 + i * 18));
             }
         }
 
