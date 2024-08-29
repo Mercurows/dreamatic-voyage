@@ -903,6 +903,8 @@
   "effect.dreamaticvoyage.creativity_bankruptcy": "Creativity Bankruptcy",
   "block.dreamaticvoyage.fukamizu_crusher": "Fukamizu Crusher",
   "enchantment.dreamaticvoyage.shadow_of_void": "Shadow of Void",
+  "item.dreamaticvoyage.phantasm_fuel": "Phantasm Fuel",
+  "des.dreamaticvoyage.phantasm_fuel": "进行虚构远航所需的燃料",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

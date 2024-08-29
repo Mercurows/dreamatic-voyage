@@ -23,6 +23,7 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.init.VoyageEventRegistry;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 import tech.lq0.dreamaticvoyage.voyage.core.Voyage;
@@ -186,7 +187,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         } else if (pIndex == SLOT_DREAM_GUARDIAN) {
             return pStack.getItem() instanceof DreamGuardian;
         } else if (pIndex == SLOT_FUEL) {
-            return true;
+            return pStack.is(ItemRegistry.PHANTASM_FUEL.get());
         } else if (pIndex == SLOT_BOOK) {
             return pStack.is(Items.WRITABLE_BOOK);
         } else return pIndex == SLOT_UPGRADE;

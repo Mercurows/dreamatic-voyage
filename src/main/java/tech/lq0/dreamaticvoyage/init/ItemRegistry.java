@@ -401,6 +401,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MIRACLE_CORE = MISC_ITEMS.register("miracle_core", MiracleCore::new);
     public static final RegistryObject<Item> DREAM_WEAVING_YARN = MISC_ITEMS.register("dream_weaving_yarn", DreamWeavingYarn::new);
     public static final RegistryObject<Item> EARTH_DEBRIS = MISC_ITEMS.register("earth_debris", EarthDebris::new);
+    public static final RegistryObject<Item> PHANTASM_FUEL = MISC_ITEMS.register("phantasm_fuel", PhantasmFuel::new);
 
     /**
      * others

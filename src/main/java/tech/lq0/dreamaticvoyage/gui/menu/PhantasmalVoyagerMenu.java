@@ -14,6 +14,7 @@ import tech.lq0.dreamaticvoyage.gui.slot.DreamGuardianSlot;
 import tech.lq0.dreamaticvoyage.gui.slot.VoyagerBookSlot;
 import tech.lq0.dreamaticvoyage.gui.slot.VoyagerFuelSlot;
 import tech.lq0.dreamaticvoyage.gui.slot.VoyagerUpgradeSlot;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.init.MenuTypeRegistry;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 
@@ -83,13 +84,11 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
                     if (!this.moveItemStackTo(stack, 2, 3, false)) {
                         return ItemStack.EMPTY;
                     }
-                }
-//                else if (stack.getBurnTime(null) > 0) {
-//                    if (!this.moveItemStackTo(stack, 1, 2, false)) {
-//                        return ItemStack.EMPTY;
-//                    }
-//                }
-                else if (pIndex >= 39 && pIndex < 48 && !this.moveItemStackTo(stack, 12, 39, false)) {
+                } else if (stack.is(ItemRegistry.PHANTASM_FUEL.get())) {
+                    if (!this.moveItemStackTo(stack, 1, 2, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (pIndex >= 39 && pIndex < 48 && !this.moveItemStackTo(stack, 12, 39, false)) {
                     return ItemStack.EMPTY;
                 } else {
                     if (!this.moveItemStackTo(stack, 39, 48, false)) {

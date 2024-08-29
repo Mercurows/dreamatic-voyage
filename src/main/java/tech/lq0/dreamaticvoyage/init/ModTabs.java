@@ -24,7 +24,6 @@ public class ModTabs {
                     output.accept(registryObject.get());
                 }
             }))
-            .withSearchBar()
             .build();
 
     public static CreativeModeTab MISC_TAB = CreativeModeTab.builder()
@@ -36,7 +35,6 @@ public class ModTabs {
                     output.accept(registryObject.get());
                 }
             }))
-            .withSearchBar()
             .build();
 
     public static CreativeModeTab BLOCK_TAB = CreativeModeTab.builder()
