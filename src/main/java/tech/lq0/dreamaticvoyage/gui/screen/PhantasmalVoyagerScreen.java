@@ -1,5 +1,6 @@
 package tech.lq0.dreamaticvoyage.gui.screen;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
@@ -29,8 +30,14 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
         super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
         this.renderTooltip(pGuiGraphics, pMouseX, pMouseY);
 
+        int i = (this.width - this.imageWidth) / 2;
+        int j = (this.height - this.imageHeight) / 2;
+
         var components = menu.getComponents();
         // TODO 实现远航信息渲染
+        for (Component component : components) {
+            pGuiGraphics.drawString(Minecraft.getInstance().font, component, i, j, 0xFFFFFF);
+        }
     }
 
     public PhantasmalVoyagerScreen(PhantasmalVoyagerMenu menu, Inventory inventory, Component title) {
@@ -39,7 +46,6 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
         imageHeight = 240;
     }
 
-    // TODO 远航事件文本渲染
     @Override
     protected void renderBg(GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
         int x = (this.width - this.imageWidth + 26) / 2;

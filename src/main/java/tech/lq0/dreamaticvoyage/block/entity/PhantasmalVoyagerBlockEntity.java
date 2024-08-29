@@ -91,10 +91,9 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
             boolean success = data.successConditionMatch(event);
 
-            // TODO 完成远航事件的文本存储与显示
-            System.out.println("发现事件：" + event.getDisplayName().getString());
-            System.out.println(event.getDescription().getString());
-            System.out.println(success ? event.getSuccessMessage().getString() : event.getFailMessage().getString());
+            blockEntity.components.add(event.getDisplayName());
+            blockEntity.components.add(event.getDescription());
+            blockEntity.components.add(success ? event.getSuccessMessage() : event.getFailMessage());
 
             List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos, event);
             VoyageHelper.mergeList(lootItems, data.items, 0);

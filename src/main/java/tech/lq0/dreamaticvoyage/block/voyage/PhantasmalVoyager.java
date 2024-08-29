@@ -57,7 +57,7 @@ public class PhantasmalVoyager extends Block implements EntityBlock {
                 var components = voyager.getComponents();
                 buf.writeInt(components.size());
                 for (var component : components) {
-                    buf.writeUtf(component.getString());
+                    buf.writeComponent(component);
                 }
             });
         }
