@@ -70,7 +70,7 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
     }
 
     @OnlyIn(Dist.CLIENT)
-    static class StartButton extends AbstractButton {
+    class StartButton extends AbstractButton {
 
         public StartButton(int pX, int pY) {
             super(pX, pY, 21, 15, Component.translatable("button.dreamaticvoyage.start_voyage"));
@@ -98,7 +98,7 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
     }
 
     @OnlyIn(Dist.CLIENT)
-    static class EndButton extends AbstractButton {
+    class EndButton extends AbstractButton {
 
         public EndButton(int pX, int pY) {
             super(pX, pY, 21, 15, Component.translatable("button.dreamaticvoyage.end_voyage"));
