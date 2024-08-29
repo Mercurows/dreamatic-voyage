@@ -21,4 +21,9 @@ public class DGYorune extends DreamGuardian {
     public @NotNull Optional<TooltipComponent> getTooltipImage(@NotNull ItemStack pStack) {
         return Optional.of(new ImageTooltip(64, 64, IMAGE));
     }
+
+    @Override
+    public ResourceLocation getDgTexture() {
+        return IMAGE;
+    }
 }

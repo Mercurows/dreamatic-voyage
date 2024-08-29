@@ -5,9 +5,11 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
+import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 
 public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalVoyagerMenu> {
 
@@ -33,6 +35,13 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
         int y = (this.height - this.imageHeight + 80) / 2;
 
         pGuiGraphics.blit(TEXTURE, x, y, 0, 0, 350, 167, this.imageWidth, this.imageHeight);
+
+        ItemStack stack = PhantasmalVoyagerScreen.this.menu.getDreamGuardian();
+        if (stack.getItem() instanceof DreamGuardian dreamGuardian) {
+            pGuiGraphics.blit(dreamGuardian.getDgTexture(), x + 99, y + 13, 0, 0, 48, 48, 48, 48);
+            pGuiGraphics.blit(TEXTURE, x + 145, y + 2, 0, 168, 13, 13, this.imageWidth, this.imageHeight);
+        }
+
     }
 
     @Override

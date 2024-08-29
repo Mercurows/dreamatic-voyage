@@ -117,6 +117,10 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
         return this.container.stillValid(pPlayer);
     }
 
+    public ItemStack getDreamGuardian() {
+        return this.container.getItem(0);
+    }
+
     public class ResultSlot extends Slot {
 
         public ResultSlot(Container pContainer, int pSlot, int pX, int pY) {

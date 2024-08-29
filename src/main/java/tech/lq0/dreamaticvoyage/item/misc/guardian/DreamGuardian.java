@@ -2,6 +2,7 @@ package tech.lq0.dreamaticvoyage.item.misc.guardian;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
@@ -32,4 +33,6 @@ public abstract class DreamGuardian extends Item {
 
         TooltipTool.addDevelopingText(pTooltip);
     }
+
+    abstract public ResourceLocation getDgTexture();
 }
