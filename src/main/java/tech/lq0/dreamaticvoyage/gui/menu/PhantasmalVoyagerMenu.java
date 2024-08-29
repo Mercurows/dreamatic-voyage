@@ -27,13 +27,13 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
     public static final int Y_OFFSET = 56;
 
     public PhantasmalVoyagerMenu(int id, Inventory inventory) {
-        this(id, inventory, new SimpleContainer(12), new SimpleContainerData(1));
+        this(id, inventory, new SimpleContainer(32), new SimpleContainerData(1));
     }
 
     public PhantasmalVoyagerMenu(int id, Inventory inventory, Container container, ContainerData containerData) {
         super(MenuTypeRegistry.PHANTASMAL_VOYAGER_MENU.get(), id);
 
-        checkContainerSize(container, 2);
+        checkContainerSize(container, 32);
         checkContainerDataCount(containerData, 1);
 
         this.container = container;
@@ -44,7 +44,7 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
         this.addSlot(new VoyagerBookSlot(container, 2, 178, 43));
         this.addSlot(new VoyagerUpgradeSlot(container, 3, 246, 43));
 
-        for (int i = 0; i < 2; ++i) {
+        for (int i = 0; i < 7; ++i) {
             for (int j = 0; j < 4; ++j) {
                 this.addSlot(new ResultSlot(container, j + i * 4 + 4, 8 + j * 18, 84 + i * 18));
             }
@@ -71,8 +71,8 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
         if (slot.hasItem()) {
             ItemStack stack = slot.getItem();
             itemStack = stack.copy();
-            if (pIndex >= 0 && pIndex <= 11) {
-                if (!this.moveItemStackTo(stack, 12, 48, true)) {
+            if (pIndex >= 0 && pIndex <= 31) {
+                if (!this.moveItemStackTo(stack, 32, 68, true)) {
                     return ItemStack.EMPTY;
                 }
             } else {
@@ -88,10 +88,10 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
                     if (!this.moveItemStackTo(stack, 1, 2, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (pIndex >= 39 && pIndex < 48 && !this.moveItemStackTo(stack, 12, 39, false)) {
+                } else if (pIndex >= 59 && pIndex < 68 && !this.moveItemStackTo(stack, 32, 59, false)) {
                     return ItemStack.EMPTY;
                 } else {
-                    if (!this.moveItemStackTo(stack, 39, 48, false)) {
+                    if (!this.moveItemStackTo(stack, 59, 68, false)) {
                         return ItemStack.EMPTY;
                     }
                 }

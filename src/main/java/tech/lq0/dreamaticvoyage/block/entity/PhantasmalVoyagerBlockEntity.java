@@ -41,7 +41,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     protected static final int SLOT_UPGRADE = 3;
     protected static final int[] SLOTS_RESULT = new int[]{4, 5, 6, 7, 8, 9, 10, 11};
 
-    protected NonNullList<ItemStack> items = NonNullList.withSize(12, ItemStack.EMPTY);
+    protected NonNullList<ItemStack> items = NonNullList.withSize(32, ItemStack.EMPTY);
 
     protected final Voyage voyageData = new Voyage();
     public int finished;
@@ -135,7 +135,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
     @Override
     public boolean canPlaceItem(int pIndex, ItemStack pStack) {
-        if (pIndex >= 4 && pIndex <= 11) {
+        if (pIndex >= 4 && pIndex < 32) {
             return false;
         } else if (pIndex == SLOT_DREAM_GUARDIAN) {
             return pStack.getItem() instanceof DreamGuardian;

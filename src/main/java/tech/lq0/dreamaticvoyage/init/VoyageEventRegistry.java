@@ -10,6 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.voyage.core.VoyageEvent;
 
+@SuppressWarnings("unused")
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VoyageEventRegistry {
 
@@ -18,8 +19,8 @@ public class VoyageEventRegistry {
     public static final RegistryObject<VoyageEvent> FUKAMIZU_BAKERY = EVENTS.register("fukamizu_bakery", () -> new VoyageEvent(
             "fukamizu_bakery",
             VoyageEvent.Type.BENEFICIAL,
-            new float[]{0.0f, 0.0f, 0.0f, 0.0f},
             new float[]{0.1f, 0.0f, 0.0f, 0.0f},
+            new float[]{0.0f, 0.0f, 0.0f, 0.0f},
             VoyageEvent.ResultType.CONTINUE,
             false,
             1
