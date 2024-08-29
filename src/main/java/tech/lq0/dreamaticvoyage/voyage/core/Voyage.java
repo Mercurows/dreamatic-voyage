@@ -40,11 +40,11 @@ public class Voyage implements INBTSerializable<CompoundTag> {
     public final NonNullList<ItemStack> items = NonNullList.create();
     public boolean finished;
 
-    public List<ItemStack> generateDrop(ServerLevel level, BlockPos pos, VoyageEvent event) {
+    public List<ItemStack> generateDrop(ServerLevel level, BlockPos pos, VoyageEvent event, boolean isSuccess) {
         LootDataManager manager = level.getServer().getLootData();
 
         LootTable lootTable;
-        if (this.successConditionMatch(event)) {
+        if (isSuccess) {
             lootTable = manager.getLootTable(event.successLoot);
         } else {
             lootTable = manager.getLootTable(event.failLoot);
@@ -52,6 +52,10 @@ public class Voyage implements INBTSerializable<CompoundTag> {
 
         return lootTable.getRandomItems(new LootParams.Builder(level)
                 .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)).withLuck(luck).create(LootContextParamSets.CHEST));
+    }
+
+    public List<ItemStack> generateDrop(ServerLevel level, BlockPos pos, VoyageEvent event) {
+        return this.generateDrop(level, pos, event, this.successConditionMatch(event));
     }
 
     public boolean appearConditionMatch(VoyageEvent event) {

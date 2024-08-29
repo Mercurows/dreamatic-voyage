@@ -20,14 +20,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
-import tech.lq0.dreamaticvoyage.init.VoyageEventRegistry;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 import tech.lq0.dreamaticvoyage.voyage.core.Voyage;
 import tech.lq0.dreamaticvoyage.voyage.core.VoyageEvent;
+import tech.lq0.dreamaticvoyage.voyage.core.VoyageHelper;
 
 import java.util.List;
 
@@ -59,19 +58,19 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         data.currentTime++;
 
         if (data.currentTime % (data.time / 3) == 0) {
-            VoyageEvent event = blockEntity.generateVoyageEvent();
+            VoyageEvent event = VoyageHelper.generateVoyageEvent(blockEntity.voyageData);
             if (event == null) {
                 return;
             }
 
             // TODO 完成远航事件的文本存储与显示
-            System.out.println("发现事件：" + Component.translatable("voyage." + Utils.MOD_ID + "." + event.descriptionId + ".name").getString());
-            System.out.println(Component.translatable("voyage." + Utils.MOD_ID + "." + event.descriptionId + ".des").getString());
+            System.out.println("发现事件：" + event.getDisplayName().getString());
+            System.out.println(event.getDescription().getString());
 
             List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos, event);
-            blockEntity.mergeList(lootItems, blockEntity.items);
+            VoyageHelper.mergeList(lootItems, blockEntity.items, 4);
 
-            if (event.resultType == VoyageEvent.ResultType.BREAK) {
+            if (event.resultType == VoyageEvent.ResultType.BREAK && !blockEntity.voyageData.successConditionMatch(event)) {
                 data.finished = true;
                 return;
             }
@@ -79,52 +78,6 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
         if (data.currentTime >= data.time) {
             data.finished = true;
-        }
-    }
-
-    @Nullable
-    private VoyageEvent generateVoyageEvent() {
-        var availableEvents = VoyageEventRegistry.EVENTS.getEntries().stream().filter(r -> voyageData.appearConditionMatch(r.get()) && r.get().level == 1).toList();
-        if (availableEvents.isEmpty()) return null;
-
-        return availableEvents.get((int) (Math.random() * availableEvents.size())).get();
-    }
-
-    /**
-     * 将tempList的物品合并至resultList上
-     */
-    private void mergeList(List<ItemStack> temp, List<ItemStack> result) {
-        for (ItemStack itemStack : temp) {
-            insertNewItem(result, itemStack);
-        }
-    }
-
-    private void insertNewItem(List<ItemStack> result, ItemStack stack) {
-        if (stack.isEmpty()) return;
-
-        for (int i = 4; i < result.size(); i++) {
-            var slot = result.get(i);
-            if (slot.isEmpty()) {
-                result.set(i, stack);
-                break;
-            }
-
-            if (slot.getCount() >= 64) continue;
-            if (!ItemStack.isSameItemSameTags(slot, stack)) continue;
-
-            int slotItemCount = slot.getCount();
-            int itemCount = stack.getCount();
-
-            int maxAddableCount = 64 - slotItemCount;
-
-            if (maxAddableCount >= itemCount) {
-                stack.setCount(0);
-                slot.setCount(slotItemCount + itemCount);
-                break;
-            }
-
-            stack.setCount(itemCount - maxAddableCount);
-            slot.setCount(64);
         }
     }
 

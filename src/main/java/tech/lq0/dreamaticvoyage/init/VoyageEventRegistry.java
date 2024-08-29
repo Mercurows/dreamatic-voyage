@@ -19,8 +19,17 @@ public class VoyageEventRegistry {
             "fukamizu_bakery",
             VoyageEvent.Type.BENEFICIAL,
             new float[]{0.0f, 0.0f, 0.0f, 0.0f},
-            new float[]{0.0f, 0.0f, 0.0f, 0.0f},
+            new float[]{0.1f, 0.0f, 0.0f, 0.0f},
             VoyageEvent.ResultType.CONTINUE,
+            false,
+            1
+    ));
+    public static final RegistryObject<VoyageEvent> EVIL_BOSS = EVENTS.register("evil_boss", () -> new VoyageEvent(
+            "evil_boss",
+            VoyageEvent.Type.HARMFUL,
+            new float[]{0.0f, 0.0f, 0.0f, 0.0f},
+            new float[]{0.0f, 0.0f, 0.0f, 0.0f},
+            VoyageEvent.ResultType.BREAK,
             false,
             1
     ));

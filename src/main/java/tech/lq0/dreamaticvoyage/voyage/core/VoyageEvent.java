@@ -1,5 +1,6 @@
 package tech.lq0.dreamaticvoyage.voyage.core;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import tech.lq0.dreamaticvoyage.Utils;
 
@@ -55,6 +56,22 @@ public class VoyageEvent {
     public enum ResultType {
         CONTINUE,
         BREAK,
+    }
+
+    public Component getDisplayName() {
+        return Component.translatable("voyage." + Utils.MOD_ID + "." + this.descriptionId + ".name");
+    }
+
+    public Component getDescription() {
+        return Component.translatable("voyage." + Utils.MOD_ID + "." + this.descriptionId + ".des");
+    }
+
+    public Component getSuccessMessage() {
+        return Component.translatable("voyage." + Utils.MOD_ID + "." + this.descriptionId + ".des.success");
+    }
+
+    public Component getFailMessage() {
+        return Component.translatable("voyage." + Utils.MOD_ID + "." + this.descriptionId + ".des.fail");
     }
 
 }
