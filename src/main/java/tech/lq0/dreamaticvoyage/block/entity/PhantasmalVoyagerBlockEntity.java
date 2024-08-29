@@ -46,22 +46,37 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
 
     protected Voyage voyageData = new Voyage();
     public int nowVoyaging;
+    public int progress;
+    public int maxTime;
 
-    // TODO 修改为正确的逻辑
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
+        if (blockEntity.nowVoyaging == 1) {
+            blockEntity.resetVoyageData();
+            blockEntity.nowVoyaging = 2;
+            blockEntity.setChanged();
+            return;
+        }
+
         var data = blockEntity.voyageData;
 
-//        if (blockEntity.nowVoyaging == 0 && !data.finished) {
-//            blockEntity.resetVoyageData();
-//        }
+        if (blockEntity.nowVoyaging == -1) {
+            data.finished = true;
+            VoyageHelper.mergeList(data.items, blockEntity.items, 4);
+            data.items.clear();
+        }
 
         if (data.finished) {
             blockEntity.nowVoyaging = 0;
-//            blockEntity.resetVoyageData();
+            blockEntity.setChanged();
+            return;
+        }
+
+        if (blockEntity.nowVoyaging == 0) {
             return;
         }
 
         data.currentTime++;
+        blockEntity.progress = data.currentTime;
 
         if (data.currentTime % (data.time / 3) == 0) {
             VoyageEvent event = VoyageHelper.generateVoyageEvent(blockEntity.voyageData);
@@ -77,23 +92,25 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
             System.out.println(success ? event.getSuccessMessage().getString() : event.getFailMessage().getString());
 
             List<ItemStack> lootItems = data.generateDrop((ServerLevel) level, pos, event);
-            VoyageHelper.mergeList(lootItems, blockEntity.items, 4);
-            VoyageHelper.processAttributes(blockEntity.voyageData, event);
+            VoyageHelper.mergeList(lootItems, data.items, 0);
+            VoyageHelper.processAttributes(data, event);
+
+            blockEntity.setChanged();
 
             if (event.resultType == VoyageEvent.ResultType.BREAK && !success) {
-                data.finished = true;
+                blockEntity.nowVoyaging = -1;
                 return;
             }
         }
 
-        if (data.currentTime >= data.time) {
-            data.finished = true;
+        if (data.currentTime >= data.time && !data.finished) {
+            blockEntity.nowVoyaging = -1;
         }
     }
 
-    // TODO 根据属性完成远航的创建
     private void resetVoyageData() {
-        this.voyageData = new Voyage();
+        this.voyageData = Voyage.genLevel1Voyage();
+        this.maxTime = this.voyageData.time;
     }
 
     @Override
@@ -104,6 +121,8 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         ContainerHelper.loadAllItems(pTag, this.items);
         this.voyageData.deserializeNBT(pTag.getCompound("Voyage"));
         this.nowVoyaging = pTag.getInt("NowVoyaging");
+        this.progress = pTag.getInt("Progress");
+        this.maxTime = pTag.getInt("MaxTime");
     }
 
     @Override
@@ -113,20 +132,34 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         ContainerHelper.saveAllItems(pTag, this.items);
         pTag.put("Voyage", this.voyageData.serializeNBT());
         pTag.putInt("NowVoyaging", this.nowVoyaging);
+        pTag.putInt("Progress", this.progress);
+        pTag.putInt("MaxTime", this.maxTime);
     }
 
     protected final ContainerData dataAccess = new ContainerData() {
         public int get(int pIndex) {
-            return nowVoyaging;
+            if (pIndex == 0) {
+                return nowVoyaging;
+            } else if (pIndex == 1) {
+                return progress;
+            } else {
+                return maxTime;
+            }
         }
 
         public void set(int pIndex, int pValue) {
-            nowVoyaging = pValue;
+            if (pIndex == 0) {
+                nowVoyaging = pValue;
+            } else if (pIndex == 1) {
+                progress = pValue;
+            } else {
+                maxTime = pValue;
+            }
         }
 
         @Override
         public int getCount() {
-            return 1;
+            return 3;
         }
     };
 

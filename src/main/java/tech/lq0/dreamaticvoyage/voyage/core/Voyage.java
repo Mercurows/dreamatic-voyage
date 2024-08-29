@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootDataManager;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -14,6 +15,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.INBTSerializable;
 
 import java.util.List;
+import java.util.Random;
 
 public class Voyage implements INBTSerializable<CompoundTag> {
 
@@ -36,9 +38,10 @@ public class Voyage implements INBTSerializable<CompoundTag> {
     public float insight;
     // 社交能力
     public float sociability;
-
-    public final NonNullList<ItemStack> items = NonNullList.create();
+    // 是否完成
     public boolean finished;
+    // 暂时的物品
+    public NonNullList<ItemStack> items = NonNullList.withSize(capacity, ItemStack.EMPTY);
 
     public List<ItemStack> generateDrop(ServerLevel level, BlockPos pos, VoyageEvent event, boolean isSuccess) {
         LootDataManager manager = level.getServer().getLootData();
@@ -88,6 +91,8 @@ public class Voyage implements INBTSerializable<CompoundTag> {
         nbt.putFloat("Intelligence", this.intelligence);
         nbt.putFloat("Insight", this.insight);
         nbt.putFloat("Sociability", this.sociability);
+        nbt.putBoolean("Finished", this.finished);
+        ContainerHelper.saveAllItems(nbt, this.items);
 
         return nbt;
     }
@@ -102,5 +107,20 @@ public class Voyage implements INBTSerializable<CompoundTag> {
         this.intelligence = nbt.getFloat("Intelligence");
         this.insight = nbt.getFloat("Insight");
         this.sociability = nbt.getFloat("Sociability");
+        this.finished = nbt.getBoolean("Finished");
+        this.items = NonNullList.withSize(this.capacity, ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(nbt, this.items);
+    }
+
+    public static Voyage genLevel1Voyage() {
+        Voyage voyage = new Voyage();
+        voyage.level = 1;
+        voyage.capacity = 8;
+        voyage.luck = new Random().nextInt(5) / 10.0f;
+        voyage.intelligence = new Random().nextInt(5) / 10.0f;
+        voyage.insight = new Random().nextInt(5) / 10.0f;
+        voyage.sociability = new Random().nextInt(5) / 10.0f;
+        voyage.items = NonNullList.withSize(voyage.capacity, ItemStack.EMPTY);
+        return voyage;
     }
 }

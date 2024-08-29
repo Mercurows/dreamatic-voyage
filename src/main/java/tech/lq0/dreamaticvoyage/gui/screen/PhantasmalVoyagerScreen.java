@@ -16,6 +16,7 @@ import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.DreamGuardian;
 import tech.lq0.dreamaticvoyage.network.DmvNetwork;
 import tech.lq0.dreamaticvoyage.network.packet.PhantasmalVoyagerPacket;
+import tech.lq0.dreamaticvoyage.tools.RenderTool;
 
 @OnlyIn(Dist.CLIENT)
 public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalVoyagerMenu> {
@@ -35,7 +36,7 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
         imageHeight = 240;
     }
 
-    // TODO 其他物品渲染
+    // TODO 远航事件文本渲染
     @Override
     protected void renderBg(GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
         int x = (this.width - this.imageWidth + 26) / 2;
@@ -48,6 +49,14 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
             pGuiGraphics.blit(dreamGuardian.getDgTexture(), x + 99, y + 13, 0, 0, 48, 48, 48, 48);
             pGuiGraphics.blit(TEXTURE, x + 145, y + 2, 0, 168, 13, 13, this.imageWidth, this.imageHeight);
         }
+
+        int progress = PhantasmalVoyagerScreen.this.menu.getVoyageProgress();
+        int maxTime = PhantasmalVoyagerScreen.this.menu.getVoyageMaxTime();
+
+        RenderTool.preciseBlit(pGuiGraphics, TEXTURE, x + 157, y + 19, 102, 168,
+                100 * ((float) progress / maxTime), 4, this.imageWidth, this.imageHeight);
+        RenderTool.preciseBlit(pGuiGraphics, TEXTURE, x + 154 + 100 * ((float) progress / maxTime), y + 15,
+                203, 168, 7, 12, this.imageWidth, this.imageHeight);
 
     }
 
@@ -69,6 +78,7 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
         this.addRenderableWidget(endButton);
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     @OnlyIn(Dist.CLIENT)
     class StartButton extends AbstractButton {
 
@@ -97,6 +107,7 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
         }
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     @OnlyIn(Dist.CLIENT)
     class EndButton extends AbstractButton {
 
@@ -116,7 +127,7 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
 
         @Override
         public void onPress() {
-            DmvNetwork.CHANNEL.sendToServer(new PhantasmalVoyagerPacket(0));
+            DmvNetwork.CHANNEL.sendToServer(new PhantasmalVoyagerPacket(-1));
         }
 
         @Override

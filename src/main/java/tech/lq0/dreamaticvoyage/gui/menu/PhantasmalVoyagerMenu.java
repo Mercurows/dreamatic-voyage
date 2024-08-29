@@ -23,14 +23,14 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
     public static final int Y_OFFSET = 41;
 
     public PhantasmalVoyagerMenu(int id, Inventory inventory) {
-        this(id, inventory, new SimpleContainer(32), new SimpleContainerData(1));
+        this(id, inventory, new SimpleContainer(32), new SimpleContainerData(3));
     }
 
     public PhantasmalVoyagerMenu(int id, Inventory inventory, Container container, ContainerData containerData) {
         super(MenuTypeRegistry.PHANTASMAL_VOYAGER_MENU.get(), id);
 
         checkContainerSize(container, 32);
-        checkContainerDataCount(containerData, 1);
+        checkContainerDataCount(containerData, 3);
 
         this.container = container;
         this.containerData = containerData;
@@ -42,7 +42,7 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
 
         for (int i = 0; i < 7; ++i) {
             for (int j = 0; j < 4; ++j) {
-                this.addSlot(new VoyageResultSlot(container, j + i * 4 + 4, 285 + j * 18, 53 + i * 18, this.containerData.get(0) == 1));
+                this.addSlot(new VoyageResultSlot(container, j + i * 4 + 4, 285 + j * 18, 53 + i * 18, this.containerData.get(0) == 0));
             }
         }
 
@@ -120,5 +120,17 @@ public class PhantasmalVoyagerMenu extends AbstractContainerMenu {
 
     public void setVoyageState(int state) {
         this.containerData.set(0, state);
+    }
+
+    public int getVoyageState() {
+        return this.containerData.get(0);
+    }
+
+    public int getVoyageProgress() {
+        return this.containerData.get(1);
+    }
+
+    public int getVoyageMaxTime() {
+        return this.containerData.get(2);
     }
 }

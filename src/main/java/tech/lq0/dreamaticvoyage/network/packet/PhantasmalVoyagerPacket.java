@@ -22,7 +22,6 @@ public class PhantasmalVoyagerPacket {
         buf.writeInt(packet.state);
     }
 
-    // TODO 实现正确的启动和终止远航功能
     public static void handle(PhantasmalVoyagerPacket packet, Supplier<NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
             var player = ctx.get().getSender();
@@ -34,7 +33,12 @@ public class PhantasmalVoyagerPacket {
                     return;
                 }
 
-                menu.setVoyageState(packet.state);
+                if (packet.state == 1 && menu.getVoyageState() == 0) {
+                    menu.setVoyageState(1);
+                }
+                if (packet.state == -1 && menu.getVoyageState() == 2) {
+                    menu.setVoyageState(-1);
+                }
             }
 
         });
