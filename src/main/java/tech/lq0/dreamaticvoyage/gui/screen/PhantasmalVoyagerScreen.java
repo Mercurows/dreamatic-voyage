@@ -6,7 +6,9 @@ import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.FormattedText;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,11 +21,14 @@ import tech.lq0.dreamaticvoyage.network.DmvNetwork;
 import tech.lq0.dreamaticvoyage.network.packet.PhantasmalVoyagerPacket;
 import tech.lq0.dreamaticvoyage.tools.RenderTool;
 
+import java.util.List;
+
 @OnlyIn(Dist.CLIENT)
 public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalVoyagerMenu> {
 
     public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/gui/phantasmal_voyager.png");
 
+    // TODO 实现实时渲染components
     @Override
     public void render(@NotNull GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
         this.renderBackground(pGuiGraphics);
@@ -33,11 +38,7 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
         int i = (this.width - this.imageWidth) / 2;
         int j = (this.height - this.imageHeight) / 2;
 
-        var components = menu.getComponents();
-        // TODO 实现远航信息渲染
-        for (Component component : components) {
-            pGuiGraphics.drawString(Minecraft.getInstance().font, component, i, j, 0xFFFFFF);
-        }
+        renderComponents(pGuiGraphics, menu.getComponents(), i + 52, j + 92, 100);
     }
 
     public PhantasmalVoyagerScreen(PhantasmalVoyagerMenu menu, Inventory inventory, Component title) {
@@ -66,7 +67,6 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
                 100 * ((float) progress / maxTime), 4, this.imageWidth, this.imageHeight);
         RenderTool.preciseBlit(pGuiGraphics, TEXTURE, x + 154 + 100 * ((float) progress / maxTime), y + 15,
                 203, 168, 7, 12, this.imageWidth, this.imageHeight);
-
     }
 
     @Override
@@ -85,6 +85,28 @@ public class PhantasmalVoyagerScreen extends AbstractContainerScreen<PhantasmalV
 
         this.addRenderableWidget(startButton);
         this.addRenderableWidget(endButton);
+    }
+
+    // TODO 实现远航信息渲染的滚动条效果
+    private void renderComponents(GuiGraphics pGuiGraphics, List<Component> components, int x, int y, int width) {
+        pGuiGraphics.pose().pushPose();
+
+        pGuiGraphics.pose().scale(0.7f, 0.7f, 0.7f);
+
+        int i = 0;
+        for (Component component : components) {
+            List<FormattedCharSequence> cachedComponents = this.font.split(FormattedText.of(component.getString()), width);
+
+            for (int j = 0; j < cachedComponents.size(); j++) {
+                var cachedComponent = cachedComponents.get(j);
+                pGuiGraphics.drawString(Minecraft.getInstance().font, cachedComponent, x, y + i * 10 + j * 10, 0xFFFFFF);
+                if (j == cachedComponents.size() - 1) {
+                    i++;
+                }
+            }
+            i += cachedComponents.size();
+        }
+        pGuiGraphics.pose().popPose();
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
