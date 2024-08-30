@@ -1,9 +1,13 @@
 package tech.lq0.dreamaticvoyage.voyage.core;
 
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.VoyageEventRegistry;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class VoyageHelper {
@@ -67,5 +71,33 @@ public class VoyageHelper {
             voyage.insight += event.failAttributeBonus[2];
             voyage.sociability += event.failAttributeBonus[3];
         }
+    }
+
+    public static String getEventId(Component component) {
+        String string = component.toString();
+        String[] list = string.split("'");
+        if (list.length > 1) {
+            return list[1];
+        } else return "";
+    }
+
+    public static void saveComponents(CompoundTag tag, List<Component> components) {
+        ListTag list = new ListTag();
+        for (Component component : components) {
+            CompoundTag nbt = new CompoundTag();
+            nbt.putString("Text", getEventId(component));
+            list.add(nbt);
+        }
+        tag.put("Components", list);
+    }
+
+    public static List<Component> loadComponents(CompoundTag tag) {
+        List<Component> list = new ArrayList<>();
+        ListTag listTag = tag.getList("Components", 10);
+        for (int i = 0; i < listTag.size(); i++) {
+            CompoundTag nbt = listTag.getCompound(i);
+            list.add(Component.translatable(nbt.getString("Text")));
+        }
+        return list;
     }
 }

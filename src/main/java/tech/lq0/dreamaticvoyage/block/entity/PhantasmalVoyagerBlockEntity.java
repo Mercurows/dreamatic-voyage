@@ -51,8 +51,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     public int nowVoyaging;
     public int progress;
     public int maxTime;
-
-    private final List<Component> components = new ArrayList<>();
+    public List<Component> components = new ArrayList<>();
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, PhantasmalVoyagerBlockEntity blockEntity) {
         if (blockEntity.nowVoyaging == 1) {
@@ -115,6 +114,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     private void resetVoyageData() {
         this.voyageData = Voyage.genLevel1Voyage();
         this.maxTime = this.voyageData.time;
+        this.components.clear();
     }
 
     @Override
@@ -127,6 +127,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         this.nowVoyaging = pTag.getInt("NowVoyaging");
         this.progress = pTag.getInt("Progress");
         this.maxTime = pTag.getInt("MaxTime");
+        this.components = VoyageHelper.loadComponents(pTag);
     }
 
     @Override
@@ -138,6 +139,7 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         pTag.putInt("NowVoyaging", this.nowVoyaging);
         pTag.putInt("Progress", this.progress);
         pTag.putInt("MaxTime", this.maxTime);
+        VoyageHelper.saveComponents(pTag, this.components);
     }
 
     protected final ContainerData dataAccess = new ContainerData() {
@@ -234,7 +236,6 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         return ContainerHelper.takeItem(this.items, pSlot);
     }
 
-    // TODO 待修改
     @Override
     public void setItem(int pSlot, ItemStack pStack) {
         ItemStack itemstack = this.items.get(pSlot);
@@ -242,6 +243,10 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
         this.items.set(pSlot, pStack);
         if (pStack.getCount() > this.getMaxStackSize()) {
             pStack.setCount(this.getMaxStackSize());
+        }
+
+        if (!flag) {
+            this.setChanged();
         }
     }
 
@@ -273,6 +278,6 @@ public class PhantasmalVoyagerBlockEntity extends BlockEntity implements Worldly
     }
 
     public List<Component> getComponents() {
-        return components;
+        return this.components;
     }
 }
