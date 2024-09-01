@@ -15,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -37,7 +38,7 @@ public class YeggyPearl extends Item implements ICurioItem {
     public static final String TAG_YEGGY_PEARL = "yeggy_energy";
 
     public YeggyPearl() {
-        super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+        super(new Properties().stacksTo(1).rarity(Rarity.RARE));
     }
 
     @Override
@@ -69,7 +70,10 @@ public class YeggyPearl extends Item implements ICurioItem {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-        setEnergy(stack, getEnergy(stack) + 1);
+        LivingEntity entity = slotContext.entity();
+        if (entity instanceof Player player && player.getPersistentData().getInt("YeggyPearl") == 0) {
+            setEnergy(stack, getEnergy(stack) + 1);
+        }
         ICurioItem.super.curioTick(slotContext, stack);
     }
 
@@ -112,12 +116,47 @@ public class YeggyPearl extends Item implements ICurioItem {
                             slotResult -> {
                                 if (!slotResult.slotContext().cosmetic()) {
                                     ItemStack stack = slotResult.stack();
-                                    event.setAmount(event.getAmount() * getDamageTimes(getEnergy(stack)));
-                                    setEnergy(stack, 0);
+                                    if (player.getPersistentData().getInt("YeggyPearl") <= 0) {
+                                        player.getPersistentData().putInt("YeggyPearl", 1);
+                                        player.getPersistentData().putFloat("YeggyPearlDamage", getDamageTimes(getEnergy(stack)));
+
+                                    }
+                                    if (player.getPersistentData().getInt("YeggyPearl") > 0) {
+                                        if (player.getPersistentData().contains("YeggyPearlDamage")) {
+                                            event.setAmount(event.getAmount() * player.getPersistentData().getFloat("YeggyPearlDamage"));
+                                        }
+                                    }
                                 }
                             }
                     )
             );
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+        if (event.phase == TickEvent.Phase.END) {
+            Player player = event.player;
+
+            if (player.getPersistentData().contains("YeggyPearl")) {
+                int energy = player.getPersistentData().getInt("YeggyPearl");
+
+                if (energy > 0) {
+                    player.getPersistentData().putInt("YeggyPearl", Math.max(0, energy - 1));
+                    if (player.getPersistentData().getInt("YeggyPearl") == 0) {
+                        player.getPersistentData().remove("YeggyPearlDamage");
+                        CuriosApi.getCuriosInventory(player).ifPresent(
+                                c -> c.findFirstCurio(ItemRegistry.YEGGY_PEARL.get()).ifPresent(
+                                        slotResult -> {
+                                            if (!slotResult.slotContext().cosmetic()) {
+                                                ItemStack stack = slotResult.stack();
+                                                setEnergy(stack, 0);
+                                            }
+                                        }
+                                ));
+                    }
+                }
+            }
         }
     }
 }
