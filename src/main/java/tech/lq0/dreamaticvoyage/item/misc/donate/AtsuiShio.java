@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
@@ -23,7 +24,7 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class AtsuiShio extends Item {
-    public static final String TAG_BURN = "dreamaticvoyage_burn";
+    public static final String TAG_BURN = "AtsuiShioBurn";
 
     public static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(1).alwaysEat().build();
 
@@ -41,7 +42,7 @@ public class AtsuiShio extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if (pLivingEntity instanceof Player player) {
-            player.addTag(TAG_BURN);
+            player.getPersistentData().putBoolean(TAG_BURN, true);
 
             if (player.isCreative()) {
                 return pStack;
@@ -60,13 +61,18 @@ public class AtsuiShio extends Item {
     @SubscribeEvent
     public static void doBurning(TickEvent.PlayerTickEvent event) {
         Player player = event.player;
-        if (event.phase == TickEvent.Phase.START) {
-            if (player.getTags().contains(TAG_BURN) && !player.level().isClientSide) {
+        if (event.phase == TickEvent.Phase.END) {
+            if (player.getPersistentData().getBoolean(TAG_BURN) && !player.level().isClientSide) {
                 player.setSecondsOnFire(1);
             }
+        }
+    }
 
-            if (!player.isAlive()) {
-                player.removeTag(TAG_BURN);
+    @SubscribeEvent
+    public static void onPlayerDeath(LivingDeathEvent event) {
+        if (event.getEntity() instanceof Player player) {
+            if (player.getPersistentData().contains(TAG_BURN)) {
+                player.getPersistentData().remove(TAG_BURN);
             }
         }
     }

@@ -35,7 +35,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class YeggyPearl extends Item implements ICurioItem {
-    public static final String TAG_YEGGY_PEARL = "yeggy_energy";
+    public static final String TAG_YEGGY_PEARL = "YeggyEnergy";
 
     public YeggyPearl() {
         super(new Properties().stacksTo(1).rarity(Rarity.RARE));
