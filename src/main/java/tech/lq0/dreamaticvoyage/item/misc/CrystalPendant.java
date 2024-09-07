@@ -47,7 +47,6 @@ public class CrystalPendant extends Item implements ICurioItem {
     @SubscribeEvent
     public static void onItemBreak(LivingItemBreakEvent event) {
         LivingEntity living = event.livingEntity;
-        System.out.println(event.slot);
         ItemStack stack = event.getItemStack();
         if (stack.isDamageableItem()) {
             ItemStack copy = generateFixedItem(stack, .25f);
