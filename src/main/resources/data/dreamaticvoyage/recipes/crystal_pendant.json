@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    " d "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gold_nugget"
+    },
+    "d": {
+      "item": "dreamaticvoyage:harden_crystal_block"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:crystal_pendant",
+    "count": 1
+  }
+}
