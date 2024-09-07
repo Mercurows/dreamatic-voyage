@@ -16,7 +16,7 @@
   },
   "parent": "dreamaticvoyage:main/dream_weaving_yarn",
   "criteria": {
-    "magicros_core": {
+    "chiram_core": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -24,17 +24,38 @@
             "items": [
               "dreamaticvoyage:chiram_core"
             ]
-          },
+          }
+        ]
+      }
+    },
+    "haine_core": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
           {
             "items": [
               "dreamaticvoyage:haine_core"
             ]
-          },
+          }
+        ]
+      }
+    },
+    "keroro_core": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
           {
             "items": [
               "dreamaticvoyage:keroro_core"
             ]
-          },
+          }
+        ]
+      }
+    },
+    "ekira_core": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
           {
             "items": [
               "dreamaticvoyage:ekira_core"
