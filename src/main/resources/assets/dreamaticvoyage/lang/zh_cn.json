@@ -905,6 +905,9 @@
   "enchantment.dreamaticvoyage.shadow_of_void": "虚无之影",
   "item.dreamaticvoyage.phantasm_fuel": "幻想燃料",
   "des.dreamaticvoyage.phantasm_fuel": "进行虚构远航所需的燃料",
+  "item.dreamaticvoyage.crystal_pendant": "结晶吊坠",
+  "des.dreamaticvoyage.crystal_pendant_1": "利用结晶之力保护工具和盔甲不被损坏的吊坠",
+  "des.dreamaticvoyage.crystal_pendant_2": "“我是绝对不会让你受伤的，绝不”",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

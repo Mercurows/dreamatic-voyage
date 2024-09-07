@@ -419,6 +419,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> GOURMET_MEDAL = MISC_ITEMS.register("gourmet_medal", GourmetMedal::new);
     public static final RegistryObject<Item> APOCALYPSE_CARNIVAL = MISC_ITEMS.register("apocalypse_carnival", ApocalypseCarnival::new);
     public static final RegistryObject<Item> MIRACLE_BADGE = MISC_ITEMS.register("miracle_badge", MiracleBadge::new);
+    public static final RegistryObject<Item> CRYSTAL_PENDANT = MISC_ITEMS.register("crystal_pendant", CrystalPendant::new);
 
     /**
      * donate
