@@ -1,0 +1,39 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "botanypots"
+    }
+  ],
+  "type": "botanypots:crop",
+  "seed": {
+    "item": "dreamaticvoyage:uni_millet"
+  },
+  "categories": [
+    "dirt",
+    "farmland"
+  ],
+  "growthTicks": 1200,
+  "display": {
+    "type": "botanypots:aging",
+    "block": "dreamaticvoyage:uni_millet_block"
+  },
+  "drops": [
+    {
+      "chance": 1.00,
+      "output": {
+        "item": "dreamaticvoyage:uni_millet"
+      },
+      "minRolls": 1,
+      "maxRolls": 2
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "item": "dreamaticvoyage:uni_millet"
+      },
+      "minRolls": 1,
+      "maxRolls": 2
+    }
+  ]
+}
