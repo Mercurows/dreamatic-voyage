@@ -217,6 +217,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ItemRegistry.FUKAMIZU_BREAD_SWORD);
         simpleItem(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT);
         simpleItem(ItemRegistry.MINERALIZED_FUKAMIZU_BREAD);
+        simpleItem(ItemRegistry.FUKAMIZU_BREAD_HELMET);
+        simpleItem(ItemRegistry.FUKAMIZU_BREAD_CHESTPLATE);
+        simpleItem(ItemRegistry.FUKAMIZU_BREAD_LEGGINGS);
+        simpleItem(ItemRegistry.FUKAMIZU_BREAD_BOOTS);
 
         simpleItem(ItemRegistry.FUKAMIZU_CRUMB);
         simpleItem(ItemRegistry.IRON_RICH_CRUMB);
