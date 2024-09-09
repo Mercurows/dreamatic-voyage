@@ -7,13 +7,13 @@
   ],
   "key": {
     "a": {
-      "item": "dreamaticvoyage:fictional_nugget"
+      "item": "dreamaticvoyage:gachi_nugget"
     },
     "b": {
       "item": "minecraft:iron_ingot"
     },
     "c": {
-      "item": "minecraft:gold_nugget"
+      "item": "dreamaticvoyage:fictional_nugget"
     },
     "d": {
       "item": "minecraft:nether_star"

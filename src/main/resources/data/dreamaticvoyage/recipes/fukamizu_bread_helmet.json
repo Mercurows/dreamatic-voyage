@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+    "F F"
+  ],
+  "key": {
+    "F": {
+      "item": "dreamaticvoyage:fukamizu_bread_ingot"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fukamizu_bread_helmet",
+    "count": 1
+  }
+}

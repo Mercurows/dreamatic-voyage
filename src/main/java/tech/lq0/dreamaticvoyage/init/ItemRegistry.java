@@ -46,6 +46,10 @@ import tech.lq0.dreamaticvoyage.item.magicros.keroro.*;
 import tech.lq0.dreamaticvoyage.item.misc.*;
 import tech.lq0.dreamaticvoyage.item.misc.donate.*;
 import tech.lq0.dreamaticvoyage.item.misc.fukamizutech.*;
+import tech.lq0.dreamaticvoyage.item.misc.fukamizutech.armor.FukamizuBreadBoots;
+import tech.lq0.dreamaticvoyage.item.misc.fukamizutech.armor.FukamizuBreadChestplate;
+import tech.lq0.dreamaticvoyage.item.misc.fukamizutech.armor.FukamizuBreadHelmet;
+import tech.lq0.dreamaticvoyage.item.misc.fukamizutech.armor.FukamizuBreadLeggings;
 import tech.lq0.dreamaticvoyage.item.misc.fukamizutech.tool.*;
 import tech.lq0.dreamaticvoyage.item.misc.guardian.*;
 import tech.lq0.dreamaticvoyage.item.misc.material.*;
@@ -457,6 +461,10 @@ public class ItemRegistry {
     public static final RegistryObject<Item> FUKAMIZU_BREAD_PICKAXE = MISC_ITEMS.register("fukamizu_bread_pickaxe", FukamizuBreadPickaxe::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_AXE = MISC_ITEMS.register("fukamizu_bread_axe", FukamizuBreadAxe::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_HOE = MISC_ITEMS.register("fukamizu_bread_hoe", FukamizuBreadHoe::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_HELMET = MISC_ITEMS.register("fukamizu_bread_helmet", FukamizuBreadHelmet::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_CHESTPLATE = MISC_ITEMS.register("fukamizu_bread_chestplate", FukamizuBreadChestplate::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_LEGGINGS = MISC_ITEMS.register("fukamizu_bread_leggings", FukamizuBreadLeggings::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_BOOTS = MISC_ITEMS.register("fukamizu_bread_boots", FukamizuBreadBoots::new);
     public static final RegistryObject<Item> FUKAMIZU_UPGRADE_SMITHING_TEMPLATE = MISC_ITEMS.register("fukamizu_upgrade_smithing_template", FukamizuUpgradeSmithingTemplate::new);
 
     public static final RegistryObject<Item> FUKAMIZU_CRUMB = MISC_ITEMS.register("fukamizu_crumb", FukamizuCrumb::new);
