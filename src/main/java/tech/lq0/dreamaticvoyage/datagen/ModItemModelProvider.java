@@ -201,6 +201,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ItemRegistry.ANCIENT_MICROPHONE);
         simpleItem(ItemRegistry.FICTIONAL_FORGING_SIGIL);
         simpleItem(ItemRegistry.CRYSTAL_POPCORN);
+        simpleItem(ItemRegistry.CRYSTAL_PENDANT);
 
         // dream guardian
         simpleItem(ItemRegistry.DG_SHIRAKO);
@@ -255,6 +256,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.FUKAMIZU_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ItemRegistry.MIRACLE_CORE);
         simpleItem(ItemRegistry.EARTH_DEBRIS);
+        simpleItem(ItemRegistry.PHANTASM_FUEL);
 
         // donate
         simpleItem(ItemRegistry.LITTLE_POTATO);
