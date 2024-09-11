@@ -916,6 +916,8 @@
   "des.dreamaticvoyage.fukamizu_bread_leggings": "用深水面包锭制成的护腿",
   "item.dreamaticvoyage.fukamizu_bread_boots": "深水面包靴子",
   "des.dreamaticvoyage.fukamizu_bread_boots": "用深水面包锭制成的靴子",
+  "item.dreamaticvoyage.fukamizu_bread_multitool": "深水面包万能工具",
+  "des.dreamaticvoyage.fukamizu_bread_multitool": "用多种深水面包工具制成的复合工具",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",
