@@ -462,6 +462,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> FUKAMIZU_BREAD_AXE = MISC_ITEMS.register("fukamizu_bread_axe", FukamizuBreadAxe::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_HOE = MISC_ITEMS.register("fukamizu_bread_hoe", FukamizuBreadHoe::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_MULTITOOL = MISC_ITEMS.register("fukamizu_bread_multitool", FukamizuBreadMultitool::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_SHEARS = MISC_ITEMS.register("fukamizu_bread_shears", FukamizuBreadShears::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_HELMET = MISC_ITEMS.register("fukamizu_bread_helmet", FukamizuBreadHelmet::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_CHESTPLATE = MISC_ITEMS.register("fukamizu_bread_chestplate", FukamizuBreadChestplate::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_LEGGINGS = MISC_ITEMS.register("fukamizu_bread_leggings", FukamizuBreadLeggings::new);

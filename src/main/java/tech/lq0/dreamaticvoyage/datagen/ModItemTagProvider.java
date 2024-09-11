@@ -59,11 +59,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 ItemRegistry.ANCIENT_LOLLIPOP.get(), ItemRegistry.FETUOZI.get(), ItemRegistry.WORLD_PEACE_STAFF.get(),
                 ItemRegistry.MOMO_KNIFE.get(), ItemRegistry.TAIL_PEN.get(), ItemRegistry.SHU_RINO_KEN.get(),
                 ItemRegistry.SHURA_CHIN.get(), ItemRegistry.UME.get(), ItemRegistry.LUNAR_ECLIPSE.get(),
-                ItemRegistry.OMINOUS_SICKLE.get(), ItemRegistry.FUKAMIZU_BREAD_SWORD.get());
-        this.tag(ItemTags.PICKAXES).add(ItemRegistry.MOUNTAIN_DESTROYER.get(), ItemRegistry.FUKAMIZU_BREAD_PICKAXE.get());
-        this.tag(ItemTags.AXES).add(ItemRegistry.FIAXE.get(), ItemRegistry.FUKAMIZU_BREAD_AXE.get());
-        this.tag(ItemTags.HOES).add(ItemRegistry.QIANYUN_HOE.get(), ItemRegistry.GREEN_FIELD_SONG.get(), ItemRegistry.FUKAMIZU_BREAD_HOE.get());
-        this.tag(ItemTags.SHOVELS).add(ItemRegistry.MOUNTAIN_DESTROYER.get(), ItemRegistry.FUKAMIZU_BREAD_SHOVEL.get());
+                ItemRegistry.OMINOUS_SICKLE.get(), ItemRegistry.FUKAMIZU_BREAD_SWORD.get(),
+                ItemRegistry.FUKAMIZU_BREAD_MULTITOOL.get());
+        this.tag(ItemTags.PICKAXES).add(ItemRegistry.MOUNTAIN_DESTROYER.get(), ItemRegistry.FUKAMIZU_BREAD_PICKAXE.get(), ItemRegistry.FUKAMIZU_BREAD_MULTITOOL.get());
+        this.tag(ItemTags.AXES).add(ItemRegistry.FIAXE.get(), ItemRegistry.FUKAMIZU_BREAD_AXE.get(), ItemRegistry.FUKAMIZU_BREAD_MULTITOOL.get());
+        this.tag(ItemTags.HOES).add(ItemRegistry.QIANYUN_HOE.get(), ItemRegistry.GREEN_FIELD_SONG.get(),
+                ItemRegistry.FUKAMIZU_BREAD_HOE.get(), ItemRegistry.FUKAMIZU_BREAD_MULTITOOL.get());
+        this.tag(ItemTags.SHOVELS).add(ItemRegistry.MOUNTAIN_DESTROYER.get(), ItemRegistry.FUKAMIZU_BREAD_SHOVEL.get(), ItemRegistry.FUKAMIZU_BREAD_MULTITOOL.get());
         this.tag(Tags.Items.SEEDS).add(ItemRegistry.UNI_MILLET.get());
+        this.tag(Tags.Items.SHEARS).add(ItemRegistry.FUKAMIZU_BREAD_SHEARS.get());
     }
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-09T22:32:39.9241564	Item Models: dreamaticvoyage
+// 1.20.1	2024-09-12T01:43:09.1532496	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 f37df339e571439e12f7388bec647a0b97ac128f assets/dreamaticvoyage/models/item/ancient_microphone.json
@@ -121,6 +121,7 @@ e2b7acccf78074097775761d48dc24a6fea175d7 assets/dreamaticvoyage/models/item/fuka
 4ccce4cd1d68a8eba2525654a09a1cbbcb02cd1d assets/dreamaticvoyage/models/item/fukamizu_bread_ingot.json
 879fa4476a059f9f1ccb7f2403d308eed9eef01b assets/dreamaticvoyage/models/item/fukamizu_bread_leggings.json
 6115c8e40e984be2be67e64ce97b119de8a881f1 assets/dreamaticvoyage/models/item/fukamizu_bread_pickaxe.json
+928e7a6b9a282b9f5c40f03195e2dcc63d946bac assets/dreamaticvoyage/models/item/fukamizu_bread_shears.json
 1371a143f528f3084d4ca8c6de24293fd6bce465 assets/dreamaticvoyage/models/item/fukamizu_bread_shovel.json
 32a364996806fcfcf317c317362c4045a772553b assets/dreamaticvoyage/models/item/fukamizu_bread_sword.json
 4bb1c1c542ae232e98fa2148d167a6e19cadbda9 assets/dreamaticvoyage/models/item/fukamizu_compressor.json
