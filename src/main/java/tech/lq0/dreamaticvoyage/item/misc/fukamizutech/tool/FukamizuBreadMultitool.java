@@ -1,5 +1,6 @@
 package tech.lq0.dreamaticvoyage.item.misc.fukamizutech.tool;
 
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
@@ -11,10 +12,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -36,11 +34,14 @@ import java.util.Collections;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class FukamizuBreadMultitool extends AxeItem {
     private static final Set<ToolAction> TOOL_ACTIONS = Collections.newSetFromMap(new IdentityHashMap<>());
 
     static {
+        TOOL_ACTIONS.addAll(ToolActions.DEFAULT_HOE_ACTIONS);
         TOOL_ACTIONS.addAll(ToolActions.DEFAULT_PICKAXE_ACTIONS);
         TOOL_ACTIONS.addAll(ToolActions.DEFAULT_SHOVEL_ACTIONS);
         TOOL_ACTIONS.addAll(ToolActions.DEFAULT_AXE_ACTIONS);
@@ -48,7 +49,7 @@ public class FukamizuBreadMultitool extends AxeItem {
     }
 
     public FukamizuBreadMultitool() {
-        super(ModItemTier.FUKAMIZU_BREAD, 5.0F, -2.4F, new Item.Properties().fireResistant().durability(810));
+        super(ModItemTier.FUKAMIZU_BREAD, 5.0F, -2.4F, new Item.Properties().fireResistant().durability(1145));
     }
 
     @Override
@@ -93,40 +94,62 @@ public class FukamizuBreadMultitool extends AxeItem {
             return axeResult;
         }
 
-        Level world = context.getLevel();
+        Level level = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
         Player player = context.getPlayer();
-        BlockState blockstate = world.getBlockState(blockpos);
+        if (player == null) {
+            return InteractionResult.PASS;
+        }
+
+        BlockState blockstate = level.getBlockState(blockpos);
         BlockState resultToSet = null;
 
-        if (context.getClickedFace() == Direction.DOWN) {
-            return InteractionResult.PASS;
-        }
-        BlockState foundResult = blockstate.getToolModifiedState(context, ToolActions.SHOVEL_FLATTEN, false);
-        if (foundResult != null && world.isEmptyBlock(blockpos.above())) {
-            world.playSound(player, blockpos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
-            resultToSet = foundResult;
-        } else if (blockstate.getBlock() instanceof CampfireBlock && blockstate.getValue(CampfireBlock.LIT)) {
-            if (!world.isClientSide) {
-                world.levelEvent(null, LevelEvent.SOUND_EXTINGUISH_FIRE, blockpos, 0);
+        if (player.isShiftKeyDown()) {
+            BlockState hoeRes = level.getBlockState(blockpos).getToolModifiedState(context, net.minecraftforge.common.ToolActions.HOE_TILL, false);
+            Pair<Predicate<UseOnContext>, Consumer<UseOnContext>> pair = hoeRes == null ? null : Pair.of(ctx -> true, HoeItem.changeIntoState(hoeRes));
+            if (pair == null) {
+                return InteractionResult.PASS;
+            } else {
+                Predicate<UseOnContext> predicate = pair.getFirst();
+                Consumer<UseOnContext> consumer = pair.getSecond();
+                if (predicate.test(context)) {
+                    level.playSound(player, blockpos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    if (!level.isClientSide) {
+                        consumer.accept(context);
+                    }
+                } else {
+                    return InteractionResult.PASS;
+                }
             }
-            CampfireBlock.dowse(player, world, blockpos, blockstate);
-            resultToSet = blockstate.setValue(CampfireBlock.LIT, false);
-        }
-        if (resultToSet == null) {
-            return InteractionResult.PASS;
-        }
-        if (!world.isClientSide) {
-            ItemStack stack = context.getItemInHand();
-            if (player instanceof ServerPlayer serverPlayer) {
-                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, blockpos, stack);
+        } else {
+            if (context.getClickedFace() == Direction.DOWN) {
+                return InteractionResult.PASS;
             }
-            world.setBlock(blockpos, resultToSet, Block.UPDATE_ALL_IMMEDIATE);
-            if (player != null) {
+            BlockState shovelRes = blockstate.getToolModifiedState(context, ToolActions.SHOVEL_FLATTEN, false);
+            if (shovelRes != null && level.isEmptyBlock(blockpos.above())) {
+                level.playSound(player, blockpos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+                resultToSet = shovelRes;
+            } else if (blockstate.getBlock() instanceof CampfireBlock && blockstate.getValue(CampfireBlock.LIT)) {
+                if (!level.isClientSide) {
+                    level.levelEvent(null, LevelEvent.SOUND_EXTINGUISH_FIRE, blockpos, 0);
+                }
+                CampfireBlock.dowse(player, level, blockpos, blockstate);
+                resultToSet = blockstate.setValue(CampfireBlock.LIT, false);
+            }
+            if (resultToSet == null) {
+                return InteractionResult.PASS;
+            }
+            if (!level.isClientSide) {
+                ItemStack stack = context.getItemInHand();
+                if (player instanceof ServerPlayer serverPlayer) {
+                    CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, blockpos, stack);
+                }
+                level.setBlock(blockpos, resultToSet, Block.UPDATE_ALL_IMMEDIATE);
                 stack.hurtAndBreak(1, player, onBroken -> onBroken.broadcastBreakEvent(context.getHand()));
             }
         }
-        return InteractionResult.sidedSuccess(world.isClientSide);
+
+        return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
     @Override
