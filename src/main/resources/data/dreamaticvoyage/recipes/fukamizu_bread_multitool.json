@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dreamaticvoyage:fukamizu_bread_axe"
+    },
+    {
+      "item": "dreamaticvoyage:fukamizu_bread_pickaxe"
+    },
+    {
+      "item": "dreamaticvoyage:fukamizu_bread_hoe"
+    },
+    {
+      "item": "dreamaticvoyage:fukamizu_bread_sword"
+    },
+    {
+      "item": "dreamaticvoyage:fukamizu_bread_shovel"
+    }
+  ],
+  "result": {
+    "item": "dreamaticvoyage:fukamizu_bread_multitool",
+    "count": 1
+  }
+}
