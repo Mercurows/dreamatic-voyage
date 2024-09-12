@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-12T01:43:09.1532496	Item Models: dreamaticvoyage
+// 1.20.1	2024-09-12T22:21:37.8143829	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 f37df339e571439e12f7388bec647a0b97ac128f assets/dreamaticvoyage/models/item/ancient_microphone.json
@@ -127,6 +127,7 @@ e2b7acccf78074097775761d48dc24a6fea175d7 assets/dreamaticvoyage/models/item/fuka
 4bb1c1c542ae232e98fa2148d167a6e19cadbda9 assets/dreamaticvoyage/models/item/fukamizu_compressor.json
 f5d494896a2ea74c3b18b69d28c3e836b822cbb8 assets/dreamaticvoyage/models/item/fukamizu_crumb.json
 1ddcc57e355ddbd5bd19349c746a3bf7268beae9 assets/dreamaticvoyage/models/item/fukamizu_fish.json
+4813fc3655b9c1306d21438e7b5825cffd120e51 assets/dreamaticvoyage/models/item/fukamizu_kwas_bucket.json
 bcadf6b16b549bec1ef9adfdd48a1d2955dc3981 assets/dreamaticvoyage/models/item/fukamizu_upgrade_smithing_template.json
 139e87637a4b0d8fae9af8dc11ccbdc355677cc8 assets/dreamaticvoyage/models/item/gachi_ingot.json
 f932e5e6bcf03b00286883306bf9f6eafadf0bf3 assets/dreamaticvoyage/models/item/gachi_nugget.json

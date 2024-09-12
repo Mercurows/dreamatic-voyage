@@ -13,8 +13,8 @@ public class FukamizuKwasFluidType extends FluidType {
 
     public FukamizuKwasFluidType() {
         super(FluidType.Properties.create().fallDistanceModifier(0F).canExtinguish(true)
-                .supportsBoating(false).canHydrate(false).motionScale(0.007D).canPushEntity(true)
-                .canSwim(true).canConvertToSource(false).canDrown(true)
+                .supportsBoating(true).canHydrate(false).motionScale(0.007D).canPushEntity(true)
+                .canSwim(true).canConvertToSource(false).canDrown(false)
                 .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
                 .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
                 .sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH));
@@ -23,6 +23,11 @@ public class FukamizuKwasFluidType extends FluidType {
     @Override
     public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
         consumer.accept(new IClientFluidTypeExtensions() {
+            @Override
+            public int getTintColor() {
+                return 0xFFFECF02;
+            }
+
             @Override
             public ResourceLocation getStillTexture() {
                 return new ResourceLocation(Utils.MOD_ID, "block/fukamizu_kwas_still");

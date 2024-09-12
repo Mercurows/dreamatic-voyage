@@ -2,10 +2,6 @@ package tech.lq0.dreamaticvoyage.init;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -82,7 +78,5 @@ public class BlockRegistry {
     public static final RegistryObject<Block> FUKAMIZU_COMPRESSOR = BLOCKS.register("fukamizu_compressor", FukamizuCompressor::new);
     public static final RegistryObject<Block> FUKAMIZU_CRUSHER = BLOCKS.register("fukamizu_crusher", FukamizuCrusher::new);
 
-    public static final RegistryObject<LiquidBlock> FUKAMIZU_KWAS = BLOCKS.register("fukamizu_kwas",
-            () -> new LiquidBlock(FluidRegistry.FUKAMIZU_KWAS, BlockBehaviour.Properties.of().mapColor(MapColor.WATER).strength(100.0f)
-                    .noCollission().noLootTable().liquid().pushReaction(PushReaction.DESTROY).replaceable().sound(SoundType.EMPTY)));
+    public static final RegistryObject<LiquidBlock> FUKAMIZU_KWAS = BLOCKS.register("fukamizu_kwas", FukamizuKwasBlock::new);
 }
