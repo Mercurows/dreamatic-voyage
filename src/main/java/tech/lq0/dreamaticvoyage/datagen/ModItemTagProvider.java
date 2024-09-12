@@ -79,15 +79,18 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .addOptional(makeCompatCrumbId(CompatMetals.NICKEL)).addOptional(makeCompatCrumbId(CompatMetals.SILVER))
                 .addOptional(makeCompatCrumbId(CompatMetals.TIN)).addOptional(makeCompatCrumbId(CompatMetals.ALUMINUM))
                 .addOptional(makeCompatCrumbId(CompatMetals.OSMIUM)).addOptional(makeCompatCrumbId(CompatMetals.URANIUM));
-        compatCrumb(CompatMetals.ZINC, CompatMetals.LEAD, CompatMetals.NICKEL, CompatMetals.SILVER,
+        addCompatCrumbDustTag(CompatMetals.ZINC, CompatMetals.LEAD, CompatMetals.NICKEL, CompatMetals.SILVER,
                 CompatMetals.TIN, CompatMetals.ALUMINUM, CompatMetals.OSMIUM, CompatMetals.URANIUM);
+        this.tag(forgeTag("dusts/iron")).add(ItemRegistry.IRON_RICH_CRUMB.get());
+        this.tag(forgeTag("dusts/copper")).add(ItemRegistry.COPPER_RICH_CRUMB.get());
+        this.tag(forgeTag("dusts/gold")).add(ItemRegistry.GOLD_RICH_CRUMB.get());
     }
 
     private static TagKey<Item> forgeTag(String name) {
         return ItemTags.create(new ResourceLocation("forge", name));
     }
 
-    private void compatCrumb(CompatMetals... metals) {
+    private void addCompatCrumbDustTag(CompatMetals... metals) {
         for (var metal : metals) {
             this.tag(forgeTag("dusts/" + metal.getName())).addOptional(new ResourceLocation(Utils.MOD_ID, metal.getName() + "_rich_crumb"));
         }
