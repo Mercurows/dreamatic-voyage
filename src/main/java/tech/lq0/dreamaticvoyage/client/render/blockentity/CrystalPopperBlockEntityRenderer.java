@@ -27,7 +27,7 @@ public class CrystalPopperBlockEntityRenderer implements BlockEntityRenderer<Cry
 
         ItemStack stack = pBlockEntity.getInput();
 
-        NonNullList<ItemStack> nonnulllist = pBlockEntity.getOutput();
+        NonNullList<ItemStack> nonnulllist = pBlockEntity.getOutputs();
         int i = (int) pBlockEntity.getBlockPos().asLong();
 
         if (stack != ItemStack.EMPTY) {

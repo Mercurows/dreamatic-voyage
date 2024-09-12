@@ -28,7 +28,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.CrystalPopperBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
@@ -76,28 +75,7 @@ public class CrystalPopper extends Block implements EntityBlock {
         ItemStack mainHandItem = player.getItemInHand(handIn);
 
         if (blockentity instanceof CrystalPopperBlockEntity popper) {
-            if (mainHandItem.isEmpty()) {
-                var outputInv = popper.outputInv;
-                if (!outputInv.getStackInSlot(0).isEmpty() || !outputInv.getStackInSlot(1).isEmpty() || !outputInv.getStackInSlot(2).isEmpty()) {
-                    // 取出输出槽物品
-                    player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(0));
-                    player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(1));
-                    player.getInventory().placeItemBackInInventory(outputInv.getStackInSlot(2));
-                    outputInv.setStackInSlot(0, ItemStack.EMPTY);
-                    outputInv.setStackInSlot(1, ItemStack.EMPTY);
-                    outputInv.setStackInSlot(2, ItemStack.EMPTY);
-                } else {
-                    // 取出输入槽物品
-                    var inputInv = popper.inputInv;
-                    player.getInventory().placeItemBackInInventory(inputInv.getStackInSlot(0));
-                    inputInv.setStackInSlot(0, ItemStack.EMPTY);
-                }
-                popper.setChanged();
-            } else if (popper.tryInsertGold(mainHandItem)) {
-                // 尝试输入金锭
-                return InteractionResult.CONSUME;
-            }
-            return InteractionResult.PASS;
+
         }
         return InteractionResult.SUCCESS;
     }
@@ -127,18 +105,10 @@ public class CrystalPopper extends Block implements EntityBlock {
 
     @Override
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
-        if (pLevel instanceof ServerLevel) {
+        if (pLevel instanceof ServerLevel serverLevel) {
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
             if (blockentity instanceof CrystalPopperBlockEntity blockEntity) {
-                IItemHandler inputInv = blockEntity.inputInv;
-                for (int slot = 0; slot < inputInv.getSlots(); slot++) {
-                    Containers.dropItemStack(pLevel, pPos.getX(), pPos.getY(), pPos.getZ(), inputInv.getStackInSlot(slot));
-                }
-
-                IItemHandler outputInv = blockEntity.outputInv;
-                for (int slot = 0; slot < outputInv.getSlots(); slot++) {
-                    Containers.dropItemStack(pLevel, pPos.getX(), pPos.getY(), pPos.getZ(), outputInv.getStackInSlot(slot));
-                }
+                Containers.dropContents(serverLevel, pPos, blockEntity);
             }
         }
 
