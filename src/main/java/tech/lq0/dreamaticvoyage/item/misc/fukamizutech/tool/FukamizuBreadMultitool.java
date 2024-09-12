@@ -50,7 +50,7 @@ public class FukamizuBreadMultitool extends AxeItem {
     }
 
     public FukamizuBreadMultitool() {
-        super(ModItemTier.FUKAMIZU_BREAD, 5.0F, -2.4F, new Item.Properties().fireResistant().durability(1145));
+        super(ModItemTier.FUKAMIZU_BREAD, 5.0F, -2.4F, new Item.Properties().fireResistant().durability(2020));
     }
 
     @Override
