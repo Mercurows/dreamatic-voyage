@@ -1,5 +1,7 @@
 package tech.lq0.dreamaticvoyage.client;
 
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -17,10 +19,7 @@ import tech.lq0.dreamaticvoyage.client.render.blockentity.PointsStoreBlockEntity
 import tech.lq0.dreamaticvoyage.client.render.curios.*;
 import tech.lq0.dreamaticvoyage.client.render.tooltip.ClientImageTooltip;
 import tech.lq0.dreamaticvoyage.client.render.tooltip.ImageTooltip;
-import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
-import tech.lq0.dreamaticvoyage.init.EntityRegistry;
-import tech.lq0.dreamaticvoyage.init.ItemRegistry;
-import tech.lq0.dreamaticvoyage.init.ParticleRegistry;
+import tech.lq0.dreamaticvoyage.init.*;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -48,6 +47,9 @@ public class ClientRenderHandler {
         CuriosRendererRegistry.register(ItemRegistry.CHIRAM_HAT.get(), ChiramHatRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.YEGGY_PEARL.get(), YeggyPearlRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.DARK_ELF_GLASSES.get(), DarkElfGlassesRenderer::new);
+
+        ItemBlockRenderTypes.setRenderLayer(FluidRegistry.FUKAMIZU_KWAS.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FluidRegistry.FLOWING_FUKAMIZU_KWAS.get(), RenderType.translucent());
     }
 
     @SubscribeEvent

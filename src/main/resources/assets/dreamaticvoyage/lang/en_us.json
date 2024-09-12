@@ -920,6 +920,9 @@
   "des.dreamaticvoyage.fukamizu_bread_multitool": "用多种深水面包工具制成的复合工具",
   "item.dreamaticvoyage.fukamizu_bread_shears": "深水面包剪",
   "des.dreamaticvoyage.fukamizu_bread_shears": "用深水面包锭制成的剪子",
+  "fluid_type.dreamaticvoyage.fukamizu_kwas": "Fukamizu Kwas",
+  "item.dreamaticvoyage.fukamizu_kwas_bucket": "Fukamizu Kwas Bucket",
+  "block.dreamaticvoyage.fukamizu_kwas": "Fukamizu Kwas",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

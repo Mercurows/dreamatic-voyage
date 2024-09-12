@@ -1,8 +1,6 @@
 package tech.lq0.dreamaticvoyage.init;
 
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
@@ -481,6 +479,8 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ALUMINUM_RICH_CRUMB = compatMetalCrumb(CompatMetals.ALUMINUM);
     public static final RegistryObject<Item> OSMIUM_RICH_CRUMB = compatMetalCrumb(CompatMetals.OSMIUM);
     public static final RegistryObject<Item> URANIUM_RICH_CRUMB = compatMetalCrumb(CompatMetals.URANIUM);
+
+    public static final RegistryObject<Item> FUKAMIZU_KWAS_BUCKET = MISC_ITEMS.register("fukamizu_kwas_bucket", () -> new BucketItem(FluidRegistry.FUKAMIZU_KWAS, new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET)));
 
     /**
      * legacy

@@ -42,6 +42,7 @@ public class Utils {
         ParticleRegistry.PARTICLE_TYPES.register(modEventBus);
         MenuTypeRegistry.MENU_TYPES.register(modEventBus);
         VoyageEventRegistry.EVENTS.register(modEventBus);
+        FluidRegistry.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
