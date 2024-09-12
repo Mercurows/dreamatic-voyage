@@ -8,8 +8,10 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
+import tech.lq0.dreamaticvoyage.tools.ModTags;
 
 import java.util.List;
 
@@ -27,5 +29,10 @@ public class FukamizuBreadPickaxe extends PickaxeItem {
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
         return super.canApplyAtEnchantingTable(stack, enchantment) && enchantment != Enchantments.MENDING;
+    }
+
+    @Override
+    public float getDestroySpeed(ItemStack pStack, BlockState pState) {
+        return pState.is(ModTags.Blocks.FUKAMIZU_BREAD) ? 15.0F : super.getDestroySpeed(pStack, pState);
     }
 }

@@ -29,6 +29,7 @@ import net.minecraftforge.common.ToolActions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
+import tech.lq0.dreamaticvoyage.tools.ModTags;
 
 import java.util.Collections;
 import java.util.IdentityHashMap;
@@ -64,7 +65,7 @@ public class FukamizuBreadMultitool extends AxeItem {
 
     @Override
     public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
-        if (state.is(Blocks.COBWEB)) {
+        if (state.is(Blocks.COBWEB) || state.is(ModTags.Blocks.FUKAMIZU_BREAD)) {
             return 15.0F;
         } else {
             return state.is(BlockTags.MINEABLE_WITH_PICKAXE) || state.is(BlockTags.MINEABLE_WITH_SHOVEL)

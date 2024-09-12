@@ -82,5 +82,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.WOODEN_BUTTONS).add(BlockRegistry.HARANO_BUTTON.get());
         this.tag(BlockTags.WITHER_IMMUNE).add(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), BlockRegistry.FUKAMIZU_BREAD_BRICKS.get());
         this.tag(ModTags.Blocks.FUKAMIZU_MACHINE).add(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), BlockRegistry.FUKAMIZU_CRUSHER.get());
+        this.tag(ModTags.Blocks.FUKAMIZU_BREAD).add(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), BlockRegistry.FUKAMIZU_BREAD_BRICKS.get());
     }
 }

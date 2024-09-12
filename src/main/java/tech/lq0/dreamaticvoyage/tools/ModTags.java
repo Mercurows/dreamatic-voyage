@@ -12,6 +12,7 @@ public class ModTags {
     public static class Blocks {
 
         public static final TagKey<Block> FUKAMIZU_MACHINE = tag("fukamizu_machine");
+        public static final TagKey<Block> FUKAMIZU_BREAD = tag("fukamizu_bread");
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(Utils.MOD_ID, name));
