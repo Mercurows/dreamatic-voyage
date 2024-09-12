@@ -3,11 +3,15 @@ package tech.lq0.dreamaticvoyage.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.compat.data.CompatMetals;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
 import javax.annotation.Nullable;
@@ -68,5 +72,28 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.SHOVELS).add(ItemRegistry.MOUNTAIN_DESTROYER.get(), ItemRegistry.FUKAMIZU_BREAD_SHOVEL.get(), ItemRegistry.FUKAMIZU_BREAD_MULTITOOL.get());
         this.tag(Tags.Items.SEEDS).add(ItemRegistry.UNI_MILLET.get());
         this.tag(Tags.Items.SHEARS).add(ItemRegistry.FUKAMIZU_BREAD_SHEARS.get());
+
+        this.tag(Tags.Items.DUSTS).add(ItemRegistry.FUKAMIZU_CRUMB.get(), ItemRegistry.IRON_RICH_CRUMB.get(),
+                        ItemRegistry.COPPER_RICH_CRUMB.get(), ItemRegistry.GOLD_RICH_CRUMB.get())
+                .addOptional(makeCompatCrumbId(CompatMetals.ZINC)).addOptional(makeCompatCrumbId(CompatMetals.LEAD))
+                .addOptional(makeCompatCrumbId(CompatMetals.NICKEL)).addOptional(makeCompatCrumbId(CompatMetals.SILVER))
+                .addOptional(makeCompatCrumbId(CompatMetals.TIN)).addOptional(makeCompatCrumbId(CompatMetals.ALUMINUM))
+                .addOptional(makeCompatCrumbId(CompatMetals.OSMIUM)).addOptional(makeCompatCrumbId(CompatMetals.URANIUM));
+        compatCrumb(CompatMetals.ZINC, CompatMetals.LEAD, CompatMetals.NICKEL, CompatMetals.SILVER,
+                CompatMetals.TIN, CompatMetals.ALUMINUM, CompatMetals.OSMIUM, CompatMetals.URANIUM);
+    }
+
+    private static TagKey<Item> forgeTag(String name) {
+        return ItemTags.create(new ResourceLocation("forge", name));
+    }
+
+    private void compatCrumb(CompatMetals... metals) {
+        for (var metal : metals) {
+            this.tag(forgeTag("dusts/" + metal.getName())).addOptional(new ResourceLocation(Utils.MOD_ID, metal.getName() + "_rich_crumb"));
+        }
+    }
+
+    private ResourceLocation makeCompatCrumbId(CompatMetals metal) {
+        return new ResourceLocation(Utils.MOD_ID, metal.getName() + "_rich_crumb");
     }
 }

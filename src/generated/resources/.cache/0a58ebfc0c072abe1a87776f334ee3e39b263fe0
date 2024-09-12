@@ -1,4 +1,13 @@
-// 1.20.1	2024-09-12T01:09:57.5945562	Tags for minecraft:item mod id dreamaticvoyage
+// 1.20.1	2024-09-12T16:56:16.9715294	Tags for minecraft:item mod id dreamaticvoyage
+fda4f898ec2511940458a58436b71b327fc9b867 data/forge/tags/items/dusts.json
+726e2f789912dca4ae6efc63b1f7c4c73693da5d data/forge/tags/items/dusts/aluminum.json
+82fb70ec3c22990d84e246e3d8d0d3bd3916e519 data/forge/tags/items/dusts/lead.json
+06454ec736cc9cfddc5ea72a0d254736a7ba57a3 data/forge/tags/items/dusts/nickel.json
+8ce6d049ab6c722e4603680b5d6c9e189b99df07 data/forge/tags/items/dusts/osmium.json
+30b1458a45dd3dd8fdba9bb2371cbf0f944b716b data/forge/tags/items/dusts/silver.json
+2b49d319e50fb639ad044139ab00562b3d0ce8dd data/forge/tags/items/dusts/tin.json
+03597a70ec4236d6aad0fcf7afbf4b268ce31ee8 data/forge/tags/items/dusts/uranium.json
+a970784f9a4dd686319de562f70f59947d36a409 data/forge/tags/items/dusts/zinc.json
 231a202bbd648d2359364967567e6fd0a2e8d772 data/forge/tags/items/sand.json
 aed3ef6f2929a8f19592b8a5c21ca16d3214d7bb data/forge/tags/items/sandstone.json
 fb0153b2c8162a3937a1dbf7abdf268ac73bef04 data/forge/tags/items/seeds.json
