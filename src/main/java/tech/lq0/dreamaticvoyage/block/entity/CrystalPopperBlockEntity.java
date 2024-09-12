@@ -5,6 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.MenuProvider;
@@ -17,6 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
@@ -86,6 +88,8 @@ public class CrystalPopperBlockEntity extends BlockEntity implements WorldlyCont
                 popper.getInput().shrink(1);
                 popper.energy++;
                 setChanged(pLevel, pPos, pState);
+                pLevel.sendBlockUpdated(pPos, pState, pState, 3);
+                pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
             }
         }
 
@@ -98,6 +102,8 @@ public class CrystalPopperBlockEntity extends BlockEntity implements WorldlyCont
                 popper.energy--;
                 popper.generateOutput();
                 setChanged(pLevel, pPos, pState);
+                pLevel.sendBlockUpdated(pPos, pState, pState, 3);
+                pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
             }
         }
     }
@@ -262,4 +268,15 @@ public class CrystalPopperBlockEntity extends BlockEntity implements WorldlyCont
         return null;
     }
 
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag compoundtag = new CompoundTag();
+        ContainerHelper.saveAllItems(compoundtag, this.items, true);
+        return compoundtag;
+    }
 }
