@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C#",
+    "GdG",
+    "#W#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:pink_concrete"
+    },
+    "C": {
+      "item": "minecraft:cauldron"
+    },
+    "G": {
+      "tag": "forge:glass"
+    },
+    "d": {
+      "item": "dreamaticvoyage:purified_crystal_ingot"
+    },
+    "W": {
+      "item": "minecraft:white_concrete"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:crystal_popper",
+    "count": 1
+  }
+}

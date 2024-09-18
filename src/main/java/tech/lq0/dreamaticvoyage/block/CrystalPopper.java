@@ -31,7 +31,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.CrystalPopperBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
-import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
 
@@ -61,8 +60,6 @@ public class CrystalPopper extends Block implements EntityBlock {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(Component.translatable("des.dreamaticvoyage.crystal_popper").withStyle(ChatFormatting.GRAY));
-
-        TooltipTool.addDevelopingText(pTooltip);
     }
 
     @Override
@@ -71,12 +68,6 @@ public class CrystalPopper extends Block implements EntityBlock {
             return InteractionResult.SUCCESS;
         }
 
-        BlockEntity blockentity = worldIn.getBlockEntity(pos);
-        ItemStack mainHandItem = player.getItemInHand(handIn);
-
-        if (blockentity instanceof CrystalPopperBlockEntity popper) {
-
-        }
         return InteractionResult.SUCCESS;
     }
 
