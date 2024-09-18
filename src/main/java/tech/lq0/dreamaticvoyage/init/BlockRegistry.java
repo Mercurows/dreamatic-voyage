@@ -8,9 +8,9 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.*;
 import tech.lq0.dreamaticvoyage.block.bluesand.*;
-import tech.lq0.dreamaticvoyage.block.fukamizutech.FukamizuCompressor;
-import tech.lq0.dreamaticvoyage.block.fukamizutech.FukamizuCrusher;
-import tech.lq0.dreamaticvoyage.block.fukamizutech.FukamizuMachineCasing;
+import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuCompressor;
+import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuCrusher;
+import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuMachineCasing;
 import tech.lq0.dreamaticvoyage.block.harano.*;
 import tech.lq0.dreamaticvoyage.block.voyage.PhantasmalVoyager;
 

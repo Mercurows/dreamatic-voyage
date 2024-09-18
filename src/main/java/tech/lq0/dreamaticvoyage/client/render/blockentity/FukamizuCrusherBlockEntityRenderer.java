@@ -13,7 +13,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.entity.FukamizuCrusherBlockEntity;
-import tech.lq0.dreamaticvoyage.block.fukamizutech.FukamizuCrusher;
+import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuCrusher;
 import tech.lq0.dreamaticvoyage.client.models.blockentity.FukamizuCrusherModel;
 
 @SuppressWarnings("rawtypes")

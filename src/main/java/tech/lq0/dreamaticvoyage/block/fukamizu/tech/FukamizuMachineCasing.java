@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.block.fukamizutech;
+package tech.lq0.dreamaticvoyage.block.fukamizu.tech;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
