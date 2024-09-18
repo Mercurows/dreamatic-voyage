@@ -27,33 +27,43 @@ public class CrystalPopperBlockEntityRenderer implements BlockEntityRenderer<Cry
 
         ItemStack stack = pBlockEntity.getInput();
 
-        NonNullList<ItemStack> nonnulllist = pBlockEntity.getOutputs();
+        NonNullList<ItemStack> nonnulllist = pBlockEntity.getItems();
         int i = (int) pBlockEntity.getBlockPos().asLong();
 
         if (stack != ItemStack.EMPTY) {
-            pPoseStack.pushPose();
-            pPoseStack.translate(0.5F, 0.44921875F, 0.5F);
-            pPoseStack.mulPose(Axis.XP.rotationDegrees(90.0F));
-            pPoseStack.translate(-0.3125F, -0.3125F, 0.0F);
-            pPoseStack.scale(0.375F, 0.375F, 0.375F);
-            this.itemRenderer.renderStatic(stack, ItemDisplayContext.FIXED, pPackedLight, pPackedOverlay, pPoseStack, pBuffer, pBlockEntity.getLevel(), i);
-            pPoseStack.popPose();
-        }
-
-        // TODO 修改为正确的渲染方法
-        for (int j = 0; j < nonnulllist.size(); ++j) {
-            ItemStack itemstack = nonnulllist.get(j);
-            if (itemstack != ItemStack.EMPTY) {
+            for (int count = 0; count <= (stack.getCount() - 1) / 16; count++) {
                 pPoseStack.pushPose();
-                pPoseStack.translate(0.5F, 0.44921875F, 0.5F);
-                Direction direction1 = Direction.from2DDataValue((j + direction.get2DDataValue()) % 4);
+
+                pPoseStack.translate(0.5F, 1.05F, 0.5F);
+                Direction direction1 = Direction.from2DDataValue((count + direction.get2DDataValue()) % 4);
                 float f = -direction1.toYRot();
                 pPoseStack.mulPose(Axis.YP.rotationDegrees(f));
-                pPoseStack.mulPose(Axis.XP.rotationDegrees(90.0F));
-                pPoseStack.translate(-0.3125F, -0.3125F, 0.0F);
+
+                pPoseStack.translate(0F, -0.3125F, 0.2525F);
                 pPoseStack.scale(0.375F, 0.375F, 0.375F);
-                this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, pPackedLight, pPackedOverlay, pPoseStack, pBuffer, pBlockEntity.getLevel(), i + j);
+                this.itemRenderer.renderStatic(stack, ItemDisplayContext.FIXED, pPackedLight, pPackedOverlay, pPoseStack, pBuffer, pBlockEntity.getLevel(), i);
                 pPoseStack.popPose();
+            }
+        }
+
+        for (int j = 1; j < nonnulllist.size(); ++j) {
+            ItemStack itemstack = nonnulllist.get(j);
+
+            if (itemstack != ItemStack.EMPTY) {
+                for (int count = 0; count <= (itemstack.getCount() - 1) / 8; count++) {
+                    pPoseStack.pushPose();
+                    pPoseStack.translate(0.5F, count * 0.025f - 0.3f, 0.5F);
+
+                    Direction direction1 = Direction.from2DDataValue((j + direction.get2DDataValue()) % 3);
+                    float f = -direction1.toYRot();
+                    pPoseStack.mulPose(Axis.YP.rotationDegrees(f * 4 / 3));
+                    pPoseStack.mulPose(Axis.XP.rotationDegrees(90.0F));
+                    pPoseStack.translate(0.0F, -0.2425F, -0.4125F);
+                    pPoseStack.scale(0.375F, 0.375F, 0.375F);
+
+                    this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, pPackedLight, pPackedOverlay, pPoseStack, pBuffer, pBlockEntity.getLevel(), i + j);
+                    pPoseStack.popPose();
+                }
             }
         }
     }

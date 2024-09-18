@@ -5,7 +5,7 @@
 	"texture_size": [128, 128],
 	"textures": {
 		"2": "dreamaticvoyage:block/crystal_popper",
-		"particle": "dreamaticvoyage:block/crystal_popper"
+		"particle": "minecraft:block/pink_concrete"
 	},
 	"elements": [
 		{

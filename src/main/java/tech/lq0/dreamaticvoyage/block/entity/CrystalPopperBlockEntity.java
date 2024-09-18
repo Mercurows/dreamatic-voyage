@@ -146,8 +146,8 @@ public class CrystalPopperBlockEntity extends BlockEntity implements WorldlyCont
         return this.items.get(SLOT_INPUT);
     }
 
-    public NonNullList<ItemStack> getOutputs() {
-        return NonNullList.of(this.items.get(1), this.items.get(2), this.items.get(3));
+    public NonNullList<ItemStack> getItems() {
+        return this.items;
     }
 
     private boolean canInputProcess() {
