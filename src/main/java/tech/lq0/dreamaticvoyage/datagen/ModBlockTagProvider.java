@@ -42,7 +42,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 BlockRegistry.HARANO_FENCE.get(), BlockRegistry.HARANO_FENCE_GATE.get(), BlockRegistry.HARANO_PRESSURE_PLATE.get(),
                 BlockRegistry.HARANO_DOOR.get(), BlockRegistry.HARANO_TRAPDOOR.get(), BlockRegistry.HARANO_BUTTON.get(),
                 BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), BlockRegistry.FUKAMIZU_PLUM_LOG.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
-        this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.UNI_MILLET_BLOCK.get());
+        this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.FUKAMIZU_PLUM_LEAVES.get());
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(BlockRegistry.RED_AHOGE_BLOCK.get(), BlockRegistry.WHITE_AHOGE_BLOCK.get(),
                 BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get());
@@ -75,7 +75,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.FENCE_GATES).add(BlockRegistry.HARANO_FENCE_GATE.get());
         this.tag(BlockTags.PRESSURE_PLATES).add(BlockRegistry.HARANO_PRESSURE_PLATE.get());
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(BlockRegistry.HARANO_PRESSURE_PLATE.get());
-        this.tag(BlockTags.LEAVES).add(BlockRegistry.HARANO_LEAVES.get());
+        this.tag(BlockTags.LEAVES).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.FUKAMIZU_PLUM_LEAVES.get());
         this.tag(Tags.Blocks.SAND).add(BlockRegistry.BLUE_SAND.get());
         this.tag(BlockTags.DOORS).add(BlockRegistry.HARANO_DOOR.get());
         this.tag(BlockTags.WOODEN_DOORS).add(BlockRegistry.HARANO_DOOR.get());

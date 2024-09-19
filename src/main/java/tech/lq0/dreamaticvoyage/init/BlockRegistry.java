@@ -8,6 +8,7 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.*;
 import tech.lq0.dreamaticvoyage.block.bluesand.*;
+import tech.lq0.dreamaticvoyage.block.fukamizu.plum.FukamizuPlumLeaves;
 import tech.lq0.dreamaticvoyage.block.fukamizu.plum.FukamizuPlumLog;
 import tech.lq0.dreamaticvoyage.block.fukamizu.plum.FukamizuPlumPlanks;
 import tech.lq0.dreamaticvoyage.block.fukamizu.plum.StrippedFukamizuPlumLog;
@@ -83,6 +84,7 @@ public class BlockRegistry {
 
     // Fukamizu Plum Series
     public static final RegistryObject<Block> FUKAMIZU_PLUM_LOG = BLOCKS.register("fukamizu_plum_log", FukamizuPlumLog::new);
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_LEAVES = BLOCKS.register("fukamizu_plum_leaves", FukamizuPlumLeaves::new);
     public static final RegistryObject<Block> FUKAMIZU_PLUM_PLANKS = BLOCKS.register("fukamizu_plum_planks", FukamizuPlumPlanks::new);
     public static final RegistryObject<Block> STRIPPED_FUKAMIZU_PLUM_LOG = BLOCKS.register("stripped_fukamizu_plum_log", StrippedFukamizuPlumLog::new);
 

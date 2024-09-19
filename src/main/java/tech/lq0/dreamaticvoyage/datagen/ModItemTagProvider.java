@@ -47,7 +47,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.WOODEN_FENCES).add(ItemRegistry.HARANO_FENCE.get());
         this.tag(ItemTags.FENCE_GATES).add(ItemRegistry.HARANO_FENCE_GATE.get());
         this.tag(ItemTags.WOODEN_PRESSURE_PLATES).add(ItemRegistry.HARANO_PRESSURE_PLATE.get());
-        this.tag(ItemTags.LEAVES).add(ItemRegistry.HARANO_LEAVES.get());
+        this.tag(ItemTags.LEAVES).add(ItemRegistry.HARANO_LEAVES.get(), ItemRegistry.FUKAMIZU_PLUM_LEAVES.get());
         this.tag(Tags.Items.SAND).add(ItemRegistry.BLUE_SAND.get());
         ItemRegistry.AUDIO_ITEMS.getEntries().forEach(entry -> this.tag(ItemTags.MUSIC_DISCS).add(entry.get()));
         this.tag(ItemTags.MUSIC_DISCS).add(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN.get());

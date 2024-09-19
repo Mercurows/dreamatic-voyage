@@ -72,6 +72,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.FICTIONAL_INGOT_BLOCK);
         blockWithItem(BlockRegistry.GACHI_INGOT_BLOCK);
 
+        leavesBlock(BlockRegistry.FUKAMIZU_PLUM_LEAVES);
         blockWithItem(BlockRegistry.FUKAMIZU_PLUM_PLANKS);
         logBlock((RotatedPillarBlock) BlockRegistry.FUKAMIZU_PLUM_LOG.get());
         logBlock((RotatedPillarBlock) BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
