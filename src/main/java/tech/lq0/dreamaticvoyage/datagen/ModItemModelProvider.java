@@ -312,6 +312,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         buttonItem(BlockRegistry.HARANO_BUTTON, BlockRegistry.HARANO_PLANKS);
 
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_LOG);
+        evenSimplerBlockItem(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG);
 
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);
 

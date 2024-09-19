@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "dreamaticvoyage:block/stripped_fukamizu_plum_log_top",
+    "side": "dreamaticvoyage:block/stripped_fukamizu_plum_log"
+  }
+}

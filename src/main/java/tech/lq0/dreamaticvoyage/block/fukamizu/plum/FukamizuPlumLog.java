@@ -34,14 +34,13 @@ public class FukamizuPlumLog extends RotatedPillarBlock {
         pTooltip.add(Component.translatable("des.dreamaticvoyage.fukamizu_plum_log").withStyle(ChatFormatting.GRAY));
     }
 
-    // TODO 修改为正确的木头
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult pHit) {
         ItemStack stack = player.getItemInHand(handIn);
         if (stack.getItem() instanceof AxeItem) {
             pLevel.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
             if (!pLevel.isClientSide) {
-                pLevel.setBlock(pos, BlockRegistry.STRIPPED_HARANO_LOG.get().defaultBlockState()
+                pLevel.setBlock(pos, BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get().defaultBlockState()
                         .setValue(RotatedPillarBlock.AXIS, pState.getValue(RotatedPillarBlock.AXIS)), 11);
                 stack.hurtAndBreak(1, player, (player1) -> player1.broadcastBreakEvent(handIn));
             }

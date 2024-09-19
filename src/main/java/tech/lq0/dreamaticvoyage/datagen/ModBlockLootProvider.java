@@ -82,6 +82,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
 
         this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_LOG.get());
         this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get());
+        this.dropSelf(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
 
         this.dropSelf(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());
         this.dropSelf(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get());
