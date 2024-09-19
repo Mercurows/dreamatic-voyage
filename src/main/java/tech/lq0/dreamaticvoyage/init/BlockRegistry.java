@@ -8,6 +8,7 @@ import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.*;
 import tech.lq0.dreamaticvoyage.block.bluesand.*;
+import tech.lq0.dreamaticvoyage.block.fukamizu.plum.FukamizuPlumLog;
 import tech.lq0.dreamaticvoyage.block.fukamizu.plum.FukamizuPlumPlanks;
 import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuCompressor;
 import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuCrusher;
@@ -80,6 +81,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> FUKAMIZU_CRUSHER = BLOCKS.register("fukamizu_crusher", FukamizuCrusher::new);
 
     // Fukamizu Plum Series
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_LOG = BLOCKS.register("fukamizu_plum_log", FukamizuPlumLog::new);
     public static final RegistryObject<Block> FUKAMIZU_PLUM_PLANKS = BLOCKS.register("fukamizu_plum_planks", FukamizuPlumPlanks::new);
 
     // Fluids

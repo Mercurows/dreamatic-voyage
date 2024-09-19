@@ -310,6 +310,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trapdoorItem(BlockRegistry.HARANO_TRAPDOOR);
         buttonItem(BlockRegistry.HARANO_BUTTON, BlockRegistry.HARANO_PLANKS);
 
+        evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_LOG);
+
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);
 
         evenSimplerBlockItem(BlockRegistry.CRYSTAL_POPPER);

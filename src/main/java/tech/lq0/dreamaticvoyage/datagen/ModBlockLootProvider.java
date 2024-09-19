@@ -80,6 +80,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         this.dropSelf(BlockRegistry.HARANO_TRAPDOOR.get());
         this.dropSelf(BlockRegistry.HARANO_BUTTON.get());
 
+        this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_LOG.get());
         this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get());
 
         this.dropSelf(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());

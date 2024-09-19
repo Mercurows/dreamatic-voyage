@@ -619,6 +619,8 @@ public class ItemRegistry {
     public static final RegistryObject<Item> HARANO_BUTTON = BLOCK_ITEMS.register("harano_button",
             () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_LOG = BLOCK_ITEMS.register("fukamizu_plum_log",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_LOG.get(), new Item.Properties()));
     public static final RegistryObject<Item> FUKAMIZU_PLUM_PLANKS = BLOCK_ITEMS.register("fukamizu_plum_planks",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), new Item.Properties()));
 

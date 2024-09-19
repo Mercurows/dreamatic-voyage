@@ -18,9 +18,9 @@ import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagProvider extends ItemTagsProvider {
-    public ModItemTagProvider(PackOutput p_275343_, CompletableFuture<HolderLookup.Provider> p_275729_,
-                              CompletableFuture<TagLookup<Block>> p_275322_, @Nullable ExistingFileHelper existingFileHelper) {
-        super(p_275343_, p_275729_, p_275322_, Utils.MOD_ID, existingFileHelper);
+    public ModItemTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> providerCompletableFuture,
+                              CompletableFuture<TagLookup<Block>> tagLookupCompletableFuture, @Nullable ExistingFileHelper existingFileHelper) {
+        super(packOutput, providerCompletableFuture, tagLookupCompletableFuture, Utils.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -29,9 +29,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(Tags.Items.SANDSTONE)
                 .add(ItemRegistry.BLUE_SANDSTONE.get(), ItemRegistry.CUT_BLUE_SANDSTONE.get(), ItemRegistry.SMOOTH_BLUE_SANDSTONE.get(), ItemRegistry.CHISELED_BLUE_SANDSTONE.get());
         this.tag(ItemTags.LOGS)
-                .add(ItemRegistry.HARANO_LOG.get(), ItemRegistry.HARANO_WOOD.get(), ItemRegistry.STRIPPED_HARANO_LOG.get(), ItemRegistry.STRIPPED_HARANO_WOOD.get());
+                .add(ItemRegistry.HARANO_LOG.get(), ItemRegistry.HARANO_WOOD.get(), ItemRegistry.STRIPPED_HARANO_LOG.get(), ItemRegistry.STRIPPED_HARANO_WOOD.get(),
+                        ItemRegistry.FUKAMIZU_PLUM_LOG.get());
         this.tag(ItemTags.LOGS_THAT_BURN)
-                .add(ItemRegistry.HARANO_LOG.get(), ItemRegistry.HARANO_WOOD.get(), ItemRegistry.STRIPPED_HARANO_LOG.get(), ItemRegistry.STRIPPED_HARANO_WOOD.get());
+                .add(ItemRegistry.HARANO_LOG.get(), ItemRegistry.HARANO_WOOD.get(), ItemRegistry.STRIPPED_HARANO_LOG.get(), ItemRegistry.STRIPPED_HARANO_WOOD.get(),
+                        ItemRegistry.FUKAMIZU_PLUM_LOG.get());
         this.tag(ItemTags.WALLS).add(ItemRegistry.BLUE_SANDSTONE_WALL.get());
         this.tag(ItemTags.SLABS)
                 .add(ItemRegistry.BLUE_SANDSTONE_SLAB.get(), ItemRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(),
