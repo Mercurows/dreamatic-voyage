@@ -74,6 +74,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.SHOVELS).add(ItemRegistry.MOUNTAIN_DESTROYER.get(), ItemRegistry.FUKAMIZU_BREAD_SHOVEL.get(), ItemRegistry.FUKAMIZU_BREAD_MULTITOOL.get());
         this.tag(Tags.Items.SEEDS).add(ItemRegistry.UNI_MILLET.get());
         this.tag(Tags.Items.SHEARS).add(ItemRegistry.FUKAMIZU_BREAD_SHEARS.get());
+        this.tag(ItemTags.SAPLINGS).add(ItemRegistry.HARANO_SAPLING.get(), ItemRegistry.FUKAMIZU_PLUM_SAPLING.get());
 
         this.tag(Tags.Items.DUSTS).add(ItemRegistry.FUKAMIZU_CRUMB.get(), ItemRegistry.IRON_RICH_CRUMB.get(),
                         ItemRegistry.COPPER_RICH_CRUMB.get(), ItemRegistry.GOLD_RICH_CRUMB.get())

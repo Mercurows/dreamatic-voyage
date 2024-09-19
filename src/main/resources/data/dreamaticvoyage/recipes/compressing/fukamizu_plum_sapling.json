@@ -1,10 +1,10 @@
 {
   "type": "dreamaticvoyage:fukamizu_compressing",
   "ingredient": {
-    "item": "dreamaticvoyage:fukamizu_bread_ingot"
+    "tag": "minecraft:saplings"
   },
   "output": {
     "count": 1,
-    "item": "dreamaticvoyage:swollen_fukamizu_bread_ingot"
+    "item": "dreamaticvoyage:fukamizu_plum_sapling"
   }
 }

@@ -14,17 +14,19 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
+import tech.lq0.dreamaticvoyage.recipe.FukamizuCompressingRecipe;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class FukamizuCompressorCategory implements IRecipeCategory<Object> {
+public class FukamizuCompressorCategory implements IRecipeCategory<FukamizuCompressingRecipe> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/gui/fukamizu_compressor.png");
 
-    public static final RecipeType<Object> TYPE = RecipeType.create(Utils.MOD_ID, "fukamizu_compressor", Object.class);
+    public static final RecipeType<FukamizuCompressingRecipe> TYPE = new RecipeType<>(new ResourceLocation(Utils.MOD_ID, "fukamizu_compressor"),
+            FukamizuCompressingRecipe.class);
+
     private final IDrawable background;
     private final IDrawable icon;
     private final IDrawableAnimated piston;
@@ -46,7 +48,7 @@ public class FukamizuCompressorCategory implements IRecipeCategory<Object> {
 
     @Override
     @ParametersAreNonnullByDefault
-    public void draw(Object recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+    public void draw(FukamizuCompressingRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
         piston.draw(guiGraphics, 67, 21);
 
         int diff = (int) (System.currentTimeMillis() % 10000);
@@ -61,7 +63,7 @@ public class FukamizuCompressorCategory implements IRecipeCategory<Object> {
     }
 
     @Override
-    public @NotNull RecipeType<Object> getRecipeType() {
+    public @NotNull RecipeType<FukamizuCompressingRecipe> getRecipeType() {
         return TYPE;
     }
 
@@ -82,9 +84,9 @@ public class FukamizuCompressorCategory implements IRecipeCategory<Object> {
 
     @Override
     @ParametersAreNonnullByDefault
-    public void setRecipe(IRecipeLayoutBuilder builder, Object recipe, IFocusGroup group) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 43, 19).addIngredients(Ingredient.of(ItemRegistry.FUKAMIZU_BREAD_INGOT.get()));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 102, 19).addIngredients(Ingredient.of(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT.get()));
+    public void setRecipe(IRecipeLayoutBuilder builder, FukamizuCompressingRecipe recipe, IFocusGroup group) {
+        builder.addSlot(RecipeIngredientRole.INPUT, 43, 19).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 102, 19).addItemStack(recipe.getResultItem(null));
     }
 
 }

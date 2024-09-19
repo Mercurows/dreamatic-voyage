@@ -1,6 +1,5 @@
 package tech.lq0.dreamaticvoyage.recipe;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
@@ -16,12 +15,12 @@ import tech.lq0.dreamaticvoyage.Utils;
 import javax.annotation.Nullable;
 
 public class FukamizuCompressingRecipe implements Recipe<SimpleContainer> {
-    private final NonNullList<Ingredient> inputs;
+    private final Ingredient input;
     private final ItemStack output;
     private final ResourceLocation id;
 
-    public FukamizuCompressingRecipe(NonNullList<Ingredient> inputs, ItemStack output, ResourceLocation id) {
-        this.inputs = inputs;
+    public FukamizuCompressingRecipe(Ingredient input, ItemStack output, ResourceLocation id) {
+        this.input = input;
         this.output = output;
         this.id = id;
     }
@@ -32,7 +31,12 @@ public class FukamizuCompressingRecipe implements Recipe<SimpleContainer> {
             return false;
         }
 
-        return inputs.get(0).test(pContainer.getItem(0));
+        return input.test(pContainer.getItem(0));
+    }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return NonNullList.withSize(1, input);
     }
 
     @Override
@@ -78,31 +82,23 @@ public class FukamizuCompressingRecipe implements Recipe<SimpleContainer> {
         @Override
         public FukamizuCompressingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
-            JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
-            }
+            var ingredient = GsonHelper.getAsJsonObject(pSerializedRecipe, "ingredient");
+            var input = Ingredient.fromJson(ingredient);
 
-            return new FukamizuCompressingRecipe(inputs, output, pRecipeId);
+            return new FukamizuCompressingRecipe(input, output, pRecipeId);
         }
 
         @Override
         public @Nullable FukamizuCompressingRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
-            NonNullList<Ingredient> inputs = NonNullList.withSize(pBuffer.readInt(), Ingredient.EMPTY);
-            inputs.replaceAll(ignored -> Ingredient.fromNetwork(pBuffer));
+            Ingredient input = Ingredient.fromNetwork(pBuffer);
             ItemStack output = pBuffer.readItem();
 
-            return new FukamizuCompressingRecipe(inputs, output, pRecipeId);
+            return new FukamizuCompressingRecipe(input, output, pRecipeId);
         }
 
         @Override
         public void toNetwork(FriendlyByteBuf pBuffer, FukamizuCompressingRecipe pRecipe) {
-            pBuffer.writeInt(pRecipe.inputs.size());
-            for (Ingredient ingredient : pRecipe.getIngredients()) {
-                ingredient.toNetwork(pBuffer);
-            }
-
+            pRecipe.input.toNetwork(pBuffer);
             pBuffer.writeItemStack(pRecipe.getResultItem(null), false);
         }
     }
