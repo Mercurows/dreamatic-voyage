@@ -1,5 +1,7 @@
-// 1.20.1	2024-03-15T02:29:48.9840617	Registries
+// 1.20.1	2024-09-20T01:27:20.897969	Registries
 a0a214fc1321db9ddefbdea28314182e6df7efb3 data/dreamaticvoyage/worldgen/biome/blue_desert.json
 5f7139fe24a4b6c2e8af8702bc7209229f92bfbf data/dreamaticvoyage/worldgen/biome/harano_plains.json
+8d51240bc98e8407d03e943488a87f1fd334b4ee data/dreamaticvoyage/worldgen/configured_feature/fukamizu_plum_tree.json
 1a18543370dd02e0ddd6d30c1a4c8b9f60be3cc6 data/dreamaticvoyage/worldgen/configured_feature/harano_tree.json
+8b31aad2898af4f47f7c76b8dbe3ff70f6451d7d data/dreamaticvoyage/worldgen/placed_feature/fukamizu_plum_tree_placed.json
 a09f57a97f375a8ac8ba0b603503d90cf10ddd7e data/dreamaticvoyage/worldgen/placed_feature/harano_tree_placed.json

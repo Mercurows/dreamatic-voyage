@@ -82,12 +82,13 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
 
         this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_LOG.get());
         this.add(BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(),
-                block -> createTagLeavesDrops(BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(), BlockRegistry.HARANO_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES)
+                block -> createTagLeavesDrops(BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(), BlockRegistry.FUKAMIZU_PLUM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES)
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_TAG_OR_SILK_TOUCH)
                                 .add(this.applyExplosionCondition(BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(), LootItem.lootTableItem(ItemRegistry.FUKAMIZU_PLUM.get()))
                                         .when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F)))));
         this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get());
         this.dropSelf(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
+        this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_SAPLING.get());
 
         this.dropSelf(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());
         this.dropSelf(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get());

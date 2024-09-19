@@ -18,12 +18,15 @@ import java.util.List;
 
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> HARANO_TREE_PLACE_KEY = registerKey("harano_tree_placed");
+    public static final ResourceKey<PlacedFeature> FUKAMIZU_PLUM_TREE_PLACE_KEY = registerKey("fukamizu_plum_tree_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, HARANO_TREE_PLACE_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.HARANO_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), BlockRegistry.HARANO_SAPLING.get()));
+        register(context, FUKAMIZU_PLUM_TREE_PLACE_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FUKAMIZU_PLUM_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), BlockRegistry.FUKAMIZU_PLUM_SAPLING.get()));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

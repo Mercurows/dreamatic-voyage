@@ -626,6 +626,8 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), new Item.Properties()));
     public static final RegistryObject<Item> FUKAMIZU_PLUM_LEAVES = BLOCK_ITEMS.register("fukamizu_plum_leaves",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_SAPLING = BLOCK_ITEMS.register("fukamizu_plum_sapling",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_SAPLING.get(), new Item.Properties()));
     public static final RegistryObject<Item> STRIPPED_FUKAMIZU_PLUM_LOG = BLOCK_ITEMS.register("stripped_fukamizu_plum_log",
             () -> new BlockItem(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get(), new Item.Properties()));
 
