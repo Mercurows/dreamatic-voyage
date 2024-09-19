@@ -10,7 +10,6 @@ import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import tech.lq0.dreamaticvoyage.block.entity.FukamizuCompressorBlockEntity;
-import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.init.MenuTypeRegistry;
 
 public class FukamizuCompressorMenu extends AbstractContainerMenu {
@@ -63,10 +62,8 @@ public class FukamizuCompressorMenu extends AbstractContainerMenu {
 
                 slot.onQuickCraft(itemstack1, itemstack);
             } else if (pIndex != 0) {
-                if (itemstack1.is(ItemRegistry.FUKAMIZU_BREAD_INGOT.get())) {
-                    if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
-                        return ItemStack.EMPTY;
-                    }
+                if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
+                    return ItemStack.EMPTY;
                 } else if (pIndex >= 2 && pIndex < 29) {
                     if (!this.moveItemStackTo(itemstack1, 29, 38, false)) {
                         return ItemStack.EMPTY;
@@ -113,7 +110,7 @@ public class FukamizuCompressorMenu extends AbstractContainerMenu {
         }
 
         public boolean mayPlace(ItemStack pStack) {
-            return pStack.is(ItemRegistry.FUKAMIZU_BREAD_INGOT.get());
+            return super.mayPlace(pStack);
         }
 
         public int getMaxStackSize() {

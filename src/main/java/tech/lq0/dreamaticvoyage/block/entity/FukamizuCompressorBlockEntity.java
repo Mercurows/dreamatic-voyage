@@ -10,6 +10,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -19,7 +20,9 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuCompressor;
 import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCompressorMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
-import tech.lq0.dreamaticvoyage.init.ItemRegistry;
+import tech.lq0.dreamaticvoyage.recipe.FukamizuCompressingRecipe;
+
+import java.util.Optional;
 
 public class FukamizuCompressorBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
     protected static final int SLOT_INPUT = 0;
@@ -93,14 +96,7 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
             return;
         }
 
-        if (blockEntity.canProcess()) {
-            ItemStack input = blockEntity.items.get(SLOT_INPUT);
-
-            if (!input.is(ItemRegistry.FUKAMIZU_BREAD_INGOT.get())) {
-                blockEntity.compressingProgress = 0;
-                return;
-            }
-
+        if (blockEntity.canProcess() && blockEntity.hasRecipe()) {
             blockEntity.compressingProgress++;
             if (blockEntity.pressure >= MIN_NORMAL_PRESSURE) {
                 blockEntity.compressingProgress++;
@@ -111,21 +107,12 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
             }
 
             if (blockEntity.compressingProgress >= PROCESS_TIME) {
-                blockEntity.compressingProgress = 0;
-
-                ItemStack result = blockEntity.items.get(SLOT_RESULT);
-
-                if (result == ItemStack.EMPTY) {
-                    blockEntity.items.set(SLOT_RESULT, new ItemStack(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT.get()));
-                } else {
-                    result.grow(1);
-                }
-                input.shrink(1);
+                blockEntity.resetProgress();
+                blockEntity.craftItem();
             }
         } else {
-            blockEntity.compressingProgress = 0;
+            blockEntity.resetProgress();
         }
-
     }
 
     private static int calculatePressure(Level pLevel, BlockPos pPos) {
@@ -136,6 +123,62 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
             pPos = pPos.above();
         }
         return count;
+    }
+
+    private void craftItem() {
+        Optional<FukamizuCompressingRecipe> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) {
+            return;
+        }
+
+        ItemStack result = recipe.get().getResultItem(null);
+
+        ItemStack input = this.items.get(SLOT_INPUT);
+        input.shrink(1);
+
+        ItemStack output = this.items.get(SLOT_RESULT);
+        this.items.set(SLOT_RESULT, new ItemStack(result.getItem(), output.getCount() + result.getCount()));
+    }
+
+    private Optional<FukamizuCompressingRecipe> getCurrentRecipe() {
+        if (this.level == null) {
+            return Optional.empty();
+        }
+
+        SimpleContainer inventory = new SimpleContainer(this.items.size());
+        for (int i = 0; i < this.items.size(); i++) {
+            inventory.setItem(i, this.items.get(i));
+        }
+
+        return this.level.getRecipeManager().getRecipeFor(FukamizuCompressingRecipe.Type.INSTANCE, inventory, level);
+    }
+
+    private boolean hasRecipe() {
+        Optional<FukamizuCompressingRecipe> recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty()) {
+            return false;
+        }
+
+        if (getLevel() == null) {
+            return false;
+        }
+
+        ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
+
+        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+    }
+
+    private boolean canInsertItemIntoOutputSlot(Item item) {
+        return this.items.get(SLOT_RESULT).isEmpty() || this.items.get(SLOT_RESULT).is(item);
+    }
+
+    private boolean canInsertAmountIntoOutputSlot(int count) {
+        return this.items.get(SLOT_RESULT).getCount() + count <= this.items.get(SLOT_RESULT).getMaxStackSize();
+    }
+
+    private void resetProgress() {
+        this.compressingProgress = 0;
     }
 
     @Override
@@ -180,16 +223,12 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     public boolean canPlaceItem(int pIndex, ItemStack pStack) {
         if (pIndex == 1) {
             return false;
-        } else return pIndex == 0 && pStack.is(ItemRegistry.FUKAMIZU_BREAD_INGOT.get());
+        } else return pIndex == 0;
     }
 
     @Override
     public boolean canTakeItemThroughFace(int pIndex, ItemStack pStack, Direction pDirection) {
-        if (pDirection == Direction.DOWN && pIndex == 1) {
-            return pStack.is(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT.get());
-        } else {
-            return true;
-        }
+        return pIndex == 1 && pDirection == Direction.DOWN;
     }
 
     @Override

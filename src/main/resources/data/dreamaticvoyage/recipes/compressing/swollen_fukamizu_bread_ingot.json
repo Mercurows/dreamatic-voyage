@@ -1,0 +1,12 @@
+{
+  "type": "dreamaticvoyage:fukamizu_compressing",
+  "ingredients": [
+    {
+      "item": "dreamaticvoyage:fukamizu_bread_ingot"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "dreamaticvoyage:swollen_fukamizu_bread_ingot"
+  }
+}

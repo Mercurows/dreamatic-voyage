@@ -43,6 +43,7 @@ public class Utils {
         MenuTypeRegistry.MENU_TYPES.register(modEventBus);
         VoyageEventRegistry.EVENTS.register(modEventBus);
         FluidRegistry.register(modEventBus);
+        RecipeRegistry.RECIPE_SERIALIZERS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
