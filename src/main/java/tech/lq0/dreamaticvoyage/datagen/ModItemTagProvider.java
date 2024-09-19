@@ -40,7 +40,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.STAIRS)
                 .add(ItemRegistry.BLUE_SANDSTONE_STAIRS.get(), ItemRegistry.SMOOTH_BLUE_SANDSTONE_STAIRS.get(),
                         ItemRegistry.HARANO_STAIRS.get());
-        this.tag(ItemTags.PLANKS).add(ItemRegistry.HARANO_PLANKS.get());
+        this.tag(ItemTags.PLANKS).add(ItemRegistry.HARANO_PLANKS.get(), ItemRegistry.FUKAMIZU_PLUM_PLANKS.get());
         this.tag(ItemTags.FENCES).add(ItemRegistry.HARANO_FENCE.get());
         this.tag(ItemTags.WOODEN_FENCES).add(ItemRegistry.HARANO_FENCE.get());
         this.tag(ItemTags.FENCE_GATES).add(ItemRegistry.HARANO_FENCE_GATE.get());

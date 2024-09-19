@@ -924,6 +924,8 @@
   "fluid_type.dreamaticvoyage.fukamizu_kwas": "Fukamizu Kwas",
   "item.dreamaticvoyage.fukamizu_kwas_bucket": "Fukamizu Kwas Bucket",
   "block.dreamaticvoyage.fukamizu_kwas": "Fukamizu Kwas",
+  "block.dreamaticvoyage.fukamizu_plum_planks": "深水李子木板",
+  "des.dreamaticvoyage.fukamizu_plum_planks": "奇怪的水生李子树做成的木板",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

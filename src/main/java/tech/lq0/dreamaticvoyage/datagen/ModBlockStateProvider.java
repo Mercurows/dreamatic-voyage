@@ -72,6 +72,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.FICTIONAL_INGOT_BLOCK);
         blockWithItem(BlockRegistry.GACHI_INGOT_BLOCK);
 
+        blockWithItem(BlockRegistry.FUKAMIZU_PLUM_PLANKS);
+
         blockWithItem(BlockRegistry.VERDANT_SPIRIT_RICH_SOIL);
 
         simpleBlockWithItem(BlockRegistry.FUKAMIZU_MACHINE_CASING.get(), models().cubeColumn("fukamizu_machine_casing", new ResourceLocation(Utils.MOD_ID, "block/fukamizu_machine_casing_side"),
