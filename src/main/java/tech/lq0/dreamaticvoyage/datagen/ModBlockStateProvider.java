@@ -76,6 +76,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.FUKAMIZU_PLUM_PLANKS);
         logBlock((RotatedPillarBlock) BlockRegistry.FUKAMIZU_PLUM_LOG.get());
         logBlock((RotatedPillarBlock) BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
+        saplingBlock(BlockRegistry.FUKAMIZU_PLUM_SAPLING);
 
         blockWithItem(BlockRegistry.VERDANT_SPIRIT_RICH_SOIL);
 

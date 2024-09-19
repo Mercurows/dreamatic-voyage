@@ -310,9 +310,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.HARANO_DOOR);
         trapdoorItem(BlockRegistry.HARANO_TRAPDOOR);
         buttonItem(BlockRegistry.HARANO_BUTTON, BlockRegistry.HARANO_PLANKS);
+        saplingItem(BlockRegistry.HARANO_SAPLING);
 
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_LOG);
         evenSimplerBlockItem(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG);
+        saplingItem(BlockRegistry.FUKAMIZU_PLUM_SAPLING);
 
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);
 
@@ -363,21 +365,19 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Utils.MOD_ID, "block/" + item.getId().getPath()));
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
+                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()));
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
+                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item, String renderType) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath())).renderType(renderType);
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
+                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()))
+                .renderType(renderType);
     }
 
     public void evenSimplerBlockItem(RegistryObject<Block> block) {
@@ -406,26 +406,22 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/handheld")).texture("layer0",
-                new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()));
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/handheld"))
+                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()));
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
+                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItemBlockTexture(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Utils.MOD_ID, "block/" + item.getId().getPath()));
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
+                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder audioTapeItem(RegistryObject<Item> item, Livers livers) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Utils.MOD_ID, "item/" + "audio_tape_" + livers.getName()));
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
+                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + "audio_tape_" + livers.getName()));
     }
 }

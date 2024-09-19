@@ -16,7 +16,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import java.util.List;
 
 public class FukamizuPlum extends Item {
-    private static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(8).effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 400, 0), 1.0f).build();
+    private static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.6f).nutrition(3).effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 400, 0), 1.0f).build();
 
     public FukamizuPlum() {
         super(new Properties().food(food));
