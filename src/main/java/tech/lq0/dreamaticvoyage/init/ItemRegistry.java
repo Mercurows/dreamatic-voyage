@@ -322,6 +322,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> GARLIC_MELON_SLICE = ITEMS.register("garlic_melon_slice", GarlicMelonSlice::new);
     public static final RegistryObject<Item> CAGE_RING = ITEMS.register("cage_ring", CageRing::new);
     public static final RegistryObject<Item> HEAVY_BREAD_COMPONENT = ITEMS.register("heavy_bread_component", HeavyBreadComponent::new);
+    public static final RegistryObject<Item> FUKAMIZU_PLUM = ITEMS.register("fukamizu_plum", FukamizuPlum::new);
 
     // lutafia
     public static final RegistryObject<Item> FIAXE = ITEMS.register("fiaxe", Fiaxe::new);
