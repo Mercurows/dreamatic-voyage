@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "PBP",
+    " P "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:wither_rose"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "B": [
+      {
+        "item": "dreamaticvoyage:gn_souls"
+      },
+      {
+        "item": "dreamaticvoyage:gn_spirit"
+      }
+    ]
+  },
+  "result": {
+    "item": "dreamaticvoyage:wither_bouquet",
+    "count": 1
+  }
+}
