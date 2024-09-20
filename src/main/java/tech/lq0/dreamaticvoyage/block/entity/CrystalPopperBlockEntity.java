@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.gui.menu.CrystalPopperMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
@@ -265,7 +266,7 @@ public class CrystalPopperBlockEntity extends BlockEntity implements WorldlyCont
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return null;
+        return new CrystalPopperMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
     }
 
     @Override

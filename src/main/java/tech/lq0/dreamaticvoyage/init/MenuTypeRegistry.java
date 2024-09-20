@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.gui.menu.CrystalPopperMenu;
 import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCompressorMenu;
 import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
 
@@ -19,4 +20,8 @@ public class MenuTypeRegistry {
     public static final RegistryObject<MenuType<PhantasmalVoyagerMenu>> PHANTASMAL_VOYAGER_MENU =
             MENU_TYPES.register("phantasmal_voyager_menu",
                     () -> IForgeMenuType.create(PhantasmalVoyagerMenu::new));
+
+    public static final RegistryObject<MenuType<CrystalPopperMenu>> CRYSTAL_POPPER_MENU =
+            MENU_TYPES.register("crystal_popper_menu",
+                    () -> IForgeMenuType.create(((windowId, inv, data) -> new CrystalPopperMenu(windowId, inv))));
 }
