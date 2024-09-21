@@ -94,6 +94,7 @@ import tech.lq0.dreamaticvoyage.item.third.yuki.FoxIceCream;
 import tech.lq0.dreamaticvoyage.item.third.yuki.FoxPudding;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 @SuppressWarnings("unused")
@@ -697,24 +698,24 @@ public class ItemRegistry {
     }
 
     private static RegistryObject<Item> compatMetalBreadSlice(CompatMetals metal) {
-        return compatMetalBreadSlice(metal, 5.0f, (Supplier<MobEffectInstance>) null);
+        return compatMetalBreadSlice(metal, 5.0f);
     }
 
     private static RegistryObject<Item> compatMetalBreadSlice(CompatMetals metal, float damage) {
-        return compatMetalBreadSlice(metal, damage, (Supplier<MobEffectInstance>) null);
+        for (CompatMods mod : metal.getMods()) {
+            if (ModList.get().isLoaded(mod.getModId())) {
+                return MISC_ITEMS.register(metal.getName() + "_bread_slice", () -> new MetalBreadSlice(metal.getName(), damage));
+            }
+        }
+
+        return null;
     }
 
     @SafeVarargs
     private static RegistryObject<Item> compatMetalBreadSlice(CompatMetals metal, float damage, Supplier<MobEffectInstance>... effects) {
         for (CompatMods mod : metal.getMods()) {
             if (ModList.get().isLoaded(mod.getModId())) {
-                var item = new MetalBreadSlice(metal.getName(), damage);
-                for (var effect : effects) {
-                    item = item.setEffect(effect);
-                }
-
-                MetalBreadSlice finalItem = item;
-                return MISC_ITEMS.register(metal.getName() + "_bread_slice", () -> finalItem);
+                return MISC_ITEMS.register(metal.getName() + "_bread_slice", () -> new MetalBreadSlice(metal.getName(), damage).setEffect(List.of(effects)));
             }
         }
 

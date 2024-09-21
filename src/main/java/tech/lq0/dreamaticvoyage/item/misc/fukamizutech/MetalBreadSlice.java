@@ -39,6 +39,13 @@ public class MetalBreadSlice extends Item {
         return this;
     }
 
+    public MetalBreadSlice setEffect(List<Supplier<MobEffectInstance>> effects) {
+        if (!effects.isEmpty()) {
+            this.effects.addAll(effects);
+        }
+        return this;
+    }
+
     @Override
     public boolean isEdible() {
         return true;
