@@ -29,7 +29,7 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MoonlightAmulet extends Item implements ICurioItem {
-    public static final String TAG_MOONLIGHT = "isnight";
+    public static final String TAG_MOONLIGHT = "IsNight";
 
     public MoonlightAmulet() {
         super(new Properties().stacksTo(1));
@@ -48,7 +48,7 @@ public class MoonlightAmulet extends Item implements ICurioItem {
         if (livingEntity instanceof Player player && !player.level().isClientSide) {
             if (!player.level().isDay()) {
                 ItemNBTTool.setBoolean(stack, TAG_MOONLIGHT, true);
-                player.addEffect(new MobEffectInstance(EffectRegistry.BIG_FIERCE_ONE.get(), 300, 0), player);
+                player.addEffect(new MobEffectInstance(EffectRegistry.BIG_FIERCE_ONE.get(), 300, 0, false, true), player);
             } else {
                 ItemNBTTool.setBoolean(stack, TAG_MOONLIGHT, false);
             }
