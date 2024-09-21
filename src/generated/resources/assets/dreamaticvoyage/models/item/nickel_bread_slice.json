@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dreamaticvoyage:item/nickel_bread_slice"
+  }
+}

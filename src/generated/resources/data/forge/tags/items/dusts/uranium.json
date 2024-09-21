@@ -3,6 +3,10 @@
     {
       "id": "dreamaticvoyage:uranium_rich_crumb",
       "required": false
+    },
+    {
+      "id": "dreamaticvoyage:uranium_rich_crumb",
+      "required": false
     }
   ]
 }

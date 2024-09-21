@@ -243,8 +243,21 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(makeCompatCrumbId(CompatMetals.QUICKSILVER));
         simpleItem(makeCompatCrumbId(CompatMetals.PLATINUM));
 
-//        simpleItem(makeCompatBreadSliceId(CompatMetals.BRASS));
-//        simpleItem(makeCompatBreadSliceId(CompatMetals.STEEL));
+        simpleItem(ItemRegistry.IRON_BREAD_SLICE);
+        simpleItem(ItemRegistry.GOLD_BREAD_SLICE);
+        simpleItem(ItemRegistry.COPPER_BREAD_SLICE);
+        simpleItem(makeCompatBreadSliceId(CompatMetals.BRASS));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.STEEL));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.ZINC));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.LEAD));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.NICKEL));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.SILVER));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.TIN));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.ALUMINUM));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.OSMIUM));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.URANIUM));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.QUICKSILVER));
+        simpleItem(makeCompatBreadSliceId(CompatMetals.PLATINUM));
 
         // legacy
         simpleItem(ItemRegistry.FLUFF_BALL);

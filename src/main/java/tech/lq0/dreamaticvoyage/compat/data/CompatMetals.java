@@ -2,9 +2,9 @@ package tech.lq0.dreamaticvoyage.compat.data;
 
 public enum CompatMetals {
     ZINC("zinc", CompatMods.CREATE),
-    LEAD("lead", CompatMods.THERMAL, CompatMods.IMMERSIVEENGINEERING, CompatMods.MEKANISM),
+    LEAD("lead", CompatMods.THERMAL, CompatMods.IMMERSIVEENGINEERING, CompatMods.MEKANISM, CompatMods.SUPERBWARFARE),
     NICKEL("nickel", CompatMods.THERMAL),
-    SILVER("silver", CompatMods.THERMAL, CompatMods.IMMERSIVEENGINEERING),
+    SILVER("silver", CompatMods.THERMAL, CompatMods.IMMERSIVEENGINEERING, CompatMods.SUPERBWARFARE),
     TIN("tin", CompatMods.THERMAL, CompatMods.MEKANISM),
     ALUMINUM("aluminum", CompatMods.IMMERSIVEENGINEERING),
     OSMIUM("osmium", CompatMods.MEKANISM),
@@ -12,7 +12,7 @@ public enum CompatMetals {
     QUICKSILVER("quicksilver"),
     PLATINUM("platinum"),
     BRASS("brass", CompatMods.CREATE),
-    STEEL("steel", CompatMods.IMMERSIVEENGINEERING),
+    STEEL("steel", CompatMods.IMMERSIVEENGINEERING, CompatMods.SUPERBWARFARE),
     ;
 
     private final String name;

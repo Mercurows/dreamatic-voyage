@@ -3,6 +3,10 @@
     {
       "id": "dreamaticvoyage:lead_rich_crumb",
       "required": false
+    },
+    {
+      "id": "dreamaticvoyage:lead_rich_crumb",
+      "required": false
     }
   ]
 }

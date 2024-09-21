@@ -81,9 +81,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .addOptional(makeCompatCrumbId(CompatMetals.ZINC)).addOptional(makeCompatCrumbId(CompatMetals.LEAD))
                 .addOptional(makeCompatCrumbId(CompatMetals.NICKEL)).addOptional(makeCompatCrumbId(CompatMetals.SILVER))
                 .addOptional(makeCompatCrumbId(CompatMetals.TIN)).addOptional(makeCompatCrumbId(CompatMetals.ALUMINUM))
-                .addOptional(makeCompatCrumbId(CompatMetals.OSMIUM)).addOptional(makeCompatCrumbId(CompatMetals.URANIUM));
+                .addOptional(makeCompatCrumbId(CompatMetals.OSMIUM)).addOptional(makeCompatCrumbId(CompatMetals.URANIUM))
+                .addOptional(makeCompatCrumbId(CompatMetals.QUICKSILVER)).addOptional(makeCompatCrumbId(CompatMetals.PLATINUM));
         addCompatCrumbDustTag(CompatMetals.ZINC, CompatMetals.LEAD, CompatMetals.NICKEL, CompatMetals.SILVER,
-                CompatMetals.TIN, CompatMetals.ALUMINUM, CompatMetals.OSMIUM, CompatMetals.URANIUM);
+                CompatMetals.TIN, CompatMetals.ALUMINUM, CompatMetals.OSMIUM, CompatMetals.URANIUM, CompatMetals.PLATINUM, CompatMetals.QUICKSILVER);
         this.tag(forgeTag("dusts/iron")).add(ItemRegistry.IRON_RICH_CRUMB.get());
         this.tag(forgeTag("dusts/copper")).add(ItemRegistry.COPPER_RICH_CRUMB.get());
         this.tag(forgeTag("dusts/gold")).add(ItemRegistry.GOLD_RICH_CRUMB.get());
@@ -91,8 +92,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(forgeTag("plates/iron")).add(ItemRegistry.IRON_BREAD_SLICE.get());
         this.tag(forgeTag("plates/copper")).add(ItemRegistry.COPPER_BREAD_SLICE.get());
         this.tag(forgeTag("plates/gold")).add(ItemRegistry.GOLD_BREAD_SLICE.get());
-        this.tag(forgeTag("plates/brass")).addOptional(makeCompatBreadSliceId(CompatMetals.BRASS));
-        this.tag(forgeTag("plates/steel")).addOptional(makeCompatBreadSliceId(CompatMetals.STEEL));
+        addCompatCrumbDustTag(CompatMetals.ZINC, CompatMetals.LEAD, CompatMetals.NICKEL, CompatMetals.SILVER,
+                CompatMetals.TIN, CompatMetals.ALUMINUM, CompatMetals.OSMIUM, CompatMetals.URANIUM, CompatMetals.PLATINUM, CompatMetals.QUICKSILVER,
+                CompatMetals.BRASS, CompatMetals.STEEL);
     }
 
     private static TagKey<Item> forgeTag(String name) {
@@ -107,6 +109,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     private ResourceLocation makeCompatCrumbId(CompatMetals metal) {
         return new ResourceLocation(Utils.MOD_ID, metal.getName() + "_rich_crumb");
+    }
+
+    private void addCompatBreadSlicePlateTag(CompatMetals... metals) {
+        for (var metal : metals) {
+            this.tag(forgeTag("plates/" + metal.getName())).addOptional(new ResourceLocation(Utils.MOD_ID, metal.getName() + "_bread_slice"));
+        }
     }
 
     private ResourceLocation makeCompatBreadSliceId(CompatMetals metal) {

@@ -1,5 +1,7 @@
 package tech.lq0.dreamaticvoyage.init;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -91,6 +93,8 @@ import tech.lq0.dreamaticvoyage.item.third.leciel.ReinaWings;
 import tech.lq0.dreamaticvoyage.item.third.yuki.FoxIceCream;
 import tech.lq0.dreamaticvoyage.item.third.yuki.FoxPudding;
 import tech.lq0.dreamaticvoyage.tools.Livers;
+
+import java.util.function.Supplier;
 
 @SuppressWarnings("unused")
 public class ItemRegistry {
@@ -482,10 +486,20 @@ public class ItemRegistry {
     public static final RegistryObject<Item> URANIUM_RICH_CRUMB = compatMetalCrumb(CompatMetals.URANIUM);
 
     public static final RegistryObject<Item> IRON_BREAD_SLICE = MISC_ITEMS.register("iron_bread_slice", () -> new MetalBreadSlice("iron"));
-    public static final RegistryObject<Item> GOLD_BREAD_SLICE = MISC_ITEMS.register("gold_bread_slice", () -> new MetalBreadSlice("gold"));
-    public static final RegistryObject<Item> COPPER_BREAD_SLICE = MISC_ITEMS.register("copper_bread_slice", () -> new MetalBreadSlice("copper"));
-    public static final RegistryObject<Item> BRASS_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.BRASS);
-    public static final RegistryObject<Item> STEEL_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.STEEL);
+    public static final RegistryObject<Item> GOLD_BREAD_SLICE = MISC_ITEMS.register("gold_bread_slice", () -> new MetalBreadSlice("gold", 3.0f).setEffect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 200)));
+    public static final RegistryObject<Item> COPPER_BREAD_SLICE = MISC_ITEMS.register("copper_bread_slice", () -> new MetalBreadSlice("copper", 4.0f).setEffect(() -> new MobEffectInstance(MobEffects.CONFUSION, 200)));
+    public static final RegistryObject<Item> ZINC_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.ZINC, 5.0f, () -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 200));
+    public static final RegistryObject<Item> LEAD_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.LEAD, 5.0f, () -> new MobEffectInstance(MobEffects.POISON, 200), () -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200));
+    public static final RegistryObject<Item> NICKEL_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.NICKEL, 3.0f, () -> new MobEffectInstance(EffectRegistry.BLEEDING.get(), 200));
+    public static final RegistryObject<Item> SILVER_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.SILVER, 2.0f, () -> new MobEffectInstance(EffectRegistry.HOLINESS.get(), 200));
+    public static final RegistryObject<Item> TIN_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.TIN, 5.0f, () -> new MobEffectInstance(MobEffects.BLINDNESS, 200));
+    public static final RegistryObject<Item> ALUMINUM_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.ALUMINUM, 5.0f, () -> new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 200), () -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200));
+    public static final RegistryObject<Item> OSMIUM_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.OSMIUM, 8.0f, () -> new MobEffectInstance(MobEffects.CONFUSION, 200));
+    public static final RegistryObject<Item> URANIUM_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.URANIUM, 30.0f, () -> new MobEffectInstance(MobEffects.WITHER, 200));
+    public static final RegistryObject<Item> QUICKSILVER_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.QUICKSILVER, 0.0f, () -> new MobEffectInstance(MobEffects.WITHER, 1200), () -> new MobEffectInstance(MobEffects.POISON, 1200));
+    public static final RegistryObject<Item> PLATINUM_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.PLATINUM, 15.0f);
+    public static final RegistryObject<Item> BRASS_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.BRASS, 4.0f, () -> new MobEffectInstance(MobEffects.CONFUSION, 200));
+    public static final RegistryObject<Item> STEEL_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.STEEL, 10.0f);
 
     public static final RegistryObject<Item> FUKAMIZU_KWAS_BUCKET = MISC_ITEMS.register("fukamizu_kwas_bucket", () -> new BucketItem(FluidRegistry.FUKAMIZU_KWAS, new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET)));
 
@@ -683,9 +697,24 @@ public class ItemRegistry {
     }
 
     private static RegistryObject<Item> compatMetalBreadSlice(CompatMetals metal) {
+        return compatMetalBreadSlice(metal, 5.0f, (Supplier<MobEffectInstance>) null);
+    }
+
+    private static RegistryObject<Item> compatMetalBreadSlice(CompatMetals metal, float damage) {
+        return compatMetalBreadSlice(metal, damage, (Supplier<MobEffectInstance>) null);
+    }
+
+    @SafeVarargs
+    private static RegistryObject<Item> compatMetalBreadSlice(CompatMetals metal, float damage, Supplier<MobEffectInstance>... effects) {
         for (CompatMods mod : metal.getMods()) {
             if (ModList.get().isLoaded(mod.getModId())) {
-                return MISC_ITEMS.register(metal.getName() + "_bread_slice", () -> new MetalBreadSlice(metal.getName()));
+                var item = new MetalBreadSlice(metal.getName(), damage);
+                for (var effect : effects) {
+                    item = item.setEffect(effect);
+                }
+
+                MetalBreadSlice finalItem = item;
+                return MISC_ITEMS.register(metal.getName() + "_bread_slice", () -> finalItem);
             }
         }
 

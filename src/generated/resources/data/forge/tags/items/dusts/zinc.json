@@ -3,6 +3,10 @@
     {
       "id": "dreamaticvoyage:zinc_rich_crumb",
       "required": false
+    },
+    {
+      "id": "dreamaticvoyage:zinc_rich_crumb",
+      "required": false
     }
   ]
 }

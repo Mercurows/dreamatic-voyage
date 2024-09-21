@@ -5,6 +5,7 @@ public enum CompatMods {
     THERMAL("thermal"),
     MEKANISM("mekanism"),
     IMMERSIVEENGINEERING("immersiveengineering"),
+    SUPERBWARFARE("superbwarfare"),
     ;
 
     private final String modId;
