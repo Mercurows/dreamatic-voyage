@@ -10,6 +10,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.compat.data.CompatMetals;
 import tech.lq0.dreamaticvoyage.init.BlockRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tools.Livers;
@@ -231,6 +232,19 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.IRON_RICH_CRUMB);
         simpleItem(ItemRegistry.GOLD_RICH_CRUMB);
         simpleItem(ItemRegistry.COPPER_RICH_CRUMB);
+        simpleItem(makeCompatCrumbId(CompatMetals.ZINC));
+        simpleItem(makeCompatCrumbId(CompatMetals.LEAD));
+        simpleItem(makeCompatCrumbId(CompatMetals.NICKEL));
+        simpleItem(makeCompatCrumbId(CompatMetals.SILVER));
+        simpleItem(makeCompatCrumbId(CompatMetals.TIN));
+        simpleItem(makeCompatCrumbId(CompatMetals.ALUMINUM));
+        simpleItem(makeCompatCrumbId(CompatMetals.OSMIUM));
+        simpleItem(makeCompatCrumbId(CompatMetals.URANIUM));
+        simpleItem(makeCompatCrumbId(CompatMetals.QUICKSILVER));
+        simpleItem(makeCompatCrumbId(CompatMetals.PLATINUM));
+
+//        simpleItem(makeCompatBreadSliceId(CompatMetals.BRASS));
+//        simpleItem(makeCompatBreadSliceId(CompatMetals.STEEL));
 
         // legacy
         simpleItem(ItemRegistry.FLUFF_BALL);
@@ -375,9 +389,12 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item, String renderType) {
-        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
-                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()))
-                .renderType(renderType);
+        return simpleItem(item).renderType(renderType);
+    }
+
+    private ItemModelBuilder simpleItem(ResourceLocation item) {
+        return withExistingParent(item.getPath(), new ResourceLocation("item/generated"))
+                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + item.getPath()));
     }
 
     public void evenSimplerBlockItem(RegistryObject<Block> block) {
@@ -423,5 +440,13 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder audioTapeItem(RegistryObject<Item> item, Livers livers) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
                 .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + "audio_tape_" + livers.getName()));
+    }
+
+    private ResourceLocation makeCompatCrumbId(CompatMetals metal) {
+        return new ResourceLocation(Utils.MOD_ID, metal.getName() + "_rich_crumb");
+    }
+
+    private ResourceLocation makeCompatBreadSliceId(CompatMetals metal) {
+        return new ResourceLocation(Utils.MOD_ID, metal.getName() + "_bread_slice");
     }
 }

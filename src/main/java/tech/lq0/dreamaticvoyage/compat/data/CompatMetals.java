@@ -9,6 +9,8 @@ public enum CompatMetals {
     ALUMINUM("aluminum", CompatMods.IMMERSIVEENGINEERING),
     OSMIUM("osmium", CompatMods.MEKANISM),
     URANIUM("uranium", CompatMods.MEKANISM, CompatMods.IMMERSIVEENGINEERING),
+    QUICKSILVER("quicksilver"),
+    PLATINUM("platinum"),
     BRASS("brass", CompatMods.CREATE),
     STEEL("steel", CompatMods.IMMERSIVEENGINEERING),
     ;
