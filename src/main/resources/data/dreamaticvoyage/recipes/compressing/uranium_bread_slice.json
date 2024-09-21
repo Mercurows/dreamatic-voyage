@@ -1,0 +1,19 @@
+{
+  "type": "dreamaticvoyage:fukamizu_compressing",
+  "ingredient": {
+    "tag": "forge:ingots/uranium"
+  },
+  "output": {
+    "count": 2,
+    "item": "dreamaticvoyage:uranium_bread_slice"
+  },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/uranium"
+      }
+    }
+  ]
+}

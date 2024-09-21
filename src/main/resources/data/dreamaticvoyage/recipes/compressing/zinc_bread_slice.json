@@ -1,0 +1,19 @@
+{
+  "type": "dreamaticvoyage:fukamizu_compressing",
+  "ingredient": {
+    "tag": "forge:ingots/zinc"
+  },
+  "output": {
+    "count": 2,
+    "item": "dreamaticvoyage:zinc_bread_slice"
+  },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/zinc"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "dreamaticvoyage:fukamizu_compressing",
+  "ingredient": {
+    "tag": "forge:ingots/quicksilver"
+  },
+  "output": {
+    "count": 2,
+    "item": "dreamaticvoyage:quicksilver_bread_slice"
+  },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/quicksilver"
+      }
+    }
+  ]
+}
