@@ -220,6 +220,7 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
         return this.canPlaceItem(pIndex, pItemStack);
     }
 
+    @Override
     public boolean canPlaceItem(int pIndex, ItemStack pStack) {
         if (pIndex == 1) {
             return false;
@@ -272,7 +273,7 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
         }
 
         if (pSlot == 0 && !flag) {
-            this.compressingProgress = 0;
+            this.resetProgress();
             this.setChanged();
         }
     }
