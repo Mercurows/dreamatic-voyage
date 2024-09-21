@@ -92,7 +92,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(forgeTag("plates/iron")).add(ItemRegistry.IRON_BREAD_SLICE.get());
         this.tag(forgeTag("plates/copper")).add(ItemRegistry.COPPER_BREAD_SLICE.get());
         this.tag(forgeTag("plates/gold")).add(ItemRegistry.GOLD_BREAD_SLICE.get());
-        addCompatCrumbDustTag(CompatMetals.ZINC, CompatMetals.LEAD, CompatMetals.NICKEL, CompatMetals.SILVER,
+        addCompatBreadSlicePlateTag(CompatMetals.ZINC, CompatMetals.LEAD, CompatMetals.NICKEL, CompatMetals.SILVER,
                 CompatMetals.TIN, CompatMetals.ALUMINUM, CompatMetals.OSMIUM, CompatMetals.URANIUM, CompatMetals.PLATINUM, CompatMetals.QUICKSILVER,
                 CompatMetals.BRASS, CompatMetals.STEEL);
     }
