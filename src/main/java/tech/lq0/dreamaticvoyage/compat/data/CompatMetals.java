@@ -3,7 +3,7 @@ package tech.lq0.dreamaticvoyage.compat.data;
 public enum CompatMetals {
     ZINC("zinc", CompatMods.CREATE),
     LEAD("lead", CompatMods.THERMAL, CompatMods.IMMERSIVEENGINEERING, CompatMods.MEKANISM, CompatMods.SUPERBWARFARE),
-    NICKEL("nickel", CompatMods.THERMAL),
+    NICKEL("nickel", CompatMods.THERMAL, CompatMods.IMMERSIVEENGINEERING),
     SILVER("silver", CompatMods.THERMAL, CompatMods.IMMERSIVEENGINEERING, CompatMods.SUPERBWARFARE),
     TIN("tin", CompatMods.THERMAL, CompatMods.MEKANISM),
     ALUMINUM("aluminum", CompatMods.IMMERSIVEENGINEERING),
