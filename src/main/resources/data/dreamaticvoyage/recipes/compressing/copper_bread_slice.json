@@ -1,0 +1,10 @@
+{
+  "type": "dreamaticvoyage:fukamizu_compressing",
+  "ingredient": {
+    "tag": "forge:ingots/copper"
+  },
+  "output": {
+    "count": 2,
+    "item": "dreamaticvoyage:copper_bread_slice"
+  }
+}

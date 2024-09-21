@@ -87,6 +87,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(forgeTag("dusts/iron")).add(ItemRegistry.IRON_RICH_CRUMB.get());
         this.tag(forgeTag("dusts/copper")).add(ItemRegistry.COPPER_RICH_CRUMB.get());
         this.tag(forgeTag("dusts/gold")).add(ItemRegistry.GOLD_RICH_CRUMB.get());
+
+        this.tag(forgeTag("plates/iron")).add(ItemRegistry.IRON_BREAD_SLICE.get());
+        this.tag(forgeTag("plates/copper")).add(ItemRegistry.COPPER_BREAD_SLICE.get());
+        this.tag(forgeTag("plates/gold")).add(ItemRegistry.GOLD_BREAD_SLICE.get());
+        this.tag(forgeTag("plates/brass")).addOptional(makeCompatBreadSliceId(CompatMetals.BRASS));
+        this.tag(forgeTag("plates/steel")).addOptional(makeCompatBreadSliceId(CompatMetals.STEEL));
     }
 
     private static TagKey<Item> forgeTag(String name) {
@@ -101,5 +107,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     private ResourceLocation makeCompatCrumbId(CompatMetals metal) {
         return new ResourceLocation(Utils.MOD_ID, metal.getName() + "_rich_crumb");
+    }
+
+    private ResourceLocation makeCompatBreadSliceId(CompatMetals metal) {
+        return new ResourceLocation(Utils.MOD_ID, metal.getName() + "_bread_slice");
     }
 }

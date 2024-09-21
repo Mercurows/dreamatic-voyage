@@ -1,0 +1,10 @@
+{
+  "type": "dreamaticvoyage:fukamizu_compressing",
+  "ingredient": {
+    "tag": "forge:ingots/gold"
+  },
+  "output": {
+    "count": 2,
+    "item": "dreamaticvoyage:gold_bread_slice"
+  }
+}

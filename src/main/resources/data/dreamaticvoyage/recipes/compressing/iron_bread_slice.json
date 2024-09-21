@@ -1,0 +1,10 @@
+{
+  "type": "dreamaticvoyage:fukamizu_compressing",
+  "ingredient": {
+    "tag": "forge:ingots/iron"
+  },
+  "output": {
+    "count": 2,
+    "item": "dreamaticvoyage:iron_bread_slice"
+  }
+}

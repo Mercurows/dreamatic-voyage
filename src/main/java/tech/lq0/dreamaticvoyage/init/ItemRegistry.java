@@ -481,6 +481,12 @@ public class ItemRegistry {
     public static final RegistryObject<Item> OSMIUM_RICH_CRUMB = compatMetalCrumb(CompatMetals.OSMIUM);
     public static final RegistryObject<Item> URANIUM_RICH_CRUMB = compatMetalCrumb(CompatMetals.URANIUM);
 
+    public static final RegistryObject<Item> IRON_BREAD_SLICE = MISC_ITEMS.register("iron_bread_slice", () -> new MetalBreadSlice("iron"));
+    public static final RegistryObject<Item> GOLD_BREAD_SLICE = MISC_ITEMS.register("gold_bread_slice", () -> new MetalBreadSlice("gold"));
+    public static final RegistryObject<Item> COPPER_BREAD_SLICE = MISC_ITEMS.register("copper_bread_slice", () -> new MetalBreadSlice("copper"));
+    public static final RegistryObject<Item> BRASS_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.BRASS);
+    public static final RegistryObject<Item> STEEL_BREAD_SLICE = compatMetalBreadSlice(CompatMetals.STEEL);
+
     public static final RegistryObject<Item> FUKAMIZU_KWAS_BUCKET = MISC_ITEMS.register("fukamizu_kwas_bucket", () -> new BucketItem(FluidRegistry.FUKAMIZU_KWAS, new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET)));
 
     /**
@@ -670,6 +676,16 @@ public class ItemRegistry {
         for (CompatMods mod : metal.getMods()) {
             if (ModList.get().isLoaded(mod.getModId())) {
                 return MISC_ITEMS.register(metal.getName() + "_rich_crumb", () -> new MetalRichCrumb(metal.getName()));
+            }
+        }
+
+        return null;
+    }
+
+    private static RegistryObject<Item> compatMetalBreadSlice(CompatMetals metal) {
+        for (CompatMods mod : metal.getMods()) {
+            if (ModList.get().isLoaded(mod.getModId())) {
+                return MISC_ITEMS.register(metal.getName() + "_bread_slice", () -> new MetalBreadSlice(metal.getName()));
             }
         }
 
