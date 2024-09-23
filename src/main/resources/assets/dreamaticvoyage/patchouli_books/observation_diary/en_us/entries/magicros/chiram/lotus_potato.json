@@ -12,6 +12,16 @@
       "type": "patchouli:crafting",
       "recipe": "dreamaticvoyage:lotus_potato",
       "text": "dreamaticvoyage.page.lotus_potato2"
+    },
+    {
+      "type": "patchouli:text",
+      "advancement": "dreamaticvoyage:main/eat_lotus_potato",
+      "text": "dreamaticvoyage.page.lotus_potato3"
+    },
+    {
+      "type": "patchouli:text",
+      "advancement": "dreamaticvoyage:main/eat_lotus_potato",
+      "text": "dreamaticvoyage.page.lotus_potato4"
     }
   ],
   "sortnum": 30102

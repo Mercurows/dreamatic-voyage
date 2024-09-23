@@ -12,6 +12,14 @@
       "type": "patchouli:crafting",
       "recipe": "dreamaticvoyage:bolster",
       "text": "dreamaticvoyage.page.bolster2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.bolster3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.bolster4"
     }
   ],
   "sortnum": 30105
