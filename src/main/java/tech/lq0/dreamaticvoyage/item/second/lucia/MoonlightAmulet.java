@@ -48,7 +48,7 @@ public class MoonlightAmulet extends Item implements ICurioItem {
         if (livingEntity instanceof Player player && !player.level().isClientSide) {
             if (!player.level().isDay()) {
                 ItemNBTTool.setBoolean(stack, TAG_MOONLIGHT, true);
-                player.addEffect(new MobEffectInstance(EffectRegistry.BIG_FIERCE_ONE.get(), 300, 0, false, true), player);
+                player.addEffect(new MobEffectInstance(EffectRegistry.BIG_FIERCE_ONE.get(), 300, 0, false, false), player);
             } else {
                 ItemNBTTool.setBoolean(stack, TAG_MOONLIGHT, false);
             }
