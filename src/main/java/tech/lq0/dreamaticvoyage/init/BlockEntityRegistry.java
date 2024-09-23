@@ -23,6 +23,9 @@ public class BlockEntityRegistry {
     public static final RegistryObject<BlockEntityType<CrystalPopperBlockEntity>> CRYSTAL_POPPER_BLOCK_ENTITY =
             BLOCK_ENTITY_TYPES.register("crystal_popper_block_entity",
                     () -> BlockEntityType.Builder.of(CrystalPopperBlockEntity::new, BlockRegistry.CRYSTAL_POPPER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<CrystalPurifierBlockEntity>> CRYSTAL_PURIFIER_BLOCK_ENTITY =
+            BLOCK_ENTITY_TYPES.register("crystal_purifier_block_entity",
+                    () -> BlockEntityType.Builder.of(CrystalPurifierBlockEntity::new, BlockRegistry.CRYSTAL_PURIFIER.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<FukamizuCompressorBlockEntity>> FUKAMIZU_COMPRESSOR_BLOCK_ENTITY =
             BLOCK_ENTITY_TYPES.register("fukamizu_compressor_block_entity",

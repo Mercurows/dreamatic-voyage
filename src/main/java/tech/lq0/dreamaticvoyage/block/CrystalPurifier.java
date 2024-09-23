@@ -28,7 +28,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.block.entity.CrystalPopperBlockEntity;
+import tech.lq0.dreamaticvoyage.block.entity.CrystalPurifierBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 
 import java.util.List;
@@ -41,7 +41,7 @@ public class CrystalPurifier extends Block implements EntityBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
         if (!pLevel.isClientSide) {
-            return createTickerHelper(pBlockEntityType, BlockEntityRegistry.CRYSTAL_POPPER_BLOCK_ENTITY.get(), CrystalPopperBlockEntity::serverTick);
+            return createTickerHelper(pBlockEntityType, BlockEntityRegistry.CRYSTAL_PURIFIER_BLOCK_ENTITY.get(), CrystalPurifierBlockEntity::serverTick);
         }
         return null;
     }
@@ -58,7 +58,7 @@ public class CrystalPurifier extends Block implements EntityBlock {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.dreamaticvoyage.crystal_popper").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.crystal_purifier").withStyle(ChatFormatting.GRAY));
     }
 
     @Override
@@ -73,9 +73,9 @@ public class CrystalPurifier extends Block implements EntityBlock {
 
     protected void openContainer(Level pLevel, BlockPos pPos, Player pPlayer) {
         BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-        if (blockentity instanceof CrystalPopperBlockEntity blockEntity) {
-            pPlayer.openMenu(blockEntity);
-        }
+//        if (blockentity instanceof CrystalPurifierBlockEntity blockEntity) {
+//            pPlayer.openMenu(blockEntity);
+//        }
     }
 
     @Override
@@ -87,7 +87,7 @@ public class CrystalPurifier extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new CrystalPopperBlockEntity(pPos, pState);
+        return new CrystalPurifierBlockEntity(pPos, pState);
     }
 
     @Override
@@ -105,7 +105,7 @@ public class CrystalPurifier extends Block implements EntityBlock {
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
         if (pLevel instanceof ServerLevel serverLevel) {
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-            if (blockentity instanceof CrystalPopperBlockEntity blockEntity) {
+            if (blockentity instanceof CrystalPurifierBlockEntity blockEntity) {
                 Containers.dropContents(serverLevel, pPos, blockEntity);
             }
         }
