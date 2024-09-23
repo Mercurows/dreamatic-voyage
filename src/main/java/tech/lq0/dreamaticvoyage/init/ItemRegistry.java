@@ -472,6 +472,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> FUKAMIZU_BREAD_LEGGINGS = MISC_ITEMS.register("fukamizu_bread_leggings", FukamizuBreadLeggings::new);
     public static final RegistryObject<Item> FUKAMIZU_BREAD_BOOTS = MISC_ITEMS.register("fukamizu_bread_boots", FukamizuBreadBoots::new);
     public static final RegistryObject<Item> FUKAMIZU_UPGRADE_SMITHING_TEMPLATE = MISC_ITEMS.register("fukamizu_upgrade_smithing_template", FukamizuUpgradeSmithingTemplate::new);
+    public static final RegistryObject<Item> FUKAMIZU_BREAD_WRENCH = MISC_ITEMS.register("fukamizu_bread_wrench", FukamizuBreadWrench::new);
 
     public static final RegistryObject<Item> FUKAMIZU_CRUMB = MISC_ITEMS.register("fukamizu_crumb", FukamizuCrumb::new);
     public static final RegistryObject<Item> IRON_RICH_CRUMB = MISC_ITEMS.register("iron_rich_crumb", () -> new MetalRichCrumb("iron"));
@@ -563,7 +564,6 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MUSIC_DISC_AROUND_THE_TRAVEL = AUDIO_ITEMS.register("music_disc_around_the_travel", () -> new MusicDisc(Livers.SHIRAKO, SoundRegistry.AROUND_THE_TRAVEL, (new Item.Properties()).stacksTo(1).rarity(Rarity.EPIC), 2, 4420));
     public static final RegistryObject<Item> MUSIC_DISC_SONG_OF_QINGQIU = AUDIO_ITEMS.register("music_disc_song_of_qingqiu", () -> new MusicDisc(Livers.AOI, SoundRegistry.SONG_OF_QINGQIU, (new Item.Properties()).stacksTo(1).rarity(Rarity.RARE), 3, 4260));
     public static final RegistryObject<Item> MUSIC_DISC_DREAMING_FAIRY = AUDIO_ITEMS.register("music_disc_dreaming_fairy", () -> new MusicDisc(Livers.UNIA, SoundRegistry.DREAMING_FAIRY, (new Item.Properties()).stacksTo(1).rarity(Rarity.RARE), 4, 4680));
-
 
     /**
      * ===BLOCKS===
@@ -678,6 +678,8 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.FUKAMIZU_MACHINE_CASING.get(), new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FUKAMIZU_COMPRESSOR = BLOCK_ITEMS.register("fukamizu_compressor",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> FUKAMIZU_PYLON = BLOCK_ITEMS.register("fukamizu_pylon",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PYLON.get(), new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FUKAMIZU_CRUSHER = BLOCK_ITEMS.register("fukamizu_crusher",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_CRUSHER.get(), new Item.Properties().fireResistant()));
 
