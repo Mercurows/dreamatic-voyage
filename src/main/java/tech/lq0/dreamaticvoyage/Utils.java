@@ -5,6 +5,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
@@ -60,7 +61,13 @@ public class Utils {
                 Ingredient.of(ItemRegistry.LUCIA_RICE_CAKE.get()), new ItemStack(ItemRegistry.BIG_MOE_ONE_POTION.get())));
         event.enqueueWork(() -> BrewingRecipeRegistry.addRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.STRONG_POISON)),
                 Ingredient.of(ItemRegistry.GARLIC_MELON_SLICE.get()), new ItemStack(Items.DRAGON_BREATH)));
+
         DmvNetwork.init();
+
+        ComposterBlock.add(0.3f, ItemRegistry.HARANO_SAPLING.get());
+        ComposterBlock.add(0.3f, ItemRegistry.HARANO_LEAVES.get());
+        ComposterBlock.add(0.3f, ItemRegistry.FUKAMIZU_PLUM_SAPLING.get());
+        ComposterBlock.add(0.3f, ItemRegistry.FUKAMIZU_PLUM_LEAVES.get());
     }
 
     private void registerForgeEvents() {
