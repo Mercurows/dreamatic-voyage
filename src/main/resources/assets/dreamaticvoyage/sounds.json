@@ -65,15 +65,6 @@
       }
     ]
   },
-  "song/darakudatenshi": {
-    "subtitle": "subtitle.dreamaticvoyage.darakudatenshi",
-    "sounds": [
-      {
-        "name": "dreamaticvoyage:song/darakudatenshi",
-        "stream": true
-      }
-    ]
-  },
   "blood_crystal": {
     "subtitle": "subtitle.dreamaticvoyage.blood_crystal",
     "sounds": [

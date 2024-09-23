@@ -1156,9 +1156,6 @@
   "subtitle.dreamaticvoyage.usa_gundam": "胡桃Usa：高达形态",
   "des.item.dreamaticvoyage.audio_tape_usa_3": "高达形态",
   "text.item.dreamaticvoyage.audio_tape_usa_3": "回路连接成功、各项数据正常……这是最后的手段了！天界歼灭兵器，出击！",
-  "item.dreamaticvoyage.music_disc_darakudatenshi": "音乐唱片（堕堕天使）",
-  "subtitle.dreamaticvoyage.darakudatenshi": "正在播放：堕堕天使",
-  "item.dreamaticvoyage.music_disc_darakudatenshi.desc": "Project Mons feat.胡桃Usa - ダラクダテンシ（堕堕天使）",
   "item.dreamaticvoyage.music_disc_around_the_travel": "音乐唱片（一人旅行）",
   "subtitle.dreamaticvoyage.around_the_travel": "正在播放：一人旅行",
   "item.dreamaticvoyage.music_disc_around_the_travel.desc": "白桃Shirako - 一人旅行",
@@ -1702,7 +1699,6 @@
 
   "jei.dreamaticvoyage.around_the_travel": "能够在末地城的宝藏箱中发现。\n使用血槽大于400的世界和平之杖，潜行对有唱片的唱片机按下使用键，即可将已有唱片转换成该唱片。\n\n“不忘初心，继续探索追寻那终点。”",
   "jei.dreamaticvoyage.song_of_qingqiu": "能够在雪屋的宝藏箱中发现。",
-  "jei.dreamaticvoyage.darakudatenshi": "能够在地牢、沙漠神殿和废弃矿井的宝藏箱或箱子矿车中发现。",
   "jei.dreamaticvoyage.song_of_autumn": "能够在原野平原的帐篷内的木桶中发现。",
   "jei.dreamaticvoyage.elf_wings": "能够在丛林神庙和林地府邸的宝藏箱中发现。",
   "jei.dreamaticvoyage.past_sugar": "通过食用附魔后的异界棒棒糖获取。\n当异界棒棒糖的附魔等级之和大于11时，食用后有 (附魔等级 - 10) * 5%% 的概率获得流血效果，并获得一个昔日糖砂。"

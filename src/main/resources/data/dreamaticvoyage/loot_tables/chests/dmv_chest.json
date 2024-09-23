@@ -30,27 +30,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dreamaticvoyage:music_disc_darakudatenshi",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
           "weight": 2,
           "name": "dreamaticvoyage:red_ahoge",
           "functions": [

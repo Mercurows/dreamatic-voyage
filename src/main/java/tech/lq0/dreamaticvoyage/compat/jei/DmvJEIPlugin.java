@@ -50,7 +50,6 @@ public class DmvJEIPlugin implements IModPlugin {
         // 其他物品获取方式描述
         registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL.get()), Component.translatable("jei.dreamaticvoyage.around_the_travel"));
         registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_SONG_OF_QINGQIU.get()), Component.translatable("jei.dreamaticvoyage.song_of_qingqiu"));
-        registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_DARAKUDATENSHI.get()), Component.translatable("jei.dreamaticvoyage.darakudatenshi"));
         registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN.get()), Component.translatable("jei.dreamaticvoyage.song_of_autumn"));
         registration.addItemStackInfo(new ItemStack(ItemRegistry.ELF_WINGS.get()), Component.translatable("jei.dreamaticvoyage.elf_wings"));
         registration.addItemStackInfo(new ItemStack(ItemRegistry.PAST_SUGAR.get()), Component.translatable("jei.dreamaticvoyage.past_sugar"));
