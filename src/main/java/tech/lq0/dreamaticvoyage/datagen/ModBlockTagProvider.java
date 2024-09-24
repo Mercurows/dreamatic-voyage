@@ -33,8 +33,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         BlockRegistry.CHARGED_CRYSTAL_BLOCK.get(), BlockRegistry.FICTIONAL_INGOT_BLOCK.get(),
                         BlockRegistry.ROCK_STATUE.get(), BlockRegistry.PHANTASMAL_VOYAGER.get(),
                         BlockRegistry.FUKAMIZU_BREAD_BRICKS.get(), BlockRegistry.FUKAMIZU_MACHINE_CASING.get(),
-                        BlockRegistry.FUKAMIZU_COMPRESSOR.get(), BlockRegistry.CRYSTAL_POPPER.get(),
-                        BlockRegistry.FUKAMIZU_CRUSHER.get(), BlockRegistry.GACHI_INGOT_BLOCK.get());
+                        BlockRegistry.CRYSTAL_POPPER.get(), BlockRegistry.GACHI_INGOT_BLOCK.get())
+                .addTag(ModTags.Blocks.FUKAMIZU_MACHINE);
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(BlockRegistry.BLUE_SAND.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.HARANO_LOG.get(),
                 BlockRegistry.HARANO_WOOD.get(), BlockRegistry.HARANO_SLAB.get(), BlockRegistry.HARANO_PLANKS.get(),
@@ -87,7 +87,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.BUTTONS).add(BlockRegistry.HARANO_BUTTON.get());
         this.tag(BlockTags.WOODEN_BUTTONS).add(BlockRegistry.HARANO_BUTTON.get());
         this.tag(BlockTags.WITHER_IMMUNE).add(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), BlockRegistry.FUKAMIZU_BREAD_BRICKS.get());
-        this.tag(ModTags.Blocks.FUKAMIZU_MACHINE).add(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), BlockRegistry.FUKAMIZU_CRUSHER.get());
+        this.tag(ModTags.Blocks.FUKAMIZU_MACHINE).add(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), BlockRegistry.FUKAMIZU_CRUSHER.get(),
+                BlockRegistry.FUKAMIZU_PYLON.get(), BlockRegistry.LIGHT_BREAD_ENERGY_BLOCK.get());
         this.tag(ModTags.Blocks.FUKAMIZU_BREAD).add(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), BlockRegistry.FUKAMIZU_BREAD_BRICKS.get());
     }
 }
