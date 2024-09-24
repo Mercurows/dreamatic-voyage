@@ -33,6 +33,9 @@ public class BlockEntityRegistry {
     public static final RegistryObject<BlockEntityType<FukamizuPylonBlockEntity>> FUKAMIZU_PYLON_BLOCK_ENTITY =
             BLOCK_ENTITY_TYPES.register("fukamizu_pylon_block_entity",
                     () -> BlockEntityType.Builder.of(FukamizuPylonBlockEntity::new, BlockRegistry.FUKAMIZU_PYLON.get()).build(null));
+    public static final RegistryObject<BlockEntityType<LightBreadEnergyBlockEntity>> LIGHT_BREAD_ENERGY_BLOCK_ENTITY =
+            BLOCK_ENTITY_TYPES.register("light_bread_energy_block_entity",
+                    () -> BlockEntityType.Builder.of(LightBreadEnergyBlockEntity::new, BlockRegistry.LIGHT_BREAD_ENERGY_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<FukamizuCrusherBlockEntity>> FUKAMIZU_CRUSHER_BLOCK_ENTITY =
             BLOCK_ENTITY_TYPES.register("fukamizu_crusher_block_entity",
                     () -> BlockEntityType.Builder.of(FukamizuCrusherBlockEntity::new, BlockRegistry.FUKAMIZU_CRUSHER.get()).build(null));

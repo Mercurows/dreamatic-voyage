@@ -109,6 +109,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         this.dropSelf(BlockRegistry.FUKAMIZU_MACHINE_CASING.get());
         this.dropSelf(BlockRegistry.FUKAMIZU_COMPRESSOR.get());
         this.dropSelf(BlockRegistry.FUKAMIZU_PYLON.get());
+        this.dropSelf(BlockRegistry.LIGHT_BREAD_ENERGY_BLOCK.get());
         this.dropSelf(BlockRegistry.FUKAMIZU_CRUSHER.get());
     }
 

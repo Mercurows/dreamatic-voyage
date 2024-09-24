@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-24T18:25:42.363959	Loot Tables
+// 1.20.1	2024-09-25T00:47:36.8835802	Loot Tables
 de907c77e3f973d4cc51e684a7c589816f1f7488 data/dreamaticvoyage/loot_tables/blocks/blue_sand.json
 d7c59f5243134df755eed00c0b7c4d762d809115 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone.json
 22ea59f302064014af02351f18938dbc97043258 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone_slab.json
@@ -39,6 +39,7 @@ a979efce61cc5c4188ec4df95378938bd0c1c8b0 data/dreamaticvoyage/loot_tables/blocks
 c3ae6be9fe186b045de082322e95dac8335d9304 data/dreamaticvoyage/loot_tables/blocks/harano_wood.json
 d816a52466f54f5e7e6e1b49257892b4f1483e50 data/dreamaticvoyage/loot_tables/blocks/harden_crystal_block.json
 1c2eda93c9ef729d362b78e2c51eedb03680faf2 data/dreamaticvoyage/loot_tables/blocks/jellyfish_bottle.json
+7e7d089e478a1a02abbef2864925ecb58cd70e3c data/dreamaticvoyage/loot_tables/blocks/light_bread_energy_block.json
 d10474e90669fc90d84a8f60f92862014d4d1d3b data/dreamaticvoyage/loot_tables/blocks/phantasmal_voyager.json
 e52017d61a036b836af5fe5c854a66eb4638b216 data/dreamaticvoyage/loot_tables/blocks/points_store.json
 5c6f985b5e8988b0d909e189f998aa111a8915c6 data/dreamaticvoyage/loot_tables/blocks/porcelain_throne.json

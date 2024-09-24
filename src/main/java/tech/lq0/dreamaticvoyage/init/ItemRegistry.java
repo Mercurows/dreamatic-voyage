@@ -684,6 +684,8 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FUKAMIZU_PYLON = BLOCK_ITEMS.register("fukamizu_pylon",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_PYLON.get(), new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> LIGHT_BREAD_ENERGY_BLOCK = BLOCK_ITEMS.register("light_bread_energy_block",
+            () -> new BlockItem(BlockRegistry.LIGHT_BREAD_ENERGY_BLOCK.get(), new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> FUKAMIZU_CRUSHER = BLOCK_ITEMS.register("fukamizu_crusher",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_CRUSHER.get(), new Item.Properties().fireResistant()));
 

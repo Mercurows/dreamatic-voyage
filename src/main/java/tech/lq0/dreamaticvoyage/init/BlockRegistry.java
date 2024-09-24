@@ -9,10 +9,7 @@ import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.*;
 import tech.lq0.dreamaticvoyage.block.bluesand.*;
 import tech.lq0.dreamaticvoyage.block.fukamizu.plum.*;
-import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuCompressor;
-import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuCrusher;
-import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuMachineCasing;
-import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuPylon;
+import tech.lq0.dreamaticvoyage.block.fukamizu.tech.*;
 import tech.lq0.dreamaticvoyage.block.harano.*;
 import tech.lq0.dreamaticvoyage.block.voyage.PhantasmalVoyager;
 
@@ -80,6 +77,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> FUKAMIZU_MACHINE_CASING = BLOCKS.register("fukamizu_machine_casing", FukamizuMachineCasing::new);
     public static final RegistryObject<Block> FUKAMIZU_COMPRESSOR = BLOCKS.register("fukamizu_compressor", FukamizuCompressor::new);
     public static final RegistryObject<Block> FUKAMIZU_PYLON = BLOCKS.register("fukamizu_pylon", FukamizuPylon::new);
+    public static final RegistryObject<Block> LIGHT_BREAD_ENERGY_BLOCK = BLOCKS.register("light_bread_energy_block", LightBreadEnergyBlock::new);
     public static final RegistryObject<Block> FUKAMIZU_CRUSHER = BLOCKS.register("fukamizu_crusher", FukamizuCrusher::new);
 
     // Fukamizu Plum Series
