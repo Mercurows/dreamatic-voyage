@@ -16,6 +16,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
@@ -24,6 +25,7 @@ import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.uce.IUCEnergyStorage;
 import tech.lq0.dreamaticvoyage.capability.uce.UCEnergyStorage;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
 // TODO 完成能量塔逻辑
 public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
@@ -31,11 +33,14 @@ public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyCont
     public static final int MAX_RANGE = 10;
     public static final int MAX_CAPACITY = 100000;
     public static final int CHARGE_SPEED = 50;
-    public static final int MAX_TRANSFER_TOTAL = 1000;
-    public static final int MAX_TRANSFER_SINGLE = 100;
+    public static final int TRANSFER_COOLDOWN = 40;
+    public static final int MAX_TRANSFER_TOTAL = 2000;
+    public static final int MAX_TRANSFER_SINGLE = 200;
 
     public LazyOptional<IUCEnergyStorage> capability;
     public UCEnergyStorage energyStorage = new UCEnergyStorage(MAX_CAPACITY, MAX_TRANSFER_TOTAL);
+
+    public int chargeTime;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(1, ItemStack.EMPTY);
 
@@ -45,21 +50,44 @@ public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyCont
     }
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuPylonBlockEntity blockEntity) {
-        var energy = blockEntity.energyStorage;
+        blockEntity.charge(pLevel, pPos, pState);
+    }
 
-        if (energy.canReceive()) {
-            energy.receiveEnergy(CHARGE_SPEED, false);
+    private void charge(Level pLevel, BlockPos pPos, BlockState pState) {
+        if (!this.energyStorage.canReceive()) {
+            return;
+        }
+
+        if (this.chargeTime <= 0) {
+            ItemStack stack = this.items.get(0);
+            if (stack.isEmpty()) {
+                return;
+            }
+
+            if (!stack.is(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT.get())) {
+                return;
+            }
+
+            stack.shrink(1);
+            this.chargeTime += 40;
+
+            this.setChanged();
+            pLevel.sendBlockUpdated(pPos, pState, pState, 3);
+            pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
+        } else {
+            this.energyStorage.receiveEnergy(CHARGE_SPEED, false);
+            this.chargeTime--;
         }
     }
 
     @Override
     public int[] getSlotsForFace(Direction pSide) {
-        return new int[0];
+        return new int[]{0};
     }
 
     @Override
     public boolean canPlaceItemThroughFace(int pIndex, ItemStack pItemStack, @Nullable Direction pDirection) {
-        return pDirection != Direction.DOWN;
+        return pDirection != Direction.DOWN && pItemStack.is(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT.get());
     }
 
     @Override
@@ -136,13 +164,20 @@ public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyCont
     @Override
     public void load(CompoundTag pTag) {
         super.load(pTag);
+
         this.energyStorage.read(pTag);
+        this.chargeTime = pTag.getInt("ChargeTime");
+        this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(pTag, this.items);
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag) {
         super.saveAdditional(pTag);
+
         this.energyStorage.write(pTag);
+        pTag.putInt("ChargeTime", this.chargeTime);
+        ContainerHelper.saveAllItems(pTag, this.items);
     }
 
     @Override
