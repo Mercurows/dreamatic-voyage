@@ -3,7 +3,7 @@ package tech.lq0.dreamaticvoyage.capability.uce;
 import net.minecraftforge.common.capabilities.AutoRegisterCapability;
 
 @AutoRegisterCapability
-public interface IUmisuCurrentEnergyCapability {
+public interface IUCEnergyStorage {
 
     int receiveEnergy(int maxReceive, boolean simulate);
 

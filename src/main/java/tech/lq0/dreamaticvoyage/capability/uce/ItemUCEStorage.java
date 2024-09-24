@@ -3,7 +3,7 @@ package tech.lq0.dreamaticvoyage.capability.uce;
 import net.minecraft.world.item.ItemStack;
 
 @SuppressWarnings("ConstantConditions")
-public class ItemUCEStorage extends UmisuCurrentEnergyCapability {
+public class ItemUCEStorage extends UCEnergyStorage {
     private static final String NBT_UCE = "UmisuEnergy";
 
     private final ItemStack stack;

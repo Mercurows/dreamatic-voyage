@@ -13,6 +13,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -20,19 +21,35 @@ import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
-import tech.lq0.dreamaticvoyage.capability.uce.UmisuCurrentEnergyCapability;
+import tech.lq0.dreamaticvoyage.capability.uce.IUCEnergyStorage;
+import tech.lq0.dreamaticvoyage.capability.uce.UCEnergyStorage;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 
 // TODO 完成能量塔逻辑
 public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
 
-    public UmisuCurrentEnergyCapability capability;
+    public static final int MAX_RANGE = 10;
+    public static final int MAX_CAPACITY = 100000;
+    public static final int CHARGE_SPEED = 50;
+    public static final int MAX_TRANSFER_TOTAL = 1000;
+    public static final int MAX_TRANSFER_SINGLE = 100;
+
+    public LazyOptional<IUCEnergyStorage> capability;
+    public UCEnergyStorage energyStorage = new UCEnergyStorage(MAX_CAPACITY, MAX_TRANSFER_TOTAL);
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(1, ItemStack.EMPTY);
 
     public FukamizuPylonBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.FUKAMIZU_PYLON_BLOCK_ENTITY.get(), pPos, pBlockState);
-        capability = new UmisuCurrentEnergyCapability(50000, 1000);
+        capability = LazyOptional.of(() -> energyStorage);
+    }
+
+    public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuPylonBlockEntity blockEntity) {
+        var energy = blockEntity.energyStorage;
+
+        if (energy.canReceive()) {
+            energy.receiveEnergy(CHARGE_SPEED, false);
+        }
     }
 
     @Override
@@ -42,7 +59,7 @@ public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyCont
 
     @Override
     public boolean canPlaceItemThroughFace(int pIndex, ItemStack pItemStack, @Nullable Direction pDirection) {
-        return false;
+        return pDirection != Direction.DOWN;
     }
 
     @Override
@@ -119,20 +136,26 @@ public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyCont
     @Override
     public void load(CompoundTag pTag) {
         super.load(pTag);
-        this.capability.deserializeNBT(pTag);
+        this.energyStorage.read(pTag);
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag) {
         super.saveAdditional(pTag);
-        this.capability.serializeNBT();
+        this.energyStorage.write(pTag);
     }
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY) {
-            return LazyOptional.of(() -> this.capability).cast();
+            return this.capability.cast();
         }
         return super.getCapability(cap, side);
+    }
+
+    @Override
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        this.capability.invalidate();
     }
 }

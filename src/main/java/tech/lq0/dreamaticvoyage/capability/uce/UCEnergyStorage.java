@@ -1,29 +1,31 @@
 package tech.lq0.dreamaticvoyage.capability.uce;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.IntTag;
 import net.minecraft.nbt.Tag;
 import net.minecraftforge.common.util.INBTSerializable;
 
-public class UmisuCurrentEnergyCapability implements IUmisuCurrentEnergyCapability, INBTSerializable<Tag> {
+public class UCEnergyStorage implements IUCEnergyStorage, INBTSerializable<Tag> {
+    private static final String NBT_UCE = "UmisuEnergy";
 
     protected int energy;
     protected int capacity;
     protected int maxReceive;
     protected int maxExtract;
 
-    public UmisuCurrentEnergyCapability(int capacity) {
+    public UCEnergyStorage(int capacity) {
         this(capacity, capacity, capacity, 0);
     }
 
-    public UmisuCurrentEnergyCapability(int capacity, int maxTransfer) {
+    public UCEnergyStorage(int capacity, int maxTransfer) {
         this(capacity, maxTransfer, maxTransfer, 0);
     }
 
-    public UmisuCurrentEnergyCapability(int capacity, int maxReceive, int maxExtract) {
+    public UCEnergyStorage(int capacity, int maxReceive, int maxExtract) {
         this(capacity, maxReceive, maxExtract, 0);
     }
 
-    public UmisuCurrentEnergyCapability(int capacity, int maxReceive, int maxExtract, int energy) {
+    public UCEnergyStorage(int capacity, int maxReceive, int maxExtract, int energy) {
         this.capacity = capacity;
         this.maxReceive = maxReceive;
         this.maxExtract = maxExtract;
@@ -86,5 +88,13 @@ public class UmisuCurrentEnergyCapability implements IUmisuCurrentEnergyCapabili
         if (!(nbt instanceof IntTag intNbt))
             throw new IllegalArgumentException("Can not deserialize to an instance that isn't the default implementation");
         this.energy = intNbt.getAsInt();
+    }
+
+    public void write(CompoundTag tag) {
+        tag.put(NBT_UCE, IntTag.valueOf(energy));
+    }
+
+    public void read(CompoundTag tag) {
+        energy = tag.getInt(NBT_UCE);
     }
 }
