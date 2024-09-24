@@ -73,9 +73,17 @@ public class UCEnergyStorage implements IUCEnergyStorage, INBTSerializable<Tag> 
         return this.maxExtract > 0;
     }
 
+    public boolean canExtract(int energy) {
+        return this.maxExtract > 0 && energy <= this.energy;
+    }
+
     @Override
     public boolean canReceive() {
         return this.maxReceive > 0;
+    }
+
+    public boolean canReceive(int energy) {
+        return this.maxReceive > 0 && energy <= this.capacity - this.energy;
     }
 
     @Override
