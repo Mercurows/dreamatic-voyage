@@ -30,10 +30,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ItemRegistry.BLUE_SANDSTONE.get(), ItemRegistry.CUT_BLUE_SANDSTONE.get(), ItemRegistry.SMOOTH_BLUE_SANDSTONE.get(), ItemRegistry.CHISELED_BLUE_SANDSTONE.get());
         this.tag(ItemTags.LOGS)
                 .add(ItemRegistry.HARANO_LOG.get(), ItemRegistry.HARANO_WOOD.get(), ItemRegistry.STRIPPED_HARANO_LOG.get(), ItemRegistry.STRIPPED_HARANO_WOOD.get(),
-                        ItemRegistry.FUKAMIZU_PLUM_LOG.get(), ItemRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
+                        ItemRegistry.FUKAMIZU_PLUM_LOG.get(), ItemRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get(), ItemRegistry.FUKAMIZU_PLUM_WOOD.get(),
+                        ItemRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get());
         this.tag(ItemTags.LOGS_THAT_BURN)
                 .add(ItemRegistry.HARANO_LOG.get(), ItemRegistry.HARANO_WOOD.get(), ItemRegistry.STRIPPED_HARANO_LOG.get(), ItemRegistry.STRIPPED_HARANO_WOOD.get(),
-                        ItemRegistry.FUKAMIZU_PLUM_LOG.get(), ItemRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
+                        ItemRegistry.FUKAMIZU_PLUM_LOG.get(), ItemRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get(), ItemRegistry.FUKAMIZU_PLUM_WOOD.get(),
+                        ItemRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get());
         this.tag(ItemTags.WALLS).add(ItemRegistry.BLUE_SANDSTONE_WALL.get());
         this.tag(ItemTags.SLABS)
                 .add(ItemRegistry.BLUE_SANDSTONE_SLAB.get(), ItemRegistry.SMOOTH_BLUE_SANDSTONE_SLAB.get(),

@@ -77,6 +77,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         logBlock((RotatedPillarBlock) BlockRegistry.FUKAMIZU_PLUM_LOG.get());
         logBlock((RotatedPillarBlock) BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
         saplingBlock(BlockRegistry.FUKAMIZU_PLUM_SAPLING);
+        axisBlock((RotatedPillarBlock) BlockRegistry.FUKAMIZU_PLUM_WOOD.get(), models().cubeColumn("fukamizu_plum_wood", new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_log"), new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_log")),
+                models().cubeColumn("fukamizu_plum_wood", new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_log"), new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_log")));
+        axisBlock((RotatedPillarBlock) BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get(), models().cubeColumn("stripped_fukamizu_plum_wood", new ResourceLocation(Utils.MOD_ID, "block/stripped_fukamizu_plum_log"), new ResourceLocation(Utils.MOD_ID, "block/stripped_fukamizu_plum_log")),
+                models().cubeColumn("stripped_fukamizu_plum_wood", new ResourceLocation(Utils.MOD_ID, "block/stripped_fukamizu_plum_log"), new ResourceLocation(Utils.MOD_ID, "block/stripped_fukamizu_plum_log")));
 
         blockWithItem(BlockRegistry.VERDANT_SPIRIT_RICH_SOIL);
 

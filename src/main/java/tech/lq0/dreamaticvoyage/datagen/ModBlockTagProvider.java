@@ -41,7 +41,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 BlockRegistry.HARANO_STAIRS.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get(),
                 BlockRegistry.HARANO_FENCE.get(), BlockRegistry.HARANO_FENCE_GATE.get(), BlockRegistry.HARANO_PRESSURE_PLATE.get(),
                 BlockRegistry.HARANO_DOOR.get(), BlockRegistry.HARANO_TRAPDOOR.get(), BlockRegistry.HARANO_BUTTON.get(),
-                BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), BlockRegistry.FUKAMIZU_PLUM_LOG.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
+                BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), BlockRegistry.FUKAMIZU_PLUM_LOG.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get(),
+                BlockRegistry.FUKAMIZU_PLUM_WOOD.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get());
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.FUKAMIZU_PLUM_LEAVES.get());
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(BlockRegistry.RED_AHOGE_BLOCK.get(), BlockRegistry.WHITE_AHOGE_BLOCK.get(),
                 BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());
@@ -56,10 +57,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         BlockRegistry.SMOOTH_BLUE_SANDSTONE.get(), BlockRegistry.CHISELED_BLUE_SANDSTONE.get());
         this.tag(BlockTags.LOGS)
                 .add(BlockRegistry.HARANO_LOG.get(), BlockRegistry.HARANO_WOOD.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get(),
-                        BlockRegistry.FUKAMIZU_PLUM_LOG.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
+                        BlockRegistry.FUKAMIZU_PLUM_LOG.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get(), BlockRegistry.FUKAMIZU_PLUM_WOOD.get(),
+                        BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get());
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(BlockRegistry.HARANO_LOG.get(), BlockRegistry.HARANO_WOOD.get(), BlockRegistry.STRIPPED_HARANO_LOG.get(), BlockRegistry.STRIPPED_HARANO_WOOD.get(),
-                        BlockRegistry.FUKAMIZU_PLUM_LOG.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
+                        BlockRegistry.FUKAMIZU_PLUM_LOG.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get(), BlockRegistry.FUKAMIZU_PLUM_WOOD.get(),
+                        BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get());
         this.tag(BlockTags.WALLS).add(BlockRegistry.BLUE_SANDSTONE_WALL.get());
         this.tag(BlockTags.SWORD_EFFICIENT).add(BlockRegistry.UNI_MILLET_BLOCK.get());
         this.tag(BlockTags.SLABS)

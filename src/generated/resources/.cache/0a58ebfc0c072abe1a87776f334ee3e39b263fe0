@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-23T13:13:19.4548821	Tags for minecraft:item mod id dreamaticvoyage
+// 1.20.1	2024-09-24T18:25:42.3650086	Tags for minecraft:item mod id dreamaticvoyage
 c93b06183954ba0a459bce6c121e69d0448c09e6 data/forge/tags/items/dusts.json
 726e2f789912dca4ae6efc63b1f7c4c73693da5d data/forge/tags/items/dusts/aluminum.json
 c2e582954ed4d09c0e2605b0e730ff30fa987dbd data/forge/tags/items/dusts/copper.json
@@ -39,8 +39,8 @@ b622e7a899240477510f98d8d5556a5e3a94befb data/minecraft/tags/items/axes.json
 235242cdfbbea10eb261b7905775ebe74834ad3c data/minecraft/tags/items/fence_gates.json
 35a3a6647d215ac6217446f56f6ecee0c7d5edeb data/minecraft/tags/items/hoes.json
 2d06759284bed6997b9e5486a7776f838f48069b data/minecraft/tags/items/leaves.json
-419914df0595f0e2ccfabd95898201a23352049f data/minecraft/tags/items/logs.json
-419914df0595f0e2ccfabd95898201a23352049f data/minecraft/tags/items/logs_that_burn.json
+fe000922377e7a009f4501c3e404a12e4527c767 data/minecraft/tags/items/logs.json
+fe000922377e7a009f4501c3e404a12e4527c767 data/minecraft/tags/items/logs_that_burn.json
 10a2436046c13ab52a4df3dcb366042a47830124 data/minecraft/tags/items/music_discs.json
 bd12bce46e91f279338f850a1fd336153eed89fc data/minecraft/tags/items/pickaxes.json
 147df96e9f75e69e4d365880d2473ac60d43f7f9 data/minecraft/tags/items/piglin_loved.json

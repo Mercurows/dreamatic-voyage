@@ -87,7 +87,9 @@ public class BlockRegistry {
     public static final RegistryObject<Block> FUKAMIZU_PLUM_LEAVES = BLOCKS.register("fukamizu_plum_leaves", FukamizuPlumLeaves::new);
     public static final RegistryObject<Block> FUKAMIZU_PLUM_SAPLING = BLOCKS.register("fukamizu_plum_sapling", FukamizuPlumSapling::new);
     public static final RegistryObject<Block> FUKAMIZU_PLUM_PLANKS = BLOCKS.register("fukamizu_plum_planks", FukamizuPlumPlanks::new);
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_WOOD = BLOCKS.register("fukamizu_plum_wood", FukamizuPlumWood::new);
     public static final RegistryObject<Block> STRIPPED_FUKAMIZU_PLUM_LOG = BLOCKS.register("stripped_fukamizu_plum_log", StrippedFukamizuPlumLog::new);
+    public static final RegistryObject<Block> STRIPPED_FUKAMIZU_PLUM_WOOD = BLOCKS.register("stripped_fukamizu_plum_wood", StrippedFukamizuPlumWood::new);
 
     // Fluids
     public static final RegistryObject<LiquidBlock> FUKAMIZU_KWAS = BLOCKS.register("fukamizu_kwas", FukamizuKwasBlock::new);

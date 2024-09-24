@@ -87,7 +87,10 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
                                 .add(this.applyExplosionCondition(BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(), LootItem.lootTableItem(ItemRegistry.FUKAMIZU_PLUM.get()))
                                         .when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F)))));
         this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get());
+//        this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_STAIRS.get());
+        this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_WOOD.get());
         this.dropSelf(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
+        this.dropSelf(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get());
         this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_SAPLING.get());
 
         this.dropSelf(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());

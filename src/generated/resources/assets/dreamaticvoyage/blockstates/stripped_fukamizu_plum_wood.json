@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "dreamaticvoyage:block/stripped_fukamizu_plum_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "dreamaticvoyage:block/stripped_fukamizu_plum_wood"
+    },
+    "axis=z": {
+      "model": "dreamaticvoyage:block/stripped_fukamizu_plum_wood",
+      "x": 90
+    }
+  }
+}

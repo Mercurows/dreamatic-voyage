@@ -342,6 +342,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_LOG);
         evenSimplerBlockItem(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG);
         saplingItem(BlockRegistry.FUKAMIZU_PLUM_SAPLING);
+        evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_WOOD);
+        evenSimplerBlockItem(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD);
 
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);
 
