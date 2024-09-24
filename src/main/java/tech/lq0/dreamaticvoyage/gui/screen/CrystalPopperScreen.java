@@ -46,6 +46,18 @@ public class CrystalPopperScreen extends AbstractContainerScreen<CrystalPopperMe
     }
 
     @Override
+    protected void renderTooltip(GuiGraphics pGuiGraphics, int pX, int pY) {
+        super.renderTooltip(pGuiGraphics, pX, pY);
+
+        int i = (this.width - this.imageWidth) / 2;
+        int j = (this.height - this.imageHeight) / 2;
+
+        if ((pX - i) >= 84 && (pX - i) <= 92 && (pY - j) >= 17 && (pY - j) <= 77) {
+            pGuiGraphics.renderTooltip(this.font, Component.literal(this.menu.getEnergy() + " / 100"), pX, pY);
+        }
+    }
+
+    @Override
     protected void init() {
         super.init();
         this.titleLabelX = 8;
