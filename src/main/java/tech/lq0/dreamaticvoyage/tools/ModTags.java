@@ -11,6 +11,8 @@ import tech.lq0.dreamaticvoyage.Utils;
 public class ModTags {
     public static class Blocks {
 
+        public static final TagKey<Block> HARANO = tag("harano");
+        public static final TagKey<Block> FUKAMIZU_PLUM = tag("fukamizu_plum");
         public static final TagKey<Block> FUKAMIZU_MACHINE = tag("fukamizu_machine");
         public static final TagKey<Block> FUKAMIZU_BREAD = tag("fukamizu_bread");
 

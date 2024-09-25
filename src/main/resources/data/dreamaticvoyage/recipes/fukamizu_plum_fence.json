@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "dreamaticvoyage:fukamizu_plum_planks"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fukamizu_plum_fence",
+    "count": 3
+  }
+}

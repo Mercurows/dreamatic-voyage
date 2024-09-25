@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:fukamizu_plum_planks"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fukamizu_plum_stairs",
+    "count": 4
+  }
+}

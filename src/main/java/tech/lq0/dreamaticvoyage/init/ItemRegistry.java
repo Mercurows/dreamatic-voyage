@@ -663,7 +663,7 @@ public class ItemRegistry {
 //    public static final RegistryObject<Item> FUKAMIZU_PLUM_TRAPDOOR = BLOCK_ITEMS.register("fukamizu_plum_trapdoor",
 //            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> FUKAMIZU_PLUM_BUTTON = BLOCK_ITEMS.register("fukamizu_plum_button",
-            () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties()));
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_BUTTON.get(), new Item.Properties()));
     public static final RegistryObject<Item> FUKAMIZU_PLUM_PLANKS = BLOCK_ITEMS.register("fukamizu_plum_planks",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), new Item.Properties()));
     public static final RegistryObject<Item> FUKAMIZU_PLUM_LEAVES = BLOCK_ITEMS.register("fukamizu_plum_leaves",

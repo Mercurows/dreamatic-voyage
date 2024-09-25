@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dreamaticvoyage:fukamizu_plum_planks"
+    }
+  ],
+  "result": {
+    "item": "dreamaticvoyage:fukamizu_plum_button"
+  }
+}

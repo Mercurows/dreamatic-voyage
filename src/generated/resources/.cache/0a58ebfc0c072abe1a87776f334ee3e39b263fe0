@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-25T12:39:49.5982851	Tags for minecraft:item mod id dreamaticvoyage
+// 1.20.1	2024-09-25T15:26:40.4723695	Tags for minecraft:item mod id dreamaticvoyage
 c93b06183954ba0a459bce6c121e69d0448c09e6 data/forge/tags/items/dusts.json
 726e2f789912dca4ae6efc63b1f7c4c73693da5d data/forge/tags/items/dusts/aluminum.json
 c2e582954ed4d09c0e2605b0e730ff30fa987dbd data/forge/tags/items/dusts/copper.json
@@ -34,10 +34,10 @@ aed3ef6f2929a8f19592b8a5c21ca16d3214d7bb data/forge/tags/items/sandstone.json
 fb0153b2c8162a3937a1dbf7abdf268ac73bef04 data/forge/tags/items/seeds.json
 fe52dfffdae2bf07ee41c4c0237ce9269fb674f8 data/forge/tags/items/shears.json
 b622e7a899240477510f98d8d5556a5e3a94befb data/minecraft/tags/items/axes.json
-4cebf103bfadc4376bc4e03429266d8d8d0aba80 data/minecraft/tags/items/buttons.json
+be3f43d769b6135246a6b31b236a89daf80aed18 data/minecraft/tags/items/buttons.json
 0403b6516098875b66dcd7f02f9b5c65c27b4b3e data/minecraft/tags/items/doors.json
-290a3581d9ff9a54a2195ee38eb75e02deb07621 data/minecraft/tags/items/fences.json
-235242cdfbbea10eb261b7905775ebe74834ad3c data/minecraft/tags/items/fence_gates.json
+2f1005fe9e53e11553d4f0d479f313351b49da8b data/minecraft/tags/items/fences.json
+512f52390bec78d304f7bd037c5a5bbf58eb2a80 data/minecraft/tags/items/fence_gates.json
 35a3a6647d215ac6217446f56f6ecee0c7d5edeb data/minecraft/tags/items/hoes.json
 2d06759284bed6997b9e5486a7776f838f48069b data/minecraft/tags/items/leaves.json
 fe000922377e7a009f4501c3e404a12e4527c767 data/minecraft/tags/items/logs.json
@@ -49,14 +49,14 @@ fca73e5243b593eb2b04d24e4fe51b0c2c7271fc data/minecraft/tags/items/planks.json
 231a202bbd648d2359364967567e6fd0a2e8d772 data/minecraft/tags/items/sand.json
 29df9a0dabb12a74e700abffd7499be470432953 data/minecraft/tags/items/saplings.json
 ea5aee09f7153891f771f13ca9ca55c009c53968 data/minecraft/tags/items/shovels.json
-575573b0677eca713f51574323b4a352876c0f0c data/minecraft/tags/items/slabs.json
+e88117e2a0c9bf88516d7ec8bfc1c232ef59bd01 data/minecraft/tags/items/slabs.json
 231a202bbd648d2359364967567e6fd0a2e8d772 data/minecraft/tags/items/smelts_to_glass.json
-3b142ad72079a02726e1b6363cca34942074cda7 data/minecraft/tags/items/stairs.json
+ed8ff2d1294d43d312707e08691c7ea348b26c16 data/minecraft/tags/items/stairs.json
 6b8677452328d5eeed04e66db240c3c97358abc4 data/minecraft/tags/items/swords.json
 3a997fddcc56b54e22c384a8077c9356d30f1df4 data/minecraft/tags/items/trapdoors.json
 91ae97cacf98848aaeb321a9db25a29d4903e3af data/minecraft/tags/items/walls.json
-4cebf103bfadc4376bc4e03429266d8d8d0aba80 data/minecraft/tags/items/wooden_buttons.json
+be3f43d769b6135246a6b31b236a89daf80aed18 data/minecraft/tags/items/wooden_buttons.json
 0403b6516098875b66dcd7f02f9b5c65c27b4b3e data/minecraft/tags/items/wooden_doors.json
-290a3581d9ff9a54a2195ee38eb75e02deb07621 data/minecraft/tags/items/wooden_fences.json
-1646c2ab60f6ba19703843130b19a6d380e017cd data/minecraft/tags/items/wooden_pressure_plates.json
+2f1005fe9e53e11553d4f0d479f313351b49da8b data/minecraft/tags/items/wooden_fences.json
+6f963e8853513cb02bf287e0ae96201e701cd4fb data/minecraft/tags/items/wooden_pressure_plates.json
 3a997fddcc56b54e22c384a8077c9356d30f1df4 data/minecraft/tags/items/wooden_trapdoors.json
