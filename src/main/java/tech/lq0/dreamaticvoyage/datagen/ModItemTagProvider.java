@@ -93,12 +93,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         this.tag(forgeTag("plates")).add(ItemRegistry.IRON_BREAD_SLICE.get(),
                         ItemRegistry.COPPER_BREAD_SLICE.get(), ItemRegistry.GOLD_BREAD_SLICE.get())
-                .addOptional(makeCompatCrumbId(CompatMetals.ZINC)).addOptional(makeCompatCrumbId(CompatMetals.LEAD))
-                .addOptional(makeCompatCrumbId(CompatMetals.NICKEL)).addOptional(makeCompatCrumbId(CompatMetals.SILVER))
-                .addOptional(makeCompatCrumbId(CompatMetals.TIN)).addOptional(makeCompatCrumbId(CompatMetals.ALUMINUM))
-                .addOptional(makeCompatCrumbId(CompatMetals.OSMIUM)).addOptional(makeCompatCrumbId(CompatMetals.URANIUM))
-                .addOptional(makeCompatCrumbId(CompatMetals.QUICKSILVER)).addOptional(makeCompatCrumbId(CompatMetals.PLATINUM))
-                .addOptional(makeCompatCrumbId(CompatMetals.BRASS)).addOptional(makeCompatCrumbId(CompatMetals.STEEL));
+                .addOptional(makeCompatBreadSliceId(CompatMetals.ZINC)).addOptional(makeCompatBreadSliceId(CompatMetals.LEAD))
+                .addOptional(makeCompatBreadSliceId(CompatMetals.NICKEL)).addOptional(makeCompatBreadSliceId(CompatMetals.SILVER))
+                .addOptional(makeCompatBreadSliceId(CompatMetals.TIN)).addOptional(makeCompatBreadSliceId(CompatMetals.ALUMINUM))
+                .addOptional(makeCompatBreadSliceId(CompatMetals.OSMIUM)).addOptional(makeCompatBreadSliceId(CompatMetals.URANIUM))
+                .addOptional(makeCompatBreadSliceId(CompatMetals.QUICKSILVER)).addOptional(makeCompatBreadSliceId(CompatMetals.PLATINUM))
+                .addOptional(makeCompatBreadSliceId(CompatMetals.BRASS)).addOptional(makeCompatBreadSliceId(CompatMetals.STEEL));
         this.tag(forgeTag("plates/iron")).add(ItemRegistry.IRON_BREAD_SLICE.get());
         this.tag(forgeTag("plates/copper")).add(ItemRegistry.COPPER_BREAD_SLICE.get());
         this.tag(forgeTag("plates/gold")).add(ItemRegistry.GOLD_BREAD_SLICE.get());
