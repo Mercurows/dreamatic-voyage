@@ -91,6 +91,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(forgeTag("dusts/copper")).add(ItemRegistry.COPPER_RICH_CRUMB.get());
         this.tag(forgeTag("dusts/gold")).add(ItemRegistry.GOLD_RICH_CRUMB.get());
 
+        this.tag(forgeTag("plates")).add(ItemRegistry.IRON_BREAD_SLICE.get(),
+                        ItemRegistry.COPPER_BREAD_SLICE.get(), ItemRegistry.GOLD_BREAD_SLICE.get())
+                .addOptional(makeCompatCrumbId(CompatMetals.ZINC)).addOptional(makeCompatCrumbId(CompatMetals.LEAD))
+                .addOptional(makeCompatCrumbId(CompatMetals.NICKEL)).addOptional(makeCompatCrumbId(CompatMetals.SILVER))
+                .addOptional(makeCompatCrumbId(CompatMetals.TIN)).addOptional(makeCompatCrumbId(CompatMetals.ALUMINUM))
+                .addOptional(makeCompatCrumbId(CompatMetals.OSMIUM)).addOptional(makeCompatCrumbId(CompatMetals.URANIUM))
+                .addOptional(makeCompatCrumbId(CompatMetals.QUICKSILVER)).addOptional(makeCompatCrumbId(CompatMetals.PLATINUM))
+                .addOptional(makeCompatCrumbId(CompatMetals.BRASS)).addOptional(makeCompatCrumbId(CompatMetals.STEEL));
         this.tag(forgeTag("plates/iron")).add(ItemRegistry.IRON_BREAD_SLICE.get());
         this.tag(forgeTag("plates/copper")).add(ItemRegistry.COPPER_BREAD_SLICE.get());
         this.tag(forgeTag("plates/gold")).add(ItemRegistry.GOLD_BREAD_SLICE.get());

@@ -1,0 +1,55 @@
+{
+  "values": [
+    "dreamaticvoyage:iron_bread_slice",
+    "dreamaticvoyage:copper_bread_slice",
+    "dreamaticvoyage:gold_bread_slice",
+    {
+      "id": "dreamaticvoyage:zinc_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:lead_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:nickel_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:silver_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:tin_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:aluminum_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:osmium_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:uranium_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:quicksilver_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:platinum_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:brass_rich_crumb",
+      "required": false
+    },
+    {
+      "id": "dreamaticvoyage:steel_rich_crumb",
+      "required": false
+    }
+  ]
+}
