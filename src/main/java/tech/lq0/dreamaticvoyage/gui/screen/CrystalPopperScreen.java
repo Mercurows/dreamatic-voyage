@@ -11,6 +11,11 @@ import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.entity.CrystalPopperBlockEntity;
 import tech.lq0.dreamaticvoyage.gui.menu.CrystalPopperMenu;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 @OnlyIn(Dist.CLIENT)
 public class CrystalPopperScreen extends AbstractContainerScreen<CrystalPopperMenu> {
 
@@ -52,8 +57,12 @@ public class CrystalPopperScreen extends AbstractContainerScreen<CrystalPopperMe
         int i = (this.width - this.imageWidth) / 2;
         int j = (this.height - this.imageHeight) / 2;
 
+        List<Component> tooltip = new ArrayList<>();
+        tooltip.add(Component.translatable("des.dreamaticvoyage.crystal_popper.energy", this.menu.getEnergy()));
+        tooltip.add(Component.translatable("des.dreamaticvoyage.crystal_popper.progress", new DecimalFormat("#.#").format(this.menu.getOutputProgress() / 3) + " %"));
+
         if ((pX - i) >= 84 && (pX - i) <= 92 && (pY - j) >= 17 && (pY - j) <= 77) {
-            pGuiGraphics.renderTooltip(this.font, Component.literal(this.menu.getEnergy() + " / 100"), pX, pY);
+            pGuiGraphics.renderTooltip(this.font, tooltip, Optional.empty(), pX, pY);
         }
     }
 

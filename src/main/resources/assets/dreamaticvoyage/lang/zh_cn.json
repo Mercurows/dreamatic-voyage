@@ -870,9 +870,9 @@
   "des.dreamaticvoyage.mineralized_fukamizu_bread": "被人鱼公主注入魔力的面包，表面呈现了矿物的性质",
   "block.dreamaticvoyage.crystal_popper": "结晶爆米花机",
   "des.dreamaticvoyage.crystal_popper": "沉浸式体验爆米的机器，大概会有些烧钱吧",
-  "jei.dreamaticvoyage.crystal_popper.probability": "概率：",
-  "jei.dreamaticvoyage.crystal_popper.probability.purified_powder": " ( 能量 - 90 ) % ",
-  "jei.dreamaticvoyage.crystal_popper.probability.powder": " ( 20 + 能量 * 2 ) % ",
+  "container.dreamaticvoyage.crystal_popper": "结晶爆米花机",
+  "des.dreamaticvoyage.crystal_popper.energy": "能量：%1$s / 100",
+  "des.dreamaticvoyage.crystal_popper.progress": "进度：%1$s",
   "item.dreamaticvoyage.fukamizu_crumb": "深水面包屑",
   "des.dreamaticvoyage.fukamizu_crumb": "“金刚砂？！！”",
   "item.dreamaticvoyage.iron_rich_crumb": "富铁面包屑",
@@ -1715,5 +1715,7 @@
   "jei.dreamaticvoyage.song_of_autumn": "能够在原野平原的帐篷内的木桶中发现。",
   "jei.dreamaticvoyage.elf_wings": "能够在丛林神庙和林地府邸的宝藏箱中发现。",
   "jei.dreamaticvoyage.past_sugar": "通过食用附魔后的异界棒棒糖获取。\n当异界棒棒糖的附魔等级之和大于11时，食用后有 (附魔等级 - 10) * 5%% 的概率获得流血效果，并获得一个昔日糖砂。",
-  "container.dreamaticvoyage.crystal_popper": "Crystal Popper"
+  "jei.dreamaticvoyage.crystal_popper.probability": "概率：",
+  "jei.dreamaticvoyage.crystal_popper.probability.purified_powder": "(能量 - 90) %",
+  "jei.dreamaticvoyage.crystal_popper.probability.powder": "(20 + 能量 * 2) %"
 }

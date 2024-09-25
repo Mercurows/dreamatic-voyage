@@ -12,6 +12,7 @@ import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -82,20 +83,18 @@ public class CrystalPopperCategory implements IRecipeCategory<Object> {
     public void setRecipe(IRecipeLayoutBuilder builder, Object recipe, IFocusGroup group) {
         builder.addSlot(RecipeIngredientRole.INPUT, 3, 10).addIngredients(Ingredient.of(Items.GOLD_INGOT));
 
-        // TODO 修改tooltip显示效果
-
         builder.addSlot(RecipeIngredientRole.OUTPUT, 75, 3)
                 .addItemStack(ItemRegistry.PURIFIED_CRYSTAL_POWDER.get().getDefaultInstance())
                 .addTooltipCallback((tooltipContext, tooltip) -> {
                     tooltip.add(Component.translatable("jei.dreamaticvoyage.crystal_popper.probability").withStyle(ChatFormatting.GRAY));
-                    tooltip.add(Component.translatable("jei.dreamaticvoyage.crystal_popper.probability.purified_powder").withStyle(ChatFormatting.BLUE));
+                    tooltip.add(CommonComponents.space().append(Component.translatable("jei.dreamaticvoyage.crystal_popper.probability.purified_powder").withStyle(ChatFormatting.BLUE)));
                 });
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 75, 23)
                 .addItemStack(ItemRegistry.CRYSTAL_POWDER.get().getDefaultInstance())
                 .addTooltipCallback((tooltipContext, tooltip) -> {
                     tooltip.add(Component.translatable("jei.dreamaticvoyage.crystal_popper.probability").withStyle(ChatFormatting.GRAY));
-                    tooltip.add(Component.translatable("jei.dreamaticvoyage.crystal_popper.probability.powder").withStyle(ChatFormatting.BLUE));
+                    tooltip.add(CommonComponents.space().append(Component.translatable("jei.dreamaticvoyage.crystal_popper.probability.powder").withStyle(ChatFormatting.BLUE)));
                 });
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 75, 43).addItemStack(ItemRegistry.CRYSTAL_POPCORN.get().getDefaultInstance());
