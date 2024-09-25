@@ -66,6 +66,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlockWithRenderType((DoorBlock) BlockRegistry.HARANO_DOOR.get(), new ResourceLocation(Utils.MOD_ID, "block/harano_door_bottom"), new ResourceLocation(Utils.MOD_ID, "block/harano_door_top"), "cutout");
         trapdoorBlockWithRenderType((TrapDoorBlock) BlockRegistry.HARANO_TRAPDOOR.get(), new ResourceLocation(Utils.MOD_ID, "block/harano_trapdoor"), true, "cutout");
         buttonBlock((ButtonBlock) BlockRegistry.HARANO_BUTTON.get(), blockTexture(BlockRegistry.HARANO_PLANKS.get()));
+
         blockWithItem(BlockRegistry.HARDEN_CRYSTAL_BLOCK);
         blockWithItem(BlockRegistry.PURIFIED_CRYSTAL_BLOCK);
         blockWithItem(BlockRegistry.CHARGED_CRYSTAL_BLOCK);
@@ -74,6 +75,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         leavesBlock(BlockRegistry.FUKAMIZU_PLUM_LEAVES);
         blockWithItem(BlockRegistry.FUKAMIZU_PLUM_PLANKS);
+        slabBlock((SlabBlock) BlockRegistry.FUKAMIZU_PLUM_SLAB.get(), blockTexture(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get()), new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_planks"),
+                new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_planks"), new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_planks"));
+        stairsBlock((StairBlock) BlockRegistry.FUKAMIZU_PLUM_STAIRS.get(), blockTexture(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get()), new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_planks"),
+                new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_planks"));
         logBlock((RotatedPillarBlock) BlockRegistry.FUKAMIZU_PLUM_LOG.get());
         logBlock((RotatedPillarBlock) BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
         saplingBlock(BlockRegistry.FUKAMIZU_PLUM_SAPLING);
@@ -81,6 +86,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().cubeColumn("fukamizu_plum_wood", new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_log"), new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_log")));
         axisBlock((RotatedPillarBlock) BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get(), models().cubeColumn("stripped_fukamizu_plum_wood", new ResourceLocation(Utils.MOD_ID, "block/stripped_fukamizu_plum_log"), new ResourceLocation(Utils.MOD_ID, "block/stripped_fukamizu_plum_log")),
                 models().cubeColumn("stripped_fukamizu_plum_wood", new ResourceLocation(Utils.MOD_ID, "block/stripped_fukamizu_plum_log"), new ResourceLocation(Utils.MOD_ID, "block/stripped_fukamizu_plum_log")));
+        fenceBlock((FenceBlock) BlockRegistry.FUKAMIZU_PLUM_FENCE.get(), blockTexture(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) BlockRegistry.FUKAMIZU_PLUM_FENCE_GATE.get(), blockTexture(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get(), blockTexture(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get()));
+        buttonBlock((ButtonBlock) BlockRegistry.FUKAMIZU_PLUM_BUTTON.get(), blockTexture(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get()));
+//        doorBlockWithRenderType((DoorBlock) BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_door_bottom"), new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_door_top"), "cutout");
+//        trapdoorBlockWithRenderType((TrapDoorBlock) BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(), new ResourceLocation(Utils.MOD_ID, "block/fukamizu_plum_trapdoor"), true, "cutout");
 
         blockWithItem(BlockRegistry.VERDANT_SPIRIT_RICH_SOIL);
 

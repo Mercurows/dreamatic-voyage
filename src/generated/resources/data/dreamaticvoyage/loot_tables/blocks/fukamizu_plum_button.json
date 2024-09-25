@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dreamaticvoyage:fukamizu_plum_button"
+          "name": "minecraft:air"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dreamaticvoyage:blocks/harano_button"
+  "random_sequence": "dreamaticvoyage:blocks/fukamizu_plum_button"
 }

@@ -88,6 +88,14 @@ public class BlockRegistry {
     public static final RegistryObject<Block> FUKAMIZU_PLUM_WOOD = BLOCKS.register("fukamizu_plum_wood", FukamizuPlumWood::new);
     public static final RegistryObject<Block> STRIPPED_FUKAMIZU_PLUM_LOG = BLOCKS.register("stripped_fukamizu_plum_log", StrippedFukamizuPlumLog::new);
     public static final RegistryObject<Block> STRIPPED_FUKAMIZU_PLUM_WOOD = BLOCKS.register("stripped_fukamizu_plum_wood", StrippedFukamizuPlumWood::new);
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_STAIRS = BLOCKS.register("fukamizu_plum_stairs", FukamizuPlumStairs::new);
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_SLAB = BLOCKS.register("fukamizu_plum_slab", FukamizuPlumSlab::new);
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_FENCE = BLOCKS.register("fukamizu_plum_fence", FukamizuPlumFence::new);
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_FENCE_GATE = BLOCKS.register("fukamizu_plum_fence_gate", FukamizuPlumFenceGate::new);
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_PRESSURE_PLATE = BLOCKS.register("fukamizu_plum_pressure_plate", FukamizuPlumPressurePlate::new);
+    //    public static final RegistryObject<Block> FUKAMIZU_PLUM_DOOR = BLOCKS.register("fukamizu_plum_door", FukamizuPlumDoor::new);
+//    public static final RegistryObject<Block> FUKAMIZU_PLUM_TRAPDOOR = BLOCKS.register("fukamizu_plum_trapdoor", FukamizuPlumTrapDoor::new);
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_BUTTON = BLOCKS.register("fukamizu_plum_button", FukamizuPlumButton::new);
 
     // Fluids
     public static final RegistryObject<LiquidBlock> FUKAMIZU_KWAS = BLOCKS.register("fukamizu_kwas", FukamizuKwasBlock::new);

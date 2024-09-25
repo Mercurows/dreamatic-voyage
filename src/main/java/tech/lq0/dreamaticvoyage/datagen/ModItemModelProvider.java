@@ -339,11 +339,19 @@ public class ModItemModelProvider extends ItemModelProvider {
         buttonItem(BlockRegistry.HARANO_BUTTON, BlockRegistry.HARANO_PLANKS);
         saplingItem(BlockRegistry.HARANO_SAPLING);
 
+        evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_SLAB);
+        evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_STAIRS);
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_LOG);
         evenSimplerBlockItem(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG);
+        fenceItem(BlockRegistry.FUKAMIZU_PLUM_FENCE, BlockRegistry.FUKAMIZU_PLUM_PLANKS);
+        evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_FENCE_GATE);
+        evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE);
         saplingItem(BlockRegistry.FUKAMIZU_PLUM_SAPLING);
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_WOOD);
         evenSimplerBlockItem(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD);
+//        simpleItem(ItemRegistry.FUKAMIZU_PLUM_DOOR);
+//        trapdoorItem(BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR);
+        buttonItem(BlockRegistry.FUKAMIZU_PLUM_BUTTON, BlockRegistry.FUKAMIZU_PLUM_PLANKS);
 
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);
 

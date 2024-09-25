@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "dreamaticvoyage:block/fukamizu_plum_planks",
+    "side": "dreamaticvoyage:block/fukamizu_plum_planks",
+    "top": "dreamaticvoyage:block/fukamizu_plum_planks"
+  }
+}

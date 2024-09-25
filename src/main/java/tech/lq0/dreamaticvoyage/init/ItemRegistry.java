@@ -611,14 +611,14 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> HARANO_LOG = BLOCK_ITEMS.register("harano_log",
             () -> new BlockItem(BlockRegistry.HARANO_LOG.get(), new Item.Properties()));
-    public static final RegistryObject<Item> HARANO_PLANKS = BLOCK_ITEMS.register("harano_planks",
-            () -> new BlockItem(BlockRegistry.HARANO_PLANKS.get(), new Item.Properties()));
-    public static final RegistryObject<Item> HARANO_LEAVES = BLOCK_ITEMS.register("harano_leaves",
-            () -> new BlockItem(BlockRegistry.HARANO_LEAVES.get(), new Item.Properties()));
-    public static final RegistryObject<Item> HARANO_SAPLING = BLOCK_ITEMS.register("harano_sapling",
-            () -> new BlockItem(BlockRegistry.HARANO_SAPLING.get(), new Item.Properties()));
     public static final RegistryObject<Item> HARANO_WOOD = BLOCK_ITEMS.register("harano_wood",
             () -> new BlockItem(BlockRegistry.HARANO_WOOD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_HARANO_LOG = BLOCK_ITEMS.register("stripped_harano_log",
+            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_LOG.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_HARANO_WOOD = BLOCK_ITEMS.register("stripped_harano_wood",
+            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_WOOD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_PLANKS = BLOCK_ITEMS.register("harano_planks",
+            () -> new BlockItem(BlockRegistry.HARANO_PLANKS.get(), new Item.Properties()));
     public static final RegistryObject<Item> HARANO_STAIRS = BLOCK_ITEMS.register("harano_stairs",
             () -> new BlockItem(BlockRegistry.HARANO_STAIRS.get(), new Item.Properties()));
     public static final RegistryObject<Item> HARANO_SLAB = BLOCK_ITEMS.register("harano_slab",
@@ -629,31 +629,47 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.HARANO_FENCE_GATE.get(), new Item.Properties()));
     public static final RegistryObject<Item> HARANO_PRESSURE_PLATE = BLOCK_ITEMS.register("harano_pressure_plate",
             () -> new BlockItem(BlockRegistry.HARANO_PRESSURE_PLATE.get(), new Item.Properties()));
-    public static final RegistryObject<Item> STRIPPED_HARANO_LOG = BLOCK_ITEMS.register("stripped_harano_log",
-            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_LOG.get(), new Item.Properties()));
-    public static final RegistryObject<Item> STRIPPED_HARANO_WOOD = BLOCK_ITEMS.register("stripped_harano_wood",
-            () -> new BlockItem(BlockRegistry.STRIPPED_HARANO_WOOD.get(), new Item.Properties()));
     public static final RegistryObject<Item> HARANO_DOOR = BLOCK_ITEMS.register("harano_door",
             () -> new BlockItem(BlockRegistry.HARANO_DOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> HARANO_TRAPDOOR = BLOCK_ITEMS.register("harano_trapdoor",
             () -> new BlockItem(BlockRegistry.HARANO_TRAPDOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> HARANO_BUTTON = BLOCK_ITEMS.register("harano_button",
             () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_LEAVES = BLOCK_ITEMS.register("harano_leaves",
+            () -> new BlockItem(BlockRegistry.HARANO_LEAVES.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARANO_SAPLING = BLOCK_ITEMS.register("harano_sapling",
+            () -> new BlockItem(BlockRegistry.HARANO_SAPLING.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> FUKAMIZU_PLUM_LOG = BLOCK_ITEMS.register("fukamizu_plum_log",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_LOG.get(), new Item.Properties()));
-    public static final RegistryObject<Item> FUKAMIZU_PLUM_PLANKS = BLOCK_ITEMS.register("fukamizu_plum_planks",
-            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), new Item.Properties()));
-    public static final RegistryObject<Item> FUKAMIZU_PLUM_LEAVES = BLOCK_ITEMS.register("fukamizu_plum_leaves",
-            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(), new Item.Properties()));
-    public static final RegistryObject<Item> FUKAMIZU_PLUM_SAPLING = BLOCK_ITEMS.register("fukamizu_plum_sapling",
-            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_SAPLING.get(), new Item.Properties()));
     public static final RegistryObject<Item> FUKAMIZU_PLUM_WOOD = BLOCK_ITEMS.register("fukamizu_plum_wood",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_WOOD.get(), new Item.Properties()));
     public static final RegistryObject<Item> STRIPPED_FUKAMIZU_PLUM_LOG = BLOCK_ITEMS.register("stripped_fukamizu_plum_log",
             () -> new BlockItem(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get(), new Item.Properties()));
     public static final RegistryObject<Item> STRIPPED_FUKAMIZU_PLUM_WOOD = BLOCK_ITEMS.register("stripped_fukamizu_plum_wood",
             () -> new BlockItem(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_STAIRS = BLOCK_ITEMS.register("fukamizu_plum_stairs",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_SLAB = BLOCK_ITEMS.register("fukamizu_plum_slab",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_FENCE = BLOCK_ITEMS.register("fukamizu_plum_fence",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_FENCE_GATE = BLOCK_ITEMS.register("fukamizu_plum_fence_gate",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_PRESSURE_PLATE = BLOCK_ITEMS.register("fukamizu_plum_pressure_plate",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get(), new Item.Properties()));
+    //    public static final RegistryObject<Item> FUKAMIZU_PLUM_DOOR = BLOCK_ITEMS.register("fukamizu_plum_door",
+//            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), new Item.Properties()));
+//    public static final RegistryObject<Item> FUKAMIZU_PLUM_TRAPDOOR = BLOCK_ITEMS.register("fukamizu_plum_trapdoor",
+//            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_BUTTON = BLOCK_ITEMS.register("fukamizu_plum_button",
+            () -> new BlockItem(BlockRegistry.HARANO_BUTTON.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_PLANKS = BLOCK_ITEMS.register("fukamizu_plum_planks",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_LEAVES = BLOCK_ITEMS.register("fukamizu_plum_leaves",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FUKAMIZU_PLUM_SAPLING = BLOCK_ITEMS.register("fukamizu_plum_sapling",
+            () -> new BlockItem(BlockRegistry.FUKAMIZU_PLUM_SAPLING.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> HARDEN_CRYSTAL_BLOCK = BLOCK_ITEMS.register("harden_crystal_block",
             () -> new BlockItem(BlockRegistry.HARDEN_CRYSTAL_BLOCK.get(), new Item.Properties()));

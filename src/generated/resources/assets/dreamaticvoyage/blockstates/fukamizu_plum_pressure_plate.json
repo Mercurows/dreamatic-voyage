@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "dreamaticvoyage:block/fukamizu_plum_pressure_plate"
+    },
+    "powered=true": {
+      "model": "dreamaticvoyage:block/fukamizu_plum_pressure_plate_down"
+    }
+  }
+}
