@@ -33,20 +33,18 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
     private static final int[] SLOTS_FOR_SIDES = new int[]{1};
     private static final int[] SLOTS_FOR_DOWN = new int[]{2};
 
-    public static final int MAX_DATA_COUNT = 3;
+    public static final int MAX_DATA_COUNT = 2;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 
     public int energy;
     public int outputProgress;
-    public int totalProgress;
 
     protected final ContainerData dataAccess = new ContainerData() {
         public int get(int pIndex) {
             return switch (pIndex) {
                 case 0 -> CrystalPurifierBlockEntity.this.energy;
                 case 1 -> CrystalPurifierBlockEntity.this.outputProgress;
-                case 2 -> CrystalPurifierBlockEntity.this.totalProgress;
                 default -> 0;
             };
         }
@@ -58,9 +56,6 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
                     break;
                 case 1:
                     CrystalPurifierBlockEntity.this.outputProgress = pValue;
-                    break;
-                case 2:
-                    CrystalPurifierBlockEntity.this.totalProgress = pValue;
                     break;
             }
         }
@@ -96,7 +91,6 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
 
         this.energy = pTag.getInt("Energy");
         this.outputProgress = pTag.getInt("OutputProgress");
-        this.totalProgress = pTag.getInt("TotalProgress");
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items);
     }
@@ -107,7 +101,6 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
 
         pTag.putInt("Energy", this.energy);
         pTag.putInt("OutputProgress", this.outputProgress);
-        pTag.putInt("TotalProgress", this.totalProgress);
         ContainerHelper.saveAllItems(pTag, this.items);
     }
 
