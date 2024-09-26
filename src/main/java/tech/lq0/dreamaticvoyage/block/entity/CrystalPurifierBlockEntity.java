@@ -6,24 +6,25 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.Container;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.WorldlyContainer;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.gui.menu.CrystalPopperMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
+import tech.lq0.dreamaticvoyage.recipe.CrystalPurifyingRecipe;
 
-// TODO 实现逻辑
+import java.util.Optional;
+
+// TODO 实现菜单和渲染
 public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
     protected static final int SLOT_INPUT = 0;
     protected static final int SLOT_FUEL = 1;
@@ -34,6 +35,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
     private static final int[] SLOTS_FOR_DOWN = new int[]{2};
 
     public static final int MAX_DATA_COUNT = 2;
+    public static final int FUEL_TICK = 200;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 
@@ -66,15 +68,97 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
     };
 
     public CrystalPurifierBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(BlockEntityRegistry.CRYSTAL_POPPER_BLOCK_ENTITY.get(), pPos, pBlockState);
+        super(BlockEntityRegistry.CRYSTAL_PURIFIER_BLOCK_ENTITY.get(), pPos, pBlockState);
     }
 
-    public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPurifierBlockEntity popper) {
+    public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPurifierBlockEntity blockEntity) {
+        if (blockEntity.hasRecipe()) {
+            var recipe = blockEntity.getCurrentRecipe();
+            if (recipe.isEmpty()) return;
 
+            ItemStack fuel = blockEntity.items.get(SLOT_FUEL);
+            if (blockEntity.energy <= 0) {
+                if (fuel.isEmpty()) {
+                    if (blockEntity.outputProgress <= 0) return;
+                    blockEntity.outputProgress--;
+                } else {
+                    fuel.shrink(1);
+                    blockEntity.energy += FUEL_TICK;
+                    blockEntity.setChanged();
+                    pLevel.sendBlockUpdated(pPos, pState, pState, 3);
+                    pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
+                }
+            }
+
+            int time = recipe.get().getTick();
+
+            blockEntity.outputProgress++;
+            blockEntity.energy--;
+
+            if (blockEntity.outputProgress >= time) {
+                blockEntity.craftItem();
+                blockEntity.outputProgress = 0;
+                blockEntity.setChanged();
+                pLevel.sendBlockUpdated(pPos, pState, pState, 3);
+                pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
+            }
+        } else {
+            if (blockEntity.outputProgress > 0) {
+                blockEntity.outputProgress--;
+            }
+        }
     }
 
-    private void generateOutput() {
+    private void craftItem() {
+        Optional<CrystalPurifyingRecipe> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) {
+            return;
+        }
 
+        ItemStack result = recipe.get().getResultItem(null);
+
+        ItemStack input = this.items.get(SLOT_INPUT);
+        input.shrink(1);
+
+        ItemStack output = this.items.get(SLOT_RESULT);
+        this.items.set(SLOT_RESULT, new ItemStack(result.getItem(), output.getCount() + result.getCount()));
+    }
+
+    private Optional<CrystalPurifyingRecipe> getCurrentRecipe() {
+        if (this.level == null) {
+            return Optional.empty();
+        }
+
+        SimpleContainer inventory = new SimpleContainer(this.items.size());
+        for (int i = 0; i < this.items.size(); i++) {
+            inventory.setItem(i, this.items.get(i));
+        }
+
+        return this.level.getRecipeManager().getRecipeFor(CrystalPurifyingRecipe.Type.INSTANCE, inventory, level);
+    }
+
+    private boolean hasRecipe() {
+        Optional<CrystalPurifyingRecipe> recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty()) {
+            return false;
+        }
+
+        if (getLevel() == null) {
+            return false;
+        }
+
+        ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
+
+        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+    }
+
+    private boolean canInsertItemIntoOutputSlot(Item item) {
+        return this.items.get(SLOT_RESULT).isEmpty() || this.items.get(SLOT_RESULT).is(item);
+    }
+
+    private boolean canInsertAmountIntoOutputSlot(int count) {
+        return this.items.get(SLOT_RESULT).getCount() + count <= this.items.get(SLOT_RESULT).getMaxStackSize();
     }
 
     public ItemStack getInput() {
@@ -194,7 +278,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return new CrystalPopperMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
+        return null;
     }
 
     @Override
