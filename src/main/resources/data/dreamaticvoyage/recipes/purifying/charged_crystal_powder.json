@@ -1,0 +1,11 @@
+{
+  "type": "dreamaticvoyage:crystal_purifying",
+  "ingredient": {
+    "item": "dreamaticvoyage:purified_crystal_powder"
+  },
+  "tick": 9000,
+  "output": {
+    "count": 1,
+    "item": "dreamaticvoyage:charged_crystal_powder"
+  }
+}

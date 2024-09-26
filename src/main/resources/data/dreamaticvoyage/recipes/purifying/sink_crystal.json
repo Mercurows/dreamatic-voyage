@@ -1,0 +1,11 @@
+{
+  "type": "dreamaticvoyage:crystal_purifying",
+  "ingredient": {
+    "item": "dreamaticvoyage:radiant_crystal"
+  },
+  "tick": 200,
+  "output": {
+    "count": 1,
+    "item": "dreamaticvoyage:sink_crystal"
+  }
+}

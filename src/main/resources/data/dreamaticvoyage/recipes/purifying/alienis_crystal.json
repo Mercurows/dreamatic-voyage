@@ -1,0 +1,11 @@
+{
+  "type": "dreamaticvoyage:crystal_purifying",
+  "ingredient": {
+    "item": "dreamaticvoyage:illusory_crystal"
+  },
+  "tick": 3000,
+  "output": {
+    "count": 1,
+    "item": "dreamaticvoyage:alienis_crystal"
+  }
+}

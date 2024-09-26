@@ -35,7 +35,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
     private static final int[] SLOTS_FOR_DOWN = new int[]{2};
 
     public static final int MAX_DATA_COUNT = 2;
-    public static final int FUEL_TICK = 200;
+    public static final int FUEL_TICK = 300;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 
@@ -83,7 +83,12 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
                     blockEntity.outputProgress--;
                 } else {
                     fuel.shrink(1);
-                    blockEntity.energy += FUEL_TICK;
+                    if (fuel.is(Tags.Items.GEMS_EMERALD)) {
+                        blockEntity.energy += FUEL_TICK;
+                    } else if (fuel.is(Tags.Items.STORAGE_BLOCKS_EMERALD)) {
+                        blockEntity.energy += FUEL_TICK * 10;
+                    }
+
                     blockEntity.setChanged();
                     pLevel.sendBlockUpdated(pPos, pState, pState, 3);
                     pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
@@ -103,9 +108,10 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
                 pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
             }
         } else {
-            if (blockEntity.outputProgress > 0) {
-                blockEntity.outputProgress--;
+            if (blockEntity.energy > 0) {
+                blockEntity.energy--;
             }
+            blockEntity.resetProgress();
         }
     }
 
@@ -159,6 +165,10 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
 
     private boolean canInsertAmountIntoOutputSlot(int count) {
         return this.items.get(SLOT_RESULT).getCount() + count <= this.items.get(SLOT_RESULT).getMaxStackSize();
+    }
+
+    private void resetProgress() {
+        this.outputProgress = 0;
     }
 
     public ItemStack getInput() {
