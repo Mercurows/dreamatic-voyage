@@ -27,6 +27,18 @@ public class ModDamageTypeTagProvider extends DamageTypeTagsProvider {
                 .addOptional(new ResourceLocation("superbwarfare", "mine"))
                 .addOptional(new ResourceLocation("superbwarfare", "cannon_fire"));
         this.tag(DamageTypeTags.IS_PROJECTILE).add(DamageSourceRegistry.BLOOD_CRYSTAL);
+        this.tag(DamageTypeTags.BYPASSES_ARMOR).add(DamageSourceRegistry.LAVA_CAKE, DamageSourceRegistry.MARI_FOOD, DamageSourceRegistry.EMOTIONAL_DAMAGE,
+                DamageSourceRegistry.LOTUS_POTATO, DamageSourceRegistry.LUNATIC_HOWL, DamageSourceRegistry.OVERLOAD, DamageSourceRegistry.BLEEDING,
+                DamageSourceRegistry.BLEEDING, DamageSourceRegistry.LUNAR_ECLIPSE, DamageSourceRegistry.FUKAMIZU_BREAD, DamageSourceRegistry.BROWNIE_UZZA,
+                DamageSourceRegistry.CHOCOAL_COOKIE, DamageSourceRegistry.LEVIY_BEAM_ABSOLUTE, DamageSourceRegistry.WITHER_ABSOLUTE);
+        this.tag(DamageTypeTags.BYPASSES_EFFECTS).add(DamageSourceRegistry.EMOTIONAL_DAMAGE, DamageSourceRegistry.OVERLOAD, DamageSourceRegistry.BLEEDING,
+                DamageSourceRegistry.LUNAR_ECLIPSE, DamageSourceRegistry.LEVIY_BEAM_ABSOLUTE, DamageSourceRegistry.WITHER_ABSOLUTE);
+        this.tag(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(DamageSourceRegistry.EMOTIONAL_DAMAGE, DamageSourceRegistry.OVERLOAD, DamageSourceRegistry.BLEEDING,
+                DamageSourceRegistry.LUNAR_ECLIPSE, DamageSourceRegistry.LEVIY_BEAM_ABSOLUTE, DamageSourceRegistry.WITHER_ABSOLUTE);
+        this.tag(DamageTypeTags.BYPASSES_RESISTANCE).add(DamageSourceRegistry.EMOTIONAL_DAMAGE, DamageSourceRegistry.OVERLOAD, DamageSourceRegistry.BLEEDING,
+                DamageSourceRegistry.LUNAR_ECLIPSE, DamageSourceRegistry.LEVIY_BEAM_ABSOLUTE, DamageSourceRegistry.WITHER_ABSOLUTE);
+        this.tag(ModTags.DamageTypes.IS_FOOD).add(DamageSourceRegistry.LAVA_CAKE, DamageSourceRegistry.MARI_FOOD, DamageSourceRegistry.LOTUS_POTATO,
+                DamageSourceRegistry.FUKAMIZU_BREAD, DamageSourceRegistry.BROWNIE_UZZA, DamageSourceRegistry.CHOCOAL_COOKIE);
     }
 
 }

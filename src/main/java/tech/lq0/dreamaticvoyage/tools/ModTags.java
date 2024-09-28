@@ -32,6 +32,7 @@ public class ModTags {
     public static class DamageTypes {
 
         public static final TagKey<DamageType> CURSED_EXPLOSION = tag("cursed_explosion");
+        public static final TagKey<DamageType> IS_FOOD = tag("is_food");
 
         private static TagKey<DamageType> tag(String name) {
             return TagKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, name));

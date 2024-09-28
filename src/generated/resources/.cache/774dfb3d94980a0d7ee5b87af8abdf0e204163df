@@ -1,3 +1,8 @@
-// 1.20.1	2024-09-29T00:28:59.9685796	Tags for minecraft:damage_type mod id dreamaticvoyage
+// 1.20.1	2024-09-29T00:36:05.9160538	Tags for minecraft:damage_type mod id dreamaticvoyage
 7ecd1e6b30e10eedd28cf7471513c439dcdc2782 data/dreamaticvoyage/tags/damage_type/cursed_explosion.json
+e439dd1214bc47c8471f985763f3dac9dc4d11fd data/dreamaticvoyage/tags/damage_type/is_food.json
+f3fba3e6eff8650a1743384483d78c8eb6dab32b data/minecraft/tags/damage_type/bypasses_armor.json
+160bda9c68096a70a89420750ba6ef65569f224c data/minecraft/tags/damage_type/bypasses_effects.json
+160bda9c68096a70a89420750ba6ef65569f224c data/minecraft/tags/damage_type/bypasses_enchantments.json
+160bda9c68096a70a89420750ba6ef65569f224c data/minecraft/tags/damage_type/bypasses_resistance.json
 6629271f5409811cd4898488df21e6e01974cbac data/minecraft/tags/damage_type/is_projectile.json
