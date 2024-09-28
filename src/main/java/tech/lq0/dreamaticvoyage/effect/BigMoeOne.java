@@ -18,7 +18,7 @@ public class BigMoeOne extends MobEffect {
     }
 
     @SubscribeEvent
-    public static void effects(LivingHurtEvent event) {
+    public static void onLivingHurt(LivingHurtEvent event) {
         LivingEntity entity = event.getEntity();
         MobEffect effect = EffectRegistry.BIG_MOE_ONE.get();
         if (entity.hasEffect(effect)) {

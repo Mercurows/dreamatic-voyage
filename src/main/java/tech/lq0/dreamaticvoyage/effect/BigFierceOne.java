@@ -19,7 +19,7 @@ public class BigFierceOne extends MobEffect {
     }
 
     @SubscribeEvent
-    public static void effects(AttackEntityEvent event) {
+    public static void onAttackEntity(AttackEntityEvent event) {
         Player player = event.getEntity();
         Entity target = event.getTarget();
         if (!player.level().isClientSide && target instanceof LivingEntity entity) {

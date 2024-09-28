@@ -17,7 +17,7 @@ public class CurseOfSerpent extends MobEffect {
     }
 
     @SubscribeEvent
-    public static void effects(LivingHurtEvent event) {
+    public static void onLivingHurt(LivingHurtEvent event) {
         DamageSource source = event.getSource();
         MobEffect mobEffect = EffectRegistry.CURSE_OF_SERPENT.get();
         LivingEntity entity = event.getEntity();

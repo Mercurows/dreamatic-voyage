@@ -9,6 +9,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.dreamaticvoyage.init.EffectRegistry;
+import tech.lq0.dreamaticvoyage.tools.ModTags;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class BlessOfDarkElf extends MobEffect {
@@ -17,19 +18,17 @@ public class BlessOfDarkElf extends MobEffect {
     }
 
     @SubscribeEvent
-    public static void effects(LivingHurtEvent event) {
+    public static void onLivingHurt(LivingHurtEvent event) {
         DamageSource source = event.getSource();
-        MobEffect effect_bless = EffectRegistry.BLESS_OF_DARK_ELF.get();
+        MobEffect mobEffect = EffectRegistry.BLESS_OF_DARK_ELF.get();
         LivingEntity entity = event.getEntity();
 
         if (!entity.level().isClientSide) {
-            if (entity.hasEffect(effect_bless)) {
-                int level = entity.getEffect(effect_bless).getAmplifier();
+            if (entity.hasEffect(mobEffect)) {
+                int level = entity.getEffect(mobEffect).getAmplifier();
                 if (source.is(DamageTypeTags.IS_FIRE)) {
                     event.setAmount(0);
-                } else if (source.is(DamageTypeTags.IS_EXPLOSION)) {
-                    event.setAmount(event.getAmount());
-                } else {
+                } else if (!source.is(ModTags.DamageTypes.CURSED_EXPLOSION)) {
                     int num = (level + 1) * 2;
                     event.setAmount(event.getAmount() > num ? event.getAmount() - num : 0);
                 }

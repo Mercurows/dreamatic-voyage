@@ -50,7 +50,7 @@ public class Overload extends MobEffect {
     }
 
     @SubscribeEvent
-    public static void SideEffect2(MobEffectEvent.Added event) {
+    public static void onEffectAdded(MobEffectEvent.Added event) {
         LivingEntity entity = event.getEntity();
         if (EffectRegistry.OVERLOAD.get().getDescriptionId().equals(event.getEffectInstance().getDescriptionId())) {
             if (entity instanceof Player player) {
@@ -63,7 +63,7 @@ public class Overload extends MobEffect {
     }
 
     @SubscribeEvent
-    public static void SideEffect3(MobEffectEvent.Remove event) {
+    public static void onEffectRemoved(MobEffectEvent.Remove event) {
         LivingEntity entity = event.getEntity();
         MobEffectInstance effect = event.getEffectInstance();
         if (effect != null) {
