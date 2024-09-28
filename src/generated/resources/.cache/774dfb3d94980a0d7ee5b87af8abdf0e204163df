@@ -1,0 +1,3 @@
+// 1.20.1	2024-09-29T00:28:59.9685796	Tags for minecraft:damage_type mod id dreamaticvoyage
+7ecd1e6b30e10eedd28cf7471513c439dcdc2782 data/dreamaticvoyage/tags/damage_type/cursed_explosion.json
+6629271f5409811cd4898488df21e6e01974cbac data/minecraft/tags/damage_type/is_projectile.json

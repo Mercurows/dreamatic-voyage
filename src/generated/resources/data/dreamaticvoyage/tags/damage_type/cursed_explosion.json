@@ -1,0 +1,18 @@
+{
+  "values": [
+    "minecraft:explosion",
+    "minecraft:player_explosion",
+    {
+      "id": "superbwarfare:projectile_boom",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:mine",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:cannon_fire",
+      "required": false
+    }
+  ]
+}

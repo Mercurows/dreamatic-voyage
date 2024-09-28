@@ -38,7 +38,7 @@ public class ClientRenderHandler {
         EntityRenderers.register(EntityRegistry.PLUNGER_ENTITY.get(), PlungerEntityRenderer::new);
         EntityRenderers.register(EntityRegistry.HIRENADE_GG_ENTITY.get(), HirenadeGGEntityRenderer::new);
         EntityRenderers.register(EntityRegistry.WATER_CARD_ENTITY.get(), WaterCardEntityRenderer::new);
-        EntityRenderers.register(EntityRegistry.TETRIS_I_BLOCK_ENTITY.get(), TetrisIBlockRenderer::new);
+//        EntityRenderers.register(EntityRegistry.TETRIS_I_BLOCK_ENTITY.get(), TetrisIBlockRenderer::new);
         EntityRenderers.register(EntityRegistry.LEVIY_BEAM_ENTITY.get(), LeviyBeamEntityRenderer::new);
         EntityRenderers.register(EntityRegistry.KURUMI_BOOMERANG_ENTITY.get(), KurumiBoomerangEntityRenderer::new);
 
