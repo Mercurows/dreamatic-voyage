@@ -60,6 +60,7 @@ import tech.lq0.dreamaticvoyage.item.oi.ayu.GravityRestraintDevice;
 import tech.lq0.dreamaticvoyage.item.oi.ccelia.CraftBeer0322;
 import tech.lq0.dreamaticvoyage.item.oi.fukami.*;
 import tech.lq0.dreamaticvoyage.item.oi.lutafia.Fiaxe;
+import tech.lq0.dreamaticvoyage.item.oi.miya.ArtMasterToolBelt;
 import tech.lq0.dreamaticvoyage.item.oi.miya.ArtistToolBelt;
 import tech.lq0.dreamaticvoyage.item.oi.miya.JellyfishShell;
 import tech.lq0.dreamaticvoyage.item.oi.miya.TailPen;
@@ -303,6 +304,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> TAIL_PEN = ITEMS.register("tail_pen", TailPen::new);
     public static final RegistryObject<Item> JELLYFISH_SHELL = ITEMS.register("jellyfish_shell", JellyfishShell::new);
     public static final RegistryObject<Item> ARTIST_TOOL_BELT = ITEMS.register("artist_tool_belt", ArtistToolBelt::new);
+    public static final RegistryObject<Item> ART_MASTER_TOOL_BELT = ITEMS.register("art_master_tool_belt", ArtMasterToolBelt::new);
 //    public static final RegistryObject<Item> TETRIS_CAT = ITEMS.register("tetris_cat", TetrisCat::new);
 
     // aoi
