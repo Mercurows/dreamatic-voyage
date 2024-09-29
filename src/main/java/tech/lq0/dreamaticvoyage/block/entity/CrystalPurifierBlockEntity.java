@@ -1,11 +1,13 @@
 package tech.lq0.dreamaticvoyage.block.entity;
 
+import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -22,7 +24,9 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.recipe.CrystalPurifyingRecipe;
 
+import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 // TODO 实现菜单和渲染
 public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
@@ -71,6 +75,16 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
         super(BlockEntityRegistry.CRYSTAL_PURIFIER_BLOCK_ENTITY.get(), pPos, pBlockState);
     }
 
+    public static Map<TagKey<Item>, Integer> getFuels() {
+        Map<TagKey<Item>, Integer> map = Maps.newLinkedHashMap();
+        map.put(Tags.Items.GEMS_EMERALD, FUEL_TICK);
+        map.put(Tags.Items.STORAGE_BLOCKS_EMERALD, FUEL_TICK * 10);
+        map.put(Tags.Items.INGOTS_GOLD, FUEL_TICK / 5);
+        map.put(Tags.Items.STORAGE_BLOCKS_GOLD, FUEL_TICK * 2);
+
+        return map;
+    }
+
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPurifierBlockEntity blockEntity) {
         if (blockEntity.hasRecipe()) {
             var recipe = blockEntity.getCurrentRecipe();
@@ -82,12 +96,12 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
                     if (blockEntity.outputProgress <= 0) return;
                     blockEntity.outputProgress--;
                 } else {
-                    fuel.shrink(1);
-                    if (fuel.is(Tags.Items.GEMS_EMERALD)) {
-                        blockEntity.energy += FUEL_TICK;
-                    } else if (fuel.is(Tags.Items.STORAGE_BLOCKS_EMERALD)) {
-                        blockEntity.energy += FUEL_TICK * 10;
-                    }
+                    getFuels().forEach((k, v) -> {
+                        if (fuel.is(k)) {
+                            blockEntity.energy += v;
+                            fuel.shrink(1);
+                        }
+                    });
 
                     blockEntity.setChanged();
                     pLevel.sendBlockUpdated(pPos, pState, pState, 3);
@@ -216,7 +230,17 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
         } else if (pDirection == Direction.DOWN) {
             return false;
         } else {
-            return pIndex == SLOT_FUEL && pStack.is(Tags.Items.GEMS_EMERALD);
+            if (pIndex == SLOT_FUEL) {
+                AtomicBoolean hasFuel = new AtomicBoolean(false);
+                getFuels().forEach((k, v) -> {
+                    if (pStack.is(k)) {
+                        hasFuel.set(true);
+                    }
+                });
+                return hasFuel.get();
+            }
+
+            return false;
         }
     }
 
