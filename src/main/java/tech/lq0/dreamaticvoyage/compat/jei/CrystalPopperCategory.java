@@ -25,10 +25,9 @@ import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 public class CrystalPopperCategory implements IRecipeCategory<Object> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/gui/crystal_popper.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/gui/crystal_popper.png");
 
-    public static final RecipeType<Object> TYPE = new RecipeType<>(new ResourceLocation(Utils.MOD_ID, "crystal_popper"),
-            Object.class);
+    public static final RecipeType<Object> TYPE = new RecipeType<>(Utils.loc("crystal_popper"), Object.class);
 
     private final IDrawable background;
     private final IDrawable icon;

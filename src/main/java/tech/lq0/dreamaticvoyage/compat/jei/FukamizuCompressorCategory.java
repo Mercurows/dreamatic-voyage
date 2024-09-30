@@ -22,9 +22,9 @@ import tech.lq0.dreamaticvoyage.recipe.FukamizuCompressingRecipe;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 public class FukamizuCompressorCategory implements IRecipeCategory<FukamizuCompressingRecipe> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/gui/fukamizu_compressor.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/gui/fukamizu_compressor.png");
 
-    public static final RecipeType<FukamizuCompressingRecipe> TYPE = new RecipeType<>(new ResourceLocation(Utils.MOD_ID, "fukamizu_compressor"),
+    public static final RecipeType<FukamizuCompressingRecipe> TYPE = new RecipeType<>(Utils.loc("fukamizu_compressor"),
             FukamizuCompressingRecipe.class);
 
     private final IDrawable background;
