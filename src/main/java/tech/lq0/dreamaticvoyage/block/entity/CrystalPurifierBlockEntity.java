@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.gui.menu.CrystalPurifierMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.recipe.CrystalPurifyingRecipe;
 
@@ -38,19 +39,23 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
     private static final int[] SLOTS_FOR_SIDES = new int[]{1};
     private static final int[] SLOTS_FOR_DOWN = new int[]{2};
 
-    public static final int MAX_DATA_COUNT = 2;
+    public static final int MAX_DATA_COUNT = 4;
     public static final int FUEL_TICK = 300;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 
     public int energy;
+    public int maxEnergy = 300;
     public int outputProgress;
+    public int outputTime = 300;
 
     protected final ContainerData dataAccess = new ContainerData() {
         public int get(int pIndex) {
             return switch (pIndex) {
                 case 0 -> CrystalPurifierBlockEntity.this.energy;
-                case 1 -> CrystalPurifierBlockEntity.this.outputProgress;
+                case 1 -> CrystalPurifierBlockEntity.this.maxEnergy;
+                case 2 -> CrystalPurifierBlockEntity.this.outputProgress;
+                case 3 -> CrystalPurifierBlockEntity.this.outputTime;
                 default -> 0;
             };
         }
@@ -61,7 +66,13 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
                     CrystalPurifierBlockEntity.this.energy = pValue;
                     break;
                 case 1:
+                    CrystalPurifierBlockEntity.this.maxEnergy = pValue;
+                    break;
+                case 2:
                     CrystalPurifierBlockEntity.this.outputProgress = pValue;
+                    break;
+                case 3:
+                    CrystalPurifierBlockEntity.this.outputTime = pValue;
                     break;
             }
         }
@@ -99,6 +110,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
                     getFuels().forEach((k, v) -> {
                         if (fuel.is(k)) {
                             blockEntity.energy += v;
+                            blockEntity.maxEnergy = v;
                             fuel.shrink(1);
                         }
                     });
@@ -113,6 +125,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
 
             blockEntity.outputProgress++;
             blockEntity.energy--;
+            blockEntity.outputTime = time;
 
             if (blockEntity.outputProgress >= time) {
                 blockEntity.craftItem();
@@ -198,7 +211,9 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
         super.load(pTag);
 
         this.energy = pTag.getInt("Energy");
+        this.maxEnergy = pTag.getInt("MaxEnergy");
         this.outputProgress = pTag.getInt("OutputProgress");
+        this.outputTime = pTag.getInt("OutputTime");
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items);
     }
@@ -208,7 +223,9 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
         super.saveAdditional(pTag);
 
         pTag.putInt("Energy", this.energy);
+        pTag.putInt("MaxEnergy", this.maxEnergy);
         pTag.putInt("OutputProgress", this.outputProgress);
+        pTag.putInt("OutputTime", this.outputTime);
         ContainerHelper.saveAllItems(pTag, this.items);
     }
 
@@ -312,7 +329,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return null;
+        return new CrystalPurifierMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
     }
 
     @Override

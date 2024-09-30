@@ -71,9 +71,9 @@ public class CrystalPurifier extends Block implements EntityBlock {
 
     protected void openContainer(Level pLevel, BlockPos pPos, Player pPlayer) {
         BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-//        if (blockentity instanceof CrystalPurifierBlockEntity blockEntity) {
-//            pPlayer.openMenu(blockEntity);
-//        }
+        if (blockentity instanceof CrystalPurifierBlockEntity blockEntity) {
+            pPlayer.openMenu(blockEntity);
+        }
     }
 
     @Nullable

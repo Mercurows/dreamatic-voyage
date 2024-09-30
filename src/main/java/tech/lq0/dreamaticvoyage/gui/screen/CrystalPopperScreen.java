@@ -19,7 +19,7 @@ import java.util.Optional;
 @OnlyIn(Dist.CLIENT)
 public class CrystalPopperScreen extends AbstractContainerScreen<CrystalPopperMenu> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/gui/crystal_popper.png");
+    private static final ResourceLocation TEXTURE = Utils.loc("textures/gui/crystal_popper.png");
 
     public CrystalPopperScreen(CrystalPopperMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
