@@ -225,6 +225,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MAGIC_TEAPOT = ITEMS.register("magic_teapot", MagicTeapot::new);
     public static final RegistryObject<Item> CHIRAM_HAT = ITEMS.register("chiram_hat", ChiramHat::new);
     public static final RegistryObject<Item> BOWL_OF_VEGETABLE = ITEMS.register("bowl_of_vegetable", BowlOfVegetable::new);
+    public static final RegistryObject<Item> DISILLUSION_FAIRY_TALE = ITEMS.register("disillusion_fairy_tale", DisillusionFairyTale::new);
 
     // haine
     public static final RegistryObject<Item> HAI_PLATE = ITEMS.register("hai_plate", HaiPlate::new);

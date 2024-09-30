@@ -68,7 +68,7 @@ public class RedNose extends Item implements ICurioItem {
     }
 
     @SubscribeEvent
-    public static void redNoseEffect(LivingHurtEvent event) {
+    public static void onLivingHurt(LivingHurtEvent event) {
         LivingEntity livingEntity = event.getEntity();
 
         if (livingEntity instanceof Player player) {

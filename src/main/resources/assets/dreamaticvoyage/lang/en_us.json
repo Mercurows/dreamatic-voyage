@@ -995,6 +995,12 @@
   "des.dreamaticvoyage.crystal_purifier_1": "能够将结晶提纯至更高级别的机器",
   "des.dreamaticvoyage.crystal_purifier_2": "“提纯！狠狠地提纯！”",
   "container.dreamaticvoyage.crystal_purifier": "结晶提纯器",
+  "item.dreamaticvoyage.art_master_tool_belt": "大艺术家工具带",
+  "des.dreamaticvoyage.art_master_tool_belt": "",
+  "item.dreamaticvoyage.disillusion_fairy_tale": "幻灭童话",
+  "des.dreamaticvoyage.disillusion_fairy_tale_1": "一本记录了不为人知的童话的故事书",
+  "des.dreamaticvoyage.disillusion_fairy_tale_2": "“……后来，巨龙只身飞过大海，到达了遥远的龙巢",
+  "des.dreamaticvoyage.disillusion_fairy_tale_3": "逃难的公主早已不见，只留下了已然破碎的城堡”",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

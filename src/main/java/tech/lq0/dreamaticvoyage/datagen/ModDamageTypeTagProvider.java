@@ -22,10 +22,6 @@ public class ModDamageTypeTagProvider extends DamageTypeTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(ModTags.DamageTypes.CURSED_EXPLOSION).add(DamageTypes.EXPLOSION, DamageTypes.PLAYER_EXPLOSION)
-                .addOptional(new ResourceLocation("superbwarfare", "projectile_boom"))
-                .addOptional(new ResourceLocation("superbwarfare", "mine"))
-                .addOptional(new ResourceLocation("superbwarfare", "cannon_fire"));
         this.tag(DamageTypeTags.IS_PROJECTILE).add(DamageSourceRegistry.BLOOD_CRYSTAL);
         this.tag(DamageTypeTags.BYPASSES_ARMOR).add(DamageSourceRegistry.LAVA_CAKE, DamageSourceRegistry.MARI_FOOD, DamageSourceRegistry.EMOTIONAL_DAMAGE,
                 DamageSourceRegistry.LOTUS_POTATO, DamageSourceRegistry.LUNATIC_HOWL, DamageSourceRegistry.OVERLOAD, DamageSourceRegistry.BLEEDING,
@@ -37,8 +33,15 @@ public class ModDamageTypeTagProvider extends DamageTypeTagsProvider {
                 DamageSourceRegistry.LUNAR_ECLIPSE, DamageSourceRegistry.LEVIY_BEAM_ABSOLUTE, DamageSourceRegistry.WITHER_ABSOLUTE);
         this.tag(DamageTypeTags.BYPASSES_RESISTANCE).add(DamageSourceRegistry.EMOTIONAL_DAMAGE, DamageSourceRegistry.OVERLOAD, DamageSourceRegistry.BLEEDING,
                 DamageSourceRegistry.LUNAR_ECLIPSE, DamageSourceRegistry.LEVIY_BEAM_ABSOLUTE, DamageSourceRegistry.WITHER_ABSOLUTE);
+
+        this.tag(ModTags.DamageTypes.CURSED_EXPLOSION).add(DamageTypes.EXPLOSION, DamageTypes.PLAYER_EXPLOSION)
+                .addOptional(new ResourceLocation("superbwarfare", "projectile_boom"))
+                .addOptional(new ResourceLocation("superbwarfare", "mine"))
+                .addOptional(new ResourceLocation("superbwarfare", "cannon_fire"));
         this.tag(ModTags.DamageTypes.IS_FOOD).add(DamageSourceRegistry.LAVA_CAKE, DamageSourceRegistry.MARI_FOOD, DamageSourceRegistry.LOTUS_POTATO,
                 DamageSourceRegistry.FUKAMIZU_BREAD, DamageSourceRegistry.BROWNIE_UZZA, DamageSourceRegistry.CHOCOAL_COOKIE);
+        this.tag(ModTags.DamageTypes.MAGIC_CAN_BE_ENHANCED).add(DamageTypes.MAGIC, DamageTypes.INDIRECT_MAGIC)
+                .addTag(DamageTypeTags.WITCH_RESISTANT_TO);
     }
 
 }

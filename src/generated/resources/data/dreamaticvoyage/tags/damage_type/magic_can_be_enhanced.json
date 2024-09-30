@@ -1,0 +1,7 @@
+{
+  "values": [
+    "minecraft:magic",
+    "minecraft:indirect_magic",
+    "#minecraft:witch_resistant_to"
+  ]
+}
