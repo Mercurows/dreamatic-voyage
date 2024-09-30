@@ -1743,5 +1743,6 @@
   "jei.dreamaticvoyage.past_sugar": "通过食用附魔后的异界棒棒糖获取。\n当异界棒棒糖的附魔等级之和大于11时，食用后有 (附魔等级 - 10) * 5%% 的概率获得流血效果，并获得一个昔日糖砂。",
   "jei.dreamaticvoyage.crystal_popper.probability": "Probability:",
   "jei.dreamaticvoyage.crystal_popper.probability.purified_powder": "(Energy - 90) %",
-  "jei.dreamaticvoyage.crystal_popper.probability.powder": "(20 + Energy * 2) %"
+  "jei.dreamaticvoyage.crystal_popper.probability.powder": "(20 + Energy * 2) %",
+  "jei.dreamaticvoyage.crystal_purifier.time": "Purifying Time: %1$s s"
 }
