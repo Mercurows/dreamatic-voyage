@@ -1,5 +1,6 @@
 package tech.lq0.dreamaticvoyage;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
@@ -73,5 +74,9 @@ public class Utils {
     private void registerForgeEvents() {
         IEventBus bus = MinecraftForge.EVENT_BUS;
         bus.addListener((LootTableLoadEvent e) -> ModLootTables.lootLoad(e.getName(), b -> e.getTable().addPool(b.build())));
+    }
+
+    public static ResourceLocation loc(String path) {
+        return new ResourceLocation(Utils.MOD_ID, path);
     }
 }

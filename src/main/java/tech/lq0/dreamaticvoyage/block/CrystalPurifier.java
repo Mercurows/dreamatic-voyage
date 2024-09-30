@@ -24,9 +24,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.CrystalPurifierBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
@@ -77,12 +74,6 @@ public class CrystalPurifier extends Block implements EntityBlock {
 //        if (blockentity instanceof CrystalPurifierBlockEntity blockEntity) {
 //            pPlayer.openMenu(blockEntity);
 //        }
-    }
-
-    @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return Shapes.or(Block.box(0.25D, 0.0D, 0.25D, 15.75D, 15.0D, 15.75D),
-                Block.box(0.0D, 15.0D, 0.0D, 16.0D, 16.0D, 16.0D));
     }
 
     @Nullable

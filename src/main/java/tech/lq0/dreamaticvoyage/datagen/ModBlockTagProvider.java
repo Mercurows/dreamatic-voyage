@@ -33,7 +33,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         BlockRegistry.CHARGED_CRYSTAL_BLOCK.get(), BlockRegistry.FICTIONAL_INGOT_BLOCK.get(),
                         BlockRegistry.ROCK_STATUE.get(), BlockRegistry.PHANTASMAL_VOYAGER.get(),
                         BlockRegistry.FUKAMIZU_BREAD_BRICKS.get(), BlockRegistry.FUKAMIZU_MACHINE_CASING.get(),
-                        BlockRegistry.CRYSTAL_POPPER.get(), BlockRegistry.GACHI_INGOT_BLOCK.get())
+                        BlockRegistry.CRYSTAL_POPPER.get(), BlockRegistry.GACHI_INGOT_BLOCK.get(),
+                        BlockRegistry.CRYSTAL_PURIFIER.get())
                 .addTag(ModTags.Blocks.FUKAMIZU_MACHINE);
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(BlockRegistry.BLUE_SAND.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(),

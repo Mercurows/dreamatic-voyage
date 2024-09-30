@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "dreamaticvoyage:block/crystal_purifier_bottom",
+    "front": "dreamaticvoyage:block/crystal_purifier_front",
+    "side": "dreamaticvoyage:block/crystal_purifier_side",
+    "top": "dreamaticvoyage:block/crystal_purifier_top"
+  }
+}

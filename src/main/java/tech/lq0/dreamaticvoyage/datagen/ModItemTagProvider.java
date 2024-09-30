@@ -113,21 +113,21 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     private void addCompatCrumbDustTag(CompatMetals... metals) {
         for (var metal : metals) {
-            this.tag(forgeTag("dusts/" + metal.getName())).addOptional(new ResourceLocation(Utils.MOD_ID, metal.getName() + "_rich_crumb"));
+            this.tag(forgeTag("dusts/" + metal.getName())).addOptional(Utils.loc(metal.getName() + "_rich_crumb"));
         }
     }
 
     private ResourceLocation makeCompatCrumbId(CompatMetals metal) {
-        return new ResourceLocation(Utils.MOD_ID, metal.getName() + "_rich_crumb");
+        return Utils.loc(metal.getName() + "_rich_crumb");
     }
 
     private void addCompatBreadSlicePlateTag(CompatMetals... metals) {
         for (var metal : metals) {
-            this.tag(forgeTag("plates/" + metal.getName())).addOptional(new ResourceLocation(Utils.MOD_ID, metal.getName() + "_bread_slice"));
+            this.tag(forgeTag("plates/" + metal.getName())).addOptional(Utils.loc(metal.getName() + "_bread_slice"));
         }
     }
 
     private ResourceLocation makeCompatBreadSliceId(CompatMetals metal) {
-        return new ResourceLocation(Utils.MOD_ID, metal.getName() + "_bread_slice");
+        return Utils.loc(metal.getName() + "_bread_slice");
     }
 }

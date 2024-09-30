@@ -357,6 +357,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);
 
         evenSimplerBlockItem(BlockRegistry.CRYSTAL_POPPER);
+        evenSimplerBlockItem(BlockRegistry.CRYSTAL_PURIFIER);
 
         // audio
         audioTapeItem(ItemRegistry.AUDIO_TAPE_HAINE_1, Livers.HAINE);
@@ -403,12 +404,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
-                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "block/" + item.getId().getPath()));
+                .texture("layer0", Utils.loc("block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
-                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()));
+                .texture("layer0", Utils.loc("item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item, String renderType) {
@@ -417,7 +418,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     private ItemModelBuilder simpleItem(ResourceLocation item) {
         return withExistingParent(item.getPath(), new ResourceLocation("item/generated"))
-                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + item.getPath()));
+                .texture("layer0", Utils.loc("item/" + item.getPath()));
     }
 
     public void evenSimplerBlockItem(RegistryObject<Block> block) {
@@ -432,44 +433,44 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture", new ResourceLocation(Utils.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+                .texture("texture", Utils.loc("block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
     public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
-                .texture("texture", new ResourceLocation(Utils.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+                .texture("texture", Utils.loc("block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
     public void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
-                .texture("wall", new ResourceLocation(Utils.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+                .texture("wall", Utils.loc("block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/handheld"))
-                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()));
+                .texture("layer0", Utils.loc("item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
-                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + item.getId().getPath()));
+                .texture("layer0", Utils.loc("item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItemBlockTexture(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
-                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "block/" + item.getId().getPath()));
+                .texture("layer0", Utils.loc("block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder audioTapeItem(RegistryObject<Item> item, Livers livers) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
-                .texture("layer0", new ResourceLocation(Utils.MOD_ID, "item/" + "audio_tape_" + livers.getName()));
+                .texture("layer0", Utils.loc("item/" + "audio_tape_" + livers.getName()));
     }
 
     private ResourceLocation makeCompatCrumbId(CompatMetals metal) {
-        return new ResourceLocation(Utils.MOD_ID, metal.getName() + "_rich_crumb");
+        return Utils.loc(metal.getName() + "_rich_crumb");
     }
 
     private ResourceLocation makeCompatBreadSliceId(CompatMetals metal) {
-        return new ResourceLocation(Utils.MOD_ID, metal.getName() + "_bread_slice");
+        return Utils.loc(metal.getName() + "_bread_slice");
     }
 }

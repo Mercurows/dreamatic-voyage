@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-30T11:37:37.7200951	Item Models: dreamaticvoyage
+// 1.20.1	2024-09-30T17:16:10.633663	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 8c153a7fc2e832ba3f9861c22a241817859c11c9 assets/dreamaticvoyage/models/item/aluminum_bread_slice.json
@@ -80,6 +80,7 @@ cd3383d4af6eef5e801c02070d7a69dc3e96e718 assets/dreamaticvoyage/models/item/craf
 3311a61b20ff1c06020b1dbf030698316f9ef570 assets/dreamaticvoyage/models/item/crystal_popcorn.json
 8e481603d4aff7e2d44a8f14acb83a35d9677d52 assets/dreamaticvoyage/models/item/crystal_popper.json
 20eca8997d6e9e0302e403d55a899a8d8ddb026d assets/dreamaticvoyage/models/item/crystal_powder.json
+ac3f0b3d4927145ac1b2a6ef88edf9a7efb255f8 assets/dreamaticvoyage/models/item/crystal_purifier.json
 2beb581ca8ecfea13716328af6df3b7d4ac847b0 assets/dreamaticvoyage/models/item/cursed_marshaimallow.json
 5496695a243ff9ba877ad87a394310ce756523e4 assets/dreamaticvoyage/models/item/cut_blue_sandstone_slab.json
 acf53ad5b5a0f82c3cbc9dcce96174fb69b3111d assets/dreamaticvoyage/models/item/dark_crystal.json
