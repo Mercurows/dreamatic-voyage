@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CLC",
+    "PAF",
+    "CLC"
+  ],
+  "key": {
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "A": {
+      "item": "dreamaticvoyage:audio_tape_chiram_2"
+    },
+    "F": {
+      "item": "minecraft:feather"
+    },
+    "C": {
+      "item": "dreamaticvoyage:crystal_powder"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:disillusion_fairy_tale",
+    "count": 1
+  }
+}

@@ -108,7 +108,7 @@ public class YeggyPearl extends Item implements ICurioItem {
     }
 
     @SubscribeEvent
-    public static void yeggyPearlEffect(LivingDamageEvent event) {
+    public static void onLivingDamage(LivingDamageEvent event) {
         Entity source = event.getSource().getEntity();
         if (source instanceof Player player) {
             CuriosApi.getCuriosInventory(player).ifPresent(

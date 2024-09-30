@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-25T15:11:46.7648832	Item Models: dreamaticvoyage
+// 1.20.1	2024-09-30T11:37:37.7200951	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 8c153a7fc2e832ba3f9861c22a241817859c11c9 assets/dreamaticvoyage/models/item/aluminum_bread_slice.json
@@ -90,6 +90,7 @@ e47a32b25233973ac1e12b3afac10c563a67e661 assets/dreamaticvoyage/models/item/dark
 4c5b8e8e567b09a0ddb72dd17a9abb60f888614f assets/dreamaticvoyage/models/item/dg_leah.json
 d7741ed0b6ba01a86d47cabe69d540aefb530e22 assets/dreamaticvoyage/models/item/dg_shirako.json
 86b24598aadb8fad6ec2561f55919490d889da36 assets/dreamaticvoyage/models/item/dg_yorune.json
+6bc6909eb61b084a3a6315f6a8bf268513a8bbd3 assets/dreamaticvoyage/models/item/disillusion_fairy_tale.json
 6b6787ed9c178658ab3de6cb5a4d9e0a49c9d1e4 assets/dreamaticvoyage/models/item/dream_weaving_yarn.json
 8877e1fa0c8735580581b996d5b7a2ea96d3650a assets/dreamaticvoyage/models/item/drill.json
 8cc79dc9f598b1dc6df2494e0856dd57ebd9cb71 assets/dreamaticvoyage/models/item/earth_debris.json

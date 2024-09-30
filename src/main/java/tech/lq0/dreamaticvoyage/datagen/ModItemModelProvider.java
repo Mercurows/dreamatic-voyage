@@ -97,6 +97,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.MAGIC_TEAPOT);
         simpleItem(ItemRegistry.CHIRAM_HAT);
         simpleItem(ItemRegistry.BOWL_OF_VEGETABLE);
+        simpleItem(ItemRegistry.DISILLUSION_FAIRY_TALE);
 
         simpleItem(ItemRegistry.MARSHAIMALLOW);
         simpleItem(ItemRegistry.CLOUD_KEY);
