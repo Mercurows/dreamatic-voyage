@@ -29,7 +29,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-// TODO 实现菜单和渲染
 public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
     protected static final int SLOT_INPUT = 0;
     protected static final int SLOT_FUEL = 1;
@@ -40,7 +39,8 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
     private static final int[] SLOTS_FOR_DOWN = new int[]{2};
 
     public static final int MAX_DATA_COUNT = 4;
-    public static final int FUEL_TICK = 300;
+    public static final int EMERALD_FUEL_TICK = 400;
+    public static final int GOLD_FUEL_TICK = 50;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 
@@ -88,10 +88,10 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
 
     public static Map<TagKey<Item>, Integer> getFuels() {
         Map<TagKey<Item>, Integer> map = Maps.newLinkedHashMap();
-        map.put(Tags.Items.GEMS_EMERALD, FUEL_TICK);
-        map.put(Tags.Items.STORAGE_BLOCKS_EMERALD, FUEL_TICK * 10);
-        map.put(Tags.Items.INGOTS_GOLD, FUEL_TICK / 5);
-        map.put(Tags.Items.STORAGE_BLOCKS_GOLD, FUEL_TICK * 2);
+        map.put(Tags.Items.GEMS_EMERALD, EMERALD_FUEL_TICK);
+        map.put(Tags.Items.STORAGE_BLOCKS_EMERALD, EMERALD_FUEL_TICK * 10);
+        map.put(Tags.Items.INGOTS_GOLD, GOLD_FUEL_TICK);
+        map.put(Tags.Items.STORAGE_BLOCKS_GOLD, GOLD_FUEL_TICK * 10);
 
         return map;
     }

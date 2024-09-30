@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#B#",
+    "dPd",
+    "#B#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:red_nether_bricks"
+    },
+    "B": {
+      "item": "minecraft:blast_furnace"
+    },
+    "d": {
+      "item": "dreamaticvoyage:charged_crystal_ingot"
+    },
+    "P": {
+      "item": "minecraft:piglin_head"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:crystal_purifier",
+    "count": 1
+  }
+}
