@@ -43,7 +43,7 @@ public class CrystalPurifierCategory implements IRecipeCategory<CrystalPurifying
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ItemRegistry.CRYSTAL_PURIFIER.get()));
         this.energy = helper.drawableBuilder(TEXTURE, 177, 0, 11, 15)
                 .setTextureSize(256, 256)
-                .buildAnimated(50, IDrawableAnimated.StartDirection.TOP, false);
+                .buildAnimated(50, IDrawableAnimated.StartDirection.TOP, true);
         this.progress = helper.drawableBuilder(TEXTURE, 189, 0, 32, 15)
                 .setTextureSize(256, 256)
                 .buildAnimated(300, IDrawableAnimated.StartDirection.LEFT, false);
