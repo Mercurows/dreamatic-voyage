@@ -15,8 +15,10 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.block.entity.CrystalPurifierBlockEntity;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.recipe.CrystalPurifyingRecipe;
 
@@ -81,6 +83,17 @@ public class CrystalPurifierCategory implements IRecipeCategory<CrystalPurifying
     @Override
     @ParametersAreNonnullByDefault
     public void setRecipe(IRecipeLayoutBuilder builder, CrystalPurifyingRecipe recipe, IFocusGroup group) {
+        var fuels = Ingredient.merge(
+                CrystalPurifierBlockEntity
+                        .getFuels()
+                        .keySet()
+                        .stream()
+                        .map(Ingredient::of)
+                        .toList()
+        );
+
+        builder.addSlot(RecipeIngredientRole.INPUT, 53, 18).addIngredients(fuels);
+
         builder.addSlot(RecipeIngredientRole.INPUT, 32, 22).addIngredients(recipe.getIngredients().get(0));
         builder.addSlot(RecipeIngredientRole.OUTPUT, 113, 22).addItemStack(recipe.getResultItem(null));
     }
