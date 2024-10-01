@@ -5,7 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
-import tech.lq0.dreamaticvoyage.block.entity.FukamizuPylonBlockEntity;
+import tech.lq0.dreamaticvoyage.block.entity.PylonBlockEntity;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 
 public class FukamizuBreadWrench extends Item {
@@ -29,7 +29,7 @@ public class FukamizuBreadWrench extends Item {
             // TODO 替换为翻译文本
             if (player.isShiftKeyDown()) {
                 // shift右键
-                if (blockEntity instanceof FukamizuPylonBlockEntity) {
+                if (blockEntity instanceof PylonBlockEntity) {
                     // 扳手只能绑定能量塔
                     itemStack.getOrCreateTag().putIntArray("Machine", new int[]{pos.getX(), pos.getY(), pos.getZ()});
                     player.displayClientMessage(Component.literal("pylon bind " + pos), true);
@@ -39,7 +39,6 @@ public class FukamizuBreadWrench extends Item {
                 }
             } else {
                 // 直接右键
-
                 if (!itemStack.hasTag() || !itemStack.getOrCreateTag().contains("Machine")) {
                     player.displayClientMessage(Component.literal("not bounded"), true);
                     return InteractionResult.FAIL;
@@ -54,7 +53,7 @@ public class FukamizuBreadWrench extends Item {
                 }
 
                 // 扳手绑定的方块需要是能量塔才能进行下一步操作
-                if (level.getBlockEntity(new BlockPos(array[0], array[1], array[2])) instanceof FukamizuPylonBlockEntity pylonBlockEntity) {
+                if (level.getBlockEntity(new BlockPos(array[0], array[1], array[2])) instanceof PylonBlockEntity pylonBlockEntity) {
                     byte xDiff = (byte) (pos.getX() - array[0]);
                     byte yDiff = (byte) (pos.getY() - array[1]);
                     byte zDiff = (byte) (pos.getZ() - array[2]);
@@ -63,9 +62,16 @@ public class FukamizuBreadWrench extends Item {
                         // 不能绑定自己
                         player.displayClientMessage(Component.literal("cannot self bind"), true);
                         return InteractionResult.FAIL;
-                    } else if (pylonBlockEntity.canBind(new byte[]{xDiff, yDiff, zDiff})) {
+                    } else if (!pylonBlockEntity.canBind(new byte[]{xDiff, yDiff, zDiff})) {
                         // 距离限制
                         player.displayClientMessage(Component.literal("too far"), true);
+                        return InteractionResult.FAIL;
+                    }
+
+                    if (level.getBlockEntity(pos) instanceof PylonBlockEntity pylonBlock &&
+                            pylonBlockEntity.getPylonLevel() <= pylonBlock.getPylonLevel()) {
+                        // 只有高级能量塔才能绑定低级能量塔
+                        player.displayClientMessage(Component.literal("This pylon cannot bind other pylon"), true);
                         return InteractionResult.FAIL;
                     }
 

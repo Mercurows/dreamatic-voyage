@@ -15,7 +15,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.capabilities.Capability;
@@ -28,10 +27,8 @@ import tech.lq0.dreamaticvoyage.capability.uce.UCEnergyStorage;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
-import java.util.Arrays;
-
 // TODO 完成能量塔逻辑
-public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
+public class FukamizuPylonBlockEntity extends PylonBlockEntity implements WorldlyContainer, MenuProvider {
 
     public static final int MAX_RANGE = 16;
     public static final int MAX_CAPACITY = 100000;
@@ -48,7 +45,7 @@ public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyCont
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(1, ItemStack.EMPTY);
 
-    protected NonNullList<byte[]> connections = NonNullList.create();
+//    protected NonNullList<byte[]> connections = NonNullList.create();
 
     public FukamizuPylonBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.FUKAMIZU_PYLON_BLOCK_ENTITY.get(), pPos, pBlockState);
@@ -174,28 +171,30 @@ public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyCont
         return null;
     }
 
+    @Override
     public boolean canBind(byte[] offset) {
         return Math.abs(offset[0]) <= MAX_RANGE && Math.abs(offset[1]) <= MAX_RANGE && Math.abs(offset[2]) <= MAX_RANGE;
     }
 
+    @Override
     public boolean canBindMore() {
         return this.connections.size() < MAX_CONNECT_COUNT;
     }
 
-    public boolean hasConnection(byte[] offset) {
-        return this.connections.stream().anyMatch(c -> Arrays.equals(c, offset));
-    }
-
-    public void addConnection(byte[] offset) {
-        if (this.hasConnection(offset)) {
-            return;
-        }
-        this.connections.add(offset);
-    }
-
-    public void removeConnection(byte[] offset) {
-        this.connections.removeIf(c -> Arrays.equals(c, offset));
-    }
+//    public boolean hasConnection(byte[] offset) {
+//        return this.connections.stream().anyMatch(c -> Arrays.equals(c, offset));
+//    }
+//
+//    public void addConnection(byte[] offset) {
+//        if (this.hasConnection(offset)) {
+//            return;
+//        }
+//        this.connections.add(offset);
+//    }
+//
+//    public void removeConnection(byte[] offset) {
+//        this.connections.removeIf(c -> Arrays.equals(c, offset));
+//    }
 
     @Override
     public void load(CompoundTag pTag) {
@@ -242,5 +241,10 @@ public class FukamizuPylonBlockEntity extends BlockEntity implements WorldlyCont
     public void invalidateCaps() {
         super.invalidateCaps();
         this.capability.invalidate();
+    }
+
+    @Override
+    public int getPylonLevel() {
+        return 1;
     }
 }
