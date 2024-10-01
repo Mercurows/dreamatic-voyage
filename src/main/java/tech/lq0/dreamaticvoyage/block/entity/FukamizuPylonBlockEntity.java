@@ -6,7 +6,6 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -42,10 +41,6 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     public UCEnergyStorage energyStorage = new UCEnergyStorage(MAX_CAPACITY, MAX_TRANSFER_SINGLE * MAX_CONNECT_COUNT);
 
     public int chargeTime;
-
-    protected NonNullList<ItemStack> items = NonNullList.withSize(1, ItemStack.EMPTY);
-
-//    protected NonNullList<byte[]> connections = NonNullList.create();
 
     public FukamizuPylonBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.FUKAMIZU_PYLON_BLOCK_ENTITY.get(), pPos, pBlockState);
@@ -91,76 +86,6 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     }
 
     @Override
-    public int[] getSlotsForFace(Direction pSide) {
-        return new int[]{0};
-    }
-
-    @Override
-    public boolean canPlaceItemThroughFace(int pIndex, ItemStack pItemStack, @Nullable Direction pDirection) {
-        return pDirection != Direction.DOWN && pItemStack.is(ItemRegistry.SWOLLEN_FUKAMIZU_BREAD_INGOT.get());
-    }
-
-    @Override
-    public boolean canTakeItemThroughFace(int pIndex, ItemStack pStack, Direction pDirection) {
-        return false;
-    }
-
-    @Override
-    public int getContainerSize() {
-        return this.items.size();
-    }
-
-    @Override
-    public boolean isEmpty() {
-        for (ItemStack itemstack : this.items) {
-            if (!itemstack.isEmpty()) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    @Override
-    public ItemStack getItem(int pSlot) {
-        return this.items.get(pSlot);
-    }
-
-    @Override
-    public ItemStack removeItem(int pSlot, int pAmount) {
-        return ContainerHelper.removeItem(this.items, pSlot, pAmount);
-    }
-
-    @Override
-    public ItemStack removeItemNoUpdate(int pSlot) {
-        return ContainerHelper.takeItem(this.items, pSlot);
-    }
-
-    @Override
-    public void setItem(int pSlot, ItemStack pStack) {
-        ItemStack itemstack = this.items.get(pSlot);
-        boolean flag = !pStack.isEmpty() && ItemStack.isSameItemSameTags(itemstack, pStack);
-        this.items.set(pSlot, pStack);
-        if (pStack.getCount() > this.getMaxStackSize()) {
-            pStack.setCount(this.getMaxStackSize());
-        }
-
-        if (pSlot == 0 && !flag) {
-            this.setChanged();
-        }
-    }
-
-    @Override
-    public boolean stillValid(Player pPlayer) {
-        return Container.stillValidBlockEntity(this, pPlayer);
-    }
-
-    @Override
-    public void clearContent() {
-        this.items.clear();
-    }
-
-    @Override
     public Component getDisplayName() {
         return Component.translatable("container.dreamaticvoyage.fukamizu_pylon");
     }
@@ -180,21 +105,6 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     public boolean canBindMore() {
         return this.connections.size() < MAX_CONNECT_COUNT;
     }
-
-//    public boolean hasConnection(byte[] offset) {
-//        return this.connections.stream().anyMatch(c -> Arrays.equals(c, offset));
-//    }
-//
-//    public void addConnection(byte[] offset) {
-//        if (this.hasConnection(offset)) {
-//            return;
-//        }
-//        this.connections.add(offset);
-//    }
-//
-//    public void removeConnection(byte[] offset) {
-//        this.connections.removeIf(c -> Arrays.equals(c, offset));
-//    }
 
     @Override
     public void load(CompoundTag pTag) {
