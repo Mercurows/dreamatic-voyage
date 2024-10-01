@@ -44,7 +44,7 @@ public class CrystalPurifierCategory implements IRecipeCategory<CrystalPurifying
         this.energy = helper.drawableBuilder(TEXTURE, 177, 0, 11, 15)
                 .setTextureSize(256, 256)
                 .buildAnimated(50, IDrawableAnimated.StartDirection.TOP, false);
-        this.progress = helper.drawableBuilder(TEXTURE, 189, 0, 32, 16)
+        this.progress = helper.drawableBuilder(TEXTURE, 189, 0, 32, 15)
                 .setTextureSize(256, 256)
                 .buildAnimated(300, IDrawableAnimated.StartDirection.LEFT, false);
     }
@@ -52,8 +52,8 @@ public class CrystalPurifierCategory implements IRecipeCategory<CrystalPurifying
     @Override
     @ParametersAreNonnullByDefault
     public void draw(CrystalPurifyingRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
-        energy.draw(guiGraphics, 81, 11);
-        progress.draw(guiGraphics, 73, 23);
+        energy.draw(guiGraphics, 81, 7);
+        progress.draw(guiGraphics, 73, 19);
 
         guiGraphics.drawString(Minecraft.getInstance().font,
                 Component.translatable("jei.dreamaticvoyage.crystal_purifier.time", new DecimalFormat("##.#").format(recipe.getTick() / 20.0f)),
@@ -94,8 +94,8 @@ public class CrystalPurifierCategory implements IRecipeCategory<CrystalPurifying
 
         builder.addSlot(RecipeIngredientRole.INPUT, 53, 18).addIngredients(fuels);
 
-        builder.addSlot(RecipeIngredientRole.INPUT, 32, 22).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 113, 22).addItemStack(recipe.getResultItem(null));
+        builder.addSlot(RecipeIngredientRole.INPUT, 32, 18).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 113, 18).addItemStack(recipe.getResultItem(null));
     }
 
 }
