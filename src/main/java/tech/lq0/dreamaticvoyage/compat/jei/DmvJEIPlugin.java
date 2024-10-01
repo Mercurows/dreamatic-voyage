@@ -62,11 +62,7 @@ public class DmvJEIPlugin implements IModPlugin {
         registration.addRecipes(CrystalPurifierCategory.TYPE, crystalPurifyingRecipes);
 
         // 其他物品获取方式描述
-        registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL.get()), Component.translatable("jei.dreamaticvoyage.around_the_travel"));
-        registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_SONG_OF_QINGQIU.get()), Component.translatable("jei.dreamaticvoyage.song_of_qingqiu"));
-        registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN.get()), Component.translatable("jei.dreamaticvoyage.song_of_autumn"));
-        registration.addItemStackInfo(new ItemStack(ItemRegistry.ELF_WINGS.get()), Component.translatable("jei.dreamaticvoyage.elf_wings"));
-        registration.addItemStackInfo(new ItemStack(ItemRegistry.PAST_SUGAR.get()), Component.translatable("jei.dreamaticvoyage.past_sugar"));
+        addOtherInfo(registration);
     }
 
     @Override
@@ -79,5 +75,17 @@ public class DmvJEIPlugin implements IModPlugin {
     @Override
     public @NotNull ResourceLocation getPluginUid() {
         return new ResourceLocation(Utils.MOD_ID, "jei_plugin");
+    }
+
+    private void addOtherInfo(IRecipeRegistration registration) {
+        registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_AROUND_THE_TRAVEL.get()), Component.translatable("jei.dreamaticvoyage.around_the_travel"));
+        registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_SONG_OF_QINGQIU.get()), Component.translatable("jei.dreamaticvoyage.song_of_qingqiu"));
+        registration.addItemStackInfo(new ItemStack(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN.get()), Component.translatable("jei.dreamaticvoyage.song_of_autumn"));
+        registration.addItemStackInfo(new ItemStack(ItemRegistry.ELF_WINGS.get()), Component.translatable("jei.dreamaticvoyage.elf_wings"));
+        registration.addItemStackInfo(new ItemStack(ItemRegistry.PAST_SUGAR.get()), Component.translatable("jei.dreamaticvoyage.past_sugar"));
+        registration.addItemStackInfo(new ItemStack(ItemRegistry.CHIRAM_CORE.get()), Component.translatable("jei.dreamaticvoyage.chiram_core"));
+        registration.addItemStackInfo(new ItemStack(ItemRegistry.HAINE_CORE.get()), Component.translatable("jei.dreamaticvoyage.haine_core"));
+        registration.addItemStackInfo(new ItemStack(ItemRegistry.KERORO_CORE.get()), Component.translatable("jei.dreamaticvoyage.keroro_core"));
+        registration.addItemStackInfo(new ItemStack(ItemRegistry.EKIRA_CORE.get()), Component.translatable("jei.dreamaticvoyage.ekira_core"));
     }
 }

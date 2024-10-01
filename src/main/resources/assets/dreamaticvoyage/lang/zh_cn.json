@@ -1744,5 +1744,9 @@
   "jei.dreamaticvoyage.crystal_popper.probability": "概率：",
   "jei.dreamaticvoyage.crystal_popper.probability.purified_powder": "(能量 - 90) %",
   "jei.dreamaticvoyage.crystal_popper.probability.powder": "(20 + 能量 * 2) %",
-  "jei.dreamaticvoyage.crystal_purifier.time": "提纯时长：%1$s 秒"
+  "jei.dreamaticvoyage.crystal_purifier.time": "提纯时长：%1$s 秒",
+  "jei.dreamaticvoyage.chiram_core": "主手持有魔力交织核心，且：\n\n1.带有生命恢复效果；\n2.用鞘翅进行飞行，且飞行速度在约2.82 ~ 约11.25m/s之间；\n3.当前天气为晴天；\n\n同时满足以上全部条件后，快捷栏上方会出现提示，说明成功开始转化，保持30秒后转化成功。\n注意：转化进度不会保存，中途一旦出现不符合条件的情况，需要从头重新开始转化过程。",
+  "jei.dreamaticvoyage.haine_core": "主手持有魔力交织核心，且：\n\n1.盔甲大于等于20；\n2.带有漂浮效果；\n3.当前高度 >= 192；\n4.脚下方块必须是空气；\n5.当前时间为日出；\n\n同时满足以上全部条件后，快捷栏上方会出现提示，说明成功开始转化，保持20秒后转化成功。\n注意：转化进度不会保存，中途一旦出现不符合条件的情况，需要从头重新开始转化过程。",
+  "jei.dreamaticvoyage.keroro_core": "主手持有魔力交织核心，且：\n\n1.当前天气为下雨；\n2.处于水中；\n3.带有跳跃提升IV效果；\n4.带有至少8种持续时长小于20秒的负面效果；\n\n同时满足以上全部条件后，快捷栏上方会出现提示，说明成功开始转化，保持15秒后转化成功。\n注意：转化进度不会保存，中途一旦出现不符合条件的情况，需要从头重新开始转化过程。",
+  "jei.dreamaticvoyage.ekira_core": "主手持有魔力交织核心，且：\n\n1.当前天气为晴天，时间为夜晚；\n2.所处位置能看得见天空；\n3.带有发光效果；\n4.饥饿值为20；\n5.同一水平高度的5米范围内，存在4个最高等级的信标；\n\n同时满足以上全部条件后，快捷栏上方会出现提示，说明成功开始转化，保持60秒后转化成功。\n注意：转化进度不会保存，中途一旦出现不符合条件的情况，需要从头重新开始转化过程。"
 }
