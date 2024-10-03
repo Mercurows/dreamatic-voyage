@@ -71,6 +71,6 @@ public class EntityRegistry {
 //                    () -> EntityType.Builder.<TetrisIBlockEntity>of(TetrisIBlockEntity::new, MobCategory.MISC).sized(1.0f, 1.0f).build("tetris_i_bolck"));
     public static final RegistryObject<EntityType<WhiteAhogeBeamEntity>> WHITE_AHOGE_BEAM_ENTITY =
             ENTITY_TYPES.register("white_ahoge_beam",
-                    () -> EntityType.Builder.of(WhiteAhogeBeamEntity::new, MobCategory.MISC).sized(2.0f, 1.0f).fireImmune().setShouldReceiveVelocityUpdates(true)
+                    () -> EntityType.Builder.<WhiteAhogeBeamEntity>of(WhiteAhogeBeamEntity::new, MobCategory.MISC).sized(2.0f, 1.0f).fireImmune().setShouldReceiveVelocityUpdates(true)
                             .updateInterval(1).clientTrackingRange(64).build("white_ahoge_beam"));
 }

@@ -198,13 +198,14 @@ public class ItemRegistry {
     // louise
     public static final RegistryObject<Item> WHITE_AHOGE = ITEMS.register("white_ahoge", WhiteAhoge::new);
     public static final RegistryObject<Item> WHITE_DOUBLE_AHOGE = ITEMS.register("white_double_ahoge", WhiteDoubleAhoge::new);
+    public static final RegistryObject<Item> LOUISTEW = ITEMS.register("louistew", Louistew::new);
+    public static final RegistryObject<Item> UNI_MILLET = ITEMS.register("uni_millet", UniMillet::new);
     public static final RegistryObject<Item> MAGIC_BOOK = ITEMS.register("magic_book", MagicBook::new);
     public static final RegistryObject<Item> MAGIC_BOOK_MYANNA = ITEMS.register("magic_book_myanna", MagicBookMyanna::new);
     public static final RegistryObject<Item> MAGIC_BOOK_MYANNA_PLUS = ITEMS.register("magic_book_myanna_plus", MagicBookMyannaPlus::new);
     public static final RegistryObject<Item> MAGIC_BOOK_THROW = ITEMS.register("magic_book_throw", MagicBookThrow::new);
     public static final RegistryObject<Item> MAGIC_BOOK_REVELATION = ITEMS.register("magic_book_revelation", MagicBookRevelation::new);
-    public static final RegistryObject<Item> LOUISTEW = ITEMS.register("louistew", Louistew::new);
-    public static final RegistryObject<Item> UNI_MILLET = ITEMS.register("uni_millet", UniMillet::new);
+    public static final RegistryObject<Item> MAGIC_BOOK_WHITE_AHOGE_BEAM = ITEMS.register("magic_book_white_ahoge_beam", MagicBookWhiteAhogeBeam::new);
 
     /**
      * magicros

@@ -27,7 +27,6 @@ import tech.lq0.dreamaticvoyage.entity.projectile.WhiteAhogeBeamEntity;
 public class WhiteAhogeBeamEntityRenderer extends EntityRenderer<WhiteAhogeBeamEntity> {
     private final static ResourceLocation CORE = Utils.loc("textures/entity/white_ahoge_beam_core.png");
     private final static ResourceLocation MAIN = Utils.loc("textures/entity/white_ahoge_beam_main.png");
-    private final static ResourceLocation GLOW = Utils.loc("textures/entity/white_ahoge_beam_glow.png");
 
     public WhiteAhogeBeamEntityRenderer(EntityRendererProvider.Context p_174008_) {
         super(p_174008_);
@@ -42,7 +41,7 @@ public class WhiteAhogeBeamEntityRenderer extends EntityRenderer<WhiteAhogeBeamE
     private static void drawBeams(double distance, WhiteAhogeBeamEntity entity, float ticks, float speedModifier, PoseStack pMatrixStack) {
         long gameTime = entity.level().getGameTime();
         double velocity = gameTime * speedModifier;
-        float additiveThickness = (entity.getBeamWidth() * 1.75f) * calculateLaserFlickerModifier(gameTime);
+//        float additiveThickness = (entity.getBeamWidth() * 1.75f) * calculateLaserFlickerModifier(gameTime);
 
         MultiBufferSource.BufferSource buffer = Minecraft.getInstance().renderBuffers().bufferSource();
 
@@ -53,7 +52,6 @@ public class WhiteAhogeBeamEntityRenderer extends EntityRenderer<WhiteAhogeBeamE
         PoseStack.Pose matrixstack$entry = pMatrixStack.last();
         Matrix3f matrixNormal = matrixstack$entry.normal();
         Matrix4f positionMatrix = matrixstack$entry.pose();
-        drawClosingBeam(buffer.getBuffer(CustomRenderType.magicBeam(GLOW)), positionMatrix, matrixNormal, additiveThickness, distance / 10, 0.5, 1, ticks, 0.9f);
         drawBeam(buffer.getBuffer(CustomRenderType.magicBeam(MAIN)), positionMatrix, matrixNormal, entity.getBeamWidth(), distance, velocity, velocity + distance * 1.5, ticks, 0.7f);
         drawBeam(buffer.getBuffer(CustomRenderType.magicBeam(CORE)), positionMatrix, matrixNormal, entity.getBeamWidth() * 0.7f, distance, velocity, velocity + distance * 1.5, ticks, 1f);
         pMatrixStack.popPose();
