@@ -50,7 +50,7 @@ public class MagicBookWhiteAhogeBeam extends Item {
             player.stopUsingItem();
         }
 
-        if (pEntity instanceof Player player && !player.isUsingItem() && pIsSelected) {
+        if (pEntity instanceof Player player && (!player.isUsingItem() || !pIsSelected)) {
             pStack.getOrCreateTag().putInt("Cooldown", Math.max(0, pStack.getOrCreateTag().getInt("Cooldown") - 1));
         }
     }
