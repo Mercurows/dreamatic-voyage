@@ -41,7 +41,7 @@ public abstract class LivingEntityMixin {
         if (pEntity instanceof LivingEntity source) {
             if (source.hasEffect(EffectRegistry.MANA_SURGE.get())) {
                 int level = source.getEffect(EffectRegistry.MANA_SURGE.get()).getAmplifier();
-                i = Math.min(127, i + level);
+                i = Math.min(127, i + level + 1);
                 if (!pEffectInstance.getEffect().equals(EffectRegistry.MANA_SURGE.get())) {
                     if (pEffectInstance.getEffect().getCategory() != MobEffectCategory.BENEFICIAL) {
                         LivingEntity living = (LivingEntity) (Object) this;
