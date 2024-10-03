@@ -9,7 +9,7 @@ import tech.lq0.dreamaticvoyage.init.EntityRegistry;
 import java.util.Set;
 
 public class WhiteAhogeBeamEntity extends BeamEntity {
-    public float damage = 2f;
+    public float damage = 1.5f;
 
     public WhiteAhogeBeamEntity(EntityType<?> entityType, Level level) {
         super(entityType, level);
