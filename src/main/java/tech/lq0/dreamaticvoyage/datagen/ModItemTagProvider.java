@@ -13,6 +13,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.compat.data.CompatMetals;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
+import tech.lq0.dreamaticvoyage.tools.ModTags;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -105,6 +106,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
         addCompatBreadSlicePlateTag(CompatMetals.ZINC, CompatMetals.LEAD, CompatMetals.NICKEL, CompatMetals.SILVER,
                 CompatMetals.TIN, CompatMetals.ALUMINUM, CompatMetals.OSMIUM, CompatMetals.URANIUM, CompatMetals.PLATINUM, CompatMetals.QUICKSILVER,
                 CompatMetals.BRASS, CompatMetals.STEEL);
+
+        this.tag(ModTags.Items.AUDIO_TAPE_CHIRAM).add(ItemRegistry.AUDIO_TAPE_CHIRAM_1.get(), ItemRegistry.AUDIO_TAPE_CHIRAM_2.get(), ItemRegistry.AUDIO_TAPE_CHIRAM_3.get());
+        this.tag(ModTags.Items.AUDIO_TAPE_HAINE).add(ItemRegistry.AUDIO_TAPE_HAINE_1.get(), ItemRegistry.AUDIO_TAPE_HAINE_2.get(), ItemRegistry.AUDIO_TAPE_HAINE_3.get());
+        this.tag(ModTags.Items.AUDIO_TAPE_KERORO).add(ItemRegistry.AUDIO_TAPE_KERORO_1.get(), ItemRegistry.AUDIO_TAPE_KERORO_2.get(), ItemRegistry.AUDIO_TAPE_KERORO_3.get());
+        this.tag(ModTags.Items.AUDIO_TAPE_EKIRA).add(ItemRegistry.AUDIO_TAPE_EKIRA_1.get(), ItemRegistry.AUDIO_TAPE_EKIRA_2.get(), ItemRegistry.AUDIO_TAPE_EKIRA_3.get());
     }
 
     private static TagKey<Item> forgeTag(String name) {

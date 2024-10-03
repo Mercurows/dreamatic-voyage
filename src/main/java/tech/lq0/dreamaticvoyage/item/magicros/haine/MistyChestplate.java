@@ -216,7 +216,7 @@ public class MistyChestplate extends ArmorItem {
     }
 
     public static void setArmorSet(ItemStack stack, Player player) {
-        ItemNBTTool.setBoolean(stack, TAG_SET, ArmorTool.hasArmorSet(player));
+        ItemNBTTool.setBoolean(stack, TAG_SET, ArmorTool.hasMagicrosArmorSet(player));
     }
 
     public static boolean hasArmorSet(ItemStack stack) {

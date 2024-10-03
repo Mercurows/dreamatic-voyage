@@ -51,7 +51,13 @@ public class MiracleBadge extends Item implements ICurioItem {
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (!pLevel.isClientSide && pEntity instanceof Player player) {
-            setArmorSet(pStack, player);
+            AtomicBoolean flag = new AtomicBoolean(false);
+            CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(this).ifPresent(s -> flag.set(true)));
+            if (flag.get()) {
+                setArmorSet(pStack, player);
+            } else {
+                ItemNBTTool.setBoolean(pStack, TAG_SET, false);
+            }
         }
         super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
     }
@@ -76,7 +82,7 @@ public class MiracleBadge extends Item implements ICurioItem {
     }
 
     public static void setArmorSet(ItemStack stack, Player player) {
-        ItemNBTTool.setBoolean(stack, TAG_SET, ArmorTool.hasArmorSet(player));
+        ItemNBTTool.setBoolean(stack, TAG_SET, ArmorTool.hasMagicrosArmorSet(player));
     }
 
     public static boolean hasArmorSet(ItemStack stack) {

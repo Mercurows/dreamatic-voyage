@@ -4,7 +4,7 @@ import net.minecraft.world.entity.player.Player;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
 public class ArmorTool {
-    public static boolean hasArmorSet(Player player) {
+    public static boolean hasMagicrosArmorSet(Player player) {
         if (player == null) {
             return false;
         }

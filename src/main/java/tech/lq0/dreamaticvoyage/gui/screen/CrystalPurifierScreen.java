@@ -44,7 +44,7 @@ public class CrystalPurifierScreen extends AbstractContainerScreen<CrystalPurifi
         }
 
         pGuiGraphics.blit(TEXTURE, i + 81, j + 35, 189, 0,
-                (int) (32 * (float) progress / time), 16, 256, 256);
+                (int) (32 * (float) progress / (float) time), 16, 256, 256);
     }
 
     @Override

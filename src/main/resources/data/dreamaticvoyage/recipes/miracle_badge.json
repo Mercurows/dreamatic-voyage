@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C#H",
+    "#B#",
+    "K#E"
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:dream_weaving_yarn"
+    },
+    "C": {
+      "tag": "dreamaticvoyage:audio_tape_chiram"
+    },
+    "H": {
+      "tag": "dreamaticvoyage:audio_tape_haine"
+    },
+    "B": {
+      "item": "dreamaticvoyage:miracle_core"
+    },
+    "K": {
+      "tag": "dreamaticvoyage:audio_tape_keroro"
+    },
+    "E": {
+      "tag": "dreamaticvoyage:audio_tape_ekira"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:miracle_badge",
+    "count": 1
+  }
+}

@@ -24,6 +24,12 @@ public class ModTags {
     }
 
     public static class Items {
+
+        public static final TagKey<Item> AUDIO_TAPE_CHIRAM = tag("audio_tape_chiram");
+        public static final TagKey<Item> AUDIO_TAPE_HAINE = tag("audio_tape_haine");
+        public static final TagKey<Item> AUDIO_TAPE_KERORO = tag("audio_tape_keroro");
+        public static final TagKey<Item> AUDIO_TAPE_EKIRA = tag("audio_tape_ekira");
+
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(Utils.MOD_ID, name));
         }

@@ -158,7 +158,7 @@ public class BreezeCrown extends ArmorItem {
     }
 
     public static void setArmorSet(ItemStack stack, Player player) {
-        ItemNBTTool.setBoolean(stack, TAG_SET, ArmorTool.hasArmorSet(player));
+        ItemNBTTool.setBoolean(stack, TAG_SET, ArmorTool.hasMagicrosArmorSet(player));
     }
 
     public static boolean hasArmorSet(ItemStack stack) {
@@ -179,8 +179,8 @@ public class BreezeCrown extends ArmorItem {
         if (damage > 0f) {
             if (livingEntity instanceof Player player && !itemStack.isEmpty() && itemStack.getItem().equals(ItemRegistry.BREEZE_CROWN.get())) {
                 if (!player.getCooldowns().isOnCooldown(ItemRegistry.BREEZE_CROWN.get())) {
-                    int level = ArmorTool.hasArmorSet(player) ? 4 : 3;
-                    int time = ArmorTool.hasArmorSet(player) ? 50 : 35;
+                    int level = ArmorTool.hasMagicrosArmorSet(player) ? 4 : 3;
+                    int time = ArmorTool.hasMagicrosArmorSet(player) ? 50 : 35;
 
                     if (!livingEntity.level().isClientSide) {
                         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 30, level, false, false), player);
