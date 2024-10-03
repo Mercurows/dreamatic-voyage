@@ -99,7 +99,7 @@ public class MountainDestroyerRenderer {
                     matrix.translate(-view.x, -view.y, -view.z);
 
                     var buffer = Minecraft.getInstance().renderBuffers().bufferSource();
-                    var builder = buffer.getBuffer(CustomRenderType.BlockOverlay);
+                    var builder = buffer.getBuffer(CustomRenderType.BLOCK_OVERLAY);
 
                     posList.forEach(b -> {
                         BlockState s = level.getBlockState(b);
@@ -119,7 +119,7 @@ public class MountainDestroyerRenderer {
 
                     matrix.popPose();
                     RenderSystem.disableDepthTest();
-                    buffer.endBatch(CustomRenderType.BlockOverlay);
+                    buffer.endBatch(CustomRenderType.BLOCK_OVERLAY);
                 }
             }
         }

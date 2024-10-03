@@ -14,7 +14,7 @@ public class SpecialRenderer {
 
     public static void renderLandmark(PoseStack matrix, float x, float y, float z, Color color) {
         var buffer = Minecraft.getInstance().renderBuffers().bufferSource();
-        var builder = buffer.getBuffer(CustomRenderType.Landmark);
+        var builder = buffer.getBuffer(CustomRenderType.LANDMARK);
 
         Vec3 view = Minecraft.getInstance().gameRenderer.getMainCamera().getPosition();
 
@@ -59,7 +59,7 @@ public class SpecialRenderer {
 
         matrix.popPose();
         RenderSystem.disableDepthTest();
-        buffer.endBatch(CustomRenderType.Landmark);
+        buffer.endBatch(CustomRenderType.LANDMARK);
     }
 
     public static void renderBlock(Matrix4f matrix, VertexConsumer builder, Color color) {
