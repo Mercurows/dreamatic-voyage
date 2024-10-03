@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#B#",
+    "RDR",
+    "BiB"
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:alienis_crystal"
+    },
+    "B": {
+      "item": "minecraft:black_wool"
+    },
+    "R": {
+      "item": "minecraft:red_wool"
+    },
+    "D": {
+      "item": "dreamaticvoyage:jellyfish_shell"
+    },
+    "i": {
+      "item": "dreamaticvoyage:charged_crystal_ingot"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:art_master_magic_hat",
+    "count": 1
+  }
+}

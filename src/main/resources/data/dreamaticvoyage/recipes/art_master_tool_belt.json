@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#B#",
+    "GEG",
+    "#B#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "B": {
+      "item": "dreamaticvoyage:purified_crystal_ingot"
+    },
+    "G": {
+      "item": "minecraft:glow_item_frame"
+    },
+    "E": {
+      "item": "dreamaticvoyage:artist_tool_belt"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:art_master_tool_belt",
+    "count": 1
+  }
+}
