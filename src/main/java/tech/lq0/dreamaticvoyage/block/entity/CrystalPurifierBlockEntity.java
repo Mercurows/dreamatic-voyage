@@ -124,7 +124,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
             int time = recipe.get().getTick();
 
             blockEntity.outputProgress++;
-            blockEntity.energy--;
+            blockEntity.energy = Math.max(0, blockEntity.energy - 1);
             blockEntity.outputTime = time;
 
             if (blockEntity.outputProgress >= time) {
@@ -136,7 +136,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
             }
         } else {
             if (blockEntity.energy > 0) {
-                blockEntity.energy--;
+                blockEntity.energy = Math.max(0, blockEntity.energy - 1);
             }
             blockEntity.resetProgress();
         }
