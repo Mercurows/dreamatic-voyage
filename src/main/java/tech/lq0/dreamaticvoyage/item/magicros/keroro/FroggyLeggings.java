@@ -109,7 +109,7 @@ public class FroggyLeggings extends ArmorItem {
                 boolean set = hasArmorSet(stack);
 
                 if (player.isSteppingCarefully()) {
-                    player.addEffect(new MobEffectInstance(MobEffects.JUMP, 40, set ? 2 : 1, false, false));
+                    player.addEffect(new MobEffectInstance(MobEffects.JUMP, 40, set ? 2 : 1, false, false), player);
                 }
 
                 //净化

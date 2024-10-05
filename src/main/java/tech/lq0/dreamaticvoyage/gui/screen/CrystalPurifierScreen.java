@@ -4,6 +4,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -44,7 +45,7 @@ public class CrystalPurifierScreen extends AbstractContainerScreen<CrystalPurifi
         }
 
         pGuiGraphics.blit(TEXTURE, i + 81, j + 35, 189, 0,
-                (int) (32 * (float) progress / (float) time), 16, 256, 256);
+                (int) (Mth.clamp((float) progress / (float) time, 0f, 1f) * 32.0f), 16, 256, 256);
     }
 
     @Override
