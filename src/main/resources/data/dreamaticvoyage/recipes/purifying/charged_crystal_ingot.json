@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "dreamaticvoyage:purified_crystal_ingot"
   },
-  "tick": 45000,
+  "tick": 28800,
   "output": {
     "count": 1,
     "item": "dreamaticvoyage:charged_crystal_ingot"

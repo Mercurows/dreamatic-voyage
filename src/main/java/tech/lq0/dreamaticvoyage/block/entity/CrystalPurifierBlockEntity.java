@@ -39,8 +39,8 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
     private static final int[] SLOTS_FOR_DOWN = new int[]{2};
 
     public static final int MAX_DATA_COUNT = 4;
-    public static final int EMERALD_FUEL_TICK = 400;
-    public static final int GOLD_FUEL_TICK = 50;
+    public static final int EMERALD_FUEL_TICK = 960;
+    public static final int GOLD_FUEL_TICK = 120;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
 

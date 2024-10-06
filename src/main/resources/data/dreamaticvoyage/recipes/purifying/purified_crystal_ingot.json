@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "dreamaticvoyage:harden_crystal_ingot"
   },
-  "tick": 3000,
+  "tick": 4800,
   "output": {
     "count": 1,
     "item": "dreamaticvoyage:purified_crystal_ingot"

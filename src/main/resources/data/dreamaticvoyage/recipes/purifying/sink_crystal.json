@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "dreamaticvoyage:radiant_crystal"
   },
-  "tick": 200,
+  "tick": 120,
   "output": {
     "count": 1,
     "item": "dreamaticvoyage:sink_crystal"

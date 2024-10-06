@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "dreamaticvoyage:purified_crystal_powder"
   },
-  "tick": 9000,
+  "tick": 9600,
   "output": {
     "count": 1,
     "item": "dreamaticvoyage:charged_crystal_powder"
