@@ -16,6 +16,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuCompressor;
 import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCompressorMenu;
@@ -41,6 +45,8 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     public static final int MAX_DATA_COUNT = 3;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(2, ItemStack.EMPTY);
+
+    private LazyOptional<?>[] itemHandlers = SidedInvWrapper.create(this, Direction.NORTH, Direction.DOWN);
 
     public int pressure;
     public int compressingProgress;
@@ -297,5 +303,29 @@ public class FukamizuCompressorBlockEntity extends BlockEntity implements Worldl
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
         return new FukamizuCompressorMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
+    }
+
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
+        if (!this.remove && side != null && cap == ForgeCapabilities.ITEM_HANDLER) {
+            if (side == Direction.DOWN) {
+                return itemHandlers[1].cast();
+            } else {
+                return itemHandlers[0].cast();
+            }
+        }
+        return super.getCapability(cap, side);
+    }
+
+    @Override
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        for (LazyOptional<?> itemHandler : itemHandlers) itemHandler.invalidate();
+    }
+
+    @Override
+    public void reviveCaps() {
+        super.reviveCaps();
+        this.itemHandlers = SidedInvWrapper.create(this, Direction.NORTH, Direction.DOWN);
     }
 }

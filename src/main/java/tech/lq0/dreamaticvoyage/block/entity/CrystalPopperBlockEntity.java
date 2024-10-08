@@ -20,6 +20,10 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.gui.menu.CrystalPopperMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
@@ -41,6 +45,8 @@ public class CrystalPopperBlockEntity extends BlockEntity implements WorldlyCont
     public static final int MAX_ENERGY = 100;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(4, ItemStack.EMPTY);
+
+    private LazyOptional<?>[] itemHandlers = SidedInvWrapper.create(this, Direction.UP, Direction.DOWN);
 
     public int inputProgress;
     public int outputProgress;
@@ -279,5 +285,29 @@ public class CrystalPopperBlockEntity extends BlockEntity implements WorldlyCont
         CompoundTag compoundtag = new CompoundTag();
         ContainerHelper.saveAllItems(compoundtag, this.items, true);
         return compoundtag;
+    }
+
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
+        if (!this.remove && side != null && cap == ForgeCapabilities.ITEM_HANDLER) {
+            if (side == Direction.DOWN) {
+                return itemHandlers[1].cast();
+            } else {
+                return itemHandlers[0].cast();
+            }
+        }
+        return super.getCapability(cap, side);
+    }
+
+    @Override
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        for (LazyOptional<?> itemHandler : itemHandlers) itemHandler.invalidate();
+    }
+
+    @Override
+    public void reviveCaps() {
+        super.reviveCaps();
+        this.itemHandlers = SidedInvWrapper.create(this, Direction.UP, Direction.DOWN);
     }
 }
