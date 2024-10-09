@@ -62,13 +62,18 @@ public class Utils {
                 Ingredient.of(ItemRegistry.LUCIA_RICE_CAKE.get()), new ItemStack(ItemRegistry.BIG_MOE_ONE_POTION.get())));
         event.enqueueWork(() -> BrewingRecipeRegistry.addRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.STRONG_POISON)),
                 Ingredient.of(ItemRegistry.GARLIC_MELON_SLICE.get()), new ItemStack(Items.DRAGON_BREATH)));
+        event.enqueueWork(this::registerCompostableItems);
 
         DmvNetwork.init();
+    }
 
-        ComposterBlock.add(0.3f, ItemRegistry.HARANO_SAPLING.get());
-        ComposterBlock.add(0.3f, ItemRegistry.HARANO_LEAVES.get());
-        ComposterBlock.add(0.3f, ItemRegistry.FUKAMIZU_PLUM_SAPLING.get());
-        ComposterBlock.add(0.3f, ItemRegistry.FUKAMIZU_PLUM_LEAVES.get());
+    private void registerCompostableItems() {
+        ComposterBlock.COMPOSTABLES.put(ItemRegistry.HARANO_SAPLING.get(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put(ItemRegistry.HARANO_LEAVES.get(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put(ItemRegistry.FUKAMIZU_PLUM_SAPLING.get(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put(ItemRegistry.FUKAMIZU_PLUM_LEAVES.get(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put(ItemRegistry.UNI_MILLET.get(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put(ItemRegistry.FUKAMIZU_PLUM.get(), 0.3f);
     }
 
     private void registerForgeEvents() {
