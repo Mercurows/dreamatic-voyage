@@ -1,5 +1,6 @@
 package tech.lq0.dreamaticvoyage.item.misc.fukamizutech;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
@@ -26,21 +27,23 @@ public class FukamizuBreadWrench extends Item {
         if (player == null) return InteractionResult.FAIL;
 
         if (blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).isPresent()) {
-            // TODO 替换为翻译文本
             if (player.isShiftKeyDown()) {
                 // shift右键
                 if (blockEntity instanceof PylonBlockEntity) {
                     // 扳手只能绑定能量塔
                     itemStack.getOrCreateTag().putIntArray("Machine", new int[]{pos.getX(), pos.getY(), pos.getZ()});
-                    player.displayClientMessage(Component.literal("pylon bind " + pos), true);
+                    player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.bound",
+                            pos.getX() + ", " + pos.getY() + ", " + pos.getZ()).withStyle(ChatFormatting.GREEN), true);
                 } else {
-                    player.displayClientMessage(Component.literal("not pylon"), true);
+                    player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.not_pylon")
+                            .withStyle(ChatFormatting.RED), true);
                     return InteractionResult.FAIL;
                 }
             } else {
                 // 直接右键
                 if (!itemStack.hasTag() || !itemStack.getOrCreateTag().contains("Machine")) {
-                    player.displayClientMessage(Component.literal("not bounded"), true);
+                    player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.not_bounded")
+                            .withStyle(ChatFormatting.RED), true);
                     return InteractionResult.FAIL;
                 }
 
@@ -48,7 +51,8 @@ public class FukamizuBreadWrench extends Item {
                 var array = tag.getIntArray("Machine");
 
                 if (array.length != 3) {
-                    player.displayClientMessage(Component.literal("not bounded"), true);
+                    player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.not_bounded")
+                            .withStyle(ChatFormatting.RED), true);
                     return InteractionResult.FAIL;
                 }
 
@@ -60,37 +64,44 @@ public class FukamizuBreadWrench extends Item {
 
                     if (xDiff == 0 && yDiff == 0 && zDiff == 0) {
                         // 不能绑定自己
-                        player.displayClientMessage(Component.literal("cannot self bind"), true);
+                        player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.self_bound")
+                                .withStyle(ChatFormatting.RED), true);
                         return InteractionResult.FAIL;
                     } else if (!pylonBlockEntity.canBind(new byte[]{xDiff, yDiff, zDiff})) {
                         // 距离限制
-                        player.displayClientMessage(Component.literal("too far"), true);
+                        player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.too_far")
+                                .withStyle(ChatFormatting.RED), true);
                         return InteractionResult.FAIL;
                     }
 
                     if (level.getBlockEntity(pos) instanceof PylonBlockEntity pylonBlock &&
                             pylonBlockEntity.getPylonLevel() <= pylonBlock.getPylonLevel()) {
                         // 只有高级能量塔才能绑定低级能量塔
-                        player.displayClientMessage(Component.literal("This pylon cannot bind other pylon"), true);
+                        player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.wrong_level", pylonBlock.getPylonLevel())
+                                .withStyle(ChatFormatting.RED), true);
                         return InteractionResult.FAIL;
                     }
 
                     if (pylonBlockEntity.hasConnection(new byte[]{xDiff, yDiff, zDiff})) {
                         // 右键已连接方块时，移除现有连接
                         pylonBlockEntity.removeConnection(new byte[]{xDiff, yDiff, zDiff});
-                        player.displayClientMessage(Component.literal("disconnected"), true);
+                        player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.disconnected")
+                                .withStyle(ChatFormatting.YELLOW), true);
                     } else {
                         // 绑定数量限制
                         if (!pylonBlockEntity.canBindMore()) {
-                            player.displayClientMessage(Component.literal("max connections reached"), true);
+                            player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.max_count")
+                                    .withStyle(ChatFormatting.RED), true);
                             return InteractionResult.FAIL;
                         }
                         // 满足条件，进行绑定
                         pylonBlockEntity.addConnection(new byte[]{xDiff, yDiff, zDiff});
-                        player.displayClientMessage(Component.literal("UCE bind " + pos), true);
+                        player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.uce_bound",
+                                pos.getX() + ", " + pos.getY() + ", " + pos.getZ()).withStyle(ChatFormatting.GREEN), true);
                     }
                 } else {
-                    player.displayClientMessage(Component.literal("not pylon"), true);
+                    player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.not_pylon")
+                            .withStyle(ChatFormatting.RED), true);
                 }
             }
 
