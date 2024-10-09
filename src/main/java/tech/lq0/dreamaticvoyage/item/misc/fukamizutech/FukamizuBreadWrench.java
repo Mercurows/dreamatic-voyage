@@ -5,14 +5,25 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.PylonBlockEntity;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
+
+import java.util.List;
 
 public class FukamizuBreadWrench extends Item {
 
     public FukamizuBreadWrench() {
         super(new Properties().stacksTo(1).fireResistant());
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench").withStyle(ChatFormatting.GRAY));
     }
 
     @Override
@@ -77,8 +88,8 @@ public class FukamizuBreadWrench extends Item {
                     if (level.getBlockEntity(pos) instanceof PylonBlockEntity pylonBlock &&
                             pylonBlockEntity.getPylonLevel() <= pylonBlock.getPylonLevel()) {
                         // 只有高级能量塔才能绑定低级能量塔
-                        player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.wrong_level", pylonBlock.getPylonLevel())
-                                .withStyle(ChatFormatting.RED), true);
+                        player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.wrong_level",
+                                pylonBlockEntity.getPylonLevel(), pylonBlock.getPylonLevel()).withStyle(ChatFormatting.RED), true);
                         return InteractionResult.FAIL;
                     }
 
