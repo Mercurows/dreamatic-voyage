@@ -43,7 +43,7 @@ public class ArtMasterToolBelt extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.art_master_tool_belt_1").withStyle(ChatFormatting.GRAY));
-        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.art_master_tool_belt_2").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.art_master_tool_belt_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.MIYA);
     }
