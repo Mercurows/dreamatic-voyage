@@ -8,14 +8,15 @@ import tech.lq0.dreamaticvoyage.Utils;
 
 import java.util.function.Consumer;
 
-//From Botania
+// From Botania
 public final class ModLootTables {
 
-    public static final ResourceLocation DMV_CHEST = new ResourceLocation(Utils.MOD_ID, "chests/dmv_chest");
-    public static final ResourceLocation DMV_DISC_CHEST = new ResourceLocation(Utils.MOD_ID, "chests/dmv_disc_chest");
-    public static final ResourceLocation DMV_IGLOO_CHEST = new ResourceLocation(Utils.MOD_ID, "chests/dmv_igloo_chest");
-    public static final ResourceLocation DMV_ELF_CHEST = new ResourceLocation(Utils.MOD_ID, "chests/dmv_elf_chest");
-    public static final ResourceLocation DMV_BURIED_CHEST = new ResourceLocation(Utils.MOD_ID, "chests/dmv_buried_chest");
+    public static final ResourceLocation DMV_CHEST = Utils.loc("chests/dmv_chest");
+    public static final ResourceLocation DMV_DISC_CHEST = Utils.loc("chests/dmv_disc_chest");
+    public static final ResourceLocation DMV_IGLOO_CHEST = Utils.loc("chests/dmv_igloo_chest");
+    public static final ResourceLocation DMV_ELF_CHEST = Utils.loc("chests/dmv_elf_chest");
+    public static final ResourceLocation DMV_BURIED_CHEST = Utils.loc("chests/dmv_buried_chest");
+    public static final ResourceLocation DMV_SHIPWRECK_CHEST = Utils.loc("chests/dmv_shipwreck_chest");
 
     public static void lootLoad(ResourceLocation id, Consumer<LootPool.Builder> addPool) {
         String prefix = "minecraft:chests/";
@@ -29,6 +30,8 @@ public final class ModLootTables {
                 case "end_city_treasure" -> addPool.accept(inject(DMV_DISC_CHEST));
                 case "igloo_chest" -> addPool.accept(inject(DMV_IGLOO_CHEST));
                 case "buried_treasure" -> addPool.accept(inject(DMV_BURIED_CHEST));
+                case "shipwreck_supply", "shipwreck_map", "shipwreck_treasure" ->
+                        addPool.accept(inject(DMV_SHIPWRECK_CHEST));
                 default -> {
                 }
             }
