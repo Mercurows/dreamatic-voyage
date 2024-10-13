@@ -1020,6 +1020,9 @@
   "item.dreamaticvoyage.ancestral_dough": "先祖面团",
   "des.dreamaticvoyage.ancestral_dough_1": "海栖家族的元老留下的面团，其制作技艺早已失传",
   "des.dreamaticvoyage.ancestral_dough_2": "除了烤成面包以外，或许还有其他的用途",
+  "item.dreamaticvoyage.soft_edge": "柔软锋芒",
+  "des.dreamaticvoyage.soft_edge_1": "已经失传的海栖家族秘密武器的现代复原品",
+  "des.dreamaticvoyage.soft_edge_2": "怎么看都不像是用面团做的武器吧",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

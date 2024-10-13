@@ -330,6 +330,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> HEAVY_BREAD_COMPONENT = ITEMS.register("heavy_bread_component", HeavyBreadComponent::new);
     public static final RegistryObject<Item> FUKAMIZU_PLUM = ITEMS.register("fukamizu_plum", FukamizuPlum::new);
     public static final RegistryObject<Item> ANCESTRAL_DOUGH = ITEMS.register("ancestral_dough", AncestralDough::new);
+    public static final RegistryObject<Item> SOFT_EDGE = ITEMS.register("soft_edge", SoftEdge::new);
 
     // lutafia
     public static final RegistryObject<Item> FIAXE = ITEMS.register("fiaxe", Fiaxe::new);
