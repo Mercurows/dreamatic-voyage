@@ -27,7 +27,7 @@ import java.util.List;
 public class SoftEdge extends SwordItem {
 
     public SoftEdge() {
-        super(ModItemTier.FUKAMIZU_BREAD, 1, -2.8f, new Properties().setNoRepair());
+        super(ModItemTier.FUKAMIZU_BREAD, 1, -2.8f, new Properties().setNoRepair().fireResistant());
     }
 
     @Override

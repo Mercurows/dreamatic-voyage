@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "dreamaticvoyage:ancestral_dough"
+  },
+  "result": "dreamaticvoyage:fukamizu_bread",
+  "experience": 1.00
+}
