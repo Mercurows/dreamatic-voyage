@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C#",
+    "CDC",
+    "#M#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:purple_dye"
+    },
+    "C": {
+      "tag": "minecraft:fishes"
+    },
+    "D": {
+      "item": "dreamaticvoyage:ancestral_dough"
+    },
+    "M": {
+      "item": "dreamaticvoyage:fukamizu_bread_sword"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:soft_edge",
+    "count": 1
+  }
+}
