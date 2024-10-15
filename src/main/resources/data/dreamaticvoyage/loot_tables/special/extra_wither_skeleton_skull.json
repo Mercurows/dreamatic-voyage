@@ -1,0 +1,40 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:wither_skeleton_skull"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "killer_player",
+          "predicate": {
+            "equipment": {
+              "mainhand": {
+                "items": [
+                  "dreamaticvoyage:hard_edge"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "minecraft:wither_skeleton"
+          }
+        },
+        {
+          "condition": "minecraft:random_chance_with_looting",
+          "chance": 0.3,
+          "looting_multiplier": 0.05
+        }
+      ]
+    }
+  ]
+}
