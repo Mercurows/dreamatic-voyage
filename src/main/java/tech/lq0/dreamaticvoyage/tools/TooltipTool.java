@@ -10,8 +10,19 @@ import net.minecraft.network.chat.TextColor;
 import java.util.List;
 
 public class TooltipTool {
+
     public static void addHideText(List<Component> tooltip, Component text) {
         if (Screen.hasShiftDown()) {
+            tooltip.add(text);
+        }
+    }
+
+    public static void addCtrlHideText(List<Component> tooltip, Component text) {
+        addCtrlHideText(tooltip, text, false);
+    }
+
+    public static void addCtrlHideText(List<Component> tooltip, Component text, boolean reverse) {
+        if (Screen.hasControlDown() ^ reverse) {
             tooltip.add(text);
         }
     }

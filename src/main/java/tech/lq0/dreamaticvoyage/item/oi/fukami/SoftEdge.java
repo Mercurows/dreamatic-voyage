@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,13 +18,19 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class SoftEdge extends SwordItem {
 
     public SoftEdge() {
@@ -36,6 +43,7 @@ public class SoftEdge extends SwordItem {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.soft_edge_2").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMIZU);
+        handleUpgradeTooltips(pStack, pTooltipComponents);
     }
 
     @Override
@@ -72,10 +80,56 @@ public class SoftEdge extends SwordItem {
             pLivingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 300, 0), pLivingEntity);
         }
         if (pLivingEntity instanceof Player player) {
+            int hunger = player.getFoodData().getFoodLevel();
+            pStack.getOrCreateTag().putInt("Hunger", pStack.getOrCreateTag().getInt("Hunger") + Math.min(20 - hunger, 5));
+
             player.getFoodData().eat(5, 0.5f);
             player.getCooldowns().addCooldown(this, 600);
         }
         pLivingEntity.gameEvent(GameEvent.EAT);
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);
+    }
+
+    private void handleUpgradeTooltips(ItemStack pStack, List<Component> pTooltipComponents) {
+        pTooltipComponents.add(Component.literal(""));
+        TooltipTool.addCtrlHideText(pTooltipComponents, Component.translatable("des.dreamaticvoyage.ctrl_hide").withStyle(ChatFormatting.YELLOW), true);
+
+        float damage = pStack.getOrCreateTag().getFloat("CausedDamage");
+        int hunger = pStack.getOrCreateTag().getInt("Hunger");
+
+        float damageProgress = Math.min(1, damage / 1000.0f);
+        float hungerProgress = Math.min(1, hunger / 200.0f);
+        float totalProgress = Math.min(1, (damageProgress + hungerProgress) / 2.0f);
+
+        if (totalProgress >= 1) {
+            TooltipTool.addCtrlHideText(pTooltipComponents, Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.complete").withStyle(ChatFormatting.GREEN));
+        }
+
+        TooltipTool.addCtrlHideText(pTooltipComponents,
+                Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.progress").withStyle(ChatFormatting.YELLOW)
+                        .append(Component.literal("").withStyle(ChatFormatting.RESET))
+                        .append(Component.literal(new DecimalFormat("#0.0").format(totalProgress * 100) + "%").withStyle(totalProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.WHITE)));
+        TooltipTool.addCtrlHideText(pTooltipComponents,
+                Component.literal(" - ").append(Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.task.damage").withStyle(ChatFormatting.WHITE)
+                        .append(Component.literal("").withStyle(ChatFormatting.RESET))
+                        .append(Component.literal(new DecimalFormat("#0.0").format(damage) + " / " + 1000.0).withStyle(damageProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.GRAY))));
+        TooltipTool.addCtrlHideText(pTooltipComponents,
+                Component.literal(" - ").append(Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.task.hunger").withStyle(ChatFormatting.WHITE)
+                        .append(Component.literal("").withStyle(ChatFormatting.RESET))
+                        .append(Component.literal(hunger + " / " + 200).withStyle(hungerProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.GRAY))));
+    }
+
+    @SubscribeEvent
+    public static void onLivingHurt(LivingHurtEvent event) {
+        var source = event.getSource();
+        if (!source.is(DamageTypes.PLAYER_ATTACK)) return;
+
+        var sourceEntity = source.getEntity();
+        if (!(sourceEntity instanceof Player player)) return;
+
+        ItemStack stack = player.getMainHandItem();
+        if (stack.is(ItemRegistry.SOFT_EDGE.get())) {
+            stack.getOrCreateTag().putFloat("CausedDamage", stack.getOrCreateTag().getFloat("CausedDamage") + event.getAmount());
+        }
     }
 }

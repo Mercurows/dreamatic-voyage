@@ -1023,6 +1023,11 @@
   "item.dreamaticvoyage.soft_edge": "柔软锋芒",
   "des.dreamaticvoyage.soft_edge_1": "已经失传的海栖家族秘密武器的现代复原品",
   "des.dreamaticvoyage.soft_edge_2": "怎么看都不像是用面团做的武器吧",
+  "des.dreamaticvoyage.ctrl_hide": "按下 [Ctrl] 显示隐藏信息",
+  "des.dreamaticvoyage.fukamizu_edge.upgrade.progress": "升级进度：",
+  "des.dreamaticvoyage.fukamizu_edge.upgrade.complete": "当前可升级",
+  "des.dreamaticvoyage.fukamizu_edge.upgrade.task.damage": "已造成伤害：",
+  "des.dreamaticvoyage.fukamizu_edge.upgrade.task.hunger": "已恢复饥饿：",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",
