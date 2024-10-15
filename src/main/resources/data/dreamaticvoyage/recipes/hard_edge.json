@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C#",
+    "CDC",
+    "#M#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:purple_dye"
+    },
+    "C": {
+      "tag": "minecraft:fishes"
+    },
+    "D": {
+      "item": "dreamaticvoyage:ancestral_dough"
+    },
+    "M": {
+      "type": "dreamaticvoyage:comparable",
+      "item": "dreamaticvoyage:soft_edge",
+      "lesserThan": false,
+      "nbt": {
+        "CausedDamage": 1000.0,
+        "Hunger": 200
+      }
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:hard_edge",
+    "count": 1
+  }
+}

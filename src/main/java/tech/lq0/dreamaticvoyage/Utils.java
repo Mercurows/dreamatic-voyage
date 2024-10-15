@@ -10,14 +10,18 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegisterEvent;
 import tech.lq0.dreamaticvoyage.init.*;
 import tech.lq0.dreamaticvoyage.loot.ModLootTables;
 import tech.lq0.dreamaticvoyage.network.DmvNetwork;
+import tech.lq0.dreamaticvoyage.recipe.ComparableNbtIngredient;
 
 @Mod(Utils.MOD_ID)
 public class Utils {
@@ -48,6 +52,7 @@ public class Utils {
         RecipeRegistry.RECIPE_SERIALIZERS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::registerSerializers);
         MinecraftForge.EVENT_BUS.register(this);
 
         registerForgeEvents();
@@ -65,6 +70,12 @@ public class Utils {
         event.enqueueWork(this::registerCompostableItems);
 
         DmvNetwork.init();
+    }
+
+    private void registerSerializers(RegisterEvent event) {
+        event.register(ForgeRegistries.Keys.RECIPE_SERIALIZERS,
+                helper -> CraftingHelper.register(loc("comparable"), ComparableNbtIngredient.Serializer.INSTANCE)
+        );
     }
 
     private void registerCompostableItems() {
