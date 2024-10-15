@@ -32,6 +32,8 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class SoftEdge extends SwordItem {
+    public static final float MAX_DAMAGE = 3000.0f;
+    public static final int MAX_HUNGER = 200;
 
     public SoftEdge() {
         super(ModItemTier.FUKAMIZU_BREAD, 1, -2.8f, new Properties().setNoRepair().fireResistant());
@@ -97,9 +99,16 @@ public class SoftEdge extends SwordItem {
         float damage = pStack.getOrCreateTag().getFloat("CausedDamage");
         int hunger = pStack.getOrCreateTag().getInt("Hunger");
 
-        float damageProgress = Math.min(1, damage / 1000.0f);
-        float hungerProgress = Math.min(1, hunger / 200.0f);
+        float damageProgress = Math.min(1, damage / MAX_DAMAGE);
+        float hungerProgress = Math.min(1, (float) hunger / MAX_HUNGER);
         float totalProgress = Math.min(1, (damageProgress + hungerProgress) / 2.0f);
+        int count = 0;
+        if (damageProgress >= 1) {
+            count++;
+        }
+        if (hungerProgress >= 1) {
+            count++;
+        }
 
         if (totalProgress >= 1) {
             TooltipTool.addCtrlHideText(pTooltipComponents, Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.complete").withStyle(ChatFormatting.GREEN));
@@ -108,15 +117,15 @@ public class SoftEdge extends SwordItem {
         TooltipTool.addCtrlHideText(pTooltipComponents,
                 Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.progress").withStyle(ChatFormatting.YELLOW)
                         .append(Component.literal("").withStyle(ChatFormatting.RESET))
-                        .append(Component.literal(new DecimalFormat("#0.0").format(totalProgress * 100) + "%").withStyle(totalProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.WHITE)));
+                        .append(Component.literal(count + " / 2").withStyle(totalProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.WHITE)));
         TooltipTool.addCtrlHideText(pTooltipComponents,
                 Component.literal(" - ").append(Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.task.damage").withStyle(ChatFormatting.WHITE)
                         .append(Component.literal("").withStyle(ChatFormatting.RESET))
-                        .append(Component.literal(new DecimalFormat("#0.0").format(damage) + " / " + 1000.0).withStyle(damageProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.GRAY))));
+                        .append(Component.literal(new DecimalFormat("#0.0").format(damage) + " / " + MAX_DAMAGE).withStyle(damageProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.GRAY))));
         TooltipTool.addCtrlHideText(pTooltipComponents,
                 Component.literal(" - ").append(Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.task.hunger").withStyle(ChatFormatting.WHITE)
                         .append(Component.literal("").withStyle(ChatFormatting.RESET))
-                        .append(Component.literal(hunger + " / " + 200).withStyle(hungerProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.GRAY))));
+                        .append(Component.literal(hunger + " / " + MAX_HUNGER).withStyle(hungerProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.GRAY))));
     }
 
     @SubscribeEvent
