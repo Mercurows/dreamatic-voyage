@@ -111,6 +111,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ModTags.Items.AUDIO_TAPE_HAINE).add(ItemRegistry.AUDIO_TAPE_HAINE_1.get(), ItemRegistry.AUDIO_TAPE_HAINE_2.get(), ItemRegistry.AUDIO_TAPE_HAINE_3.get());
         this.tag(ModTags.Items.AUDIO_TAPE_KERORO).add(ItemRegistry.AUDIO_TAPE_KERORO_1.get(), ItemRegistry.AUDIO_TAPE_KERORO_2.get(), ItemRegistry.AUDIO_TAPE_KERORO_3.get());
         this.tag(ModTags.Items.AUDIO_TAPE_EKIRA).add(ItemRegistry.AUDIO_TAPE_EKIRA_1.get(), ItemRegistry.AUDIO_TAPE_EKIRA_2.get(), ItemRegistry.AUDIO_TAPE_EKIRA_3.get());
+
+        this.tag(ModTags.Items.FUKAMIZU_EDGE_WITH_EXTRA_LOOT).add(ItemRegistry.HARD_EDGE.get());
     }
 
     private static TagKey<Item> forgeTag(String name) {

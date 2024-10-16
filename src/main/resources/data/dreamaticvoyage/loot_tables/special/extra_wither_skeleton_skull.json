@@ -15,9 +15,7 @@
           "predicate": {
             "equipment": {
               "mainhand": {
-                "items": [
-                  "dreamaticvoyage:hard_edge"
-                ]
+                "tag": "dreamaticvoyage:fukamizu_edge_with_extra_loot"
               }
             }
           }

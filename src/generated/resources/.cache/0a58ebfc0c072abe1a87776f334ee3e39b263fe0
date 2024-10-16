@@ -1,8 +1,9 @@
-// 1.20.1	2024-10-04T04:06:30.6812887	Tags for minecraft:item mod id dreamaticvoyage
+// 1.20.1	2024-10-17T02:25:31.5767411	Tags for minecraft:item mod id dreamaticvoyage
 15a7601620738c928430677228981a8b7f163549 data/dreamaticvoyage/tags/items/audio_tape_chiram.json
 7e9afe9ad5685c65606141d7322ef2cfeeb6958e data/dreamaticvoyage/tags/items/audio_tape_ekira.json
 0d58960745effe975d9204fb4990af8e1c65ee90 data/dreamaticvoyage/tags/items/audio_tape_haine.json
 b90f5443941cfab63c485a78e7d298166721d928 data/dreamaticvoyage/tags/items/audio_tape_keroro.json
+0748f6103774dca4bcabf01ac2fb2a517659be45 data/dreamaticvoyage/tags/items/fukamizu_edge_with_extra_loot.json
 c93b06183954ba0a459bce6c121e69d0448c09e6 data/forge/tags/items/dusts.json
 726e2f789912dca4ae6efc63b1f7c4c73693da5d data/forge/tags/items/dusts/aluminum.json
 c2e582954ed4d09c0e2605b0e730ff30fa987dbd data/forge/tags/items/dusts/copper.json

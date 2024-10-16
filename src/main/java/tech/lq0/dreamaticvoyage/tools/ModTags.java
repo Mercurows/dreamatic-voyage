@@ -1,7 +1,6 @@
 package tech.lq0.dreamaticvoyage.tools;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -19,7 +18,7 @@ public class ModTags {
         public static final TagKey<Block> FUKAMIZU_BREAD = tag("fukamizu_bread");
 
         private static TagKey<Block> tag(String name) {
-            return BlockTags.create(new ResourceLocation(Utils.MOD_ID, name));
+            return BlockTags.create(Utils.loc(name));
         }
     }
 
@@ -30,8 +29,10 @@ public class ModTags {
         public static final TagKey<Item> AUDIO_TAPE_KERORO = tag("audio_tape_keroro");
         public static final TagKey<Item> AUDIO_TAPE_EKIRA = tag("audio_tape_ekira");
 
+        public static final TagKey<Item> FUKAMIZU_EDGE_WITH_EXTRA_LOOT = tag("fukamizu_edge_with_extra_loot");
+
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(new ResourceLocation(Utils.MOD_ID, name));
+            return ItemTags.create(Utils.loc(name));
         }
     }
 
@@ -42,7 +43,7 @@ public class ModTags {
         public static final TagKey<DamageType> MAGIC_CAN_BE_ENHANCED = tag("magic_can_be_enhanced");
 
         private static TagKey<DamageType> tag(String name) {
-            return TagKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Utils.MOD_ID, name));
+            return TagKey.create(Registries.DAMAGE_TYPE, Utils.loc(name));
         }
     }
 }
