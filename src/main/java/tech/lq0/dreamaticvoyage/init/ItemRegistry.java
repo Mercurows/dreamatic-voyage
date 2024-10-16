@@ -332,6 +332,9 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ANCESTRAL_DOUGH = ITEMS.register("ancestral_dough", AncestralDough::new);
     public static final RegistryObject<Item> SOFT_EDGE = ITEMS.register("soft_edge", SoftEdge::new);
     public static final RegistryObject<Item> HARD_EDGE = ITEMS.register("hard_edge", HardEdge::new);
+    public static final RegistryObject<Item> SERRATION_EDGE = ITEMS.register("serration_edge", SerrationEdge::new);
+    public static final RegistryObject<Item> COLORFUL_EDGE = ITEMS.register("colorful_edge", ColorfulEdge::new);
+    public static final RegistryObject<Item> SWOLLEN_EDGE = ITEMS.register("swollen_edge", SwollenEdge::new);
 
     // lutafia
     public static final RegistryObject<Item> FIAXE = ITEMS.register("fiaxe", Fiaxe::new);

@@ -1032,6 +1032,9 @@
   "item.dreamaticvoyage.hard_edge": "坚固锋芒",
   "des.dreamaticvoyage.hard_edge_1": "异想天开的烤制升级版武器，刀身变得无比坚硬",
   "des.dreamaticvoyage.hard_edge_2": "都烤焦了，应该不能吃了吧？",
+  "item.dreamaticvoyage.serration_edge": "锯齿锋芒",
+  "item.dreamaticvoyage.colorful_edge": "缤纷锋芒",
+  "item.dreamaticvoyage.swollen_edge": "溶胀锋芒",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",
