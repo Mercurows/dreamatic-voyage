@@ -22,9 +22,9 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.Livers;
+import tech.lq0.dreamaticvoyage.tools.ModTags;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.text.DecimalFormat;
@@ -101,7 +101,7 @@ public class SoftEdge extends SwordItem {
 
         float damageProgress = Math.min(1, damage / MAX_DAMAGE);
         float hungerProgress = Math.min(1, (float) hunger / MAX_HUNGER);
-        float totalProgress = Math.min(1, (damageProgress + hungerProgress) / 2.0f);
+
         int count = 0;
         if (damageProgress >= 1) {
             count++;
@@ -110,14 +110,14 @@ public class SoftEdge extends SwordItem {
             count++;
         }
 
-        if (totalProgress >= 1) {
+        if (count >= 2) {
             TooltipTool.addCtrlHideText(pTooltipComponents, Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.complete").withStyle(ChatFormatting.GREEN));
         }
 
         TooltipTool.addCtrlHideText(pTooltipComponents,
                 Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.progress").withStyle(ChatFormatting.YELLOW)
                         .append(Component.literal("").withStyle(ChatFormatting.RESET))
-                        .append(Component.literal(count + " / 2").withStyle(totalProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.WHITE)));
+                        .append(Component.literal(count + " / 2").withStyle(count == 2 ? ChatFormatting.GREEN : ChatFormatting.WHITE)));
         TooltipTool.addCtrlHideText(pTooltipComponents,
                 Component.literal(" - ").append(Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.task.damage").withStyle(ChatFormatting.WHITE)
                         .append(Component.literal("").withStyle(ChatFormatting.RESET))
@@ -128,6 +128,9 @@ public class SoftEdge extends SwordItem {
                         .append(Component.literal(hunger + " / " + MAX_HUNGER).withStyle(hungerProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.GRAY))));
     }
 
+    /**
+     * 深水锋芒系列通用方法，仅在本类中实现
+     */
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
         var source = event.getSource();
@@ -137,7 +140,7 @@ public class SoftEdge extends SwordItem {
         if (!(sourceEntity instanceof Player player)) return;
 
         ItemStack stack = player.getMainHandItem();
-        if (stack.is(ItemRegistry.SOFT_EDGE.get())) {
+        if (stack.is(ModTags.Items.FUKAMIZU_EDGE)) {
             stack.getOrCreateTag().putFloat("CausedDamage", stack.getOrCreateTag().getFloat("CausedDamage") + event.getAmount());
         }
     }

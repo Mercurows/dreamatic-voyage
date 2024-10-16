@@ -29,6 +29,7 @@ public class ModTags {
         public static final TagKey<Item> AUDIO_TAPE_KERORO = tag("audio_tape_keroro");
         public static final TagKey<Item> AUDIO_TAPE_EKIRA = tag("audio_tape_ekira");
 
+        public static final TagKey<Item> FUKAMIZU_EDGE = tag("fukamizu_edge");
         public static final TagKey<Item> FUKAMIZU_EDGE_WITH_EXTRA_LOOT = tag("fukamizu_edge_with_extra_loot");
 
         private static TagKey<Item> tag(String name) {
