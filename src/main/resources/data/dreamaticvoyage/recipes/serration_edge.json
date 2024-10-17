@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "dreamaticvoyage:fukamizu_upgrade_smithing_template"
+  },
+  "base": {
+    "type": "dreamaticvoyage:comparable",
+    "item": "dreamaticvoyage:hard_edge",
+    "lesserThan": false,
+    "nbt": {
+      "CausedDamage": 16000.0,
+      "Hunger": 400,
+      "KillCount": 100
+    }
+  },
+  "addition": {
+    "item": "dreamaticvoyage:heavy_bread_component"
+  },
+  "result": {
+    "item": "dreamaticvoyage:serration_edge",
+    "count": 1
+  }
+}

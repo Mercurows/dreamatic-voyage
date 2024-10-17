@@ -1,0 +1,17 @@
+{
+  "type": "dreamaticvoyage:fukamizu_compressing",
+  "ingredient": {
+    "type": "dreamaticvoyage:comparable",
+    "item": "dreamaticvoyage:hard_edge",
+    "lesserThan": false,
+    "nbt": {
+      "CausedDamage": 8000.0,
+      "Hunger": 400,
+      "KillCount": 200
+    }
+  },
+  "output": {
+    "count": 1,
+    "item": "dreamaticvoyage:swollen_edge"
+  }
+}

@@ -4,7 +4,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.SmithingTemplateItem;
-import tech.lq0.dreamaticvoyage.Utils;
 
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class FukamizuUpgradeSmithingTemplate extends SmithingTemplateItem {
                 Component.translatable("upgrade.dreamaticvoyage.fukamizu_upgrade").withStyle(ChatFormatting.GRAY),
                 Component.translatable("item.dreamaticvoyage.smithing_template.fukamizu_upgrade.base_slot_description"),
                 Component.translatable("item.dreamaticvoyage.smithing_template.fukamizu_upgrade.addition_slot_description"),
-                List.of(new ResourceLocation("item/empty_slot_ingot")), List.of(new ResourceLocation(Utils.MOD_ID, "item/ocean_destiny")));
+                List.of(new ResourceLocation("item/empty_armor_slot_helmet"), new ResourceLocation("item/empty_slot_sword")), List.of(new ResourceLocation("item/empty_slot_ingot")));
     }
 
     @Override

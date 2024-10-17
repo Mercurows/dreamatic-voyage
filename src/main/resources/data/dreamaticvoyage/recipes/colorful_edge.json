@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#HS",
+    "DED",
+    "SM#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "H": {
+      "item": "minecraft:honey_bottle"
+    },
+    "S": {
+      "item": "minecraft:sweet_berries"
+    },
+    "D": {
+      "item": "dreamaticvoyage:fukamizu_plum"
+    },
+    "E": {
+      "type": "dreamaticvoyage:comparable",
+      "item": "dreamaticvoyage:hard_edge",
+      "lesserThan": false,
+      "nbt": {
+        "CausedDamage": 8000.0,
+        "Hunger": 800,
+        "KillCount": 100
+      }
+    },
+    "M": {
+      "item": "minecraft:milk_bucket"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:colorful_edge",
+    "count": 1
+  }
+}
