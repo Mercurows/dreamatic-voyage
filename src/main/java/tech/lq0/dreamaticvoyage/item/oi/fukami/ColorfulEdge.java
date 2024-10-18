@@ -97,9 +97,11 @@ public class ColorfulEdge extends SwordItem {
         }
         if (pLivingEntity instanceof Player player) {
             int hunger = player.getFoodData().getFoodLevel();
-            pStack.getOrCreateTag().putInt("Hunger", pStack.getOrCreateTag().getInt("Hunger") + Math.min(20 - hunger, 8));
+            float saturation = player.getFoodData().getSaturationLevel();
+            pStack.getOrCreateTag().putInt("Hunger",
+                    pStack.getOrCreateTag().getInt("Hunger") + Math.min(20 - hunger, 10) + (int) Math.min(20 - saturation, 12));
 
-            player.getFoodData().eat(8, 0.6f);
+            player.getFoodData().eat(10, 0.6f);
             player.getCooldowns().addCooldown(this, 400);
         }
         pLivingEntity.gameEvent(GameEvent.EAT);

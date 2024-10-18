@@ -83,7 +83,9 @@ public class SoftEdge extends SwordItem {
         }
         if (pLivingEntity instanceof Player player) {
             int hunger = player.getFoodData().getFoodLevel();
-            pStack.getOrCreateTag().putInt("Hunger", pStack.getOrCreateTag().getInt("Hunger") + Math.min(20 - hunger, 5));
+            float saturation = player.getFoodData().getSaturationLevel();
+            pStack.getOrCreateTag().putInt("Hunger",
+                    pStack.getOrCreateTag().getInt("Hunger") + Math.min(20 - hunger, 5) + (int) Math.min(20 - saturation, 5));
 
             player.getFoodData().eat(5, 0.5f);
             player.getCooldowns().addCooldown(this, 600);

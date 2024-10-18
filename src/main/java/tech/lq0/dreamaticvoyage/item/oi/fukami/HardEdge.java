@@ -94,7 +94,9 @@ public class HardEdge extends SwordItem {
         }
         if (pLivingEntity instanceof Player player) {
             int hunger = player.getFoodData().getFoodLevel();
-            pStack.getOrCreateTag().putInt("Hunger", pStack.getOrCreateTag().getInt("Hunger") + Math.min(20 - hunger, 7));
+            float saturation = player.getFoodData().getSaturationLevel();
+            pStack.getOrCreateTag().putInt("Hunger",
+                    pStack.getOrCreateTag().getInt("Hunger") + Math.min(20 - hunger, 7) + (int) Math.min(20 - saturation, 7));
 
             player.getFoodData().eat(7, 0.5f);
             player.getCooldowns().addCooldown(this, 600);
