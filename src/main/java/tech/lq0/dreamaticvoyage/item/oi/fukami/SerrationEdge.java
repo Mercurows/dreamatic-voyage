@@ -6,6 +6,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.*;
@@ -25,7 +26,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 public class SerrationEdge extends SwordItem {
-    public static final float MAX_DAMAGE = 80000.0f;
+    public static final float MAX_DAMAGE = 100000.0f;
 
     public SerrationEdge() {
         super(ModItemTier.FUKAMIZU_BREAD, 12, -2.8f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());
@@ -102,7 +103,8 @@ public class SerrationEdge extends SwordItem {
                 if (result.getType() == HitResult.Type.ENTITY) {
                     EntityHitResult hitResult = (EntityHitResult) result;
                     if (hitResult.getEntity() instanceof LivingEntity living) {
-                        living.hurt(pLevel.damageSources().playerAttack(player), 1.5f);
+                        var attr = player.getAttribute(Attributes.ATTACK_DAMAGE);
+                        living.hurt(pLevel.damageSources().playerAttack(player), attr == null ? 1.5f : (float) (attr.getValue() / 4.0f));
                         living.invulnerableTime = 0;
                     }
                 }
