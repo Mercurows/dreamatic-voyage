@@ -45,7 +45,7 @@ public class SerrationEdge extends SwordItem {
         TooltipTool.addCtrlHideText(pTooltipComponents, Component.translatable("des.dreamaticvoyage.ctrl_hide").withStyle(ChatFormatting.YELLOW), true);
 
         float damage = pStack.getOrCreateTag().getFloat("CausedDamage");
-        float damageProgress = Math.min(2, damage / MAX_DAMAGE);
+        float damageProgress = Math.min(1, damage / MAX_DAMAGE);
 
         int count = 0;
         if (damageProgress >= 1) {
