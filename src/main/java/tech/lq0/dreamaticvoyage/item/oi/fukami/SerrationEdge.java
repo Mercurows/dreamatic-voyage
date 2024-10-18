@@ -21,9 +21,11 @@ import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class SerrationEdge extends SwordItem {
+    public static final float MAX_DAMAGE = 80000.0f;
 
     public SerrationEdge() {
         super(ModItemTier.FUKAMIZU_BREAD, 12, -2.8f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());
@@ -35,7 +37,34 @@ public class SerrationEdge extends SwordItem {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.serration_edge_2").withStyle(ChatFormatting.GRAY));
 
         TooltipTool.addLiverInfo(pTooltipComponents, Livers.FUKAMIZU);
-//        handleUpgradeTooltips(pStack, pTooltipComponents);
+        handleUpgradeTooltips(pStack, pTooltipComponents);
+    }
+
+    private void handleUpgradeTooltips(ItemStack pStack, List<Component> pTooltipComponents) {
+        pTooltipComponents.add(Component.literal(""));
+        TooltipTool.addCtrlHideText(pTooltipComponents, Component.translatable("des.dreamaticvoyage.ctrl_hide").withStyle(ChatFormatting.YELLOW), true);
+
+        float damage = pStack.getOrCreateTag().getFloat("CausedDamage");
+        float damageProgress = Math.min(2, damage / MAX_DAMAGE);
+
+        int count = 0;
+        if (damageProgress >= 1) {
+            count++;
+        }
+
+        if (count >= 1) {
+            TooltipTool.addCtrlHideText(pTooltipComponents, Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.complete").withStyle(ChatFormatting.GREEN));
+        }
+
+        TooltipTool.addCtrlHideText(pTooltipComponents,
+                Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.progress").withStyle(ChatFormatting.YELLOW)
+                        .append(Component.literal("").withStyle(ChatFormatting.RESET))
+                        .append(Component.literal(count + " / 1").withStyle(count == 1 ? ChatFormatting.GREEN : ChatFormatting.WHITE)));
+        TooltipTool.addCtrlHideText(pTooltipComponents,
+                Component.literal(" - ").append(Component.translatable("des.dreamaticvoyage.fukamizu_edge.upgrade.task.damage").withStyle(ChatFormatting.WHITE)
+                        .append(Component.literal("").withStyle(ChatFormatting.RESET))
+                        .append(Component.literal(new DecimalFormat("#0.0").format(damage) + " / " + MAX_DAMAGE)
+                                .withStyle(damageProgress >= 1 ? ChatFormatting.GREEN : ChatFormatting.GRAY))));
     }
 
     @Override

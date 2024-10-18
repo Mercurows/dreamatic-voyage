@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EPE",
+    "PAP",
+    "EPE"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:wheat"
+    },
+    "A": {
+      "item": "dreamaticvoyage:ancestral_dough"
+    },
+    "E": {
+      "tag": "minecraft:fishes"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:ancestral_dough",
+    "count": 2
+  }
+}
