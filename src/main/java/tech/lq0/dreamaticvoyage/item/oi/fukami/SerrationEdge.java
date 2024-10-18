@@ -104,7 +104,7 @@ public class SerrationEdge extends SwordItem {
                     EntityHitResult hitResult = (EntityHitResult) result;
                     if (hitResult.getEntity() instanceof LivingEntity living) {
                         var attr = player.getAttribute(Attributes.ATTACK_DAMAGE);
-                        living.hurt(pLevel.damageSources().playerAttack(player), attr == null ? 1.5f : (float) (attr.getValue() / 4.0f));
+                        living.hurt(pLevel.damageSources().playerAttack(player), attr == null ? 1.5f : (float) (attr.getValue() / 5.0f));
                         living.invulnerableTime = 0;
                     }
                 }
