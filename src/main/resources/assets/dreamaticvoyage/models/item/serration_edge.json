@@ -1,0 +1,6 @@
+{
+  "parent": "dreamaticvoyage:display/fukamizu_edge",
+  "textures": {
+    "layer0": "dreamaticvoyage:item/hard_edge"
+  }
+}
