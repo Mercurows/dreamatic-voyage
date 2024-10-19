@@ -71,6 +71,7 @@ public class ModelRegistry {
 //        event.registerLayerDefinition(TetrisIBlockModel.LAYER_LOCATION, TetrisIBlockModel::createBodyLayer);
         event.registerLayerDefinition(KurumiBoomerangModel.LAYER_LOCATION, KurumiBoomerangModel::createBodyLayer);
         event.registerLayerDefinition(FukamizuCrusherModel.LAYER_LOCATION, FukamizuCrusherModel::createBodyLayer);
+        event.registerLayerDefinition(ArtMasterMagicHatModel.LAYER_LOCATION, ArtMasterMagicHatModel::createBodyLayer);
     }
 
     @SubscribeEvent

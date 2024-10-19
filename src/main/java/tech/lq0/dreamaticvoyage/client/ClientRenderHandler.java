@@ -48,6 +48,7 @@ public class ClientRenderHandler {
         CuriosRendererRegistry.register(ItemRegistry.CHIRAM_HAT.get(), ChiramHatRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.YEGGY_PEARL.get(), YeggyPearlRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.DARK_ELF_GLASSES.get(), DarkElfGlassesRenderer::new);
+        CuriosRendererRegistry.register(ItemRegistry.ART_MASTER_MAGIC_HAT.get(), ArtMasterMagicHatRenderer::new);
 
         ItemBlockRenderTypes.setRenderLayer(FluidRegistry.FUKAMIZU_KWAS.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(FluidRegistry.FLOWING_FUKAMIZU_KWAS.get(), RenderType.translucent());
