@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EBE",
+    "ANC",
+    "EPE"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "A": {
+      "type": "dreamaticvoyage:comparable",
+      "item": "dreamaticvoyage:serration_edge",
+      "lesserThan": false,
+      "nbt": {
+        "CausedDamage": 100000.0
+      }
+    },
+    "B": {
+      "type": "dreamaticvoyage:comparable",
+      "item": "dreamaticvoyage:colorful_edge",
+      "lesserThan": false,
+      "nbt": {
+        "Hunger": 2400
+      }
+    },
+    "C": {
+      "type": "dreamaticvoyage:comparable",
+      "item": "dreamaticvoyage:swollen_edge",
+      "lesserThan": false,
+      "nbt": {
+        "KillCount": 1000
+      }
+    },
+    "E": {
+      "item": "dreamaticvoyage:fracture_destiny"
+    },
+    "P": {
+      "item": "dreamaticvoyage:fukamizu_bread_sword"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fukamizu_edge",
+    "count": 1
+  }
+}
