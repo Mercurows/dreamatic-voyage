@@ -21,7 +21,7 @@ public class ManaSurge extends MobEffect {
         if (source.is(ModTags.DamageTypes.MAGIC_CAN_BE_ENHANCED) && event.getEntity().hasEffect(EffectRegistry.MANA_SURGE.get())) {
             var instance = event.getEntity().getEffect(EffectRegistry.MANA_SURGE.get());
             assert instance != null;
-            event.setAmount((float) (event.getAmount() * (0.9 * (1 - 1 / Math.pow(2, instance.getAmplifier() + 0.5)))));
+            event.setAmount((float) (event.getAmount() * (0.1 + 9 / (5 * Math.pow(2, instance.getAmplifier() + 1.5)))));
         }
     }
 }
