@@ -114,7 +114,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         this.tag(ModTags.Items.FUKAMIZU_EDGE).add(ItemRegistry.SOFT_EDGE.get()).addTag(ModTags.Items.FUKAMIZU_EDGE_WITH_EXTRA_LOOT);
         this.tag(ModTags.Items.FUKAMIZU_EDGE_WITH_EXTRA_LOOT).add(ItemRegistry.HARD_EDGE.get(), ItemRegistry.SERRATION_EDGE.get(),
-                ItemRegistry.COLORFUL_EDGE.get(), ItemRegistry.SWOLLEN_EDGE.get());
+                ItemRegistry.COLORFUL_EDGE.get(), ItemRegistry.SWOLLEN_EDGE.get(), ItemRegistry.FUKAMIZU_EDGE.get());
     }
 
     private static TagKey<Item> forgeTag(String name) {

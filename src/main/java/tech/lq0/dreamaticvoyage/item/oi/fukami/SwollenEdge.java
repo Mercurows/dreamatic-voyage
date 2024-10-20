@@ -31,7 +31,7 @@ public class SwollenEdge extends SwordItem {
     public static final int MAX_KILL_COUNT = 1000;
 
     public SwollenEdge() {
-        super(ModItemTier.FUKAMIZU_BREAD, 7, -3.0f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());
+        super(ModItemTier.FUKAMIZU_BREAD, 5, -3.0f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());
     }
 
     @Override

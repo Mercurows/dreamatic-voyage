@@ -335,6 +335,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> SERRATION_EDGE = ITEMS.register("serration_edge", SerrationEdge::new);
     public static final RegistryObject<Item> COLORFUL_EDGE = ITEMS.register("colorful_edge", ColorfulEdge::new);
     public static final RegistryObject<Item> SWOLLEN_EDGE = ITEMS.register("swollen_edge", SwollenEdge::new);
+    public static final RegistryObject<Item> FUKAMIZU_EDGE = ITEMS.register("fukamizu_edge", FukamizuEdge::new);
 
     // lutafia
     public static final RegistryObject<Item> FIAXE = ITEMS.register("fiaxe", Fiaxe::new);

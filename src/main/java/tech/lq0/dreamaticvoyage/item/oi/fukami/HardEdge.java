@@ -29,6 +29,7 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.ModTags;
@@ -46,7 +47,7 @@ public class HardEdge extends SwordItem {
     public static final ResourceLocation EXTRA_WITHER_SKELETON_SKULL = Utils.loc("special/extra_wither_skeleton_skull");
 
     public HardEdge() {
-        super(ModItemTier.FUKAMIZU_BREAD, 4, -2.8f, new Properties().setNoRepair().rarity(Rarity.UNCOMMON).fireResistant());
+        super(ModItemTier.FUKAMIZU_BREAD, 2, -2.8f, new Properties().setNoRepair().rarity(Rarity.UNCOMMON).fireResistant());
     }
 
     @Override
@@ -212,6 +213,7 @@ public class HardEdge extends SwordItem {
         if (!(sourceEntity instanceof Player player)) return;
 
         ItemStack stack = player.getMainHandItem();
+        if (stack.is(ItemRegistry.FUKAMIZU_EDGE.get())) return;
         if (stack.is(ModTags.Items.FUKAMIZU_EDGE_WITH_EXTRA_LOOT) && player.isInWater() && entity.isInWater()) {
             stack.getOrCreateTag().putInt("KillCount", stack.getOrCreateTag().getInt("KillCount") + 1);
         }

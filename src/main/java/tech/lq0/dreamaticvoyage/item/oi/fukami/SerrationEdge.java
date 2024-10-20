@@ -29,7 +29,7 @@ public class SerrationEdge extends SwordItem {
     public static final float MAX_DAMAGE = 100000.0f;
 
     public SerrationEdge() {
-        super(ModItemTier.FUKAMIZU_BREAD, 12, -2.8f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());
+        super(ModItemTier.FUKAMIZU_BREAD, 10, -2.8f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());
     }
 
     @Override
@@ -102,7 +102,7 @@ public class SerrationEdge extends SwordItem {
                 HitResult result = getHitResult(pLevel, player);
                 if (result.getType() == HitResult.Type.ENTITY) {
                     EntityHitResult hitResult = (EntityHitResult) result;
-                    if (hitResult.getEntity() instanceof LivingEntity living) {
+                    if (hitResult.getEntity() instanceof LivingEntity living && pRemainingUseDuration % 2 == 0) {
                         var attr = player.getAttribute(Attributes.ATTACK_DAMAGE);
                         living.hurt(pLevel.damageSources().playerAttack(player), attr == null ? 1.5f : (float) (attr.getValue() / 5.0f));
                         living.invulnerableTime = 0;

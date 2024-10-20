@@ -22,6 +22,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.ModTags;
@@ -36,7 +37,7 @@ public class SoftEdge extends SwordItem {
     public static final int MAX_HUNGER = 200;
 
     public SoftEdge() {
-        super(ModItemTier.FUKAMIZU_BREAD, 1, -2.8f, new Properties().setNoRepair().fireResistant());
+        super(ModItemTier.FUKAMIZU_BREAD, 0, -2.8f, new Properties().setNoRepair().fireResistant());
     }
 
     @Override
@@ -142,6 +143,7 @@ public class SoftEdge extends SwordItem {
         if (!(sourceEntity instanceof Player player)) return;
 
         ItemStack stack = player.getMainHandItem();
+        if (stack.is(ItemRegistry.FUKAMIZU_EDGE.get())) return;
         if (stack.is(ModTags.Items.FUKAMIZU_EDGE)) {
             stack.getOrCreateTag().putFloat("CausedDamage", stack.getOrCreateTag().getFloat("CausedDamage") + event.getAmount());
         }
