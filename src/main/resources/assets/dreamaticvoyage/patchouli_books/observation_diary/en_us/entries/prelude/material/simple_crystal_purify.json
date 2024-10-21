@@ -1,0 +1,36 @@
+{
+  "name": "dreamaticvoyage.entry.simple_crystal_purify",
+  "icon": "dreamaticvoyage:purified_crystal_powder",
+  "category": "dreamaticvoyage:prelude",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.simple_crystal_purify1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:harden_crystal_ingot",
+      "text": "dreamaticvoyage.page.simple_crystal_purify2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.simple_crystal_purify3"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:purified_crystal_powder",
+      "recipe2": "dreamaticvoyage:purified_crystal_ingot"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.simple_crystal_purify4"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:charged_crystal_powder",
+      "recipe2": "dreamaticvoyage:charged_crystal_ingot"
+    }
+  ],
+  "sortnum": 103
+}

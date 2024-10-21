@@ -1,0 +1,33 @@
+{
+  "name": "dreamaticvoyage.entry.crystal_powder",
+  "icon": "dreamaticvoyage:crystal_powder",
+  "category": "dreamaticvoyage:prelude",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.crystal_powder1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:crystal_powder_from_radiant_crystal",
+      "text": "dreamaticvoyage.page.crystal_powder2"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:crystal_powder_from_sink_crystal",
+      "recipe2": "dreamaticvoyage:crystal_powder_from_illusory_crystal"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:crystal_powder_from_alienis_crystal",
+      "recipe2": "dreamaticvoyage:crystal_powder_from_terminal_crystal"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:crystal_powder_copy",
+      "text": "dreamaticvoyage.page.crystal_powder3"
+    }
+  ],
+  "sortnum": 102
+}
