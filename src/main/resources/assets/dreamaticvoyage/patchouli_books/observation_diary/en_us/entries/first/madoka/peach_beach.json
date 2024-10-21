@@ -10,6 +10,7 @@
     },
     {
       "type": "patchouli:spotlight",
+      "link_recipe": true,
       "item": "dreamaticvoyage:peach_beach",
       "text": "dreamaticvoyage.page.peach_beach2"
     }

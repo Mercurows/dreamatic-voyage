@@ -1,0 +1,53 @@
+{
+  "name": "dreamaticvoyage.entry.crystals",
+  "icon": "dreamaticvoyage:radiant_crystal",
+  "category": "dreamaticvoyage:prelude",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.crystals1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.crystals2"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "link_recipe": true,
+      "item": "dreamaticvoyage:radiant_crystal",
+      "text": "dreamaticvoyage.page.crystals3"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "link_recipe": true,
+      "item": "dreamaticvoyage:sink_crystal",
+      "text": "dreamaticvoyage.page.crystals4"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "link_recipe": true,
+      "item": "dreamaticvoyage:illusory_crystal",
+      "text": "dreamaticvoyage.page.crystals5"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "link_recipe": true,
+      "item": "dreamaticvoyage:alienis_crystal",
+      "text": "dreamaticvoyage.page.crystals6"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "link_recipe": true,
+      "item": "dreamaticvoyage:terminal_crystal",
+      "text": "dreamaticvoyage.page.crystals7"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "link_recipe": true,
+      "item": "dreamaticvoyage:dark_crystal",
+      "text": "dreamaticvoyage.page.crystals8"
+    }
+  ],
+  "sortnum": 101
+}

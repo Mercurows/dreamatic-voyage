@@ -10,6 +10,7 @@
     },
     {
       "type": "patchouli:spotlight",
+      "link_recipe": true,
       "item": "dreamaticvoyage:magic_teapot",
       "text": "dreamaticvoyage.page.magic_teapot2"
     }

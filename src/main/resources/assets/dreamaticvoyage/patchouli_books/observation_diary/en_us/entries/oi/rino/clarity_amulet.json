@@ -10,6 +10,7 @@
     },
     {
       "type": "patchouli:spotlight",
+      "link_recipe": true,
       "item": "dreamaticvoyage:clarity_amulet",
       "text": "dreamaticvoyage.page.clarity_amulet2"
     }

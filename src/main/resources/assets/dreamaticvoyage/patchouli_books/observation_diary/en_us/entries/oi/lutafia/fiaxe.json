@@ -10,6 +10,7 @@
     },
     {
       "type": "patchouli:spotlight",
+      "link_recipe": true,
       "item": "dreamaticvoyage:fiaxe",
       "text": "dreamaticvoyage.page.fiaxe2"
     }

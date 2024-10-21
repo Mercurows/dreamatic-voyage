@@ -1513,6 +1513,16 @@
 
   "dreamaticvoyage.title.leah": "综合考察日志",
 
+  "dreamaticvoyage.entry.crystals": "结晶",
+  "dreamaticvoyage.page.crystals1": "在这片奇幻的大陆上，流传着一个古老的传说。相传，有一种独特的物质，深藏于这片大陆上，它被称为$(thing)结晶$(0)。$(p)许多世代以来，无数冒险者怀揣着梦想，踏上了寻找结晶的旅程。据说，能够找到结晶的人，将会获得无穷的财富和力量。",
+  "dreamaticvoyage.page.crystals2": "然而，结晶的力量并非没有代价。拥有太多结晶的人，往往会招致反噬。结晶的力量会侵蚀他们的心灵，使他们变得贪婪和狂妄，甚至引发其他人的妒忌和敌意。$(p)当然，也有一些人能够保持清醒的头脑，谨慎地使用结晶的力量，避免了反噬的命运。$(p)在漫长的岁月中，冒险者们一共找到了六种结晶，并将其记录了下来。",
+  "dreamaticvoyage.page.crystals3": "$(item)耀光结晶$(0)是一种闪烁着火焰光芒的结晶，击杀$(thing)烈焰人$(0)有高概率掉落。",
+  "dreamaticvoyage.page.crystals4": "$(item)沉沦结晶$(0)是一种略带瑕疵的蓝色结晶，击杀$(thing)守卫者$(0)有较高概率掉落。",
+  "dreamaticvoyage.page.crystals5": "$(item)幻梦结晶$(0)是一种散发柔和白色光芒的结晶，击杀$(thing)幻翼$(0)有中概率掉落。",
+  "dreamaticvoyage.page.crystals6": "$(item)异域结晶$(0)是一种造型独特的结晶，击杀$(thing)末影人$(0)有低概率掉落，击杀$(thing)末影螨$(0)必定掉落。",
+  "dreamaticvoyage.page.crystals7": "$(item)终末结晶$(0)是一种破碎的紫色结晶，击杀$(thing)潜影贝$(0)有较低概率掉落。",
+  "dreamaticvoyage.page.crystals8": "$(item)深暗结晶$(0)是一种远古的深蓝色结晶，击杀$(thing)监守者$(0)有高概率掉落。",
+
   "dreamaticvoyage.entry.observers": "观测者",
   "dreamaticvoyage.page.observers1": "",
   "dreamaticvoyage.page.observers2": "",
@@ -1757,8 +1767,6 @@
   "dreamaticvoyage.page.world_peace_staff8": "……请原谅我的不辞而别。我知道，这个决定会让你感到困惑和伤心，但我希望你能理解，我所走的每一步，都是为了寻找内心的宁静和新的开始。$(p)或许，在没有我的日子里，你会感到孤单，但请相信，你的勇气和力量足以支撑你走过任何风雨。",
   "dreamaticvoyage.page.world_peace_staff9": "无论未来的道路多么崎岖，请你一定要坚持下去，不要放弃……答应我，好吗？$(p)你的梦想、你的使命，都值得你去为之奋斗。我相信，总有一天，我们会在新的世界中再次相遇，那时的我们，将会变得更加强大。",
   "dreamaticvoyage.page.world_peace_staff10": "最后，请接受我最真挚的祝福。愿你在未来的日子里，每一步都走得坚定而有力，每一个梦想都能实现。$(p)那就……再见啦。$(p)永远爱你的$(br)$(liver)白桃Shirako",
-
-  "dreamaticvoyage.entry.crystals": "结晶",
 
   "dreamaticvoyage.entry.emergency_engine_power": "公海法拉利套件",
   "dreamaticvoyage.page.emergency_engine_power1": "$(item)公海法拉利套件$(0)是一个能够大幅强化移动速度的装置。$(p)使用时获得强大的$(thing)速度$(0)效果，但会使自身$(c)燃烧$(0)起来。",

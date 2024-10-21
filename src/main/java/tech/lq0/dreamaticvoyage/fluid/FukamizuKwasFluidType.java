@@ -30,12 +30,12 @@ public class FukamizuKwasFluidType extends FluidType {
 
             @Override
             public ResourceLocation getStillTexture() {
-                return new ResourceLocation(Utils.MOD_ID, "block/fukamizu_kwas_still");
+                return Utils.loc("block/fukamizu_kwas_still");
             }
 
             @Override
             public ResourceLocation getFlowingTexture() {
-                return new ResourceLocation(Utils.MOD_ID, "block/fukamizu_kwas_flowing");
+                return Utils.loc("block/fukamizu_kwas_flowing");
             }
         });
     }

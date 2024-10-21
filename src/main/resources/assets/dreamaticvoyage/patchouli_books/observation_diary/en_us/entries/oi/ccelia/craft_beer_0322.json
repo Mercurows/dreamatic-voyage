@@ -10,6 +10,7 @@
     },
     {
       "type": "patchouli:spotlight",
+      "link_recipe": true,
       "item": "dreamaticvoyage:craft_beer_0322",
       "text": "dreamaticvoyage.page.craft_beer_03222"
     },

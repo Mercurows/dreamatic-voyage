@@ -10,6 +10,7 @@
     },
     {
       "type": "patchouli:spotlight",
+      "link_recipe": true,
       "item": "dreamaticvoyage:rabbit_lychee",
       "text": "dreamaticvoyage.page.rabbit_lychee2"
     }

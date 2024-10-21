@@ -10,6 +10,7 @@
     },
     {
       "type": "patchouli:spotlight",
+      "link_recipe": true,
       "item": "dreamaticvoyage:momo_gun",
       "text": "dreamaticvoyage.page.momo_gun2"
     }
