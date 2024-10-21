@@ -1531,6 +1531,13 @@
   "dreamaticvoyage.page.simple_crystal_purify2": "$(o)八合一的金属锭。",
   "dreamaticvoyage.page.simple_crystal_purify3": "结晶粉还可以进一步的提纯，利用一些更高级的材料，可以制作出$(item)纯净结晶粉$(0)与$(item)纯净结晶锭$(0)。$(p)当然，利用工作台进行手工提纯的效率并不高，需要消耗大量的材料。",
   "dreamaticvoyage.page.simple_crystal_purify4": "提纯后的结晶粉已经达到了纯度的巅峰，想要进一步强化，必须对其注入能量，形成$(item)高能结晶粉$(0)与$(item)高能结晶锭$(0)。$(p)同样，手工提纯的造价十分昂贵。",
+  "dreamaticvoyage.entry.crystal_popper": "结晶爆米花机",
+  "dreamaticvoyage.page.crystal_popper1": "这片大陆上不只存在一种获取结晶粉的方式，从一些冒险者的口中得知，当地存在一种名为“爆米”的技术，能够将钱财转化为食物，并有概率得到结晶粉。根据这个原理，可以制作出一台$(item)结晶爆米花机$(0)。",
+  "dreamaticvoyage.page.crystal_popper2": "$(o)花钱如流水。",
+  "dreamaticvoyage.page.crystal_popper3": "结晶爆米花机每隔一段时间会消耗一个$(thing)金锭$(0)，增加1点能量，当能量不为空时，每隔较长时间会进行一次产出。$(p)每次产出必定会出现一个$(item)结晶爆米花$(0)，能量越高，产出$(item)结晶粉$(0)的概率越高，当能量大于90时，有低概率产出$(item)纯净结晶粉$(0)。",
+  "dreamaticvoyage.entry.crystal_purifier": "结晶提纯器",
+  "dreamaticvoyage.page.crystal_purifier1": "众所周知，猪灵一族擅长加工贵重金属，利用猪灵传授的技术，能够制作出更加方便的$(item)结晶提纯器$(0)。$(p)结晶提纯器能够将低级的结晶粉或结晶锭加工成更高级的材料，这个过程需要消耗一定的能量，只需要向其中补充金锭、绿宝石或对应的方块作为燃料即可。",
+  "dreamaticvoyage.page.crystal_purifier2": "$(o)猪灵科技，但是并不高效。",
 
   "dreamaticvoyage.entry.observers": "观测者",
   "dreamaticvoyage.page.observers1": "",

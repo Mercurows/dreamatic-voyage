@@ -1,0 +1,24 @@
+{
+  "name": "dreamaticvoyage.entry.crystal_popper",
+  "icon": "dreamaticvoyage:crystal_popper",
+  "category": "dreamaticvoyage:prelude",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.crystal_popper1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:crystal_popper",
+      "text": "dreamaticvoyage.page.crystal_popper2"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "link_recipe": true,
+      "item": "dreamaticvoyage:crystal_popcorn",
+      "text": "dreamaticvoyage.page.crystal_popper3"
+    }
+  ],
+  "sortnum": 104
+}
