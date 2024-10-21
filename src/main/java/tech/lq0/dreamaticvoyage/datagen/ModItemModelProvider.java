@@ -150,6 +150,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.JELLYFISH_SHELL);
         simpleItem(ItemRegistry.ARTIST_TOOL_BELT);
         simpleItem(ItemRegistry.ART_MASTER_TOOL_BELT);
+        simpleItem(ItemRegistry.ART_MASTER_MAGIC_HAT);
 
         simpleItem(ItemRegistry.GRAVITY_RESTRAINT_DEVICE);
 
