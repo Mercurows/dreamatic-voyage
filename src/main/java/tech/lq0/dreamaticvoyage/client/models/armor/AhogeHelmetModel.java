@@ -9,14 +9,13 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import tech.lq0.dreamaticvoyage.Utils;
 
 @SuppressWarnings("unused")
 public class AhogeHelmetModel<T extends Entity> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Utils.MOD_ID, "ahoge_helmet_model"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(Utils.loc("ahoge_helmet_model"), "main");
     public final ModelPart main;
 
     public AhogeHelmetModel(ModelPart root) {

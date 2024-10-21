@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
 public class AhogeBoomerangEntityRenderer extends EntityRenderer<AhogeBoomerangEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/ahoge_boomerang.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/ahoge_boomerang.png");
     private final AhogeBoomerangModel<AhogeBoomerangEntity> model;
 
     public AhogeBoomerangEntityRenderer(EntityRendererProvider.Context manager) {

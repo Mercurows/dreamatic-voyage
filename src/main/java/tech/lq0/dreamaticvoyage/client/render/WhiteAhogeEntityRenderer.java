@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
 public class WhiteAhogeEntityRenderer extends EntityRenderer<WhiteAhogeEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/white_ahoge_entity.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/white_ahoge_entity.png");
     private final WhiteAhogeModel<WhiteAhogeEntity> model;
 
     public WhiteAhogeEntityRenderer(EntityRendererProvider.Context manager) {

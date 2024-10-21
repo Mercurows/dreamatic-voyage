@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
 public class DaifukuSyrupEntityRenderer extends EntityRenderer<DaifukuSyrupEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/daifuku_syrup.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/daifuku_syrup.png");
     private final DaifukuSyrupModel<DaifukuSyrupEntity> model;
 
     public DaifukuSyrupEntityRenderer(EntityRendererProvider.Context manager) {

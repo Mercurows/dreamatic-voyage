@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
 public class FluffBallEntityRenderer extends EntityRenderer<FluffBallEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/fluff_ball.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/fluff_ball.png");
     private final FluffBallModel<FluffBallEntity> model;
 
     public FluffBallEntityRenderer(EntityRendererProvider.Context manager) {

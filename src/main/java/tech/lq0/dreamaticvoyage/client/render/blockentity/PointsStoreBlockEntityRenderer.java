@@ -18,7 +18,7 @@ import tech.lq0.dreamaticvoyage.client.models.blockentity.PdCLogoModel;
 
 @OnlyIn(Dist.CLIENT)
 public class PointsStoreBlockEntityRenderer implements BlockEntityRenderer<PointsStoreBlockEntity> {
-    public static final Material TEXTURE = new Material(TextureAtlas.LOCATION_BLOCKS, new ResourceLocation(Utils.MOD_ID, "textures/entity/pdc_logo.png"));
+    public static final Material TEXTURE = new Material(TextureAtlas.LOCATION_BLOCKS, Utils.loc("textures/entity/pdc_logo.png"));
     private final PdCLogoModel model;
 
     public PointsStoreBlockEntityRenderer(BlockEntityRendererProvider.Context pContext) {

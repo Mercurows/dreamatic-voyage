@@ -1,6 +1,5 @@
 package tech.lq0.dreamaticvoyage.capability;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
@@ -15,7 +14,7 @@ public class CapabilityHandler {
     @SubscribeEvent
     public static void registerCapabilities(AttachCapabilitiesEvent<Entity> event) {
         if (event.getObject() instanceof Player) {
-            event.addCapability(new ResourceLocation(Utils.MOD_ID, "chaos"), new ChaosCapabilityProvider());
+            event.addCapability(Utils.loc("chaos"), new ChaosCapabilityProvider());
         }
     }
 

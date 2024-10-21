@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
 public class HirenadeGGEntityRenderer extends EntityRenderer<HirenadeGGEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/hirenade_gg.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/hirenade_gg.png");
     private final HirenadeGGModel<HirenadeGGEntity> model;
 
     public HirenadeGGEntityRenderer(EntityRendererProvider.Context manager) {

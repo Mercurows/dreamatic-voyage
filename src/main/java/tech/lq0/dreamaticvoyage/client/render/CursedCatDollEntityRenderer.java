@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
 public class CursedCatDollEntityRenderer extends EntityRenderer<CursedCatDollEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/cursed_cat_doll.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/cursed_cat_doll.png");
     private final CursedCatDollModel<CursedCatDollEntity> model;
 
     public CursedCatDollEntityRenderer(EntityRendererProvider.Context manager) {

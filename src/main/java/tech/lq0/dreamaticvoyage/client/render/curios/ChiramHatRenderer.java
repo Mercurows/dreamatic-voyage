@@ -18,7 +18,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 public class ChiramHatRenderer implements ICurioRenderer {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/models/curios/chiram_hat.png");
+    private static final ResourceLocation TEXTURE = Utils.loc("textures/models/curios/chiram_hat.png");
 
     private final ChiramHatModel model;
 

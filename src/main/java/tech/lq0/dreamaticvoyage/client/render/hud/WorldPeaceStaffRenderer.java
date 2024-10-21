@@ -16,7 +16,7 @@ import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT)
 public class WorldPeaceStaffRenderer {
-    private static final ResourceLocation HUD = new ResourceLocation(Utils.MOD_ID, "textures/gui/world_peace_staff_hud.png");
+    private static final ResourceLocation HUD = Utils.loc("textures/gui/world_peace_staff_hud.png");
 
     @SubscribeEvent
     public static void onRenderGui(RenderGuiOverlayEvent.Pre event) {

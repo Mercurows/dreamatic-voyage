@@ -18,7 +18,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 public class YeggyPearlRenderer implements ICurioRenderer {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/models/curios/yeggy_pearl.png");
+    private static final ResourceLocation TEXTURE = Utils.loc("textures/models/curios/yeggy_pearl.png");
 
     private final YeggyPearlModel model;
 

@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
 public class BloodCrystalEntityRenderer extends EntityRenderer<BloodCrystalEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/blood_crystal.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/blood_crystal.png");
     private final BloodCrystalModel<BloodCrystalEntity> bloodCrystalModel;
 
     public BloodCrystalEntityRenderer(EntityRendererProvider.Context manager) {

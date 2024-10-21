@@ -10,7 +10,6 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
@@ -18,7 +17,7 @@ import tech.lq0.dreamaticvoyage.Utils;
 @OnlyIn(Dist.CLIENT)
 public class PdCLogoModel extends Model {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Utils.MOD_ID, "pdc_logo_model"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(Utils.loc("pdc_logo_model"), "main");
     private final ModelPart main;
 
     public PdCLogoModel(ModelPart root) {

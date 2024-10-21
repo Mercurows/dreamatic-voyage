@@ -10,9 +10,9 @@ import tech.lq0.dreamaticvoyage.client.render.special.LeviyRenderer;
 import tech.lq0.dreamaticvoyage.entity.LeviyBeamEntity;
 
 public class LeviyBeamEntityRenderer extends EntityRenderer<LeviyBeamEntity> {
-    public static final ResourceLocation TEXTURE_LEVIY_BEAM = new ResourceLocation(Utils.MOD_ID, "textures/entity/leviy_beam.png");
-    public static final ResourceLocation TEXTURE_LEVIY_HALO = new ResourceLocation(Utils.MOD_ID, "textures/entity/leviy_halo.png");
-    public static final ResourceLocation TEXTURE_LEVIY_MAGIC = new ResourceLocation(Utils.MOD_ID, "textures/entity/leviy_magic.png");
+    public static final ResourceLocation TEXTURE_LEVIY_BEAM = Utils.loc("textures/entity/leviy_beam.png");
+    public static final ResourceLocation TEXTURE_LEVIY_HALO = Utils.loc("textures/entity/leviy_halo.png");
+    public static final ResourceLocation TEXTURE_LEVIY_MAGIC = Utils.loc("textures/entity/leviy_magic.png");
 
     public LeviyBeamEntityRenderer(EntityRendererProvider.Context manager) {
         super(manager);

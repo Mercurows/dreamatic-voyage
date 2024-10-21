@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
 public class ShuRinoKenEntityRenderer extends EntityRenderer<ShuRinoKenEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/shu_rino_ken.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/shu_rino_ken.png");
     private final ShuRinoKenModel<ShuRinoKenEntity> model;
 
     public ShuRinoKenEntityRenderer(EntityRendererProvider.Context manager) {

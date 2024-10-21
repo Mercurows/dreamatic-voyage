@@ -16,7 +16,7 @@ import tech.lq0.dreamaticvoyage.init.EffectRegistry;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT)
 public class EclipseNightRenderer {
-    private static final ResourceLocation HUD = new ResourceLocation(Utils.MOD_ID, "textures/gui/eclipse_night_hud.png");
+    private static final ResourceLocation HUD = Utils.loc("textures/gui/eclipse_night_hud.png");
     private static final ResourceLocation HUD2 = new ResourceLocation("textures/misc/nausea.png");
 
     @SuppressWarnings("ConstantConditions")

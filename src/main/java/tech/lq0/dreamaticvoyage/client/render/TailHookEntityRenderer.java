@@ -26,7 +26,7 @@ import java.awt.*;
 
 @OnlyIn(Dist.CLIENT)
 public class TailHookEntityRenderer extends EntityRenderer<TailHookEntity> {
-    private static final ResourceLocation HOOK = new ResourceLocation(Utils.MOD_ID, "textures/entity/tail_hook.png");
+    private static final ResourceLocation HOOK = Utils.loc("textures/entity/tail_hook.png");
     private static final RenderType RENDER_TYPE = RenderType.entityCutout(HOOK);
 
     public TailHookEntityRenderer(EntityRendererProvider.Context renderManagerIn) {

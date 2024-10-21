@@ -17,7 +17,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT)
 public class YeggyPearlRenderer {
-    private static final ResourceLocation HUD = new ResourceLocation(Utils.MOD_ID, "textures/gui/yeggy_pearl_hud.png");
+    private static final ResourceLocation HUD = Utils.loc("textures/gui/yeggy_pearl_hud.png");
 
     @SubscribeEvent
     public static void onRenderGui(RenderGuiOverlayEvent.Pre event) {

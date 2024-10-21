@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
 public class PlungerEntityRenderer extends EntityRenderer<PlungerEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/plunger.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/plunger.png");
     private final PlungerModel<PlungerEntity> model;
 
     public PlungerEntityRenderer(EntityRendererProvider.Context manager) {

@@ -18,7 +18,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 public class DarkElfGlassesRenderer implements ICurioRenderer {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/models/curios/dark_elf_glasses.png");
+    private static final ResourceLocation TEXTURE = Utils.loc("textures/models/curios/dark_elf_glasses.png");
 
     private final DarkElfGlassesModel model;
 

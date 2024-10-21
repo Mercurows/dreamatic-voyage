@@ -19,7 +19,7 @@ import tech.lq0.dreamaticvoyage.client.models.blockentity.FukamizuCrusherModel;
 @SuppressWarnings("rawtypes")
 @OnlyIn(Dist.CLIENT)
 public class FukamizuCrusherBlockEntityRenderer implements BlockEntityRenderer<FukamizuCrusherBlockEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/fukamizu_crusher.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/fukamizu_crusher.png");
     private final FukamizuCrusherModel model;
 
     public FukamizuCrusherBlockEntityRenderer(BlockEntityRendererProvider.Context pContext) {

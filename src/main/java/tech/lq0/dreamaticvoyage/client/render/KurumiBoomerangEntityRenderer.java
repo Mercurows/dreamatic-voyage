@@ -22,7 +22,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @OnlyIn(Dist.CLIENT)
 public class KurumiBoomerangEntityRenderer extends EntityRenderer<KurumiBoomerangEntity> {
 
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/kurumi_boomerang.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/kurumi_boomerang.png");
     private final KurumiBoomerangModel<KurumiBoomerangEntity> model;
 
     public KurumiBoomerangEntityRenderer(EntityRendererProvider.Context manager) {

@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
 public class WaterCardEntityRenderer extends EntityRenderer<WaterCardEntity> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Utils.MOD_ID, "textures/entity/water_card.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/water_card.png");
     private final WaterCardModel<WaterCardEntity> model;
 
     public WaterCardEntityRenderer(EntityRendererProvider.Context manager) {
