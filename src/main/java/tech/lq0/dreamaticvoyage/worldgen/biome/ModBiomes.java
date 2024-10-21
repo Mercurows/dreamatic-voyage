@@ -6,7 +6,6 @@ import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
@@ -17,10 +16,8 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import tech.lq0.dreamaticvoyage.Utils;
 
 public class ModBiomes {
-    public static final ResourceKey<Biome> BLUE_DESERT = ResourceKey.create(Registries.BIOME,
-            new ResourceLocation(Utils.MOD_ID, "blue_desert"));
-    public static final ResourceKey<Biome> HARANO_PLAINS = ResourceKey.create(Registries.BIOME,
-            new ResourceLocation(Utils.MOD_ID, "harano_plains"));
+    public static final ResourceKey<Biome> BLUE_DESERT = ResourceKey.create(Registries.BIOME, Utils.loc("blue_desert"));
+    public static final ResourceKey<Biome> HARANO_PLAINS = ResourceKey.create(Registries.BIOME, Utils.loc("harano_plains"));
 
     public static void boostrap(BootstapContext<Biome> context) {
         context.register(BLUE_DESERT, blueDesertBiome(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER)));

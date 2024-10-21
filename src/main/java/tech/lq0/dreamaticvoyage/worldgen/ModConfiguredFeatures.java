@@ -3,7 +3,6 @@ package tech.lq0.dreamaticvoyage.worldgen;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -37,7 +36,7 @@ public class ModConfiguredFeatures {
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Utils.MOD_ID, name));
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Utils.loc(name));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(

@@ -83,7 +83,7 @@ public class CrystalPurifyingRecipe implements Recipe<SimpleContainer> {
     public static class Serializer implements RecipeSerializer<CrystalPurifyingRecipe> {
         public static final Serializer INSTANCE = new Serializer();
 
-        public static final ResourceLocation ID = new ResourceLocation(Utils.MOD_ID, "crystal_purifying");
+        public static final ResourceLocation ID = Utils.loc("crystal_purifying");
 
         @Override
         public CrystalPurifyingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {

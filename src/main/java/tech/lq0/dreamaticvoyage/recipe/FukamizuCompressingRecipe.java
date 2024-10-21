@@ -77,7 +77,7 @@ public class FukamizuCompressingRecipe implements Recipe<SimpleContainer> {
     public static class Serializer implements RecipeSerializer<FukamizuCompressingRecipe> {
         public static final Serializer INSTANCE = new Serializer();
 
-        public static final ResourceLocation ID = new ResourceLocation(Utils.MOD_ID, "fukamizu_compressing");
+        public static final ResourceLocation ID = Utils.loc("fukamizu_compressing");
 
         @Override
         public FukamizuCompressingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {

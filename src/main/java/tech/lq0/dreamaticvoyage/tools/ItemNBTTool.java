@@ -2,7 +2,9 @@ package tech.lq0.dreamaticvoyage.tools;
 
 import net.minecraft.world.item.ItemStack;
 
-//from Botania
+/**
+ * NBT Tool Codes Based on Botania
+ */
 public final class ItemNBTTool {
     public static void setBoolean(ItemStack stack, String tag, boolean b) {
         stack.getOrCreateTag().putBoolean(tag, b);

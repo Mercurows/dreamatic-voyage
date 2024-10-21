@@ -3,7 +3,6 @@ package tech.lq0.dreamaticvoyage.worldgen.dimension;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.Level;
@@ -15,12 +14,9 @@ import tech.lq0.dreamaticvoyage.Utils;
 import java.util.OptionalLong;
 
 public class ModDimensions {
-    public static final ResourceKey<LevelStem> TRAUM_KEY = ResourceKey.create(Registries.LEVEL_STEM,
-            new ResourceLocation(Utils.MOD_ID, "traum"));
-    public static final ResourceKey<Level> TRAUM_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
-            new ResourceLocation(Utils.MOD_ID, "traum"));
-    public static final ResourceKey<DimensionType> TRAUM_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
-            new ResourceLocation(Utils.MOD_ID, "traum_type"));
+    public static final ResourceKey<LevelStem> TRAUM_KEY = ResourceKey.create(Registries.LEVEL_STEM, Utils.loc("traum"));
+    public static final ResourceKey<Level> TRAUM_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION, Utils.loc("traum"));
+    public static final ResourceKey<DimensionType> TRAUM_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE, Utils.loc("traum_type"));
 
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         context.register(TRAUM_DIM_TYPE, new DimensionType(

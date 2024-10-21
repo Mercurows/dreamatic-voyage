@@ -26,7 +26,7 @@ public class MissingMappingHandler {
     public static void onMissingMappings(MissingMappingsEvent event) {
         for (MissingMappingsEvent.Mapping<Item> mapping : event.getAllMappings(Registries.ITEM)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 Item remappedResource = ForgeRegistries.ITEMS.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -36,7 +36,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<Block> mapping : event.getAllMappings(Registries.BLOCK)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 Block remappedResource = ForgeRegistries.BLOCKS.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -46,7 +46,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<Biome> mapping : event.getAllMappings(Registries.BIOME)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 Biome remappedResource = ForgeRegistries.BIOMES.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -56,7 +56,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<Enchantment> mapping : event.getAllMappings(Registries.ENCHANTMENT)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 Enchantment remappedResource = ForgeRegistries.ENCHANTMENTS.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -66,7 +66,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<SoundEvent> mapping : event.getAllMappings(Registries.SOUND_EVENT)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 SoundEvent remappedResource = ForgeRegistries.SOUND_EVENTS.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -76,7 +76,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<BlockEntityType<?>> mapping : event.getAllMappings(Registries.BLOCK_ENTITY_TYPE)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 BlockEntityType<?> remappedResource = ForgeRegistries.BLOCK_ENTITY_TYPES.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -86,7 +86,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<EntityType<?>> mapping : event.getAllMappings(Registries.ENTITY_TYPE)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 EntityType<?> remappedResource = ForgeRegistries.ENTITY_TYPES.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -96,7 +96,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<Attribute> mapping : event.getAllMappings(Registries.ATTRIBUTE)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 Attribute remappedResource = ForgeRegistries.ATTRIBUTES.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -106,7 +106,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<PoiType> mapping : event.getAllMappings(Registries.POINT_OF_INTEREST_TYPE)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 PoiType remappedResource = ForgeRegistries.POI_TYPES.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -116,7 +116,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<MobEffect> mapping : event.getAllMappings(Registries.MOB_EFFECT)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 MobEffect remappedResource = ForgeRegistries.MOB_EFFECTS.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -126,7 +126,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<Potion> mapping : event.getAllMappings(Registries.POTION)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 Potion remappedResource = ForgeRegistries.POTIONS.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);
@@ -136,7 +136,7 @@ public class MissingMappingHandler {
 
         for (MissingMappingsEvent.Mapping<VillagerProfession> mapping : event.getAllMappings(Registries.VILLAGER_PROFESSION)) {
             if ("providencraft".equals(mapping.getKey().getNamespace())) {
-                ResourceLocation newResourceLocation = new ResourceLocation(Utils.MOD_ID, mapping.getKey().getPath());
+                ResourceLocation newResourceLocation = Utils.loc(mapping.getKey().getPath());
                 VillagerProfession remappedResource = ForgeRegistries.VILLAGER_PROFESSIONS.getValue(newResourceLocation);
                 if (remappedResource != null) {
                     mapping.remap(remappedResource);

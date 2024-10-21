@@ -1,6 +1,5 @@
 package tech.lq0.dreamaticvoyage.init;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,7 +13,7 @@ import tech.lq0.dreamaticvoyage.voyage.core.VoyageEvent;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VoyageEventRegistry {
 
-    public static final DeferredRegister<VoyageEvent> EVENTS = DeferredRegister.create(new ResourceLocation(Utils.MOD_ID, "voyage_event"), Utils.MOD_ID);
+    public static final DeferredRegister<VoyageEvent> EVENTS = DeferredRegister.create(Utils.loc("voyage_event"), Utils.MOD_ID);
 
     public static final RegistryObject<VoyageEvent> FUKAMIZU_BAKERY = EVENTS.register("fukamizu_bakery", () -> new VoyageEvent(
             "fukamizu_bakery",
@@ -62,6 +61,6 @@ public class VoyageEventRegistry {
 
     @SubscribeEvent
     public static void registry(NewRegistryEvent event) {
-        event.create(new RegistryBuilder<VoyageEvent>().setName(new ResourceLocation(Utils.MOD_ID, "voyage_event")));
+        event.create(new RegistryBuilder<VoyageEvent>().setName(Utils.loc("voyage_event")));
     }
 }

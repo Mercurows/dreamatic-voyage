@@ -3,7 +3,6 @@ package tech.lq0.dreamaticvoyage.mixin;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ResultSlot;
 import net.minecraft.world.inventory.Slot;
@@ -24,7 +23,7 @@ public class AbstractContainerScreenMixin {
 
         if (pSlot instanceof ResultSlot slot) {
             if (player.hasEffect(EffectRegistry.CREATIVITY_BANKRUPTCY.get())) {
-                pGuiGraphics.blit(new ResourceLocation(Utils.MOD_ID, "textures/gui/cross.png"),
+                pGuiGraphics.blit(Utils.loc("textures/gui/cross.png"),
                         slot.x, slot.y, 500, 0, 0, 16, 16, 16, 16);
             }
         }
