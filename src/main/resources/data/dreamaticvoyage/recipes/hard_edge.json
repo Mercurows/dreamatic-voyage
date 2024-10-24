@@ -5,8 +5,8 @@
     "item": "dreamaticvoyage:soft_edge",
     "lesserThan": false,
     "nbt": {
-      "CausedDamage": 3000.0,
-      "Hunger": 200
+      "CausedDamage": 1000.0,
+      "Hunger": 300
     }
   },
   "result": "dreamaticvoyage:hard_edge",

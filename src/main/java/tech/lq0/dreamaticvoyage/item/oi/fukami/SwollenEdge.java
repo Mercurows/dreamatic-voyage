@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class SwollenEdge extends SwordItem {
-    public static final int MAX_KILL_COUNT = 1000;
+    public static final int MAX_KILL_COUNT = 600;
 
     public SwollenEdge() {
         super(ModItemTier.FUKAMIZU_BREAD, 5, -3.0f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());

@@ -40,9 +40,9 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class HardEdge extends SwordItem {
-    public static final float MAX_DAMAGE = 8000.0f;
-    public static final int MAX_HUNGER = 400;
-    public static final int MAX_KILL_COUNT = 100;
+    public static final float MAX_DAMAGE = 4000.0f;
+    public static final int MAX_HUNGER = 800;
+    public static final int MAX_KILL_COUNT = 50;
 
     public static final ResourceLocation EXTRA_WITHER_SKELETON_SKULL = Utils.loc("special/extra_wither_skeleton_skull");
 

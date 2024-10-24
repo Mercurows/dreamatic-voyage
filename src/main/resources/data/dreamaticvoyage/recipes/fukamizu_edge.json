@@ -14,7 +14,7 @@
       "item": "dreamaticvoyage:serration_edge",
       "lesserThan": false,
       "nbt": {
-        "CausedDamage": 100000.0
+        "CausedDamage": 30000.0
       }
     },
     "B": {
@@ -22,7 +22,7 @@
       "item": "dreamaticvoyage:colorful_edge",
       "lesserThan": false,
       "nbt": {
-        "Hunger": 2400
+        "Hunger": 3000
       }
     },
     "C": {
@@ -30,7 +30,7 @@
       "item": "dreamaticvoyage:swollen_edge",
       "lesserThan": false,
       "nbt": {
-        "KillCount": 1000
+        "KillCount": 600
       }
     },
     "E": {

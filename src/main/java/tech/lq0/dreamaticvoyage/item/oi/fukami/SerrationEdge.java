@@ -26,7 +26,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 public class SerrationEdge extends SwordItem {
-    public static final float MAX_DAMAGE = 100000.0f;
+    public static final float MAX_DAMAGE = 30000.0f;
 
     public SerrationEdge() {
         super(ModItemTier.FUKAMIZU_BREAD, 10, -2.8f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());

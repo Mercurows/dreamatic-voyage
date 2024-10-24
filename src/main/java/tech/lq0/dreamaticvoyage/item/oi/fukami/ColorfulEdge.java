@@ -20,7 +20,7 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import java.util.List;
 
 public class ColorfulEdge extends SwordItem {
-    public static final int MAX_HUNGER = 2400;
+    public static final int MAX_HUNGER = 3000;
 
     public ColorfulEdge() {
         super(ModItemTier.FUKAMIZU_BREAD, 3, -2.5f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());

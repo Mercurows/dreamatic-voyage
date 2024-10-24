@@ -8,9 +8,9 @@
     "item": "dreamaticvoyage:hard_edge",
     "lesserThan": false,
     "nbt": {
-      "CausedDamage": 16000.0,
-      "Hunger": 400,
-      "KillCount": 100
+      "CausedDamage": 8000.0,
+      "Hunger": 800,
+      "KillCount": 50
     }
   },
   "addition": {
