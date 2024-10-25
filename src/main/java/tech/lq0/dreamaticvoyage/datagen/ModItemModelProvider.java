@@ -212,7 +212,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         // dream guardian
         simpleItem(ItemRegistry.DG_SHIRAKO);
         simpleItem(ItemRegistry.DG_YORUNE);
-        simpleItem(ItemRegistry.DG_LEAH);
         simpleItem(ItemRegistry.DG_HURRIC);
         simpleItem(ItemRegistry.DG_KURIKO);
 
@@ -300,7 +299,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.ORANGE_TRACKER);
         simpleItem(ItemRegistry.EMERGENCY_ENGINE_POWER);
         simpleItem(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN);
-        simpleItem(ItemRegistry.LEAH_PAD);
         simpleItem(ItemRegistry.BAKED_NAME_TAG);
         simpleItem(ItemRegistry.SAKURA_BEAN_CURD);
 

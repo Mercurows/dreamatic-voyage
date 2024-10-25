@@ -224,6 +224,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CHIRAM_HAT = ITEMS.register("chiram_hat", ChiramHat::new);
     public static final RegistryObject<Item> BOWL_OF_VEGETABLE = ITEMS.register("bowl_of_vegetable", BowlOfVegetable::new);
     public static final RegistryObject<Item> DISILLUSION_FAIRY_TALE = ITEMS.register("disillusion_fairy_tale", DisillusionFairyTale::new);
+    public static final RegistryObject<Item> CANDLE_CAKE = ITEMS.register("candle_cake", CandleCake::new);
 
     // haine
     public static final RegistryObject<Item> HAI_PLATE = ITEMS.register("hai_plate", HaiPlate::new);
@@ -449,7 +450,6 @@ public class ItemRegistry {
     public static final RegistryObject<Item> EMERGENCY_ENGINE_POWER = MISC_ITEMS.register("emergency_engine_power", EmergencyEnginePower::new);
     public static final RegistryObject<Item> MUSIC_DISC_SONG_OF_AUTUMN = MISC_ITEMS.register("music_disc_song_of_autumn", MusicDiscSongOfAutumn::new);
     public static final RegistryObject<Item> BAKED_NAME_TAG = MISC_ITEMS.register("baked_name_tag", BakedNameTag::new);
-    public static final RegistryObject<Item> LEAH_PAD = MISC_ITEMS.register("leah_pad", LeahPad::new);
     public static final RegistryObject<Item> SAKURA_BEAN_CURD = MISC_ITEMS.register("sakura_bean_curd", SakuraBeanCurd::new);
 
     /**
@@ -457,7 +457,6 @@ public class ItemRegistry {
      */
     public static final RegistryObject<Item> DG_SHIRAKO = MISC_ITEMS.register("dg_shirako", DGShirako::new);
     public static final RegistryObject<Item> DG_YORUNE = MISC_ITEMS.register("dg_yorune", DGYorune::new);
-    public static final RegistryObject<Item> DG_LEAH = MISC_ITEMS.register("dg_leah", DGLeah::new);
     public static final RegistryObject<Item> DG_HURRIC = MISC_ITEMS.register("dg_hurric", DGHurric::new);
     public static final RegistryObject<Item> DG_KURIKO = MISC_ITEMS.register("dg_kuriko", DGKuriko::new);
 

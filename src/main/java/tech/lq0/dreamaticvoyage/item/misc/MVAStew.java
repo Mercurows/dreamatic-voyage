@@ -33,6 +33,6 @@ public class MVAStew extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         ItemStack itemstack = super.finishUsingItem(pStack, pLevel, pLivingEntity);
-        return pLivingEntity instanceof Player && ((Player)pLivingEntity).getAbilities().instabuild ? itemstack : new ItemStack(Items.BOWL);
+        return pLivingEntity instanceof Player && ((Player) pLivingEntity).getAbilities().instabuild ? itemstack : new ItemStack(Items.BOWL);
     }
 }
