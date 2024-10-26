@@ -219,4 +219,9 @@ public class HardEdge extends SwordItem {
         }
     }
 
+    @Override
+    public boolean isEnchantable(ItemStack pStack) {
+        return true;
+    }
+
 }

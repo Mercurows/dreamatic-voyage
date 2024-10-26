@@ -102,4 +102,9 @@ public class SwollenEdge extends SwordItem {
         }
         return map;
     }
+
+    @Override
+    public boolean isEnchantable(ItemStack pStack) {
+        return true;
+    }
 }

@@ -146,4 +146,9 @@ public class SerrationEdge extends SwordItem {
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
         return slotChanged;
     }
+
+    @Override
+    public boolean isEnchantable(ItemStack pStack) {
+        return true;
+    }
 }

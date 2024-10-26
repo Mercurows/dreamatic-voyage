@@ -148,4 +148,9 @@ public class SoftEdge extends SwordItem {
             stack.getOrCreateTag().putFloat("CausedDamage", stack.getOrCreateTag().getFloat("CausedDamage") + event.getAmount());
         }
     }
+
+    @Override
+    public boolean isEnchantable(ItemStack pStack) {
+        return true;
+    }
 }

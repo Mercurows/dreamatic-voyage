@@ -173,4 +173,9 @@ public class FukamizuEdge extends SwordItem {
         return map;
     }
 
+    @Override
+    public boolean isEnchantable(ItemStack pStack) {
+        return true;
+    }
+
 }
