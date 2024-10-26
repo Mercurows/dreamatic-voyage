@@ -1,0 +1,27 @@
+{
+  "name": "dreamaticvoyage.entry.soft_edge",
+  "icon": "dreamaticvoyage:soft_edge",
+  "category": "dreamaticvoyage:oi",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.soft_edge1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:soft_edge",
+      "recipe2": "dreamaticvoyage:soft_edge_from_fukamizu_fish"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.soft_edge2"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:ancestral_dough",
+      "text": "dreamaticvoyage.page.soft_edge3"
+    }
+  ],
+  "sortnum": 60612
+}

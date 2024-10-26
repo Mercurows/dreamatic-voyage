@@ -1723,6 +1723,10 @@
   "dreamaticvoyage.entry.cage_ring": "“同笼”",
   "dreamaticvoyage.page.cage_ring1": "如果想要什么困住其他人的道具，$(item)“同笼”$(0)一定会成为你的不二选择。$(p)佩戴时会产生一个减速光环，任何进入光环范围内的生物都会获得$(thing)缓慢$(0)效果，但自身的速度也会下降。$(p)保持不动时，持续一段时间还会获得额外的$(thing)盔甲$(0)和$(thing)盔甲韧性$(0)加成。",
   "dreamaticvoyage.page.cage_ring2": "$(o)囚禁在深海的牢笼中吧。",
+  "dreamaticvoyage.entry.soft_edge": "柔软锋芒",
+  "dreamaticvoyage.page.soft_edge1": "随着探索的深入，我们发现了一种远古的面点技艺，根据其记载的制作方式，能够还原出一把独特的武器，$(item)柔软锋芒$(0)。$(p)深水锋芒具有$(thing)无限$(0)的耐久，并且能够作为食物食用，食用后会获得$(thing)水下呼吸$(0)效果。",
+  "dreamaticvoyage.page.soft_edge2": "资料显示，海栖家族的祖传技艺不止能制作这一把武器，柔软锋芒只是深水锋芒系列武器的最原始形态。完成武器要求的任务，即可将其升级为下一形态。$(p)合成时所需的$(item)先祖面团$(0)能够在沉船的宝藏箱中找到，也可以进行自我复制。$(p)当然还能烤成深水面包……",
+  "dreamaticvoyage.page.soft_edge3": "$(o)加了鱼的面团，做成刀还要加鱼……",
 
   "dreamaticvoyage.entry.fiaxe": "Fiaxe",
   "dreamaticvoyage.page.fiaxe1": "外星电子龙随身携带的武器，看上去和地球的消防斧没什么区别，这个$(item)斐雅斧$(0)到底有什么神奇之处呢？$(p)挖掘树叶时不会消耗耐久，有20%%的概率$(thing)恢复$(0)耐久。",
