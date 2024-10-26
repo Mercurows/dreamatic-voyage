@@ -1,0 +1,33 @@
+{
+  "values": [
+    "#minecraft:buttons",
+    "minecraft:lever",
+    "minecraft:repeater",
+    "minecraft:comparator",
+    "minecraft:redstone_wire",
+    {
+      "id": "create:analog_lever",
+      "required": false
+    },
+    {
+      "id": "create:pulse_repeater",
+      "required": false
+    },
+    {
+      "id": "create:redstone_link",
+      "required": false
+    },
+    {
+      "id": "create:powered_latch",
+      "required": false
+    },
+    {
+      "id": "create:powered_toggle_latch",
+      "required": false
+    },
+    {
+      "id": "create:pulse_extender",
+      "required": false
+    }
+  ]
+}

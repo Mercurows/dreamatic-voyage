@@ -16,6 +16,7 @@ public class ModTags {
         public static final TagKey<Block> FUKAMIZU_PLUM = tag("fukamizu_plum");
         public static final TagKey<Block> FUKAMIZU_MACHINE = tag("fukamizu_machine");
         public static final TagKey<Block> FUKAMIZU_BREAD = tag("fukamizu_bread");
+        public static final TagKey<Block> ELECTRICAL_BLOCKS = tag("electrical_blocks");
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(Utils.loc(name));

@@ -21,4 +21,5 @@ public class EffectRegistry {
     public static final RegistryObject<MobEffect> SWEET_MIRAGE = EFFECTS.register("sweet_mirage", SweetMirage::new);
     public static final RegistryObject<MobEffect> MANA_SURGE = EFFECTS.register("mana_surge", ManaSurge::new);
     public static final RegistryObject<MobEffect> CREATIVITY_BANKRUPTCY = EFFECTS.register("creativity_bankruptcy", CreativityBankruptcy::new);
+    public static final RegistryObject<MobEffect> ELECTRICAL_KILLER = EFFECTS.register("electrical_killer", ElectricalKiller::new);
 }

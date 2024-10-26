@@ -2,7 +2,9 @@ package tech.lq0.dreamaticvoyage.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -110,5 +112,18 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get(),
 //                BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(),
                 BlockRegistry.FUKAMIZU_PLUM_BUTTON.get(), BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(), BlockRegistry.FUKAMIZU_PLUM_SAPLING.get());
+
+        this.tag(ModTags.Blocks.ELECTRICAL_BLOCKS).addTag(BlockTags.BUTTONS)
+                .add(Blocks.LEVER, Blocks.REPEATER, Blocks.COMPARATOR, Blocks.REDSTONE_WIRE)
+                .addOptional(loc("create", "analog_lever"))
+                .addOptional(loc("create", "pulse_repeater"))
+                .addOptional(loc("create", "redstone_link"))
+                .addOptional(loc("create", "powered_latch"))
+                .addOptional(loc("create", "powered_toggle_latch"))
+                .addOptional(loc("create", "pulse_extender"));
+    }
+
+    private static ResourceLocation loc(String modId, String path) {
+        return new ResourceLocation(modId, path);
     }
 }
