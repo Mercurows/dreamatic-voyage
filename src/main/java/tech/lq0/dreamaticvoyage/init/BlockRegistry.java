@@ -65,7 +65,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> HARDEN_CRYSTAL_BLOCK = BLOCKS.register("harden_crystal_block", HardenCrystalBlock::new);
     public static final RegistryObject<Block> PURIFIED_CRYSTAL_BLOCK = BLOCKS.register("purified_crystal_block", PurifiedCrystalBlock::new);
     public static final RegistryObject<Block> CHARGED_CRYSTAL_BLOCK = BLOCKS.register("charged_crystal_block", ChargedCrystalBlock::new);
-    public static final RegistryObject<Block> FICTIONAL_INGOT_BLOCK = BLOCKS.register("fictional_ingot_block", FictionalIngotBlock::new);
+    public static final RegistryObject<Block> ANTI_INGOT_BLOCK = BLOCKS.register("anti_ingot_block", AntiIngotBlock::new);
     public static final RegistryObject<Block> GACHI_INGOT_BLOCK = BLOCKS.register("gachi_ingot_block", GachiIngotBlock::new);
 
     // Voyage Series

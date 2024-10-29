@@ -1,10 +1,13 @@
-// 1.20.1	2024-10-30T00:50:34.9361597	Item Models: dreamaticvoyage
+// 1.20.1	2024-10-30T01:46:00.1030173	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 8c153a7fc2e832ba3f9861c22a241817859c11c9 assets/dreamaticvoyage/models/item/aluminum_bread_slice.json
 739ce42206f85234d3bad743bc6ca2dfd61745ae assets/dreamaticvoyage/models/item/aluminum_rich_crumb.json
 f4512b5b6051ca27b28b895ba3a14e64e743dbd6 assets/dreamaticvoyage/models/item/ancestral_dough.json
 f37df339e571439e12f7388bec647a0b97ac128f assets/dreamaticvoyage/models/item/ancient_microphone.json
+fb8c179c28db6c3a71d58cbf2dcd55448d4656fd assets/dreamaticvoyage/models/item/anti_ingot.json
+1ddf0ab9394158ccbd1c36818ccdf00e5bd5d7b4 assets/dreamaticvoyage/models/item/anti_nugget.json
+6868fb9453e60c6c45ea0a46c8920de2bca293a0 assets/dreamaticvoyage/models/item/anti_powder.json
 fdb2a5c0774bfd5108fb66a0e867967cfd93c265 assets/dreamaticvoyage/models/item/artist_tool_belt.json
 00a429aa834aa045019d3a8edb1cc9821d93f0d9 assets/dreamaticvoyage/models/item/art_master_magic_hat.json
 2c68f6785ba128ff4f35012e820e8313aaaecce9 assets/dreamaticvoyage/models/item/art_master_tool_belt.json
@@ -110,8 +113,6 @@ d4d692fa5360254819fa8feba6818b141fd1a1a7 assets/dreamaticvoyage/models/item/ench
 aacc4c7c20d075c19a55d0dc323a46e6eb852994 assets/dreamaticvoyage/models/item/fallen_ring.json
 30d10559e6afee850fcb509f0db62501bc08ea17 assets/dreamaticvoyage/models/item/fetuozi.json
 e02d3fa968e888a23c1917841ae1c6d441d688d2 assets/dreamaticvoyage/models/item/fictional_forging_sigil.json
-429e0cac2fe3abeca93fb825f9e78c202cdc3bde assets/dreamaticvoyage/models/item/fictional_ingot.json
-3df71452ac4b81f1b89785732a57c9632729ad66 assets/dreamaticvoyage/models/item/fictional_nugget.json
 f828b48888b9b36914d6e854ce332f7accca8b4b assets/dreamaticvoyage/models/item/flat_vegetable_chestplate.json
 b1ba5e6ad8e0b736d04fe882c6265dc6309c4954 assets/dreamaticvoyage/models/item/fluff_ball.json
 d510852f76234f314a25bccb56e330ec67d2e54c assets/dreamaticvoyage/models/item/fox_ice_cream.json

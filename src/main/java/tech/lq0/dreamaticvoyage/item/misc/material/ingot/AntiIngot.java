@@ -11,13 +11,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class FictionalIngot extends Item {
-    public FictionalIngot() {
+public class AntiIngot extends Item {
+
+    public AntiIngot() {
         super(new Properties().rarity(Rarity.EPIC));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fictional_ingot").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.anti_ingot").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
     }
 }

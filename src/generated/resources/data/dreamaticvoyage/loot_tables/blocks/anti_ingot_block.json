@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dreamaticvoyage:fictional_ingot_block"
+          "name": "dreamaticvoyage:anti_ingot_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dreamaticvoyage:blocks/fictional_ingot_block"
+  "random_sequence": "dreamaticvoyage:blocks/anti_ingot_block"
 }

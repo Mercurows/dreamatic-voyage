@@ -11,13 +11,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class FictionalNugget extends Item {
-    public FictionalNugget() {
+public class AntiNugget extends Item {
+
+    public AntiNugget() {
         super(new Properties().rarity(Rarity.EPIC));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fictional_nugget").withStyle(ChatFormatting.GRAY));
+        pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.anti_nugget").withStyle(ChatFormatting.GRAY));
     }
 }

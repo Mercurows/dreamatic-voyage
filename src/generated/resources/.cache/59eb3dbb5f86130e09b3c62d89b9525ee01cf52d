@@ -1,4 +1,5 @@
-// 1.20.1	2024-09-25T17:04:02.1171885	Loot Tables
+// 1.20.1	2024-10-30T01:46:00.101433	Loot Tables
+ae73b83794ef78896b8e37684bf7c70fb390f7de data/dreamaticvoyage/loot_tables/blocks/anti_ingot_block.json
 de907c77e3f973d4cc51e684a7c589816f1f7488 data/dreamaticvoyage/loot_tables/blocks/blue_sand.json
 d7c59f5243134df755eed00c0b7c4d762d809115 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone.json
 22ea59f302064014af02351f18938dbc97043258 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone_slab.json
@@ -11,7 +12,6 @@ c531bbc5f2a29e83bb61828c79a96a8395f1d233 data/dreamaticvoyage/loot_tables/blocks
 73679166a0e1091d9ace6dd27e8567c904e981b9 data/dreamaticvoyage/loot_tables/blocks/crystal_purifier.json
 8710f5dde0509e4d903b9213c5748ea8757bb75b data/dreamaticvoyage/loot_tables/blocks/cut_blue_sandstone.json
 df8415be22c59609d5cb018034e6a34f41874ead data/dreamaticvoyage/loot_tables/blocks/cut_blue_sandstone_slab.json
-e05353b755a2ef2425a4f6c141c4af1b8e67b87a data/dreamaticvoyage/loot_tables/blocks/fictional_ingot_block.json
 96490582fdca821df427477c1f8d735a28742a93 data/dreamaticvoyage/loot_tables/blocks/fukamizu_bread_block.json
 a35b597f223dcb2af2a8237461a02acda769683a data/dreamaticvoyage/loot_tables/blocks/fukamizu_bread_bricks.json
 b080a00b1b064efa2cb1234b93691cfc8bfbd558 data/dreamaticvoyage/loot_tables/blocks/fukamizu_compressor.json

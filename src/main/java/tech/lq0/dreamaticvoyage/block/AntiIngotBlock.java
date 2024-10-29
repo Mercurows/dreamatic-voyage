@@ -10,13 +10,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class FictionalIngotBlock extends Block {
-    public FictionalIngotBlock() {
+public class AntiIngotBlock extends Block {
+
+    public AntiIngotBlock() {
         super(Properties.of().strength(10.0f, 10.0f).requiresCorrectToolForDrops());
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.dreamaticvoyage.fictional_ingot_block").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.anti_ingot_block").withStyle(ChatFormatting.GRAY));
     }
 }

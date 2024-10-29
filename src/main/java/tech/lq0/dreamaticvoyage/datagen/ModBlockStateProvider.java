@@ -70,7 +70,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.HARDEN_CRYSTAL_BLOCK);
         blockWithItem(BlockRegistry.PURIFIED_CRYSTAL_BLOCK);
         blockWithItem(BlockRegistry.CHARGED_CRYSTAL_BLOCK);
-        blockWithItem(BlockRegistry.FICTIONAL_INGOT_BLOCK);
+        blockWithItem(BlockRegistry.ANTI_INGOT_BLOCK);
         blockWithItem(BlockRegistry.GACHI_INGOT_BLOCK);
 
         leavesBlock(BlockRegistry.FUKAMIZU_PLUM_LEAVES);
