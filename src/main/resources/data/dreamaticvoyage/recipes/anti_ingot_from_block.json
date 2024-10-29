@@ -5,11 +5,11 @@
   ],
   "key": {
     "a": {
-      "item": "dreamaticvoyage:fictional_ingot_block"
+      "item": "dreamaticvoyage:anti_ingot_block"
     }
   },
   "result": {
-    "item": "dreamaticvoyage:fictional_ingot",
+    "item": "dreamaticvoyage:anti_ingot",
     "count": 9
   }
 }

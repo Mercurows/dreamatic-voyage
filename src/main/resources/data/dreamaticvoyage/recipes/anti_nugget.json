@@ -5,11 +5,11 @@
   ],
   "key": {
     "#": {
-      "item": "dreamaticvoyage:fictional_ingot"
+      "item": "dreamaticvoyage:anti_ingot"
     }
   },
   "result": {
-    "item": "dreamaticvoyage:fictional_nugget",
+    "item": "dreamaticvoyage:anti_nugget",
     "count": 9
   }
 }

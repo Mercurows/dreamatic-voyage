@@ -7,11 +7,11 @@
   ],
   "key": {
     "a": {
-      "item": "dreamaticvoyage:fictional_nugget"
+      "item": "dreamaticvoyage:anti_nugget"
     }
   },
   "result": {
-    "item": "dreamaticvoyage:fictional_ingot",
+    "item": "dreamaticvoyage:anti_ingot",
     "count": 1
   }
 }
