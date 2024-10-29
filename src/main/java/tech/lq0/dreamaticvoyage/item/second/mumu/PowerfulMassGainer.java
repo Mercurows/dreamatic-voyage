@@ -1,7 +1,12 @@
 package tech.lq0.dreamaticvoyage.item.second.mumu;
 
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -9,17 +14,21 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.network.ServerEventHandler;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.event.CurioChangeEvent;
 import top.theillusivec4.curios.api.event.CurioEquipEvent;
 import top.theillusivec4.curios.api.event.CurioUnequipEvent;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class PowerfulMassGainer extends Item implements ICurioItem {
@@ -28,99 +37,168 @@ public class PowerfulMassGainer extends Item implements ICurioItem {
         super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
-    private static void addModifiers(LivingEntity living) {
-        UUID uuid = new UUID(ItemRegistry.POWERFUL_MASS_GAINER.hashCode(), 0);
+    @Override
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
+        return generateAttributes(uuid, stack.getOrCreateTag().getDouble("Armor"), stack.getOrCreateTag().getDouble("Toughness"));
+    }
 
-        double armorValue = living.getArmorValue();
-        double toughnessValue = living.getAttributeValue(Attributes.ARMOR_TOUGHNESS);
-        double extraHealth = armorValue * 2 + toughnessValue * 3;
+    private static Multimap<Attribute, AttributeModifier> generateAttributes(UUID uuid, double armor, double toughness) {
+        Multimap<Attribute, AttributeModifier> map = HashMultimap.create();
 
-        var healthAttribute = living.getAttribute(Attributes.MAX_HEALTH);
-        if (healthAttribute != null) {
-            AttributeModifier healthModifier = new AttributeModifier(uuid, "Armor to Health", extraHealth, AttributeModifier.Operation.ADDITION);
-            if (healthAttribute.getModifier(uuid) != null) {
-                healthAttribute.removePermanentModifier(uuid);
-            }
-            healthAttribute.addPermanentModifier(healthModifier);
-        }
+        double extraHealth = Math.max(0, armor * 2 + toughness * 3);
+        map.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, "Armor to Max Health", extraHealth, AttributeModifier.Operation.ADDITION));
+        map.put(Attributes.ARMOR, new AttributeModifier(uuid, "Armor Zero", -armor, AttributeModifier.Operation.ADDITION));
+        map.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(uuid, "Toughness Zero", -toughness, AttributeModifier.Operation.ADDITION));
 
+        return map;
+    }
+
+    private static void setData(ItemStack stack, LivingEntity living) {
         var armorAttribute = living.getAttribute(Attributes.ARMOR);
         if (armorAttribute != null) {
-            AttributeModifier armorZeroModifier = new AttributeModifier(uuid, "Armor Zero", -armorValue, AttributeModifier.Operation.ADDITION);
-            if (armorAttribute.getModifier(uuid) != null) {
-                armorAttribute.removePermanentModifier(uuid);
-            }
-            armorAttribute.addPermanentModifier(armorZeroModifier);
+            stack.getOrCreateTag().putDouble("Armor", armorAttribute.getValue());
         }
 
         var toughnessAttribute = living.getAttribute(Attributes.ARMOR_TOUGHNESS);
         if (toughnessAttribute != null) {
-            AttributeModifier toughnessZeroModifier = new AttributeModifier(uuid, "Toughness Zero", -toughnessValue, AttributeModifier.Operation.ADDITION);
-            if (toughnessAttribute.getModifier(uuid) != null) {
-                toughnessAttribute.removePermanentModifier(uuid);
-            }
-            toughnessAttribute.addPermanentModifier(toughnessZeroModifier);
+            stack.getOrCreateTag().putDouble("Toughness", toughnessAttribute.getValue());
         }
     }
 
-    private static void removeModifiers(LivingEntity living) {
-        UUID uuid = new UUID(ItemRegistry.POWERFUL_MASS_GAINER.hashCode(), 0);
+    private static void setData(ItemStack stack, double armor, double toughness) {
+        stack.getOrCreateTag().putDouble("Armor", armor);
+        stack.getOrCreateTag().putDouble("Toughness", toughness);
+    }
 
-        var armorAttribute = living.getAttribute(Attributes.ARMOR);
-        if (armorAttribute == null) return;
+    private static void resetData(ItemStack stack) {
+        stack.getOrCreateTag().putDouble("Armor", 0);
+        stack.getOrCreateTag().putDouble("Toughness", 0);
+    }
 
-        var armorModifier = armorAttribute.getModifier(uuid);
-        if (armorModifier != null) {
-            armorAttribute.removePermanentModifier(uuid);
-        }
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        LivingEntity livingEntity = slotContext.entity();
+        AtomicBoolean flag = new AtomicBoolean(true);
+        CuriosApi.getCuriosInventory(livingEntity).ifPresent(c -> c.findFirstCurio(this).ifPresent(s -> flag.set(false)));
 
-        var toughnessAttribute = living.getAttribute(Attributes.ARMOR_TOUGHNESS);
-        if (toughnessAttribute != null) {
-            var toughnessModifier = toughnessAttribute.getModifier(uuid);
-            if (toughnessModifier != null) {
-                toughnessAttribute.removePermanentModifier(uuid);
-            }
-        }
-
-        var healthModifier = living.getAttribute(Attributes.MAX_HEALTH);
-        if (healthModifier != null) {
-            healthModifier.removePermanentModifier(uuid);
-        }
+        return flag.get();
     }
 
     @SubscribeEvent
     public static void onLivingEquipmentChange(LivingEquipmentChangeEvent event) {
         LivingEntity entity = event.getEntity();
+        var slot = event.getSlot();
+        if (!slot.isArmor()) return;
+
         if (entity instanceof Player player) {
             CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(ItemRegistry.POWERFUL_MASS_GAINER.get()).ifPresent(
                     s -> {
-                        removeModifiers(entity);
-                        ServerEventHandler.queueServerEvent(1, () -> {
-                            addModifiers(entity);
-                            entity.setHealth(Mth.clamp(entity.getHealth(), 0, entity.getMaxHealth()));
-                        });
+                        ItemStack stack = s.stack();
+                        ItemStack from = event.getFrom();
+                        ItemStack to = event.getTo();
+
+                        var fromAttr = calculateAttributes(from, slot);
+                        var toAttr = calculateAttributes(to, slot);
+
+                        double armor = toAttr.getFirst() - fromAttr.getFirst();
+                        double toughness = toAttr.getSecond() - fromAttr.getSecond();
+
+                        setData(stack, stack.getOrCreateTag().getDouble("Armor") + armor,
+                                stack.getOrCreateTag().getDouble("Toughness") + toughness);
+
+                        ServerEventHandler.queueServerEvent(1, () -> entity.setHealth(Mth.clamp(entity.getHealth(), 0, entity.getMaxHealth())));
                     }
             ));
         }
     }
+
+    private static Pair<Double, Double> calculateAttributes(ItemStack stack, EquipmentSlot slot) {
+        AtomicReference<Double> first = new AtomicReference<>(0.0);
+        AtomicReference<Double> second = new AtomicReference<>(0.0);
+
+        var attr = stack.getAttributeModifiers(slot);
+        if (!attr.get(Attributes.ARMOR).isEmpty()) {
+            attr.get(Attributes.ARMOR).stream().filter(a -> a.getOperation() == AttributeModifier.Operation.ADDITION)
+                    .forEach(a -> first.updateAndGet(v -> v + a.getAmount()));
+        }
+
+        if (!attr.get(Attributes.ARMOR_TOUGHNESS).isEmpty()) {
+            attr.get(Attributes.ARMOR_TOUGHNESS).stream().filter(a -> a.getOperation() == AttributeModifier.Operation.ADDITION)
+                    .forEach(a -> second.updateAndGet(v -> v + a.getAmount()));
+        }
+
+        return Pair.of(first.get(), second.get());
+    }
+
+    private static Pair<Double, Double> calculateAttributes(ItemStack stack, SlotContext slotContext) {
+        AtomicReference<Double> first = new AtomicReference<>(0.0);
+        AtomicReference<Double> second = new AtomicReference<>(0.0);
+
+        if (!(stack.getItem() instanceof ICurioItem curioItem)) return Pair.of(first.get(), second.get());
+
+        var attr = curioItem.getAttributeModifiers(slotContext, UUID.randomUUID(), stack);
+        if (!attr.get(Attributes.ARMOR).isEmpty()) {
+            attr.get(Attributes.ARMOR).stream().filter(a -> a.getOperation() == AttributeModifier.Operation.ADDITION)
+                    .forEach(a -> first.updateAndGet(v -> v + a.getAmount()));
+        }
+
+        if (!attr.get(Attributes.ARMOR_TOUGHNESS).isEmpty()) {
+            attr.get(Attributes.ARMOR_TOUGHNESS).stream().filter(a -> a.getOperation() == AttributeModifier.Operation.ADDITION)
+                    .forEach(a -> second.updateAndGet(v -> v + a.getAmount()));
+        }
+
+        return Pair.of(first.get(), second.get());
+    }
+
+//    @SubscribeEvent
+//    public static void onCurioChange(CurioChangeEvent event) {
+//        var entity = event.getEntity();
+//        int index = event.getSlotIndex();
+//        if (entity instanceof Player player) {
+//            CuriosApi.getCuriosInventory(player).ifPresent(c -> c.findFirstCurio(ItemRegistry.POWERFUL_MASS_GAINER.get()).ifPresent(
+//                    s -> {
+//                        ItemStack stack = s.stack();
+//                        ItemStack from = event.getFrom();
+//                        ItemStack to = event.getTo();
+//
+//                        var fromAttr = calculateAttributes(from, slot);
+//                        var toAttr = calculateAttributes(to, slot);
+//
+//                        double armor = toAttr.getFirst() - fromAttr.getFirst();
+//                        double toughness = toAttr.getSecond() - fromAttr.getSecond();
+//
+//                        setData(stack, stack.getOrCreateTag().getDouble("Armor") + armor,
+//                                stack.getOrCreateTag().getDouble("Toughness") + toughness);
+//
+//                        ServerEventHandler.queueServerEvent(1, () -> entity.setHealth(Mth.clamp(entity.getHealth(), 0, entity.getMaxHealth())));
+//                    }
+//            ));
+//        }
+//
+//
+//    }
 
     @SubscribeEvent
     public static void onEquipCurio(CurioEquipEvent event) {
         SlotContext slotContext = event.getSlotContext();
         ItemStack stack = event.getStack();
         if (stack.is(ItemRegistry.POWERFUL_MASS_GAINER.get())) {
-            addModifiers(slotContext.entity());
+            setData(stack, slotContext.entity());
         }
     }
 
     @SubscribeEvent
     public static void onUnequipCurio(CurioUnequipEvent event) {
-        SlotContext slotContext = event.getSlotContext();
-        LivingEntity living = slotContext.entity();
         ItemStack stack = event.getStack();
         if (stack.is(ItemRegistry.POWERFUL_MASS_GAINER.get())) {
-            removeModifiers(living);
-            ServerEventHandler.queueServerEvent(1, () -> living.setHealth(Mth.clamp(living.getHealth(), 0, living.getMaxHealth())));
+            resetData(stack);
         }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerLogout(PlayerEvent.PlayerLoggedOutEvent event) {
+        CuriosApi.getCuriosInventory(event.getEntity()).ifPresent(c -> c.findFirstCurio(ItemRegistry.POWERFUL_MASS_GAINER.get()).ifPresent(
+                s -> resetData(s.stack())
+        ));
     }
 }
