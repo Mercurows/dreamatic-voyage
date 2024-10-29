@@ -1,4 +1,4 @@
-// 1.20.1	2024-10-26T00:34:01.4927238	Item Models: dreamaticvoyage
+// 1.20.1	2024-10-30T00:50:34.9361597	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 8c153a7fc2e832ba3f9861c22a241817859c11c9 assets/dreamaticvoyage/models/item/aluminum_bread_slice.json
@@ -249,6 +249,7 @@ cc36707a4eb9ca2dc99acad042ab9e4e355c208c assets/dreamaticvoyage/models/item/oran
 54610403c58ae9d87e3cb395c8cf149eb2085925 assets/dreamaticvoyage/models/item/platinum_bread_slice.json
 e1c2f6b6899e70815ed2af46d0965f0e0bf39c55 assets/dreamaticvoyage/models/item/platinum_rich_crumb.json
 45db3aea89ac4c887e5921839a6b07fa7a5501f9 assets/dreamaticvoyage/models/item/porcelain_throne.json
+5f4b9b158d935af937719f3ae70bd0df11057d12 assets/dreamaticvoyage/models/item/powerful_mass_gainer.json
 aba54640194ff815aeb858fd87a501adb133f81e assets/dreamaticvoyage/models/item/premium_pdc_point.json
 c7cfd6a939a9505eee03b0478e8204c672e82670 assets/dreamaticvoyage/models/item/purified_crystal_ingot.json
 2d55b2d23241003594b4eec7db4410f16a735e96 assets/dreamaticvoyage/models/item/purified_crystal_powder.json

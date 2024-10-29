@@ -86,6 +86,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.AYELET_MASK);
         simpleItem(ItemRegistry.MUMU_STEAK);
         simpleItem(ItemRegistry.MUSHROOM_CROISSANT);
+        simpleItem(ItemRegistry.POWERFUL_MASS_GAINER);
 
         // magicros
         simpleItem(ItemRegistry.FLAT_VEGETABLE_CHESTPLATE);
