@@ -23,8 +23,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
@@ -32,11 +30,9 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.network.ServerEventHandler;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.Livers;
@@ -140,7 +136,7 @@ public class AncientLollipop extends SwordItem {
         return pStack;
     }
 
-    //From Electroblob77's Wizardry
+    // From Electroblob77's Wizardry
     public static Vec3 getTpPos(Entity entity, Vec3 vec3) {
         Level level = entity.level();
         AABB box = entity.getBoundingBox();
@@ -237,63 +233,32 @@ public class AncientLollipop extends SwordItem {
                 target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 2), player);
 
                 if (!level.isClientSide) {
-                    new Object() {
-                        private int ticks = 0;
-                        private float waitTicks;
+                    ((ServerLevel) level).sendParticles(ParticleTypes.ENCHANT, target.getX(), target.getY() + 1, target.getZ(),
+                            150, 0.1, 0.2, 0.1, 2);
 
-                        public void start(int waitTicks) {
-                            ((ServerLevel) level).sendParticles(ParticleTypes.ENCHANT, target.getX(), target.getY() + 1, target.getZ(),
-                                    150, 0.1, 0.2, 0.1, 2);
+                    ServerEventHandler.queueServerEvent(30, () -> {
+                        if (!target.isAlive()) return;
 
-                            this.waitTicks = waitTicks;
-                            MinecraftForge.EVENT_BUS.register(this);
-                        }
+                        Explosion explosion = new Explosion(level, player, level.damageSources().playerAttack(player),
+                                null, target.getX(), target.getY(), target.getZ(), 3, false, Explosion.BlockInteraction.KEEP);
+                        explosion.explode();
+                        explosion.finalizeExplosion(true);
 
-                        @SubscribeEvent
-                        public void tick(TickEvent.ServerTickEvent event) {
-                            if (event.phase == TickEvent.Phase.END) {
-                                this.ticks++;
+                        ((ServerLevel) level).sendParticles(ParticleTypes.DRAGON_BREATH, target.getX(), target.getY() + 1, target.getZ(),
+                                200, level.random.nextDouble() - 0.5, level.random.nextDouble(), level.random.nextDouble() - 0.5, 0.5);
+                        explosion.clearToBlow();
 
-                                if (!target.isAlive()) {
-                                    MinecraftForge.EVENT_BUS.unregister(this);
-                                }
-
-                                if (this.ticks >= this.waitTicks) {
-                                    run();
-                                }
+                        for (ServerPlayer serverPlayer : ((ServerLevel) level).players()) {
+                            if (serverPlayer.distanceToSqr(target.getX(), target.getY(), target.getZ()) < 400) {
+                                serverPlayer.connection.send(new ClientboundExplodePacket(target.getX(), target.getY(), target.getZ(), 3, explosion.getToBlow(), explosion.getHitPlayers().get(target)));
                             }
                         }
-
-                        private void run() {
-                            Explosion explosion = new Explosion(level, player, level.damageSources().playerAttack(player),
-                                    null, target.getX(), target.getY(), target.getZ(), 3, false, Explosion.BlockInteraction.KEEP);
-                            explosion.explode();
-                            explosion.finalizeExplosion(true);
-
-                            ((ServerLevel) level).sendParticles(ParticleTypes.DRAGON_BREATH, target.getX(), target.getY() + 1, target.getZ(),
-                                    200, level.random.nextDouble() - 0.5, level.random.nextDouble(), level.random.nextDouble() - 0.5, 0.5);
-
-                            explosion.clearToBlow();
-
-                            for (ServerPlayer serverPlayer : ((ServerLevel) level).players()) {
-                                if (serverPlayer.distanceToSqr(target.getX(), target.getY(), target.getZ()) < 400) {
-                                    serverPlayer.connection.send(new ClientboundExplodePacket(target.getX(), target.getY(), target.getZ(), 3, explosion.getToBlow(), explosion.getHitPlayers().get(target)));
-                                }
-                            }
-
-                            MinecraftForge.EVENT_BUS.unregister(this);
-                        }
-                    }.start(30);
+                    });
                 }
             }
         }
 
         return true;
-    }
-
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return enchantment.category == EnchantmentCategory.WEAPON || enchantment.category == EnchantmentCategory.BREAKABLE;
     }
 
     @Override
