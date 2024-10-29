@@ -407,11 +407,12 @@ public class ItemRegistry {
     public static final RegistryObject<Item> HARDEN_CRYSTAL_INGOT = MISC_ITEMS.register("harden_crystal_ingot", HardenCrystalIngot::new);
     public static final RegistryObject<Item> PURIFIED_CRYSTAL_INGOT = MISC_ITEMS.register("purified_crystal_ingot", PurifiedCrystalIngot::new);
     public static final RegistryObject<Item> CHARGED_CRYSTAL_INGOT = MISC_ITEMS.register("charged_crystal_ingot", ChargedCrystalIngot::new);
+    public static final RegistryObject<Item> ANTI_POWDER = MISC_ITEMS.register("anti_powder", AntiPowder::new);
+    public static final RegistryObject<Item> GACHI_POWDER = MISC_ITEMS.register("gachi_powder", GachiPowder::new);
     public static final RegistryObject<Item> ANTI_INGOT = MISC_ITEMS.register("anti_ingot", AntiIngot::new);
     public static final RegistryObject<Item> ANTI_NUGGET = MISC_ITEMS.register("anti_nugget", AntiNugget::new);
     public static final RegistryObject<Item> GACHI_INGOT = MISC_ITEMS.register("gachi_ingot", GachiIngot::new);
     public static final RegistryObject<Item> GACHI_NUGGET = MISC_ITEMS.register("gachi_nugget", GachiNugget::new);
-    public static final RegistryObject<Item> ANTI_POWDER = MISC_ITEMS.register("anti_powder", AntiPowder::new);
     public static final RegistryObject<Item> IDOL_CLOTH = MISC_ITEMS.register("idol_cloth", IdolCloth::new);
     public static final RegistryObject<Item> MAGICROS_CORE = MISC_ITEMS.register("magicros_core", MagicrosCore::new);
     public static final RegistryObject<Item> MIRACLE_CORE = MISC_ITEMS.register("miracle_core", MiracleCore::new);
