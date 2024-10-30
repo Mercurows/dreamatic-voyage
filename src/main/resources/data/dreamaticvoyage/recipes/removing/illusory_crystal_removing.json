@@ -1,0 +1,16 @@
+{
+  "type": "dreamaticvoyage:crystal_removing",
+  "ingredient": {
+    "item": "dreamaticvoyage:illusory_crystal"
+  },
+  "output": {
+    "count": 1,
+    "item": "minecraft:emerald"
+  },
+  "output_chance": 0.25,
+  "extra_output": {
+    "count": 1,
+    "item": "dreamaticvoyage:anti_powder"
+  },
+  "extra_chance": 0.0125
+}
