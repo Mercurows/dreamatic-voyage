@@ -1663,6 +1663,12 @@
   "dreamaticvoyage.page.reina_wings2": "$(o)红烧翅膀我喜欢吃。",
   "dreamaticvoyage.page.reina_wings3": "制作怜奈系列物品需要用到粉红色的$(item)怜奈之羽$(0)，奇怪的是，原料中并没有可以吃的东西……",
   "dreamaticvoyage.page.reina_wings4": "$(o)钢铁羽毛。",
+  "dreamaticvoyage.entry.leciel_ear_coverts": "露西耶耳羽",
+  "dreamaticvoyage.page.leciel_ear_coverts1": "什么是温柔的象征？答案就是$(item)露西耶耳羽$(0)了。$(p)装备时提供额外的移动速度和幸运，攻击动物或村民时会获得$(thing)虚弱$(0)和$(thing)霉运$(0)效果，并播放独特的音效。",
+  "dreamaticvoyage.page.leciel_ear_coverts2": "$(o)对不起对不起对不起对不起对不起……",
+  "dreamaticvoyage.entry.giant_diamond_ring": "巨型钻戒",
+  "dreamaticvoyage.page.giant_diamond_ring1": "“就是那一天，我在沙滩上假装摔倒，然后拿出了 25,000,000 克拉的$(item)巨型钻戒$(0)向她求婚，所以现在我要和怜奈露西耶结婚了……”$(p)使用巨型钻戒挖掘玻璃类方块时自带$(thing)精准采集$(0)效果。",
+  "dreamaticvoyage.page.giant_diamond_ring2": "$(o)这一次，她真的感动了。",
 
   "dreamaticvoyage.entry.fourth.intro": "黄昏之歌",
   "dreamaticvoyage.page.fourth.intro1": "由内向外，逐步瓦解，分崩离析。$(br)往日的辉煌不再，旅人们又会去往何方？",
@@ -1709,7 +1715,7 @@
   "dreamaticvoyage.page.chocolate_boots3": "巧克力工艺店的一双巧克力鞋，嘿，您甭说，瞧着跟真的似的。$(p)吔了一口感觉浑身充满了帕瓦！！力量！！急迫！！$(p)——嚼了一口鞋子的夜音如是说",
 
   "dreamaticvoyage.entry.tail_pen": "彩猫笔",
-  "dreamaticvoyage.page.tail_pen1": "$(item)彩猫笔$(0)是一位想成为大艺术家的小猫咪的画笔，能够将周围变得五颜六色。$(p)使用彩猫笔攻击生物时会从十种功能之中抽取一种进行触发，此外，彩猫笔会以每秒1点的速度自然恢复耐久值。",
+  "dreamaticvoyage.page.tail_pen1": "$(item)彩猫笔$(0)是一位想成为大艺术家的小猫咪的画笔，能够将周围变得五颜六色。$(p)手持时能够提升攻击速度和击退，使用彩猫笔攻击生物时会从十种功能之中抽取一种进行触发，此外，彩猫笔会以每秒1点的速度自然恢复耐久值。",
   "dreamaticvoyage.page.tail_pen2": "$(o)看起来还没长出尾巴，就先用手拿着它吧。",
   "dreamaticvoyage.page.tail_pen3": "随机抽取的功能包括：$(br)$(li)给予玩家$(thing)生命恢复III$(0)，持续时间5秒。$(li)给予玩家$(thing)速度III$(0)，持续时间5秒。$(li)给予玩家$(thing)跳跃提升III$(0)，持续时间5秒。$(li)给予玩家$(thing)力量III$(0)，持续时间5秒。$(li)给予玩家$(thing)伤害吸收III$(0)，持续时间5秒。",
   "dreamaticvoyage.page.tail_pen4": "$(li)给予目标$(thing)缓慢IV$(0)，持续时间15秒。$(li)给予目标$(thing)凋零IV$(0)，持续时间15秒。$(li)给予目标$(thing)中毒IV$(0)，持续时间15秒。$(li)给予目标$(thing)虚弱IV$(0)，持续时间15秒。$(li)给予目标$(thing)瞬间伤害IV$(0)，若目标为$(c)亡灵生物$(0)，则给予$(thing)瞬间治疗IV$(0)。",

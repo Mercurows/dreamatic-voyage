@@ -1,0 +1,18 @@
+{
+  "name": "dreamaticvoyage.entry.leciel_ear_coverts",
+  "icon": "dreamaticvoyage:leciel_ear_coverts",
+  "category": "dreamaticvoyage:third",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.leciel_ear_coverts1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:leciel_ear_coverts",
+      "text": "dreamaticvoyage.page.leciel_ear_coverts2"
+    }
+  ],
+  "sortnum": 30303
+}
