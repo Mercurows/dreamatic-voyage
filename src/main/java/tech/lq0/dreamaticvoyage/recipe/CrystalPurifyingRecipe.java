@@ -15,6 +15,7 @@ import tech.lq0.dreamaticvoyage.Utils;
 import javax.annotation.Nullable;
 
 public class CrystalPurifyingRecipe implements Recipe<SimpleContainer> {
+
     private final Ingredient input;
     private final ItemStack output;
     private final int tick;
