@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "EP#",
     "PAP",
-    "#PE"
+    "#T#",
+    "PEP"
   ],
   "key": {
     "#": {
@@ -17,6 +17,9 @@
     },
     "E": {
       "item": "dreamaticvoyage:anti_ingot"
+    },
+    "T": {
+      "item": "minecraft:tnt"
     }
   },
   "result": {
