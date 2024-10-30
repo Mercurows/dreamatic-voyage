@@ -1,10 +1,9 @@
-// 1.20.1	2024-10-30T01:46:00.1056283	Tags for minecraft:block mod id dreamaticvoyage
+// 1.20.1	2024-10-30T19:14:28.5642795	Tags for minecraft:block mod id dreamaticvoyage
 e8bf6e1584b6253aca7a40f13e0bc38832c78454 data/dreamaticvoyage/tags/blocks/electrical_blocks.json
 b46a5b5b70d2a86791741ff13ee07d581d7280fe data/dreamaticvoyage/tags/blocks/fukamizu_bread.json
 be1c64f2ac892bb668c8c05e12d6f1b359d3af30 data/dreamaticvoyage/tags/blocks/fukamizu_machine.json
 cc75c91ac136c2f95c4dbcbd6846feacf699ec10 data/dreamaticvoyage/tags/blocks/fukamizu_plum.json
 356f998cd5aa67ed5e0e9a1b4393cf896565871f data/dreamaticvoyage/tags/blocks/harano.json
-9d9111630b0a0340a5d023920c268b7b594a3343 data/forge/tags/blocks/needs_netherite_tool.json
 231a202bbd648d2359364967567e6fd0a2e8d772 data/forge/tags/blocks/sand.json
 aed3ef6f2929a8f19592b8a5c21ca16d3214d7bb data/forge/tags/blocks/sandstone.json
 8db11ffa48c111306ce6bf0eb5dbcc7c9607e91a data/minecraft/tags/blocks/bee_growables.json
@@ -18,10 +17,10 @@ fe000922377e7a009f4501c3e404a12e4527c767 data/minecraft/tags/blocks/logs.json
 fe000922377e7a009f4501c3e404a12e4527c767 data/minecraft/tags/blocks/logs_that_burn.json
 771ec952c3e0efd227897639ebbe4ac722fbd9e3 data/minecraft/tags/blocks/mineable/axe.json
 4a6a81a40acad52bd167de6803f0eec362216831 data/minecraft/tags/blocks/mineable/hoe.json
-3bf3d09402eccad00180814a0b2c355f877b4775 data/minecraft/tags/blocks/mineable/pickaxe.json
+09e1abf4f2ba9c72c1902a9b327422d7274bd3dd data/minecraft/tags/blocks/mineable/pickaxe.json
 231a202bbd648d2359364967567e6fd0a2e8d772 data/minecraft/tags/blocks/mineable/shovel.json
-482b8fbb0cfe4750f1d0cdb14f76248868cccd45 data/minecraft/tags/blocks/needs_diamond_tool.json
-b7bd33a25c1697223dbaa38aa30f865e1b4cf40d data/minecraft/tags/blocks/needs_iron_tool.json
+9d9111630b0a0340a5d023920c268b7b594a3343 data/minecraft/tags/blocks/needs_diamond_tool.json
+1863fb7905486e58989f0222ddc7d7268d916ed2 data/minecraft/tags/blocks/needs_iron_tool.json
 633a7a153e5709e7019ffd88707bb5028200cb7d data/minecraft/tags/blocks/needs_stone_tool.json
 fca73e5243b593eb2b04d24e4fe51b0c2c7271fc data/minecraft/tags/blocks/planks.json
 6f963e8853513cb02bf287e0ae96201e701cd4fb data/minecraft/tags/blocks/pressure_plates.json
@@ -32,7 +31,7 @@ ed8ff2d1294d43d312707e08691c7ea348b26c16 data/minecraft/tags/blocks/stairs.json
 8db11ffa48c111306ce6bf0eb5dbcc7c9607e91a data/minecraft/tags/blocks/sword_efficient.json
 3a997fddcc56b54e22c384a8077c9356d30f1df4 data/minecraft/tags/blocks/trapdoors.json
 91ae97cacf98848aaeb321a9db25a29d4903e3af data/minecraft/tags/blocks/walls.json
-b46a5b5b70d2a86791741ff13ee07d581d7280fe data/minecraft/tags/blocks/wither_immune.json
+4a7f9bd9fed792adef1b3a35801f2b9352012d05 data/minecraft/tags/blocks/wither_immune.json
 be3f43d769b6135246a6b31b236a89daf80aed18 data/minecraft/tags/blocks/wooden_buttons.json
 0403b6516098875b66dcd7f02f9b5c65c27b4b3e data/minecraft/tags/blocks/wooden_doors.json
 2f1005fe9e53e11553d4f0d479f313351b49da8b data/minecraft/tags/blocks/wooden_fences.json

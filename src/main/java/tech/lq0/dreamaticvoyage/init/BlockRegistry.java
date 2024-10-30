@@ -72,6 +72,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> PHANTASMAL_VOYAGER = BLOCKS.register("phantasmal_voyager", PhantasmalVoyager::new);
     public static final RegistryObject<Block> CRYSTAL_POPPER = BLOCKS.register("crystal_popper", CrystalPopper::new);
     public static final RegistryObject<Block> CRYSTAL_PURIFIER = BLOCKS.register("crystal_purifier", CrystalPurifier::new);
+    public static final RegistryObject<Block> CRYSTAL_POWDER_REMOVER = BLOCKS.register("crystal_powder_remover", CrystalPowderRemover::new);
 
     // Fukamizu Tech Series
     public static final RegistryObject<Block> FUKAMIZU_MACHINE_CASING = BLOCKS.register("fukamizu_machine_casing", FukamizuMachineCasing::new);

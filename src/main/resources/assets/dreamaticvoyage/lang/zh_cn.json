@@ -1045,6 +1045,9 @@
   "des.dreamaticvoyage.powerful_mass_gainer_2": "“真正的猛士从来不会借助盔甲的力量”",
   "item.dreamaticvoyage.anti_powder": "黑化粉",
   "item.dreamaticvoyage.gachi_powder": "狂热粉",
+  "block.dreamaticvoyage.crystal_powder_remover": "结晶脱粉机",
+  "des.dreamaticvoyage.crystal_powder_remover_1": "能够避免结晶反噬，回收结晶的机器",
+  "des.dreamaticvoyage.crystal_powder_remover_2": "“我只想拿回自己的金钱，其他的与我何干？”",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

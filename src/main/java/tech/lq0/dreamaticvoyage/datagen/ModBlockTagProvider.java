@@ -36,7 +36,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         BlockRegistry.ROCK_STATUE.get(), BlockRegistry.PHANTASMAL_VOYAGER.get(),
                         BlockRegistry.FUKAMIZU_BREAD_BRICKS.get(), BlockRegistry.FUKAMIZU_MACHINE_CASING.get(),
                         BlockRegistry.CRYSTAL_POPPER.get(), BlockRegistry.GACHI_INGOT_BLOCK.get(),
-                        BlockRegistry.CRYSTAL_PURIFIER.get())
+                        BlockRegistry.CRYSTAL_PURIFIER.get(), BlockRegistry.CRYSTAL_POWDER_REMOVER.get())
                 .addTag(ModTags.Blocks.FUKAMIZU_MACHINE);
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(BlockRegistry.BLUE_SAND.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(BlockRegistry.UNI_MILLET_BLOCK.get(),
@@ -48,15 +48,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 BlockRegistry.FUKAMIZU_PLUM_WOOD.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get(), BlockRegistry.FUKAMIZU_PLUM_SLAB.get(),
                 BlockRegistry.FUKAMIZU_PLUM_STAIRS.get(), BlockRegistry.FUKAMIZU_PLUM_FENCE.get(), BlockRegistry.FUKAMIZU_PLUM_FENCE_GATE.get(),
                 BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get(), BlockRegistry.FUKAMIZU_PLUM_BUTTON.get()
-//              , BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(),
+//              , BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get()
         );
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.FUKAMIZU_PLUM_LEAVES.get());
 
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(BlockRegistry.RED_AHOGE_BLOCK.get(), BlockRegistry.WHITE_AHOGE_BLOCK.get(),
                 BlockRegistry.HARDEN_CRYSTAL_BLOCK.get());
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get());
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(BlockRegistry.CHARGED_CRYSTAL_BLOCK.get());
-        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(BlockRegistry.ANTI_INGOT_BLOCK.get(), BlockRegistry.GACHI_INGOT_BLOCK.get());
+        this.tag(BlockTags.NEEDS_IRON_TOOL).add(BlockRegistry.PURIFIED_CRYSTAL_BLOCK.get(), BlockRegistry.CHARGED_CRYSTAL_BLOCK.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(BlockRegistry.ANTI_INGOT_BLOCK.get(), BlockRegistry.GACHI_INGOT_BLOCK.get());
 
         this.tag(BlockTags.BEE_GROWABLES).add(BlockRegistry.UNI_MILLET_BLOCK.get());
         this.tag(BlockTags.CROPS).add(BlockRegistry.UNI_MILLET_BLOCK.get());
@@ -95,7 +94,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.WOODEN_TRAPDOORS).add(BlockRegistry.HARANO_TRAPDOOR.get());
         this.tag(BlockTags.BUTTONS).add(BlockRegistry.HARANO_BUTTON.get(), BlockRegistry.FUKAMIZU_PLUM_BUTTON.get());
         this.tag(BlockTags.WOODEN_BUTTONS).add(BlockRegistry.HARANO_BUTTON.get(), BlockRegistry.FUKAMIZU_PLUM_BUTTON.get());
-        this.tag(BlockTags.WITHER_IMMUNE).add(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), BlockRegistry.FUKAMIZU_BREAD_BRICKS.get());
+        this.tag(BlockTags.WITHER_IMMUNE).add(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), BlockRegistry.FUKAMIZU_BREAD_BRICKS.get(),
+                BlockRegistry.ANTI_INGOT_BLOCK.get(), BlockRegistry.GACHI_INGOT_BLOCK.get());
 
         this.tag(ModTags.Blocks.FUKAMIZU_MACHINE).add(BlockRegistry.FUKAMIZU_COMPRESSOR.get(), BlockRegistry.FUKAMIZU_CRUSHER.get(),
                 BlockRegistry.FUKAMIZU_PYLON.get(), BlockRegistry.LIGHT_BREAD_ENERGY_BLOCK.get());
