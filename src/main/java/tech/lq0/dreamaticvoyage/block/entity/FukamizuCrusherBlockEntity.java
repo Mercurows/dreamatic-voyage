@@ -86,7 +86,6 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         return this.canPlaceItem(pIndex, pItemStack);
     }
 
-    // TODO pIndex == 1 时修改为深水面包磨球
     @Override
     public boolean canPlaceItem(int pIndex, ItemStack pStack) {
         if (pIndex == 0) {

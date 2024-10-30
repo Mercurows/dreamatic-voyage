@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -21,11 +20,8 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.client.render.item.SecondaryCataclysmRenderer;
 import tech.lq0.dreamaticvoyage.entity.projectile.HirenadeGGEntity;
 import tech.lq0.dreamaticvoyage.init.SoundRegistry;
 import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
@@ -35,6 +31,7 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import java.util.List;
 import java.util.function.Consumer;
 
+// TODO 移交至 Superb Warfare
 public class SecondaryCataclysm extends Item {
     public static final String TAG_AMMO = "Ammo";
     public static final int MAX_AMMO_SIZE = 8;
@@ -111,12 +108,6 @@ public class SecondaryCataclysm extends Item {
             @Override
             public HumanoidModel.@Nullable ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand, ItemStack itemStack) {
                 return HumanoidModel.ArmPose.BOW_AND_ARROW;
-            }
-
-            @OnlyIn(Dist.CLIENT)
-            @Override
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return new SecondaryCataclysmRenderer();
             }
         });
     }
