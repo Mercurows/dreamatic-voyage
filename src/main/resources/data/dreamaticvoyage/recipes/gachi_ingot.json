@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#p#",
+    "pPp",
+    "#p#"
+  ],
+  "key": {
+    "#": {
+      "item": "dreamaticvoyage:gachi_powder"
+    },
+    "p": {
+      "item": "dreamaticvoyage:charged_crystal_ingot"
+    },
+    "P": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:gachi_ingot",
+    "count": 1
+  }
+}
