@@ -1,13 +1,11 @@
 package tech.lq0.dreamaticvoyage.block.entity;
 
-import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -15,54 +13,48 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.gui.menu.CrystalPurifierMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
-import tech.lq0.dreamaticvoyage.recipe.CrystalPurifyingRecipe;
+import tech.lq0.dreamaticvoyage.recipe.CrystalRemovingRecipe;
 
-import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicBoolean;
 
-public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
+public class CrystalPowderRemoverBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
 
     protected static final int SLOT_INPUT = 0;
     protected static final int SLOT_FUEL = 1;
     protected static final int SLOT_RESULT = 2;
+    protected static final int SLOT_EXTRA = 3;
 
     private static final int[] SLOTS_FOR_UP = new int[]{0};
     private static final int[] SLOTS_FOR_SIDES = new int[]{1};
-    private static final int[] SLOTS_FOR_DOWN = new int[]{2};
+    private static final int[] SLOTS_FOR_DOWN = new int[]{2, 3};
 
-    public static final int MAX_DATA_COUNT = 4;
-    public static final int EMERALD_FUEL_TICK = 960;
-    public static final int GOLD_FUEL_TICK = 120;
+    public static final int MAX_DATA_COUNT = 2;
+    public static final int FUEL_TICK = 800;
+    public static final int PROCESS_TIME = 200;
 
-    protected NonNullList<ItemStack> items = NonNullList.withSize(3, ItemStack.EMPTY);
+    protected NonNullList<ItemStack> items = NonNullList.withSize(4, ItemStack.EMPTY);
 
     private LazyOptional<?>[] itemHandlers = SidedInvWrapper.create(this, Direction.UP, Direction.DOWN, Direction.NORTH);
 
     public int energy;
-    public int maxEnergy = 300;
     public int outputProgress;
-    public int outputTime = 300;
 
     protected final ContainerData dataAccess = new ContainerData() {
         public int get(int pIndex) {
             return switch (pIndex) {
-                case 0 -> CrystalPurifierBlockEntity.this.energy;
-                case 1 -> CrystalPurifierBlockEntity.this.maxEnergy;
-                case 2 -> CrystalPurifierBlockEntity.this.outputProgress;
-                case 3 -> CrystalPurifierBlockEntity.this.outputTime;
+                case 0 -> CrystalPowderRemoverBlockEntity.this.energy;
+                case 1 -> CrystalPowderRemoverBlockEntity.this.outputProgress;
                 default -> 0;
             };
         }
@@ -70,16 +62,10 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
         public void set(int pIndex, int pValue) {
             switch (pIndex) {
                 case 0:
-                    CrystalPurifierBlockEntity.this.energy = pValue;
+                    CrystalPowderRemoverBlockEntity.this.energy = pValue;
                     break;
                 case 1:
-                    CrystalPurifierBlockEntity.this.maxEnergy = pValue;
-                    break;
-                case 2:
-                    CrystalPurifierBlockEntity.this.outputProgress = pValue;
-                    break;
-                case 3:
-                    CrystalPurifierBlockEntity.this.outputTime = pValue;
+                    CrystalPowderRemoverBlockEntity.this.outputProgress = pValue;
                     break;
             }
         }
@@ -89,21 +75,11 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
         }
     };
 
-    public CrystalPurifierBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(BlockEntityRegistry.CRYSTAL_PURIFIER_BLOCK_ENTITY.get(), pPos, pBlockState);
+    public CrystalPowderRemoverBlockEntity(BlockPos pPos, BlockState pBlockState) {
+        super(BlockEntityRegistry.CRYSTAL_POWDER_REMOVER_BLOCK_ENTITY.get(), pPos, pBlockState);
     }
 
-    public static Map<TagKey<Item>, Integer> getFuels() {
-        Map<TagKey<Item>, Integer> map = Maps.newLinkedHashMap();
-        map.put(Tags.Items.GEMS_EMERALD, EMERALD_FUEL_TICK);
-        map.put(Tags.Items.STORAGE_BLOCKS_EMERALD, EMERALD_FUEL_TICK * 10);
-        map.put(Tags.Items.INGOTS_GOLD, GOLD_FUEL_TICK);
-        map.put(Tags.Items.STORAGE_BLOCKS_GOLD, GOLD_FUEL_TICK * 10);
-
-        return map;
-    }
-
-    public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPurifierBlockEntity blockEntity) {
+    public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPowderRemoverBlockEntity blockEntity) {
         if (blockEntity.hasRecipe()) {
             var recipe = blockEntity.getCurrentRecipe();
             if (recipe.isEmpty()) return;
@@ -114,27 +90,18 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
                     if (blockEntity.outputProgress <= 0) return;
                     blockEntity.outputProgress--;
                 } else {
-                    getFuels().forEach((k, v) -> {
-                        if (fuel.is(k)) {
-                            blockEntity.energy += v;
-                            blockEntity.maxEnergy = v;
-                            fuel.shrink(1);
-                        }
-                    });
-
+                    fuel.shrink(1);
+                    blockEntity.energy = FUEL_TICK;
                     blockEntity.setChanged();
                     pLevel.sendBlockUpdated(pPos, pState, pState, 3);
                     pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
                 }
             }
 
-            int time = recipe.get().getTick();
-
             blockEntity.outputProgress++;
             blockEntity.energy = Math.max(0, blockEntity.energy - 1);
-            blockEntity.outputTime = time;
 
-            if (blockEntity.outputProgress >= time) {
+            if (blockEntity.outputProgress >= PROCESS_TIME) {
                 blockEntity.craftItem();
                 blockEntity.outputProgress = 0;
                 blockEntity.setChanged();
@@ -150,7 +117,9 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
     }
 
     private void craftItem() {
-        Optional<CrystalPurifyingRecipe> recipe = getCurrentRecipe();
+        if (this.level == null) return;
+
+        Optional<CrystalRemovingRecipe> recipe = getCurrentRecipe();
         if (recipe.isEmpty()) {
             return;
         }
@@ -160,11 +129,19 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
         ItemStack input = this.items.get(SLOT_INPUT);
         input.shrink(1);
 
-        ItemStack output = this.items.get(SLOT_RESULT);
-        this.items.set(SLOT_RESULT, new ItemStack(result.getItem(), output.getCount() + result.getCount()));
+        ItemStack resultSlotItem = this.items.get(SLOT_RESULT);
+        if (level.random.nextDouble() < recipe.get().getOutputChance()) {
+            this.items.set(SLOT_RESULT, new ItemStack(result.getItem(), resultSlotItem.getCount() + result.getCount()));
+        }
+
+        ItemStack extraOutput = recipe.get().getExtraOutput();
+        ItemStack extraSlotItem = this.items.get(SLOT_EXTRA);
+        if (level.random.nextDouble() < recipe.get().getExtraChance()) {
+            this.items.set(SLOT_EXTRA, new ItemStack(extraOutput.getItem(), extraSlotItem.getCount() + 1));
+        }
     }
 
-    private Optional<CrystalPurifyingRecipe> getCurrentRecipe() {
+    private Optional<CrystalRemovingRecipe> getCurrentRecipe() {
         if (this.level == null) {
             return Optional.empty();
         }
@@ -174,11 +151,11 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
             inventory.setItem(i, this.items.get(i));
         }
 
-        return this.level.getRecipeManager().getRecipeFor(CrystalPurifyingRecipe.Type.INSTANCE, inventory, level);
+        return this.level.getRecipeManager().getRecipeFor(CrystalRemovingRecipe.Type.INSTANCE, inventory, level);
     }
 
     private boolean hasRecipe() {
-        Optional<CrystalPurifyingRecipe> recipe = getCurrentRecipe();
+        Optional<CrystalRemovingRecipe> recipe = getCurrentRecipe();
 
         if (recipe.isEmpty()) {
             return false;
@@ -189,12 +166,18 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
         }
 
         ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
+        ItemStack extra = recipe.get().getExtraOutput();
 
-        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem())
+                && canInsertItemIntoExtraSlot(extra.getItem());
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {
         return this.items.get(SLOT_RESULT).isEmpty() || this.items.get(SLOT_RESULT).is(item);
+    }
+
+    private boolean canInsertItemIntoExtraSlot(Item item) {
+        return this.items.get(SLOT_EXTRA).isEmpty() || this.items.get(SLOT_EXTRA).is(item);
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count) {
@@ -218,9 +201,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
         super.load(pTag);
 
         this.energy = pTag.getInt("Energy");
-        this.maxEnergy = pTag.getInt("MaxEnergy");
         this.outputProgress = pTag.getInt("OutputProgress");
-        this.outputTime = pTag.getInt("OutputTime");
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items);
     }
@@ -230,9 +211,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
         super.saveAdditional(pTag);
 
         pTag.putInt("Energy", this.energy);
-        pTag.putInt("MaxEnergy", this.maxEnergy);
         pTag.putInt("OutputProgress", this.outputProgress);
-        pTag.putInt("OutputTime", this.outputTime);
         ContainerHelper.saveAllItems(pTag, this.items);
     }
 
@@ -255,13 +234,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
             return false;
         } else {
             if (pIndex == SLOT_FUEL) {
-                AtomicBoolean hasFuel = new AtomicBoolean(false);
-                getFuels().forEach((k, v) -> {
-                    if (pStack.is(k)) {
-                        hasFuel.set(true);
-                    }
-                });
-                return hasFuel.get();
+                return pStack.is(Items.ECHO_SHARD);
             }
 
             return false;
@@ -270,7 +243,7 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
 
     @Override
     public boolean canTakeItemThroughFace(int pIndex, ItemStack pStack, Direction pDirection) {
-        return pDirection == Direction.DOWN && pIndex == SLOT_RESULT;
+        return pDirection == Direction.DOWN && (pIndex == SLOT_RESULT || pIndex == SLOT_EXTRA);
     }
 
     @Override
@@ -330,13 +303,14 @@ public class CrystalPurifierBlockEntity extends BlockEntity implements WorldlyCo
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("container.dreamaticvoyage.crystal_purifier");
+        return Component.translatable("container.dreamaticvoyage.crystal_powder_remover");
     }
 
+    // TODO 添加正确的menu
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return new CrystalPurifierMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
+        return null;
     }
 
     @Override
