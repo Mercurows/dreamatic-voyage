@@ -1658,6 +1658,10 @@
   "dreamaticvoyage.entry.third.intro": "虚无之影",
   "dreamaticvoyage.page.third.intro1": "我所见的，是真实的繁荣吗？$(br)我所闻的，是虚伪的和睦吗？",
 
+  "dreamaticvoyage.entry.hiru_head": "灯瑠头",
+  "dreamaticvoyage.page.hiru_head1": "传说在上古时期，海中有一种称作“灯”的怪物，头部巨大无比，背后长有无数的白色触手，任何经过的生物都无法逃脱它的魔爪。$(item)灯瑠头$(0)是这怪物的艺术复原品的部件之一。$(p)佩戴时免疫击退效果，但会减少移动速度。在水中时获得$(thing)潮涌能量$(0)和$(thing)水下呼吸$(0)效果。",
+  "dreamaticvoyage.page.hiru_head2": "$(o)拿去吓人也不错。",
+
   "dreamaticvoyage.entry.reina_wings": "怜奈之翼",
   "dreamaticvoyage.page.reina_wings1": "$(item)怜奈之翼$(0)是一件能够提供饥饿值恢复的装备，尽管不知道它的原理是什么。$(p)装备时提供$(thing)缓降$(0)效果，每10秒会恢复1点$(thing)饥饿值$(0)和1点$(thing)饱和度$(0)。$(p)此外还会降低佩戴者的重力。",
   "dreamaticvoyage.page.reina_wings2": "$(o)红烧翅膀我喜欢吃。",
