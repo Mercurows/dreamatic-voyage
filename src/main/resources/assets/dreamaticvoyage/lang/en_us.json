@@ -1708,6 +1708,12 @@
   "dreamaticvoyage.page.chocolate_boots2": "$(o)并不能当做饭盒使用。",
   "dreamaticvoyage.page.chocolate_boots3": "巧克力工艺店的一双巧克力鞋，嘿，您甭说，瞧着跟真的似的。$(p)吔了一口感觉浑身充满了帕瓦！！力量！！急迫！！$(p)——嚼了一口鞋子的夜音如是说",
 
+  "dreamaticvoyage.entry.tail_pen": "彩猫笔",
+  "dreamaticvoyage.page.tail_pen1": "$(item)彩猫笔$(0)是一位想成为大艺术家的小猫咪的画笔，能够将周围变得五颜六色。$(p)使用彩猫笔攻击生物时会从十种功能之中抽取一种进行触发，此外，彩猫笔会以每秒1点的速度自然恢复耐久值。",
+  "dreamaticvoyage.page.tail_pen2": "$(o)看起来还没长出尾巴，就先用手拿着它吧。",
+  "dreamaticvoyage.page.tail_pen3": "随机抽取的功能包括：$(br)$(li)给予玩家$(thing)生命恢复III$(0)，持续时间5秒。$(li)给予玩家$(thing)速度III$(0)，持续时间5秒。$(li)给予玩家$(thing)跳跃提升III$(0)，持续时间5秒。$(li)给予玩家$(thing)力量III$(0)，持续时间5秒。$(li)给予玩家$(thing)伤害吸收III$(0)，持续时间5秒。",
+  "dreamaticvoyage.page.tail_pen4": "$(li)给予目标$(thing)缓慢IV$(0)，持续时间15秒。$(li)给予目标$(thing)凋零IV$(0)，持续时间15秒。$(li)给予目标$(thing)中毒IV$(0)，持续时间15秒。$(li)给予目标$(thing)虚弱IV$(0)，持续时间15秒。$(li)给予目标$(thing)瞬间伤害IV$(0)，若目标为$(c)亡灵生物$(0)，则给予$(thing)瞬间治疗IV$(0)。",
+
   "dreamaticvoyage.entry.rabbit_lychee": "Rabbit Lychee",
   "dreamaticvoyage.page.rabbit_lychee1": "魔法之森有一种独特的生物，明明是荔枝，却长出了兔耳——或者说，是一只兔子，却变成了荔枝的模样？总之，$(item)兔荔枝$(0)就是这样的神奇的生物。$(p)食用后会获得$(thing)跳跃提升$(0)效果。",
   "dreamaticvoyage.page.rabbit_lychee2": "在积分商店处兑换。$(p)$(o)独特的水果，就是太贵了。",

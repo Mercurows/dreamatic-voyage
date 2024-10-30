@@ -1,0 +1,26 @@
+{
+  "name": "dreamaticvoyage.entry.tail_pen",
+  "icon": "dreamaticvoyage:tail_pen",
+  "category": "dreamaticvoyage:oi",
+  "advancement": "dreamaticvoyage:main/root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.tail_pen1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dreamaticvoyage:tail_pen",
+      "text": "dreamaticvoyage.page.tail_pen2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.tail_pen3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dreamaticvoyage.page.tail_pen4"
+    }
+  ],
+  "sortnum": 60201
+}
