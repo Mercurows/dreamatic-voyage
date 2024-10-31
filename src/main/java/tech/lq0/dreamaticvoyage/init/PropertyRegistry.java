@@ -51,6 +51,8 @@ public class PropertyRegistry {
                 (heldStack, world, livingEntity, seed) -> livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == heldStack ? 1.0F : 0.0F));
         event.enqueueWork(() -> ItemProperties.register(ItemRegistry.OMINOUS_SICKLE.get(), new ResourceLocation("invoke"),
                 (heldStack, world, livingEntity, seed) -> ItemNBTTool.getBoolean(heldStack, "Invoke", false) ? 1.0F : 0.0F));
+        event.enqueueWork(() -> ItemProperties.register(ItemRegistry.CANDLE_CAKE.get(), Utils.loc("damage"),
+                (heldStack, world, livingEntity, seed) -> heldStack.getDamageValue()));
 //        event.enqueueWork(() -> ItemProperties.register(ItemRegistry.TETRIS_CAT.get(), Utils.loc("tetriscat_blocking"),
 //                (heldStack, world, livingEntity, seed) ->
 //                        livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == heldStack ? 1.0F : 0.0F));

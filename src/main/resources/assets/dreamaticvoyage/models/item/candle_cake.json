@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dreamaticvoyage:item/candle_cake"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "dreamaticvoyage:damage": 1
+      },
+      "model": "dreamaticvoyage:item/candle_cake_1"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:damage": 2
+      },
+      "model": "dreamaticvoyage:item/candle_cake_2"
+    },
+    {
+      "predicate": {
+        "dreamaticvoyage:damage": 3
+      },
+      "model": "dreamaticvoyage:item/candle_cake_3"
+    }
+  ]
+}

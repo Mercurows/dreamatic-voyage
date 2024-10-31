@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dreamaticvoyage:crystal_powder_remover"
+          "name": "dreamaticvoyage:crystal_cutter"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dreamaticvoyage:blocks/crystal_powder_remover"
+  "random_sequence": "dreamaticvoyage:blocks/crystal_cutter"
 }
