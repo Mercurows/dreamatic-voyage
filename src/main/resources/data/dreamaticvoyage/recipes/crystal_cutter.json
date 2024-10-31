@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#S#",
+    "dBd",
+    "#S#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:purpur_block"
+    },
+    "S": {
+      "item": "minecraft:smoker"
+    },
+    "d": {
+      "item": "dreamaticvoyage:charged_crystal_ingot"
+    },
+    "B": {
+      "item": "dreamaticvoyage:dark_crystal"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:crystal_cutter",
+    "count": 1
+  }
+}
