@@ -14,7 +14,7 @@ import tech.lq0.dreamaticvoyage.Utils;
 
 import javax.annotation.Nullable;
 
-public class CrystalRemovingRecipe implements Recipe<SimpleContainer> {
+public class CrystalCuttingRecipe implements Recipe<SimpleContainer> {
 
     private final Ingredient input;
     private final ItemStack output;
@@ -23,7 +23,7 @@ public class CrystalRemovingRecipe implements Recipe<SimpleContainer> {
     private final double extraChance;
     private final ResourceLocation id;
 
-    public CrystalRemovingRecipe(Ingredient input, ItemStack output, double outputChance, ItemStack extraOutput, double extraChance, ResourceLocation id) {
+    public CrystalCuttingRecipe(Ingredient input, ItemStack output, double outputChance, ItemStack extraOutput, double extraChance, ResourceLocation id) {
         this.input = input;
         this.output = output;
         this.outputChance = outputChance;
@@ -68,12 +68,12 @@ public class CrystalRemovingRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return CrystalRemovingRecipe.Serializer.INSTANCE;
+        return CrystalCuttingRecipe.Serializer.INSTANCE;
     }
 
     @Override
     public RecipeType<?> getType() {
-        return CrystalRemovingRecipe.Type.INSTANCE;
+        return CrystalCuttingRecipe.Type.INSTANCE;
     }
 
     public double getOutputChance() {
@@ -88,18 +88,18 @@ public class CrystalRemovingRecipe implements Recipe<SimpleContainer> {
         return extraOutput;
     }
 
-    public static class Type implements RecipeType<CrystalRemovingRecipe> {
-        public static final CrystalRemovingRecipe.Type INSTANCE = new CrystalRemovingRecipe.Type();
-        public static final String ID = "crystal_removing";
+    public static class Type implements RecipeType<CrystalCuttingRecipe> {
+        public static final CrystalCuttingRecipe.Type INSTANCE = new CrystalCuttingRecipe.Type();
+        public static final String ID = "crystal_cutting";
     }
 
-    public static class Serializer implements RecipeSerializer<CrystalRemovingRecipe> {
-        public static final CrystalRemovingRecipe.Serializer INSTANCE = new CrystalRemovingRecipe.Serializer();
+    public static class Serializer implements RecipeSerializer<CrystalCuttingRecipe> {
+        public static final CrystalCuttingRecipe.Serializer INSTANCE = new CrystalCuttingRecipe.Serializer();
 
-        public static final ResourceLocation ID = Utils.loc("crystal_removing");
+        public static final ResourceLocation ID = Utils.loc("crystal_cutting");
 
         @Override
-        public CrystalRemovingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
+        public CrystalCuttingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
             var extra = GsonHelper.getAsJsonObject(pSerializedRecipe, "extra_output", null);
             ItemStack extraOutput = ItemStack.EMPTY;
@@ -111,22 +111,22 @@ public class CrystalRemovingRecipe implements Recipe<SimpleContainer> {
             var ingredient = GsonHelper.getAsJsonObject(pSerializedRecipe, "ingredient");
             var input = Ingredient.fromJson(ingredient);
 
-            return new CrystalRemovingRecipe(input, output, outputChance, extraOutput, extraChance, pRecipeId);
+            return new CrystalCuttingRecipe(input, output, outputChance, extraOutput, extraChance, pRecipeId);
         }
 
         @Override
-        public @Nullable CrystalRemovingRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+        public @Nullable CrystalCuttingRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             Ingredient input = Ingredient.fromNetwork(pBuffer);
             ItemStack output = pBuffer.readItem();
             double outputChance = pBuffer.readDouble();
             ItemStack extraOutput = pBuffer.readItem();
             double extraChance = pBuffer.readDouble();
 
-            return new CrystalRemovingRecipe(input, output, outputChance, extraOutput, extraChance, pRecipeId);
+            return new CrystalCuttingRecipe(input, output, outputChance, extraOutput, extraChance, pRecipeId);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf pBuffer, CrystalRemovingRecipe pRecipe) {
+        public void toNetwork(FriendlyByteBuf pBuffer, CrystalCuttingRecipe pRecipe) {
             pRecipe.input.toNetwork(pBuffer);
             pBuffer.writeItemStack(pRecipe.getResultItem(null), false);
             pBuffer.writeDouble(pRecipe.outputChance);

@@ -25,25 +25,25 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.block.entity.CrystalPowderRemoverBlockEntity;
+import tech.lq0.dreamaticvoyage.block.entity.CrystalCutterBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 
 import java.util.List;
 
 @SuppressWarnings("deprecation")
-public class CrystalPowderRemover extends Block implements EntityBlock {
+public class CrystalCutter extends Block implements EntityBlock {
 
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    public CrystalPowderRemover() {
+    public CrystalCutter() {
         super(Properties.of().strength(3f).requiresCorrectToolForDrops());
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("des.dreamaticvoyage.crystal_powder_remover_1").withStyle(ChatFormatting.GRAY));
-        pTooltip.add(Component.translatable("des.dreamaticvoyage.crystal_powder_remover_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.crystal_cutter_1").withStyle(ChatFormatting.GRAY));
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.crystal_cutter_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
     }
 
     @Override
@@ -58,7 +58,7 @@ public class CrystalPowderRemover extends Block implements EntityBlock {
 
     protected void openContainer(Level pLevel, BlockPos pPos, Player pPlayer) {
         BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-        if (blockentity instanceof CrystalPowderRemoverBlockEntity blockEntity) {
+        if (blockentity instanceof CrystalCutterBlockEntity blockEntity) {
             pPlayer.openMenu(blockEntity);
         }
     }
@@ -66,7 +66,7 @@ public class CrystalPowderRemover extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new CrystalPowderRemoverBlockEntity(pPos, pState);
+        return new CrystalCutterBlockEntity(pPos, pState);
     }
 
     @Override
@@ -84,7 +84,7 @@ public class CrystalPowderRemover extends Block implements EntityBlock {
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
         if (pLevel instanceof ServerLevel serverLevel) {
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-            if (blockentity instanceof CrystalPowderRemoverBlockEntity blockEntity) {
+            if (blockentity instanceof CrystalCutterBlockEntity blockEntity) {
                 Containers.dropContents(serverLevel, pPos, blockEntity);
             }
         }
@@ -96,7 +96,7 @@ public class CrystalPowderRemover extends Block implements EntityBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
         if (!pLevel.isClientSide) {
-            return createTickerHelper(pBlockEntityType, BlockEntityRegistry.CRYSTAL_POWDER_REMOVER_BLOCK_ENTITY.get(), CrystalPowderRemoverBlockEntity::serverTick);
+            return createTickerHelper(pBlockEntityType, BlockEntityRegistry.CRYSTAL_CUTTER_BLOCK_ENTITY.get(), CrystalCutterBlockEntity::serverTick);
         }
         return null;
     }

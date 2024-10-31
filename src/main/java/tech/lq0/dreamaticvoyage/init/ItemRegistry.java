@@ -700,8 +700,8 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.CRYSTAL_POPPER.get(), new Item.Properties()));
     public static final RegistryObject<Item> CRYSTAL_PURIFIER = BLOCK_ITEMS.register("crystal_purifier",
             () -> new BlockItem(BlockRegistry.CRYSTAL_PURIFIER.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
-    public static final RegistryObject<Item> CRYSTAL_POWDER_REMOVER = BLOCK_ITEMS.register("crystal_powder_remover",
-            () -> new BlockItem(BlockRegistry.CRYSTAL_POWDER_REMOVER.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> CRYSTAL_CUTTER = BLOCK_ITEMS.register("crystal_cutter",
+            () -> new BlockItem(BlockRegistry.CRYSTAL_CUTTER.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> FUKAMIZU_MACHINE_CASING = BLOCK_ITEMS.register("fukamizu_machine_casing",
             () -> new BlockItem(BlockRegistry.FUKAMIZU_MACHINE_CASING.get(), new Item.Properties().fireResistant()));

@@ -6,7 +6,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.recipe.CrystalPurifyingRecipe;
-import tech.lq0.dreamaticvoyage.recipe.CrystalRemovingRecipe;
+import tech.lq0.dreamaticvoyage.recipe.CrystalCuttingRecipe;
 import tech.lq0.dreamaticvoyage.recipe.FukamizuCompressingRecipe;
 
 public class RecipeRegistry {
@@ -21,7 +21,7 @@ public class RecipeRegistry {
     public static final RegistryObject<RecipeSerializer<CrystalPurifyingRecipe>> CRYSTAL_PURIFYING_SERIALIZER =
             RECIPE_SERIALIZERS.register("crystal_purifying", () -> CrystalPurifyingRecipe.Serializer.INSTANCE);
 
-    public static final RegistryObject<RecipeSerializer<CrystalRemovingRecipe>> CRYSTAL_REMOVING_SERIALIZER =
-            RECIPE_SERIALIZERS.register("crystal_removing", () -> CrystalRemovingRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<CrystalCuttingRecipe>> CRYSTAL_CUTTING_SERIALIZER =
+            RECIPE_SERIALIZERS.register("crystal_cutting", () -> CrystalCuttingRecipe.Serializer.INSTANCE);
 
 }

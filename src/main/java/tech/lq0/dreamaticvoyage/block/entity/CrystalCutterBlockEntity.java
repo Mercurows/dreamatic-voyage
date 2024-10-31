@@ -24,11 +24,11 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
-import tech.lq0.dreamaticvoyage.recipe.CrystalRemovingRecipe;
+import tech.lq0.dreamaticvoyage.recipe.CrystalCuttingRecipe;
 
 import java.util.Optional;
 
-public class CrystalPowderRemoverBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
+public class CrystalCutterBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
 
     protected static final int SLOT_INPUT = 0;
     protected static final int SLOT_FUEL = 1;
@@ -53,8 +53,8 @@ public class CrystalPowderRemoverBlockEntity extends BlockEntity implements Worl
     protected final ContainerData dataAccess = new ContainerData() {
         public int get(int pIndex) {
             return switch (pIndex) {
-                case 0 -> CrystalPowderRemoverBlockEntity.this.energy;
-                case 1 -> CrystalPowderRemoverBlockEntity.this.outputProgress;
+                case 0 -> CrystalCutterBlockEntity.this.energy;
+                case 1 -> CrystalCutterBlockEntity.this.outputProgress;
                 default -> 0;
             };
         }
@@ -62,10 +62,10 @@ public class CrystalPowderRemoverBlockEntity extends BlockEntity implements Worl
         public void set(int pIndex, int pValue) {
             switch (pIndex) {
                 case 0:
-                    CrystalPowderRemoverBlockEntity.this.energy = pValue;
+                    CrystalCutterBlockEntity.this.energy = pValue;
                     break;
                 case 1:
-                    CrystalPowderRemoverBlockEntity.this.outputProgress = pValue;
+                    CrystalCutterBlockEntity.this.outputProgress = pValue;
                     break;
             }
         }
@@ -75,11 +75,11 @@ public class CrystalPowderRemoverBlockEntity extends BlockEntity implements Worl
         }
     };
 
-    public CrystalPowderRemoverBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(BlockEntityRegistry.CRYSTAL_POWDER_REMOVER_BLOCK_ENTITY.get(), pPos, pBlockState);
+    public CrystalCutterBlockEntity(BlockPos pPos, BlockState pBlockState) {
+        super(BlockEntityRegistry.CRYSTAL_CUTTER_BLOCK_ENTITY.get(), pPos, pBlockState);
     }
 
-    public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalPowderRemoverBlockEntity blockEntity) {
+    public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CrystalCutterBlockEntity blockEntity) {
         if (blockEntity.hasRecipe()) {
             var recipe = blockEntity.getCurrentRecipe();
             if (recipe.isEmpty()) return;
@@ -119,7 +119,7 @@ public class CrystalPowderRemoverBlockEntity extends BlockEntity implements Worl
     private void craftItem() {
         if (this.level == null) return;
 
-        Optional<CrystalRemovingRecipe> recipe = getCurrentRecipe();
+        Optional<CrystalCuttingRecipe> recipe = getCurrentRecipe();
         if (recipe.isEmpty()) {
             return;
         }
@@ -141,7 +141,7 @@ public class CrystalPowderRemoverBlockEntity extends BlockEntity implements Worl
         }
     }
 
-    private Optional<CrystalRemovingRecipe> getCurrentRecipe() {
+    private Optional<CrystalCuttingRecipe> getCurrentRecipe() {
         if (this.level == null) {
             return Optional.empty();
         }
@@ -151,11 +151,11 @@ public class CrystalPowderRemoverBlockEntity extends BlockEntity implements Worl
             inventory.setItem(i, this.items.get(i));
         }
 
-        return this.level.getRecipeManager().getRecipeFor(CrystalRemovingRecipe.Type.INSTANCE, inventory, level);
+        return this.level.getRecipeManager().getRecipeFor(CrystalCuttingRecipe.Type.INSTANCE, inventory, level);
     }
 
     private boolean hasRecipe() {
-        Optional<CrystalRemovingRecipe> recipe = getCurrentRecipe();
+        Optional<CrystalCuttingRecipe> recipe = getCurrentRecipe();
 
         if (recipe.isEmpty()) {
             return false;
@@ -303,7 +303,7 @@ public class CrystalPowderRemoverBlockEntity extends BlockEntity implements Worl
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("container.dreamaticvoyage.crystal_powder_remover");
+        return Component.translatable("container.dreamaticvoyage.crystal_cutter");
     }
 
     // TODO 添加正确的menu

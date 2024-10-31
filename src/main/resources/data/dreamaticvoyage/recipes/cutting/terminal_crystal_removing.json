@@ -1,16 +1,16 @@
 {
-  "type": "dreamaticvoyage:crystal_removing",
+  "type": "dreamaticvoyage:crystal_cutting",
   "ingredient": {
-    "item": "dreamaticvoyage:alienis_crystal"
+    "item": "dreamaticvoyage:terminal_crystal"
   },
   "output": {
     "count": 1,
     "item": "minecraft:emerald"
   },
-  "output_chance": 0.4,
+  "output_chance": 0.8,
   "extra_output": {
     "count": 1,
     "item": "dreamaticvoyage:anti_powder"
   },
-  "extra_chance": 0.02
+  "extra_chance": 0.04
 }
