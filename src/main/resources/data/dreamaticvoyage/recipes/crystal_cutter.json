@@ -1,22 +1,28 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#S#",
+    "TST",
     "dBd",
-    "#S#"
+    "#C#"
   ],
   "key": {
     "#": {
       "item": "minecraft:purpur_block"
     },
     "S": {
-      "item": "minecraft:smoker"
+      "item": "minecraft:stonecutter"
     },
     "d": {
       "item": "dreamaticvoyage:charged_crystal_ingot"
     },
     "B": {
       "item": "dreamaticvoyage:dark_crystal"
+    },
+    "T": {
+      "item": "minecraft:smooth_stone"
+    },
+    "C": {
+      "item": "minecraft:crying_obsidian"
     }
   },
   "result": {

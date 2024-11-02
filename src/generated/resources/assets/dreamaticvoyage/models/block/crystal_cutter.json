@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "dreamaticvoyage:block/crystal_cutter_bottom",
+    "side": "dreamaticvoyage:block/crystal_cutter_side",
+    "top": "dreamaticvoyage:block/crystal_cutter_top"
+  }
+}
