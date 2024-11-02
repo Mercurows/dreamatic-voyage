@@ -6,12 +6,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.gui.menu.CrystalPopperMenu;
-import tech.lq0.dreamaticvoyage.gui.menu.CrystalPurifierMenu;
-import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCompressorMenu;
-import tech.lq0.dreamaticvoyage.gui.menu.PhantasmalVoyagerMenu;
+import tech.lq0.dreamaticvoyage.gui.menu.*;
 
 public class MenuTypeRegistry {
+
     public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.MENU_TYPES, Utils.MOD_ID);
 
     public static final RegistryObject<MenuType<FukamizuCompressorMenu>> FUKAMIZU_COMPRESSOR_MENU =
@@ -29,4 +27,8 @@ public class MenuTypeRegistry {
     public static final RegistryObject<MenuType<CrystalPurifierMenu>> CRYSTAL_PURIFIER_MENU =
             MENU_TYPES.register("crystal_purifier_menu",
                     () -> IForgeMenuType.create(((windowId, inv, data) -> new CrystalPurifierMenu(windowId, inv))));
+
+    public static final RegistryObject<MenuType<CrystalCutterMenu>> CRYSTAL_CUTTER_MENU =
+            MENU_TYPES.register("crystal_cutter_menu",
+                    () -> IForgeMenuType.create(((windowId, inv, data) -> new CrystalCutterMenu(windowId, inv))));
 }

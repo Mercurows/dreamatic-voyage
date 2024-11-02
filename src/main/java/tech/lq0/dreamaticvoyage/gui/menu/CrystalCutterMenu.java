@@ -9,14 +9,13 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import tech.lq0.dreamaticvoyage.block.entity.CrystalPurifierBlockEntity;
+import tech.lq0.dreamaticvoyage.block.entity.CrystalCutterBlockEntity;
 import tech.lq0.dreamaticvoyage.init.MenuTypeRegistry;
-import tech.lq0.dreamaticvoyage.recipe.CrystalPurifyingRecipe;
+import tech.lq0.dreamaticvoyage.recipe.CrystalCuttingRecipe;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
-public class CrystalPurifierMenu extends AbstractContainerMenu {
+public class CrystalCutterMenu extends AbstractContainerMenu {
 
     private final Container container;
     private final ContainerData containerData;
@@ -25,23 +24,24 @@ public class CrystalPurifierMenu extends AbstractContainerMenu {
     public static final int X_OFFSET = 0;
     public static final int Y_OFFSET = 0;
 
-    public CrystalPurifierMenu(int id, Inventory inventory) {
-        this(id, inventory, new SimpleContainer(3), new SimpleContainerData(CrystalPurifierBlockEntity.MAX_DATA_COUNT));
+    public CrystalCutterMenu(int id, Inventory inventory) {
+        this(id, inventory, new SimpleContainer(4), new SimpleContainerData(CrystalCutterBlockEntity.MAX_DATA_COUNT));
     }
 
-    public CrystalPurifierMenu(int id, Inventory inventory, Container container, ContainerData containerData) {
-        super(MenuTypeRegistry.CRYSTAL_PURIFIER_MENU.get(), id);
+    public CrystalCutterMenu(int id, Inventory inventory, Container container, ContainerData containerData) {
+        super(MenuTypeRegistry.CRYSTAL_CUTTER_MENU.get(), id);
 
-        checkContainerSize(container, 3);
-        checkContainerDataCount(containerData, CrystalPurifierBlockEntity.MAX_DATA_COUNT);
+        checkContainerSize(container, 4);
+        checkContainerDataCount(containerData, CrystalCutterBlockEntity.MAX_DATA_COUNT);
 
         this.container = container;
         this.containerData = containerData;
         this.level = inventory.player.level();
 
-        this.addSlot(new CrystalPurifierMenu.InputSlot(container, 0, 40, 34));
-        this.addSlot(new CrystalPurifierMenu.FuelSlot(container, 1, 61, 34));
-        this.addSlot(new CrystalPurifierMenu.ResultSlot(container, 2, 121, 34));
+        this.addSlot(new CrystalCutterMenu.InputSlot(container, 0, 40, 34));
+        this.addSlot(new CrystalCutterMenu.FuelSlot(container, 1, 61, 34));
+        this.addSlot(new CrystalCutterMenu.ResultSlot(container, 2, 121, 34));
+        this.addSlot(new CrystalCutterMenu.ResultSlot(container, 3, 142, 34));
 
         this.addDataSlots(containerData);
 
@@ -64,8 +64,8 @@ public class CrystalPurifierMenu extends AbstractContainerMenu {
             ItemStack itemstack1 = slot.getItem();
             itemstack = itemstack1.copy();
 
-            if (pIndex == 2) {
-                if (!this.moveItemStackTo(itemstack1, 3, 39, true)) {
+            if (pIndex == 2 || pIndex == 3) {
+                if (!this.moveItemStackTo(itemstack1, 4, 40, true)) {
                     return ItemStack.EMPTY;
                 }
 
@@ -75,18 +75,18 @@ public class CrystalPurifierMenu extends AbstractContainerMenu {
                     if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (this.isFuel(itemstack1)) {
+                } else if (itemstack1.is(Items.ECHO_SHARD)) {
                     if (!this.moveItemStackTo(itemstack1, 1, 2, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (pIndex >= 3 && pIndex < 30) {
-                    if (!this.moveItemStackTo(itemstack1, 30, 39, false)) {
+                } else if (pIndex >= 4 && pIndex < 31) {
+                    if (!this.moveItemStackTo(itemstack1, 31, 40, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (pIndex >= 30 && pIndex < 39 && !this.moveItemStackTo(itemstack1, 3, 30, false)) {
+                } else if (pIndex >= 31 && pIndex < 40 && !this.moveItemStackTo(itemstack1, 4, 31, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.moveItemStackTo(itemstack1, 3, 39, false)) {
+            } else if (!this.moveItemStackTo(itemstack1, 4, 40, false)) {
                 return ItemStack.EMPTY;
             }
 
@@ -107,17 +107,7 @@ public class CrystalPurifierMenu extends AbstractContainerMenu {
     }
 
     protected boolean canProcess(ItemStack pStack) {
-        return this.level.getRecipeManager().getRecipeFor(CrystalPurifyingRecipe.Type.INSTANCE, new SimpleContainer(pStack), this.level).isPresent();
-    }
-
-    protected boolean isFuel(ItemStack pStack) {
-        AtomicBoolean flag = new AtomicBoolean(false);
-        CrystalPurifierBlockEntity.getFuels().forEach((tagKey, integer) -> {
-            if (pStack.is(tagKey)) {
-                flag.set(true);
-            }
-        });
-        return flag.get();
+        return this.level.getRecipeManager().getRecipeFor(CrystalCuttingRecipe.Type.INSTANCE, new SimpleContainer(pStack), this.level).isPresent();
     }
 
     @Override
@@ -129,16 +119,8 @@ public class CrystalPurifierMenu extends AbstractContainerMenu {
         return this.containerData.get(0);
     }
 
-    public int getMaxEnergy() {
-        return this.containerData.get(1);
-    }
-
     public int getOutputProgress() {
-        return this.containerData.get(2);
-    }
-
-    public int getOutputTime() {
-        return this.containerData.get(3);
+        return this.containerData.get(1);
     }
 
     static class InputSlot extends Slot {
@@ -161,13 +143,7 @@ public class CrystalPurifierMenu extends AbstractContainerMenu {
         }
 
         public boolean mayPlace(ItemStack pStack) {
-            AtomicBoolean flag = new AtomicBoolean(false);
-            CrystalPurifierBlockEntity.getFuels().forEach((tagKey, integer) -> {
-                if (pStack.is(tagKey)) {
-                    flag.set(true);
-                }
-            });
-            return flag.get();
+            return pStack.is(Items.ECHO_SHARD);
         }
 
         public int getMaxStackSize() {

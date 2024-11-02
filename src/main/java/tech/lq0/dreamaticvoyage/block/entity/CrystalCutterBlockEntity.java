@@ -23,6 +23,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.gui.menu.CrystalCutterMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.recipe.CrystalCuttingRecipe;
 
@@ -298,11 +299,10 @@ public class CrystalCutterBlockEntity extends BlockEntity implements WorldlyCont
         return Component.translatable("container.dreamaticvoyage.crystal_cutter");
     }
 
-    // TODO 添加正确的menu
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return null;
+        return new CrystalCutterMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
     }
 
     @Override

@@ -5,10 +5,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import tech.lq0.dreamaticvoyage.gui.screen.CrystalPopperScreen;
-import tech.lq0.dreamaticvoyage.gui.screen.CrystalPurifierScreen;
-import tech.lq0.dreamaticvoyage.gui.screen.FukamizuCompressorScreen;
-import tech.lq0.dreamaticvoyage.gui.screen.PhantasmalVoyagerScreen;
+import tech.lq0.dreamaticvoyage.gui.screen.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ScreenRegistry {
@@ -20,6 +17,7 @@ public class ScreenRegistry {
             MenuScreens.register(MenuTypeRegistry.PHANTASMAL_VOYAGER_MENU.get(), PhantasmalVoyagerScreen::new);
             MenuScreens.register(MenuTypeRegistry.CRYSTAL_POPPER_MENU.get(), CrystalPopperScreen::new);
             MenuScreens.register(MenuTypeRegistry.CRYSTAL_PURIFIER_MENU.get(), CrystalPurifierScreen::new);
+            MenuScreens.register(MenuTypeRegistry.CRYSTAL_CUTTER_MENU.get(), CrystalCutterScreen::new);
         });
     }
 }
