@@ -40,7 +40,7 @@ public class CrystalCutterBlockEntity extends BlockEntity implements WorldlyCont
     private static final int[] SLOTS_FOR_DOWN = new int[]{2, 3};
 
     public static final int MAX_DATA_COUNT = 2;
-    public static final int FUEL_TICK = 800;
+    public static final int MAX_FUEL = 4;
     public static final int PROCESS_TIME = 200;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(4, ItemStack.EMPTY);
@@ -86,32 +86,24 @@ public class CrystalCutterBlockEntity extends BlockEntity implements WorldlyCont
 
             ItemStack fuel = blockEntity.items.get(SLOT_FUEL);
             if (blockEntity.energy <= 0) {
-                if (fuel.isEmpty()) {
-                    if (blockEntity.outputProgress <= 0) return;
-                    blockEntity.outputProgress--;
-                } else {
-                    fuel.shrink(1);
-                    blockEntity.energy = FUEL_TICK;
-                    blockEntity.setChanged();
-                    pLevel.sendBlockUpdated(pPos, pState, pState, 3);
-                    pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
-                }
+                fuel.shrink(1);
+                blockEntity.energy = MAX_FUEL;
+                blockEntity.setChanged();
+                pLevel.sendBlockUpdated(pPos, pState, pState, 3);
+                pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
             }
 
             blockEntity.outputProgress++;
-            blockEntity.energy = Math.max(0, blockEntity.energy - 1);
 
             if (blockEntity.outputProgress >= PROCESS_TIME) {
                 blockEntity.craftItem();
+                blockEntity.energy = Math.max(0, blockEntity.energy - 1);
                 blockEntity.outputProgress = 0;
                 blockEntity.setChanged();
                 pLevel.sendBlockUpdated(pPos, pState, pState, 3);
                 pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
             }
         } else {
-            if (blockEntity.energy > 0) {
-                blockEntity.energy = Math.max(0, blockEntity.energy - 1);
-            }
             blockEntity.resetProgress();
         }
     }
