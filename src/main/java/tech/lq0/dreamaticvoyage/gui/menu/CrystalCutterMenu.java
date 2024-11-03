@@ -38,10 +38,10 @@ public class CrystalCutterMenu extends AbstractContainerMenu {
         this.containerData = containerData;
         this.level = inventory.player.level();
 
-        this.addSlot(new CrystalCutterMenu.InputSlot(container, 0, 40, 34));
-        this.addSlot(new CrystalCutterMenu.FuelSlot(container, 1, 61, 34));
-        this.addSlot(new CrystalCutterMenu.ResultSlot(container, 2, 121, 34));
-        this.addSlot(new CrystalCutterMenu.ResultSlot(container, 3, 142, 34));
+        this.addSlot(new CrystalCutterMenu.InputSlot(container, 0, 46, 39));
+        this.addSlot(new CrystalCutterMenu.FuelSlot(container, 1, 21, 19));
+        this.addSlot(new CrystalCutterMenu.ResultSlot(container, 2, 109, 39));
+        this.addSlot(new CrystalCutterMenu.ResultSlot(container, 3, 130, 39));
 
         this.addDataSlots(containerData);
 

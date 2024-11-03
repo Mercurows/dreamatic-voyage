@@ -87,6 +87,8 @@ public class CrystalCutterBlockEntity extends BlockEntity implements WorldlyCont
 
             ItemStack fuel = blockEntity.items.get(SLOT_FUEL);
             if (blockEntity.energy <= 0) {
+                if (fuel.isEmpty()) return;
+
                 fuel.shrink(1);
                 blockEntity.energy = MAX_FUEL;
                 blockEntity.setChanged();

@@ -8,9 +8,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.block.entity.CrystalCutterBlockEntity;
 import tech.lq0.dreamaticvoyage.gui.menu.CrystalCutterMenu;
 
-// TODO 完成渲染
 @OnlyIn(Dist.CLIENT)
 public class CrystalCutterScreen extends AbstractContainerScreen<CrystalCutterMenu> {
 
@@ -28,6 +28,12 @@ public class CrystalCutterScreen extends AbstractContainerScreen<CrystalCutterMe
         int j = (this.height - this.imageHeight) / 2;
         pGuiGraphics.blit(TEXTURE, i, j, 0, 0, this.imageWidth, this.imageHeight);
 
+        int energy = this.menu.getEnergy();
+        pGuiGraphics.blit(TEXTURE, i + 75, j + 62, 177, 17, (int) (22f * energy / 4f), 4, 256, 256);
+
+        int progress = this.menu.getOutputProgress();
+        pGuiGraphics.blit(TEXTURE, i + 75, j + 40, 177, 0,
+                (int) (23f * progress / (float) CrystalCutterBlockEntity.PROCESS_TIME), 16, 256, 256);
     }
 
     @Override
