@@ -29,11 +29,11 @@ public class CrystalCutterScreen extends AbstractContainerScreen<CrystalCutterMe
         pGuiGraphics.blit(TEXTURE, i, j, 0, 0, this.imageWidth, this.imageHeight);
 
         int energy = this.menu.getEnergy();
-        pGuiGraphics.blit(TEXTURE, i + 75, j + 62, 177, 17, (int) (22f * energy / 4f), 4, 256, 256);
+        pGuiGraphics.blit(TEXTURE, i + 75, j + 62, 177, 17, (int) (21f * energy / 4f), 4, 256, 256);
 
         int progress = this.menu.getOutputProgress();
         pGuiGraphics.blit(TEXTURE, i + 75, j + 40, 177, 0,
-                (int) (23f * progress / (float) CrystalCutterBlockEntity.PROCESS_TIME), 16, 256, 256);
+                (int) (22f * progress / (float) CrystalCutterBlockEntity.PROCESS_TIME), 16, 256, 256);
     }
 
     @Override

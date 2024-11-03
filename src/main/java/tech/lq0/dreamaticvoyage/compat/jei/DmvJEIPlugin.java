@@ -14,10 +14,12 @@ import net.minecraft.world.item.crafting.RecipeManager;
 import org.jetbrains.annotations.NotNull;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.entity.PointsStoreBlockEntity;
+import tech.lq0.dreamaticvoyage.gui.screen.CrystalCutterScreen;
 import tech.lq0.dreamaticvoyage.gui.screen.CrystalPopperScreen;
 import tech.lq0.dreamaticvoyage.gui.screen.CrystalPurifierScreen;
 import tech.lq0.dreamaticvoyage.gui.screen.FukamizuCompressorScreen;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
+import tech.lq0.dreamaticvoyage.recipe.CrystalCuttingRecipe;
 import tech.lq0.dreamaticvoyage.recipe.CrystalPurifyingRecipe;
 import tech.lq0.dreamaticvoyage.recipe.FukamizuCompressingRecipe;
 
@@ -26,12 +28,14 @@ import java.util.List;
 
 @JeiPlugin
 public class DmvJEIPlugin implements IModPlugin {
+
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new PointsStoreCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new FukamizuCompressorCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new CrystalPopperCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new CrystalPurifierCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new CrystalCutterCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
@@ -40,6 +44,7 @@ public class DmvJEIPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(ItemRegistry.FUKAMIZU_COMPRESSOR.get()), FukamizuCompressorCategory.TYPE);
         registration.addRecipeCatalyst(new ItemStack(ItemRegistry.CRYSTAL_POPPER.get()), CrystalPopperCategory.TYPE);
         registration.addRecipeCatalyst(new ItemStack(ItemRegistry.CRYSTAL_PURIFIER.get()), CrystalPurifierCategory.TYPE);
+        registration.addRecipeCatalyst(new ItemStack(ItemRegistry.CRYSTAL_CUTTER.get()), CrystalCutterCategory.TYPE);
     }
 
     @Override
@@ -61,6 +66,10 @@ public class DmvJEIPlugin implements IModPlugin {
         List<CrystalPurifyingRecipe> crystalPurifyingRecipes = recipeManager.getAllRecipesFor(CrystalPurifyingRecipe.Type.INSTANCE);
         registration.addRecipes(CrystalPurifierCategory.TYPE, crystalPurifyingRecipes);
 
+        // 结晶切割机
+        List<CrystalCuttingRecipe> crystalCuttingRecipes = recipeManager.getAllRecipesFor(CrystalCuttingRecipe.Type.INSTANCE);
+        registration.addRecipes(CrystalCutterCategory.TYPE, crystalCuttingRecipes);
+
         // 其他物品获取方式描述
         addOtherInfo(registration);
     }
@@ -70,6 +79,7 @@ public class DmvJEIPlugin implements IModPlugin {
         registration.addRecipeClickArea(FukamizuCompressorScreen.class, 73, 43, 27, 16, FukamizuCompressorCategory.TYPE);
         registration.addRecipeClickArea(CrystalPopperScreen.class, 65, 23, 18, 41, CrystalPopperCategory.TYPE);
         registration.addRecipeClickArea(CrystalPurifierScreen.class, 81, 35, 32, 16, CrystalPurifierCategory.TYPE);
+        registration.addRecipeClickArea(CrystalCutterScreen.class, 75, 40, 24, 16, CrystalCutterCategory.TYPE);
     }
 
     @Override

@@ -26,6 +26,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.text.DecimalFormat;
 
 public class CrystalPurifierCategory implements IRecipeCategory<CrystalPurifyingRecipe> {
+
     public static final ResourceLocation TEXTURE = Utils.loc("textures/gui/crystal_purifier.png");
 
     public static final RecipeType<CrystalPurifyingRecipe> TYPE = new RecipeType<>(Utils.loc("crystal_purifier"), CrystalPurifyingRecipe.class);

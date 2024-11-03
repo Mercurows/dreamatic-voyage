@@ -89,13 +89,13 @@ public class CrystalCuttingRecipe implements Recipe<SimpleContainer> {
     }
 
     public static class Type implements RecipeType<CrystalCuttingRecipe> {
-        public static final CrystalCuttingRecipe.Type INSTANCE = new CrystalCuttingRecipe.Type();
+        public static final Type INSTANCE = new Type();
         public static final String ID = "crystal_cutting";
     }
 
     public static class Serializer implements RecipeSerializer<CrystalCuttingRecipe> {
-        public static final CrystalCuttingRecipe.Serializer INSTANCE = new CrystalCuttingRecipe.Serializer();
 
+        public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID = Utils.loc("crystal_cutting");
 
         @Override
