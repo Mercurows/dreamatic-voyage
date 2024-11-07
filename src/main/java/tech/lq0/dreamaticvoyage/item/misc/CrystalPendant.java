@@ -4,7 +4,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -71,11 +70,8 @@ public class CrystalPendant extends Item implements ICurioItem {
                             ItemStack pendant = slotResult.stack();
                             ItemStack stack = ItemStack.of(pendant.getOrCreateTag().getCompound("ItemToRepair"));
                             if (!stack.isEmpty() && stack.getItem() != ItemRegistry.CRYSTAL_PENDANT.get()) {
-                                if (stack.getItem() instanceof ArmorItem armorItem) {
-                                    event.player.setItemSlot(armorItem.getEquipmentSlot(), stack);
-                                } else {
-                                    event.player.addItem(stack);
-                                }
+                                event.player.addItem(stack);
+
                                 pendant.removeTagKey("ItemToRepair");
 
                                 if (!event.player.getAbilities().instabuild) {
