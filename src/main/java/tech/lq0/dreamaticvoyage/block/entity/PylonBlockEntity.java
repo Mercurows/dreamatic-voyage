@@ -46,6 +46,10 @@ public abstract class PylonBlockEntity extends BlockEntity implements WorldlyCon
         this.connections.removeIf(c -> Arrays.equals(c, offset));
     }
 
+    public NonNullList<byte[]> getConnections() {
+        return this.connections;
+    }
+
     @Override
     public int[] getSlotsForFace(Direction pSide) {
         return new int[]{0};
