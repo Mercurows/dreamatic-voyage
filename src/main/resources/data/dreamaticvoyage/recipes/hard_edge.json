@@ -6,7 +6,7 @@
     "lesserThan": false,
     "nbt": {
       "CausedDamage": 1000.0,
-      "Hunger": 300
+      "Hunger": 200
     }
   },
   "result": "dreamaticvoyage:hard_edge",

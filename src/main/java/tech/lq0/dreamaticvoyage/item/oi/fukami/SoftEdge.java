@@ -34,7 +34,7 @@ import java.util.List;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class SoftEdge extends SwordItem {
     public static final float MAX_DAMAGE = 1000.0f;
-    public static final int MAX_HUNGER = 300;
+    public static final int MAX_HUNGER = 200;
 
     public SoftEdge() {
         super(ModItemTier.FUKAMIZU_BREAD, 0, -2.8f, new Properties().setNoRepair().fireResistant());
