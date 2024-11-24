@@ -1,5 +1,7 @@
 package tech.lq0.dreamaticvoyage.item.oi.fukami;
 
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
@@ -7,23 +9,54 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
+import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
 import java.util.List;
 
 public class ColorfulEdge extends SwordItem {
+
     public static final int MAX_HUNGER = 2000;
 
     public ColorfulEdge() {
         super(ModItemTier.FUKAMIZU_BREAD, 3, -2.5f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());
+    }
+
+    @Override
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack stack) {
+        if (equipmentSlot == EquipmentSlot.MAINHAND && ItemNBTTool.getBoolean(stack, "Underwater", false)) {
+            ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+            builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", 17.0f,
+                    AttributeModifier.Operation.ADDITION));
+            builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", -2.5f,
+                    AttributeModifier.Operation.ADDITION));
+
+            return builder.build();
+        }
+        return super.getAttributeModifiers(equipmentSlot, stack);
+    }
+
+    @Override
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
+        if (pEntity instanceof LivingEntity living) {
+            ItemNBTTool.setBoolean(pStack, "Underwater", living.isUnderWater());
+        }
     }
 
     @Override
@@ -94,6 +127,7 @@ public class ColorfulEdge extends SwordItem {
         pLevel.playSound(null, pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ(), SoundEvents.GENERIC_EAT, SoundSource.NEUTRAL, 1.0F, 1.0F + (pLevel.random.nextFloat() - pLevel.random.nextFloat()) * 0.4F);
         if (!pLevel.isClientSide) {
             pLivingEntity.heal(4.0f);
+            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 600, 0), pLivingEntity);
         }
         if (pLivingEntity instanceof Player player) {
             int hunger = player.getFoodData().getFoodLevel();

@@ -1,11 +1,17 @@
 package tech.lq0.dreamaticvoyage.item.oi.fukami;
 
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
@@ -19,6 +25,7 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.EffectRegistry;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
+import tech.lq0.dreamaticvoyage.tools.ItemNBTTool;
 import tech.lq0.dreamaticvoyage.tools.Livers;
 import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 
@@ -26,10 +33,33 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 public class SerrationEdge extends SwordItem {
+
     public static final float MAX_DAMAGE = 40000.0f;
 
     public SerrationEdge() {
         super(ModItemTier.FUKAMIZU_BREAD, 10, -2.8f, new Properties().setNoRepair().rarity(Rarity.RARE).fireResistant());
+    }
+
+    @Override
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack stack) {
+        if (equipmentSlot == EquipmentSlot.MAINHAND && ItemNBTTool.getBoolean(stack, "Underwater", false)) {
+            ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+            builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", 31.0f,
+                    AttributeModifier.Operation.ADDITION));
+            builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", -2.8f,
+                    AttributeModifier.Operation.ADDITION));
+
+            return builder.build();
+        }
+        return super.getAttributeModifiers(equipmentSlot, stack);
+    }
+
+    @Override
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
+        if (pEntity instanceof LivingEntity living) {
+            ItemNBTTool.setBoolean(pStack, "Underwater", living.isUnderWater());
+        }
     }
 
     @Override
