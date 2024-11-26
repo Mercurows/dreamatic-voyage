@@ -15,7 +15,7 @@
     "hidden": true
   },
   "criteria": {
-    "legendary": {
+    "legendary_1": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -26,6 +26,24 @@
           }
         ]
       }
+    },
+    "legendary_2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamaticvoyage:gachi_ingot"
+            ]
+          }
+        ]
+      }
     }
-  }
+  },
+  "requirements": [
+    [
+      "legendary_1",
+      "legendary_2"
+    ]
+  ]
 }
