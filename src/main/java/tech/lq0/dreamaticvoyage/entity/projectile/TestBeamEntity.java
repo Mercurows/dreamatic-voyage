@@ -1,0 +1,119 @@
+package tech.lq0.dreamaticvoyage.entity.projectile;
+
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
+
+import java.util.List;
+
+/**
+ * Code based on @BobMowzie's MowziesMobs and @EEEAB's EEEABsMobs
+ */
+public class TestBeamEntity extends AbstractBeamEntity {
+
+    public static final double RADIUS = 32D;
+    private static final EntityDataAccessor<Boolean> DATA_IS_PLAYER = SynchedEntityData.defineId(TestBeamEntity.class, EntityDataSerializers.BOOLEAN);
+
+    public TestBeamEntity(EntityType<? extends TestBeamEntity> type, Level level) {
+        super(type, level, 20);
+    }
+
+    public TestBeamEntity(EntityType<? extends TestBeamEntity> type, Level world, LivingEntity caster, double x, double y, double z, float yaw, float pitch, int duration) {
+        this(type, world);
+        this.caster = caster;
+        this.setYaw(yaw);
+        this.setPitch(pitch);
+        this.setDuration(duration);
+        this.setPos(x, y, z);
+        this.calculateEndPos(RADIUS);
+        if (!level().isClientSide) {
+            setCasterId(caster.getId());
+        }
+    }
+
+    @Override
+    public void beamTick() {
+        if (!this.level().isClientSide) {
+            if (isPlayer() && this.caster instanceof Player) {
+                this.updateWithPlayer();
+            } else if (this.caster != null) {
+                this.updateWithEntity(0F, 0.75F);
+            }
+        }
+
+        if (caster != null) {
+            this.yaw = (float) Math.toRadians(caster.yHeadRot + 90);
+            this.pitch = (float) -Math.toRadians(caster.getXRot());
+        }
+
+        if (this.tickCount >= this.getCountDown()) {
+            this.calculateEndPos(RADIUS);
+            List<LivingEntity> hit = raytraceEntities(level(), new Vec3(getX(), getY(), getZ()), new Vec3(endPosX, endPosY, endPosZ)).getEntities();
+            if (this.blockSide != null) {
+                this.spawnExplosionParticles();
+            }
+            if (!this.level().isClientSide) {
+                for (LivingEntity target : hit) {
+                    target.setSecondsOnFire(3);
+                    if (this.caster != null) {
+                        target.hurt(this.damageSources().mobAttack(this.caster), 5F + target.getMaxHealth() * 0.01F);
+                    }
+                }
+            }
+        }
+    }
+
+    public void spawnExplosionParticles() {
+
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(DATA_IS_PLAYER, false);
+    }
+
+    @Override
+    protected void readAdditionalSaveData(CompoundTag compoundTag) {
+        if (this.caster == null) {
+            discard();
+        }
+    }
+
+    public boolean isPlayer() {
+        return getEntityData().get(DATA_IS_PLAYER);
+    }
+
+    public void setPlayer(boolean flag) {
+        getEntityData().set(DATA_IS_PLAYER, flag);
+    }
+
+    @Override
+    public boolean shouldRenderAtSqrDistance(double distance) {
+        Double radius = 32D;
+        return isPlayer() ? distance < (radius * radius) * 2 : distance < (RADIUS * RADIUS) * 2;
+    }
+
+    private void updateWithPlayer() {
+        this.setYaw((float) Math.toRadians(caster.yHeadRot + 90));
+        this.setPitch((float) Math.toRadians(-caster.getXRot()));
+        Vec3 vecOffset = caster.getLookAngle().normalize().scale(1);
+        this.setPos(caster.getX() + vecOffset.x(), caster.getY() + caster.getBbHeight() * 0.5F + vecOffset.y(), caster.getZ() + vecOffset.z());
+    }
+
+    private void updateWithEntity(float offset, float yOffset) {
+        double radians = Math.toRadians(this.caster.yHeadRot + 90);
+        this.setYaw((float) radians);
+        this.setPitch((float) ((double) (-this.caster.getXRot()) * Math.PI / 180.0));
+        double offsetX = Math.cos(radians) * offset;
+        double offsetZ = Math.sin(radians) * offset;
+        this.setPos(this.caster.getX() + offsetX, this.caster.getY(yOffset), this.caster.getZ() + offsetZ);
+    }
+
+}
