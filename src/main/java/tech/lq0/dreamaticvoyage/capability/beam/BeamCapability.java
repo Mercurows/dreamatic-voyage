@@ -59,7 +59,6 @@ public class BeamCapability {
 
         @Override
         public void tick() {
-            System.out.println(114);
         }
 
         @Override

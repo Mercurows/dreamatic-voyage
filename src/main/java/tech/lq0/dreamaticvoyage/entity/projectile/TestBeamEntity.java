@@ -9,6 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import tech.lq0.dreamaticvoyage.init.EntityRegistry;
 
 import java.util.List;
 
@@ -24,8 +25,8 @@ public class TestBeamEntity extends AbstractBeamEntity {
         super(type, level, 20);
     }
 
-    public TestBeamEntity(EntityType<? extends TestBeamEntity> type, Level world, LivingEntity caster, double x, double y, double z, float yaw, float pitch, int duration) {
-        this(type, world);
+    public TestBeamEntity(Level level, LivingEntity caster, double x, double y, double z, float yaw, float pitch, int duration) {
+        super(EntityRegistry.TEST_BEAM_ENTITY.get(), level, 20);
         this.caster = caster;
         this.setYaw(yaw);
         this.setPitch(pitch);
