@@ -73,4 +73,7 @@ public class EntityRegistry {
             ENTITY_TYPES.register("white_ahoge_beam",
                     () -> EntityType.Builder.<WhiteAhogeBeamEntity>of(WhiteAhogeBeamEntity::new, MobCategory.MISC).sized(2.0f, 1.0f).fireImmune().setShouldReceiveVelocityUpdates(true)
                             .updateInterval(1).clientTrackingRange(64).build("white_ahoge_beam"));
+    public static final RegistryObject<EntityType<TestBeamEntity>> TEST_BEAM_ENTITY =
+            ENTITY_TYPES.register("test_beam",
+                    () -> EntityType.Builder.<TestBeamEntity>of(TestBeamEntity::new, MobCategory.MISC).sized(0.1f, 0.1f).fireImmune().setUpdateInterval(1).build("test_beam"));
 }
