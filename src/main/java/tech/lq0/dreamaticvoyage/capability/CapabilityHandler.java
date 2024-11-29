@@ -7,14 +7,17 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.capability.beam.BeamCapability;
 import tech.lq0.dreamaticvoyage.capability.chaos.ChaosCapabilityProvider;
 
 @Mod.EventBusSubscriber()
 public class CapabilityHandler {
+
     @SubscribeEvent
     public static void registerCapabilities(AttachCapabilitiesEvent<Entity> event) {
         if (event.getObject() instanceof Player) {
             event.addCapability(Utils.loc("chaos"), new ChaosCapabilityProvider());
+            event.addCapability(BeamCapability.ID, new BeamCapability.BeamCapabilityProvider());
         }
     }
 
