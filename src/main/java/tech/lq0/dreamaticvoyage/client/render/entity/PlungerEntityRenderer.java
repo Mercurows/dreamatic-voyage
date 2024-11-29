@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.client.render;
+package tech.lq0.dreamaticvoyage.client.render.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,34 +13,33 @@ import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.entity.projectile.CursedCatDollEntity;
-import tech.lq0.dreamaticvoyage.client.models.entity.CursedCatDollModel;
+import tech.lq0.dreamaticvoyage.entity.projectile.PlungerEntity;
+import tech.lq0.dreamaticvoyage.client.models.entity.PlungerModel;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
-public class CursedCatDollEntityRenderer extends EntityRenderer<CursedCatDollEntity> {
-    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/cursed_cat_doll.png");
-    private final CursedCatDollModel<CursedCatDollEntity> model;
+public class PlungerEntityRenderer extends EntityRenderer<PlungerEntity> {
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/plunger.png");
+    private final PlungerModel<PlungerEntity> model;
 
-    public CursedCatDollEntityRenderer(EntityRendererProvider.Context manager) {
+    public PlungerEntityRenderer(EntityRendererProvider.Context manager) {
         super(manager);
-        model = new CursedCatDollModel<>(manager.bakeLayer(CursedCatDollModel.LAYER_LOCATION));
+        model = new PlungerModel<>(manager.bakeLayer(PlungerModel.LAYER_LOCATION));
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    public void render(CursedCatDollEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
+    public void render(PlungerEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
         matrixStackIn.pushPose();
 
         matrixStackIn.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entityIn.yRotO, entityIn.getYRot()) - 90.0F));
-        matrixStackIn.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot()) + 90.0F));
-        matrixStackIn.mulPose(Axis.XP.rotationDegrees(90.0F));
-        matrixStackIn.mulPose(Axis.ZP.rotationDegrees(90.0F));
+        matrixStackIn.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot())));
+        matrixStackIn.mulPose(Axis.XP.rotationDegrees(45.0F));
 
-        matrixStackIn.translate(0.0f, -1.0f, 0.0f);
+        matrixStackIn.translate(0.0f, -1.3f, 0.0f);
         VertexConsumer vertexConsumer = ItemRenderer.getFoilBufferDirect(bufferIn, this.model.renderType(this.getTextureLocation(entityIn)), false, false);
         this.model.renderToBuffer(matrixStackIn, vertexConsumer, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
         matrixStackIn.popPose();
@@ -49,7 +48,7 @@ public class CursedCatDollEntityRenderer extends EntityRenderer<CursedCatDollEnt
     @Override
     @ParametersAreNonnullByDefault
     @Nonnull
-    public ResourceLocation getTextureLocation(CursedCatDollEntity entity) {
+    public ResourceLocation getTextureLocation(PlungerEntity entity) {
         return TEXTURE;
     }
 }

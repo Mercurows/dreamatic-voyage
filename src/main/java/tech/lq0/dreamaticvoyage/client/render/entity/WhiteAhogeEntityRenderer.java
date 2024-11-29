@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.client.render;
+package tech.lq0.dreamaticvoyage.client.render.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,25 +13,25 @@ import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.entity.projectile.AhogeBoomerangEntity;
-import tech.lq0.dreamaticvoyage.client.models.entity.AhogeBoomerangModel;
+import tech.lq0.dreamaticvoyage.entity.projectile.WhiteAhogeEntity;
+import tech.lq0.dreamaticvoyage.client.models.entity.WhiteAhogeModel;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
-public class AhogeBoomerangEntityRenderer extends EntityRenderer<AhogeBoomerangEntity> {
-    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/ahoge_boomerang.png");
-    private final AhogeBoomerangModel<AhogeBoomerangEntity> model;
+public class WhiteAhogeEntityRenderer extends EntityRenderer<WhiteAhogeEntity> {
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/white_ahoge_entity.png");
+    private final WhiteAhogeModel<WhiteAhogeEntity> model;
 
-    public AhogeBoomerangEntityRenderer(EntityRendererProvider.Context manager) {
+    public WhiteAhogeEntityRenderer(EntityRendererProvider.Context manager) {
         super(manager);
-        model = new AhogeBoomerangModel<>(manager.bakeLayer(AhogeBoomerangModel.LAYER_LOCATION));
+        model = new WhiteAhogeModel<>(manager.bakeLayer(WhiteAhogeModel.LAYER_LOCATION));
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    public void render(AhogeBoomerangEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
+    public void render(WhiteAhogeEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
         matrixStackIn.pushPose();
 
@@ -47,7 +47,7 @@ public class AhogeBoomerangEntityRenderer extends EntityRenderer<AhogeBoomerangE
     @Override
     @ParametersAreNonnullByDefault
     @Nonnull
-    public ResourceLocation getTextureLocation(AhogeBoomerangEntity entity) {
+    public ResourceLocation getTextureLocation(WhiteAhogeEntity entity) {
         return TEXTURE;
     }
 }

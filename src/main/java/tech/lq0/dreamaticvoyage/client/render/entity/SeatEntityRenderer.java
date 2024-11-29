@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.client.render;
+package tech.lq0.dreamaticvoyage.client.render.entity;
 
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

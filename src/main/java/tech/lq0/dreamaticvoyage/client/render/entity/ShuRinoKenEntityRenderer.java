@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.client.render;
+package tech.lq0.dreamaticvoyage.client.render.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,32 +13,30 @@ import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.entity.projectile.FluffBallEntity;
-import tech.lq0.dreamaticvoyage.client.models.entity.FluffBallModel;
+import tech.lq0.dreamaticvoyage.entity.projectile.ShuRinoKenEntity;
+import tech.lq0.dreamaticvoyage.client.models.entity.ShuRinoKenModel;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
-public class FluffBallEntityRenderer extends EntityRenderer<FluffBallEntity> {
-    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/fluff_ball.png");
-    private final FluffBallModel<FluffBallEntity> model;
+public class ShuRinoKenEntityRenderer extends EntityRenderer<ShuRinoKenEntity> {
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/shu_rino_ken.png");
+    private final ShuRinoKenModel<ShuRinoKenEntity> model;
 
-    public FluffBallEntityRenderer(EntityRendererProvider.Context manager) {
+    public ShuRinoKenEntityRenderer(EntityRendererProvider.Context manager) {
         super(manager);
-        model = new FluffBallModel<>(manager.bakeLayer(FluffBallModel.LAYER_LOCATION));
+        model = new ShuRinoKenModel<>(manager.bakeLayer(ShuRinoKenModel.LAYER_LOCATION));
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    public void render(FluffBallEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
+    public void render(ShuRinoKenEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
         matrixStackIn.pushPose();
 
         matrixStackIn.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entityIn.yRotO, entityIn.getYRot()) - 90.0F));
         matrixStackIn.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot())));
-        matrixStackIn.mulPose(Axis.YN.rotationDegrees(90.0f));
-        matrixStackIn.mulPose(Axis.ZP.rotationDegrees(180.0f));
 
         matrixStackIn.translate(0.0f, -1.3f, 0.0f);
         VertexConsumer vertexConsumer = ItemRenderer.getFoilBufferDirect(bufferIn, this.model.renderType(this.getTextureLocation(entityIn)), false, false);
@@ -49,7 +47,7 @@ public class FluffBallEntityRenderer extends EntityRenderer<FluffBallEntity> {
     @Override
     @ParametersAreNonnullByDefault
     @Nonnull
-    public ResourceLocation getTextureLocation(FluffBallEntity entity) {
+    public ResourceLocation getTextureLocation(ShuRinoKenEntity entity) {
         return TEXTURE;
     }
 }

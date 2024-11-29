@@ -19,7 +19,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
-import tech.lq0.dreamaticvoyage.client.render.LeviyBeamEntityRenderer;
+import tech.lq0.dreamaticvoyage.client.render.entity.LeviyBeamEntityRenderer;
 import tech.lq0.dreamaticvoyage.entity.LeviyBeamEntity;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.item.second.lecia.Leviy;

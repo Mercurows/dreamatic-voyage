@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.client.render;
+package tech.lq0.dreamaticvoyage.client.render.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,32 +13,35 @@ import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.entity.projectile.WhiteAhogeEntity;
-import tech.lq0.dreamaticvoyage.client.models.entity.WhiteAhogeModel;
+import tech.lq0.dreamaticvoyage.entity.projectile.HirenadeGGEntity;
+import tech.lq0.dreamaticvoyage.client.models.entity.HirenadeGGModel;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @OnlyIn(Dist.CLIENT)
-public class WhiteAhogeEntityRenderer extends EntityRenderer<WhiteAhogeEntity> {
-    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/white_ahoge_entity.png");
-    private final WhiteAhogeModel<WhiteAhogeEntity> model;
+public class HirenadeGGEntityRenderer extends EntityRenderer<HirenadeGGEntity> {
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/hirenade_gg.png");
+    private final HirenadeGGModel<HirenadeGGEntity> model;
 
-    public WhiteAhogeEntityRenderer(EntityRendererProvider.Context manager) {
+    public HirenadeGGEntityRenderer(EntityRendererProvider.Context manager) {
         super(manager);
-        model = new WhiteAhogeModel<>(manager.bakeLayer(WhiteAhogeModel.LAYER_LOCATION));
+        model = new HirenadeGGModel<>(manager.bakeLayer(HirenadeGGModel.LAYER_LOCATION));
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    public void render(WhiteAhogeEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
+    public void render(HirenadeGGEntity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
         matrixStackIn.pushPose();
 
         matrixStackIn.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entityIn.yRotO, entityIn.getYRot()) - 90.0F));
-        matrixStackIn.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot())));
+        matrixStackIn.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot()) + 90.0F));
+        matrixStackIn.mulPose(Axis.XN.rotationDegrees(90.0F));
 
-        matrixStackIn.translate(0.0f, -1.3f, 0.0f);
+        matrixStackIn.scale(0.5f, 0.5f, 0.5f);
+        matrixStackIn.translate(0.0f, -1.5f, 0.0f);
+
         VertexConsumer vertexConsumer = ItemRenderer.getFoilBufferDirect(bufferIn, this.model.renderType(this.getTextureLocation(entityIn)), false, false);
         this.model.renderToBuffer(matrixStackIn, vertexConsumer, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
         matrixStackIn.popPose();
@@ -47,7 +50,7 @@ public class WhiteAhogeEntityRenderer extends EntityRenderer<WhiteAhogeEntity> {
     @Override
     @ParametersAreNonnullByDefault
     @Nonnull
-    public ResourceLocation getTextureLocation(WhiteAhogeEntity entity) {
+    public ResourceLocation getTextureLocation(HirenadeGGEntity entity) {
         return TEXTURE;
     }
 }
