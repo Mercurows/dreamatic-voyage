@@ -60,7 +60,6 @@ public class TestBeamEntity extends AbstractBeamEntity {
             }
             if (!this.level().isClientSide) {
                 for (LivingEntity target : hit) {
-                    target.setSecondsOnFire(3);
                     if (this.caster != null) {
                         target.hurt(this.damageSources().mobAttack(this.caster), 5F + target.getMaxHealth() * 0.01F);
                     }

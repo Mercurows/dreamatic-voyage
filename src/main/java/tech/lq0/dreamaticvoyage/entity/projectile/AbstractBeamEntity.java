@@ -1,5 +1,6 @@
 package tech.lq0.dreamaticvoyage.entity.projectile;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -13,10 +14,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TraceableEntity;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.*;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
@@ -179,8 +179,8 @@ public abstract class AbstractBeamEntity extends Entity implements TraceableEnti
         }
     }
 
-    public HitResult raytraceEntities(Level world, Vec3 from, Vec3 to) {
-        HitResult result = new HitResult();
+    public CustomHitResult raytraceEntities(Level world, Vec3 from, Vec3 to) {
+        CustomHitResult result = new CustomHitResult();
         result.setBlockHit(world.clip(new ClipContext(from, to, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, this)));
         if (result.getBlockHit() != null) {
             Vec3 hitVec = result.getBlockHit().getLocation();
@@ -221,11 +221,30 @@ public abstract class AbstractBeamEntity extends Entity implements TraceableEnti
         return false;
     }
 
+    protected void onHit(HitResult hitResult) {
+        HitResult.Type hitresult$type = hitResult.getType();
+        if (hitresult$type == HitResult.Type.ENTITY) {
+            this.onHitEntity((EntityHitResult) hitResult);
+            this.level().gameEvent(GameEvent.PROJECTILE_LAND, hitResult.getLocation(), GameEvent.Context.of(this, null));
+        } else if (hitresult$type == HitResult.Type.BLOCK) {
+            BlockHitResult blockhitresult = (BlockHitResult) hitResult;
+            this.onHitBlock(blockhitresult);
+            BlockPos blockpos = blockhitresult.getBlockPos();
+            this.level().gameEvent(GameEvent.PROJECTILE_LAND, blockpos, GameEvent.Context.of(this, this.level().getBlockState(blockpos)));
+        }
+    }
+
+    protected void onHitEntity(EntityHitResult result) {
+    }
+
+    protected void onHitBlock(BlockHitResult result) {
+    }
+
     protected float getBaseScale() {
         return 0.5F;
     }
 
-    public static class HitResult {
+    public static class CustomHitResult {
 
         private BlockHitResult blockHit;
         private final List<LivingEntity> entities = new ArrayList<>();
