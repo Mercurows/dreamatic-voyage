@@ -26,6 +26,7 @@ import java.util.List;
 
 @SuppressWarnings("SameParameterValue")
 public class Chocolusion extends Item {
+
     private static final double RADIUS = 4;
 
     public Chocolusion() {
@@ -34,8 +35,6 @@ public class Chocolusion extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        TooltipTool.addDevelopingText(pTooltipComponents);
-
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.chocolusion_1").withStyle(ChatFormatting.GRAY));
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.chocolusion_2").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
 
