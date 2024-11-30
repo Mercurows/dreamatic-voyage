@@ -26,7 +26,7 @@ public class WhiteAhogeBeamEntityRenderer extends AbstractBeamEntityRenderer<Whi
     private static final float TEXTURE_WIDTH = 256;
     private static final float TEXTURE_HEIGHT = 32;
 
-    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/test_beam.png");
+    public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/white_ahoge_beam.png");
 
     public WhiteAhogeBeamEntityRenderer(EntityRendererProvider.Context context) {
         super(context, 0.8f, 0.6f);

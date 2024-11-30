@@ -1,9 +1,6 @@
 package tech.lq0.dreamaticvoyage.entity.projectile;
 
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -19,7 +16,6 @@ import java.util.List;
 public class WhiteAhogeBeamEntity extends AbstractBeamEntity {
 
     public static final double RADIUS = 32D;
-    private static final EntityDataAccessor<Boolean> DATA_IS_PLAYER = SynchedEntityData.defineId(WhiteAhogeBeamEntity.class, EntityDataSerializers.BOOLEAN);
 
     public WhiteAhogeBeamEntity(EntityType<? extends WhiteAhogeBeamEntity> type, Level level) {
         super(type, level, 20);
@@ -41,7 +37,7 @@ public class WhiteAhogeBeamEntity extends AbstractBeamEntity {
     @Override
     public void beamTick() {
         if (!this.level().isClientSide) {
-            if (isPlayer() && this.caster instanceof Player) {
+            if (this.caster instanceof Player) {
                 this.updateWithPlayer();
             } else if (this.caster != null) {
                 this.updateWithEntity(0F, 0.75F);
@@ -70,13 +66,11 @@ public class WhiteAhogeBeamEntity extends AbstractBeamEntity {
     }
 
     public void spawnExplosionParticles() {
-
     }
 
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(DATA_IS_PLAYER, false);
     }
 
     @Override
@@ -86,24 +80,16 @@ public class WhiteAhogeBeamEntity extends AbstractBeamEntity {
         }
     }
 
-    public boolean isPlayer() {
-        return getEntityData().get(DATA_IS_PLAYER);
-    }
-
-    public void setPlayer(boolean flag) {
-        getEntityData().set(DATA_IS_PLAYER, flag);
-    }
-
     @Override
     public boolean shouldRenderAtSqrDistance(double distance) {
         Double radius = 32D;
-        return isPlayer() ? distance < (radius * radius) * 2 : distance < (RADIUS * RADIUS) * 2;
+        return distance < (radius * radius) * 2;
     }
 
     private void updateWithPlayer() {
         this.setYaw((float) Math.toRadians(caster.yHeadRot + 90));
         this.setPitch((float) Math.toRadians(-caster.getXRot()));
-        Vec3 vecOffset = caster.getLookAngle().normalize().scale(1);
+        Vec3 vecOffset = caster.getLookAngle().normalize().scale(1.25);
         this.setPos(caster.getX() + vecOffset.x(), caster.getY() + caster.getBbHeight() * 0.5F + vecOffset.y(), caster.getZ() + vecOffset.z());
     }
 
