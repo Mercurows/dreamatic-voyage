@@ -42,7 +42,7 @@ public class ClientRenderHandler {
         EntityRenderers.register(EntityRegistry.LEVIY_BEAM_ENTITY.get(), LeviyBeamEntityRenderer::new);
         EntityRenderers.register(EntityRegistry.KURUMI_BOOMERANG_ENTITY.get(), KurumiBoomerangEntityRenderer::new);
         EntityRenderers.register(EntityRegistry.WHITE_AHOGE_BEAM_ENTITY.get(), WhiteAhogeBeamEntityRenderer::new);
-        EntityRenderers.register(EntityRegistry.TEST_BEAM_ENTITY.get(), TestBeamEntityRenderer::new);
+        EntityRenderers.register(EntityRegistry.TEST_BEAM_ENTITY.get(), WhiteAhogeBeamEntityRenderer::new);
 
         CuriosRendererRegistry.register(ItemRegistry.LUNATIC_BOW.get(), LunaticBowRenderer::new);
         CuriosRendererRegistry.register(ItemRegistry.RED_NOSE.get(), RedNoseRenderer::new);

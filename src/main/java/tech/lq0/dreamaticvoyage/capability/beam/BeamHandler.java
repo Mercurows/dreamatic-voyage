@@ -46,6 +46,8 @@ public class BeamHandler {
     }
 
     public void stop() {
+        if (!this.isUsing) return;
+
         this.isUsing = false;
         this.tick = 0;
         if (this.beamEntity != null) {

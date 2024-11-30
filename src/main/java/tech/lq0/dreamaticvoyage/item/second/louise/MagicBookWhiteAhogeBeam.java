@@ -11,55 +11,13 @@ import net.minecraft.world.level.Level;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.beam.BeamCapability;
 import tech.lq0.dreamaticvoyage.capability.beam.BeamHandler;
-import tech.lq0.dreamaticvoyage.entity.projectile.TestBeamEntity;
+import tech.lq0.dreamaticvoyage.entity.projectile.WhiteAhogeBeamEntity;
 
 public class MagicBookWhiteAhogeBeam extends Item {
 
     public MagicBookWhiteAhogeBeam() {
         super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
-
-//    @Override
-//    public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
-//        super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
-//
-//        List<WhiteAhogeBeamEntity> entities = pLevel.getEntitiesOfClass(WhiteAhogeBeamEntity.class, pLivingEntity.getBoundingBox().inflate(2.0F),
-//                corruptedBeam -> corruptedBeam.getOwner() == pLivingEntity);
-//        Vec3 vector3d = pLivingEntity.getViewVector(1.0F);
-//        if (entities.isEmpty()) {
-//            WhiteAhogeBeamEntity beamEntity = new WhiteAhogeBeamEntity(pLevel, pLivingEntity);
-//            beamEntity.moveTo(
-//                    pLivingEntity.getX() + vector3d.x / 2,
-//                    pLivingEntity.getEyeY() - 0.2,
-//                    pLivingEntity.getZ() + vector3d.z / 2, pLivingEntity.getYRot(), pLivingEntity.getXRot());
-//            beamEntity.setOwner(pLivingEntity);
-//            pLevel.addFreshEntity(beamEntity);
-//
-//            pStack.getOrCreateTag().putInt("Cooldown", Math.min(100, pStack.getOrCreateTag().getInt("Cooldown") + 1));
-//        }
-//    }
-//
-//    @Override
-//    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-//        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
-//
-//        if (pStack.getOrCreateTag().getInt("Cooldown") >= 100 && pEntity instanceof Player player) {
-//            player.getCooldowns().addCooldown(this, 80);
-//            pStack.getOrCreateTag().putInt("Cooldown", 0);
-//            player.stopUsingItem();
-//        }
-//
-//        if (pEntity instanceof Player player && (!player.isUsingItem() || !pIsSelected)) {
-//            pStack.getOrCreateTag().putInt("Cooldown", Math.max(0, pStack.getOrCreateTag().getInt("Cooldown") - 1));
-//        }
-//    }
-//
-//    @Override
-//    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-//        ItemStack stack = pPlayer.getItemInHand(pUsedHand);
-//        pPlayer.startUsingItem(pUsedHand);
-//        return InteractionResultHolder.consume(stack);
-//    }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
@@ -73,8 +31,8 @@ public class MagicBookWhiteAhogeBeam extends Item {
                 double pz = player.getZ();
                 float yHeadRotAngle = (float) Math.toRadians(player.yHeadRot + 90);
                 float xHeadRotAngle = (float) (float) -Math.toRadians(player.getXRot());
-                TestBeamEntity testBeamEntity = new TestBeamEntity(player.level(), player, px, py, pz, yHeadRotAngle, xHeadRotAngle, 200);
-                capability.init(new BeamHandler(player, testBeamEntity, stack, 60));
+                WhiteAhogeBeamEntity whiteAhogeBeamEntity = new WhiteAhogeBeamEntity(player.level(), player, px, py, pz, yHeadRotAngle, xHeadRotAngle, 200);
+                capability.init(new BeamHandler(player, whiteAhogeBeamEntity, stack, 60));
                 capability.start();
             }
         });
@@ -88,6 +46,14 @@ public class MagicBookWhiteAhogeBeam extends Item {
             player.getCapability(ModCapabilities.BEAM_CAPABILITY).ifPresent(BeamCapability.IBeamCapability::stop);
         }
         super.releaseUsing(stack, level, livingEntity, timeCharged);
+    }
+
+    @Override
+    public void onStopUsing(ItemStack stack, LivingEntity entity, int count) {
+        if (entity instanceof Player player) {
+            player.getCapability(ModCapabilities.BEAM_CAPABILITY).ifPresent(BeamCapability.IBeamCapability::stop);
+        }
+        super.onStopUsing(stack, entity, count);
     }
 
     @Override
