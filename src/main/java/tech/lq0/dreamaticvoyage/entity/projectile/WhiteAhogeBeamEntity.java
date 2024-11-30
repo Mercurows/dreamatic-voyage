@@ -15,14 +15,15 @@ import java.util.List;
  */
 public class WhiteAhogeBeamEntity extends AbstractBeamEntity {
 
-    public static final double RADIUS = 32D;
+    public static final double RADIUS = 64D;
+    public static final int COUNTDOWN = 10;
 
     public WhiteAhogeBeamEntity(EntityType<? extends WhiteAhogeBeamEntity> type, Level level) {
-        super(type, level, 20);
+        super(type, level, COUNTDOWN);
     }
 
     public WhiteAhogeBeamEntity(Level level, LivingEntity caster, double x, double y, double z, float yaw, float pitch, int duration) {
-        super(EntityRegistry.TEST_BEAM_ENTITY.get(), level, 20);
+        super(EntityRegistry.TEST_BEAM_ENTITY.get(), level, COUNTDOWN);
         this.caster = caster;
         this.setYaw(yaw);
         this.setPitch(pitch);
