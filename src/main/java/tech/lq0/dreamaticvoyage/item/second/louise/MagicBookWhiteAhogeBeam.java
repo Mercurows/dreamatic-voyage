@@ -10,6 +10,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.beam.BeamCapability;
+import tech.lq0.dreamaticvoyage.capability.beam.BeamHandler;
 import tech.lq0.dreamaticvoyage.entity.projectile.TestBeamEntity;
 
 public class MagicBookWhiteAhogeBeam extends Item {
@@ -62,7 +63,8 @@ public class MagicBookWhiteAhogeBeam extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        player.getCapability(ModCapabilities.BEAM_CAPABILITY).ifPresent(consumer -> {
+        ItemStack stack = player.getItemInHand(hand);
+        player.getCapability(ModCapabilities.BEAM_CAPABILITY).ifPresent(capability -> {
             player.startUsingItem(hand);
 
             if (!level.isClientSide) {
@@ -71,9 +73,9 @@ public class MagicBookWhiteAhogeBeam extends Item {
                 double pz = player.getZ();
                 float yHeadRotAngle = (float) Math.toRadians(player.yHeadRot + 90);
                 float xHeadRotAngle = (float) (float) -Math.toRadians(player.getXRot());
-                TestBeamEntity testBeamEntity = new TestBeamEntity(player.level(), player, px, py, pz, yHeadRotAngle, xHeadRotAngle, 100);
-                consumer.init(testBeamEntity, player);
-                consumer.start();
+                TestBeamEntity testBeamEntity = new TestBeamEntity(player.level(), player, px, py, pz, yHeadRotAngle, xHeadRotAngle, 200);
+                capability.init(new BeamHandler(player, testBeamEntity, stack, 60));
+                capability.start();
             }
         });
 

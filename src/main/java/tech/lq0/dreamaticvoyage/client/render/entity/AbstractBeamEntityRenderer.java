@@ -16,6 +16,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
+import tech.lq0.dreamaticvoyage.client.render.special.CustomRenderType;
 import tech.lq0.dreamaticvoyage.entity.projectile.AbstractBeamEntity;
 
 /**
@@ -49,19 +50,20 @@ public abstract class AbstractBeamEntityRenderer<T extends AbstractBeamEntity> e
         float yaw = laser.preYaw + (laser.yaw - laser.preYaw) * delta;
         float pitch = laser.prePitch + (laser.pitch - laser.prePitch) * delta;
 
-//        float length = (float) Math.sqrt(Math.pow(collidePosX - posX, 2) + Math.pow(collidePosY - posY, 2) + Math.pow(collidePosZ - posZ, 2));
+        float length = (float) Math.sqrt(Math.pow(collidePosX - posX, 2) + Math.pow(collidePosY - posY, 2) + Math.pow(collidePosZ - posZ, 2));
 //        int frame = Mth.floor((laser.displayControlled.getTimer() - 1 + delta) * 2);
-//        if (frame < 0) {
-//            frame = 6;
-//        }
-//        if (!laser.isAccumulating()) return;
-//        VertexConsumer vertex$builder = bufferIn.getBuffer(EMRenderType.getGlowingEffect(getTextureLocation(laser)));
-//        renderStart(laser, frame, matrixStackIn, vertex$builder, delta, packedLightIn);
-//        renderBeam(length, 180f / (float) Math.PI * yaw, 180f / (float) Math.PI * pitch, frame, matrixStackIn, vertex$builder, packedLightIn);
-//        matrixStackIn.pushPose();
-//        matrixStackIn.translate(collidePosX - posX, collidePosY - posY, collidePosZ - posZ);
-//        renderEnd(laser, frame, laser.blockSide, matrixStackIn, vertex$builder, delta, packedLightIn);
-//        matrixStackIn.popPose();
+        int frame = 0;
+        if (frame < 0) {
+            frame = 6;
+        }
+        if (!laser.isAccumulating()) return;
+        VertexConsumer vertex$builder = bufferIn.getBuffer(CustomRenderType.BEAM.apply(getTextureLocation(laser)));
+        renderStart(laser, frame, matrixStackIn, vertex$builder, delta, packedLightIn);
+        renderBeam(length, 180f / (float) Math.PI * yaw, 180f / (float) Math.PI * pitch, frame, matrixStackIn, vertex$builder, packedLightIn);
+        matrixStackIn.pushPose();
+        matrixStackIn.translate(collidePosX - posX, collidePosY - posY, collidePosZ - posZ);
+        renderEnd(laser, frame, laser.blockSide, matrixStackIn, vertex$builder, delta, packedLightIn);
+        matrixStackIn.popPose();
     }
 
     protected void renderFlatQuad(int frame, PoseStack matrixStackIn, VertexConsumer builder, int packedLightIn, boolean inGround) {
