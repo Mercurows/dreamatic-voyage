@@ -19,6 +19,7 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.*;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.client.AnimationTicker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,8 @@ public abstract class AbstractBeamEntity extends Entity implements TraceableEnti
     public double prevCollidePosX, prevCollidePosY, prevCollidePosZ;
     public Direction blockSide = null;
     public boolean on = true;
+    public AnimationTicker ticker = new AnimationTicker(3);
+
     private static final EntityDataAccessor<Integer> DATA_CASTER_ID = SynchedEntityData.defineId(AbstractBeamEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Float> DATA_YAW = SynchedEntityData.defineId(AbstractBeamEntity.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Float> DATA_PITCH = SynchedEntityData.defineId(AbstractBeamEntity.class, EntityDataSerializers.FLOAT);
@@ -68,12 +71,13 @@ public abstract class AbstractBeamEntity extends Entity implements TraceableEnti
 
         this.beamTick();
 
-        if (!on || (this.caster != null && !caster.isAlive())) {
+        if ((!this.on && this.ticker.isStopped()) || (this.caster != null && !caster.isAlive())) {
             this.discard();
         }
+        this.ticker.changeTimer(this.on && this.isAccumulating());
 
         if (this.tickCount - this.getCountDown() > this.getDuration()) {
-            on = false;
+            this.on = false;
         }
     }
 

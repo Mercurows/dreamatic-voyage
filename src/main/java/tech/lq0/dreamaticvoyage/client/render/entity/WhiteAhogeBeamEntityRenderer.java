@@ -29,7 +29,7 @@ public class WhiteAhogeBeamEntityRenderer extends AbstractBeamEntityRenderer<Whi
     public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/test_beam.png");
 
     public WhiteAhogeBeamEntityRenderer(EntityRendererProvider.Context context) {
-        super(context, 1.0f, 0.8f);
+        super(context, 0.8f, 0.6f);
     }
 
     @Override
@@ -38,10 +38,10 @@ public class WhiteAhogeBeamEntityRenderer extends AbstractBeamEntityRenderer<Whi
     }
 
     @Override
-    public void render(WhiteAhogeBeamEntity laser, float entityYaw, float delta, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
-        this.playerView = laser.caster instanceof Player && Minecraft.getInstance().player == laser.caster
+    public void render(WhiteAhogeBeamEntity beam, float entityYaw, float delta, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
+        this.playerView = beam.caster instanceof Player && Minecraft.getInstance().player == beam.caster
                 && Minecraft.getInstance().options.getCameraType() == CameraType.FIRST_PERSON;
-        super.render(laser, entityYaw, delta, matrixStackIn, bufferIn, packedLightIn);
+        super.render(beam, entityYaw, delta, matrixStackIn, bufferIn, packedLightIn);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class WhiteAhogeBeamEntityRenderer extends AbstractBeamEntityRenderer<Whi
         Matrix4f matrix4f = matrix$stack$entry.pose();
         Matrix3f matrix3f = matrix$stack$entry.normal();
         float offset = playerView ? -1 : 0;
-        float size = 0.8f;
+        float size = 0.6f;
         drawVertex(matrix4f, matrix3f, builder, -size, offset, 0, minU, minV, packedLightIn);
         drawVertex(matrix4f, matrix3f, builder, -size, length, 0, minU, maxV, packedLightIn);
         drawVertex(matrix4f, matrix3f, builder, size, length, 0, maxU, maxV, packedLightIn);

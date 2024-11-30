@@ -40,29 +40,28 @@ public abstract class AbstractBeamEntityRenderer<T extends AbstractBeamEntity> e
     public abstract ResourceLocation getTextureLocation(T entity);
 
     @Override
-    public void render(T laser, float entityYaw, float delta, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
-        double collidePosX = laser.prevCollidePosX + (laser.collidePosX - laser.prevCollidePosX) * delta;
-        double collidePosY = laser.prevCollidePosY + (laser.collidePosY - laser.prevCollidePosY) * delta;
-        double collidePosZ = laser.prevCollidePosZ + (laser.collidePosZ - laser.prevCollidePosZ) * delta;
-        double posX = laser.xo + (laser.getX() - laser.xo) * delta;
-        double posY = laser.yo + (laser.getY() - laser.yo) * delta;
-        double posZ = laser.zo + (laser.getZ() - laser.zo) * delta;
-        float yaw = laser.preYaw + (laser.yaw - laser.preYaw) * delta;
-        float pitch = laser.prePitch + (laser.pitch - laser.prePitch) * delta;
+    public void render(T beam, float entityYaw, float delta, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
+        double collidePosX = beam.prevCollidePosX + (beam.collidePosX - beam.prevCollidePosX) * delta;
+        double collidePosY = beam.prevCollidePosY + (beam.collidePosY - beam.prevCollidePosY) * delta;
+        double collidePosZ = beam.prevCollidePosZ + (beam.collidePosZ - beam.prevCollidePosZ) * delta;
+        double posX = beam.xo + (beam.getX() - beam.xo) * delta;
+        double posY = beam.yo + (beam.getY() - beam.yo) * delta;
+        double posZ = beam.zo + (beam.getZ() - beam.zo) * delta;
+        float yaw = beam.preYaw + (beam.yaw - beam.preYaw) * delta;
+        float pitch = beam.prePitch + (beam.pitch - beam.prePitch) * delta;
 
         float length = (float) Math.sqrt(Math.pow(collidePosX - posX, 2) + Math.pow(collidePosY - posY, 2) + Math.pow(collidePosZ - posZ, 2));
-//        int frame = Mth.floor((laser.displayControlled.getTimer() - 1 + delta) * 2);
-        int frame = 0;
+        int frame = Mth.floor((beam.ticker.getTick() - 1 + delta) * 2);
         if (frame < 0) {
             frame = 6;
         }
-        if (!laser.isAccumulating()) return;
-        VertexConsumer vertex$builder = bufferIn.getBuffer(CustomRenderType.BEAM.apply(getTextureLocation(laser)));
-        renderStart(laser, frame, matrixStackIn, vertex$builder, delta, packedLightIn);
+        if (!beam.isAccumulating()) return;
+        VertexConsumer vertex$builder = bufferIn.getBuffer(CustomRenderType.BEAM.apply(getTextureLocation(beam)));
+        renderStart(beam, frame, matrixStackIn, vertex$builder, delta, packedLightIn);
         renderBeam(length, 180f / (float) Math.PI * yaw, 180f / (float) Math.PI * pitch, frame, matrixStackIn, vertex$builder, packedLightIn);
         matrixStackIn.pushPose();
         matrixStackIn.translate(collidePosX - posX, collidePosY - posY, collidePosZ - posZ);
-        renderEnd(laser, frame, laser.blockSide, matrixStackIn, vertex$builder, delta, packedLightIn);
+        renderEnd(beam, frame, beam.blockSide, matrixStackIn, vertex$builder, delta, packedLightIn);
         matrixStackIn.popPose();
     }
 
@@ -148,11 +147,11 @@ public abstract class AbstractBeamEntityRenderer<T extends AbstractBeamEntity> e
         Matrix4f matrix4f = matrix$stack$entry.pose();
         Matrix3f matrix3f = matrix$stack$entry.normal();
         float offset = 0;
-        float SIZE = this.beamRadius;
-        drawVertex(matrix4f, matrix3f, builder, -SIZE, offset, 0, minU, minV, packedLightIn);
-        drawVertex(matrix4f, matrix3f, builder, -SIZE, length, 0, minU, maxV, packedLightIn);
-        drawVertex(matrix4f, matrix3f, builder, SIZE, length, 0, maxU, maxV, packedLightIn);
-        drawVertex(matrix4f, matrix3f, builder, SIZE, offset, 0, maxU, minV, packedLightIn);
+        float size = this.beamRadius;
+        drawVertex(matrix4f, matrix3f, builder, -size, offset, 0, minU, minV, packedLightIn);
+        drawVertex(matrix4f, matrix3f, builder, -size, length, 0, minU, maxV, packedLightIn);
+        drawVertex(matrix4f, matrix3f, builder, size, length, 0, maxU, maxV, packedLightIn);
+        drawVertex(matrix4f, matrix3f, builder, size, offset, 0, maxU, minV, packedLightIn);
     }
 
     protected void drawVertex(Matrix4f matrix, Matrix3f normals, VertexConsumer vertexBuilder, float offsetX, float offsetY, float offsetZ, float textureX, float textureY, int packedLightIn) {
