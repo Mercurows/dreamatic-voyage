@@ -59,7 +59,8 @@ public class WhiteAhogeBeamEntity extends AbstractBeamEntity {
             if (!this.level().isClientSide) {
                 for (LivingEntity target : hit) {
                     if (this.caster != null) {
-                        target.hurt(this.damageSources().mobAttack(this.caster), 5F + target.getMaxHealth() * 0.01F);
+                        target.hurt(this.damageSources().indirectMagic(this, this.caster), 2F);
+                        target.invulnerableTime = 0;
                     }
                 }
             }
