@@ -2,6 +2,7 @@ package tech.lq0.dreamaticvoyage.item.second.louise;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -15,13 +16,14 @@ import tech.lq0.dreamaticvoyage.entity.projectile.WhiteAhogeBeamEntity;
 
 public class MagicBookWhiteAhogeBeam extends Item {
 
+    public static final int ACCUMULATING_TICK = 10;
+
     public MagicBookWhiteAhogeBeam() {
         super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack stack = player.getItemInHand(hand);
         player.getCapability(ModCapabilities.BEAM_CAPABILITY).ifPresent(capability -> {
             player.startUsingItem(hand);
 
@@ -31,13 +33,38 @@ public class MagicBookWhiteAhogeBeam extends Item {
                 double pz = player.getZ();
                 float yHeadRotAngle = (float) Math.toRadians(player.yHeadRot + 90);
                 float xHeadRotAngle = (float) (float) -Math.toRadians(player.getXRot());
-                WhiteAhogeBeamEntity whiteAhogeBeamEntity = new WhiteAhogeBeamEntity(player.level(), player, px, py, pz, yHeadRotAngle, xHeadRotAngle, 200);
-                capability.init(new BeamHandler(player, whiteAhogeBeamEntity, stack, 60));
+                WhiteAhogeBeamEntity whiteAhogeBeamEntity = new WhiteAhogeBeamEntity(player.level(), player, px, py, pz, yHeadRotAngle, xHeadRotAngle, 190);
+                capability.init(new BeamHandler(player, whiteAhogeBeamEntity, 60));
                 capability.start();
             }
         });
 
         return InteractionResultHolder.consume(player.getItemInHand(hand));
+    }
+
+    @Override
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
+
+        if (pStack.getOrCreateTag().getInt("Cooldown") >= 200 && pEntity instanceof Player player) {
+            player.getCooldowns().addCooldown(this, 80);
+            pStack.getOrCreateTag().putInt("Cooldown", 0);
+            player.stopUsingItem();
+            player.getCapability(ModCapabilities.BEAM_CAPABILITY).ifPresent(BeamCapability.IBeamCapability::stop);
+        }
+
+        if (pEntity instanceof Player player && (!player.isUsingItem() || !pIsSelected)) {
+            pStack.getOrCreateTag().putInt("Cooldown", Math.max(0, pStack.getOrCreateTag().getInt("Cooldown") - 1));
+        }
+    }
+
+    @Override
+    public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
+        int tick = getUseDuration(pStack) - pRemainingUseDuration;
+        if (tick > ACCUMULATING_TICK) {
+            pStack.getOrCreateTag().putInt("Cooldown", Math.min(200, pStack.getOrCreateTag().getInt("Cooldown") + 1));
+        }
+        super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
     }
 
     @Override
@@ -49,16 +76,16 @@ public class MagicBookWhiteAhogeBeam extends Item {
     }
 
     @Override
-    public void onStopUsing(ItemStack stack, LivingEntity entity, int count) {
-        if (entity instanceof Player player) {
+    public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
+        if (pLivingEntity instanceof Player player) {
             player.getCapability(ModCapabilities.BEAM_CAPABILITY).ifPresent(BeamCapability.IBeamCapability::stop);
         }
-        super.onStopUsing(stack, entity, count);
+        return super.finishUsingItem(pStack, pLevel, pLivingEntity);
     }
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        return 200;
+        return 300;
     }
 
     @Override
@@ -68,7 +95,7 @@ public class MagicBookWhiteAhogeBeam extends Item {
 
     @Override
     public int getBarWidth(ItemStack pStack) {
-        return Math.round(pStack.getOrCreateTag().getInt("Cooldown") * 13.0F / 100.0f);
+        return Math.round(pStack.getOrCreateTag().getInt("Cooldown") * 13.0F / 200.0f);
     }
 
     @Override

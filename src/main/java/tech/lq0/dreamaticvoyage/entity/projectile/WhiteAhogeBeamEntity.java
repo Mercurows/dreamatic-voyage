@@ -7,6 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import tech.lq0.dreamaticvoyage.init.EntityRegistry;
+import tech.lq0.dreamaticvoyage.item.second.louise.MagicBookWhiteAhogeBeam;
 
 import java.util.List;
 
@@ -16,14 +17,13 @@ import java.util.List;
 public class WhiteAhogeBeamEntity extends AbstractBeamEntity {
 
     public static final double RADIUS = 64D;
-    public static final int COUNTDOWN = 10;
 
     public WhiteAhogeBeamEntity(EntityType<? extends WhiteAhogeBeamEntity> type, Level level) {
-        super(type, level, COUNTDOWN);
+        super(type, level, MagicBookWhiteAhogeBeam.ACCUMULATING_TICK);
     }
 
     public WhiteAhogeBeamEntity(Level level, LivingEntity caster, double x, double y, double z, float yaw, float pitch, int duration) {
-        super(EntityRegistry.TEST_BEAM_ENTITY.get(), level, COUNTDOWN);
+        super(EntityRegistry.TEST_BEAM_ENTITY.get(), level, MagicBookWhiteAhogeBeam.ACCUMULATING_TICK);
         this.caster = caster;
         this.setYaw(yaw);
         this.setPitch(pitch);

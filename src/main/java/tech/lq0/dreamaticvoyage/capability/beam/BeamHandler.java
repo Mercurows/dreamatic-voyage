@@ -5,8 +5,6 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import tech.lq0.dreamaticvoyage.entity.projectile.AbstractBeamEntity;
 
 public class BeamHandler {
@@ -15,14 +13,12 @@ public class BeamHandler {
     public boolean isUsing;
     public final LivingEntity entity;
     public final AbstractBeamEntity beamEntity;
-    public final ItemStack stack;
     private int tick;
 
-    public BeamHandler(LivingEntity entity, AbstractBeamEntity beamEntity, ItemStack stack, int coolingTick) {
+    public BeamHandler(LivingEntity entity, AbstractBeamEntity beamEntity, int coolingTick) {
         this.coolingTick = coolingTick;
         this.entity = entity;
         this.beamEntity = beamEntity;
-        this.stack = stack;
     }
 
     public void start() {
@@ -52,9 +48,6 @@ public class BeamHandler {
         this.tick = 0;
         if (this.beamEntity != null) {
             this.beamEntity.discard();
-        }
-        if (this.entity instanceof Player player) {
-            player.getCooldowns().addCooldown(this.stack.getItem(), this.coolingTick);
         }
     }
 
