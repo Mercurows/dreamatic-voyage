@@ -23,7 +23,7 @@ public class WhiteAhogeBeamEntity extends AbstractBeamEntity {
     }
 
     public WhiteAhogeBeamEntity(Level level, LivingEntity caster, double x, double y, double z, float yaw, float pitch, int duration) {
-        super(EntityRegistry.TEST_BEAM_ENTITY.get(), level, MagicBookWhiteAhogeBeam.ACCUMULATING_TICK);
+        super(EntityRegistry.WHITE_AHOGE_BEAM_ENTITY.get(), level, MagicBookWhiteAhogeBeam.ACCUMULATING_TICK);
         this.caster = caster;
         this.setYaw(yaw);
         this.setPitch(pitch);
