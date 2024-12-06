@@ -17,23 +17,23 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
+import tech.lq0.dreamaticvoyage.capability.uce.UCEnergyStorage;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
-import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
 public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
+
     protected static final int SLOT_INPUT = 0;
-    protected static final int SLOT_GRINDING_BALL = 1;
 
     private static final int[] SLOTS_FOR_UP = new int[]{0};
-    private static final int[] SLOTS_FOR_SIDES = new int[]{1};
-    private static final int[] SLOTS_FOR_DOWN = new int[]{2, 3, 4, 5};
+    private static final int[] SLOTS_FOR_SIDES = new int[]{1, 2, 3, 4};
+    private static final int[] SLOTS_FOR_DOWN = new int[]{1, 2, 3, 4};
 
     public static final int PROCESS_TIME = 1200;
 
     public static final int MAX_DATA_COUNT = 2;
-    protected NonNullList<ItemStack> items = NonNullList.withSize(6, ItemStack.EMPTY);
+    protected NonNullList<ItemStack> items = NonNullList.withSize(5, ItemStack.EMPTY);
 
-    public int energy;
     public int crushingProgress;
 
     public FukamizuCrusherBlockEntity(BlockPos pPos, BlockState pBlockState) {
@@ -56,7 +56,12 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items);
 
-        this.energy = pTag.getInt("UmisuEnergy");
+        if (pTag.contains("UmisuEnergy")) {
+            getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> {
+                ((UCEnergyStorage) handler).deserializeNBT(pTag.get("UmisuEnergy"));
+            });
+        }
+
         this.crushingProgress = pTag.getInt("CrushingProgress");
     }
 
@@ -66,7 +71,7 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
         ContainerHelper.saveAllItems(pTag, this.items);
 
-        pTag.putInt("UmisuEnergy", this.energy);
+        getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> pTag.put("UmisuEnergy", ((UCEnergyStorage) handler).serializeNBT()));
         pTag.putInt("CrushingProgress", this.crushingProgress);
     }
 
@@ -88,16 +93,12 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
     @Override
     public boolean canPlaceItem(int pIndex, ItemStack pStack) {
-        if (pIndex == 0) {
-            return true;
-        } else if (pIndex == 1) {
-            return pStack.is(ItemRegistry.FUKAMIZU_BREAD.get());
-        } else return false;
+        return pIndex == 0;
     }
 
     @Override
     public boolean canTakeItemThroughFace(int pIndex, ItemStack pStack, Direction pDirection) {
-        return pIndex >= 2 && pDirection == Direction.DOWN;
+        return pIndex >= 1 && pDirection != Direction.UP;
     }
 
     @Override
