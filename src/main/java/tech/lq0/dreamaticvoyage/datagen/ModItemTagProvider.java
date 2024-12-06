@@ -19,6 +19,7 @@ import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagProvider extends ItemTagsProvider {
+
     public ModItemTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> providerCompletableFuture,
                               CompletableFuture<TagLookup<Block>> tagLookupCompletableFuture, @Nullable ExistingFileHelper existingFileHelper) {
         super(packOutput, providerCompletableFuture, tagLookupCompletableFuture, Utils.MOD_ID, existingFileHelper);
@@ -54,10 +55,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(Tags.Items.SAND).add(ItemRegistry.BLUE_SAND.get());
         ItemRegistry.AUDIO_ITEMS.getEntries().forEach(entry -> this.tag(ItemTags.MUSIC_DISCS).add(entry.get()));
         this.tag(ItemTags.MUSIC_DISCS).add(ItemRegistry.MUSIC_DISC_SONG_OF_AUTUMN.get());
-        this.tag(ItemTags.DOORS).add(ItemRegistry.HARANO_DOOR.get());
-        this.tag(ItemTags.WOODEN_DOORS).add(ItemRegistry.HARANO_DOOR.get());
-        this.tag(ItemTags.TRAPDOORS).add(ItemRegistry.HARANO_TRAPDOOR.get());
-        this.tag(ItemTags.WOODEN_TRAPDOORS).add(ItemRegistry.HARANO_TRAPDOOR.get());
+        this.tag(ItemTags.DOORS).add(ItemRegistry.HARANO_DOOR.get(), ItemRegistry.FUKAMIZU_PLUM_DOOR.get());
+        this.tag(ItemTags.WOODEN_DOORS).add(ItemRegistry.HARANO_DOOR.get(), ItemRegistry.FUKAMIZU_PLUM_DOOR.get());
+        this.tag(ItemTags.TRAPDOORS).add(ItemRegistry.HARANO_TRAPDOOR.get(), ItemRegistry.FUKAMIZU_PLUM_TRAPDOOR.get());
+        this.tag(ItemTags.WOODEN_TRAPDOORS).add(ItemRegistry.HARANO_TRAPDOOR.get(), ItemRegistry.FUKAMIZU_PLUM_TRAPDOOR.get());
         this.tag(ItemTags.BUTTONS).add(ItemRegistry.HARANO_BUTTON.get(), ItemRegistry.FUKAMIZU_PLUM_BUTTON.get());
         this.tag(ItemTags.WOODEN_BUTTONS).add(ItemRegistry.HARANO_BUTTON.get(), ItemRegistry.FUKAMIZU_PLUM_BUTTON.get());
         this.tag(ItemTags.PIGLIN_LOVED).add(ItemRegistry.CRYSTAL_POWDER.get(), ItemRegistry.PURIFIED_CRYSTAL_POWDER.get(), ItemRegistry.CHARGED_CRYSTAL_POWDER.get(),

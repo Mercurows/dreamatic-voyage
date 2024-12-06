@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-06T09:19:05.6889768	Loot Tables
+// 1.20.1	2024-12-06T09:48:38.2602855	Loot Tables
 ae73b83794ef78896b8e37684bf7c70fb390f7de data/dreamaticvoyage/loot_tables/blocks/anti_ingot_block.json
 de907c77e3f973d4cc51e684a7c589816f1f7488 data/dreamaticvoyage/loot_tables/blocks/blue_sand.json
 d7c59f5243134df755eed00c0b7c4d762d809115 data/dreamaticvoyage/loot_tables/blocks/blue_sandstone.json
@@ -19,6 +19,7 @@ b080a00b1b064efa2cb1234b93691cfc8bfbd558 data/dreamaticvoyage/loot_tables/blocks
 b8c7457b3351db3f517041d16de5d030cc51d31d data/dreamaticvoyage/loot_tables/blocks/fukamizu_crusher.json
 6a4f749245e85ae981ef907ff3bd7a0148c71c3b data/dreamaticvoyage/loot_tables/blocks/fukamizu_machine_casing.json
 d89b42facdba79bf4bcbfccd26fca4d4927a32be data/dreamaticvoyage/loot_tables/blocks/fukamizu_plum_button.json
+c00abe7a7f79aa07cdd85057135938abfacf6275 data/dreamaticvoyage/loot_tables/blocks/fukamizu_plum_door.json
 2c26564a38db5122da2f6bcb2e2ed6ab0ce957d1 data/dreamaticvoyage/loot_tables/blocks/fukamizu_plum_fence.json
 517a89aaaa21699e3a504a81bc83a50e9bc95712 data/dreamaticvoyage/loot_tables/blocks/fukamizu_plum_fence_gate.json
 94ce186048a7c48aa176be4d10de71c8fdfa9118 data/dreamaticvoyage/loot_tables/blocks/fukamizu_plum_leaves.json

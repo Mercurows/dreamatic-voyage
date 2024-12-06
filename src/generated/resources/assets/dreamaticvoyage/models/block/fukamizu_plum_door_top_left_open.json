@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "dreamaticvoyage:block/fukamizu_plum_door_bottom",
+    "top": "dreamaticvoyage:block/fukamizu_plum_door_top"
+  }
+}

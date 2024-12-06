@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-06T09:19:05.6905714	Item Models: dreamaticvoyage
+// 1.20.1	2024-12-06T09:48:38.2630306	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 8c153a7fc2e832ba3f9861c22a241817859c11c9 assets/dreamaticvoyage/models/item/aluminum_bread_slice.json
@@ -139,6 +139,7 @@ f5d494896a2ea74c3b18b69d28c3e836b822cbb8 assets/dreamaticvoyage/models/item/fuka
 4813fc3655b9c1306d21438e7b5825cffd120e51 assets/dreamaticvoyage/models/item/fukamizu_kwas_bucket.json
 8385aae6049eaba788387a1253de4673e650bb6e assets/dreamaticvoyage/models/item/fukamizu_plum.json
 1418b76e77e6a0db0c4af0a9611839f9006feb49 assets/dreamaticvoyage/models/item/fukamizu_plum_button.json
+0cfab8e8dc9addf75bcd4b9af15630e4e1ae8e3b assets/dreamaticvoyage/models/item/fukamizu_plum_door.json
 d5361bd3024bb33c832b11805b69f88a3d4ccd39 assets/dreamaticvoyage/models/item/fukamizu_plum_fence.json
 aff2c72032ef07b028ea414c85ee9156c74fb125 assets/dreamaticvoyage/models/item/fukamizu_plum_fence_gate.json
 c9fa889ecb25e27351705fdc1a4263f885ed11e5 assets/dreamaticvoyage/models/item/fukamizu_plum_log.json

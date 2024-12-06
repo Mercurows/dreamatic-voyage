@@ -48,8 +48,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 BlockRegistry.FUKAMIZU_PLUM_WOOD.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get(), BlockRegistry.FUKAMIZU_PLUM_SLAB.get(),
                 BlockRegistry.FUKAMIZU_PLUM_STAIRS.get(), BlockRegistry.FUKAMIZU_PLUM_FENCE.get(), BlockRegistry.FUKAMIZU_PLUM_FENCE_GATE.get(),
                 BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get(), BlockRegistry.FUKAMIZU_PLUM_BUTTON.get(),
-//                BlockRegistry.FUKAMIZU_PLUM_DOOR.get(),
-                BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get()
+                BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get()
         );
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.FUKAMIZU_PLUM_LEAVES.get());
 
@@ -89,10 +88,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(BlockRegistry.HARANO_PRESSURE_PLATE.get(), BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get());
         this.tag(BlockTags.LEAVES).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.FUKAMIZU_PLUM_LEAVES.get());
         this.tag(Tags.Blocks.SAND).add(BlockRegistry.BLUE_SAND.get());
-        this.tag(BlockTags.DOORS).add(BlockRegistry.HARANO_DOOR.get());
-        this.tag(BlockTags.WOODEN_DOORS).add(BlockRegistry.HARANO_DOOR.get());
-        this.tag(BlockTags.TRAPDOORS).add(BlockRegistry.HARANO_TRAPDOOR.get());
-        this.tag(BlockTags.WOODEN_TRAPDOORS).add(BlockRegistry.HARANO_TRAPDOOR.get());
+        this.tag(BlockTags.DOORS).add(BlockRegistry.HARANO_DOOR.get(), BlockRegistry.FUKAMIZU_PLUM_DOOR.get());
+        this.tag(BlockTags.WOODEN_DOORS).add(BlockRegistry.HARANO_DOOR.get(), BlockRegistry.FUKAMIZU_PLUM_DOOR.get());
+        this.tag(BlockTags.TRAPDOORS).add(BlockRegistry.HARANO_TRAPDOOR.get(), BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get());
+        this.tag(BlockTags.WOODEN_TRAPDOORS).add(BlockRegistry.HARANO_TRAPDOOR.get(), BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get());
         this.tag(BlockTags.BUTTONS).add(BlockRegistry.HARANO_BUTTON.get(), BlockRegistry.FUKAMIZU_PLUM_BUTTON.get());
         this.tag(BlockTags.WOODEN_BUTTONS).add(BlockRegistry.HARANO_BUTTON.get(), BlockRegistry.FUKAMIZU_PLUM_BUTTON.get());
         this.tag(BlockTags.WITHER_IMMUNE).add(BlockRegistry.FUKAMIZU_BREAD_BLOCK.get(), BlockRegistry.FUKAMIZU_BREAD_BRICKS.get(),
@@ -111,8 +110,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), BlockRegistry.FUKAMIZU_PLUM_STAIRS.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get(),
                 BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get(), BlockRegistry.FUKAMIZU_PLUM_FENCE.get(), BlockRegistry.FUKAMIZU_PLUM_FENCE_GATE.get(),
                 BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get(),
-//                BlockRegistry.FUKAMIZU_PLUM_DOOR.get(),
-                BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(),
+                BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(),
                 BlockRegistry.FUKAMIZU_PLUM_BUTTON.get(), BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(), BlockRegistry.FUKAMIZU_PLUM_SAPLING.get());
 
         this.tag(ModTags.Blocks.ELECTRICAL_BLOCKS).addTag(BlockTags.BUTTONS)

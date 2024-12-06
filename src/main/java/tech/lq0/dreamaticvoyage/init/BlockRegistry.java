@@ -95,7 +95,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> FUKAMIZU_PLUM_FENCE = BLOCKS.register("fukamizu_plum_fence", FukamizuPlumFence::new);
     public static final RegistryObject<Block> FUKAMIZU_PLUM_FENCE_GATE = BLOCKS.register("fukamizu_plum_fence_gate", FukamizuPlumFenceGate::new);
     public static final RegistryObject<Block> FUKAMIZU_PLUM_PRESSURE_PLATE = BLOCKS.register("fukamizu_plum_pressure_plate", FukamizuPlumPressurePlate::new);
-    //    public static final RegistryObject<Block> FUKAMIZU_PLUM_DOOR = BLOCKS.register("fukamizu_plum_door", FukamizuPlumDoor::new);
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_DOOR = BLOCKS.register("fukamizu_plum_door", FukamizuPlumDoor::new);
     public static final RegistryObject<Block> FUKAMIZU_PLUM_TRAPDOOR = BLOCKS.register("fukamizu_plum_trapdoor", FukamizuPlumTrapDoor::new);
     public static final RegistryObject<Block> FUKAMIZU_PLUM_BUTTON = BLOCKS.register("fukamizu_plum_button", FukamizuPlumButton::new);
 

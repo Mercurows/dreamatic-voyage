@@ -96,7 +96,7 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get());
         this.dropSelf(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get());
         this.dropSelf(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get());
-//        this.add(BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), block -> createDoorTable(BlockRegistry.FUKAMIZU_PLUM_DOOR.get()));
+        this.add(BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), block -> createDoorTable(BlockRegistry.FUKAMIZU_PLUM_DOOR.get()));
         this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get());
         this.dropSelf(BlockRegistry.FUKAMIZU_PLUM_BUTTON.get());
 
