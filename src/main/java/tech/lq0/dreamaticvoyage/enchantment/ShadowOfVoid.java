@@ -14,10 +14,11 @@ import tech.lq0.dreamaticvoyage.init.EnchantmentRegistry;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ShadowOfVoid extends Enchantment {
-    private static final EquipmentSlot[] HEAD = new EquipmentSlot[]{EquipmentSlot.HEAD};
+
+    private static final EquipmentSlot[] SLOTS = new EquipmentSlot[]{EquipmentSlot.HEAD};
 
     public ShadowOfVoid() {
-        super(Rarity.VERY_RARE, EnchantmentCategory.ARMOR_HEAD, HEAD);
+        super(Rarity.VERY_RARE, EnchantmentCategory.ARMOR_HEAD, SLOTS);
     }
 
     @Override

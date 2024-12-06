@@ -12,10 +12,11 @@ import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.tiers.ModItemTier;
 
 public class AhogeParasitic extends Enchantment {
-    private static final EquipmentSlot[] MAINHAND = new EquipmentSlot[]{EquipmentSlot.MAINHAND};
+
+    private static final EquipmentSlot[] SLOTS = new EquipmentSlot[]{EquipmentSlot.MAINHAND};
 
     public AhogeParasitic() {
-        super(Rarity.RARE, EnchantmentCategory.WEAPON, MAINHAND);
+        super(Rarity.RARE, EnchantmentCategory.WEAPON, SLOTS);
     }
 
     @Override

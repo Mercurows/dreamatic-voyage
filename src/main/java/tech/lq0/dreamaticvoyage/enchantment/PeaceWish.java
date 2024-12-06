@@ -9,10 +9,11 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import tech.lq0.dreamaticvoyage.init.EffectRegistry;
 
 public class PeaceWish extends Enchantment {
-    private static final EquipmentSlot[] CHEST = new EquipmentSlot[]{EquipmentSlot.CHEST};
+
+    private static final EquipmentSlot[] SLOTS = new EquipmentSlot[]{EquipmentSlot.CHEST};
 
     public PeaceWish() {
-        super(Rarity.VERY_RARE, EnchantmentCategory.ARMOR_CHEST, CHEST);
+        super(Rarity.VERY_RARE, EnchantmentCategory.ARMOR_CHEST, SLOTS);
     }
 
     @Override

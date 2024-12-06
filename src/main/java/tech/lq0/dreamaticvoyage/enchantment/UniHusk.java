@@ -9,10 +9,11 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
 public class UniHusk extends Enchantment {
-    private static final EquipmentSlot[] CHEST = new EquipmentSlot[]{EquipmentSlot.CHEST};
+
+    private static final EquipmentSlot[] SLOTS = new EquipmentSlot[]{EquipmentSlot.CHEST};
 
     public UniHusk() {
-        super(Rarity.RARE, EnchantmentCategory.ARMOR_CHEST, CHEST);
+        super(Rarity.RARE, EnchantmentCategory.ARMOR_CHEST, SLOTS);
     }
 
     @Override

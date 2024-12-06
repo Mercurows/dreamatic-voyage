@@ -16,6 +16,7 @@ import tech.lq0.dreamaticvoyage.init.EnchantmentRegistry;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class FairMeans extends Enchantment {
+
     private static final EquipmentSlot[] SLOTS = new EquipmentSlot[]{EquipmentSlot.MAINHAND};
 
     public FairMeans() {
