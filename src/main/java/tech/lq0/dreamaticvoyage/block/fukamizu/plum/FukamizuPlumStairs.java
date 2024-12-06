@@ -12,6 +12,7 @@ import tech.lq0.dreamaticvoyage.init.BlockRegistry;
 import java.util.List;
 
 public class FukamizuPlumStairs extends StairBlock {
+
     public FukamizuPlumStairs() {
         super(() -> BlockRegistry.FUKAMIZU_PLUM_PLANKS.get().defaultBlockState(), Properties.copy(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get()));
     }

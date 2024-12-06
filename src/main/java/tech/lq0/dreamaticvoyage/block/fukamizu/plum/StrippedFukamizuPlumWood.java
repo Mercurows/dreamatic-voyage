@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class StrippedFukamizuPlumWood extends RotatedPillarBlock {
+
     public StrippedFukamizuPlumWood(){
         super(Properties.of().strength(2.0F).mapColor(MapColor.TERRACOTTA_PURPLE).sound(SoundType.WOOD));
     }

@@ -12,6 +12,7 @@ import tech.lq0.dreamaticvoyage.init.BlockRegistry;
 import java.util.List;
 
 public class FukamizuPlumSlab extends SlabBlock {
+
     public FukamizuPlumSlab() {
         super(Properties.copy(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get()));
     }

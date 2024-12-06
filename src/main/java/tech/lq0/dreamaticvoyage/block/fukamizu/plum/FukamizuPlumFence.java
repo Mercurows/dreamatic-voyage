@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class FukamizuPlumFence extends FenceBlock {
+
     public FukamizuPlumFence() {
         super(Properties.of().strength(2.0F, 3.0F).mapColor(MapColor.WOOD).sound(SoundType.WOOD));
     }

@@ -47,8 +47,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 BlockRegistry.FUKAMIZU_PLUM_LOG.get(), BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get(),
                 BlockRegistry.FUKAMIZU_PLUM_WOOD.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get(), BlockRegistry.FUKAMIZU_PLUM_SLAB.get(),
                 BlockRegistry.FUKAMIZU_PLUM_STAIRS.get(), BlockRegistry.FUKAMIZU_PLUM_FENCE.get(), BlockRegistry.FUKAMIZU_PLUM_FENCE_GATE.get(),
-                BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get(), BlockRegistry.FUKAMIZU_PLUM_BUTTON.get()
-//              , BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get()
+                BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get(), BlockRegistry.FUKAMIZU_PLUM_BUTTON.get(),
+//                BlockRegistry.FUKAMIZU_PLUM_DOOR.get(),
+                BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get()
         );
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.HARANO_LEAVES.get(), BlockRegistry.UNI_MILLET_BLOCK.get(), BlockRegistry.FUKAMIZU_PLUM_LEAVES.get());
 
@@ -110,7 +111,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 BlockRegistry.FUKAMIZU_PLUM_PLANKS.get(), BlockRegistry.FUKAMIZU_PLUM_STAIRS.get(), BlockRegistry.STRIPPED_FUKAMIZU_PLUM_LOG.get(),
                 BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD.get(), BlockRegistry.FUKAMIZU_PLUM_FENCE.get(), BlockRegistry.FUKAMIZU_PLUM_FENCE_GATE.get(),
                 BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get(),
-//                BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(),
+//                BlockRegistry.FUKAMIZU_PLUM_DOOR.get(),
+                BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(),
                 BlockRegistry.FUKAMIZU_PLUM_BUTTON.get(), BlockRegistry.FUKAMIZU_PLUM_LEAVES.get(), BlockRegistry.FUKAMIZU_PLUM_SAPLING.get());
 
         this.tag(ModTags.Blocks.ELECTRICAL_BLOCKS).addTag(BlockTags.BUTTONS)

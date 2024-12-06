@@ -15,6 +15,7 @@ import tech.lq0.dreamaticvoyage.block.voyage.PhantasmalVoyager;
 
 @SuppressWarnings("unused")
 public class BlockRegistry {
+
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Utils.MOD_ID);
 
     public static final RegistryObject<Block> RED_AHOGE_BLOCK = BLOCKS.register("red_ahoge_block", RedAhogeBlock::new);
@@ -95,7 +96,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> FUKAMIZU_PLUM_FENCE_GATE = BLOCKS.register("fukamizu_plum_fence_gate", FukamizuPlumFenceGate::new);
     public static final RegistryObject<Block> FUKAMIZU_PLUM_PRESSURE_PLATE = BLOCKS.register("fukamizu_plum_pressure_plate", FukamizuPlumPressurePlate::new);
     //    public static final RegistryObject<Block> FUKAMIZU_PLUM_DOOR = BLOCKS.register("fukamizu_plum_door", FukamizuPlumDoor::new);
-//    public static final RegistryObject<Block> FUKAMIZU_PLUM_TRAPDOOR = BLOCKS.register("fukamizu_plum_trapdoor", FukamizuPlumTrapDoor::new);
+    public static final RegistryObject<Block> FUKAMIZU_PLUM_TRAPDOOR = BLOCKS.register("fukamizu_plum_trapdoor", FukamizuPlumTrapDoor::new);
     public static final RegistryObject<Block> FUKAMIZU_PLUM_BUTTON = BLOCKS.register("fukamizu_plum_button", FukamizuPlumButton::new);
 
     // Fluids

@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class FukamizuPlumLeaves extends LeavesBlock {
+
     public FukamizuPlumLeaves() {
         super(Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks().sound(SoundType.GRASS)
                 .noOcclusion().isValidSpawn((state, getter, blockPos, type) -> (type == EntityType.OCELOT || type == EntityType.PARROT))

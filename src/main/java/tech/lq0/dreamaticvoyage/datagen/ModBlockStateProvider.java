@@ -13,6 +13,7 @@ import tech.lq0.dreamaticvoyage.init.BlockRegistry;
 
 @SuppressWarnings({"ConstantConditions", "SameParameterValue"})
 public class ModBlockStateProvider extends BlockStateProvider {
+
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Utils.MOD_ID, exFileHelper);
     }
@@ -91,7 +92,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         pressurePlateBlock((PressurePlateBlock) BlockRegistry.FUKAMIZU_PLUM_PRESSURE_PLATE.get(), blockTexture(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get()));
         buttonBlock((ButtonBlock) BlockRegistry.FUKAMIZU_PLUM_BUTTON.get(), blockTexture(BlockRegistry.FUKAMIZU_PLUM_PLANKS.get()));
 //        doorBlockWithRenderType((DoorBlock) BlockRegistry.FUKAMIZU_PLUM_DOOR.get(), Utils.loc( "block/fukamizu_plum_door_bottom"), Utils.loc( "block/fukamizu_plum_door_top"), "cutout");
-//        trapdoorBlockWithRenderType((TrapDoorBlock) BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(), Utils.loc( "block/fukamizu_plum_trapdoor"), true, "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR.get(), Utils.loc( "block/fukamizu_plum_trapdoor"), true, "cutout");
 
         blockWithItem(BlockRegistry.VERDANT_SPIRIT_RICH_SOIL);
 

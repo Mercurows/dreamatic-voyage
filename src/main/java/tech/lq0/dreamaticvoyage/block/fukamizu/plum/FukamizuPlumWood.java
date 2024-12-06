@@ -24,6 +24,7 @@ import tech.lq0.dreamaticvoyage.init.BlockRegistry;
 import java.util.List;
 
 public class FukamizuPlumWood extends RotatedPillarBlock {
+
     public FukamizuPlumWood() {
         super(Properties.of().strength(2.0F).mapColor(MapColor.WOOD).sound(SoundType.WOOD));
     }

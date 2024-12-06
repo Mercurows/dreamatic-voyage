@@ -1,4 +1,4 @@
-// 1.20.1	2024-10-31T23:47:03.2056706	Item Models: dreamaticvoyage
+// 1.20.1	2024-12-06T09:19:05.6905714	Item Models: dreamaticvoyage
 6b886f1c24a3be1eca43435d11708e88aac17dfc assets/dreamaticvoyage/models/item/activated_cream.json
 7646d49b7d59ad5852cfbf1eec8e9e8a60e80c57 assets/dreamaticvoyage/models/item/alienis_crystal.json
 8c153a7fc2e832ba3f9861c22a241817859c11c9 assets/dreamaticvoyage/models/item/aluminum_bread_slice.json
@@ -146,6 +146,7 @@ c9fa889ecb25e27351705fdc1a4263f885ed11e5 assets/dreamaticvoyage/models/item/fuka
 3b7fc1afee3aeb5efd0731ea5307bda040631e12 assets/dreamaticvoyage/models/item/fukamizu_plum_sapling.json
 3c1462313a20c056ec1af57ab9dab9341e4cc4cc assets/dreamaticvoyage/models/item/fukamizu_plum_slab.json
 7b91b12527a463aa4245e380dd4758b1afdf3123 assets/dreamaticvoyage/models/item/fukamizu_plum_stairs.json
+53452825a3efe078079ff448380c44648dd6b1ee assets/dreamaticvoyage/models/item/fukamizu_plum_trapdoor.json
 ca120597205d11fe1a0bd46367aec2413f9ed552 assets/dreamaticvoyage/models/item/fukamizu_plum_wood.json
 bcadf6b16b549bec1ef9adfdd48a1d2955dc3981 assets/dreamaticvoyage/models/item/fukamizu_upgrade_smithing_template.json
 139e87637a4b0d8fae9af8dc11ccbdc355677cc8 assets/dreamaticvoyage/models/item/gachi_ingot.json

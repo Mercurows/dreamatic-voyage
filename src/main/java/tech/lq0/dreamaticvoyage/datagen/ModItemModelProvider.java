@@ -17,6 +17,7 @@ import tech.lq0.dreamaticvoyage.tools.Livers;
 
 @SuppressWarnings({"ConstantConditions", "UnusedReturnValue", "SameParameterValue", "unused"})
 public class ModItemModelProvider extends ItemModelProvider {
+
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Utils.MOD_ID, existingFileHelper);
     }
@@ -355,7 +356,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_PLUM_WOOD);
         evenSimplerBlockItem(BlockRegistry.STRIPPED_FUKAMIZU_PLUM_WOOD);
 //        simpleItem(ItemRegistry.FUKAMIZU_PLUM_DOOR);
-//        trapdoorItem(BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR);
+        trapdoorItem(BlockRegistry.FUKAMIZU_PLUM_TRAPDOOR);
         buttonItem(BlockRegistry.FUKAMIZU_PLUM_BUTTON, BlockRegistry.FUKAMIZU_PLUM_PLANKS);
 
         evenSimplerBlockItem(BlockRegistry.FUKAMIZU_COMPRESSOR);

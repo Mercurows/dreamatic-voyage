@@ -25,6 +25,7 @@ import tech.lq0.dreamaticvoyage.init.BlockRegistry;
 import java.util.List;
 
 public class FukamizuPlumLog extends RotatedPillarBlock {
+
     public FukamizuPlumLog() {
         super(BlockBehaviour.Properties.of().strength(2.0F).mapColor(MapColor.TERRACOTTA_PURPLE).sound(SoundType.WOOD));
     }

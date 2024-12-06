@@ -28,6 +28,7 @@ import java.util.List;
 
 @SuppressWarnings("deprecation")
 public class FukamizuPlumSapling extends SaplingBlock implements SimpleWaterloggedBlock {
+
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public FukamizuPlumSapling() {

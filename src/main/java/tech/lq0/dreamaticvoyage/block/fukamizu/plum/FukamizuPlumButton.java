@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class FukamizuPlumButton extends ButtonBlock {
+
     public FukamizuPlumButton() {
         super(Properties.of().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY).mapColor(MapColor.WOOD).sound(SoundType.WOOD),
                 BlockSetType.register(new BlockSetType("fukamizu_plum")), 30, true);
