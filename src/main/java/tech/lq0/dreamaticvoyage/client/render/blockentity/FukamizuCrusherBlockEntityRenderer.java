@@ -34,14 +34,8 @@ public class FukamizuCrusherBlockEntityRenderer implements BlockEntityRenderer<F
         pPoseStack.translate(-0.5f, -1.5f, 0.5f);
         pPoseStack.mulPose(Axis.YP.rotationDegrees(pBlockEntity.getBlockState().getValue(FukamizuCrusher.FACING).toYRot()));
 
-        pPoseStack.pushPose();
-        // TODO 完成加工时的旋转动画
-
-
-        pPoseStack.popPose();
-
         VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(pBuffer, this.model.renderType(TEXTURE), false, false);
-        this.model.renderToBuffer(pPoseStack, vertexconsumer, 0xffffff, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+        this.model.render(pPoseStack, vertexconsumer, 0xffffff, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F, pBlockEntity.crushingProgress > 0);
         pPoseStack.popPose();
     }
 }

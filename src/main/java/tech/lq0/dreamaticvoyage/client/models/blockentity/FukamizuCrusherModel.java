@@ -60,6 +60,17 @@ public class FukamizuCrusherModel<T extends Entity> extends EntityModel<T> {
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
 
+    public void render(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha, boolean roll) {
+        if (roll) {
+            this.wheel1.zRot = -(System.currentTimeMillis() % 36000000) / 300f;
+            this.wheel2.zRot = -this.wheel1.zRot;
+        } else {
+            this.wheel1.zRot = 0;
+            this.wheel2.zRot = 0;
+        }
+        renderToBuffer(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+    }
+
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         main.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
