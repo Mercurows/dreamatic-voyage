@@ -35,8 +35,9 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CageRing extends Item implements ICurioItem {
-    public static final String TAG_STOP = "stopTime";
-    public static final String TAG_POS = "currentPos";
+
+    public static final String TAG_STOP = "StopTime";
+    public static final String TAG_POS = "CurrentPos";
 
     public CageRing() {
         super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));

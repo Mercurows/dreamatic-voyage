@@ -46,7 +46,8 @@ import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class FukamizuRing extends Item {
-    public static final String TAG_WATER = "underwater";
+
+    public static final String TAG_UNDERWATER = "Underwater";
 
     public FukamizuRing() {
         super(new Properties().stacksTo(1).durability(404).rarity(Rarity.EPIC));
@@ -91,7 +92,7 @@ public class FukamizuRing extends Item {
     public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (pSlotId == EquipmentSlot.HEAD.getIndex() && !level.isClientSide && pEntity instanceof LivingEntity living) {
             if (living.isInWater() || level.isRaining()) {
-                ItemNBTTool.setBoolean(stack, TAG_WATER, true);
+                ItemNBTTool.setBoolean(stack, TAG_UNDERWATER, true);
                 living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 2, false, false), living);
                 living.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, false, false));
 
@@ -106,7 +107,7 @@ public class FukamizuRing extends Item {
                     }
                 }
             } else {
-                ItemNBTTool.setBoolean(stack, TAG_WATER, false);
+                ItemNBTTool.setBoolean(stack, TAG_UNDERWATER, false);
                 living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 0, false, false), living);
             }
 
@@ -121,7 +122,7 @@ public class FukamizuRing extends Item {
         UUID uuid = new UUID(ItemRegistry.FUKAMIZU_RING.hashCode() + slot.toString().hashCode(), 0);
         if (slot == EquipmentSlot.HEAD) {
             map = HashMultimap.create(map);
-            boolean underwater = ItemNBTTool.getBoolean(stack, TAG_WATER, false);
+            boolean underwater = ItemNBTTool.getBoolean(stack, TAG_UNDERWATER, false);
             map.put(Attributes.ARMOR,
                     new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, underwater ? 5.0f : 1.0f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.MAX_HEALTH,

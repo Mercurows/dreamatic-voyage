@@ -23,10 +23,11 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import java.util.List;
 
 public class FukamizuBread extends Item {
-    private static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(8).build();
+
+    private static final FoodProperties FOOD = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(8).build();
 
     public FukamizuBread() {
-        super(new Properties().food(food).fireResistant());
+        super(new Properties().food(FOOD).fireResistant());
     }
 
     @Override

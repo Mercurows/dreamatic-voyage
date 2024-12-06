@@ -16,6 +16,7 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import java.util.List;
 
 public class GarlicMelonSlice extends Item {
+
     private static final FoodProperties food = (new FoodProperties.Builder()).alwaysEat().nutrition(3).saturationMod(0.3f)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 200, 0), 0.5f).build();
 

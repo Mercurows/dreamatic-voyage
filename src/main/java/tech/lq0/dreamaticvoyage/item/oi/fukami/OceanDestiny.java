@@ -29,6 +29,7 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class OceanDestiny extends Item implements ICurioItem {
+
     public OceanDestiny() {
         super(new Properties().rarity(Rarity.EPIC).stacksTo(1));
     }

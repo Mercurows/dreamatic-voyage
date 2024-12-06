@@ -46,7 +46,8 @@ import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EchoedDestinyRing extends Item {
-    public static final String TAG_ECHO = "underwater";
+
+    public static final String TAG_UNDERWATER = "Underwater";
 
     public EchoedDestinyRing() {
         super(new Properties().stacksTo(1).durability(404).rarity(RarityTool.LEGENDARY));
@@ -86,12 +87,12 @@ public class EchoedDestinyRing extends Item {
     public boolean isDamageable(ItemStack stack) {
         return false;
     }
-    
+
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (pSlotId == EquipmentSlot.HEAD.getIndex() && !level.isClientSide && pEntity instanceof Player player) {
             if (player.isInWater() || level.isRaining()) {
-                ItemNBTTool.setBoolean(stack, TAG_ECHO, true);
+                ItemNBTTool.setBoolean(stack, TAG_UNDERWATER, true);
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 2, false, false), player);
                 player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 300, 0, false, false));
                 player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, false, false), player);
@@ -115,7 +116,7 @@ public class EchoedDestinyRing extends Item {
                     }
                 }
             } else {
-                ItemNBTTool.setBoolean(stack, TAG_ECHO, false);
+                ItemNBTTool.setBoolean(stack, TAG_UNDERWATER, false);
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1, false, false), player);
                 player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, 1, false, false), player);
 
@@ -148,7 +149,7 @@ public class EchoedDestinyRing extends Item {
         UUID uuid = new UUID(ItemRegistry.FUKAMIZU_RING.hashCode() + slot.toString().hashCode(), 0);
         if (slot == EquipmentSlot.HEAD) {
             map = HashMultimap.create(map);
-            boolean flag = ItemNBTTool.getBoolean(stack, TAG_ECHO, false);
+            boolean flag = ItemNBTTool.getBoolean(stack, TAG_UNDERWATER, false);
             map.put(Attributes.ARMOR,
                     new AttributeModifier(uuid, Utils.MOD_ATTRIBUTE_MODIFIER, flag ? 9.0f : 3.0f, AttributeModifier.Operation.ADDITION));
             map.put(Attributes.ARMOR_TOUGHNESS,

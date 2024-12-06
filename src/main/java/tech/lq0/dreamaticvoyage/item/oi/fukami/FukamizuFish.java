@@ -16,11 +16,12 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import java.util.List;
 
 public class FukamizuFish extends Item {
-    private static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(6).
+
+    private static final FoodProperties FOOD = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(6).
             effect(() -> new MobEffectInstance(MobEffects.LUCK, 600, 0), 1.0f).build();
 
     public FukamizuFish() {
-        super(new Properties().food(food));
+        super(new Properties().food(FOOD));
     }
 
     @Override

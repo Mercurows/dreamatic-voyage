@@ -16,6 +16,7 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import java.util.List;
 
 public class FractureDestiny extends Item {
+
     private static final FoodProperties food = (new FoodProperties.Builder()).saturationMod(0.5f).nutrition(20).alwaysEat().build();
 
     public FractureDestiny() {
