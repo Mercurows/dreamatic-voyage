@@ -1058,6 +1058,9 @@
   "des.dreamaticvoyage.candle_cake_2": "插着两根蜡烛的美味蛋糕，真是令人垂涎欲滴",
   "des.dreamaticvoyage.candle_cake_3": "插着一根蜡烛的美味蛋糕，真是令人垂涎欲滴",
   "des.dreamaticvoyage.candle_cake_4": "涂满草莓果酱的美味蛋糕，真是令人垂涎欲滴",
+  "item.dreamaticvoyage.fortune_cat_glove": "招财猫手套",
+  "des.dreamaticvoyage.fortune_cat_glove": "",
+  "des.dreamaticvoyage.fortune_cat_glove.text": "喵~",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",
