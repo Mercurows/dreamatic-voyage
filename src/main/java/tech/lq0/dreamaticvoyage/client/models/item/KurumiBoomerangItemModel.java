@@ -14,6 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public record KurumiBoomerangItemModel(BakedModel model) implements BakedModel {
+
     @Override
     public List<BakedQuad> getQuads(@Nullable BlockState pState, @Nullable Direction pDirection, RandomSource pRandom) {
         return this.model.getQuads(pState, pDirection, pRandom);

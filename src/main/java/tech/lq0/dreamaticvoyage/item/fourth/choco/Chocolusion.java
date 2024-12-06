@@ -15,6 +15,8 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.init.EffectRegistry;
 import tech.lq0.dreamaticvoyage.init.ParticleRegistry;
@@ -25,6 +27,7 @@ import tech.lq0.dreamaticvoyage.tools.TooltipTool;
 import java.util.List;
 
 @SuppressWarnings("SameParameterValue")
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class Chocolusion extends Item {
 
     private static final double RADIUS = 4;
@@ -136,4 +139,5 @@ public class Chocolusion extends Item {
             level.sendParticles(ParticleRegistry.UMU_LIGHT.get(), d0, d1, d2, 1, 0.0D, yOffset, 0.0D, 0.0D);
         }
     }
+
 }
