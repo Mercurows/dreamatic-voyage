@@ -69,12 +69,20 @@ public class FukamizuCrusher extends Block implements EntityBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
-        if (worldIn.isClientSide) {
+    public InteractionResult use(BlockState state, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand handIn, BlockHitResult hit) {
+        if (pLevel.isClientSide) {
             return InteractionResult.SUCCESS;
+        } else {
+            this.openContainer(pLevel, pPos, pPlayer);
+            return InteractionResult.CONSUME;
         }
+    }
 
-        return InteractionResult.SUCCESS;
+    protected void openContainer(Level pLevel, BlockPos pPos, Player pPlayer) {
+        BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+        if (blockentity instanceof FukamizuCrusherBlockEntity blockEntity) {
+            pPlayer.openMenu(blockEntity);
+        }
     }
 
     @Override

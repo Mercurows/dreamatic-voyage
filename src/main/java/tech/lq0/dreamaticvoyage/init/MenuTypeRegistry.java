@@ -15,20 +15,19 @@ public class MenuTypeRegistry {
     public static final RegistryObject<MenuType<FukamizuCompressorMenu>> FUKAMIZU_COMPRESSOR_MENU =
             MENU_TYPES.register("fukamizu_compressor_menu",
                     () -> IForgeMenuType.create((windowId, inv, data) -> new FukamizuCompressorMenu(windowId, inv)));
-
     public static final RegistryObject<MenuType<PhantasmalVoyagerMenu>> PHANTASMAL_VOYAGER_MENU =
             MENU_TYPES.register("phantasmal_voyager_menu",
                     () -> IForgeMenuType.create(PhantasmalVoyagerMenu::new));
-
     public static final RegistryObject<MenuType<CrystalPopperMenu>> CRYSTAL_POPPER_MENU =
             MENU_TYPES.register("crystal_popper_menu",
                     () -> IForgeMenuType.create(((windowId, inv, data) -> new CrystalPopperMenu(windowId, inv))));
-
     public static final RegistryObject<MenuType<CrystalPurifierMenu>> CRYSTAL_PURIFIER_MENU =
             MENU_TYPES.register("crystal_purifier_menu",
                     () -> IForgeMenuType.create(((windowId, inv, data) -> new CrystalPurifierMenu(windowId, inv))));
-
     public static final RegistryObject<MenuType<CrystalCutterMenu>> CRYSTAL_CUTTER_MENU =
             MENU_TYPES.register("crystal_cutter_menu",
                     () -> IForgeMenuType.create(((windowId, inv, data) -> new CrystalCutterMenu(windowId, inv))));
+    public static final RegistryObject<MenuType<FukamizuCrusherMenu>> FUKAMIZU_CRUSHER_MENU =
+            MENU_TYPES.register("fukamizu_crusher_menu",
+                    () -> IForgeMenuType.create(((windowId, inv, data) -> new FukamizuCrusherMenu(windowId, inv))));
 }

@@ -2,8 +2,6 @@ package tech.lq0.dreamaticvoyage.gui.menu;
 
 import com.google.common.collect.Lists;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.Container;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.event.entity.player.PlayerContainerEvent;
@@ -28,11 +26,11 @@ public abstract class BaseEnergyMenu extends AbstractContainerMenu {
     private final List<ContainerEnergyDataSlot> containerEnergyDataSlots = Lists.newArrayList();
     private final List<ServerPlayer> usingPlayers = new ArrayList<>();
 
-    public BaseEnergyMenu(@Nullable MenuType<?> pMenuType, int pContainerId, Inventory inventory) {
+    public BaseEnergyMenu(@Nullable MenuType<?> pMenuType, int pContainerId) {
         super(pMenuType, pContainerId);
     }
 
-    public BaseEnergyMenu(@Nullable MenuType<?> pMenuType, int id, Inventory inventory, Container container, ContainerEnergyData containerData) {
+    public BaseEnergyMenu(@Nullable MenuType<?> pMenuType, int id, ContainerEnergyData containerData) {
         super(pMenuType, id);
 
         for (int i = 0; i < containerData.getCount(); ++i) {

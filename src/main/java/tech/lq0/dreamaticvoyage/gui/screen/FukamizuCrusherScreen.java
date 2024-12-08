@@ -8,15 +8,14 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.block.entity.FukamizuCompressorBlockEntity;
-import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCompressorMenu;
+import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCrusherMenu;
 
 @OnlyIn(Dist.CLIENT)
-public class FukamizuCompressorScreen extends AbstractContainerScreen<FukamizuCompressorMenu> {
+public class FukamizuCrusherScreen extends AbstractContainerScreen<FukamizuCrusherMenu> {
 
-    private static final ResourceLocation TEXTURE = Utils.loc("textures/gui/fukamizu_compressor.png");
+    private static final ResourceLocation TEXTURE = Utils.loc("textures/gui/fukamizu_crusher.png");
 
-    public FukamizuCompressorScreen(FukamizuCompressorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public FukamizuCrusherScreen(FukamizuCrusherMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         imageWidth = 176;
         imageHeight = 177;
@@ -28,21 +27,6 @@ public class FukamizuCompressorScreen extends AbstractContainerScreen<FukamizuCo
         int j = (this.height - this.imageHeight) / 2;
         pGuiGraphics.blit(TEXTURE, i, j, 0, 0, this.imageWidth, this.imageHeight);
 
-        int pressure = this.menu.getPressure();
-        float pressureY;
-        if (pressure < 16) {
-            pressureY = 64 - pressure / 15f * 9;
-        } else if (pressure <= 24) {
-            pressureY = 56 - (pressure - 15) / 8f * 10;
-        } else {
-            pressureY = Math.max(45 - (pressure - 24) / 8f * 9, 34);
-        }
-
-        pGuiGraphics.blit(TEXTURE, i + 28, (int) (j + pressureY), 177, 13, 8, 3);
-
-        float compressingProgress = this.menu.getCompressingProgress();
-        pGuiGraphics.blit(TEXTURE, i + 75, j + 45, 177, 0,
-                (int) (compressingProgress / FukamizuCompressorBlockEntity.PROCESS_TIME * 23f), 12);
     }
 
     @Override

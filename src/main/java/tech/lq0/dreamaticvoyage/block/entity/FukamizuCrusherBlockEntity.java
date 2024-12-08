@@ -16,12 +16,18 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.uce.UCEnergyStorage;
+import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCrusherMenu;
+import tech.lq0.dreamaticvoyage.gui.slot.ContainerEnergyData;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
 
@@ -38,9 +44,38 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
     protected NonNullList<ItemStack> items = NonNullList.withSize(5, ItemStack.EMPTY);
 
     private LazyOptional<UCEnergyStorage> energyHandler;
-    private LazyOptional<?>[] itemHandlers = SidedInvWrapper.create(this, Direction.NORTH, Direction.DOWN, Direction.NORTH);
+    private LazyOptional<?>[] itemHandlers = SidedInvWrapper.create(this, Direction.UP, Direction.DOWN, Direction.NORTH);
 
     public int crushingProgress;
+
+    protected final ContainerEnergyData dataAccess = new ContainerEnergyData() {
+        public long get(int pIndex) {
+            return switch (pIndex) {
+                case 0 -> {
+                    AtomicInteger energy = new AtomicInteger();
+                    FukamizuCrusherBlockEntity.this.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(consumer -> energy.set(consumer.getEnergyStored()));
+                    yield energy.get();
+                }
+                case 1 -> FukamizuCrusherBlockEntity.this.crushingProgress;
+                default -> 0;
+            };
+        }
+
+        public void set(int pIndex, long pValue) {
+            switch (pIndex) {
+                case 0:
+                    FukamizuCrusherBlockEntity.this.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(consumer -> consumer.receiveEnergy((int) pValue, false));
+                    break;
+                case 1:
+                    FukamizuCrusherBlockEntity.this.crushingProgress = (int) pValue;
+                    break;
+            }
+        }
+
+        public int getCount() {
+            return MAX_DATA_COUNT;
+        }
+    };
 
     public FukamizuCrusherBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.FUKAMIZU_CRUSHER_BLOCK_ENTITY.get(), pPos, pBlockState);
@@ -170,6 +205,37 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return null;
+        return new FukamizuCrusherMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
+    }
+
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
+        if (cap == ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY) {
+            return energyHandler.cast();
+        }
+        if (!this.remove && side != null && cap == ForgeCapabilities.ITEM_HANDLER) {
+            if (side == Direction.UP) {
+                return itemHandlers[0].cast();
+            } else if (side == Direction.DOWN) {
+                return itemHandlers[1].cast();
+            } else {
+                return itemHandlers[2].cast();
+            }
+        }
+        return super.getCapability(cap, side);
+    }
+
+    @Override
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        for (LazyOptional<?> itemHandler : itemHandlers) itemHandler.invalidate();
+        this.energyHandler.invalidate();
+    }
+
+    @Override
+    public void reviveCaps() {
+        super.reviveCaps();
+        this.itemHandlers = SidedInvWrapper.create(this, Direction.UP, Direction.DOWN, Direction.NORTH);
+        this.energyHandler = LazyOptional.of(() -> new UCEnergyStorage(MAX_ENERGY));
     }
 }

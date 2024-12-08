@@ -18,6 +18,7 @@ public class ScreenRegistry {
             MenuScreens.register(MenuTypeRegistry.CRYSTAL_POPPER_MENU.get(), CrystalPopperScreen::new);
             MenuScreens.register(MenuTypeRegistry.CRYSTAL_PURIFIER_MENU.get(), CrystalPurifierScreen::new);
             MenuScreens.register(MenuTypeRegistry.CRYSTAL_CUTTER_MENU.get(), CrystalCutterScreen::new);
+            MenuScreens.register(MenuTypeRegistry.FUKAMIZU_CRUSHER_MENU.get(), FukamizuCrusherScreen::new);
         });
     }
 }
