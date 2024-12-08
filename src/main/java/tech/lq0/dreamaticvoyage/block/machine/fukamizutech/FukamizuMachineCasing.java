@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class FukamizuMachineCasing extends Block {
+
     public FukamizuMachineCasing() {
         super(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK));
     }

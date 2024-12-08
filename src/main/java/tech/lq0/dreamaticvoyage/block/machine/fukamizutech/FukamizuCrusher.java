@@ -102,10 +102,14 @@ public class FukamizuCrusher extends Block implements EntityBlock {
 
     @Override
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
-        if (pLevel instanceof ServerLevel serverLevel) {
+        if (!pState.is(pNewState.getBlock())) {
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
             if (blockentity instanceof FukamizuCrusherBlockEntity blockEntity) {
-                Containers.dropContents(serverLevel, pPos, blockEntity);
+                if (pLevel instanceof ServerLevel serverLevel) {
+                    Containers.dropContents(serverLevel, pPos, blockEntity);
+                }
+
+                pLevel.updateNeighbourForOutputSignal(pPos, this);
             }
         }
 

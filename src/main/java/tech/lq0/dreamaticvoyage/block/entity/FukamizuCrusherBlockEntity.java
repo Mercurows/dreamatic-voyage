@@ -92,7 +92,7 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         boolean flag = false;
         AtomicInteger energy = new AtomicInteger(0);
         blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> energy.set(handler.getEnergyStored()));
-        if (energy.get() <= DEFAULT_ENERGY_COST) return;
+        if (energy.get() < DEFAULT_ENERGY_COST) return;
 
         if (blockEntity.hasRecipe()) {
             blockEntity.crushingProgress++;
@@ -110,8 +110,7 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
         if (pState.getValue(FukamizuCrusher.PROCESSING) != blockEntity.crushingProgress > 0) {
             flag = true;
-            pState = pState.setValue(FukamizuCrusher.PROCESSING, blockEntity.crushingProgress > 0);
-            pLevel.setBlock(pPos, pState, 3);
+            pLevel.setBlockAndUpdate(pPos, pState.setValue(FukamizuCrusher.PROCESSING, blockEntity.crushingProgress > 0));
         }
 
         if (flag) {

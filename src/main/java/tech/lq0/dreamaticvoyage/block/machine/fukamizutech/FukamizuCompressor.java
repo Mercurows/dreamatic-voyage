@@ -37,6 +37,7 @@ import java.util.List;
 
 @SuppressWarnings("deprecation")
 public class FukamizuCompressor extends Block implements EntityBlock {
+
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty OVERPRESSURE = BooleanProperty.create("overpressure");
 
@@ -101,10 +102,14 @@ public class FukamizuCompressor extends Block implements EntityBlock {
 
     @Override
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
-        if (pLevel instanceof ServerLevel serverLevel) {
+        if (!pState.is(pNewState.getBlock())) {
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-            if (blockentity instanceof FukamizuCompressorBlockEntity fukamizuCompressorBlockEntity) {
-                Containers.dropContents(serverLevel, pPos, fukamizuCompressorBlockEntity);
+            if (blockentity instanceof FukamizuCompressorBlockEntity blockEntity) {
+                if (pLevel instanceof ServerLevel serverLevel) {
+                    Containers.dropContents(serverLevel, pPos, blockEntity);
+                }
+
+                pLevel.updateNeighbourForOutputSignal(pPos, this);
             }
         }
 

@@ -36,6 +36,7 @@ import java.util.List;
 
 @SuppressWarnings("deprecation")
 public class CrystalPopper extends Block implements EntityBlock {
+
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
     @Nullable
@@ -104,10 +105,14 @@ public class CrystalPopper extends Block implements EntityBlock {
 
     @Override
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
-        if (pLevel instanceof ServerLevel serverLevel) {
+        if (!pState.is(pNewState.getBlock())) {
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
             if (blockentity instanceof CrystalPopperBlockEntity blockEntity) {
-                Containers.dropContents(serverLevel, pPos, blockEntity);
+                if (pLevel instanceof ServerLevel serverLevel) {
+                    Containers.dropContents(serverLevel, pPos, blockEntity);
+                }
+
+                pLevel.updateNeighbourForOutputSignal(pPos, this);
             }
         }
 
