@@ -5,13 +5,14 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.Container;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.WorldlyContainer;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -21,12 +22,15 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.Nullable;
+import tech.lq0.dreamaticvoyage.block.machine.fukamizutech.FukamizuCrusher;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.uce.UCEnergyStorage;
 import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCrusherMenu;
 import tech.lq0.dreamaticvoyage.gui.slot.ContainerEnergyData;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
+import tech.lq0.dreamaticvoyage.recipe.FukamizuCrushingRecipe;
 
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
@@ -83,11 +87,106 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         this.energyHandler = LazyOptional.of(() -> new UCEnergyStorage(MAX_ENERGY));
     }
 
+    // TODO 完成blockstate的正确更新
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuCrusherBlockEntity blockEntity) {
+        boolean flag = false;
         AtomicInteger energy = new AtomicInteger(0);
         blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> energy.set(handler.getEnergyStored()));
-        if (energy.get() <= 0) return;
+        if (energy.get() <= DEFAULT_ENERGY_COST) return;
 
+        if (blockEntity.hasRecipe()) {
+            blockEntity.crushingProgress++;
+            blockEntity.energyHandler.ifPresent(consumer -> consumer.extractEnergy(DEFAULT_ENERGY_COST, false));
+
+            if (blockEntity.crushingProgress >= PROCESS_TIME) {
+                blockEntity.craftItem();
+                blockEntity.resetProgress();
+                blockEntity.setChanged();
+            }
+        } else if (blockEntity.crushingProgress > 0) {
+            blockEntity.resetProgress();
+            blockEntity.setChanged();
+        }
+
+        if (pState.getValue(FukamizuCrusher.PROCESSING) != blockEntity.crushingProgress > 0) {
+            flag = true;
+            pState = pState.setValue(FukamizuCrusher.PROCESSING, blockEntity.crushingProgress > 0);
+            pLevel.setBlock(pPos, pState, 3);
+        }
+
+        if (flag) {
+            setChanged(pLevel, pPos, pState);
+        }
+    }
+
+    private void craftItem() {
+        Optional<FukamizuCrushingRecipe> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) {
+            return;
+        }
+
+        ItemStack input = this.items.get(SLOT_INPUT);
+        input.shrink(1);
+
+        var results = recipe.get().rollResults();
+
+        for (ItemStack result : results) {
+            for (int i = 1; i < 5; i++) {
+                if (this.items.get(i).isEmpty()) {
+                    this.items.set(i, result);
+                    break;
+                } else if (this.items.get(i).is(result.getItem())) {
+                    this.items.set(i, new ItemStack(result.getItem(), this.items.get(i).getCount() + result.getCount()));
+                    break;
+                }
+            }
+        }
+    }
+
+    private Optional<FukamizuCrushingRecipe> getCurrentRecipe() {
+        if (this.level == null) {
+            return Optional.empty();
+        }
+
+        SimpleContainer inventory = new SimpleContainer(this.items.size());
+        inventory.setItem(0, this.items.get(SLOT_INPUT));
+
+        return this.level.getRecipeManager().getRecipeFor(FukamizuCrushingRecipe.Type.INSTANCE, inventory, level);
+    }
+
+    private boolean hasRecipe() {
+        Optional<FukamizuCrushingRecipe> recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty()) {
+            return false;
+        }
+
+        if (getLevel() == null) {
+            return false;
+        }
+
+        var results = recipe.get().getRollableResultsAsItemStacks();
+        if (results.size() > 4) return false;
+
+        for (ItemStack result : results) {
+            boolean[] flags = new boolean[]{true, true, true, true, true};
+            for (int i = 1; i < 5; i++) {
+                flags[i] = canInsertItemIntoOutputSlot(result.getItem(), i) && canInsertAmountIntoOutputSlot(result.getCount(), i);
+            }
+            if (!flags[0] || !flags[1] || !flags[2] || !flags[3] || !flags[4]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private boolean canInsertItemIntoOutputSlot(Item item, int slot) {
+        return this.items.get(slot).isEmpty() || this.items.get(slot).is(item);
+    }
+
+    private boolean canInsertAmountIntoOutputSlot(int count, int slot) {
+        return this.items.get(slot).getCount() + count <= this.items.get(slot).getMaxStackSize();
     }
 
     private void resetProgress() {
@@ -209,6 +308,19 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
         return new FukamizuCrusherMenu(pContainerId, pPlayerInventory, this, this.dataAccess);
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag compoundtag = new CompoundTag();
+        compoundtag.putInt("CrushingProgress", this.crushingProgress);
+        return compoundtag;
     }
 
     @Override

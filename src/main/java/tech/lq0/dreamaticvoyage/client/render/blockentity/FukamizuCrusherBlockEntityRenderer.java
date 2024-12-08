@@ -19,6 +19,7 @@ import tech.lq0.dreamaticvoyage.client.models.blockentity.FukamizuCrusherModel;
 @SuppressWarnings("rawtypes")
 @OnlyIn(Dist.CLIENT)
 public class FukamizuCrusherBlockEntityRenderer implements BlockEntityRenderer<FukamizuCrusherBlockEntity> {
+
     public static final ResourceLocation TEXTURE = Utils.loc("textures/entity/fukamizu_crusher.png");
     private final FukamizuCrusherModel model;
 
@@ -35,7 +36,8 @@ public class FukamizuCrusherBlockEntityRenderer implements BlockEntityRenderer<F
         pPoseStack.mulPose(Axis.YP.rotationDegrees(pBlockEntity.getBlockState().getValue(FukamizuCrusher.FACING).toYRot()));
 
         VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(pBuffer, this.model.renderType(TEXTURE), false, false);
-        this.model.render(pPoseStack, vertexconsumer, 0xffffff, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F, pBlockEntity.crushingProgress > 0);
+        this.model.render(pPoseStack, vertexconsumer, 0xffffff, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F,
+                pBlockEntity.getBlockState().getValue(FukamizuCrusher.PROCESSING));
         pPoseStack.popPose();
     }
 }

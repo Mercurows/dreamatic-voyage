@@ -18,6 +18,7 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.recipe.ingredient.ChanceOutput;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -60,6 +61,21 @@ public class FukamizuCrushingRecipe implements Recipe<SimpleContainer> {
 
     public List<ItemStack> getRollableResultsAsItemStacks() {
         return this.results.stream().map(ChanceOutput::stack).toList();
+    }
+
+    public List<ItemStack> rollResults() {
+        return rollResults(this.results);
+    }
+
+    public List<ItemStack> rollResults(List<ChanceOutput> rollableResults) {
+        List<ItemStack> results = new ArrayList<>();
+        for (ChanceOutput output : rollableResults) {
+            ItemStack stack = output.rollOutput();
+            if (!stack.isEmpty()) {
+                results.add(stack);
+            }
+        }
+        return results;
     }
 
     @Override

@@ -1,0 +1,17 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": {
+    "item": "dreamaticvoyage:fukamizu_bread"
+  },
+  "results": [
+    {
+      "item": "dreamaticvoyage:fukamizu_crumb",
+      "count": 1
+    },
+    {
+      "item": "dreamaticvoyage:fukamizu_crumb",
+      "count": 1,
+      "chance": 0.5
+    }
+  ]
+}

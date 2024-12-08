@@ -59,7 +59,7 @@ public class FukamizuCrusherMenu extends BaseEnergyMenu {
             ItemStack itemstack1 = slot.getItem();
             itemstack = itemstack1.copy();
             if (pIndex >= 1 && pIndex < 5) {
-                if (!this.moveItemStackTo(itemstack1, 6, 42, true)) {
+                if (!this.moveItemStackTo(itemstack1, 5, 41, true)) {
                     return ItemStack.EMPTY;
                 }
 
@@ -67,14 +67,14 @@ public class FukamizuCrusherMenu extends BaseEnergyMenu {
             } else if (pIndex != 0) {
                 if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
                     return ItemStack.EMPTY;
-                } else if (pIndex >= 6 && pIndex < 33) {
-                    if (!this.moveItemStackTo(itemstack1, 33, 42, false)) {
+                } else if (pIndex >= 5 && pIndex < 32) {
+                    if (!this.moveItemStackTo(itemstack1, 32, 41, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (pIndex >= 33 && pIndex < 42 && !this.moveItemStackTo(itemstack1, 6, 33, false)) {
+                } else if (pIndex >= 32 && pIndex < 41 && !this.moveItemStackTo(itemstack1, 5, 32, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.moveItemStackTo(itemstack1, 6, 42, false)) {
+            } else if (!this.moveItemStackTo(itemstack1, 5, 41, false)) {
                 return ItemStack.EMPTY;
             }
 
