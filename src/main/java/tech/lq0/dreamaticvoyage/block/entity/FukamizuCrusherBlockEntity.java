@@ -113,7 +113,7 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
             blockEntity.setChanged();
         }
 
-        if (pState.getValue(FukamizuCrusher.PROCESSING) != blockEntity.crushingProgress > 0) {
+        if (pState.getValue(FukamizuCrusher.PROCESSING) != blockEntity.crushingProgress > 0 && !blockEntity.canProcess()) {
             flag = true;
             pLevel.setBlockAndUpdate(pPos, pState.setValue(FukamizuCrusher.PROCESSING, blockEntity.crushingProgress > 0));
         }
@@ -134,12 +134,13 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
         var results = recipe.get().rollResults();
 
+        // TODO 弹射多余的物品
         for (ItemStack result : results) {
             for (int i = 1; i < 5; i++) {
                 if (this.items.get(i).isEmpty()) {
                     this.items.set(i, result);
                     break;
-                } else if (this.items.get(i).is(result.getItem())) {
+                } else if (this.items.get(i).is(result.getItem()) && this.items.get(i).getCount() + result.getCount() <= this.items.get(i).getMaxStackSize()) {
                     this.items.set(i, new ItemStack(result.getItem(), this.items.get(i).getCount() + result.getCount()));
                     break;
                 }
