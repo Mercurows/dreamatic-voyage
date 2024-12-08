@@ -6,6 +6,7 @@ import net.minecraft.nbt.Tag;
 import net.minecraftforge.common.util.INBTSerializable;
 
 public class UCEnergyStorage implements IUCEnergyStorage, INBTSerializable<Tag> {
+
     private static final String NBT_UCE = "UmisuEnergy";
 
     protected int energy;

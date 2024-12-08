@@ -1,10 +1,14 @@
 package tech.lq0.dreamaticvoyage.network;
 
+import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.network.packet.ContainerDataSyncPacket;
 import tech.lq0.dreamaticvoyage.network.packet.LeviyLaunchPacket;
 import tech.lq0.dreamaticvoyage.network.packet.PhantasmalVoyagerPacket;
+
+import java.util.Optional;
 
 public class DmvNetwork {
 
@@ -15,5 +19,6 @@ public class DmvNetwork {
     public static void init() {
         CHANNEL.registerMessage(0, LeviyLaunchPacket.class, LeviyLaunchPacket::encode, LeviyLaunchPacket::decode, LeviyLaunchPacket::handle);
         CHANNEL.registerMessage(1, PhantasmalVoyagerPacket.class, PhantasmalVoyagerPacket::encode, PhantasmalVoyagerPacket::decode, PhantasmalVoyagerPacket::handle);
+        CHANNEL.registerMessage(2, ContainerDataSyncPacket.class, ContainerDataSyncPacket::encode, ContainerDataSyncPacket::decode, ContainerDataSyncPacket::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
     }
 }
