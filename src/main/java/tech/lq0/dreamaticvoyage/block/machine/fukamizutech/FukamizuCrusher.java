@@ -47,7 +47,7 @@ public class FukamizuCrusher extends Block implements EntityBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING).add(PROCESSING);
+        pBuilder.add(FACING, PROCESSING);
     }
 
     @Nullable

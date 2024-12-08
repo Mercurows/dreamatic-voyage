@@ -1,17 +1,32 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,processing=false": {
       "model": "dreamaticvoyage:block/fukamizu_crusher",
       "y": 90
     },
-    "facing=north": {
+    "facing=east,processing=true": {
+      "model": "dreamaticvoyage:block/fukamizu_crusher",
+      "y": 90
+    },
+    "facing=north,processing=false": {
       "model": "dreamaticvoyage:block/fukamizu_crusher"
     },
-    "facing=south": {
+    "facing=north,processing=true": {
+      "model": "dreamaticvoyage:block/fukamizu_crusher"
+    },
+    "facing=south,processing=false": {
       "model": "dreamaticvoyage:block/fukamizu_crusher",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,processing=true": {
+      "model": "dreamaticvoyage:block/fukamizu_crusher",
+      "y": 180
+    },
+    "facing=west,processing=false": {
+      "model": "dreamaticvoyage:block/fukamizu_crusher",
+      "y": 270
+    },
+    "facing=west,processing=true": {
       "model": "dreamaticvoyage:block/fukamizu_crusher",
       "y": 270
     }
