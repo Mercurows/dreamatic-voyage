@@ -6,12 +6,16 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tech.lq0.dreamaticvoyage.Utils;
-import tech.lq0.dreamaticvoyage.block.*;
-import tech.lq0.dreamaticvoyage.block.bluesand.*;
-import tech.lq0.dreamaticvoyage.block.fukamizu.plum.*;
-import tech.lq0.dreamaticvoyage.block.fukamizu.tech.*;
-import tech.lq0.dreamaticvoyage.block.harano.*;
-import tech.lq0.dreamaticvoyage.block.voyage.PhantasmalVoyager;
+import tech.lq0.dreamaticvoyage.block.basic.*;
+import tech.lq0.dreamaticvoyage.block.basic.bluesand.*;
+import tech.lq0.dreamaticvoyage.block.basic.harano.*;
+import tech.lq0.dreamaticvoyage.block.basic.misc.*;
+import tech.lq0.dreamaticvoyage.block.basic.plum.*;
+import tech.lq0.dreamaticvoyage.block.machine.CrystalCutter;
+import tech.lq0.dreamaticvoyage.block.machine.CrystalPopper;
+import tech.lq0.dreamaticvoyage.block.machine.CrystalPurifier;
+import tech.lq0.dreamaticvoyage.block.machine.fukamizutech.*;
+import tech.lq0.dreamaticvoyage.block.machine.voyage.PhantasmalVoyager;
 
 @SuppressWarnings("unused")
 public class BlockRegistry {

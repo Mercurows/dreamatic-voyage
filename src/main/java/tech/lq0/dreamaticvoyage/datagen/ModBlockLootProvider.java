@@ -19,7 +19,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.RegistryObject;
-import tech.lq0.dreamaticvoyage.block.UniMilletBlock;
+import tech.lq0.dreamaticvoyage.block.basic.misc.UniMilletBlock;
 import tech.lq0.dreamaticvoyage.init.BlockRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 

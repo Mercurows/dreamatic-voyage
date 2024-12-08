@@ -106,4 +106,8 @@ public class UCEnergyStorage implements IUCEnergyStorage, INBTSerializable<Tag> 
     public void read(CompoundTag tag) {
         energy = tag.getInt(NBT_UCE);
     }
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
+    }
 }

@@ -21,7 +21,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.Nullable;
-import tech.lq0.dreamaticvoyage.block.fukamizu.tech.FukamizuCompressor;
+import tech.lq0.dreamaticvoyage.block.machine.fukamizutech.FukamizuCompressor;
 import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCompressorMenu;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.recipe.FukamizuCompressingRecipe;

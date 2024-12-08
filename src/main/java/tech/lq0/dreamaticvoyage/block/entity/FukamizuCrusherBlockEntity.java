@@ -16,6 +16,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
 import tech.lq0.dreamaticvoyage.capability.uce.UCEnergyStorage;
@@ -26,19 +28,24 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
     protected static final int SLOT_INPUT = 0;
 
     private static final int[] SLOTS_FOR_UP = new int[]{0};
-    private static final int[] SLOTS_FOR_SIDES = new int[]{1, 2, 3, 4};
-    private static final int[] SLOTS_FOR_DOWN = new int[]{1, 2, 3, 4};
+    private static final int[] SLOTS_FOR_OTHER = new int[]{1, 2, 3, 4};
 
-    public static final int PROCESS_TIME = 1200;
-
+    public static final int PROCESS_TIME = 100;
     public static final int MAX_DATA_COUNT = 2;
+    public static final int MAX_ENERGY = 64000;
+    public static final int DEFAULT_ENERGY_COST = 20;
+
     protected NonNullList<ItemStack> items = NonNullList.withSize(5, ItemStack.EMPTY);
+
+    private LazyOptional<UCEnergyStorage> energyHandler;
+    private LazyOptional<?>[] itemHandlers = SidedInvWrapper.create(this, Direction.NORTH, Direction.DOWN, Direction.NORTH);
 
     public int crushingProgress;
 
     public FukamizuCrusherBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.FUKAMIZU_CRUSHER_BLOCK_ENTITY.get(), pPos, pBlockState);
 
+        this.energyHandler = LazyOptional.of(() -> new UCEnergyStorage(MAX_ENERGY));
     }
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuCrusherBlockEntity blockEntity) {
@@ -79,16 +86,14 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
     public int[] getSlotsForFace(Direction pSide) {
         if (pSide == Direction.UP) {
             return SLOTS_FOR_UP;
-        } else if (pSide == Direction.DOWN) {
-            return SLOTS_FOR_DOWN;
         } else {
-            return SLOTS_FOR_SIDES;
+            return SLOTS_FOR_OTHER;
         }
     }
 
     @Override
     public boolean canPlaceItemThroughFace(int pIndex, ItemStack pItemStack, @Nullable Direction pDirection) {
-        return this.canPlaceItem(pIndex, pItemStack);
+        return this.canPlaceItem(pIndex, pItemStack) && pDirection == Direction.UP;
     }
 
     @Override
