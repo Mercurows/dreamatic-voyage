@@ -99,7 +99,7 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
             return;
         }
 
-        if (blockEntity.hasRecipe()) {
+        if (blockEntity.canProcess()) {
             blockEntity.crushingProgress++;
             blockEntity.energyHandler.ifPresent(consumer -> consumer.extractEnergy(DEFAULT_ENERGY_COST, false));
 
@@ -158,7 +158,7 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         return this.level.getRecipeManager().getRecipeFor(FukamizuCrushingRecipe.Type.INSTANCE, inventory, level);
     }
 
-    private boolean hasRecipe() {
+    private boolean canProcess() {
         Optional<FukamizuCrushingRecipe> recipe = getCurrentRecipe();
 
         if (recipe.isEmpty()) {
@@ -170,19 +170,17 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         }
 
         var results = recipe.get().getRollableResultsAsItemStacks();
-        if (results.size() > 4) return false;
+        if (results.stream().map(ItemStack::getDescriptionId).distinct().count() > 4) return false;
 
-        for (ItemStack result : results) {
-            boolean[] flags = new boolean[]{true, true, true, true, true};
+        return results.stream().anyMatch(result -> {
             for (int i = 1; i < 5; i++) {
-                flags[i] = canInsertItemIntoOutputSlot(result.getItem(), i) && canInsertAmountIntoOutputSlot(result.getCount(), i);
+                var item = this.items.get(i);
+                if (item.isEmpty() || item.is(result.getItem()) && item.getCount() + result.getCount() <= item.getMaxStackSize()) {
+                    return true;
+                }
             }
-            if (!flags[0] || !flags[1] || !flags[2] || !flags[3] || !flags[4]) {
-                return false;
-            }
-        }
-
-        return true;
+            return false;
+        });
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item, int slot) {
