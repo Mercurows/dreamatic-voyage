@@ -13,6 +13,7 @@ import tech.lq0.dreamaticvoyage.block.entity.FukamizuCompressorBlockEntity;
 import tech.lq0.dreamaticvoyage.init.MenuTypeRegistry;
 
 public class FukamizuCompressorMenu extends AbstractContainerMenu {
+
     private final Container container;
     private final ContainerData containerData;
 

@@ -4,10 +4,12 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tech.lq0.dreamaticvoyage.Utils;
+import tech.lq0.dreamaticvoyage.block.entity.FukamizuCrusherBlockEntity;
 import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCrusherMenu;
 
 @OnlyIn(Dist.CLIENT)
@@ -26,6 +28,13 @@ public class FukamizuCrusherScreen extends AbstractContainerScreen<FukamizuCrush
         int i = (this.width - this.imageWidth) / 2;
         int j = (this.height - this.imageHeight) / 2;
         pGuiGraphics.blit(TEXTURE, i, j, 0, 0, this.imageWidth, this.imageHeight);
+
+        long energy = FukamizuCrusherScreen.this.menu.getEnergy();
+
+        // Energy
+        float energyRate = Mth.clamp((float) energy / (float) FukamizuCrusherBlockEntity.MAX_ENERGY, 0, 1);
+        pGuiGraphics.blit(TEXTURE, i + 27, j + 66 - (int) (31 * energyRate),
+                177, 0, 4, (int) (31 * energyRate));
 
     }
 

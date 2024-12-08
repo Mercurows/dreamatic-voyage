@@ -103,6 +103,10 @@ public class FukamizuCrusherMenu extends BaseEnergyMenu {
         return this.containerData.get(0);
     }
 
+    public long getCrushingProgress() {
+        return this.containerData.get(1);
+    }
+
     static class ResultSlot extends Slot {
 
         public ResultSlot(Container pContainer, int pSlot, int pX, int pY) {

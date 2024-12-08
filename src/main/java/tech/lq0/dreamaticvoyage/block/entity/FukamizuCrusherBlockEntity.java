@@ -84,6 +84,9 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
     }
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuCrusherBlockEntity blockEntity) {
+        AtomicInteger energy = new AtomicInteger(0);
+        blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> energy.set(handler.getEnergyStored()));
+        if (energy.get() <= 0) return;
 
     }
 

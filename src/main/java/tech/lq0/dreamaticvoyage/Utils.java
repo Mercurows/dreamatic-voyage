@@ -21,7 +21,7 @@ import net.minecraftforge.registries.RegisterEvent;
 import tech.lq0.dreamaticvoyage.init.*;
 import tech.lq0.dreamaticvoyage.loot.ModLootTables;
 import tech.lq0.dreamaticvoyage.network.DmvNetwork;
-import tech.lq0.dreamaticvoyage.recipe.ComparableNbtIngredient;
+import tech.lq0.dreamaticvoyage.recipe.ingredient.ComparableNbtIngredient;
 
 @Mod(Utils.MOD_ID)
 public class Utils {

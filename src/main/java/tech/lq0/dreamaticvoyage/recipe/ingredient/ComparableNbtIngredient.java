@@ -1,4 +1,4 @@
-package tech.lq0.dreamaticvoyage.recipe;
+package tech.lq0.dreamaticvoyage.recipe.ingredient;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
