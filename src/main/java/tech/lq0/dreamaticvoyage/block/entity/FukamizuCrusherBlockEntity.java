@@ -87,12 +87,17 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         this.energyHandler = LazyOptional.of(() -> new UCEnergyStorage(MAX_ENERGY));
     }
 
-    // TODO 完成blockstate的正确更新
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuCrusherBlockEntity blockEntity) {
         boolean flag = false;
         AtomicInteger energy = new AtomicInteger(0);
         blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> energy.set(handler.getEnergyStored()));
-        if (energy.get() < DEFAULT_ENERGY_COST) return;
+        if (energy.get() < DEFAULT_ENERGY_COST) {
+            if (pState.getValue(FukamizuCrusher.PROCESSING)) {
+                pLevel.setBlockAndUpdate(pPos, pState.setValue(FukamizuCrusher.PROCESSING, false));
+                setChanged(pLevel, pPos, pState);
+            }
+            return;
+        }
 
         if (blockEntity.hasRecipe()) {
             blockEntity.crushingProgress++;
