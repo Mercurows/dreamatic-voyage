@@ -136,13 +136,17 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
         // TODO 弹射多余的物品
         for (ItemStack result : results) {
+            int count = result.getCount();
             for (int i = 1; i < 5; i++) {
                 if (this.items.get(i).isEmpty()) {
                     this.items.set(i, result);
                     break;
-                } else if (this.items.get(i).is(result.getItem()) && this.items.get(i).getCount() + result.getCount() <= this.items.get(i).getMaxStackSize()) {
-                    this.items.set(i, new ItemStack(result.getItem(), this.items.get(i).getCount() + result.getCount()));
-                    break;
+                } else if (this.items.get(i).is(result.getItem()) && this.items.get(i).getCount() + count <= this.items.get(i).getMaxStackSize()) {
+                    this.items.set(i, new ItemStack(result.getItem(), this.items.get(i).getCount() + count));
+                    count = Math.max(0, count - this.items.get(i).getMaxStackSize() + this.items.get(i).getCount());
+                    if (count == 0) {
+                        break;
+                    }
                 }
             }
         }
@@ -204,9 +208,7 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         ContainerHelper.loadAllItems(pTag, this.items);
 
         if (pTag.contains("UmisuEnergy")) {
-            getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> {
-                ((UCEnergyStorage) handler).deserializeNBT(pTag.get("UmisuEnergy"));
-            });
+            getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> ((UCEnergyStorage) handler).deserializeNBT(pTag.get("UmisuEnergy")));
         }
 
         this.crushingProgress = pTag.getInt("CrushingProgress");
