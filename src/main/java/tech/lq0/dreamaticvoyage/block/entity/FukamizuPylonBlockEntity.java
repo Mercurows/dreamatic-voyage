@@ -41,6 +41,8 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     private LazyOptional<UCEnergyStorage> energyHandler;
     public int chargeTime;
 
+    public int cooldown = 0;
+
     public FukamizuPylonBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.FUKAMIZU_PYLON_BLOCK_ENTITY.get(), pPos, pBlockState);
 
@@ -50,12 +52,34 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuPylonBlockEntity pylonBlockEntity) {
         pylonBlockEntity.selfCharge(pLevel, pPos, pState);
 
+        if (pylonBlockEntity.cooldown > 0) {
+            pylonBlockEntity.cooldown--;
+        } else {
+            pylonBlockEntity.cooldown = TRANSFER_COOLDOWN;
+        }
+
         // 自动移除失效链接
         pylonBlockEntity.connections.removeIf(offset -> {
             var newPos = new BlockPos(pPos.getX() + offset[0], pPos.getY() + offset[1], pPos.getZ() + offset[2]);
             var blockEntity = pLevel.getBlockEntity(newPos);
             return blockEntity == null || !blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).isPresent();
         });
+
+        // 尝试发送能量
+        if (pylonBlockEntity.cooldown == 0 && pylonBlockEntity.energyHandler.map(UCEnergyStorage::getEnergyStored).orElse(0) > 0) {
+            pylonBlockEntity.connections.forEach(offset -> {
+                var newPos = new BlockPos(pPos.getX() + offset[0], pPos.getY() + offset[1], pPos.getZ() + offset[2]);
+                var blockEntity = pLevel.getBlockEntity(newPos);
+                if (blockEntity == null) return;
+
+                blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(targetBlockHandler -> {
+                    if (targetBlockHandler.canReceive() && targetBlockHandler.getEnergyStored() < targetBlockHandler.getMaxEnergyStored()) {
+                        int energy = targetBlockHandler.receiveEnergy(MAX_TRANSFER_SINGLE, false);
+                        pylonBlockEntity.energyHandler.ifPresent(handler -> handler.extractEnergy(energy, false));
+                    }
+                });
+            });
+        }
     }
 
     private void selfCharge(Level pLevel, BlockPos pPos, BlockState pState) {
