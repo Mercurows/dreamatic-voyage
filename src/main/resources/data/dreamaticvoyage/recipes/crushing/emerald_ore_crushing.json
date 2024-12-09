@@ -1,0 +1,27 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": {
+    "tag": "forge:ores/emerald"
+  },
+  "results": [
+    {
+      "item": "minecraft:emerald",
+      "count": 1
+    },
+    {
+      "item": "minecraft:emerald",
+      "count": 1,
+      "chance": 0.6
+    },
+    {
+      "item": "minecraft:emerald",
+      "count": 1,
+      "chance": 0.4
+    },
+    {
+      "item": "minecraft:emerald",
+      "count": 1,
+      "chance": 0.2
+    }
+  ]
+}

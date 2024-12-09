@@ -1,0 +1,27 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": {
+    "tag": "forge:ores/copper"
+  },
+  "results": [
+    {
+      "item": "dreamaticvoyage:copper_rich_crumb",
+      "count": 5
+    },
+    {
+      "item": "dreamaticvoyage:copper_rich_crumb",
+      "count": 2,
+      "chance": 0.8
+    },
+    {
+      "item": "dreamaticvoyage:copper_rich_crumb",
+      "count": 2,
+      "chance": 0.6
+    },
+    {
+      "item": "dreamaticvoyage:copper_rich_crumb",
+      "count": 1,
+      "chance": 0.4
+    }
+  ]
+}

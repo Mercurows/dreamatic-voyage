@@ -9,7 +9,6 @@ import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -110,19 +109,6 @@ public class FukamizuCrusher extends Block implements EntityBlock {
         if (blockentity instanceof FukamizuCrusherBlockEntity blockEntity) {
             pPlayer.openMenu(blockEntity);
         }
-    }
-
-    @Override
-    public void updateEntityAfterFallOn(BlockGetter pLevel, Entity entity) {
-        super.updateEntityAfterFallOn(pLevel, entity);
-
-        if (entity.level().isClientSide || !(entity instanceof ItemEntity itemEntity) || !entity.isAlive()) {
-            return;
-        }
-
-        var blockEntity = pLevel.getBlockEntity(entity.blockPosition().below());
-        if (!(blockEntity instanceof FukamizuCrusherBlockEntity crusher)) return;
-
     }
 
     @Override

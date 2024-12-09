@@ -1,0 +1,32 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": [
+    {
+      "item": "minecraft:gold_ore"
+    },
+    {
+      "item": "minecraft:deepslate_gold_ore"
+    }
+  ],
+  "results": [
+    {
+      "item": "dreamaticvoyage:gold_rich_crumb",
+      "count": 1
+    },
+    {
+      "item": "dreamaticvoyage:gold_rich_crumb",
+      "count": 1,
+      "chance": 0.6
+    },
+    {
+      "item": "dreamaticvoyage:gold_rich_crumb",
+      "count": 1,
+      "chance": 0.4
+    },
+    {
+      "item": "dreamaticvoyage:gold_rich_crumb",
+      "count": 1,
+      "chance": 0.2
+    }
+  ]
+}

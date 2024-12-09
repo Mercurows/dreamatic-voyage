@@ -38,6 +38,13 @@ public class FukamizuCrushingRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        NonNullList<Ingredient> nonnulllist = NonNullList.create();
+        nonnulllist.add(this.input);
+        return nonnulllist;
+    }
+
+    @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
         if (pLevel.isClientSide()) {
             return false;
@@ -116,7 +123,8 @@ public class FukamizuCrushingRecipe implements Recipe<SimpleContainer> {
 
         @Override
         public FukamizuCrushingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
-            var ingredient = GsonHelper.getAsJsonObject(pSerializedRecipe, "input");
+            JsonElement ingredient = GsonHelper.isArrayNode(pSerializedRecipe, "input") ?
+                    GsonHelper.getAsJsonArray(pSerializedRecipe, "input") : GsonHelper.getAsJsonObject(pSerializedRecipe, "input");
             var input = Ingredient.fromJson(ingredient);
 
             NonNullList<ChanceOutput> results = NonNullList.create();

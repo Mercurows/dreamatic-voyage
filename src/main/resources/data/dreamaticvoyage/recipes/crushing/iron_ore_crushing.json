@@ -1,0 +1,27 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": {
+    "tag": "forge:ores/iron"
+  },
+  "results": [
+    {
+      "item": "dreamaticvoyage:iron_rich_crumb",
+      "count": 1
+    },
+    {
+      "item": "dreamaticvoyage:iron_rich_crumb",
+      "count": 1,
+      "chance": 0.6
+    },
+    {
+      "item": "dreamaticvoyage:iron_rich_crumb",
+      "count": 1,
+      "chance": 0.4
+    },
+    {
+      "item": "dreamaticvoyage:iron_rich_crumb",
+      "count": 1,
+      "chance": 0.2
+    }
+  ]
+}
