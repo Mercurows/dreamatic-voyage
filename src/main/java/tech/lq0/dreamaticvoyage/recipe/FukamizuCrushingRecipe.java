@@ -24,9 +24,10 @@ import java.util.List;
 /**
  * Code Based On @Creators-of-Create 's Create
  */
+@SuppressWarnings("ClassCanBeRecord")
 public class FukamizuCrushingRecipe implements Recipe<SimpleContainer> {
 
-    private final Ingredient input;
+    public final Ingredient input;
     private final NonNullList<ChanceOutput> results;
     private final ResourceLocation id;
 
@@ -96,6 +97,10 @@ public class FukamizuCrushingRecipe implements Recipe<SimpleContainer> {
     @Override
     public boolean isSpecial() {
         return true;
+    }
+
+    public NonNullList<ChanceOutput> getResults() {
+        return this.results;
     }
 
     public static class Type implements RecipeType<FukamizuCrushingRecipe> {
