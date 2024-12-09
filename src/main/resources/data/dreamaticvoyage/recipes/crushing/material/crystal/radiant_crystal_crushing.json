@@ -1,0 +1,17 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": {
+    "item": "dreamaticvoyage:radiant_crystal"
+  },
+  "results": [
+    {
+      "item": "dreamaticvoyage:crystal_powder",
+      "count": 2
+    },
+    {
+      "item": "dreamaticvoyage:crystal_powder",
+      "count": 1,
+      "chance": 0.5
+    }
+  ]
+}

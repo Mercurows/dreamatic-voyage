@@ -3,11 +3,14 @@ package tech.lq0.dreamaticvoyage.item.misc.fukamizutech;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
@@ -28,22 +31,18 @@ public class FukamizuBreadWrench extends Item {
         pTooltipComponents.add(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench").withStyle(ChatFormatting.GRAY));
     }
 
-    @SubscribeEvent
-    public static void rightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-        var itemStack = event.getItemStack();
-        if (!(itemStack.getItem() instanceof FukamizuBreadWrench)) return;
-
-        var pos = event.getPos();
-        var level = event.getLevel();
-        var player = event.getEntity();
+    @Override
+    public InteractionResult useOn(UseOnContext context) {
+        var pos = context.getClickedPos();
+        var itemStack = context.getItemInHand();
+        var player = context.getPlayer();
+        var level = context.getLevel();
         var blockEntity = level.getBlockEntity(pos);
-        if (blockEntity == null) return;
+
+        if (blockEntity == null) return InteractionResult.FAIL;
+        if (player == null) return InteractionResult.FAIL;
 
         if (blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).isPresent()) {
-            // TODO 正确取消右键事件
-            // 若右键方块存在对应属性，取消对应右键事件
-            event.setCanceled(true);
-
             if (player.isShiftKeyDown()) {
                 // shift右键
                 if (blockEntity instanceof PylonBlockEntity) {
@@ -51,17 +50,17 @@ public class FukamizuBreadWrench extends Item {
                     itemStack.getOrCreateTag().putIntArray("Machine", new int[]{pos.getX(), pos.getY(), pos.getZ()});
                     player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.bound",
                             pos.getX() + ", " + pos.getY() + ", " + pos.getZ()).withStyle(ChatFormatting.GREEN), true);
-                    event.setCanceled(false);
                 } else {
                     player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.not_pylon")
                             .withStyle(ChatFormatting.RED), true);
+                    return InteractionResult.FAIL;
                 }
             } else {
                 // 直接右键
                 if (!itemStack.hasTag() || !itemStack.getOrCreateTag().contains("Machine")) {
                     player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.not_bounded")
                             .withStyle(ChatFormatting.RED), true);
-                    return;
+                    return InteractionResult.FAIL;
                 }
 
                 var tag = itemStack.getOrCreateTag();
@@ -70,7 +69,7 @@ public class FukamizuBreadWrench extends Item {
                 if (array.length != 3) {
                     player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.not_bounded")
                             .withStyle(ChatFormatting.RED), true);
-                    return;
+                    return InteractionResult.FAIL;
                 }
 
                 // 扳手绑定的方块需要是能量塔才能进行下一步操作
@@ -83,12 +82,12 @@ public class FukamizuBreadWrench extends Item {
                         // 不能绑定自己
                         player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.self_bound")
                                 .withStyle(ChatFormatting.RED), true);
-                        return;
+                        return InteractionResult.FAIL;
                     } else if (!pylonBlockEntity.canBind(new byte[]{xDiff, yDiff, zDiff})) {
                         // 距离限制
                         player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.too_far")
                                 .withStyle(ChatFormatting.RED), true);
-                        return;
+                        return InteractionResult.FAIL;
                     }
 
                     if (level.getBlockEntity(pos) instanceof PylonBlockEntity pylonBlock &&
@@ -96,7 +95,7 @@ public class FukamizuBreadWrench extends Item {
                         // 只有高级能量塔才能绑定低级能量塔
                         player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.wrong_level",
                                 pylonBlockEntity.getPylonLevel(), pylonBlock.getPylonLevel()).withStyle(ChatFormatting.RED), true);
-                        return;
+                        return InteractionResult.FAIL;
                     }
 
                     if (pylonBlockEntity.hasConnection(new byte[]{xDiff, yDiff, zDiff})) {
@@ -104,25 +103,42 @@ public class FukamizuBreadWrench extends Item {
                         pylonBlockEntity.removeConnection(new byte[]{xDiff, yDiff, zDiff});
                         player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.disconnected")
                                 .withStyle(ChatFormatting.YELLOW), true);
-                        event.setCanceled(false);
                     } else {
                         // 绑定数量限制
                         if (!pylonBlockEntity.canBindMore()) {
                             player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.max_count")
                                     .withStyle(ChatFormatting.RED), true);
-                            return;
+                            return InteractionResult.FAIL;
                         }
                         // 满足条件，进行绑定
                         pylonBlockEntity.addConnection(new byte[]{xDiff, yDiff, zDiff});
                         player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.uce_bound",
                                 pos.getX() + ", " + pos.getY() + ", " + pos.getZ()).withStyle(ChatFormatting.GREEN), true);
-                        player.swing(player.getUsedItemHand());
                     }
                 } else {
                     player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.not_pylon")
                             .withStyle(ChatFormatting.RED), true);
                 }
             }
+
+            return InteractionResult.SUCCESS;
+        }
+        return InteractionResult.FAIL;
+    }
+
+    @SubscribeEvent
+    public static void rightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+        var itemStack = event.getItemStack();
+        if (!(itemStack.getItem() instanceof FukamizuBreadWrench)) return;
+
+        var pos = event.getPos();
+        var level = event.getLevel();
+        var blockEntity = level.getBlockEntity(pos);
+        if (blockEntity == null) return;
+
+        if (blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).isPresent()) {
+            // 若右键方块存在对应属性，取消对应右键事件
+            event.setUseBlock(Event.Result.DENY);
         }
     }
 }

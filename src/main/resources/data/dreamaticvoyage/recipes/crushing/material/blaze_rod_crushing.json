@@ -1,0 +1,17 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": {
+    "item": "minecraft:blaze_rod"
+  },
+  "results": [
+    {
+      "item": "minecraft:blaze_powder",
+      "count": 2
+    },
+    {
+      "item": "minecraft:blaze_powder",
+      "count": 1,
+      "chance": 0.5
+    }
+  ]
+}

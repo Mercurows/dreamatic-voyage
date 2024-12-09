@@ -40,7 +40,6 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
 
     private LazyOptional<UCEnergyStorage> energyHandler;
     public int chargeTime;
-
     public int cooldown = 0;
 
     public FukamizuPylonBlockEntity(BlockPos pPos, BlockState pBlockState) {
@@ -138,6 +137,7 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
             getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> ((UCEnergyStorage) handler).deserializeNBT(pTag.get("UmisuEnergy")));
         }
         this.chargeTime = pTag.getInt("ChargeTime");
+        this.cooldown = pTag.getInt("Cooldown");
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items);
 
@@ -154,6 +154,7 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
 
         getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> pTag.put("UmisuEnergy", ((UCEnergyStorage) handler).serializeNBT()));
         pTag.putInt("ChargeTime", this.chargeTime);
+        pTag.putInt("Cooldown", this.cooldown);
         ContainerHelper.saveAllItems(pTag, this.items);
 
         var connectionsTag = new ListTag();
