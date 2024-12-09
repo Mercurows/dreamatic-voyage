@@ -38,7 +38,7 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     public static final int CHARGE_TIME = 40;
     public static final int TRANSFER_COOLDOWN = 40;
     public static final int MAX_CONNECT_COUNT = 10;
-    public static final int MAX_TRANSFER_TOTAL = 2000;
+    public static final int MAX_TRANSFER_TOTAL = 3000;
 
     private LazyOptional<UCEnergyStorage> energyHandler;
     public int chargeTime;
