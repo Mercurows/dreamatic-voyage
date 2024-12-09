@@ -21,34 +21,34 @@ import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.capability.ModCapabilities;
-import tech.lq0.dreamaticvoyage.capability.uce.IUCEnergyStorage;
 import tech.lq0.dreamaticvoyage.capability.uce.UCEnergyStorage;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.ItemRegistry;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 // TODO 完成能量塔逻辑
 public class FukamizuPylonBlockEntity extends PylonBlockEntity implements WorldlyContainer, MenuProvider {
 
     public static final int MAX_RANGE = 16;
-    public static final int MAX_CAPACITY = 100000;
+    public static final int MAX_CAPACITY = 128000;
     public static final int CHARGE_SPEED = 50;
     public static final int CHARGE_TIME = 40;
     public static final int TRANSFER_COOLDOWN = 40;
     public static final int MAX_CONNECT_COUNT = 10;
     public static final int MAX_TRANSFER_SINGLE = 200;
 
-    public LazyOptional<IUCEnergyStorage> capability;
-    public UCEnergyStorage energyStorage = new UCEnergyStorage(MAX_CAPACITY, MAX_TRANSFER_SINGLE * MAX_CONNECT_COUNT);
-
+    private LazyOptional<UCEnergyStorage> energyHandler;
     public int chargeTime;
 
     public FukamizuPylonBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.FUKAMIZU_PYLON_BLOCK_ENTITY.get(), pPos, pBlockState);
-        capability = LazyOptional.of(() -> energyStorage);
+
+        this.energyHandler = LazyOptional.of(() -> new UCEnergyStorage(MAX_CAPACITY, MAX_TRANSFER_SINGLE * MAX_CONNECT_COUNT));
     }
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuPylonBlockEntity pylonBlockEntity) {
-        pylonBlockEntity.charge(pLevel, pPos, pState);
+        pylonBlockEntity.selfCharge(pLevel, pPos, pState);
 
         // 自动移除失效链接
         pylonBlockEntity.connections.removeIf(offset -> {
@@ -58,10 +58,10 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
         });
     }
 
-    private void charge(Level pLevel, BlockPos pPos, BlockState pState) {
-        if (!this.energyStorage.canReceive()) {
-            return;
-        }
+    private void selfCharge(Level pLevel, BlockPos pPos, BlockState pState) {
+        AtomicBoolean flag = new AtomicBoolean(false);
+        this.energyHandler.ifPresent(handler -> flag.set(handler.getEnergyStored() >= handler.getMaxEnergyStored()));
+        if (flag.get()) return;
 
         if (this.chargeTime <= 0) {
             ItemStack stack = this.items.get(0);
@@ -80,7 +80,7 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
             pLevel.sendBlockUpdated(pPos, pState, pState, 3);
             pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
         } else {
-            this.energyStorage.receiveEnergy(CHARGE_SPEED, false);
+            this.energyHandler.ifPresent(handler -> handler.receiveEnergy(CHARGE_SPEED, false));
             this.chargeTime--;
         }
     }
@@ -110,15 +110,17 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     public void load(CompoundTag pTag) {
         super.load(pTag);
 
-        this.energyStorage.read(pTag);
+        if (pTag.contains("UmisuEnergy")) {
+            getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> ((UCEnergyStorage) handler).deserializeNBT(pTag.get("UmisuEnergy")));
+        }
         this.chargeTime = pTag.getInt("ChargeTime");
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items);
 
-        var connectionsTag = pTag.getList("connections", CompoundTag.TAG_COMPOUND);
+        var connectionsTag = pTag.getList("Connections", CompoundTag.TAG_COMPOUND);
         this.connections.clear();
         for (var connectionTag : connectionsTag) {
-            this.connections.add(((CompoundTag) connectionTag).getByteArray("offset"));
+            this.connections.add(((CompoundTag) connectionTag).getByteArray("Offset"));
         }
     }
 
@@ -126,23 +128,23 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     protected void saveAdditional(CompoundTag pTag) {
         super.saveAdditional(pTag);
 
-        this.energyStorage.write(pTag);
+        getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> pTag.put("UmisuEnergy", ((UCEnergyStorage) handler).serializeNBT()));
         pTag.putInt("ChargeTime", this.chargeTime);
         ContainerHelper.saveAllItems(pTag, this.items);
 
         var connectionsTag = new ListTag();
         for (var connection : this.connections) {
             var connectionTag = new CompoundTag();
-            connectionTag.putByteArray("offset", connection);
+            connectionTag.putByteArray("Offset", connection);
             connectionsTag.add(connectionTag);
         }
-        pTag.put("connections", connectionsTag);
+        pTag.put("Connections", connectionsTag);
     }
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY) {
-            return this.capability.cast();
+            return this.energyHandler.cast();
         }
         return super.getCapability(cap, side);
     }
@@ -150,7 +152,13 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     @Override
     public void invalidateCaps() {
         super.invalidateCaps();
-        this.capability.invalidate();
+        this.energyHandler.invalidate();
+    }
+
+    @Override
+    public void reviveCaps() {
+        super.reviveCaps();
+        this.energyHandler = LazyOptional.of(() -> new UCEnergyStorage(MAX_CAPACITY));
     }
 
     @Override
