@@ -230,6 +230,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.FUKAMIZU_BREAD_LEGGINGS);
         simpleItem(ItemRegistry.FUKAMIZU_BREAD_BOOTS);
         handheldItem(ItemRegistry.FUKAMIZU_BREAD_SHEARS);
+        handheldItem(ItemRegistry.FUKAMIZU_BREAD_WRENCH);
 
         simpleItem(ItemRegistry.FUKAMIZU_KWAS_BUCKET);
 

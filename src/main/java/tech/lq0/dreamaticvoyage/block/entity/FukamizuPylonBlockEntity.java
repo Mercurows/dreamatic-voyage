@@ -30,7 +30,6 @@ import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-// TODO 完成能量塔逻辑
 public class FukamizuPylonBlockEntity extends PylonBlockEntity implements WorldlyContainer, MenuProvider {
 
     public static final int MAX_RANGE = 16;
@@ -39,7 +38,7 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     public static final int CHARGE_TIME = 40;
     public static final int TRANSFER_COOLDOWN = 40;
     public static final int MAX_CONNECT_COUNT = 10;
-    public static final int MAX_TRANSFER_SINGLE = 200;
+    public static final int MAX_TRANSFER_TOTAL = 2000;
 
     private LazyOptional<UCEnergyStorage> energyHandler;
     public int chargeTime;
@@ -48,7 +47,7 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
     public FukamizuPylonBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.FUKAMIZU_PYLON_BLOCK_ENTITY.get(), pPos, pBlockState);
 
-        this.energyHandler = LazyOptional.of(() -> new UCEnergyStorage(MAX_CAPACITY, MAX_TRANSFER_SINGLE * MAX_CONNECT_COUNT));
+        this.energyHandler = LazyOptional.of(() -> new UCEnergyStorage(MAX_CAPACITY, MAX_TRANSFER_TOTAL));
     }
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuPylonBlockEntity pylonBlockEntity) {
@@ -69,6 +68,7 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
             });
 
             // 尝试发送能量
+            int count = pylonBlockEntity.connections.size();
             pylonBlockEntity.connections.forEach(offset -> {
                 var newPos = new BlockPos(pPos.getX() + offset[0], pPos.getY() + offset[1], pPos.getZ() + offset[2]);
                 var blockEntity = pLevel.getBlockEntity(newPos);
@@ -76,7 +76,7 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
 
                 blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(targetBlockHandler -> {
                     if (targetBlockHandler.canReceive() && targetBlockHandler.getEnergyStored() < targetBlockHandler.getMaxEnergyStored()) {
-                        int energy = targetBlockHandler.receiveEnergy(MAX_TRANSFER_SINGLE, false);
+                        int energy = targetBlockHandler.receiveEnergy(MAX_TRANSFER_TOTAL / count, false);
                         pylonBlockEntity.energyHandler.ifPresent(handler -> handler.extractEnergy(energy, false));
                     }
                 });
