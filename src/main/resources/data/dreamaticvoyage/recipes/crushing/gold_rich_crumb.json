@@ -1,15 +1,15 @@
 {
   "type": "dreamaticvoyage:fukamizu_crushing",
   "input": {
-    "tag": "forge:raw_materials/iron"
+    "tag": "forge:raw_materials/gold"
   },
   "results": [
     {
-      "item": "dreamaticvoyage:iron_rich_crumb",
+      "item": "dreamaticvoyage:gold_rich_crumb",
       "count": 1
     },
     {
-      "item": "dreamaticvoyage:iron_rich_crumb",
+      "item": "dreamaticvoyage:gold_rich_crumb",
       "count": 1,
       "chance": 0.2
     }

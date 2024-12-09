@@ -9,10 +9,10 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.*;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -30,6 +30,8 @@ import tech.lq0.dreamaticvoyage.gui.slot.ContainerEnergyData;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.recipe.FukamizuCrushingRecipe;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -88,7 +90,6 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
     }
 
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, FukamizuCrusherBlockEntity blockEntity) {
-        boolean flag = false;
         AtomicInteger energy = new AtomicInteger(0);
         blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> energy.set(handler.getEnergyStored()));
         if (energy.get() < DEFAULT_ENERGY_COST) {
@@ -113,12 +114,8 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
             blockEntity.setChanged();
         }
 
-        if (pState.getValue(FukamizuCrusher.PROCESSING) != blockEntity.crushingProgress > 0 && !blockEntity.canProcess()) {
-            flag = true;
-            pLevel.setBlockAndUpdate(pPos, pState.setValue(FukamizuCrusher.PROCESSING, blockEntity.crushingProgress > 0));
-        }
-
-        if (flag) {
+        if (pState.getValue(FukamizuCrusher.PROCESSING) != blockEntity.crushingProgress > 0) {
+            pLevel.setBlockAndUpdate(pPos, pState.setValue(FukamizuCrusher.PROCESSING, blockEntity.crushingProgress > 0 || blockEntity.canProcess()));
             setChanged(pLevel, pPos, pState);
         }
     }
@@ -134,12 +131,13 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
         var results = recipe.get().rollResults();
 
-        // TODO 弹射多余的物品
+        List<ItemStack> remaining = new ArrayList<>();
         for (ItemStack result : results) {
             int count = result.getCount();
             for (int i = 1; i < 5; i++) {
                 if (this.items.get(i).isEmpty()) {
                     this.items.set(i, result);
+                    count = 0;
                     break;
                 } else if (this.items.get(i).is(result.getItem()) && this.items.get(i).getCount() + count <= this.items.get(i).getMaxStackSize()) {
                     this.items.set(i, new ItemStack(result.getItem(), this.items.get(i).getCount() + count));
@@ -149,7 +147,13 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
                     }
                 }
             }
+            if (count != 0) {
+                ItemStack stack = result.copy();
+                stack.setCount(count);
+                remaining.add(stack);
+            }
         }
+        popItems(remaining);
     }
 
     private Optional<FukamizuCrushingRecipe> getCurrentRecipe() {
@@ -188,12 +192,22 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         });
     }
 
-    private boolean canInsertItemIntoOutputSlot(Item item, int slot) {
-        return this.items.get(slot).isEmpty() || this.items.get(slot).is(item);
-    }
+    private void popItems(List<ItemStack> list) {
+        if (this.getLevel() == null) return;
 
-    private boolean canInsertAmountIntoOutputSlot(int count, int slot) {
-        return this.items.get(slot).getCount() + count <= this.items.get(slot).getMaxStackSize();
+        getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).ifPresent(handler -> {
+            for (ItemStack item : list) {
+                if (handler.getEnergyStored() >= DEFAULT_ENERGY_COST) {
+                    handler.extractEnergy(DEFAULT_ENERGY_COST, false);
+                    ItemEntity itemEntity = new ItemEntity(getLevel(),
+                            getBlockPos().getX() + getBlockState().getValue(FukamizuCrusher.FACING).getOpposite().getStepX() + 0.5,
+                            getBlockPos().getY() + 0.2,
+                            getBlockPos().getZ() + getBlockState().getValue(FukamizuCrusher.FACING).getOpposite().getStepZ() + 0.5,
+                            item);
+                    getLevel().addFreshEntity(itemEntity);
+                }
+            }
+        });
     }
 
     private void resetProgress() {
