@@ -1,0 +1,22 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": {
+    "tag": "dreamaticvoyage:stone_can_be_crushed"
+  },
+  "results": [
+    {
+      "item": "dreamaticvoyage:earth_debris",
+      "count": 2
+    },
+    {
+      "item": "dreamaticvoyage:earth_debris",
+      "count": 1,
+      "chance": 0.7
+    },
+    {
+      "item": "dreamaticvoyage:earth_debris",
+      "count": 1,
+      "chance": 0.3
+    }
+  ]
+}

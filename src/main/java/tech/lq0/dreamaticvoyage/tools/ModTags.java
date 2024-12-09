@@ -33,6 +33,8 @@ public class ModTags {
         public static final TagKey<Item> FUKAMIZU_EDGE = tag("fukamizu_edge");
         public static final TagKey<Item> FUKAMIZU_EDGE_WITH_EXTRA_LOOT = tag("fukamizu_edge_with_extra_loot");
 
+        public static final TagKey<Item> STONE_CAN_BE_CRUSHED = tag("stone_can_be_crushed");
+
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(Utils.loc(name));
         }

@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -116,6 +117,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ModTags.Items.FUKAMIZU_EDGE).add(ItemRegistry.SOFT_EDGE.get()).addTag(ModTags.Items.FUKAMIZU_EDGE_WITH_EXTRA_LOOT);
         this.tag(ModTags.Items.FUKAMIZU_EDGE_WITH_EXTRA_LOOT).add(ItemRegistry.HARD_EDGE.get(), ItemRegistry.SERRATION_EDGE.get(),
                 ItemRegistry.COLORFUL_EDGE.get(), ItemRegistry.SWOLLEN_EDGE.get(), ItemRegistry.FUKAMIZU_EDGE.get());
+
+        this.tag(ModTags.Items.STONE_CAN_BE_CRUSHED).add(Items.ANDESITE, Items.GRANITE, Items.DIORITE, Items.TUFF, Items.BASALT,
+                Items.CALCITE);
     }
 
     private static TagKey<Item> forgeTag(String name) {
