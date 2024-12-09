@@ -1107,7 +1107,7 @@
   "death.attack.wither_absolute": "%1$s枯萎了",
   "death.attack.wither_absolute.entity": "%1$s在与%2$s战斗时枯萎了",
   "death.attack.wither_absolute.item": "%1$s在与%2$s战斗时枯萎了",
-  "death.attack.fukamizu_crushing": "%1$s不幸被磨成了面包屑",
+  "death.attack.fukamizu_crushing": "%1$s被磨成了富碳面包屑",
   "death.attack.fukamizu_crushing.entity": "%1$s被%2$s推入了粉碎机",
   "death.attack.fukamizu_crushing.item": "%1$s被%2$s用%3$s推入了粉碎机",
 

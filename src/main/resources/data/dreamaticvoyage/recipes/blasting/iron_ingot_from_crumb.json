@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "dreamaticvoyage:iron_rich_crumb"
+  },
+  "result": "minecraft:iron_ingot",
+  "cookingtime": 100
+}

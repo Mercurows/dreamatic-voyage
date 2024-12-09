@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "dreamaticvoyage:copper_rich_crumb"
+  },
+  "result": "minecraft:copper_ingot",
+  "cookingtime": 100
+}
