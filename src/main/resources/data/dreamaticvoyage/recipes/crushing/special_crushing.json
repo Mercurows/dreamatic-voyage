@@ -1,0 +1,57 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": {
+    "item": "dreamaticvoyage:fukamizu_crusher"
+  },
+  "results": [
+    {
+      "item": "minecraft:diamond",
+      "count": 64
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 64,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 64,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 64,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 64,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 64,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 64,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 64,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 64,
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 64,
+      "chance": 0.5
+    }
+  ]
+}

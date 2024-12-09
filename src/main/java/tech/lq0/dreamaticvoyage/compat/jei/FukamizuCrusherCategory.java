@@ -98,7 +98,7 @@ public class FukamizuCrusherCategory implements IRecipeCategory<FukamizuCrushing
         if (results.size() < 5) return;
         for (int i = 5; i < results.size() && i < 10; i++) {
             var result = results.get(i);
-            builder.addSlot(RecipeIngredientRole.OUTPUT, 64 + i * 18, 28).addItemStack(result.stack())
+            builder.addSlot(RecipeIngredientRole.OUTPUT, 64 + (i - 5) * 18, 28).addItemStack(result.stack())
                     .setOverlay(result.chance() == 1 ? empty : chanceIcon, 11, 1)
                     .addTooltipCallback((tooltipContext, tooltip) -> {
                         if (result.chance() != 1) {

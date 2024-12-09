@@ -31,6 +31,7 @@ import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCrusherMenu;
 import tech.lq0.dreamaticvoyage.gui.slot.ContainerEnergyData;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
+import tech.lq0.dreamaticvoyage.init.ItemRegistry;
 import tech.lq0.dreamaticvoyage.recipe.FukamizuCrushingRecipe;
 
 import java.util.ArrayList;
@@ -106,6 +107,11 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
         if (blockEntity.canProcess()) {
             blockEntity.crushingProgress++;
             blockEntity.energyHandler.ifPresent(consumer -> consumer.extractEnergy(DEFAULT_ENERGY_COST, false));
+
+            if (blockEntity.getItem(0).is(ItemRegistry.FUKAMIZU_CRUSHER.get()) && blockEntity.crushingProgress >= 60) {
+                pLevel.destroyBlock(pPos, false);
+                return;
+            }
 
             if (blockEntity.crushingProgress >= PROCESS_TIME) {
                 blockEntity.craftItem();
