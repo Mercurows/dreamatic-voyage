@@ -30,6 +30,7 @@ public class DamageSourceRegistry {
     public static final ResourceKey<DamageType> LEVIY_BEAM = ResourceKey.create(Registries.DAMAGE_TYPE, Utils.loc("leviy_beam"));
     public static final ResourceKey<DamageType> LEVIY_BEAM_ABSOLUTE = ResourceKey.create(Registries.DAMAGE_TYPE, Utils.loc("leviy_beam_absolute"));
     public static final ResourceKey<DamageType> WITHER_ABSOLUTE = ResourceKey.create(Registries.DAMAGE_TYPE, Utils.loc("wither_absolute"));
+    public static final ResourceKey<DamageType> FUKAMIZU_CRUSHING = ResourceKey.create(Registries.DAMAGE_TYPE, Utils.loc("fukamizu_crushing"));
 
     public static DamageSource causeLavaCakeDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
         return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(LAVA_CAKE), entity);
@@ -89,6 +90,10 @@ public class DamageSourceRegistry {
 
     public static DamageSource causeAbsoluteWitherDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
         return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(WITHER_ABSOLUTE), entity);
+    }
+
+    public static DamageSource causeFukamizuCrushingDamage(RegistryAccess registryAccess, @Nullable Entity entity) {
+        return new DamageMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(FUKAMIZU_CRUSHING), entity);
     }
 
     private static class DamageMessages extends DamageSource {

@@ -9,6 +9,8 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.*;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -28,6 +30,7 @@ import tech.lq0.dreamaticvoyage.capability.uce.UCEnergyStorage;
 import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCrusherMenu;
 import tech.lq0.dreamaticvoyage.gui.slot.ContainerEnergyData;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
+import tech.lq0.dreamaticvoyage.init.DamageSourceRegistry;
 import tech.lq0.dreamaticvoyage.recipe.FukamizuCrushingRecipe;
 
 import java.util.ArrayList;
@@ -212,6 +215,31 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
     private void resetProgress() {
         this.crushingProgress = 0;
+    }
+
+    public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+        if (pLevel.isClientSide) return;
+        if (!pEntity.isAlive()) return;
+
+        if (pEntity instanceof LivingEntity living && pState.getValue(FukamizuCrusher.PROCESSING)) {
+            living.hurt(DamageSourceRegistry.causeFukamizuCrushingDamage(pLevel.registryAccess(), null), 4.0F);
+            return;
+        }
+
+        if (pEntity instanceof ItemEntity item) {
+            ItemStack stack = item.getItem();
+            if (this.getItem(0).isEmpty()) {
+                this.setItem(0, stack);
+                item.discard();
+                this.setChanged();
+            } else if (stack.is(this.getItem(0).getItem())) {
+                if (this.getItem(0).getCount() + stack.getCount() <= this.getItem(0).getMaxStackSize()) {
+                    this.getItem(0).grow(stack.getCount());
+                    item.discard();
+                    this.setChanged();
+                }
+            }
+        }
     }
 
     @Override
