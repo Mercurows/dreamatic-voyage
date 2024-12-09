@@ -1,7 +1,9 @@
 package tech.lq0.dreamaticvoyage.block.machine.fukamizutech;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -9,6 +11,8 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -28,6 +32,8 @@ import org.jetbrains.annotations.Nullable;
 import tech.lq0.dreamaticvoyage.block.entity.FukamizuCrusherBlockEntity;
 import tech.lq0.dreamaticvoyage.init.BlockEntityRegistry;
 
+import java.util.List;
+
 @SuppressWarnings("deprecation")
 public class FukamizuCrusher extends Block implements EntityBlock {
 
@@ -37,6 +43,11 @@ public class FukamizuCrusher extends Block implements EntityBlock {
     public FukamizuCrusher() {
         super(BlockBehaviour.Properties.of().strength(5f, 6f).requiresCorrectToolForDrops());
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(PROCESSING, false));
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+        pTooltip.add(Component.translatable("des.dreamaticvoyage.fukamizu_crusher").withStyle(ChatFormatting.GRAY));
     }
 
     @Nullable

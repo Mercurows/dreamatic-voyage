@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " b ",
+    "hfh",
+    " p "
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:hopper"
+    },
+    "h": {
+      "item": "dreamaticvoyage:heavy_bread_component"
+    },
+    "p": {
+      "item": "minecraft:dropper"
+    },
+    "f": {
+      "item": "dreamaticvoyage:fukamizu_machine_casing"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:fukamizu_crusher",
+    "count": 1
+  }
+}
