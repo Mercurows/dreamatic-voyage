@@ -1062,6 +1062,7 @@
   "item.dreamaticvoyage.fortune_cat_glove": "Fortune Cat Glove",
   "des.dreamaticvoyage.fortune_cat_glove": "",
   "des.dreamaticvoyage.fortune_cat_glove.text": " Nya~",
+  "des.dreamaticvoyage.umisu_current_energy": "%1$s / %2$s UCE",
 
   "death.attack.lava_cake": "%1$s享用了一生只能吃一次的美味",
   "death.attack.lava_cake.entity": "%2$s让%1$s享用了一生只能吃一次的美味",

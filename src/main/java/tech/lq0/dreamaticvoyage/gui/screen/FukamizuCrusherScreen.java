@@ -12,6 +12,10 @@ import tech.lq0.dreamaticvoyage.Utils;
 import tech.lq0.dreamaticvoyage.block.entity.FukamizuCrusherBlockEntity;
 import tech.lq0.dreamaticvoyage.gui.menu.FukamizuCrusherMenu;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 @OnlyIn(Dist.CLIENT)
 public class FukamizuCrusherScreen extends AbstractContainerScreen<FukamizuCrusherMenu> {
 
@@ -30,12 +34,32 @@ public class FukamizuCrusherScreen extends AbstractContainerScreen<FukamizuCrush
         pGuiGraphics.blit(TEXTURE, i, j, 0, 0, this.imageWidth, this.imageHeight);
 
         long energy = FukamizuCrusherScreen.this.menu.getEnergy();
+        long progress = FukamizuCrusherScreen.this.menu.getCrushingProgress();
 
         // Energy
         float energyRate = Mth.clamp((float) energy / (float) FukamizuCrusherBlockEntity.MAX_ENERGY, 0, 1);
         pGuiGraphics.blit(TEXTURE, i + 27, j + 66 - (int) (31 * energyRate),
                 177, 0, 4, (int) (31 * energyRate));
 
+        // Progress
+        float progressRate = Mth.clamp((float) progress / (float) FukamizuCrusherBlockEntity.PROCESS_TIME, 0, 1);
+        pGuiGraphics.blit(TEXTURE, i + 81, j + 33, 182, 0, 9, (int) (21 * progressRate));
+    }
+
+    @Override
+    protected void renderTooltip(GuiGraphics pGuiGraphics, int pX, int pY) {
+        super.renderTooltip(pGuiGraphics, pX, pY);
+
+        int i = (this.width - this.imageWidth) / 2;
+        int j = (this.height - this.imageHeight) / 2;
+
+        List<Component> tooltip = new ArrayList<>();
+        tooltip.add(Component.translatable("des.dreamaticvoyage.umisu_current_energy",
+                FukamizuCrusherScreen.this.menu.getEnergy(), FukamizuCrusherBlockEntity.MAX_ENERGY));
+
+        if ((pX - i) >= 26 && (pX - i) <= 32 && (pY - j) >= 34 && (pY - j) <= 67) {
+            pGuiGraphics.renderTooltip(this.font, tooltip, Optional.empty(), pX, pY);
+        }
     }
 
     @Override
