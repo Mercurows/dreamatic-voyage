@@ -101,6 +101,7 @@ public class FukamizuBreadWrench extends Item {
                     if (pylonBlockEntity.hasConnection(new byte[]{xDiff, yDiff, zDiff})) {
                         // 右键已连接方块时，移除现有连接
                         pylonBlockEntity.removeConnection(new byte[]{xDiff, yDiff, zDiff});
+                        pylonBlockEntity.setChanged();
                         player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.disconnected")
                                 .withStyle(ChatFormatting.YELLOW), true);
                     } else {
@@ -112,6 +113,7 @@ public class FukamizuBreadWrench extends Item {
                         }
                         // 满足条件，进行绑定
                         pylonBlockEntity.addConnection(new byte[]{xDiff, yDiff, zDiff});
+                        pylonBlockEntity.setChanged();
                         player.displayClientMessage(Component.translatable("des.dreamaticvoyage.fukamizu_bread_wrench.uce_bound",
                                 pos.getX() + ", " + pos.getY() + ", " + pos.getZ()).withStyle(ChatFormatting.GREEN), true);
                     }
@@ -136,8 +138,8 @@ public class FukamizuBreadWrench extends Item {
         var blockEntity = level.getBlockEntity(pos);
         if (blockEntity == null) return;
 
+        // 若右键方块存在对应属性，取消对应右键事件
         if (blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).isPresent()) {
-            // 若右键方块存在对应属性，取消对应右键事件
             event.setUseBlock(Event.Result.DENY);
         }
     }

@@ -48,8 +48,8 @@ public class FukamizuCrusherBlockEntity extends BlockEntity implements WorldlyCo
 
     public static final int PROCESS_TIME = 100;
     public static final int MAX_DATA_COUNT = 2;
-    public static final int MAX_ENERGY = 64000;
-    public static final int DEFAULT_ENERGY_COST = 20;
+    public static final int MAX_ENERGY = 6400;
+    public static final int DEFAULT_ENERGY_COST = 4;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(5, ItemStack.EMPTY);
 

@@ -6,6 +6,9 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -31,8 +34,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class FukamizuPylonBlockEntity extends PylonBlockEntity implements WorldlyContainer, MenuProvider {
 
     public static final int MAX_RANGE = 16;
-    public static final int MAX_CAPACITY = 128000;
-    public static final int CHARGE_SPEED = 50;
+    public static final int MAX_CAPACITY = 25600;
+    public static final int CHARGE_SPEED = 32;
     public static final int CHARGE_TIME = 40;
     public static final int TRANSFER_COOLDOWN = 40;
     public static final int MAX_CONNECT_COUNT = 10;
@@ -57,15 +60,15 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
             pylonBlockEntity.cooldown = TRANSFER_COOLDOWN;
         }
 
-        // 自动移除失效链接
-        pylonBlockEntity.connections.removeIf(offset -> {
-            var newPos = new BlockPos(pPos.getX() + offset[0], pPos.getY() + offset[1], pPos.getZ() + offset[2]);
-            var blockEntity = pLevel.getBlockEntity(newPos);
-            return blockEntity == null || !blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).isPresent();
-        });
-
-        // 尝试发送能量
         if (pylonBlockEntity.cooldown == 0 && pylonBlockEntity.energyHandler.map(UCEnergyStorage::getEnergyStored).orElse(0) > 0) {
+            // 自动移除失效链接
+            pylonBlockEntity.connections.removeIf(offset -> {
+                var newPos = new BlockPos(pPos.getX() + offset[0], pPos.getY() + offset[1], pPos.getZ() + offset[2]);
+                var blockEntity = pLevel.getBlockEntity(newPos);
+                return blockEntity == null || !blockEntity.getCapability(ModCapabilities.UMISU_CURRENT_ENERGY_CAPABILITY).isPresent();
+            });
+
+            // 尝试发送能量
             pylonBlockEntity.connections.forEach(offset -> {
                 var newPos = new BlockPos(pPos.getX() + offset[0], pPos.getY() + offset[1], pPos.getZ() + offset[2]);
                 var blockEntity = pLevel.getBlockEntity(newPos);
@@ -78,6 +81,7 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
                     }
                 });
             });
+            pylonBlockEntity.setChanged();
         }
     }
 
@@ -164,6 +168,25 @@ public class FukamizuPylonBlockEntity extends PylonBlockEntity implements Worldl
             connectionsTag.add(connectionTag);
         }
         pTag.put("Connections", connectionsTag);
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag compoundtag = new CompoundTag();
+        var connectionsTag = new ListTag();
+        for (var connection : this.connections) {
+            var connectionTag = new CompoundTag();
+            connectionTag.putByteArray("Offset", connection);
+            connectionsTag.add(connectionTag);
+        }
+        compoundtag.put("Connections", connectionsTag);
+        return compoundtag;
     }
 
     @Override
