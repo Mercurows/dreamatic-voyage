@@ -1,0 +1,17 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": {
+    "item": "minecraft:ancient_debris"
+  },
+  "results": [
+    {
+      "item": "minecraft:netherite_scrap",
+      "count": 1
+    },
+    {
+      "item": "minecraft:netherite_scrap",
+      "count": 1,
+      "chance": 0.2
+    }
+  ]
+}

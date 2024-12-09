@@ -1,0 +1,36 @@
+{
+  "type": "dreamaticvoyage:fukamizu_crushing",
+  "input": {
+    "tag": "forge:ores/nickel"
+  },
+  "results": [
+    {
+      "item": "dreamaticvoyage:nickel_rich_crumb",
+      "count": 1
+    },
+    {
+      "item": "dreamaticvoyage:nickel_rich_crumb",
+      "count": 1,
+      "chance": 0.6
+    },
+    {
+      "item": "dreamaticvoyage:nickel_rich_crumb",
+      "count": 1,
+      "chance": 0.4
+    },
+    {
+      "item": "dreamaticvoyage:nickel_rich_crumb",
+      "count": 1,
+      "chance": 0.2
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ores/nickel"
+      }
+    }
+  ]
+}
