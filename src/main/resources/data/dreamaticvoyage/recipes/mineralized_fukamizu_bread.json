@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ab",
+    "ba"
+  ],
+  "key": {
+    "a": {
+      "item": "dreamaticvoyage:fukamizu_crumb"
+    },
+    "b": {
+      "item": "dreamaticvoyage:earth_debris"
+    }
+  },
+  "result": {
+    "item": "dreamaticvoyage:mineralized_fukamizu_bread",
+    "count": 1
+  }
+}
